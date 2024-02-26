@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .page_container {
+    @apply container max-w-2xl mx-auto;
+  }
+}

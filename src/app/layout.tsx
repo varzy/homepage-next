@@ -1,20 +1,16 @@
 import type { Metadata } from 'next';
-import './globals.css';
+import '../styles/main.css';
 
 export const metadata: Metadata = {
   title: {
-    default: `zy's Blog`,
-    template: `%s | zy's Blog`,
+    default: `贼歪`,
+    template: `%s | 贼歪`,
   },
-  description: 'hi',
+  description: '',
   icons: '/favicon.ico',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="zh-cn">
       <body>{children}</body>

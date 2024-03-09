@@ -3,6 +3,8 @@ import { SITE_CONFIG } from '@/site.config';
 import { notFound } from 'next/navigation';
 import { notionToMarkdown } from '@/lib/notion/notion-to-markdown';
 import NotionPage from '@/app/(blog)/_components/NotionPage';
+import PageHero from '@/app/(blog)/_components/PageHero';
+import PostTag from '@/app/(blog)/_components/PostTag';
 
 export async function generateStaticParams() {
   const allPosts = await getAllPagesWithMeta({
@@ -39,10 +41,15 @@ export default async function Post({ params }: { params: { slug: string } }) {
   console.log(mdString);
 
   return (
-    <div className="post_page">
-      <p>{targetPost.id}</p>
-      <hr />
-      <NotionPage markdown={mdString.parent}></NotionPage>
-    </div>
+    <>
+      <PageHero>
+        <h1 className="text-2xl">{targetPost.title}</h1>
+        <p className="">{targetPost.date}</p>
+        {targetPost.tags.length > 0 && targetPost.tags.map((tag) => <PostTag key={tag} tag={tag} />)}
+      </PageHero>
+      <div className="g-content-container">
+        <NotionPage markdown={mdString.parent}></NotionPage>
+      </div>
+    </>
   );
 }

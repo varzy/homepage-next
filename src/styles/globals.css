@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer utilities {
-  .page_container {
+  .g-content-container {
     @apply container max-w-2xl mx-auto;
   }
 }

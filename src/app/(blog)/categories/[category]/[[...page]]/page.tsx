@@ -1,8 +1,8 @@
 import { SITE_CONFIG } from '@/site.config';
-import * as fs from 'fs';
 import { notFound } from 'next/navigation';
-import Link from 'next/link';
-import { getAllDatabasePages, getAllPagesWithMeta, getPageMeta } from '@/lib/notion/notion-handler';
+import { getAllPagesWithMeta } from '@/lib/notion/notion-handler';
+import PostsContainer from '@/app/(blog)/_components/PostsContainer';
+import PageHero from '@/app/(blog)/_components/PageHero';
 
 interface PageProps {
   params: { category: keyof typeof SITE_CONFIG.categories; page?: string[] };
@@ -62,26 +62,9 @@ export default async function Page({ params }: PageProps) {
     sorts: [{ property: 'date', direction: 'descending' }],
   });
 
-  const prePage = SITE_CONFIG.blogPerPage;
-  const currentPagePosts = allPosts.slice((currentPage - 1) * prePage, currentPage * prePage);
-  const showPrev = currentPage > 2;
-  const showNext = currentPage * SITE_CONFIG.blogPerPage < allPosts.length;
-
   return (
-    <div>
-      <h1>{categoryCtx.alias}</h1>
-      <h2>{categoryCtx.description}</h2>
-      <hr />
-      {currentPagePosts.map((post) => (
-        <div key={post.id}>
-          <Link className="hover:text-red-500" href={'/' + post.slug}>
-            {post.title}
-          </Link>
-        </div>
-      ))}
-      <hr />
-      <div>{showPrev && 'PREV'}</div>
-      <div>{showNext && 'NEXT'}</div>
-    </div>
+    <PostsContainer posts={allPosts} currentPage={currentPage} urlPrefix={`/categories/${categoryParam}`}>
+      <PageHero title={categoryCtx.alias} description={categoryCtx.description}></PageHero>
+    </PostsContainer>
   );
 }

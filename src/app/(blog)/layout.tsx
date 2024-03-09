@@ -1,9 +1,11 @@
 import Link from 'next/link';
+import styles from './layout.module.css';
+import cls from 'classnames';
 
 export default function BlogLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <>
-      <header className="sticky bg-opacity-60 py-4">
+      <header className={cls('sticky', styles.header)}>
         <div className="page_container">
           <Link href="/">LOGO</Link>
         </div>

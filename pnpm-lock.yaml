@@ -8,10 +8,19 @@ dependencies:
   '@notionhq/client':
     specifier: ^2.2.14
     version: 2.2.14
+  classnames:
+    specifier: ^2.5.1
+    version: 2.5.1
+  dayjs:
+    specifier: ^1.11.10
+    version: 1.11.10
   next:
-    specifier: 14.1.1-canary.72
+    specifier: ^14.1.1-canary.72
     version: 14.1.1-canary.72(@babel/core@7.23.9)(react-dom@18.2.0)(react@18.2.0)
   notion-client:
+    specifier: ^6.16.0
+    version: 6.16.0
+  notion-utils:
     specifier: ^6.16.0
     version: 6.16.0
   prettier:
@@ -6182,6 +6191,11 @@ packages:
       { integrity: sha512-0TNiGstbQmCFwt4akjjBg5pLRTSyj/PkWQ1ZoO2zntmg9yLqSRxwEa4iCfQLGjqhiqBfOJa7W/E8wfGrTDmlZQ== }
     dev: true
 
+  /classnames@2.5.1:
+    resolution:
+      { integrity: sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow== }
+    dev: false
+
   /clean-css@5.3.3:
     resolution:
       { integrity: sha512-D5J+kHaVb/wKSFcyyV75uCn8fiY4sV38XJoe4CUyGQ+mOU/fMVYUdH1hJC+CJQ5uY3EnW27SbJYS4X8BiLrAFg== }
@@ -6640,6 +6654,11 @@ packages:
       whatwg-mimetype: 4.0.0
       whatwg-url: 14.0.0
     dev: true
+
+  /dayjs@1.11.10:
+    resolution:
+      { integrity: sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ== }
+    dev: false
 
   /debug@2.6.9:
     resolution:

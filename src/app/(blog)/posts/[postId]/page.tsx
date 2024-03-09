@@ -1,12 +1,11 @@
 import { NotionRenderer } from 'react-notion-x';
-import { notion } from '@/lib/notion';
+import { notionApiX } from '@/lib/notion/notion-api-x';
 import Link from 'next/link';
 import * as fs from 'fs';
 import NotionPage from '@/components/NotionPage';
-import { APP_CONFIG } from '@/app.config';
 
 export async function generateStaticParams() {
-  const databaseAllPages = await notion.getPage(APP_CONFIG.notionDatabaseId);
+  const databaseAllPages = await notionApiX.getPage(APP_CONFIG.notionDatabaseId);
   // fs.writeFileSync('databaseAllPages.json', JSON.stringify(databaseAllPages, null, 2));
 
   const renderingPageIds = Object.keys(databaseAllPages.block).slice(0, 1);
@@ -35,7 +34,7 @@ export async function generateStaticParams() {
 export default async function PostPage({ params }: { params: { postId: string } }) {
   console.log(params);
   const { postId } = params;
-  const postRecordMap = await notion.getPage(postId);
+  const postRecordMap = await notionApiX.getPage(postId);
 
   return (
     <div>

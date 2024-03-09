@@ -14,8 +14,11 @@
   },
   "dependencies": {
     "@notionhq/client": "^2.2.14",
+    "classnames": "^2.5.1",
+    "dayjs": "^1.11.10",
     "next": "^14.1.1-canary.72",
     "notion-client": "^6.16.0",
+    "notion-utils": "^6.16.0",
     "prettier": "^3.2.5",
     "prismjs": "^1.29.0",
     "react": "^18",

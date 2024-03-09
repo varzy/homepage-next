@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <div className="flex align-middle justify-center p-4 w-full min-h-screen bg-gray-100">
-      <div className="container bg-white  p-4">
+      <div className="container mx-auto md:w-full bg-white  p-4">
         {links.map((link, index) => (
           <div className="link" key={index}>
             <Link className="hover:text-blue-500 transition" href={link.href} target={link.target}>

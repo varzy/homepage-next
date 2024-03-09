@@ -2,7 +2,7 @@ import { getAllDatabasePages, getAllPagesWithMeta } from '@/lib/notion/notion-ha
 import { SITE_CONFIG } from '@/site.config';
 import { notFound } from 'next/navigation';
 import { notionToMarkdown } from '@/lib/notion/notion-to-markdown';
-import NotionPage from '@/components/NotionPage';
+import NotionPage from '@/app/(blog)/_components/NotionPage';
 
 export async function generateStaticParams() {
   const allPosts = await getAllPagesWithMeta({

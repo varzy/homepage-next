@@ -8,7 +8,7 @@ interface PageProps {
   };
 }
 
-function BuyMeACoffee() {
+export function BuyMeACoffee() {
   return <div className="rounded my-4 px-4 border">buy me a coffee.</div>;
 }
 

@@ -1,6 +1,5 @@
 export const SITE_CONFIG = {
   isProd: (process.env.VERCEL_ENV || process.env.NODE_ENV) === 'production',
-
   notionDatabaseId: process.env.NOTION_DATABASE_ID || '',
   notionApiSecret: process.env.NOTION_API_SECRET || '',
 

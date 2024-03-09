@@ -2,7 +2,7 @@ import { SITE_CONFIG } from '@/site.config';
 import * as fs from 'fs';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { getAllDatabasePages, getPageMeta } from '@/lib/notion/notion-handler';
+import { getAllDatabasePages, getAllPagesWithMeta, getPageMeta } from '@/lib/notion/notion-handler';
 
 interface PageProps {
   params: { category: keyof typeof SITE_CONFIG.categories; page?: string[] };
@@ -12,10 +12,10 @@ export async function generateStaticParams() {
   const categoriesConfig = SITE_CONFIG.categories;
   const presetCategories = Object.keys(categoriesConfig).map((key) => ({
     routeParam: key,
-    filed: categoriesConfig[key as keyof typeof categoriesConfig].notionField
+    filed: categoriesConfig[key as keyof typeof categoriesConfig].notionField,
   }));
 
-  const allPosts = await getAllDatabasePages({
+  const allPosts = await getAllPagesWithMeta({
     database_id: SITE_CONFIG.notionDatabaseId,
     filter: {
       and: [
@@ -24,15 +24,15 @@ export async function generateStaticParams() {
         {
           or: presetCategories.map((category) => ({
             property: 'category',
-            select: { equals: category.filed }
-          }))
-        }
-      ]
-    }
+            select: { equals: category.filed },
+          })),
+        },
+      ],
+    },
   });
 
   const renderingGroups = presetCategories.map((category) => {
-    const categoryPosts = allPosts.filter((post) => getPageMeta(post).category === category.filed);
+    const categoryPosts = allPosts.filter((post) => post.category === category.filed);
     if (categoryPosts.length === 0) return [];
     const totalPages = Math.ceil(categoryPosts.length / SITE_CONFIG.blogPerPage);
     return Array.from({ length: totalPages }).map((_, i) => ({ category: category.routeParam, page: [i + 1 + ''] }));
@@ -50,26 +50,22 @@ export default async function Page({ params }: PageProps) {
   const categoryCtx = SITE_CONFIG.categories[categoryParam];
   const categoryField = categoryCtx.notionField;
   // 获取当前类别下全部文章
-  const allPosts = await getAllDatabasePages({
+  const allPosts = await getAllPagesWithMeta({
     database_id: SITE_CONFIG.notionDatabaseId,
     filter: {
       and: [
         { property: 'status', select: { equals: 'Published' } },
         { property: 'type', select: { equals: 'Post' } },
-        { property: 'category', select: { equals: categoryField } }
-      ]
+        { property: 'category', select: { equals: categoryField } },
+      ],
     },
-    sorts: [
-      { property: 'date', direction: 'descending' }
-    ]
+    sorts: [{ property: 'date', direction: 'descending' }],
   });
-  const postsWithMeta = allPosts.map(post => getPageMeta(post));
-  fs.writeFileSync('postsWithMeta.json', JSON.stringify(postsWithMeta, null, 2));
 
   const prePage = SITE_CONFIG.blogPerPage;
-  const currentPagePosts = postsWithMeta.slice((currentPage - 1) * prePage, currentPage * prePage);
+  const currentPagePosts = allPosts.slice((currentPage - 1) * prePage, currentPage * prePage);
   const showPrev = currentPage > 2;
-  const showNext = currentPage * SITE_CONFIG.blogPerPage < postsWithMeta.length;
+  const showNext = currentPage * SITE_CONFIG.blogPerPage < allPosts.length;
 
   return (
     <div>
@@ -78,8 +74,8 @@ export default async function Page({ params }: PageProps) {
       <hr />
       {currentPagePosts.map((post) => (
         <div key={post.id}>
-          <Link className="hover:text-red-500" href={'/' + 'post.slug'}>
-            {post.id}
+          <Link className="hover:text-red-500" href={'/' + post.slug}>
+            {post.title}
           </Link>
         </div>
       ))}

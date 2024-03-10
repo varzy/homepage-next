@@ -6,7 +6,7 @@ export const SITE_CONFIG = {
   title: `贼歪`,
   keywords: `贼歪, zy, 个人网站, 博客, 技术, 前端, Notion, Homepage, Blog`,
   description: ``,
-  author: `zy`,
+  author: `贼歪`,
   email: ``,
   lang: `zh-CN`,
 
@@ -15,6 +15,6 @@ export const SITE_CONFIG = {
   // notionField: Filed name in notion database.
   categories: {
     nichijou: { notionField: 'Nichijou', alias: '日常', description: '一个普通人的思考与呓语。' },
-    tech: { notionField: 'Tech', alias: '技术', description: '一堆没有干货的技术笔记。' },
+    coding: { notionField: 'Coding', alias: '编码', description: '一堆没有干货的技术笔记。' },
   },
 };

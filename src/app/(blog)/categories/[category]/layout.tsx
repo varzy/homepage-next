@@ -1,15 +1,12 @@
 import { SITE_CONFIG } from '@/site.config';
 import { notFound } from 'next/navigation';
 import { ReactNode } from 'react';
+import BuyMeACoffee from '@/app/(blog)/_components/BuyMeACoffee';
 
 interface PageProps {
   params: {
     category: keyof typeof SITE_CONFIG.categories;
   };
-}
-
-export function BuyMeACoffee() {
-  return <div className="rounded my-4 px-4 border">buy me a coffee.</div>;
 }
 
 export function generateMetadata({ params }: PageProps) {
@@ -26,7 +23,7 @@ export default function BlogLayout({ children, params }: Readonly<{ children: Re
   return (
     <>
       {children}
-      {params.category === 'tech' && <BuyMeACoffee />}
+      {params.category === 'coding' && <BuyMeACoffee />}
     </>
   );
 }

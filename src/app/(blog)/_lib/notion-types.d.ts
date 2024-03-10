@@ -4,6 +4,20 @@ import {
   UserObjectResponse,
 } from '@notionhq/client/build/src/api-endpoints';
 
+export type DatabaseMultiSelectProperty = {
+  id: string;
+  name: string;
+  type: 'multi_select';
+  multi_select: {
+    options: {
+      id: string;
+      name: string;
+      color: string;
+      description: string;
+    }[];
+  };
+};
+
 export type PagePropertyTypeMap = keyof PageProperties;
 export type PagePropertySchema<T extends PagePropertyTypeMap> = PageProperties[T];
 

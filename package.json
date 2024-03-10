@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "test": "vitest",
-    "lint": "next lint",
+    "lint": "next lint --fix",
     "format": "prettier --write ."
   },
   "dependencies": {
@@ -17,9 +17,9 @@
     "github-markdown-css": "^5.5.1",
     "next": "^14.1.1-canary.72",
     "notion-to-md": "^3.1.1",
-    "prettier": "^3.2.5",
     "react": "^18",
     "react-dom": "^18",
+    "react-icons": "^5.0.1",
     "react-markdown": "^9.0.1"
   },
   "devDependencies": {
@@ -33,6 +33,8 @@
     "eslint-config-next": "14.1.0",
     "jsdom": "^24.0.0",
     "postcss": "^8",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.12",
     "tailwindcss": "^3.3.0",
     "typescript": "^5",
     "vitest": "^1.3.1"

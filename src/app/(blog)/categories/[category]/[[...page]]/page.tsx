@@ -1,12 +1,8 @@
 import { SITE_CONFIG } from '@/site.config';
 import { notFound } from 'next/navigation';
-import { getAllPagesWithMeta } from '@/lib/notion/notion-handler';
+import { getAllPagesWithMeta } from '@/app/(blog)/_lib/notion-handler';
 import PostsContainer from '@/app/(blog)/_components/PostsContainer';
 import PageHero from '@/app/(blog)/_components/PageHero';
-
-interface PageProps {
-  params: { category: keyof typeof SITE_CONFIG.categories; page?: string[] };
-}
 
 export async function generateStaticParams() {
   const categoriesConfig = SITE_CONFIG.categories;
@@ -40,7 +36,11 @@ export async function generateStaticParams() {
   return renderingGroups.reduce((all, group) => [...all, ...group], []);
 }
 
-export default async function Page({ params }: PageProps) {
+export default async function Page({
+  params,
+}: {
+  params: { category: keyof typeof SITE_CONFIG.categories; page?: string[] };
+}) {
   const { category: categoryParam, page: optionalPageParam = [] } = params;
   if (optionalPageParam.length > 1) notFound();
   // 页码

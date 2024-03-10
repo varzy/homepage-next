@@ -1,18 +1,20 @@
-import { PostMetaData } from '@/lib/notion/notion-handler';
+import { PostMetaData } from '@/app/(blog)/_lib/notion-handler';
 import { ReactNode } from 'react';
 import { SITE_CONFIG } from '@/site.config';
 import PostItem from './PostItem';
-import Pagination, { PaginationProps } from '@/app/(blog)/_components/Pagination';
+import Pagination from '@/app/(blog)/_components/Pagination';
 
 export default function PostsContainer({
   posts,
   currentPage,
-  urlPrefix,
+  urlPrefix = '/',
+  pagination = true,
   children,
 }: {
   posts: PostMetaData[];
   currentPage: number;
-  urlPrefix: string;
+  urlPrefix?: string;
+  pagination?: boolean;
   children?: ReactNode;
 }) {
   const prePage = SITE_CONFIG.blogPerPage;
@@ -26,12 +28,14 @@ export default function PostsContainer({
         </div>
       )}
       <div className="g-content-container">
-        <div className="posts ">
+        <div className="posts">
           {currentPagePosts.map((post) => (
             <PostItem key={post.id} {...post}></PostItem>
           ))}
         </div>
-        <Pagination current={currentPage} pageSize={prePage} urlPrefix={urlPrefix} total={posts.length} />
+        {pagination && (
+          <Pagination current={currentPage} pageSize={prePage} urlPrefix={urlPrefix} total={posts.length} />
+        )}
       </div>
     </>
   );

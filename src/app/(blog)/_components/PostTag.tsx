@@ -1,9 +1,13 @@
 import Link from 'next/link';
 
-export default function PostTag({ tag }: { tag: string }) {
+export default function PostTag({ tag, count }: { tag: string; count?: number }) {
   return (
-    <Link href={`/tags/${tag}`} className="inline-block rounded-2xl px-2 py-1 border mr-2 last:mr-0">
-      #{tag}
+    <Link
+      href={`/tags/${tag}`}
+      className="mr-4 inline-block rounded-2xl border px-3 py-0.5 transition last:mr-0 hover:bg-gray-100"
+    >
+      <span>#{tag}</span>
+      {count && <span className="ml-2">&nbsp;{count}</span>}
     </Link>
   );
 }

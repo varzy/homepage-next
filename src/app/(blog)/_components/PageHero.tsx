@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 export default function PageHero(props: { title?: string; description?: string; children?: ReactNode }) {
   return (
-    <div className="py-6 bg-gray-100">
+    <div className="py-6">
       <div className="g-content-container">
         {props.title ? (
           <>

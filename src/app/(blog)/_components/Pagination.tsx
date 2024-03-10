@@ -17,7 +17,7 @@ export default function Pagination({ total, current, pageSize, urlPrefix }: Pagi
   return (
     <>
       {moreThanOnePage && (
-        <div className="flex align-center justify-between py-4">
+        <div className="align-center flex justify-between py-4">
           <div className="prev">{showPrev && Goto(current - 1, '< Prev')}</div>
           <div className="next">{showNext && Goto(current + 1, 'Next >')}</div>
         </div>

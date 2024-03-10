@@ -2,8 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  body {
+    @apply bg-[#f7f7f7] font-serif  text-gray-600;
+  }
+}
+
 @layer utilities {
   .g-content-container {
-    @apply container max-w-2xl mx-auto;
+    @apply container mx-auto max-w-2xl;
+  }
+
+  .g-link {
+    @apply text-blue-600 transition hover:text-black;
+  }
+
+  .g-link-fancy {
+    @apply relative ease-in-out before:absolute before:bottom-0 before:left-0 before:z-[-1] before:h-2 before:w-full before:bg-violet-100 before:transition-all before:duration-200 group-hover:before:h-[2px];
   }
 }

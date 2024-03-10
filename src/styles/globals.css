@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-[#f7f7f7] font-serif  text-gray-600;
+    @apply bg-[#f7f7f7] font-serif font-light text-gray-600;
   }
 }
 
@@ -18,6 +18,6 @@
   }
 
   .g-link-fancy {
-    @apply relative ease-in-out before:absolute before:bottom-0 before:left-0 before:z-[-1] before:h-2 before:w-full before:bg-violet-100 before:transition-all before:duration-200 group-hover:before:h-[2px];
+    @apply relative whitespace-nowrap ease-in-out before:absolute before:bottom-0 before:left-0 before:z-[-1] before:h-2 before:w-full before:bg-violet-200 before:transition-all before:duration-200 group-hover:before:h-[2px];
   }
 }

@@ -7,7 +7,6 @@ import {
 import { DatabaseMultiSelectProperty, PagePropertySchema, PagePropertyTypeMap } from '@/app/(blog)/_lib/notion-types';
 import { cache } from 'react';
 import Dayjs from 'dayjs';
-import * as fs from 'fs';
 
 export const getAllDatabasePages = cache(async (query: QueryDatabaseParameters) => {
   let pages: PageObjectResponse[] = [];

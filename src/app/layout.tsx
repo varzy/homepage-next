@@ -5,11 +5,9 @@ import { getEmojiFavicon } from '@/utils/helpers';
 
 // Re-SSG by 60s.
 // https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating#time-based-revalidation
-// https://github.com/vercel/next.js/issues/41951
-// export const revalidate = 30;
-// @ts-ignore
-// export const revalidate = process.env.NODE_ENV === 'development' ? false : SITE_CONFIG.revalidate;
-export const revalidate = false;
+// unit: s. 60 = 1min
+// Notion images will expire after 3600s, so we must revalidate less than 1 hour.
+export const revalidate = 60 * 20;
 
 export const metadata: Metadata = {
   title: {

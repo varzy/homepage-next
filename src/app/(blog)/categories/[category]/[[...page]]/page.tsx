@@ -63,8 +63,13 @@ export default async function Page({
   });
 
   return (
-    <PostsContainer posts={allPosts} currentPage={currentPage} urlPrefix={`/categories/${categoryParam}`}>
-      <PageHero title={categoryCtx.alias} description={categoryCtx.description}></PageHero>
-    </PostsContainer>
+    <>
+      <PageHero title={categoryCtx.alias} after={categoryCtx.description}></PageHero>
+      <PostsContainer
+        posts={allPosts}
+        currentPage={currentPage}
+        urlPrefix={`/categories/${categoryParam}`}
+      ></PostsContainer>
+    </>
   );
 }

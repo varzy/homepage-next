@@ -71,13 +71,15 @@ export default async function Post({ params }: PageProps) {
 
   return (
     <>
-      <PageHero>
-        <p className="text-xs">{targetPost.dateAmericaStyle}</p>
-        <h1 className="mt-2 text-2xl font-normal">{targetPost.title}</h1>
-        <div className="mt-2">
-          {targetPost.tags.length > 0 && targetPost.tags.map((tag) => <PostTag key={tag} tag={tag} />)}
-        </div>
-      </PageHero>
+      <PageHero
+        title={targetPost.title}
+        before={targetPost.dateAmericaStyle}
+        after={
+          <div className="mt-2">
+            {targetPost.tags.length > 0 && targetPost.tags.map((tag) => <PostTag key={tag} tag={tag} />)}
+          </div>
+        }
+      ></PageHero>
       <div className="g-blog-container py-6">
         <NotionPage markdown={mdString.parent}></NotionPage>
       </div>

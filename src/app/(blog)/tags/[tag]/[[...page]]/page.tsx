@@ -44,8 +44,9 @@ export default async function Tag({ params }: { params: { tag: string; page?: st
   });
 
   return (
-    <PostsContainer posts={allPosts} currentPage={currentPage} urlPrefix={`/tags/${tagText}`}>
-      <PageHero title={'#' + decodeURIComponent(tagText)} description={`共 ${allPosts.length} 篇`}></PageHero>
-    </PostsContainer>
+    <>
+      <PageHero title={'#' + decodeURIComponent(tagText)}></PageHero>
+      <PostsContainer posts={allPosts} currentPage={currentPage} urlPrefix={`/tags/${tagText}`}></PostsContainer>
+    </>
   );
 }

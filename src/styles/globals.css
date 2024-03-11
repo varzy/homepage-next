@@ -10,7 +10,7 @@
 
 @layer utilities {
   .g-blog-container {
-    @apply container mx-auto max-w-3xl px-3;
+    @apply container mx-auto max-w-3xl px-5;
   }
 
   .g-blog-link {

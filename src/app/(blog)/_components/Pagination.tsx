@@ -23,11 +23,11 @@ export default function Pagination({ total, current, pageSize, urlPrefix }: Pagi
     <>
       {moreThanOnePage && (
         <div className="flex items-center justify-between py-4">
-          <div className="prev">{showPrev && Goto(current - 1, '< Prev')}</div>
-          <div className="current">
+          <div className="prev flex-1 text-left">{showPrev && Goto(current - 1, '< Prev')}</div>
+          <div className="current flex-1 text-center">
             {current} / {totalPage}
           </div>
-          <div className="next">{showNext && Goto(current + 1, 'Next >')}</div>
+          <div className="next flex-1 text-right">{showNext && Goto(current + 1, 'Next >')}</div>
         </div>
       )}
     </>

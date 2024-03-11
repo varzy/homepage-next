@@ -6,7 +6,7 @@ export default function BlogFooter() {
     <footer>
       <div className="g-blog-container">
         <hr className="border-gray-200" />
-        <div className="pb-8 pt-4 text-sm leading-6">
+        <div className="pb-16 pt-6 text-sm leading-6">
           <p>
             &copy; {SITE_CONFIG.author} 2015 - {new Date().getFullYear()} • Powered by Vercel, Next.js & Notion.
           </p>

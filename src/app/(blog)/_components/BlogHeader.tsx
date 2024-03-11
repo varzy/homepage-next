@@ -10,7 +10,7 @@ export default function BlogHeader() {
   const links = [{ label: '首页', href: '/' }, ...categoryLinks, { label: '朋友们', href: '/friends' }];
 
   return (
-    <header className="py-4 shadow-md">
+    <header className="z-50 py-4 shadow-md">
       <div className="g-blog-container">
         <div className="align-center flex justify-between">
           <div className="logo">

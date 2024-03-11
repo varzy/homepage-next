@@ -1,6 +1,6 @@
 import HomeWrapper from '@/app/_components/HomeWrapper';
-import Link from 'next/link';
 import { Metadata } from 'next';
+import FancyLink from '@/app/_components/FancyLink';
 
 export const metadata: Metadata = {
   title: 'ZY',
@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <HomeWrapper
       t={{
-        iam: `I'm `,
+        iam: `I’m `,
         name: `ZY`,
         pronounce: `zei: wai`,
         telegram: `Telegram`,
@@ -22,11 +22,18 @@ export default function Home() {
         resume: `Resume`,
       }}
     >
-      <p>I'm a Software Engineer living in Beijing. I am a fan of ACG and  I'm also a minimalist. I am a Anime and rock music</p>
       <p>
-        There are some pieces of my <Link className="g-link-fancy" href="/categories/nichijou">Everyday Life</Link> and some <Link className="g-link-fancy" href="/categories/coding">Coding Notes</Link> in my blog, I also have a <Link className="g-link-fancy" href="https://t.me/aboutzy">Telegram Channel</Link> and welcome your subscription.
+        I’m a software engineer living in Beijing. I enjoy watching anime, comics, playing games, and listening music
+        especially rocks. Just like most of geek, I always interest at software and consumer electronics field. I’m also
+        a minimalist.
       </p>
-      <p>This world is wild and I do hope I can change it even just a bit.</p>
+      <p>
+        There are some pieces of my <FancyLink href="/categories/nichijou" label="Everyday Life" /> and some{' '}
+        <FancyLink href="/categories/coding" label="Coding Notes" /> in my blog, I also have a{' '}
+        <FancyLink href="https://t.me/aboutzy" label="Telegram Channel" target="_blank"></FancyLink> and welcome your
+        subscription.
+      </p>
+      <p>This world is so wild, but I do hope I can change it even just a bit.</p>
     </HomeWrapper>
   );
 }

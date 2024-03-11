@@ -1,7 +1,6 @@
 'use client';
 
 import ReactMarkdown from 'react-markdown';
-import 'github-markdown-css';
 
 export default function PostPage({ markdown }: { markdown: string }) {
   return (

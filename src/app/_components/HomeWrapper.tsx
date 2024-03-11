@@ -1,4 +1,3 @@
-import SocialTag, { SocialTagProps } from '@/app/_components/SocialTag';
 import { ReactNode } from 'react';
 import { FaRegPenToSquare } from 'react-icons/fa6';
 import { FaGithub, FaInstagram, FaRegAddressCard, FaTelegramPlane } from 'react-icons/fa';
@@ -6,6 +5,7 @@ import { SiDoubanread } from 'react-icons/si';
 import { RiNeteaseCloudMusicLine } from 'react-icons/ri';
 import LocaleToggle from '@/app/_components/LocaleToggle';
 import Avatar from '@/app/_components/Avatar';
+import FancyLink, { FancyLinkProps } from '@/app/_components/FancyLink';
 
 export interface I18nProps {
   blog: string;
@@ -21,8 +21,8 @@ export interface I18nProps {
 }
 
 export default function HomeWrapper({ t, children }: { t: I18nProps; children: ReactNode }) {
-  const links: SocialTagProps[] = [
-    { label: t.blog, href: '/blog', icon: <FaRegPenToSquare /> },
+  const links: FancyLinkProps[] = [
+    { label: t.blog, href: '/categories/nichijou', icon: <FaRegPenToSquare /> },
     { label: t.telegram, href: 'https://t.me/aboutzy', target: '_blank', icon: <FaTelegramPlane /> },
     { label: t.github, href: 'https://github.com/varzy', target: '_blank', icon: <FaGithub /> },
     { label: t.instagram, href: 'https://instagram.com/varzyme', target: '_blank', icon: <FaInstagram /> },
@@ -47,14 +47,14 @@ export default function HomeWrapper({ t, children }: { t: I18nProps; children: R
   return (
     <>
       <LocaleToggle />
-      <div className="container mx-auto max-w-4xl px-6 py-20 tracking-wider sm:px-8">
+      <div className="container mx-auto max-w-4xl px-6 py-20 leading-7 sm:px-8">
         <Row>
           <div className="flex flex-col-reverse md:flex-row md:items-center md:justify-between">
             <div className="info">
               <p className="mb-3 text-4xl font-bold">Hi,</p>
               <p className="mb-3 text-3xl font-bold">
                 {t.iam}
-                <strong className="inline-block italic text-violet-800">{t.name}</strong>
+                <strong className="inline-block italic text-indigo-600">{t.name}</strong>
                 <span className="inline-block text-lg font-light">&nbsp;&nbsp;/{t.pronounce}/</span>
               </p>
               <p>🧑‍💻Web Developer. 📝Blogger. 🫣INFJ.</p>
@@ -65,13 +65,13 @@ export default function HomeWrapper({ t, children }: { t: I18nProps; children: R
           </div>
         </Row>
         <Row title="about me">
-          <div className="leading-7 [&>p]:mb-4 last:[&>p]:mb-0">{children}</div>
+          <div className="[&>p]:mb-4 last:[&>p]:mb-0">{children}</div>
         </Row>
         <Row title="find me">
           <div className="flex flex-wrap">
             {links.map((link, index) => (
               <div className="mb-3 basis-1/2 sm:basis-1/3 md:basis-1/4" key={index}>
-                <SocialTag href={link.href} target={link.target} label={link.label} icon={link.icon} />
+                <FancyLink href={link.href} target={link.target} label={link.label} icon={link.icon} />
               </div>
             ))}
           </div>

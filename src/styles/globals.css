@@ -4,20 +4,16 @@
 
 @layer base {
   body {
-    @apply bg-[#f7f7f7] font-serif font-light text-gray-600;
+    @apply bg-[#f7f7f7] font-serif font-light tracking-wider text-gray-600;
   }
 }
 
 @layer utilities {
   .g-blog-container {
-    @apply container mx-auto max-w-2xl px-3;
+    @apply container mx-auto max-w-3xl px-3;
   }
 
-  .g-link {
-    @apply  text-violet-600 transition duration-200 ease-in-out hover:text-sky-600;
-  }
-
-  .g-link-fancy {
-    @apply relative whitespace-nowrap ease-in-out before:absolute before:bottom-0 before:left-0 before:z-[-1] before:h-2 before:w-full before:bg-violet-200 before:transition-all before:duration-200 group-hover:before:h-[2px];
-  }
+  /*.g-link {*/
+  /*  @apply  text-indigo-600 transition duration-200 ease-in-out hover:text-indigo-600;*/
+  /*}*/
 }

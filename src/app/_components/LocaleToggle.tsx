@@ -6,26 +6,17 @@ import { usePathname } from 'next/navigation';
 export default function LocaleToggle() {
   const pathname = usePathname();
 
-  const SwitchItem = ({ path, label }: { path: '/en'; label: 'EN' } | { path: '/'; label: '中' }) => {
-    const isMatch = pathname === path;
+  const Switcher = ({ label, href }: { label: string; href: string }) => {
     return (
-      <>
-        {isMatch ? (
-          <span>{label}</span>
-        ) : (
-          <Link className="g-link-fancy" href={path}>
-            {label}
-          </Link>
-        )}
-      </>
+      <Link href={href} className="p-2 font-bold transition-all duration-200 ease-in-out hover:text-indigo-500">
+        {label}
+      </Link>
     );
   };
 
   return (
-    <div className="absolute right-6 top-4">
-      <SwitchItem path="/" label="中" />
-      &nbsp;&nbsp;/&nbsp;&nbsp;
-      <SwitchItem path="/en" label="EN" />
+    <div className="absolute right-5 top-4">
+      {pathname === '/' ? <Switcher href="/en" label="EN" /> : <Switcher href="/" label="中文" />}
     </div>
   );
 }

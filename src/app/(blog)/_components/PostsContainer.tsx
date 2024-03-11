@@ -22,11 +22,7 @@ export default function PostsContainer({
 
   return (
     <>
-      {children && (
-        <div className="heading bg-gray-100">
-          <div className="g-blog-container">{children}</div>
-        </div>
-      )}
+      {children && <div>{children}</div>}
       <div className="g-blog-container">
         <div className="posts">
           {currentPagePosts.map((post) => (

@@ -10,17 +10,17 @@ export default function BlogHeader() {
   const links = [{ label: '主页', href: '/' }, ...categoryLinks, { label: '朋友们', href: '/friends' }];
 
   return (
-    <header className="relative z-50 py-4 ">
+    <header className="relative z-50 py-4">
       <div className="g-blog-container">
         <div className="flex items-center justify-between">
           <div className="logo">
-            <Link className="text-lg font-bold italic" href="/blog">
+            <Link className="hover:g-blog-link text-lg font-bold italic" href="/blog">
               贼 歪
             </Link>
           </div>
           <div className="menu align-center flex">
             {links.map((link, index) => (
-              <Link className="mr-3.5 last:mr-0" key={index} href={link.href}>
+              <Link className="hover:g-blog-link mr-3.5 last:mr-0" key={index} href={link.href}>
                 {link.label}
               </Link>
             ))}

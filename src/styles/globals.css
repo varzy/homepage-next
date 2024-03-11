@@ -14,10 +14,6 @@
   }
 
   .g-blog-link {
-    @apply transition-all duration-200 ease-in-out hover:text-indigo-600;
+    @apply transition-all duration-300 ease-in-out hover:text-indigo-500;
   }
-
-  /*.g-link {*/
-  /*  @apply  text-indigo-600 transition duration-200 ease-in-out hover:text-indigo-600;*/
-  /*}*/
 }

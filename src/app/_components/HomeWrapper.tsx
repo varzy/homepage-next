@@ -22,7 +22,7 @@ export interface I18nProps {
 
 export default function HomeWrapper({ t, children }: { t: I18nProps; children: ReactNode }) {
   const links: FancyLinkProps[] = [
-    { label: t.blog, href: '/categories/nichijou', icon: <FaRegPenToSquare /> },
+    { label: t.blog, href: '/blog', icon: <FaRegPenToSquare /> },
     { label: t.telegram, href: 'https://t.me/aboutzy', target: '_blank', icon: <FaTelegramPlane /> },
     { label: t.github, href: 'https://github.com/varzy', target: '_blank', icon: <FaGithub /> },
     { label: t.instagram, href: 'https://instagram.com/varzyme', target: '_blank', icon: <FaInstagram /> },
@@ -40,7 +40,7 @@ export default function HomeWrapper({ t, children }: { t: I18nProps; children: R
       <div className="left mb-3 flex w-full shrink-0 justify-start sm:mb-0 sm:w-1/6 sm:justify-end">
         {title && <h1 className="text-base font-bold text-black">{title}</h1>}
       </div>
-      <div className="right ml-0 flex-1 sm:mx-8">{children}</div>
+      <div className="right  flex-1 sm:mx-8">{children}</div>
     </div>
   );
 
@@ -55,7 +55,7 @@ export default function HomeWrapper({ t, children }: { t: I18nProps; children: R
               <p className="mb-3 text-3xl font-bold">
                 {t.iam}
                 <strong className="inline-block italic text-indigo-600">{t.name}</strong>
-                <span className="inline-block text-base font-light">&nbsp;&nbsp;/{t.pronounce}/</span>
+                <span className="inline-block text-base font-light text-gray-500">&nbsp;&nbsp;/{t.pronounce}/</span>
               </p>
               <p>🧑‍💻Web Developer. 📝Blogger. 🫣INFJ.</p>
             </div>

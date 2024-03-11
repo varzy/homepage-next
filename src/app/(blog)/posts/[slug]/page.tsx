@@ -5,6 +5,7 @@ import { notionToMarkdown } from '@/app/(blog)/_lib/notion-to-markdown';
 import NotionPage from '@/app/(blog)/_components/NotionPage';
 import PageHero from '@/app/(blog)/_components/PageHero';
 import PostTag from '@/app/(blog)/_components/PostTag';
+import { getEmojiFavicon } from '@/utils/helpers';
 
 interface PageProps {
   params: { slug: string };
@@ -30,6 +31,7 @@ export async function generateMetadata({ params }: PageProps) {
   return {
     title: page.title,
     description: page.summary,
+    icons: getEmojiFavicon(page.icon),
   };
 }
 

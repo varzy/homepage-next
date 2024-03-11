@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import '../styles/main.css';
 import { SITE_CONFIG } from '@/site.config';
+import { getEmojiFavicon } from '@/utils/helpers';
 
 // Re-SSG by 60s.
 // https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating#time-based-revalidation
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
   },
   keywords: SITE_CONFIG.keywords,
   description: SITE_CONFIG.description,
-  icons: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👻</text></svg>',
+  icons: getEmojiFavicon('👻'),
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

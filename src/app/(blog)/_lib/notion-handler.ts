@@ -7,6 +7,7 @@ import {
 import { DatabaseMultiSelectProperty, PagePropertySchema, PagePropertyTypeMap } from '@/app/(blog)/_lib/notion-types';
 import { cache } from 'react';
 import Dayjs from 'dayjs';
+import * as fs from 'fs';
 
 export const getAllDatabasePages = cache(async (query: QueryDatabaseParameters) => {
   let pages: PageObjectResponse[] = [];
@@ -54,11 +55,14 @@ export interface PostMetaData {
   dateAmericaStyle: string;
   type: string;
   slug: string;
+  icon?: string;
 }
 
 export const getPageMeta = (page: PageObjectResponse): PostMetaData => {
   const date = getProperty<'date'>(page, 'date').date?.start || '';
   const dateAmericaStyle = Dayjs(date).format('MMM DD, YYYY');
+  const icon = page.icon?.type === 'emoji' ? (page.icon.emoji as string) : undefined;
+
   return {
     id: page.id,
     title: getProperty<'title'>(page, 'title')
@@ -75,6 +79,7 @@ export const getPageMeta = (page: PageObjectResponse): PostMetaData => {
     date,
     dateAmericaStyle,
     tags: getProperty<'multi_select'>(page, 'tags').multi_select.map((tag) => tag.name),
+    icon,
   };
 };
 

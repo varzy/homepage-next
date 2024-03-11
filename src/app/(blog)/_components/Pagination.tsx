@@ -13,7 +13,11 @@ export default function Pagination({ total, current, pageSize, urlPrefix }: Pagi
   const totalPage = Math.ceil(total / pageSize);
   const moreThanOnePage = totalPage > 1;
 
-  const Goto = (page: number, label: string) => <Link href={`${urlPrefix}/${page}`}>{label}</Link>;
+  const Goto = (page: number, label: string) => (
+    <Link className="g-blog-link" href={`${urlPrefix}/${page}`}>
+      {label}
+    </Link>
+  );
 
   return (
     <>

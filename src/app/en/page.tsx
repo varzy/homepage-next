@@ -24,8 +24,7 @@ export default function Home() {
     >
       <p>
         I’m a software engineer living in Beijing. I enjoy watching anime, reading comics, playing games, and listening
-        to music especially rock. Just like most geeks, I’m always interested at software and consumer electronics
-        field. I’m also a minimalist.
+        to music especially rock. Just like most geeks, I’m always interested at softwares and consumer electronics. I’m also a minimalist.
       </p>
       <p>
         There are some pieces of my <FancyLink href="/categories/nichijou" label="Everyday Life" /> and some{' '}

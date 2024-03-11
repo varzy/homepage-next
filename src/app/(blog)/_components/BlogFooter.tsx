@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function BlogFooter() {
   return (
     <footer>
-      <div className="g-content-container">
+      <div className="g-blog-container">
         <hr className="border-gray-200" />
         <div className="pb-8 pt-4 text-sm leading-6">
           <p>

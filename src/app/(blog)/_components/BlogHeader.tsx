@@ -11,7 +11,7 @@ export default function BlogHeader() {
 
   return (
     <header className="py-4 shadow-md">
-      <div className="g-content-container">
+      <div className="g-blog-container">
         <div className="align-center flex justify-between">
           <div className="logo">
             <Link className="font-bold" href="/">

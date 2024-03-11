@@ -22,15 +22,11 @@ export default function Home() {
         resume: `Resume`,
       }}
     >
-      <p>I’m a Software Engineer living in Beijing, i’m also a minimalist. I am a Anime and rock music</p>
+      <p>I'm a Software Engineer living in Beijing. I am a fan of ACG and  I'm also a minimalist. I am a Anime and rock music</p>
       <p>
-        My blog has some pieces of my life and some tech notes, i also have a{' '}
-        <Link className="g-link-fancy" href="https://t.me/aboutzy">
-          Telegram Channel
-        </Link>{' '}
-        and welcome your subscription
+        There are some pieces of my <Link className="g-link-fancy" href="/categories/nichijou">Everyday Life</Link> and some <Link className="g-link-fancy" href="/categories/coding">Coding Notes</Link> in my blog, I also have a <Link className="g-link-fancy" href="https://t.me/aboutzy">Telegram Channel</Link> and welcome your subscription.
       </p>
-      <p>This world is so wild and I do hope I can change it even a little.</p>
+      <p>This world is wild and I do hope I can change it even just a bit.</p>
     </HomeWrapper>
   );
 }

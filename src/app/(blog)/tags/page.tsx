@@ -18,7 +18,7 @@ export default async function Tag() {
   const sortedTags = tagsWithPostsCount.filter((tag) => tag.postsCount > 0).sort((a, b) => b.postsCount - a.postsCount);
 
   return (
-    <div className="g-content-container">
+    <div className="g-blog-container">
       {sortedTags.map((tag, index) => (
         <div key={index} className="mb-2 mr-4 inline-block">
           <PostTag tag={tag.tag} count={tag.postsCount} />

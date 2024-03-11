@@ -23,9 +23,9 @@ export default function LocaleToggle() {
 
   return (
     <div className="absolute right-6 top-4">
-      <SwitchItem path="/en" label="EN" />
-      &nbsp;&nbsp;/&nbsp;&nbsp;
       <SwitchItem path="/" label="中" />
+      &nbsp;&nbsp;/&nbsp;&nbsp;
+      <SwitchItem path="/en" label="EN" />
     </div>
   );
 }

@@ -76,7 +76,7 @@ export default async function Post({ params }: PageProps) {
           {targetPost.tags.length > 0 && targetPost.tags.map((tag) => <PostTag key={tag} tag={tag} />)}
         </div>
       </PageHero>
-      <div className="g-content-container">
+      <div className="g-blog-container">
         <NotionPage markdown={mdString.parent}></NotionPage>
       </div>
     </>

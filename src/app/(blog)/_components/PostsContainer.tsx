@@ -24,10 +24,10 @@ export default function PostsContainer({
     <>
       {children && (
         <div className="heading bg-gray-100">
-          <div className="g-content-container">{children}</div>
+          <div className="g-blog-container">{children}</div>
         </div>
       )}
-      <div className="g-content-container">
+      <div className="g-blog-container">
         <div className="posts">
           {currentPagePosts.map((post) => (
             <PostItem key={post.id} {...post}></PostItem>

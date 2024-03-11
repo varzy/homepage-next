@@ -9,12 +9,12 @@
 }
 
 @layer utilities {
-  .g-content-container {
-    @apply container mx-auto max-w-2xl;
+  .g-blog-container {
+    @apply container mx-auto max-w-2xl px-3;
   }
 
   .g-link {
-    @apply text-blue-600 transition hover:text-black;
+    @apply  text-violet-600 transition duration-200 ease-in-out hover:text-sky-600;
   }
 
   .g-link-fancy {

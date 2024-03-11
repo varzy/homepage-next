@@ -1,7 +1,6 @@
 import { SITE_CONFIG } from '@/site.config';
 import { notFound } from 'next/navigation';
 import { ReactNode } from 'react';
-import BuyMeACoffee from '@/app/(blog)/_components/BuyMeACoffee';
 
 interface PageProps {
   params: {
@@ -20,10 +19,5 @@ export default function BlogLayout({ children, params }: Readonly<{ children: Re
   const availableCategories = Object.keys(SITE_CONFIG.categories);
   if (!availableCategories.includes(params.category)) notFound();
 
-  return (
-    <>
-      {children}
-      {params.category === 'coding' && <BuyMeACoffee />}
-    </>
-  );
+  return <>{children}</>;
 }

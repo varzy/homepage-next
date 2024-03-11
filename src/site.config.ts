@@ -11,10 +11,8 @@ export const SITE_CONFIG = {
   lang: `zh-CN`,
 
   blogPerPage: 10,
-  // key: /categories/{key}
-  // notionField: Filed name in notion database.
   categories: {
     nichijou: { notionField: 'Nichijou', alias: '日常', description: '一个普通人的思考与呓语。' },
-    coding: { notionField: 'Coding', alias: '编码', description: '一堆没有干货的技术笔记。' },
+    coding: { notionField: 'Coding', alias: '编程', description: '一堆没有干货的技术笔记。' },
   },
 };

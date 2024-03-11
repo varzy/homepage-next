@@ -4,8 +4,8 @@ import ReactMarkdown from 'react-markdown';
 
 export default function PostPage({ markdown }: { markdown: string }) {
   return (
-    <div className="post_page markdown-body">
+    <article className="prose max-w-none font-normal prose-img:mx-auto prose-img:w-4/5 prose-img:rounded-md">
       <ReactMarkdown>{markdown}</ReactMarkdown>
-    </div>
+    </article>
   );
 }

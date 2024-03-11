@@ -47,7 +47,7 @@ export default function HomeWrapper({ t, children }: { t: I18nProps; children: R
   return (
     <>
       <LocaleToggle />
-      <div className="container mx-auto max-w-4xl px-6 py-20 leading-7 sm:px-8">
+      <div className="container mx-auto max-w-4xl px-6 pt-20 leading-7 sm:px-8">
         <Row>
           <div className="flex flex-col-reverse md:flex-row md:items-center md:justify-between">
             <div className="info">
@@ -55,7 +55,7 @@ export default function HomeWrapper({ t, children }: { t: I18nProps; children: R
               <p className="mb-3 text-3xl font-bold">
                 {t.iam}
                 <strong className="inline-block italic text-indigo-600">{t.name}</strong>
-                <span className="inline-block text-lg font-light">&nbsp;&nbsp;/{t.pronounce}/</span>
+                <span className="inline-block text-base font-light">&nbsp;&nbsp;/{t.pronounce}/</span>
               </p>
               <p>🧑‍💻Web Developer. 📝Blogger. 🫣INFJ.</p>
             </div>
@@ -65,7 +65,7 @@ export default function HomeWrapper({ t, children }: { t: I18nProps; children: R
           </div>
         </Row>
         <Row title="about me">
-          <div className="[&>p]:mb-4 last:[&>p]:mb-0">{children}</div>
+          <div className="[&>p]:mb-3 last:[&>p]:mb-0">{children}</div>
         </Row>
         <Row title="find me">
           <div className="flex flex-wrap">

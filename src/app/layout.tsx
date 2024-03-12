@@ -7,7 +7,7 @@ import { getEmojiFavicon } from '@/utils/helpers';
 // https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating#time-based-revalidation
 // unit: s. 60 = 1min
 // Notion images will expire after 3600s, so we must revalidate less than 1 hour.
-export const revalidate = 60 * 20;
+export const revalidate = 60 * 30;
 
 export const metadata: Metadata = {
   title: {

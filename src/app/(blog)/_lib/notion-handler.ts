@@ -7,6 +7,10 @@ import {
 import { DatabaseMultiSelectProperty, PagePropertySchema, PagePropertyTypeMap } from '@/app/(blog)/_lib/notion-types';
 import { cache } from 'react';
 import Dayjs from 'dayjs';
+import { SITE_CONFIG } from '@/site.config';
+import { Revalidate } from 'next/dist/server/lib/revalidate';
+
+export const NOTION_VERSION = `2022-06-28`;
 
 export const getAllDatabasePages = cache(async (query: QueryDatabaseParameters) => {
   let pages: PageObjectResponse[] = [];
@@ -43,6 +47,19 @@ export const getPageBySlug = cache(async (query: QueryDatabaseParameters, slug: 
   const allPosts = await getAllPagesWithMeta(query);
   return allPosts.find((post) => post.slug === slug);
 });
+
+/**
+ * 不使用 NotionClient 而是使用命令行保证自行控制缓存时间
+ * 目前似乎无需使用此方法？
+ */
+export const getNotionPageBlocksByFetch = async (pageId: string, revalidate: false | 0 | number = 60 * 30) => {
+  const res = await fetch(`https://api.notion.com/v1/blocks/${pageId}/children?page_size=100`, {
+    headers: { 'Notion-Version': NOTION_VERSION, Authorization: `Bearer '${SITE_CONFIG.notionApiSecret}'` },
+    next: { revalidate },
+  });
+  return res;
+  // https://api.notion.com/v1/blocks/b55c9c91-384d-452b-81db-d1ef79372b75/children?page_size=100
+};
 
 export interface PostMetaData {
   id: string;

@@ -4,18 +4,18 @@ import { notFound } from 'next/navigation';
 import { notionToMarkdown } from '@/app/(blog)/_lib/notion-to-markdown';
 import NotionPage from '@/app/(blog)/_components/NotionPage';
 import PostTag from '@/app/(blog)/_components/PostTag';
-import { getEmojiFavicon } from '@/utils/helpers';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 import BuyMeACoffee from '@/app/(blog)/_components/BuyMeACoffee';
+import { getEmojiFavicon } from '@/utils/favicon';
 
 interface PageProps {
   params: { slug: string };
 }
 
-// https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating#time-based-revalidation
-// unit: s. 60 = 1min
-// Notion images will expire after 3600s, so we must revalidate less than 1 hour.
-export const revalidate = 600;
+// 由于 Notion 图片存在 1 小时的过期时间，但 revalidate 即使重新生成也只能在第二次访问时返回新的数据，因此需要使用定时任务辅助刷新，因此真实的刷新时间将依据定时任务而定
+// 如此一来便可同时用到缓存功能，并能保证图片可用。注意，定时任务间隔时间要小于 3600 - revalidate，如此一来才能保证每个窗口期都能被触发
+// 60m - 30m = 30min = 1800s, 因此可以设置定时任务 20min 触发一次
+export const revalidate = 1800;
 
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = params;

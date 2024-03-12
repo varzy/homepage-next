@@ -13,11 +13,11 @@ export default function Sponsor() {
     >
       <div className="">
         <div className="mt-2 text-lg ">微信</div>
-        <Image className="mt-2 w-1/2" src={SponsorWechat} alt="微信"></Image>
+        <Image className="mt-2 w-full sm:w-1/2" src={SponsorWechat} alt="微信"></Image>
       </div>
       <div className="mt-5">
         <div className="text-lg ">支付宝</div>
-        <Image className="mt-2 w-1/2" src={SponsorAlipay} alt="支付宝"></Image>
+        <Image className="mt-2 w-full sm:w-1/2" src={SponsorAlipay} alt="支付宝"></Image>
       </div>
     </BlogPageContainer>
   );

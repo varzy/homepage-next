@@ -14,18 +14,20 @@
     "@notionhq/client": "^2.2.14",
     "@tailwindcss/typography": "^0.5.10",
     "classnames": "^2.5.1",
+    "cron": "^3.1.6",
     "dayjs": "^1.11.10",
-    "next": "^14.1.1-canary.72",
-    "next-intl": "^3.9.4",
+    "next": "^14.1.1",
     "notion-to-md": "^3.1.1",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.0.1",
-    "react-markdown": "^9.0.1"
+    "react-markdown": "^9.0.1",
+    "sharp": "^0.33.2"
   },
   "devDependencies": {
     "@testing-library/react": "^14.2.1",
     "@types/node": "^20",
+    "@types/node-cron": "^3.0.11",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@vitejs/plugin-react": "^4.2.1",

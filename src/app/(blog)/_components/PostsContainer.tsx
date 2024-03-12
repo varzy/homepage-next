@@ -19,18 +19,16 @@ export default function PostsContainer({
 
   return (
     <>
-      <div className="g-blog-container py-6">
-        <div className="posts">
-          {currentPagePosts.map((post) => (
-            <PostItem key={post.id} {...post}></PostItem>
-          ))}
-        </div>
-        {pagination && (
-          <div className="mt-4">
-            <Pagination current={currentPage} pageSize={prePage} urlPrefix={urlPrefix} total={posts.length} />
-          </div>
-        )}
+      <div className="posts">
+        {currentPagePosts.map((post) => (
+          <PostItem key={post.id} {...post}></PostItem>
+        ))}
       </div>
+      {pagination && (
+        <div className="mt-4">
+          <Pagination current={currentPage} pageSize={prePage} urlPrefix={urlPrefix} total={posts.length} />
+        </div>
+      )}
     </>
   );
 }

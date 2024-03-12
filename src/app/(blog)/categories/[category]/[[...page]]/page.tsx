@@ -2,7 +2,7 @@ import { SITE_CONFIG } from '@/site.config';
 import { notFound } from 'next/navigation';
 import { getAllPagesWithMeta } from '@/app/(blog)/_lib/notion-handler';
 import PostsContainer from '@/app/(blog)/_components/PostsContainer';
-import PageHero from '@/app/(blog)/_components/PageHero';
+import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 
 export async function generateStaticParams() {
   const categoriesConfig = SITE_CONFIG.categories;
@@ -63,13 +63,12 @@ export default async function Page({
   });
 
   return (
-    <>
-      <PageHero title={categoryCtx.alias} after={categoryCtx.description}></PageHero>
+    <BlogPageContainer pageHero={{ title: categoryCtx.alias, after: categoryCtx.description }}>
       <PostsContainer
         posts={allPosts}
         currentPage={currentPage}
         urlPrefix={`/categories/${categoryParam}`}
       ></PostsContainer>
-    </>
+    </BlogPageContainer>
   );
 }

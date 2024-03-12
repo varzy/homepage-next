@@ -8,7 +8,6 @@ import { DatabaseMultiSelectProperty, PagePropertySchema, PagePropertyTypeMap } 
 import { cache } from 'react';
 import Dayjs from 'dayjs';
 import { SITE_CONFIG } from '@/site.config';
-import { Revalidate } from 'next/dist/server/lib/revalidate';
 
 export const NOTION_VERSION = `2022-06-28`;
 

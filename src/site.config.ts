@@ -15,4 +15,6 @@ export const SITE_CONFIG = {
     nichijou: { notionField: 'Nichijou', alias: '日常', description: '一个普通人的思考与呓语。' },
     coding: { notionField: 'Coding', alias: '编程', description: '一堆没有干货的技术笔记。' },
   },
+
+  utterancRepo: ``,
 };

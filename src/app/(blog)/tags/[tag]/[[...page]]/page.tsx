@@ -2,7 +2,7 @@ import { SITE_CONFIG } from '@/site.config';
 import { notFound } from 'next/navigation';
 import { getAllPagesWithMeta, getDatabaseTags } from '@/app/(blog)/_lib/notion-handler';
 import PostsContainer from '@/app/(blog)/_components/PostsContainer';
-import PageHero from '@/app/(blog)/_components/PageHero';
+import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 
 export async function generateStaticParams() {
   const tags = await getDatabaseTags({ database_id: SITE_CONFIG.notionDatabaseId });
@@ -44,9 +44,8 @@ export default async function Tag({ params }: { params: { tag: string; page?: st
   });
 
   return (
-    <>
-      <PageHero title={'#' + decodeURIComponent(tagText)}></PageHero>
+    <BlogPageContainer pageHero={{ title: '#' + decodeURIComponent(tagText) }}>
       <PostsContainer posts={allPosts} currentPage={currentPage} urlPrefix={`/tags/${tagText}`}></PostsContainer>
-    </>
+    </BlogPageContainer>
   );
 }

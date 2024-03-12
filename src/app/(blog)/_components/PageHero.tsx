@@ -1,16 +1,13 @@
 import { ReactNode } from 'react';
 
-export default function PageHero({
-  title,
-  before,
-  after,
-  children,
-}: {
+export interface PageHeroProps {
   title?: string;
   before?: string;
   after?: string | ReactNode;
   children?: ReactNode;
-}) {
+}
+
+export default function PageHero({ title, before, after, children }: PageHeroProps) {
   return (
     <div className="bg-[#EEEDEB]">
       <div className="g-blog-container py-6">

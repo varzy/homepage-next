@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown';
 export default async function Resume() {
   return (
     <>
-      <article className="prose prose-sm mx-auto max-w-2xl pb-32 pt-16 font-sans">
+      <article className="prose prose-sm mx-auto max-w-2xl px-5 pb-32 pt-16 font-sans">
         <ReactMarkdown>{ResumeFile}</ReactMarkdown>
       </article>
 

@@ -2,7 +2,7 @@ import { SITE_CONFIG } from '@/site.config';
 import { getAllPagesWithMeta, getDatabaseTags } from '@/app/(blog)/_lib/notion-handler';
 import PostTag from '@/app/(blog)/_components/PostTag';
 import { Metadata } from 'next';
-import PageHero from '../_components/PageHero';
+import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 
 export const metadata: Metadata = {
   title: '标签',
@@ -19,15 +19,12 @@ export default async function Tag() {
   const sortedTags = tagsWithPostsCount.filter((tag) => tag.postsCount > 0).sort((a, b) => b.postsCount - a.postsCount);
 
   return (
-    <>
-      <PageHero title="Tags" />
-      <div className="g-blog-container py-6">
-        {sortedTags.map((tag, index) => (
-          <div key={index} className="mb-2 mr-4 inline-block">
-            <PostTag tag={tag.tag} count={tag.postsCount} />
-          </div>
-        ))}
-      </div>
-    </>
+    <BlogPageContainer pageHero={{ title: 'Tags' }}>
+      {sortedTags.map((tag, index) => (
+        <div key={index} className="mb-2 mr-4 inline-block">
+          <PostTag tag={tag.tag} count={tag.postsCount} />
+        </div>
+      ))}
+    </BlogPageContainer>
   );
 }

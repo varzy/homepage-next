@@ -26,7 +26,7 @@ export default function HomeWrapper({ t, children }: { t: I18nProps; children: R
     { label: t.telegram, href: 'https://t.me/aboutzy', target: '_blank', icon: <FaTelegramPlane /> },
     { label: t.github, href: 'https://github.com/varzy', target: '_blank', icon: <FaGithub /> },
     { label: t.instagram, href: 'https://instagram.com/varzyme', target: '_blank', icon: <FaInstagram /> },
-    { label: t.douban, href: 'https://www.douban.com/people/varzy/', icon: <SiDoubanread /> },
+    { label: t.douban, href: 'https://www.douban.com/people/varzy/', target: '_blank', icon: <SiDoubanread /> },
     {
       label: t.neteaseMusic,
       href: 'https://music.163.com/playlist?id=39874340&userid=45403592',

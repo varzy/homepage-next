@@ -3,9 +3,10 @@ import { SITE_CONFIG } from '@/site.config';
 import { notFound } from 'next/navigation';
 import { notionToMarkdown } from '@/app/(blog)/_lib/notion-to-markdown';
 import NotionPage from '@/app/(blog)/_components/NotionPage';
-import PageHero from '@/app/(blog)/_components/PageHero';
 import PostTag from '@/app/(blog)/_components/PostTag';
 import { getEmojiFavicon } from '@/utils/helpers';
+import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
+import BuyMeACoffee from '@/app/(blog)/_components/BuyMeACoffee';
 
 interface PageProps {
   params: { slug: string };
@@ -75,19 +76,19 @@ export default async function Post({ params }: PageProps) {
   const mdString = notionToMarkdown.toMarkdownString(mdBlocks);
 
   return (
-    <>
-      <PageHero
-        title={targetPost.title}
-        before={targetPost.dateAmericaStyle}
-        after={
+    <BlogPageContainer
+      pageHero={{
+        title: targetPost.title,
+        before: targetPost.dateAmericaStyle,
+        after: (
           <div className="mt-2">
             {targetPost.tags.length > 0 && targetPost.tags.map((tag) => <PostTag key={tag} tag={tag} />)}
           </div>
-        }
-      ></PageHero>
-      <div className="g-blog-container py-6">
-        <NotionPage markdown={mdString.parent}></NotionPage>
-      </div>
-    </>
+        ),
+      }}
+      extra={targetPost.category === 'Coding' ? <BuyMeACoffee /> : undefined}
+    >
+      <NotionPage markdown={mdString.parent}></NotionPage>
+    </BlogPageContainer>
   );
 }

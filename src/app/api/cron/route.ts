@@ -9,18 +9,19 @@ export async function GET() {
     filter: {
       and: [
         { property: 'status', select: { equals: 'Published' } },
-        { property: 'type', select: { equals: 'Post' } }
-      ]
-    }
+        { property: 'type', select: { equals: 'Post' } },
+      ],
+    },
   });
-  const slugs = allPages.map(page => page.slug);
-  slugs.forEach(slug => {
-    fetch(`https://varzy.me/posts/${slug}`).catch(e => {
+  const slugs = allPages.map((page) => page.slug);
+  for (const slug of slugs) {
+    const url = `https://varzy.me/posts/${slug}`;
+    await fetch(url).catch((e) => {
       console.error(e);
       return;
     });
-    console.log(`[keepNotionImageAlive] /posts/${slug} has been refreshed.`);
-  });
+    console.log(`[keepNotionImageAlive] ${url} has been refreshed.`);
+  }
 
-  return Response.json({ ok: true, refreshed: slugs, currentTime: dayjs().format('YYYY-MM-DD HH:mm:ss') });
+  return Response.json({ currentTime: dayjs().format('YYYY-MM-DD HH:mm:ss'), refreshed: slugs });
 }

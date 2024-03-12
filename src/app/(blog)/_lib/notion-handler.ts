@@ -15,8 +15,8 @@ export const NOTION_VERSION = `2022-06-28`;
 export const buildDatabaseQuery = (tags: Array<'sort_desc' | 'sort_asc'>): QueryDatabaseParameters => {
   return {
     database_id: SITE_CONFIG.notionDatabaseId,
-  }
-}
+  };
+};
 
 export const getAllDatabasePages = cache(async (query: QueryDatabaseParameters) => {
   let pages: PageObjectResponse[] = [];

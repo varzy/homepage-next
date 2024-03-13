@@ -17,9 +17,9 @@ interface PageProps {
 // 但实际上只要触发任何一次后，缓存时间都将被拉齐，如果不在意首次可访问性则可以把定时任务时间设置的稍大一些，比如 50min
 // 60m - 30m = 30min = 1800s, 因此可以设置定时任务 20min 触发一次
 // 最终的缓存时间 = min(revalidate, cronSchedule) = 20min
-export const revalidate = 1800;
-
-// export const cache = 'no-chce';
+// export const revalidate = 1800;
+export const dynamic = `force-dynamic`;
+export const revalidate = 0;
 
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = params;

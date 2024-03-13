@@ -7,12 +7,10 @@ export default function PostsContainer({
   posts,
   currentPage,
   urlPrefix = '/',
-  pagination = true,
 }: {
   posts: PostMetaData[];
   currentPage: number;
   urlPrefix?: string;
-  pagination?: boolean;
 }) {
   const prePage = SITE_CONFIG.blogPerPage;
   const currentPagePosts = posts.slice((currentPage - 1) * prePage, currentPage * prePage);
@@ -24,11 +22,7 @@ export default function PostsContainer({
           <PostItem key={post.id} {...post}></PostItem>
         ))}
       </div>
-      {pagination && (
-        <div className="mt-4">
-          <Pagination current={currentPage} pageSize={prePage} urlPrefix={urlPrefix} total={posts.length} />
-        </div>
-      )}
+      <Pagination current={currentPage} pageSize={prePage} urlPrefix={urlPrefix} total={posts.length} />
     </>
   );
 }

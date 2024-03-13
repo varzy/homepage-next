@@ -1,9 +1,12 @@
 import { getAllPagesWithMeta } from '@/app/(blog)/_lib/notion-handler';
 import { SITE_CONFIG } from '@/site.config';
 import dayjs from 'dayjs';
+import { revalidatePath } from 'next/cache';
 
 export async function GET() {
   console.log(`[keepNotionImageAlive] Ready to refresh pages...`);
+  revalidatePath('/', 'layout')
+
   const allPages = await getAllPagesWithMeta({
     database_id: SITE_CONFIG.notionDatabaseId,
     filter: {

@@ -16,12 +16,11 @@ export async function GET() {
   const slugs = allPages.map((page) => page.slug);
   for (const slug of slugs) {
     const url = `https://varzy.me/posts/${slug}`;
-    await fetch(url).catch((e) => {
-      console.error(e);
-      return;
-    });
+    const res = await fetch(url, { cache: 'no-cache' });
+    console.log(res.text());
     console.log(`[keepNotionImageAlive] ${url} has been refreshed.`);
   }
+  console.log(`[keepNotionImageAlive] All pages has been refreshed!`);
 
   return Response.json({ currentTime: dayjs().format('YYYY-MM-DD HH:mm:ss'), refreshed: slugs });
 }

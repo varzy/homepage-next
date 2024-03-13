@@ -13,7 +13,7 @@ export default function BlogPageContainer({
   return (
     <>
       {pageHero && <PageHero {...pageHero}></PageHero>}
-      <div className="g-blog-container py-6">
+      <div className="g-blog-container py-8">
         <div>{children}</div>
         {extra && <div className="mt-8">{extra}</div>}
       </div>

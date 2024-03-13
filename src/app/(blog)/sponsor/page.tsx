@@ -1,23 +1,33 @@
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 import Image from 'next/image';
-import SponsorWechat from '../../../assets/sponsor_wechat.png';
-import SponsorAlipay from '../../../assets/sponsor_alipay.png';
+import SponsorWechat from '../../../assets/sponsor_wechat.jpg';
+import SponsorAlipay from '../../../assets/sponsor_alipay.jpg';
+import { Metadata } from 'next';
+import { getEmojiFavicon } from '@/utils/favicon';
+
+export const metadata: Metadata = {
+  title: `Buy me a Coffee`,
+  icons: getEmojiFavicon('☕️')
+};
 
 export default function Sponsor() {
+  const channels = [
+    { label: `微信`, qrcode: SponsorWechat },
+    { label: `支付宝`, qrcode: SponsorAlipay }
+  ];
+
   return (
     <BlogPageContainer
       pageHero={{
         title: `☕️ Buy me a Coffee~`,
-        after: `如果你喜欢我的内容，或者它们可以给你带来帮助，或许可以请我喝一杯咖啡？`,
+        after: `如果你喜欢我的内容，或者它们可以给你带来帮助，或许可以请我喝一杯咖啡？`
       }}
     >
-      <div className="">
-        <div className="mt-2 text-lg ">微信</div>
-        <Image className="mt-2 w-full sm:w-1/2" src={SponsorWechat} alt="微信"></Image>
-      </div>
-      <div className="mt-5">
-        <div className="text-lg ">支付宝</div>
-        <Image className="mt-2 w-full sm:w-1/2" src={SponsorAlipay} alt="支付宝"></Image>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {channels.map((channel, index) => <div key={index}>
+          <div className="text-lg">{channel.label}</div>
+          <Image className="mt-2 w-full" src={channel.qrcode} alt={channel.label} />
+        </div>)}
       </div>
     </BlogPageContainer>
   );

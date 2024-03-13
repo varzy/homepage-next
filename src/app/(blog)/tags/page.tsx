@@ -2,9 +2,11 @@ import { composeDatabaseQuery, getAllPagesWithMeta, getDatabaseTags } from '@/ap
 import PostTag from '@/app/(blog)/_components/PostTag';
 import { Metadata } from 'next';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
+import { getEmojiFavicon } from '@/utils/favicon';
 
 export const metadata: Metadata = {
-  title: '标签',
+  title: 'Tags',
+  icons: getEmojiFavicon('🏷️'),
 };
 
 export default async function Tag() {

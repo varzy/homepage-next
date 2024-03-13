@@ -16,7 +16,7 @@ export default function PageHero({ title, before, after, children }: PageHeroPro
         ) : (
           <>
             {before && <p className="mb-2 text-xs">{before}</p>}
-            {title && <h1 className="text-2xl font-normal">{title}</h1>}
+            {title && <h1 className="text-xl font-normal sm:text-2xl">{title}</h1>}
             {after && typeof after === 'string' ? <p className="mt-2 text-base">{after}</p> : <>{after}</>}
           </>
         )}

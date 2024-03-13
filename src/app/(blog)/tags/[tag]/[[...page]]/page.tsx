@@ -1,20 +1,12 @@
 import { SITE_CONFIG } from '@/site.config';
 import { notFound } from 'next/navigation';
-import { getAllPagesWithMeta, getDatabaseTags } from '@/app/(blog)/_lib/notion-handler';
+import { composeDatabaseQuery, getAllPagesWithMeta, getDatabaseTags } from '@/app/(blog)/_lib/notion-handler';
 import PostsContainer from '@/app/(blog)/_components/PostsContainer';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 
 export async function generateStaticParams() {
-  const tags = await getDatabaseTags({ database_id: SITE_CONFIG.notionDatabaseId });
-  const allPosts = await getAllPagesWithMeta({
-    database_id: SITE_CONFIG.notionDatabaseId,
-    filter: {
-      and: [
-        { property: 'status', select: { equals: 'Published' } },
-        { property: 'type', select: { equals: 'Post' } },
-      ],
-    },
-  });
+  const tags = await getDatabaseTags(composeDatabaseQuery());
+  const allPosts = await getAllPagesWithMeta(composeDatabaseQuery());
   const renderingGroups = tags.map((tag) => {
     const tagPosts = allPosts.filter((post) => post.tags.includes(tag));
     if (tagPosts.length === 0) return [];
@@ -31,17 +23,13 @@ export default async function Tag({ params }: { params: { tag: string; page?: st
   const [optionalPage] = optionalPageParam;
   const currentPage = +(optionalPage || 1);
 
-  const allPosts = await getAllPagesWithMeta({
-    database_id: SITE_CONFIG.notionDatabaseId,
-    filter: {
-      and: [
-        { property: 'status', select: { equals: 'Published' } },
-        { property: 'type', select: { equals: 'Post' } },
-        { property: 'tags', multi_select: { contains: tagText } },
-      ],
-    },
-    sorts: [{ property: 'date', direction: 'descending' }],
-  });
+  const allPosts = await getAllPagesWithMeta(
+    composeDatabaseQuery({
+      filter: {
+        and: [{ property: 'tags', multi_select: { contains: tagText } }],
+      },
+    }),
+  );
 
   return (
     <BlogPageContainer pageHero={{ title: '#' + decodeURIComponent(tagText) }}>

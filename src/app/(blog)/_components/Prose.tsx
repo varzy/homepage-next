@@ -20,8 +20,7 @@ export default function Prose({ markdown }: { markdown: string }) {
 
   return (
     <>
-      <article
-        className="prose max-w-none font-normal prose-img:mx-auto prose-img:cursor-pointer prose-pre:bg-[#1e1e1e] prose-img:rounded-md prose-img:sm:w-[90%]">
+      <article className="prose max-w-none font-normal prose-pre:bg-[#1e1e1e] prose-img:mx-auto prose-img:cursor-pointer prose-img:rounded-md prose-img:sm:w-[90%]">
         <ReactMarkdown
           components={{
             img(props) {
@@ -36,19 +35,16 @@ export default function Prose({ markdown }: { markdown: string }) {
                 />
               );
             },
-            code({inline, className, children, ...props }: any) {
+            code({ inline, className, children, ...props }: any) {
               const match = /language-(\w+)/.exec(className || '');
               return !inline && match ? (
-                <CodeBlock
-                  codestring={String(children).replace(/\n$/, '')}
-                  language={match[1]}
-                />
+                <CodeBlock codestring={String(children).replace(/\n$/, '')} language={match[1]} />
               ) : (
                 <code className={className} {...props}>
                   {children}
                 </code>
               );
-            }
+            },
           }}
         >
           {markdown}

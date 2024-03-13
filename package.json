@@ -16,6 +16,8 @@
     "classnames": "^2.5.1",
     "cron": "^3.1.6",
     "dayjs": "^1.11.10",
+    "deepmerge": "^4.3.1",
+    "lodash": "^4.17.21",
     "next": "^14.1.1",
     "notion-to-md": "^3.1.1",
     "react": "^18",
@@ -27,6 +29,7 @@
   },
   "devDependencies": {
     "@testing-library/react": "^14.2.1",
+    "@types/lodash": "^4.17.0",
     "@types/node": "^20",
     "@types/node-cron": "^3.0.11",
     "@types/react": "^18",

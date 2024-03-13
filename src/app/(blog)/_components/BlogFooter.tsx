@@ -10,17 +10,29 @@ export default function BlogFooter() {
           <p>
             &copy; {SITE_CONFIG.author} 2015 - {new Date().getFullYear()}
             &nbsp;•&nbsp;
-            <Link className="g-blog-link" href="/tags">
+            <Link className="underline" href="/tags">
               Tags
             </Link>
             &nbsp;•&nbsp;
-            <Link className="g-blog-link" href="/rss">
+            <Link className="underline" href="/rss">
               RSS
             </Link>
           </p>
           <p>
-            Powered by Vercel, Next.js & Notion. View Source on&nbsp;
-            <Link className="g-blog-link" href="https://github.com/varzy/homepage-next" target="_blank">
+            Powered by{' '}
+            <Link className="underline" href="https://vercel.com/" target="_blank">
+              Vercel
+            </Link>
+            ,{' '}
+            <Link className="underline" href="https://nextjs.org/" target="_blank">
+              Next.js
+            </Link>{' '}
+            &{' '}
+            <Link className="underline" href="https://varzy.notion.site">
+              Notion
+            </Link>
+            . View Source on&nbsp;
+            <Link className="underline" href="https://github.com/varzy/homepage-next" target="_blank">
               Github
             </Link>
             .

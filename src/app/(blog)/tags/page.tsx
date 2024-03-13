@@ -1,5 +1,4 @@
-import { SITE_CONFIG } from '@/site.config';
-import { getAllPagesWithMeta, getDatabaseTags } from '@/app/(blog)/_lib/notion-handler';
+import { composeDatabaseQuery, getAllPagesWithMeta, getDatabaseTags } from '@/app/(blog)/_lib/notion-handler';
 import PostTag from '@/app/(blog)/_components/PostTag';
 import { Metadata } from 'next';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
@@ -9,8 +8,8 @@ export const metadata: Metadata = {
 };
 
 export default async function Tag() {
-  const allPosts = await getAllPagesWithMeta({ database_id: SITE_CONFIG.notionDatabaseId });
-  const tags = await getDatabaseTags({ database_id: SITE_CONFIG.notionDatabaseId });
+  const allPosts = await getAllPagesWithMeta(composeDatabaseQuery());
+  const tags = await getDatabaseTags(composeDatabaseQuery());
 
   const tagsWithPostsCount = tags.map((tag) => {
     const tagPosts = allPosts.filter((post) => post.tags.includes(tag));

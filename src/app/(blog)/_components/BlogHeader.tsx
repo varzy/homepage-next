@@ -14,13 +14,20 @@ export default function BlogHeader() {
       <div className="g-blog-container">
         <div className="flex items-center justify-between">
           <div className="logo">
-            <Link className="hover:g-blog-link text-lg font-bold italic" href="/blog">
+            <Link
+              className="text-lg font-bold italic transition-all duration-300 ease-in-out hover:text-indigo-500"
+              href="/blog"
+            >
               贼 歪
             </Link>
           </div>
           <div className="menu align-center flex">
             {links.map((link, index) => (
-              <Link className="hover:g-blog-link mr-3.5 last:mr-0" key={index} href={link.href}>
+              <Link
+                className=" mr-3.5 transition-all duration-300 ease-in-out last:mr-0 hover:text-indigo-500"
+                key={index}
+                href={link.href}
+              >
                 {link.label}
               </Link>
             ))}

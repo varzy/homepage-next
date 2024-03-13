@@ -12,8 +12,4 @@
   .g-blog-container {
     @apply container mx-auto max-w-3xl px-5;
   }
-
-  .g-blog-link {
-    @apply transition-all duration-300 ease-in-out hover:text-indigo-500;
-  }
 }

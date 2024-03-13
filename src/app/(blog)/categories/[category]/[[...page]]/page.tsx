@@ -1,6 +1,6 @@
 import { SITE_CONFIG } from '@/site.config';
 import { notFound } from 'next/navigation';
-import { getAllPagesWithMeta } from '@/app/(blog)/_lib/notion-handler';
+import { composeDatabaseQuery, getAllPagesWithMeta } from '@/app/(blog)/_lib/notion-handler';
 import PostsContainer from '@/app/(blog)/_components/PostsContainer';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 
@@ -11,21 +11,20 @@ export async function generateStaticParams() {
     filed: categoriesConfig[key as keyof typeof categoriesConfig].notionField,
   }));
 
-  const allPosts = await getAllPagesWithMeta({
-    database_id: SITE_CONFIG.notionDatabaseId,
-    filter: {
-      and: [
-        { property: 'status', select: { equals: 'Published' } },
-        { property: 'type', select: { equals: 'Post' } },
-        {
-          or: presetCategories.map((category) => ({
-            property: 'category',
-            select: { equals: category.filed },
-          })),
-        },
-      ],
-    },
-  });
+  const allPosts = await getAllPagesWithMeta(
+    composeDatabaseQuery({
+      filter: {
+        and: [
+          {
+            or: presetCategories.map((category) => ({
+              property: 'category',
+              select: { equals: category.filed },
+            })),
+          },
+        ],
+      },
+    }),
+  );
 
   const renderingGroups = presetCategories.map((category) => {
     const categoryPosts = allPosts.filter((post) => post.category === category.filed);
@@ -50,17 +49,13 @@ export default async function Page({
   const categoryCtx = SITE_CONFIG.categories[categoryParam];
   const categoryField = categoryCtx.notionField;
   // 获取当前类别下全部文章
-  const allPosts = await getAllPagesWithMeta({
-    database_id: SITE_CONFIG.notionDatabaseId,
-    filter: {
-      and: [
-        { property: 'status', select: { equals: 'Published' } },
-        { property: 'type', select: { equals: 'Post' } },
-        { property: 'category', select: { equals: categoryField } },
-      ],
-    },
-    sorts: [{ property: 'date', direction: 'descending' }],
-  });
+  const allPosts = await getAllPagesWithMeta(
+    composeDatabaseQuery({
+      filter: {
+        and: [{ property: 'category', select: { equals: categoryField } }],
+      },
+    }),
+  );
 
   return (
     <BlogPageContainer pageHero={{ title: categoryCtx.alias, after: categoryCtx.description }}>

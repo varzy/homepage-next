@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import '../styles/main.css';
 import { SITE_CONFIG } from '@/site.config';
 import { getEmojiFavicon } from '@/utils/favicon';
-// import { keepNotionImagesAlive } from '@/utils/cron';
 
 export const metadata: Metadata = {
   title: {
@@ -15,10 +14,8 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  // keepNotionImagesAlive();
-
   return (
-    <html lang={SITE_CONFIG.lang}>
+    <html className="scroll-smooth focus:scroll-auto" lang={SITE_CONFIG.lang}>
       <body>{children}</body>
     </html>
   );

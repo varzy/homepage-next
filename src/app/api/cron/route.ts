@@ -4,12 +4,13 @@ import { revalidatePath } from 'next/cache';
 
 export async function GET() {
   console.log(`[keepNotionImageAlive] Ready to refresh pages...`);
-  revalidatePath('/posts/[slug]', 'layout');
+  // revalidatePath('/posts/[slug]', 'layout');
 
   const allPages = await getAllPagesWithMeta(composeDatabaseQuery());
   const slugs = allPages.map((page) => page.slug);
   for (const slug of slugs) {
     const url = `https://varzy.me/posts/${slug}`;
+    revalidatePath(`/posts/${slug}`, 'page');
     await fetch(url, { cache: 'no-cache' });
     console.log(`[keepNotionImageAlive] ${url} has been refreshed.`);
   }

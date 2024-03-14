@@ -13,6 +13,7 @@
   "dependencies": {
     "@notionhq/client": "^2.2.14",
     "@tailwindcss/typography": "^0.5.10",
+    "@vercel/speed-insights": "^1.0.10",
     "classnames": "^2.5.1",
     "dayjs": "^1.11.10",
     "deepmerge": "^4.3.1",

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import '../styles/main.css';
 import { SITE_CONFIG } from '@/site.config';
 import { getEmojiFavicon } from '@/utils/favicon';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
   title: {
@@ -17,6 +18,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html className="scroll-smooth focus:scroll-auto" lang={SITE_CONFIG.lang}>
       <body>{children}</body>
+      <SpeedInsights />
     </html>
   );
 }

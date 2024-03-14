@@ -4,7 +4,7 @@ import { revalidatePath } from 'next/cache';
 
 export async function GET() {
   console.log(`[keepNotionImageAlive] Ready to refresh pages...`);
-  revalidatePath('/', 'layout');
+  revalidatePath('/posts/[slug]', 'layout');
 
   const allPages = await getAllPagesWithMeta(composeDatabaseQuery());
   const slugs = allPages.map((page) => page.slug);

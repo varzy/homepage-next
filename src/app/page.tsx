@@ -7,7 +7,7 @@ export default function Home() {
       t={{
         iam: `我是`,
         name: `贼歪`,
-        pronounce: `zei 'wai`,
+        pronounce: `zeɪ 'waɪ`,
         telegram: `Telegram`,
         github: `Github`,
         instagram: `Instagram`,

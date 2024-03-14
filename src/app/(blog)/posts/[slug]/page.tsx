@@ -11,8 +11,8 @@ interface PageProps {
   params: { slug: string };
 }
 
-export const dynamic = `force-dynamic`;
-export const revalidate = 1200;
+// export const dynamic = `force-dynamic`;
+export const revalidate = 2400;
 
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = params;

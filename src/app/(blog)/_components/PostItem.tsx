@@ -12,7 +12,7 @@ export default function PostItem(post: PostMetaData) {
       </div>
       <div className="flex-1">
         <h2 className="font-bold sm:group-hover:underline">{post.title}</h2>
-        <p className="mt-1 text-sm">{post.summary}</p>
+        {post.summary && <p className="mt-1 text-sm">{post.summary}</p>}
       </div>
     </Link>
   );

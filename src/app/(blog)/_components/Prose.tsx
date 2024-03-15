@@ -1,7 +1,6 @@
 'use client';
 
 import ReactMarkdown from 'react-markdown';
-import Image from 'next/image';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
@@ -20,19 +19,21 @@ export default function Prose({ markdown }: { markdown: string }) {
 
   return (
     <>
-      <article className="prose max-w-none font-normal prose-pre:bg-[#1e1e1e] prose-img:mx-auto prose-img:cursor-pointer prose-img:rounded-md prose-img:sm:w-[90%]">
+      <article
+        className="prose max-w-none font-normal prose-pre:bg-[#1e1e1e] prose-img:mx-auto prose-img:cursor-pointer prose-img:rounded-md prose-img:sm:w-[90%]">
         <ReactMarkdown
           components={{
             img(props) {
               return (
-                <Image
-                  priority
-                  src={props.src!}
-                  alt={props.alt!}
-                  width={960}
-                  height={960}
-                  onClick={() => onViewImage(props.src)}
-                />
+                <img src={props.src} alt={props.alt || ''} onClick={() => onViewImage(props.src)} />
+                // <Image
+                //   priority
+                //   src={props.src!}
+                //   alt={props.alt!}
+                //   width={960}
+                //   height={960}
+                //   onClick={() => onViewImage(props.src)}
+                // />
               );
             },
             code({ inline, className, children, ...props }: any) {
@@ -44,7 +45,7 @@ export default function Prose({ markdown }: { markdown: string }) {
                   {children}
                 </code>
               );
-            },
+            }
           }}
         >
           {markdown}

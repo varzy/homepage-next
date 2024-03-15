@@ -37,6 +37,7 @@ export async function generateStaticParams() {
 
 export default async function Post({ params }: PageProps) {
   const { slug } = params;
+  console.log(`[posts/[slug]] Current slug: ${slug}`);
 
   const targetPost = await getPageBySlug(composeDatabaseQuery(), slug);
   if (!targetPost) notFound();

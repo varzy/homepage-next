@@ -116,7 +116,7 @@ export const getProperty = <T extends PagePropertyTypeMap>(page: PageObjectRespo
   return page.properties[property] as PagePropertySchema<T>;
 };
 
-export const replaceNotionImageWithSmms = async (pageId: string, slug?: string) => {
+export const replaceNotionImageWithSmms = cache(async (pageId: string, slug?: string) => {
   console.log(`[replaceNotionImageToSmms] Ready to replace notion images with smms. Slug: ${slug}`);
 
   const replaceBlocks = async (blockId: string, start_cursor?: string) => {
@@ -144,9 +144,9 @@ export const replaceNotionImageWithSmms = async (pageId: string, slug?: string) 
     if (res.has_more && res.next_cursor) await replaceBlocks(blockId, res.next_cursor);
   };
   await replaceBlocks(pageId);
-};
+});
 
-export const markPageImagesHasBeenUploadedToSmms = (pageId: string) => {
+export const markPageImagesHasBeenUploadedToSmms = cache((pageId: string) => {
   return notionClient.pages.update({
     page_id: pageId,
     properties: {
@@ -155,4 +155,4 @@ export const markPageImagesHasBeenUploadedToSmms = (pageId: string) => {
       },
     },
   });
-};
+});

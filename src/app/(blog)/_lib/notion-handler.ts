@@ -1,5 +1,6 @@
 import { notionClient } from './notion-client';
 import {
+  BlockObjectResponse,
   GetDatabaseParameters,
   PageObjectResponse,
   QueryDatabaseParameters,
@@ -9,6 +10,7 @@ import { cache } from 'react';
 import Dayjs from 'dayjs';
 import { SITE_CONFIG } from '@/site.config';
 import _merge from 'deepmerge';
+import { getSmmsUrl, smmsUploadExternal } from '@/utils/smms';
 
 /**
  * Generate notion database query schema. Will default query pages that published and type equals post, and returns by date desc.
@@ -81,6 +83,7 @@ export interface PostMetaData {
   type: string;
   slug: string;
   icon?: string;
+  isSmmsImages: boolean;
 }
 
 export const getPageMeta = (page: PageObjectResponse): PostMetaData => {
@@ -101,13 +104,55 @@ export const getPageMeta = (page: PageObjectResponse): PostMetaData => {
     slug: getProperty<'rich_text'>(page, 'slug')
       .rich_text.map((piece) => piece.plain_text || '')
       .join(''),
+    tags: getProperty<'multi_select'>(page, 'tags').multi_select.map((tag) => tag.name),
+    isSmmsImages: getProperty<'checkbox'>(page, 'is_smms_images').checkbox,
     date,
     dateAmericaStyle,
-    tags: getProperty<'multi_select'>(page, 'tags').multi_select.map((tag) => tag.name),
     icon,
   };
 };
 
 export const getProperty = <T extends PagePropertyTypeMap>(page: PageObjectResponse, property: string) => {
   return page.properties[property] as PagePropertySchema<T>;
+};
+
+export const replaceNotionImageWithSmms = async (pageId: string, fileNamePrefix?: string) => {
+  const replaceBlocks = async (blockId: string, start_cursor?: string) => {
+    const res = await notionClient.blocks.children.list({ block_id: blockId, start_cursor });
+    const blocks = res.results as BlockObjectResponse[];
+    for (const block of blocks) {
+      // image hosting by notion.
+      if (block.type === 'image' && block.image.type === 'file') {
+        const fileUrl = block.image.file!.url;
+        const fileName = fileNamePrefix ? fileNamePrefix + '-' + block.id : block.id;
+        const resSmms = await smmsUploadExternal(fileUrl, fileName);
+        const smmsUrl = getSmmsUrl(resSmms);
+        if (smmsUrl) {
+          await notionClient.blocks.update({
+            block_id: block.id,
+            image: { external: { url: smmsUrl } },
+          });
+          console.log(`[replaceNotionImageToSmms] ${fileName} has been replaced. New url: ${smmsUrl}`);
+        } else {
+          console.log(`[replaceNotionImageToSmms] ${fileName} replace failed.`);
+        }
+      }
+      if (block.has_children) {
+        await replaceBlocks(block.id);
+      }
+    }
+    if (res.has_more && res.next_cursor) await replaceBlocks(blockId, res.next_cursor);
+  };
+  await replaceBlocks(pageId);
+};
+
+export const markPageImagesHasBeenUploadedToSmms = (pageId: string) => {
+  return notionClient.pages.update({
+    page_id: pageId,
+    properties: {
+      is_smms_images: {
+        checkbox: true,
+      },
+    },
+  });
 };

@@ -116,7 +116,9 @@ export const getProperty = <T extends PagePropertyTypeMap>(page: PageObjectRespo
   return page.properties[property] as PagePropertySchema<T>;
 };
 
-export const replaceNotionImageWithSmms = async (pageId: string, fileNamePrefix?: string) => {
+export const replaceNotionImageWithSmms = async (pageId: string, slug?: string) => {
+  console.log(`[replaceNotionImageToSmms] Ready to replace notion images with smms. Slug: ${slug}`);
+
   const replaceBlocks = async (blockId: string, start_cursor?: string) => {
     const res = await notionClient.blocks.children.list({ block_id: blockId, start_cursor });
     const blocks = res.results as BlockObjectResponse[];
@@ -124,7 +126,7 @@ export const replaceNotionImageWithSmms = async (pageId: string, fileNamePrefix?
       // image hosting by notion.
       if (block.type === 'image' && block.image.type === 'file') {
         const fileUrl = block.image.file!.url;
-        const fileName = fileNamePrefix ? fileNamePrefix + '-' + block.id : block.id;
+        const fileName = slug ? slug + '-' + block.id : block.id;
         const resSmms = await smmsUploadExternal(fileUrl, fileName);
         const smmsUrl = getSmmsUrl(resSmms);
         if (smmsUrl) {
@@ -133,8 +135,6 @@ export const replaceNotionImageWithSmms = async (pageId: string, fileNamePrefix?
             image: { external: { url: smmsUrl } },
           });
           console.log(`[replaceNotionImageToSmms] ${fileName} has been replaced. New url: ${smmsUrl}`);
-        } else {
-          console.log(`[replaceNotionImageToSmms] ${fileName} replace failed.`);
         }
       }
       if (block.has_children) {

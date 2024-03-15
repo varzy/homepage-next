@@ -38,12 +38,13 @@ export const smmsUpload = async (file: Blob, fileName: string) => {
     method: 'post',
     body: formData,
     headers: { Authorization: SMMS_TOKEN },
+    cache: 'no-cache',
   });
   return (await res.json()) as SmmsUploadResult;
 };
 
 export const smmsUploadExternal = async (url: string, fileName: string) => {
-  const resExternal = await fetch(url);
+  const resExternal = await fetch(url, { cache: 'no-cache' });
   const fileBlob = await resExternal.blob();
   return await smmsUpload(fileBlob, fileName);
 };

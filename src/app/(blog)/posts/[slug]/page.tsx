@@ -39,33 +39,34 @@ export default async function Post({ params }: PageProps) {
   const { slug } = params;
   console.log(`[posts/[slug]] Current slug: ${slug}`);
 
-  const targetPost = await getPageBySlug(composeDatabaseQuery(), slug);
-  if (!targetPost) notFound();
-
-  // If post is not ready, run automations for it .
-  // - Replace notion image to smms image.
-  if (!targetPost.isSmmsImages) {
-    await replaceNotionImageWithSmms(targetPost.id, slug);
-    await markPageImagesHasBeenUploadedToSmms(targetPost.id);
-  }
-
-  const mdBlocks = await notionToMarkdown.pageToMarkdown(targetPost.id);
-  const mdString = notionToMarkdown.toMarkdownString(mdBlocks);
-
-  return (
-    <BlogPageContainer
-      pageHero={{
-        title: targetPost.title,
-        before: targetPost.dateAmericaStyle,
-        after: (
-          <div className="mt-2">
-            {targetPost.tags.length > 0 && targetPost.tags.map((tag) => <PostTag key={tag} tag={tag} />)}
-          </div>
-        ),
-      }}
-      extra={targetPost.category === 'Coding' ? <BuyMeACoffee /> : undefined}
-    >
-      <Prose markdown={mdString.parent}></Prose>
-    </BlogPageContainer>
-  );
+  return <>{slug}</>
+  // const targetPost = await getPageBySlug(composeDatabaseQuery(), slug);
+  // if (!targetPost) notFound();
+  //
+  // // If post is not ready, run automations for it .
+  // // - Replace notion image to smms image.
+  // if (!targetPost.isSmmsImages) {
+  //   await replaceNotionImageWithSmms(targetPost.id, slug);
+  //   await markPageImagesHasBeenUploadedToSmms(targetPost.id);
+  // }
+  //
+  // const mdBlocks = await notionToMarkdown.pageToMarkdown(targetPost.id);
+  // const mdString = notionToMarkdown.toMarkdownString(mdBlocks);
+  //
+  // return (
+  //   <BlogPageContainer
+  //     pageHero={{
+  //       title: targetPost.title,
+  //       before: targetPost.dateAmericaStyle,
+  //       after: (
+  //         <div className="mt-2">
+  //           {targetPost.tags.length > 0 && targetPost.tags.map((tag) => <PostTag key={tag} tag={tag} />)}
+  //         </div>
+  //       ),
+  //     }}
+  //     extra={targetPost.category === 'Coding' ? <BuyMeACoffee /> : undefined}
+  //   >
+  //     <Prose markdown={mdString.parent}></Prose>
+  //   </BlogPageContainer>
+  // );
 }

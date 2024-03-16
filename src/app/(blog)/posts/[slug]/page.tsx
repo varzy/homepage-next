@@ -6,16 +6,16 @@ import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 import BuyMeACoffee from '@/app/(blog)/_components/BuyMeACoffee';
 import { getEmojiFavicon } from '@/utils/favicon';
 import Prose from '@/app/(blog)/_components/Prose';
-// import { unstable_cache as cache } from 'next/cache';
+import { unstable_cache as cache } from 'next/cache';
 
 interface PageProps {
   params: { slug: string };
 }
 
-const getNotionMarkdown = async (pageId: string) => {
+const getNotionMarkdown = cache(async (pageId: string) => {
   const mdBlocks = await notionToMarkdown.pageToMarkdown(pageId);
   return notionToMarkdown.toMarkdownString(mdBlocks);
-};
+});
 
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = params;

@@ -6,6 +6,7 @@ import {
 } from '@/app/(blog)/_lib/notion-handler';
 
 export const revalidate = 0;
+export const dynamic = 'force-dynamic';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);

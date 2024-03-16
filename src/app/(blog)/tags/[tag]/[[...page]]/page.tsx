@@ -18,6 +18,9 @@ export async function generateStaticParams() {
 
 export default async function Tag({ params }: { params: { tag: string; page?: string[] } }) {
   const { tag, page: optionalPageParam = [] } = params;
+
+  console.log(`[tags/[tag]/[...page]] Current tag: ${decodeURIComponent(tag)}`);
+
   if (optionalPageParam.length > 1) notFound();
   const tagText = decodeURIComponent(tag);
   const [optionalPage] = optionalPageParam;

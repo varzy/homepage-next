@@ -117,25 +117,30 @@ export const getProperty = <T extends PagePropertyTypeMap>(page: PageObjectRespo
   return page.properties[property] as PagePropertySchema<T>;
 };
 
-export const replaceNotionImageWithSmms = cache(async (pageId: string, slug?: string) => {
+export const replaceNotionImageWithSmms = async (pageId: string, slug: string) => {
   console.log(`[replaceNotionImageToSmms] Ready to replace notion images with smms. Slug: ${slug}`);
 
   const replaceBlocks = async (blockId: string, start_cursor?: string) => {
     const res = await notionClient.blocks.children.list({ block_id: blockId, start_cursor });
     const blocks = res.results as BlockObjectResponse[];
     for (const block of blocks) {
-      // image hosting by notion.
-      if (block.type === 'image' && block.image.type === 'file') {
-        const fileUrl = block.image.file!.url;
-        const fileName = slug ? slug + '-' + block.id : block.id;
-        const resSmms = await smmsUploadExternal(fileUrl, fileName);
-        const smmsUrl = getSmmsUrl(resSmms);
-        if (smmsUrl) {
-          await notionClient.blocks.update({
-            block_id: block.id,
-            image: { external: { url: smmsUrl } },
-          });
-          console.log(`[replaceNotionImageToSmms] ${fileName} has been replaced. New url: ${smmsUrl}`);
+      if (block.type === 'image') {
+        // 如果是 notion 托管的图片，或者非 sm.ms 的图片，统一上传至 sm.ms
+        if (
+          block.image.type === 'file' ||
+          (block.image.type === 'external' && !block.image.external.url.includes('sa.net'))
+        ) {
+          const fileUrl = block.image.type === 'file' ? block.image.file.url : block.image.external.url;
+          const fileName = `blog_${slug}_${block.id}`;
+          const resSmms = await smmsUploadExternal(fileUrl, fileName);
+          const smmsUrl = getSmmsUrl(resSmms);
+          if (smmsUrl) {
+            await notionClient.blocks.update({
+              block_id: block.id,
+              image: { external: { url: smmsUrl } },
+            });
+            console.log(`[replaceNotionImageToSmms] ${fileName} has been replaced. New url: ${smmsUrl}`);
+          }
         }
       }
       if (block.has_children) {
@@ -145,9 +150,9 @@ export const replaceNotionImageWithSmms = cache(async (pageId: string, slug?: st
     if (res.has_more && res.next_cursor) await replaceBlocks(blockId, res.next_cursor);
   };
   await replaceBlocks(pageId);
-});
+};
 
-export const markPageImagesHasBeenUploadedToSmms = cache((pageId: string) => {
+export const markPageImagesHasBeenUploadedToSmms = (pageId: string) => {
   return notionClient.pages.update({
     page_id: pageId,
     properties: {
@@ -156,4 +161,4 @@ export const markPageImagesHasBeenUploadedToSmms = cache((pageId: string) => {
       },
     },
   });
-});
+};

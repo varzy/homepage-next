@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: PageProps) {
  * 注意，此处仅静态生成每个分类中靠前的部分文章
  */
 export async function generateStaticParams() {
-  const GENERATING_POSTS_COUNT = 10;
+  const GENERATING_POSTS_COUNT = SITE_CONFIG.blogPerPage;
   const allPosts = await getAllPagesWithMeta(composeDatabaseQuery());
   const categoryFields = Object.values(SITE_CONFIG.categories).map((categoryCtx) => categoryCtx.notionField);
   const categoryPostsGroup = categoryFields.map((field) =>

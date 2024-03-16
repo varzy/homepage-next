@@ -1,4 +1,4 @@
-import { composeDatabaseQuery, getAllPagesWithMeta, getPageBySlug } from '@/app/(blog)/_lib/notion-handler';
+import { composeDatabaseQuery, getPageBySlug, getPagesWithMeta } from '@/app/(blog)/_lib/notion-handler';
 import { notFound } from 'next/navigation';
 import { notionToMarkdown } from '@/app/(blog)/_lib/notion-to-markdown';
 import PostTag from '@/app/(blog)/_components/PostTag';
@@ -30,9 +30,12 @@ export async function generateMetadata({ params }: PageProps) {
   };
 }
 
+/**
+ * 注意，此处仅静态生成靠前的部分文章
+ */
 export async function generateStaticParams() {
-  const allPosts = await getAllPagesWithMeta(composeDatabaseQuery());
-  return allPosts.map((post) => ({ slug: post.slug }));
+  const first50Posts = await getPagesWithMeta(composeDatabaseQuery({ page_size: 20 }));
+  return first50Posts.map((post) => ({ slug: post.slug }));
 }
 
 export default async function Post({ params }: PageProps) {

@@ -37,6 +37,11 @@ export const composeDatabaseQuery = (
   return finalQuery as QueryDatabaseParameters;
 };
 
+export const getDatabasePages = cache(async (query: QueryDatabaseParameters) => {
+  const res = await notionClient.databases.query(query);
+  return res.results as PageObjectResponse[];
+});
+
 export const getAllDatabasePages = cache(async (query: QueryDatabaseParameters) => {
   let pages: PageObjectResponse[] = [];
 
@@ -51,6 +56,11 @@ export const getAllDatabasePages = cache(async (query: QueryDatabaseParameters) 
   await fillPages();
 
   return pages;
+});
+
+export const getPagesWithMeta = cache(async (query: QueryDatabaseParameters) => {
+  const pages = await getDatabasePages(query);
+  return pages.map((page) => getPageMeta(page));
 });
 
 export const getAllPagesWithMeta = cache(async (query: QueryDatabaseParameters) => {

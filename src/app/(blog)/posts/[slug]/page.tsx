@@ -1,4 +1,4 @@
-import { composeDatabaseQuery, getPageBySlug, getPagesWithMeta } from '@/app/(blog)/_lib/notion-handler';
+import { composeDatabaseQuery, getAllPagesWithMeta, getPageBySlug } from '@/app/(blog)/_lib/notion-handler';
 import { notFound } from 'next/navigation';
 import { notionToMarkdown } from '@/app/(blog)/_lib/notion-to-markdown';
 import PostTag from '@/app/(blog)/_components/PostTag';
@@ -7,6 +7,7 @@ import BuyMeACoffee from '@/app/(blog)/_components/BuyMeACoffee';
 import { getEmojiFavicon } from '@/utils/favicon';
 import Prose from '@/app/(blog)/_components/Prose';
 import { unstable_cache as cache } from 'next/cache';
+import { SITE_CONFIG } from '@/site.config';
 
 interface PageProps {
   params: { slug: string };
@@ -31,11 +32,17 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 /**
- * 注意，此处仅静态生成靠前的部分文章
+ * 注意，此处仅静态生成每个分类中靠前的部分文章
  */
 export async function generateStaticParams() {
-  const first50Posts = await getPagesWithMeta(composeDatabaseQuery({ page_size: 20 }));
-  return first50Posts.map((post) => ({ slug: post.slug }));
+  const GENERATING_POSTS_COUNT = 10;
+  const allPosts = await getAllPagesWithMeta(composeDatabaseQuery());
+  const categoryFields = Object.values(SITE_CONFIG.categories).map((categoryCtx) => categoryCtx.notionField);
+  const categoryPostsGroup = categoryFields.map((field) =>
+    allPosts.filter((post) => post.category === field).slice(0, GENERATING_POSTS_COUNT),
+  );
+  const generatingPosts = categoryPostsGroup.reduce((allPosts, categoryPosts) => [...allPosts, ...categoryPosts], []);
+  return generatingPosts.map((post) => ({ slug: post.slug }));
 }
 
 export default async function Post({ params }: PageProps) {
@@ -44,15 +51,6 @@ export default async function Post({ params }: PageProps) {
 
   const targetPost = await getPageBySlug(composeDatabaseQuery(), slug);
   if (!targetPost) notFound();
-
-  // If post is not ready, run automations for it .
-  // - Replace notion image to smms image.
-  // @BUG @TODO: <https://github.com/vercel/next.js/issues/58736>
-  // Next will render Page twice time, so we can not run it at production.
-  // if (!SITE_CONFIG.isProd && !targetPost.isSmmsImages) {
-  //   await replaceNotionImageWithSmms(targetPost.id, slug);
-  //   await markPageImagesHasBeenUploadedToSmms(targetPost.id);
-  // }
 
   const mdString = await getNotionMarkdown(targetPost.id);
 

@@ -6,7 +6,6 @@ import {
 } from '@/app/(blog)/_lib/notion-handler';
 import { revalidatePath } from 'next/cache';
 
-export const revalidate = 0;
 export const dynamic = 'force-dynamic';
 
 export async function GET(request: Request) {

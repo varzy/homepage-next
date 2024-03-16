@@ -3,6 +3,7 @@ export const SITE_CONFIG = {
   notionDatabaseId: process.env.NOTION_DATABASE_ID || '',
   notionApiSecret: process.env.NOTION_API_SECRET || '',
   smmsApiToken: process.env.SMMS_API_TOKEN || '',
+  apiCallingToken: process.env.API_CALLING_TOKEN || '',
 
   title: `贼歪`,
   keywords: `贼歪, zy, 个人网站, 博客, 技术, 前端, Notion, Homepage, Blog`,

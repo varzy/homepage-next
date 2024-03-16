@@ -13,6 +13,7 @@ export async function GET() {
     await fetch(url, { cache: 'no-cache' });
     console.log(`[refreshAllPages] url has been refreshed: ${url}`);
   }
+  console.log('[refreshAllPages] All pages has been refreshed.');
 
   return Response.json({ ok: true, code: 'REFRESHED' }, { status: 200 });
 }

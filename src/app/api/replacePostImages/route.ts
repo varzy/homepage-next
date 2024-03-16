@@ -11,7 +11,7 @@ export const dynamic = 'force-dynamic';
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const slug = searchParams.get('slug');
-  if (!slug) return Response.json({ ok: false, code: `NO_SLUG` }, { status: 400 });
+  if (!slug) return Response.json({ ok: false, code: `NO_SLUG_PARAM` }, { status: 400 });
 
   const targetPost = await getPageBySlug(composeDatabaseQuery(), slug);
   if (!targetPost) return Response.json({ ok: false, code: `NO_PAGE` }, { status: 404 });

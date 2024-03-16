@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 /**
- * 注意，此处仅静态生成每个分类中靠前的部分文章
+ * 注意，此处仅静态生成每个分类中第一页的文章
  */
 export async function generateStaticParams() {
   const GENERATING_POSTS_COUNT = SITE_CONFIG.blogPerPage;

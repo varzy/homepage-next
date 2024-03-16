@@ -8,7 +8,7 @@ import {
 export const revalidate = 0;
 export const dynamic = 'force-dynamic';
 
-export async function POST(request: Request) {
+export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const slug = searchParams.get('slug');
   if (!slug) return Response.json({ ok: false, code: `NO_SLUG` }, { status: 400 });

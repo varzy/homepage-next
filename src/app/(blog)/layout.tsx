@@ -5,10 +5,10 @@ export const revalidate = 1200; // 20min
 
 export default function BlogLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <>
+    <main className="font-sans">
       <BlogHeader />
-      <main>{children}</main>
+      {children}
       <BlogFooter />
-    </>
+    <main/>
   );
 }

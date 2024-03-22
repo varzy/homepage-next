@@ -9,6 +9,6 @@ export default function BlogLayout({ children }: Readonly<{ children: React.Reac
       <BlogHeader />
       {children}
       <BlogFooter />
-    <main/>
+    </main>
   );
 }

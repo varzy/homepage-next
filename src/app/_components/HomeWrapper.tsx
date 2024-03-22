@@ -45,7 +45,7 @@ export default function HomeWrapper({ t, children }: { t: I18nProps; children: R
   );
 
   return (
-    <>
+    <div className="font-serif">
       <LocaleToggle />
       <div className="container mx-auto max-w-4xl px-5 py-20 leading-7 sm:px-8">
         <Row>
@@ -77,6 +77,6 @@ export default function HomeWrapper({ t, children }: { t: I18nProps; children: R
           </div>
         </Row>
       </div>
-    </>
+    </div>
   );
 }

@@ -4,12 +4,12 @@
 
 @layer base {
   body {
-    @apply bg-[#f7f7f7] font-serif tracking-wider text-gray-600;
+    @apply bg-[#f7f7f7] font-sans tracking-wider text-gray-600;
   }
 }
 
 @layer utilities {
   .g-blog-container {
-    @apply container mx-auto max-w-3xl px-5;
+    @apply container mx-auto max-w-[800px] px-5;
   }
 }

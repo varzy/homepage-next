@@ -6,8 +6,8 @@ import {
   QueryDatabaseParameters,
 } from '@notionhq/client/build/src/api-endpoints';
 import { DatabaseMultiSelectProperty, PagePropertySchema, PagePropertyTypeMap } from '@/app/(blog)/_lib/notion-types';
-// import { cache } from 'react';
-import { unstable_cache as cache } from 'next/cache';
+import { cache } from 'react';
+// import { unstable_cache as cache } from 'next/cache';
 import Dayjs from 'dayjs';
 import { SITE_CONFIG } from '@/site.config';
 import _merge from 'deepmerge';

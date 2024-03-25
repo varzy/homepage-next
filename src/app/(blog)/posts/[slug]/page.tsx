@@ -6,7 +6,8 @@ import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 import BuyMeACoffee from '@/app/(blog)/_components/BuyMeACoffee';
 import { getEmojiFavicon } from '@/utils/favicon';
 import Prose from '@/app/(blog)/_components/Prose';
-import { unstable_cache as cache } from 'next/cache';
+// import { unstable_cache as cache } from 'next/cache';
+import { cache } from 'react';
 import { SITE_CONFIG } from '@/site.config';
 
 interface PageProps {

@@ -19,7 +19,7 @@ export default function Prose({ markdown }: { markdown: string }) {
 
   return (
     <>
-      <article className="prose max-w-none font-normal prose-a:break-words prose-pre:bg-[#1e1e1e] prose-img:mx-auto prose-img:rounded-md prose-img:sm:w-[90%]">
+      <article className="prose max-w-none font-normal prose-a:break-words prose-code:break-words prose-pre:bg-[#1e1e1e] prose-img:mx-auto prose-img:rounded-md prose-img:sm:w-[90%]">
         <ReactMarkdown
           components={{
             img(props) {

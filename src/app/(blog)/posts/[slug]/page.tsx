@@ -65,9 +65,13 @@ export default async function Post({ params }: PageProps) {
           </div>
         ),
       }}
-      extra={targetPost.category === 'Coding' ? <BuyMeACoffee /> : undefined}
     >
       <Prose markdown={mdString.parent}></Prose>
+      {targetPost.category === 'Coding' && (
+        <div className="mx-auto my-8 max-w-md">
+          <BuyMeACoffee />
+        </div>
+      )}
     </BlogPageContainer>
   );
 }

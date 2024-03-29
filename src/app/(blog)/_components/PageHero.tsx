@@ -9,7 +9,7 @@ export interface PageHeroProps {
 
 export default function PageHero({ title, before, after, children }: PageHeroProps) {
   return (
-    <div className="bg-[#EEEDEB]">
+    <div className="bg-[#f1f1f1]">
       <div className="g-blog-container py-6">
         {children ? (
           <>{children}</>

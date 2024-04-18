@@ -23,7 +23,7 @@ export default function Home() {
       }}
     >
       <p>
-        I’m a software engineer living in Beijing. I enjoy watching anime, reading comics, playing games, and listening
+        I’m a software engineer living in Beijing. I enjoy watching anime, reading comics, playing video games, and listening
         to music especially rock. Just like most geeks, I’m always interested at softwares and consumer electronics. I’m
         also a minimalist.
       </p>

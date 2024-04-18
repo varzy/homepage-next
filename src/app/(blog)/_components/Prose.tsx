@@ -12,14 +12,15 @@ const CodeBlock = ({ language, codestring }: { language: string; codestring: str
   );
 };
 
-export default function Prose({ markdown }: { markdown: string }) {
+export default function Prose({ children }: {  children: string }) {
   const onViewImage = (src?: string) => {
     console.log(src);
   };
 
   return (
     <>
-      <article className="prose max-w-none font-normal prose-a:break-words prose-code:break-words prose-pre:bg-[#1e1e1e] prose-img:mx-auto prose-img:rounded-md prose-img:sm:w-[90%]">
+      <article
+        className="prose max-w-none  font-normal prose-a:break-words prose-code:break-words prose-img:mx-auto prose-img:rounded-md  prose-inline-code:text-rose-400  prose-inline-code:before:content-none prose-inline-code:after:content-none prose-img:sm:w-[90%]">
         <ReactMarkdown
           components={{
             img(props) {
@@ -33,14 +34,14 @@ export default function Prose({ markdown }: { markdown: string }) {
               return !inline && match ? (
                 <CodeBlock codestring={String(children).replace(/\n$/, '')} language={match[1]} />
               ) : (
-                <code className={className} {...props}>
+                <code className="border bg-slate-200 text-rose-400  before:content-none after:content-none" {...props}>
                   {children}
                 </code>
               );
-            },
+            }
           }}
         >
-          {markdown}
+          {children}
         </ReactMarkdown>
       </article>
     </>

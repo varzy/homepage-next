@@ -6,7 +6,6 @@ import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 import BuyMeACoffee from '@/app/(blog)/_components/BuyMeACoffee';
 import { getEmojiFavicon } from '@/utils/favicon';
 import Prose from '@/app/(blog)/_components/Prose';
-// import { unstable_cache as cache } from 'next/cache';
 import { cache } from 'react';
 import { SITE_CONFIG } from '@/site.config';
 
@@ -32,9 +31,6 @@ export async function generateMetadata({ params }: PageProps) {
   };
 }
 
-/**
- * 注意，此处仅静态生成每个分类中第一页的文章
- */
 export async function generateStaticParams() {
   const GENERATING_POSTS_COUNT = SITE_CONFIG.blogPerPage;
   const allPosts = await getAllPagesWithMeta(composeDatabaseQuery());
@@ -66,7 +62,7 @@ export default async function Post({ params }: PageProps) {
         ),
       }}
     >
-      <Prose markdown={mdString.parent}></Prose>
+      <Prose>{mdString.parent}</Prose>
       {targetPost.category === 'Coding' && (
         <div className="mx-auto my-8 max-w-md">
           <BuyMeACoffee />

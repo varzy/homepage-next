@@ -3,7 +3,7 @@ import Prose from '@/app/(blog)/_components/Prose';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: `赵越的简历`
+  title: `赵越的简历`,
 };
 
 export default async function Resume() {

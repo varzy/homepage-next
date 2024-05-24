@@ -94,7 +94,7 @@ export interface PostMetaData {
   type: string;
   slug: string;
   icon?: string;
-  isSmmsImages: boolean;
+  // isSmmsImages: boolean;
 }
 
 export const getPageMeta = (page: PageObjectResponse): PostMetaData => {
@@ -116,7 +116,7 @@ export const getPageMeta = (page: PageObjectResponse): PostMetaData => {
       .rich_text.map((piece) => piece.plain_text || '')
       .join(''),
     tags: getProperty<'multi_select'>(page, 'tags').multi_select.map((tag) => tag.name),
-    isSmmsImages: getProperty<'checkbox'>(page, 'is_smms_images').checkbox,
+    // isSmmsImages: getProperty<'checkbox'>(page, 'is_smms_images').checkbox,
     date,
     dateAmericaStyle,
     icon,
@@ -160,15 +160,4 @@ export const replaceNotionImageWithSmms = async (pageId: string, slug: string) =
     if (res.has_more && res.next_cursor) await replaceBlocks(blockId, res.next_cursor);
   };
   await replaceBlocks(pageId);
-};
-
-export const markPageImagesHasBeenUploadedToSmms = (pageId: string) => {
-  return notionClient.pages.update({
-    page_id: pageId,
-    properties: {
-      is_smms_images: {
-        checkbox: true,
-      },
-    },
-  });
 };

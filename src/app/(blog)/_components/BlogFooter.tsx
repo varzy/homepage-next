@@ -9,7 +9,7 @@ const FOOTER_LINKS = [
 const POWERED_BY_LINKS = [
   { label: 'Next.js', href: 'https://nextjs.org/', external: true },
   { label: 'Notion', href: 'https://notion.so', external: true },
-  { label: 'Cloudflare Pages', href: 'https://pages.cloudflare.com/', external: true },
+  { label: 'Vercel', href: 'https://vercel.com/', external: true },
 ];
 
 export default function BlogFooter() {
@@ -36,7 +36,9 @@ export default function BlogFooter() {
                 <Link className="underline" href={link.href} target={link.external ? '_blank' : undefined}>
                   {link.label}
                 </Link>
-                {index < POWERED_BY_LINKS.length - 1 && <>, </>}
+                {index < POWERED_BY_LINKS.length - 1 && (
+                  <span>{index === POWERED_BY_LINKS.length - 2 ? ' & ' : ', '}</span>
+                )}
               </span>
             ))}{' '}
             . View Source on&nbsp;

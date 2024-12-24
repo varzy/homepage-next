@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 export default function Friends() {
   return (
     <BlogPageContainer pageHero={{ title: `友情链接`, after: `` }}>
+      {/* <Link href="https://ikangjia.cn/">林深时觉寒</Link> */}
       <p>空空如也...</p>
       <p>如你所见，我的朋友很少😭</p>
     </BlogPageContainer>

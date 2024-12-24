@@ -20,5 +20,3 @@ export const SITE_CONFIG = {
 
   utterancRepo: ``,
 };
-
-console.log(process.env.NOTION_API_SECRET)

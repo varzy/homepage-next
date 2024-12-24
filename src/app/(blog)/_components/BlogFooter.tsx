@@ -1,6 +1,17 @@
 import { SITE_CONFIG } from '@/site.config';
 import Link from 'next/link';
 
+const FOOTER_LINKS = [
+  { label: 'Tags', href: '/tags' },
+  { label: 'RSS', href: '/rss' },
+];
+
+const POWERED_BY_LINKS = [
+  { label: 'Next.js', href: 'https://nextjs.org/', external: true },
+  { label: 'Notion', href: 'https://notion.so', external: true },
+  { label: 'Cloudflare Pages', href: 'https://pages.cloudflare.com/', external: true },
+];
+
 export default function BlogFooter() {
   return (
     <footer>
@@ -9,28 +20,30 @@ export default function BlogFooter() {
         <div className="pb-14 pt-6 text-sm">
           <p>
             &copy; {SITE_CONFIG.author} 2015 - {new Date().getFullYear()}
-            &nbsp;•&nbsp;
-            <Link className="underline" href="/tags">
-              Tags
-            </Link>
-            &nbsp;•&nbsp;
-            <Link className="underline" href="/rss">
-              RSS
-            </Link>
+            {FOOTER_LINKS.map((link, index) => (
+              <>
+                &nbsp;•&nbsp;
+                <Link key={index} className="underline" href={link.href}>
+                  {link.label}
+                </Link>
+              </>
+            ))}
           </p>
           <p className="mt-2">
             Powered by{' '}
-            <Link className="underline" href="https://vercel.com/" target="_blank">
-              Vercel
-            </Link>
-            ,{' '}
-            <Link className="underline" href="https://nextjs.org/" target="_blank">
-              Next.js
-            </Link>{' '}
-            &{' '}
-            <Link className="underline" href="https://notion.so">
-              Notion
-            </Link>
+            {POWERED_BY_LINKS.map((link, index) => (
+              <>
+                <Link
+                  key={link.href}
+                  className="underline"
+                  href={link.href}
+                  target={link.external ? '_blank' : undefined}
+                >
+                  {link.label}
+                </Link>
+                {index < POWERED_BY_LINKS.length - 1 && <>, </>}
+              </>
+            ))}{' '}
             . View Source on&nbsp;
             <Link className="underline" href="https://github.com/varzy/homepage-next" target="_blank">
               Github

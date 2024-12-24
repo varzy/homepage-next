@@ -38,9 +38,9 @@ export async function generateStaticParams() {
 export default async function Page({
   params,
 }: {
-  params: { category: keyof typeof SITE_CONFIG.categories; page?: string[] };
+  params: Promise<{ category: keyof typeof SITE_CONFIG.categories; page?: string[] }>;
 }) {
-  const { category: categoryParam, page: optionalPageParam = [] } = params;
+  const { category: categoryParam, page: optionalPageParam = [] } = await params;
   if (optionalPageParam.length > 1) notFound();
   // 页码
   const [optionalPage] = optionalPageParam;

@@ -6,11 +6,11 @@ import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 import BuyMeACoffee from '@/app/(blog)/_components/BuyMeACoffee';
 import { getEmojiFavicon } from '@/utils/favicon';
 import Prose from '@/app/(blog)/_components/Prose';
-import { cache } from 'react';
+import { unstable_cache as cache } from 'next/cache';
 import { SITE_CONFIG } from '@/site.config';
 
 interface PageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 const getNotionMarkdown = cache(async (pageId: string) => {
@@ -19,7 +19,7 @@ const getNotionMarkdown = cache(async (pageId: string) => {
 });
 
 export async function generateMetadata({ params }: PageProps) {
-  const { slug } = params;
+  const { slug } = await params;
 
   const page = await getPageBySlug(composeDatabaseQuery(), slug);
   if (!page) return {};
@@ -43,7 +43,7 @@ export async function generateStaticParams() {
 }
 
 export default async function Post({ params }: PageProps) {
-  const { slug } = params;
+  const { slug } = await params;
 
   const targetPost = await getPageBySlug(composeDatabaseQuery(), slug);
   if (!targetPost) notFound();

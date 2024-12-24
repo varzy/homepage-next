@@ -16,8 +16,8 @@ export async function generateStaticParams() {
   return renderingGroups.reduce((all, group) => [...all, ...group], []);
 }
 
-export default async function Tag({ params }: { params: Promise<{ tag: string; page?: string[] }> }) {
-  const { tag, page: optionalPageParam = [] } = await params;
+export default async function Tag({ params }: { params: { tag: string; page?: string[] } }) {
+  const { tag, page: optionalPageParam = [] } = params;
 
   if (optionalPageParam.length > 1) notFound();
   const tagText = decodeURIComponent(tag);

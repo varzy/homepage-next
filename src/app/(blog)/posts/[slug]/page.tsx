@@ -10,7 +10,7 @@ import { unstable_cache as cache } from 'next/cache';
 import { SITE_CONFIG } from '@/site.config';
 
 interface PageProps {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }
 
 const getNotionMarkdown = cache(async (pageId: string) => {
@@ -19,7 +19,7 @@ const getNotionMarkdown = cache(async (pageId: string) => {
 });
 
 export async function generateMetadata({ params }: PageProps) {
-  const { slug } = await params;
+  const { slug } = params;
 
   const page = await getPageBySlug(composeDatabaseQuery(), slug);
   if (!page) return {};
@@ -43,7 +43,7 @@ export async function generateStaticParams() {
 }
 
 export default async function Post({ params }: PageProps) {
-  const { slug } = await params;
+  const { slug } = params;
 
   const targetPost = await getPageBySlug(composeDatabaseQuery(), slug);
   if (!targetPost) notFound();

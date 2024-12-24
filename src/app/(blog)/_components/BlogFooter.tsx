@@ -33,11 +33,7 @@ export default function BlogFooter() {
             Powered by{' '}
             {POWERED_BY_LINKS.map((link, index) => (
               <span key={index}>
-                <Link
-                  className="underline"
-                  href={link.href}
-                  target={link.external ? '_blank' : undefined}
-                >
+                <Link className="underline" href={link.href} target={link.external ? '_blank' : undefined}>
                   {link.label}
                 </Link>
                 {index < POWERED_BY_LINKS.length - 1 && <>, </>}

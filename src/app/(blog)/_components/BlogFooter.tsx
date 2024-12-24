@@ -21,20 +21,19 @@ export default function BlogFooter() {
           <p>
             &copy; {SITE_CONFIG.author} 2015 - {new Date().getFullYear()}
             {FOOTER_LINKS.map((link, index) => (
-              <>
+              <span key={index}>
                 &nbsp;•&nbsp;
-                <Link key={index} className="underline" href={link.href}>
+                <Link className="underline" href={link.href}>
                   {link.label}
                 </Link>
-              </>
+              </span>
             ))}
           </p>
           <p className="mt-2">
             Powered by{' '}
             {POWERED_BY_LINKS.map((link, index) => (
-              <>
+              <span key={index}>
                 <Link
-                  key={link.href}
                   className="underline"
                   href={link.href}
                   target={link.external ? '_blank' : undefined}
@@ -42,7 +41,7 @@ export default function BlogFooter() {
                   {link.label}
                 </Link>
                 {index < POWERED_BY_LINKS.length - 1 && <>, </>}
-              </>
+              </span>
             ))}{' '}
             . View Source on&nbsp;
             <Link className="underline" href="https://github.com/varzy/homepage-next" target="_blank">

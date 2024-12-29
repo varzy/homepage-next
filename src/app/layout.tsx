@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import '../styles/main.css';
 import { SITE_CONFIG } from '@/site.config';
 import { getEmojiFavicon } from '@/utils/favicon';
-// import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
   title: {

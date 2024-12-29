@@ -3,8 +3,18 @@
 @tailwind utilities;
 
 @layer base {
+  @font-face {
+    font-family: 'Outfit';
+    src: url('../assets/fonts/Outfit-VariableFont_wght.ttf') format('truetype');
+    font-style: normal;
+    font-display: swap;
+  }
+  html {
+    font-family: Outfit, Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial,
+      ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  }
   body {
-    @apply bg-[#f7f7f7] font-sans tracking-wider text-gray-600;
+    @apply bg-[#f7f7f7] tracking-wide text-gray-600;
   }
 }
 

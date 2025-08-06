@@ -2,7 +2,6 @@ export interface FetchConfig {
   notionDatabaseId: string;
   notionApiSecret: string;
   outputDir: string;
-  lastFetchFile: string;
 }
 
 export interface PostMetadata {
@@ -15,6 +14,7 @@ export interface PostMetadata {
   slug: string;
   summary: string;
   last_edited_time: string;
+  blog_last_fetched_time: string | null;
   notion_id: string;
 }
 

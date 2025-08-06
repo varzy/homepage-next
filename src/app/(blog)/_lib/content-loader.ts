@@ -13,6 +13,7 @@ export interface PostMeta {
   slug: string;
   summary: string;
   last_edited_time: string;
+  blog_last_fetched_time?: string;
   notion_id: string;
   dateAmericaStyle: string;
   icon?: string;
@@ -61,6 +62,7 @@ function parseMDXFile(filePath: string): PostMeta {
     slug: data.slug || '',
     summary: data.summary || '',
     last_edited_time: data.last_edited_time || '',
+    blog_last_fetched_time: data.blog_last_fetched_time,
     notion_id: data.notion_id || '',
     dateAmericaStyle: formatDate(data.date || ''),
     id: data.notion_id || '', // 使用 notion_id 作为 id
@@ -160,6 +162,7 @@ export async function getPostWithContent(slug: string): Promise<PostWithContent 
       slug: data.slug || '',
       summary: data.summary || '',
       last_edited_time: data.last_edited_time || '',
+      blog_last_fetched_time: data.blog_last_fetched_time,
       notion_id: data.notion_id || '',
       dateAmericaStyle: formatDate(data.date || ''),
       id: data.notion_id || '',

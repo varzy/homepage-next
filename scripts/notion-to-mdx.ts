@@ -53,7 +53,27 @@ export class NotionToMDXConverter {
     }
   }
 
-  private extractPostMeta(page: PageObjectResponse): PostMetadata {
+  async updateBlogLastFetchedTime(pageId: string): Promise<void> {
+    try {
+      const now = new Date().toISOString();
+      await this.notion.pages.update({
+        page_id: pageId,
+        properties: {
+          blog_last_fetched_time: {
+            date: {
+              start: now
+            }
+          }
+        }
+      });
+      console.log(`📝 Updated blog_last_fetched_time for page ${pageId}`);
+    } catch (error) {
+      console.error(`❌ Failed to update blog_last_fetched_time for page ${pageId}:`, error);
+      throw error;
+    }
+  }
+
+    private extractPostMeta(page: PageObjectResponse): PostMetadata {
     const properties = page.properties;
 
     const getTextProperty = (prop: any): string => {
@@ -90,6 +110,7 @@ export class NotionToMDXConverter {
       slug: getTextProperty(properties.slug),
       summary: getTextProperty(properties.summary),
       last_edited_time: page.last_edited_time,
+      blog_last_fetched_time: getDateProperty(properties.blog_last_fetched_time),
     };
   }
 }
@@ -105,6 +126,7 @@ date: "${metadata.date}"
 slug: "${metadata.slug}"
 summary: "${metadata.summary.replace(/"/g, '\\"')}"
 last_edited_time: "${metadata.last_edited_time}"
+blog_last_fetched_time: "${metadata.blog_last_fetched_time || ''}"
 notion_id: "${metadata.notion_id}"
 ---
 

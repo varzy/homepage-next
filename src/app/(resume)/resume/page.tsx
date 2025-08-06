@@ -1,5 +1,5 @@
 import ResumeFile from './resume.md';
-import MdxRenderer from '@/app/(blog)/_components/MDXRenderer';
+import MdxRenderer from '@/app/(blog)/_components/MdxRenderer';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {

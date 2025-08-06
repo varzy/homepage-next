@@ -6,46 +6,72 @@ interface MdxRendererProps {
   source: string;
 }
 
-// 自定义代码块组件
 const CustomCodeBlock = ({ children, className, ...props }: any) => {
   const match = /language-(\w+)/.exec(className || '');
   const language = match ? match[1] : '';
 
   if (language) {
     return (
-      <SyntaxHighlighter language={language} style={prism} PreTag="div" {...props}>
+      <SyntaxHighlighter
+        language={language}
+        style={prism}
+        PreTag="div"
+        customStyle={{
+          fontSize: '0.875rem',
+        }}
+        {...props}
+      >
         {String(children).replace(/\n$/, '')}
       </SyntaxHighlighter>
     );
   }
 
   return (
-    <code className="border bg-slate-200 text-rose-400 px-1" {...props}>
+    <pre className="bg-gray-200 p-4 rounded text-sm">
+      <code {...props}>{children}</code>
+    </pre>
+  );
+};
+
+const CustomInlineCode = ({ children, ...props }: any) => {
+  return (
+    <code className="bg-gray-200 text-rose-400 px-1 py-0.5 rounded text-sm font-medium border-0" {...props}>
       {children}
     </code>
   );
 };
 
-// 自定义链接组件 - 所有链接都在新标签页打开
 const CustomLink = (props: any) => {
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 };
 
-// 自定义预格式化文本组件
-const CustomPre = (props: any) => {
-  return <div {...props} />;
+const CustomPre = ({ children, ...props }: any) => {
+  return <>{children}</>;
 };
 
-// MDX 组件配置
+const SmartCode = ({ children, className, ...props }: any) => {
+  const hasLanguageClass = className && /language-\w+/.test(className);
+
+  if (hasLanguageClass) {
+    return (
+      <CustomCodeBlock className={className} {...props}>
+        {children}
+      </CustomCodeBlock>
+    );
+  }
+
+  return <CustomInlineCode {...props}>{children}</CustomInlineCode>;
+};
+
 const mdxComponents = {
-  code: CustomCodeBlock,
+  code: SmartCode,
   pre: CustomPre,
   a: CustomLink,
 };
 
 export default function MdxRenderer({ source }: MdxRendererProps) {
   return (
-    <article className="prose max-w-none font-normal prose-a:break-words prose-code:break-words prose-img:mx-auto prose-img:rounded-md prose-inline-code:text-rose-400 prose-inline-code:before:content-none prose-inline-code:after:content-none sm:prose-img:w-[90%]">
+    <article className="prose max-w-none font-normal prose-a:break-words prose-img:mx-auto prose-img:rounded-md prose-pre:bg-transparent prose-pre:p-0 prose-code:before:content-none prose-code:after:content-none sm:prose-img:w-[90%]">
       <MDXRemote source={source} components={mdxComponents} />
     </article>
   );

@@ -4,7 +4,7 @@ import PostTag from '@/app/(blog)/_components/PostTag';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 import BuyMeACoffee from '@/app/(blog)/_components/BuyMeACoffee';
 import { getEmojiFavicon } from '@/utils/favicon';
-import MdxRenderer from '@/app/(blog)/_components/MDXRenderer';
+import MdxRenderer from '@/app/(blog)/_components/MdxRenderer';
 
 interface PageProps {
   params: { slug: string };

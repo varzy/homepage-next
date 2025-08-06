@@ -143,7 +143,7 @@ export async function getAllCategories(): Promise<string[]> {
 
 export async function getPostWithContent(slug: string): Promise<PostWithContent | null> {
   try {
-    const filePath = path.join(CONTENT_DIR, `${slug}.mdx`);
+    const filePath = path.join(CONTENT_DIR, `${slug}.md`);
 
     if (!fs.existsSync(filePath)) {
       return null;

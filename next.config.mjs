@@ -2,14 +2,11 @@ import createMDX from '@next/mdx';
 import remarkGfm from 'remark-gfm';
 
 const nextConfig = {
-  reactStrictMode: false,
-  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   webpack: (config) => {
     config.module.rules.push({
       test: /\.md$/,
       use: 'raw-loader',
     });
-
     return config;
   },
 };

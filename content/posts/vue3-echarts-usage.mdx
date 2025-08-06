@@ -1,29 +1,25 @@
 ---
-title: "Vue3 中使用 ECharts"
-category: "Coding"
-type: "Post"
-status: "Published"
-tags: ["Vue"]
-date: "2022-04-14"
-slug: "vue3-echarts-usage"
-summary: ""
-last_edited_time: "2024-03-16T08:21:00.000Z"
-blog_last_fetched_time: "2025-08-06T03:15:30.077Z"
-notion_id: "ba1a6a3b-cfc3-4be8-9f7d-bf6c0334ab80"
+title: 'Vue3 中使用 ECharts'
+category: 'Coding'
+type: 'Post'
+status: 'Published'
+tags: ['Vue']
+date: '2022-04-14'
+slug: 'vue3-echarts-usage'
+summary: ''
+last_edited_time: '2024-03-16T08:21:00.000Z'
+blog_last_fetched_time: '2025-08-06T03:15:30.077Z'
+notion_id: 'ba1a6a3b-cfc3-4be8-9f7d-bf6c0334ab80'
 ---
 
-
 ## 使用 shallowRef 接收 Echarts 对象
-
 
 ```javascript
 const chart = shallowRef(null);
 chart.value = Echarts.init(document.getElementById(domId), theme, initOption);
 ```
 
-
 ## 需要在组件销毁时同步销毁图表对象
-
 
 ```javascript
 onUnmounted(() => {
@@ -31,9 +27,7 @@ onUnmounted(() => {
 });
 ```
 
-
 ## useChart.js
-
 
 ```javascript
 import { onUnmounted, shallowRef } from 'vue';
@@ -63,9 +57,7 @@ export default function ({ domId, theme = 'antv', initOption, chartSchema, resiz
 }
 ```
 
-
 使用：
-
 
 ```javascript
 const { chart, initChart } = useChart({
@@ -90,4 +82,3 @@ onMounted(() => {
   initChart();
 });
 ```
-

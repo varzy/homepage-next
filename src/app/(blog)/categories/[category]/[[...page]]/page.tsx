@@ -17,7 +17,7 @@ export async function generateStaticParams() {
     const totalPages = Math.ceil(categoryPosts.length / SITE_CONFIG.blogPerPage);
     return Array.from({ length: totalPages }).map((_, i) => ({
       category: key,
-      page: [String(i + 1)]
+      page: [String(i + 1)],
     }));
   });
 
@@ -45,11 +45,7 @@ export default async function Page({
 
   return (
     <BlogPageContainer pageHero={{ title: categoryCtx.alias, after: categoryCtx.description }}>
-      <PostsContainer
-        posts={allPosts}
-        currentPage={currentPage}
-        urlPrefix={`/categories/${categoryParam}`}
-      />
+      <PostsContainer posts={allPosts} currentPage={currentPage} urlPrefix={`/categories/${categoryParam}`} />
     </BlogPageContainer>
   );
 }

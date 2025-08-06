@@ -1,29 +1,24 @@
 ---
-title: "一个微信小程序的渐进式优化之路"
-category: "Coding"
-type: "Post"
-status: "Published"
-tags: ["Miniprogram", "Stylelint", "ESLint", "Prettier", "Deploy"]
-date: "2022-01-25"
-slug: "miniprogram-turning"
-summary: ""
-last_edited_time: "2024-03-16T08:21:00.000Z"
-blog_last_fetched_time: "2025-08-06T03:16:17.872Z"
-notion_id: "60ab9222-edfb-4760-8b2e-d833f77638d8"
+title: '一个微信小程序的渐进式优化之路'
+category: 'Coding'
+type: 'Post'
+status: 'Published'
+tags: ['Miniprogram', 'Stylelint', 'ESLint', 'Prettier', 'Deploy']
+date: '2022-01-25'
+slug: 'miniprogram-turning'
+summary: ''
+last_edited_time: '2024-03-16T08:21:00.000Z'
+blog_last_fetched_time: '2025-08-06T03:16:17.872Z'
+notion_id: '60ab9222-edfb-4760-8b2e-d833f77638d8'
 ---
-
 
 2022 年第一更，来个大的！
 
-
 入职搜狐后我开展的第一个项目就是微信小程序。谈起小程序开发，生态封闭、坑多路滑、开发工具难用等槽点是一定不能被忽视的，因此市面上也涌现了一大批诸如 mpvue、taro 这样的抽象程度更高的小程序开发框架。我负责的这个小程序项目并没有采用这些第三方框架，而是选择在原生技术栈的基础上进行了一系列的优化和定制。
-
 
 去年 8 月份 (2021.08)，小程序的版本已经来到了 4.0.0。经历了长达一年的渐进式优化，这个小程序项目的开发体验也勉强达到了“好用”的水平，于是我写下了本文并在组内做了技术分享。技术分享后我就想找时间把文章脱敏并公开，结果拖延症发作一直鸽🕊️到了 2022 年。。。今天终于狠下心来重新梳理了这篇万字长文，希望能帮助到需要开发小程序的你。
 
-
 章节比较多，可以点击目录快速跳转；加 ⭐️ 表示个人认为收益比较大的优化。
-
 
 ## 我信奉的几条代码哲学
 
@@ -33,21 +28,15 @@ notion_id: "60ab9222-edfb-4760-8b2e-d833f77638d8"
 
 ## 开发之前
 
-
 我已经不接触小程序很久了，但既然要从头做一个还算复杂的小程序，那就要先给自己约法三章。
-
 
 ### 使用原生技术栈，拒绝第三方框架
 
-
 小程序更新节奏很快，而且不乏各种 Breaking Changes，很多第三方框架不能完美 Follow 这些更新，以至于一些早年间大火的框架到现在都不再维护。而且小程序技术经历几年的更新，已经比刚推出的时候强大很多了，如果没有强烈的跨平台需求，使用原生技术栈或许是更好的选择。
-
 
 ### 全面拥抱 ES6+ 语法；Promisify 所有的 wx API
 
-
 小程序开发者工具已经支持绝大部分我们日常能使用到的 ES6+ 语法了，并且也支持了目前处理回调最常用的 async await 语法。但官方的 `wx.showLoading` 等 API 都还是只能使用回调，因此开发业务前的第一件事就是让所有的微信 API 支持 Promise 形式调用。
-
 
 最后我的解决方案是使用了微信官方提供的 wxp 库：[API Promise 化](https://developers.weixin.qq.com/miniprogram/dev/extended/utils/api-promise.html)。
 
@@ -65,22 +54,17 @@ promisify(wx.getUserProfile);
 export { wxp };
 export default wxp;
 
-
 // page.js
 import { wxp } from '../../utils/wxp';
 
 await wxp.showModal({ showCancel: false, title: '提示', content: errMsg });
 ```
 
-
 </details>
-
 
 > 💡 注意：从基础库 2.10.2 开始，大部分 API 就已经原生支持返回 Promise，因此未来我会在项目中逐步移除 wxp 库。详见文档：[异步 API 返回 Promise](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/api.html#API)。
 
-
 ### 拥抱模块化，简化 app.js
-
 
 项目中的公共内容，比如配置、工具函数等，全部按照模块拆分，并借由 ES6 中的模块系统实现复用，而不是一股脑塞进 app.js 中。总之，还是高内聚低耦合，保证全局模块是“薄”的。
 
@@ -109,12 +93,9 @@ const app = getApp();
 app.logger.log('...');
 ```
 
-
 </details>
 
-
 ### 确定小程序版本格式
-
 
 严格遵守 [SemVer 规范](https://semver.org/lang/zh-CN/)。
 
@@ -127,12 +108,9 @@ app.logger.log('...');
 修订号：当你做了向下兼容的问题修正。
 ```
 
-
 </details>
 
-
 ### 编写 CHANGELOG
-
 
 在项目中添加 `CHANGELOG.md`，记录每个版本的更新内容。
 
@@ -150,12 +128,9 @@ app.logger.log('...');
 - F 修复 首页弹窗的异常样式
 ```
 
-
 </details>
 
-
 ## 使用 Prettier + .editorconfig 进行代码格式化
-
 
 代码格式化是团队协作开发的基石之一，[Editorconfig](https://editorconfig.org/) 可以消除不同开发成员因为代码编辑器带来的风格差异；而 [Prettier](https://prettier.io/) 是目前最流行的前端代码格式化工具，我们可以通过添加一些规则使其适用于我们的微信小程序项目。
 
@@ -178,7 +153,6 @@ insert_final_newline = true
 trim_trailing_whitespace = false
 ```
 
-
 </details>
 
 <details>
@@ -193,20 +167,19 @@ module.exports = {
   overrides: [
     {
       files: '*.wxml',
-      options: { parser: 'html' }
+      options: { parser: 'html' },
     },
     {
       files: '*.wxss',
-      options: { parser: 'css' }
+      options: { parser: 'css' },
     },
     {
       files: '*.wxs',
-      options: { parser: 'babel', quoteProps: 'preserve' }
-    }
-  ]
+      options: { parser: 'babel', quoteProps: 'preserve' },
+    },
+  ],
 };
 ```
-
 
 </details>
 
@@ -219,12 +192,9 @@ module.exports = {
 },
 ```
 
-
 </details>
 
-
 ## ⭐️ 拆分请求层和接口层，实现接口管理和复用
-
 
 对 `wx.request` 进行封装，支持：
 
@@ -233,7 +203,7 @@ module.exports = {
 - 自定义错误提示内容
 - 是否自动携带 Token
 - 添加自定义拦截器
-<details>
+  <details>
 <summary>`utils/http.js`</summary>
 
 ```javascript
@@ -273,7 +243,7 @@ export default ({
     wx.request({
       ...options,
       header: Object.assign(header, options['header'] || {}),
-      success: res => {
+      success: (res) => {
         if (showLoading) wx.hideLoading();
 
         if (options.successInterceptor) {
@@ -305,19 +275,16 @@ export default ({
             else if (
               res.data &&
               res.data.code &&
-              [
-                'invalid_auth_token',
-                'auth_token_expired',
-                'missing_auth_token',
-                'user_login_status_error'
-              ].includes(res.data.code)
+              ['invalid_auth_token', 'auth_token_expired', 'missing_auth_token', 'user_login_status_error'].includes(
+                res.data.code,
+              )
             ) {
               Auth.clearToken();
               const msgRelation = {
                 invalid_auth_token: '登录状态已失效，请重试',
                 auth_token_expired: '登录已过期，请重试',
                 missing_auth_token: '未能获取到您的登录凭证，请重试',
-                user_login_status_error: '登录状态异常，请重试'
+                user_login_status_error: '登录状态异常，请重试',
               };
               finalMsg = res.data.code ? msgRelation[res.data.code] : '登录状态异常，请重试';
             }
@@ -332,7 +299,7 @@ export default ({
           reject(res);
         }
       },
-      fail: err => {
+      fail: (err) => {
         if (showLoading) wx.hideLoading();
 
         if (options.failInterceptor) {
@@ -343,14 +310,12 @@ export default ({
         wx.showToast({ title: '请求发送失败，请稍候重试', icon: 'none', duration: 1500 });
 
         reject(err);
-      }
+      },
     });
   });
 ```
 
-
 </details>
-
 
 而所有的接口请求都封装成异步方法放置在 api 文件夹下进行统一管理。
 
@@ -368,7 +333,7 @@ export const reqFetchGoods = (data, showLoading = true) =>
     url: buildUrl(`/goods`),
     method: 'GET',
     data,
-    showLoading
+    showLoading,
   });
 
 // 获取商品详情
@@ -376,19 +341,15 @@ export const reqShowGoods = (goodsId, showLoading = true) =>
   http({
     url: buildUrl(`/goods/${goodsId}`),
     method: 'GET',
-    showLoading
+    showLoading,
   });
 ```
 
-
 </details>
-
 
 ## ⭐️ app.js 和 page.js 间的数据交互
 
-
 进入小程序后，app.js 和 page.js 会同时执行，这就导致假如 page.js 中需要拿到一些 app.js 中的数据时，必须给全局的 `app` 对象添加一个回调，并且在 app.js 中判断是否存在这个回调。小程序开发者工具给出的 Demo 项目中就可以看到使用这种逻辑来在页面中获取用户信息。**但是这种方式非常繁琐，会导致 page.js 和 app.js 中回调满天飞，难以维护。**
-
 
 而我的解决思路是，在 app.js 中定义统一的回调函数，比如专门用于获取用户信息的 `getUserInfo(cb)` 函数，参数 cb 是页面传入的回调函数。在 app.js 中判断用户信息是否已初始化完毕，如果已完毕则直接执行页面回调；反之则先将 cb 暂存，等待用户信息初始化完毕后统一执行回调。如此一来，我们对于任何需要获取用户信息的需求都可以通过 `app.getUserInfo` 这一个入口解决。
 
@@ -401,7 +362,7 @@ App({
     isUserInfoInited: false,
     userInfoListeners: [],
     isLogged: false,
-    userInfo: null
+    userInfo: null,
   },
 
   async onLaunch(options) {
@@ -411,7 +372,7 @@ App({
   async initUserInfo(reLogin = false) {
     // 从未走过登录逻辑，或强制要求重新登录
     if (!Auth.isLoginActionCompleted() || reLogin) {
-			// Auth.login 用于获取用户信息并保存在本地
+      // Auth.login 用于获取用户信息并保存在本地
       await Auth.login();
     }
 
@@ -420,12 +381,12 @@ App({
 
     // 执行 getUserInfo 方法中暂存的回调函数
     this.globalData.isUserInfoInited = true;
-    this.globalData.userInfoListeners.forEach(listener => {
+    this.globalData.userInfoListeners.forEach((listener) => {
       listener(
         new IAppUserInfo({
           isLogged: this.globalData.isLogged,
-          userInfo: this.globalData.userInfo
-        })
+          userInfo: this.globalData.userInfo,
+        }),
       );
     });
     this.globalData.userInfoListeners = [];
@@ -435,19 +396,18 @@ App({
       cb(
         new IAppUserInfo({
           isLogged: this.globalData.isLogged,
-          userInfo: this.globalData.userInfo
-        })
+          userInfo: this.globalData.userInfo,
+        }),
       );
     } else {
       this.globalData.userInfoListeners.push(cb);
     }
   },
   async getUserInfoAsync() {
-    return new Promise(resolve => this.getUserInfo(resolve));
-  }
+    return new Promise((resolve) => this.getUserInfo(resolve));
+  },
 });
 ```
-
 
 </details>
 
@@ -466,21 +426,15 @@ async onLoad(options) {
 },
 ```
 
-
 </details>
-
 
 > 💡 除了在页面内异步获取用户信息这种需求，你还可以用类似的思路把一些变动不频繁的计算放到 app.js 里，比如自定义导航栏的高度、一些用户手机相关的系统信息等，可以显著提高性能。
 
-
 ## 选用 Vant Weapp 替换 WeUI，并编写脚本进行维护
-
 
 在项目开发初期，我们使用了官方扩展 WeUI 组件库 (主要是使用了 Icon 图标组件)。其优点是微信内置，小程序引入时不会额外增加小程序体积。但后来发现 WeUI 组件库仍不能满足开发需求，调研后决定引入 [Vant Weapp](https://youzan.github.io/vant-weapp/#/home) 组件库替代 WeUI。
 
-
 我们的项目只需要用到其中一部分组件，比如图标组件 Icon，评分组件 Rate 等，因此我们最好进行按需引入。实现方式也很简单，把 Vant Weapp 编译好的 dist 目录中需要用到的各个组件文件夹直接复制到项目中即可。因此在项目中新建了 `vendor/vant` 文件夹存放需要用到的 Vant 组件。
-
 
 虽然听起来简单，但实际存在两个问题：
 
@@ -515,7 +469,6 @@ console.log(chalk.green(`Migrated!`));
 console.log(chalk.green(`Upgrade Success! Please republish the components you need.`));
 ```
 
-
 </details>
 
 <details>
@@ -528,25 +481,18 @@ const { Command } = require('commander');
 const path = require('path');
 
 const program = new Command();
-program
-  .requiredOption('-n --folder-names <names...>', 'Component folders you need.')
-  .parse(process.argv);
+program.requiredOption('-n --folder-names <names...>', 'Component folders you need.').parse(process.argv);
 const options = program.opts();
 const folderNames = options.folderNames;
 
-folderNames.forEach(name => {
+folderNames.forEach((name) => {
   shell.rm('-rf', path.resolve(__dirname, `../src/vendor/vant/${name}`));
-  shell.cp(
-    '-R',
-    path.resolve(__dirname, `../vant/${name}`),
-    path.resolve(__dirname, `../src/vendor/vant/${name}`)
-  );
+  shell.cp('-R', path.resolve(__dirname, `../vant/${name}`), path.resolve(__dirname, `../src/vendor/vant/${name}`));
   console.log(chalk.blue(`Component ${name} has been published.`));
 });
 
 console.log(chalk.green(`All components have been published!`));
 ```
-
 
 </details>
 
@@ -560,21 +506,17 @@ console.log(chalk.green(`All components have been published!`));
 },
 ```
 
-
 </details>
-
 
 ## ⭐️ 引入 ESLint 实现 JS 代码检查
 
-
 小程序在完成一期需求后工程就已经很大了，为了继续提高项目稳定性，我决定引入 ESLint 实现代码检查。
-
 
 有几个重点：
 
 - 要把不需要检查的第三方库等添加至 `.eslintignore` 进行忽略，比如 Vant 组件库
 - 可以通过添加 `eslint-config-prettier` 和 `eslint-plugin-prettier` 插件，将 Prettier 和 ESLint 结合起来使用
-<details>
+  <details>
 <summary>`.eslintrc.js`</summary>
 
 ```javascript
@@ -607,12 +549,9 @@ module.exports = {
 };
 ```
 
-
 </details>
 
-
 ## 引入 (一点都不好用的) 单元测试
-
 
 单元测试也是提高代码质量的重要手段之一，因此我也尝试在项目中引入官方的单元测试功能。详情文档：[单元测试](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/unit-test.html)。但至少在我看来，小程序的单元测试功能真的非常难用，而且文档极度简陋，目前个人认为这项功能仍处于可用性不强的阶段。
 
@@ -640,18 +579,13 @@ describe(specDesc, () => {
 });
 ```
 
-
 </details>
-
 
 ## ⭐️ 设置独立的跳转中间页
 
-
 小程序中有很多可以进行分享的页面，如助力页、活动页等；以及一大批消息推送后用户可以点击消息卡片打开的页面，这些页面需要后端代码配置对应的页面路径，而每当小程序端文件夹结构变化时，后端代码也需要跟着改变，非常麻烦。
 
-
 随着这些入口越来越多，跳转的维护愈发复杂，因此我决定引入一个专门的中间页面 (`/pages/portal/portal`) 处理全部跳转行为。
-
 
 不管是前端生产的分享链接，还是后端代码配置的目标路径，永远都指向 Portal 页。小程序进入 Portal页后，页面再根据参数 pk (意为 PageKey) 在小程序端进行一次重定向。
 
@@ -673,7 +607,7 @@ Component({
         optionsObj = urlParamsToObj(decodeURIComponent(pageOptions.scene));
         adapters = {
           // 1001 => 小程序扫码打开活动详情页。例：scene=encodeURIComponent('?pk=1001&goodsId=${number}')
-          1001: this._adaptToActivityDetailByQrcode
+          1001: this._adaptToActivityDetailByQrcode,
         };
       }
       // 非扫码进入
@@ -698,23 +632,18 @@ Component({
     },
     _adaptToPageB(options) {
       reLaunch('B', `?userId=${options.userId}&pageFrom=PORTAL`);
-    }
-  }
+    },
+  },
 });
 ```
 
-
 </details>
-
 
 ## ⭐️⭐️ 小程序一键上传 & 版本管理
 
-
 在小程序稳步迭代半年之际，我实在是受够了每次都要从开发者工具中点击上传按钮、填写版本号、发布的操作。好在微信提供了官方的 [CI 工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/ci.html)，因此我决定编写一个脚本实现小程序的一键上传功能，并且这个脚本最好能够一键维护小程序版本。
 
-
 思路就是小程序项目内放置一个 env.js 文件，它专门向外抛出项目的运行环境和版本号信息这两个变量，所有的接口、配置等需要区分环境的时候，都导入 env.js 中的变量进行区分。而 env.js 则由上传脚本自动生成并维护。
-
 
 脚本并不复杂，也只需要接收两个参数：`-e` 和 `-s`。-e 表示将要上传的小程序的环境，支持 dev, staging 和 prod 三种，分别对应开发、预发布和正式；-s 则可以给三位的正式版本号后面添加一个子版本号，主要用于在团队内部沟通、测试时使用，比如测试同事可以记录 V4.3.0.1 发现的问题，而开发人员修复后则可以发布一个 V4.3.0.2 的新版本以供回测。正式上线时则使用 V4.3.0 这个三位版本号。
 
@@ -740,13 +669,10 @@ const env = options.env.toUpperCase();
 const subVersion = options.subVersion;
 
 if (!['DEV', 'STAGING', 'PROD'].includes(env)) {
-  console.error(
-    chalk.red(`Required option '-e, --env' must be one of 'dev', 'staging' or 'prod'.`)
-  );
+  console.error(chalk.red(`Required option '-e, --env' must be one of 'dev', 'staging' or 'prod'.`));
   return;
 }
-const fullVersion =
-  env === 'PROD' ? `${env}-${mainVersion}` : `${env}-${mainVersion}-${subVersion}`;
+const fullVersion = env === 'PROD' ? `${env}-${mainVersion}` : `${env}-${mainVersion}-${subVersion}`;
 const envFileCtx = `export const ENV = '${env}';
 export const VERSION = '${fullVersion}';
 `;
@@ -787,7 +713,6 @@ const project = new ci.Project({
 })();
 ```
 
-
 </details>
 
 <details>
@@ -800,36 +725,25 @@ import { ENV } from './env';
 export const BASE_URL_API = ENV === 'DEV' ? 'http://prod.com' : 'https://dev.com';
 ```
 
-
 </details>
-
 
 > 💡 关于脚本中的 `npx gulp build` 等命令请结合下文的 _**引入 Gulp 工作流**_ 一节。
 
-
 ## 设置开发人员和测试人员专用的辅助页面
-
 
 在小程序开发过程中，有一些功能可能是开发人员和测试人员常用的，比如查看当前用户信息、一键清空缓存、获取新的 login code 等，因此我们可以开发一个专用的页面存放这些功能，而入口则依据小程序运行环境决定是否隐藏。
 
-
 我在小程序首页的左下角添加了一个小角标，用于标记当前小程序的版本号和环境。角标具有鲜明的背景色，开发环境是绿色，预发布环境是红色，生产环境则进行隐藏。点击角标则可以进入开发和测试人员专用的 Helper 页面。
-
 
 ![l2NhBIcbRMFgjus.png](https://cdn.sa.net/2024/03/15/l2NhBIcbRMFgjus.png)
 
-
 ![aeVQTZ4cdoEzi9F.png](https://cdn.sa.net/2024/03/15/aeVQTZ4cdoEzi9F.png)
-
 
 ## ⭐️ 实现小程序中的路由系统
 
-
 小程序的路由高度依赖文件夹结构，每当项目文件更换路径，就需要全局查找并替换页面路径；并且 `wx.navigateTo` 等 API 本身只能接受字符串形式的路由参数，因此常常需要我们手动拼接路由参数。为了解决这些痛点，我从 Vue Router 中得到灵感，封装了一套简易的路由系统。
 
-
 思路也很简单，就是给所有的页面取个名字，放进一个路由对象中，格式为 `{ routeName: 'routePath' }`。进行路由跳转时，只需要调用 `Routes[routeName]` 即可获取真实路径。这样我们就可以随意组织小程序文件夹结构，而不会影响逻辑代码了。
-
 
 至于拼接参数的问题，我们则可以编写一个简单的函数，接受对象类型的参数，并组装成字符串即可。而小程序提供的多个路由函数，我们也只需要使用一个高阶函数即可生成，不需要每个都单独封装一遍。
 
@@ -844,13 +758,12 @@ export const Routes = {
   Portal: '/pages/portal/portal',
   Login: '/pages/login/login',
   Helper: '/pages/helper/helper',
-	Address: '/pages/profiles/address/address',
+  Address: '/pages/profiles/address/address',
   Setting: '/pages/profiles/setting/setting',
-	// 尤其适用于这种很长的路径！
+  // 尤其适用于这种很长的路径！
   ArticleDetail: '/subpackages/rickTextRender/pages/articleDetail/articleDetail',
 };
 ```
-
 
 </details>
 
@@ -904,7 +817,6 @@ export const navigateTo = generateRoute(wx.navigateTo);
 export const redirectTo = generateRoute(wx.redirectTo);
 ```
 
-
 </details>
 
 <details>
@@ -918,29 +830,20 @@ navigateTo('ActivityDetail', `?goodsId=${goodsId}`);
 navigateTo('CommentDetail', {
   client: this.commentClient,
   topicId: this.data.reportId,
-  commentId
+  commentId,
 });
 
 // 支持 EventChannel
-navigateTo(
-  'Address',
-  { pageFrom: 'POINT_MALL_SUBMIT' },
-  { addressSubmitted: this.initAddressForm.bind(this) }
-);
+navigateTo('Address', { pageFrom: 'POINT_MALL_SUBMIT' }, { addressSubmitted: this.initAddressForm.bind(this) });
 ```
-
 
 </details>
 
-
 ## 按照就近原则组织项目
-
 
 在项目初期，我是几乎对照 Vue CLI 项目组织代码，比如把组件都放在 components 文件夹下，把图片和图标放在 assets 文件夹下，但随着项目中的组件和文件越来越多，components 和 assets 目录下出现了大量只用到一次的组件和图片。
 
-
 由于小程序严格限制每个包最大只有 2M，我们需要更加注重项目体积。因此，为了应付越发复杂的需求，我对项目代码进行了重新整理，主要是根据是否复用把组件和静态资源进行了拆分，只在页面中使用一次的组件或资源放置在页面同级下，而真正被多次复用的组件和资源才放置在 compoents 和 assets 中。
-
 
 如此一来，当某个页面废弃时，我们只需要移除这个页面文件夹，当前页面独享的组件和资源将被一起移除，不用再满项目查找。
 
@@ -1005,18 +908,13 @@ navigateTo(
         └── reports.wxss
 ```
 
-
 </details>
-
 
 ## 权限模块
 
-
 我把小程序项目中所有授权和权限相关逻辑全部放置在 `utils/Auth.js` 中。
 
-
 ### 微信授权统一管理
-
 
 在小程序开发过程中，一定会和微信授权打交道。用户授权是一个很麻烦的事情，毕竟在整个小程序周期中，有些权限只要用户拒绝过一次就无法再次发起。因此我们需要在用户拒绝授权后尽量给出提示，尝试引导用户主动打开授权。
 
@@ -1067,7 +965,6 @@ static async isWxAuthed(scope, withRejectGuide = true) {
 }
 ```
 
-
 </details>
 
 <details>
@@ -1087,28 +984,22 @@ async onSaveQrcode() {
 }
 ```
 
-
 </details>
-
 
 ### ⭐️⭐️ 用户登录拦截
 
-
 随着小程序项目越来越大，我们不得不考虑用户登录操作的各种时机。项目早期，用户登录操作分布在各种地方，比如活动页的某个按钮可能会触发登录、“我的” 页面的头像也会触发登录，而点击任意一个菜单也有可能触发登录。这种分散的操作给项目维护带来了很大的负担。
-
 
 后续我们决定将用户的登录操作收敛到一个统一的登录页面，只要需要用户进行登录，就全部重定向到登录页进行登录。并且由于我们会在用户登录后记录用户的 openid，因此用户重新进入小程序后（包括删除小程序再进去）也可以直接通过 openid 获取用户信息实现小程序端的登录。**也就是说，用户在整个使用小程序的生命周期中，只需要登录一次，所以此处的登录其实更像是“注册”操作。**
 
-
 > 💡 从 2021 年 2 月 23 日起，小程序可以通过 wx.login 接口直接获取用户的 unionId，因此在数据库中应当使用 unionId 作为用户唯一标识而非 openid。
-
 
 具体实现思路：
 
 1. 在 app.js 中初始化用户登录状态和用户信息，并将这些信息保存到 localStorage 中。比如未登录就保存 `is_logged` 值为 false
 2. **封装** **`requireLogged`** **方法，传入一个回调函数，如果用户已登录则直接执行回调，没有则跳转到登录页。**也就是用 `requireLogged` 方法包裹登录后执行的逻辑。这个方法需要结合 `wx.navigateTo` 和 [EventChannel](https://developers.weixin.qq.com/miniprogram/dev/api/route/EventChannel.html) 共同实现，注意 navigateTo 的第三个参数即是监听登录完毕事件
 
-	> 💡 这种方案有一个优点是对于开发人员来说几乎无感，只需要把原来的逻辑用函数包裹一下复制到 requireLogged 中间即可。
+   > 💡 这种方案有一个优点是对于开发人员来说几乎无感，只需要把原来的逻辑用函数包裹一下复制到 requireLogged 中间即可。
 
 <details>
 <summary>`utils/Auth.js`</summary>
@@ -1133,14 +1024,10 @@ static requireLogged(cb, immediateDoCb = false, forceDoLogin = false) {
 }
 ```
 
-
 </details>
 
-3. 在 Login 页面实现登录逻辑，当登录成功后：
-	1. 请求后台接口，保存用户信息
-	2. 重新执行 app.js 中的用户信息初始化方法
-	3. 执行 `await wx.navigateBack()` 返回上一级页面。**注意：此处的 await 不能省略！这是由于假如 callback 里面的操作是一个页面跳转，那么如果不添加 await 等待返回操作执行完毕，可能会引起页面栈混乱而报错**
-<details>
+3. 在 Login 页面实现登录逻辑，当登录成功后：1. 请求后台接口，保存用户信息 2. 重新执行 app.js 中的用户信息初始化方法 3. 执行 `await wx.navigateBack()` 返回上一级页面。**注意：此处的 await 不能省略！这是由于假如 callback 里面的操作是一个页面跳转，那么如果不添加 await 等待返回操作执行完毕，可能会引起页面栈混乱而报错**
+   <details>
 <summary>`login.js`</summary>
 
 ```javascript
@@ -1167,7 +1054,6 @@ async onLogin() {
 },
 ```
 
-
 </details>
 
 <details>
@@ -1175,26 +1061,25 @@ async onLogin() {
 
 ```javascript
 // 一个用户点赞操作。未登录时会自动跳转到登录页，已登录则直接触发点赞
-Auth.requireLogged(() => {
-  this.triggerEvent('click-like');
-},
-// 完成登录后直接再次触发点赞操作
-true);
+Auth.requireLogged(
+  () => {
+    this.triggerEvent('click-like');
+  },
+  // 完成登录后直接再次触发点赞操作
+  true,
+);
 ```
-
 
 </details>
 
-
 ## 定义模型类保证数据结构稳定
-
 
 小程序经历了一系列迭代后，有些数据是需要整个项目到处使用的，比如用户信息、系统信息、导航栏信息、评论参数对象等。为了保证这些“到处乱飞”的数据的稳定，我从 TypeScript 中的 `interface` 汲取灵感，定义了一些类似后端开发中常见的 `Model`，当需要使用固定的数据结构时，必须使用 `new` 关键字进行实例化。这样有几个好处：
 
 - 可以把复杂的大量参数进行封装，跨组件通信时只传递实例化出来的对象
 - 当需要查看某个数据结构时，只需要查看对应的类结构即可
 - 在微信开发者工具等 IDE 中，可以实现一定的代码补全效果
-<details>
+  <details>
 <summary>Example：评论系统中的 `CommentPayload`</summary>
 
 ```javascript
@@ -1220,7 +1105,7 @@ export class CommentPayload {
     // 编辑框最长字数
     editorMaxLength = 140,
     // 编辑框最小字数
-    editorMinLength = 0
+    editorMinLength = 0,
   }) {
     this.client = client;
     this.topicId = topicId;
@@ -1239,15 +1124,11 @@ export class CommentPayload {
 }
 ```
 
-
 </details>
-
 
 ## ⭐️⭐️ 引入 Gulp 工作流
 
-
 在小程序开发过程中，样式编写大概是永远的痛点之一。在面对越发复杂的样式需求时，小程序的 wxss 很难满足我的要求。因此我尝试在小程序中使用 Scss 语法编写样式，在一系列对比后，我还是选择了流畅简单的 Gulp。当然，既然引入了 Gulp，我们就可以做更多花哨的操作了，比如，生产环境下对 js 和 wxss 进行代码压缩、把部分高阶 ES 语法转译为低阶语法、使用 yaml 代替 json 编写配置等。
-
 
 我们的小程序中没有使用太复杂的 Gulp 配置，只是着重支持了 Scss 代码编写、样式和 JS 代码压缩两个功能，而构建后的产物则输出到 dist 目录下。引入 Gulp 后，小程序的改动并不大，主要是：
 
@@ -1280,7 +1161,7 @@ const PANTONE = path.resolve(__dirname, './pantone');
 const _clean = () => del(DIST);
 const _copy = (ext) => gulp.src(`${SRC}/**/*.${ext}`).pipe(gulp.dest(DIST));
 const staticExts = ['png', 'jpg'];
-const _static = gulp.parallel(staticExts.map(ext => () => _copy(ext)));
+const _static = gulp.parallel(staticExts.map((ext) => () => _copy(ext)));
 const _wxml = () => _copy('wxml');
 const _wxs = () => _copy('wxs');
 const _json = () => _copy('json');
@@ -1315,7 +1196,6 @@ const pantone = gulp.series(_pantone);
 module.exports = { build, watch, pantone };
 ```
 
-
 </details>
 
 <details>
@@ -1327,7 +1207,6 @@ module.exports = { build, watch, pantone };
   "build": "NODE_ENV=production npx gulp build"
 },
 ```
-
 
 </details>
 
@@ -1399,12 +1278,9 @@ $color-red: #ee0a24;
 }
 ```
 
-
 </details>
 
-
 ## ⭐️ 使用 CSS 变量
-
 
 为了让项目中的各种颜色、字号更加统一，我们有必要提前定义好一些可用的色值字号。目前比起 Scss 变量，我更推荐在项目中使用原生的 CSS 变量，而微信小程序也是支持使用 CSS 变量的。
 
@@ -1414,11 +1290,11 @@ $color-red: #ee0a24;
 ```scss
 // styles/_reset.scss
 page {
-	// 定义 CSS 变量
-	--color-primary: #fbd45f;
-	--size-base: 28rpx;
+  // 定义 CSS 变量
+  --color-primary: #fbd45f;
+  --size-base: 28rpx;
 
-	// ...
+  // ...
 }
 
 view {
@@ -1426,9 +1302,7 @@ view {
 }
 ```
 
-
 </details>
-
 
 然而，当项目中使用的 CSS 变量较多时，我们可以尝试使用 Scss 自动生成 CSS 变量。下面的代码大幅参考了 [Bootstrap](https://getbootstrap.com/)。另外，如果你想更深入的了解 Scss，我也强烈建议你阅读 Bootstrap 的源码，真的是集优雅与花哨于一身。
 
@@ -1446,7 +1320,6 @@ view {
   @return mix(black, $color, $weight);
 }
 ```
-
 
 </details>
 
@@ -1547,7 +1420,6 @@ view {
 }
 ```
 
-
 </details>
 
 <details>
@@ -1575,14 +1447,13 @@ page {
     sans-serif;
   font-size: var(--size-base);
 
-	// ...
+  // ...
 }
 
 view {
   box-sizing: border-box;
 }
 ```
-
 
 </details>
 
@@ -1596,15 +1467,11 @@ view {
 }
 ```
 
-
 </details>
-
 
 ## 引入 Stylelint 实现样式代码检查
 
-
 小程序引入 Gulp 工作流后就可以愉快的使用 Scss 编写样式了。而当我重新整理样式代码时才发现项目中的样式代码量已经非常可观，我们最好进一步对样式代码进行规范，因此我也在小程序项目中引入了 Stylelint。
-
 
 与 ESLint 类似，我们同样需要在项目根目录创建 `.stylelintrc.js` 和 `.stylelintignore` 进行一点点配置。
 
@@ -1639,18 +1506,12 @@ module.exports = {
 };
 ```
 
-
 </details>
-
 
 > 💡 关于 Stylelint 我有一篇更详细的文章：[使用 Stylelint 规范样式代码](https://www.notion.so/daf5144155274fcab73bcb1615d57093) 。
 
-
 ## 引入分包机制
-
 
 在项目迭代两个大版本后，小程序体积已经达到了 985KB 左右，对于体积的优化迫在眉睫。仔细分析发现，光是用于解析富文本的 towxml 依赖就占了 337KB，而这个功能的使用频率实际上非常低。
 
-
 因此近期小程序将使用到富文本的模块和积分商城模块进行拆分，使用了[小程序分包机制](https://developers.weixin.qq.com/miniprogram/dev/framework/subpackages/basic.html)。使用分包后，小程序主包体积下降至 631KB。未来的项目开发中，也应该积极考虑使用小程序分包技术，优化用户首次打开体验。
-

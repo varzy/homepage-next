@@ -106,25 +106,25 @@ export async function getAllPosts(): Promise<PostMeta[]> {
 
 export async function getPostBySlug(slug: string): Promise<PostMeta | null> {
   const posts = await getAllPosts();
-  return posts.find(post => post.slug === slug) || null;
+  return posts.find((post) => post.slug === slug) || null;
 }
 
 export async function getPostsByCategory(category: string): Promise<PostMeta[]> {
   const posts = await getAllPosts();
-  return posts.filter(post => post.category === category);
+  return posts.filter((post) => post.category === category);
 }
 
 export async function getPostsByTag(tag: string): Promise<PostMeta[]> {
   const posts = await getAllPosts();
-  return posts.filter(post => post.tags.includes(tag));
+  return posts.filter((post) => post.tags.includes(tag));
 }
 
 export async function getAllTags(): Promise<string[]> {
   const posts = await getAllPosts();
   const tagSet = new Set<string>();
 
-  posts.forEach(post => {
-    post.tags.forEach(tag => tagSet.add(tag));
+  posts.forEach((post) => {
+    post.tags.forEach((tag) => tagSet.add(tag));
   });
 
   return Array.from(tagSet).sort();
@@ -134,7 +134,7 @@ export async function getAllCategories(): Promise<string[]> {
   const posts = await getAllPosts();
   const categorySet = new Set<string>();
 
-  posts.forEach(post => {
+  posts.forEach((post) => {
     if (post.category) categorySet.add(post.category);
   });
 

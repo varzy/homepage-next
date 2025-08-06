@@ -1,23 +1,20 @@
 ---
-title: "Git 命令速览"
-category: "Coding"
-type: "Post"
-status: "Published"
-tags: ["Git"]
-date: "2020-03-27"
-slug: "git-commands"
-summary: ""
-last_edited_time: "2024-03-16T08:21:00.000Z"
-blog_last_fetched_time: "2025-08-06T03:20:49.904Z"
-notion_id: "4adbd600-cca4-4c09-845b-0790d95916e2"
+title: 'Git 命令速览'
+category: 'Coding'
+type: 'Post'
+status: 'Published'
+tags: ['Git']
+date: '2020-03-27'
+slug: 'git-commands'
+summary: ''
+last_edited_time: '2024-03-16T08:21:00.000Z'
+blog_last_fetched_time: '2025-08-06T03:20:49.904Z'
+notion_id: '4adbd600-cca4-4c09-845b-0790d95916e2'
 ---
-
 
 以 `{}` 包裹的为必填参数，以 `[]` 包裹的为可选参数。
 
-
 ## 配置
-
 
 ```bash
 # 添加 git 使用者的名字
@@ -35,9 +32,7 @@ git config --global core.autocrlf false
 git config --global core.safecrlf false
 ```
 
-
 ## 新建仓库
-
 
 ```bash
 # 初始化一个 Git 仓库
@@ -46,9 +41,7 @@ git config --global core.safecrlf false
 git init [floder] [--bare]
 ```
 
-
 ## 添加文件
-
 
 ```bash
 # 添加所有文件到暂存区
@@ -64,9 +57,7 @@ git add *.{type}
 git add -p
 ```
 
-
 ## 删除文件
-
 
 ```bash
 # 删除工作区的文件，并记录下此次删除操作
@@ -74,9 +65,7 @@ git add -p
 git rm {file} [--cached]
 ```
 
-
 ## 提交
-
 
 ```bash
 # 提交暂存区的所有文件到版本库，并添加提交信息
@@ -84,9 +73,7 @@ git rm {file} [--cached]
 git commit -m "[description]" [file1 file2 ...]
 ```
 
-
 ## 查看
-
 
 ```bash
 # 显示各个文件当前的变更情况
@@ -109,9 +96,7 @@ git diff [-- {file}]
 git diff HEAD [-- {file}]
 ```
 
-
 ## 撤销
-
 
 ```bash
 # 将某个文件回到最近一次 git commit 或 git add 时的状态
@@ -140,9 +125,7 @@ git stash
 git stash pop
 ```
 
-
 ## 分支
-
 
 ```bash
 # 列出所有本地分支
@@ -178,9 +161,7 @@ git merge [--no-ff] {branch}
 git rebase {branch}
 ```
 
-
 ## 标签
-
 
 ```bash
 # 列出所有标签
@@ -209,9 +190,7 @@ git push origin :refs/tags/{tag}
 git checkout -b {branch} {tag}
 ```
 
-
 ## SSH Key
-
 
 ```bash
 # 创建 SSH 密钥
@@ -224,9 +203,7 @@ ssh -T git@github.com
 ssh -T git@git.coding.net
 ```
 
-
 ## 克隆
-
 
 ```bash
 # 克隆远程仓库
@@ -234,9 +211,7 @@ ssh -T git@git.coding.net
 git clone {URL} [--depth {num}]
 ```
 
-
 ## 拉取
-
 
 ```bash
 # 显示所有远程仓库
@@ -259,9 +234,7 @@ git pull origin [branch]
 git fetch [remote] [-p]
 ```
 
-
 ## 推送
-
 
 ```bash
 # 推送本地当前分支的修改到远程仓库相应追踪分支。如果当前分支只有一个追踪分支，连远程主机名都可以省略
@@ -277,9 +250,7 @@ git push -u origin {branch}
 git push origin {branch} [-a]
 ```
 
-
 ## 修改远程仓库
-
 
 ```bash
 # 添加一个名为 origin 的远程仓库
@@ -293,9 +264,7 @@ git remote add {name} {URL}
 git remote set-url [--add] origin {URL}
 ```
 
-
 ## 子模块
-
 
 ```bash
 # 添加子模块
@@ -308,9 +277,7 @@ git submodule init
 git submodule update
 ```
 
-
 ## 配置命令别名
-
 
 ```bash
 # 配置命令别名。比如用 cl 代替 clone
@@ -319,9 +286,7 @@ git submodule update
 git config --global alias.{alias} {origin}
 ```
 
-
 ## 设置代理
-
 
 ```bash
 # 域名及端口号需要自行修改
@@ -330,4 +295,3 @@ git config --global --unset https.proxy
 git config --global http.proxy 'socks5://127.0.0.1:1086'
 git config --global https.proxy 'socks5://127.0.0.1:1086'
 ```
-

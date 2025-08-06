@@ -24,7 +24,7 @@ class PostsFetcher {
     this.converter = new NotionToMDXConverter(this.config.notionApiSecret);
   }
 
-    async fetch(): Promise<FetchResult> {
+  async fetch(): Promise<FetchResult> {
     console.log('🚀 Starting to fetch posts from Notion...');
 
     const result: FetchResult = { updated: 0, skipped: 0, errors: 0 };
@@ -58,8 +58,9 @@ class PostsFetcher {
         }
       }
 
-      console.log(`🎉 Fetch completed! Updated: ${result.updated}, Skipped: ${result.skipped}, Errors: ${result.errors}`);
-
+      console.log(
+        `🎉 Fetch completed! Updated: ${result.updated}, Skipped: ${result.skipped}, Errors: ${result.errors}`,
+      );
     } catch (error) {
       console.error('💥 Fatal error during fetch:', error);
       throw error;
@@ -76,7 +77,7 @@ class PostsFetcher {
   }
 
   private filterPostsToUpdate(posts: PostMetadata[]): PostMetadata[] {
-    return posts.filter(post => {
+    return posts.filter((post) => {
       // 检查本地文件是否存在
       const localFilePath = path.join(this.config.outputDir, `${post.slug}.mdx`);
       const fileExists = fs.existsSync(localFilePath);
@@ -109,7 +110,7 @@ class PostsFetcher {
     });
   }
 
-      private async processPost(post: PostMetadata): Promise<void> {
+  private async processPost(post: PostMetadata): Promise<void> {
     try {
       // 转换 Notion 页面为 Markdown
       const markdownContent = await this.converter.convertToMDX(post.notion_id);
@@ -120,7 +121,7 @@ class PostsFetcher {
       // 创建更新后的元数据对象（包含当前时间作为 blog_last_fetched_time）
       const updatedPost: PostMetadata = {
         ...post,
-        blog_last_fetched_time: new Date().toISOString()
+        blog_last_fetched_time: new Date().toISOString(),
       };
 
       // 生成 MDX 文件内容（使用更新后的元数据）
@@ -129,7 +130,6 @@ class PostsFetcher {
       // 保存到本地文件
       const filePath = path.join(this.config.outputDir, `${post.slug}.mdx`);
       fs.writeFileSync(filePath, mdxContent, 'utf-8');
-
     } catch (error) {
       console.error(`Error processing post ${post.title}:`, error);
       throw error;

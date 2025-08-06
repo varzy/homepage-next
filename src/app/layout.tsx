@@ -16,9 +16,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html className="scroll-smooth focus:scroll-auto" lang={SITE_CONFIG.lang}>
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

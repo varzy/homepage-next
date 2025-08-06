@@ -1,17 +1,16 @@
 ---
-title: "作用域 (执行上下文)；闭包；this"
-category: "Coding"
-type: "Post"
-status: "Published"
-tags: ["JavaScript", "八股文"]
-date: "2020-04-10"
-slug: "js-this-scope"
-summary: ""
-last_edited_time: "2024-03-16T08:21:00.000Z"
-blog_last_fetched_time: "2025-08-06T03:19:04.007Z"
-notion_id: "3cb5e506-4acd-4e4b-806e-c5128aa41882"
+title: '作用域 (执行上下文)；闭包；this'
+category: 'Coding'
+type: 'Post'
+status: 'Published'
+tags: ['JavaScript', '八股文']
+date: '2020-04-10'
+slug: 'js-this-scope'
+summary: ''
+last_edited_time: '2024-03-16T08:21:00.000Z'
+blog_last_fetched_time: '2025-08-06T03:19:04.007Z'
+notion_id: '3cb5e506-4acd-4e4b-806e-c5128aa41882'
 ---
-
 
 ## 作用域
 
@@ -26,57 +25,54 @@ notion_id: "3cb5e506-4acd-4e4b-806e-c5128aa41882"
 - 只要在一个函数中再定义一个函数，这个内部函数就是一个闭包
 - 闭包之所以能访问其外层函数作用域中的变量，是因为闭包的作用域链中存在外层函数的变量对象。即使外层函数执行结束，但由于其变量对象仍然被内层函数的作用域引用，因此不会被内存回收，直到闭包执行结束后，外层函数的变量对象才会被回收
 - 闭包的作用
-	- 可以实现私有变量
-	- 可以使得某些变量保存在内存中
+  - 可以实现私有变量
+  - 可以使得某些变量保存在内存中
 
 ## this
 
-
 this 就是函数运行时所在的环境对象。一共有四种情况：
-
 
 ### 纯粹的函数调用
 
-
 ```javascript
 // 以下两者情况 `this` 只依赖于调用函数前的对象，优先级是第二个情况大于第一个情况
-function foo() { console.log(this.a) }
-var a = 1
-foo() // 1
+function foo() {
+  console.log(this.a);
+}
+var a = 1;
+foo(); // 1
 ```
-
 
 ### 作为对象方法的调用
 
-
 ```javascript
-function foo() { console.log(this.a) }
-var obj = { a: 2, foo: foo }
+function foo() {
+  console.log(this.a);
+}
+var obj = { a: 2, foo: foo };
 
-obj.foo() // 2
+obj.foo(); // 2
 ```
-
 
 ### 作为构造函数调用
 
-
 ```javascript
-function foo() { this.a = 2 }
-var a = 1
-const obj = new foo()
-console.log(obj.a) // 2
+function foo() {
+  this.a = 2;
+}
+var a = 1;
+const obj = new foo();
+console.log(obj.a); // 2
 ```
 
-
 ### call, apply, bind 调用
-
 
 ```javascript
 var bob = {
   name: 'Bob',
   sayInfo: function (age, school) {
-    return `Name: ${this.name}. Age: ${age} years old. Studying at ${school}.`
-  }
+    return `Name: ${this.name}. Age: ${age} years old. Studying at ${school}.`;
+  },
 };
 var violet = {
   name: 'Violet',
@@ -85,4 +81,3 @@ var violet = {
 console.log(bob.sayInfo.call(violet, 13, 'abc'));
 // Name: Violet. Age: 13 years old. Studying at abc.
 ```
-

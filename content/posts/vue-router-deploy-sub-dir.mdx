@@ -1,20 +1,18 @@
 ---
-title: "Vue (Router) 项目在子路径部署"
-category: "Coding"
-type: "Post"
-status: "Published"
-tags: ["Vue", "Nginx", "Deploy"]
-date: "2020-03-27"
-slug: "vue-router-deploy-sub-dir"
-summary: ""
-last_edited_time: "2024-03-16T08:21:00.000Z"
-blog_last_fetched_time: "2025-08-06T03:20:20.187Z"
-notion_id: "19275676-eee2-4b8d-8d42-7b744a0b2197"
+title: 'Vue (Router) 项目在子路径部署'
+category: 'Coding'
+type: 'Post'
+status: 'Published'
+tags: ['Vue', 'Nginx', 'Deploy']
+date: '2020-03-27'
+slug: 'vue-router-deploy-sub-dir'
+summary: ''
+last_edited_time: '2024-03-16T08:21:00.000Z'
+blog_last_fetched_time: '2025-08-06T03:20:20.187Z'
+notion_id: '19275676-eee2-4b8d-8d42-7b744a0b2197'
 ---
 
-
 ## 方案一：hash 模式
-
 
 > xxx.com/app1/#/index
 
@@ -23,7 +21,6 @@ notion_id: "19275676-eee2-4b8d-8d42-7b744a0b2197"
 - 缺点是 url 比较反直觉，也不美观
 
 vue.config.js
-
 
 ```text
 module.exports = {
@@ -34,9 +31,7 @@ module.exports = {
 }
 ```
 
-
 router.js
-
 
 ```text
 export default new Router({
@@ -45,9 +40,7 @@ export default new Router({
 });
 ```
 
-
 nginx.conf
-
 
 ```text
 location /app1/ {
@@ -56,9 +49,7 @@ location /app1/ {
 }
 ```
 
-
 ## 方案二：history 模式
-
 
 > xxx.com/app1/index
 
@@ -68,16 +59,13 @@ location /app1/ {
 
 vue.config.js
 
-
 ```text
 module.exports = {
   publicPath: '/app1/',
 }
 ```
 
-
 router.js
-
 
 ```text
 export default new Router({
@@ -86,9 +74,7 @@ export default new Router({
 });
 ```
 
-
 nginx.conf
-
 
 ```text
 location /app1/ {
@@ -97,7 +83,6 @@ location /app1/ {
     try_files $uri $uri/ /app1/index.html;
 }
 ```
-
 
 ## 参考资料
 

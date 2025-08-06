@@ -18,9 +18,7 @@ export default async function Tag() {
     return { tag, postsCount: tagPosts.length };
   });
 
-  const sortedTags = tagsWithPostsCount
-    .filter((tag) => tag.postsCount > 0)
-    .sort((a, b) => b.postsCount - a.postsCount);
+  const sortedTags = tagsWithPostsCount.filter((tag) => tag.postsCount > 0).sort((a, b) => b.postsCount - a.postsCount);
 
   return (
     <BlogPageContainer pageHero={{ title: 'Tags' }}>

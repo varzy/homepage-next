@@ -1,20 +1,18 @@
 ---
-title: "微信小程序中使用 wxs 格式化时间"
-category: "Coding"
-type: "Post"
-status: "Published"
-tags: ["Miniprogram"]
-date: "2021-03-18"
-slug: "miniprogram-wxs-format-time"
-summary: ""
-last_edited_time: "2024-03-16T08:21:00.000Z"
-blog_last_fetched_time: "2025-08-06T03:17:42.889Z"
-notion_id: "c1a9149b-9c3b-4034-9a64-81657b9c5818"
+title: '微信小程序中使用 wxs 格式化时间'
+category: 'Coding'
+type: 'Post'
+status: 'Published'
+tags: ['Miniprogram']
+date: '2021-03-18'
+slug: 'miniprogram-wxs-format-time'
+summary: ''
+last_edited_time: '2024-03-16T08:21:00.000Z'
+blog_last_fetched_time: '2025-08-06T03:17:42.889Z'
+notion_id: 'c1a9149b-9c3b-4034-9a64-81657b9c5818'
 ---
 
-
 完整代码：
-
 
 ```javascript
 var _utcToDate = function (utc) {
@@ -52,7 +50,7 @@ var stringifyDate = function (date, type, format = 'yyyy-MM-dd hh:mm:ss') {
     ['m+', _formatNumber(realDate.getMinutes())],
     ['s+', _formatNumber(realDate.getSeconds())],
     ['q+', Math.floor((realDate.getMonth() + 3) / 3)],
-    ['S+', realDate.getMilliseconds()]
+    ['S+', realDate.getMilliseconds()],
   ];
   var regYear = getRegExp('(y+)', 'i');
   var reg1 = regYear.exec(format);
@@ -64,10 +62,7 @@ var stringifyDate = function (date, type, format = 'yyyy-MM-dd hh:mm:ss') {
     var v = date[i][1];
     var reg2 = getRegExp('(' + k + ')').exec(format);
     if (reg2) {
-      format = format.replace(
-        reg2[1],
-        reg2[1].length == 1 ? v : ('00' + v).substring(('' + v).length)
-      );
+      format = format.replace(reg2[1], reg2[1].length == 1 ? v : ('00' + v).substring(('' + v).length));
     }
   }
 
@@ -75,13 +70,11 @@ var stringifyDate = function (date, type, format = 'yyyy-MM-dd hh:mm:ss') {
 };
 
 module.exports = {
-  stringifyDate: stringifyDate
+  stringifyDate: stringifyDate,
 };
 ```
 
-
 代码并不复杂，其中最核心的部分就是先把各种各样的原始时间格式转化为标准的 `Date` 对象，然后再通过正则匹配给定的时间模板得到最终的字符串。
-
 
 如果需要支持更多的时间格式，理论上只需要扩展 `_getRegularDate` 方法即可。在上面的代码中支持三种时间格式：
 
@@ -91,10 +84,8 @@ module.exports = {
 
 使用示例：
 
-
 ```html
 <wxs src="../../wxs/moment.wxs" module="moment"></wxs>
 
 <view>{{moment.stringifyDate(time, 'TimestampByMS', 'MM月dd日 hh:mm')}}</view>
 ```
-

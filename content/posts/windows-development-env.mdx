@@ -1,23 +1,20 @@
 ---
-title: "Windows 开发环境搭建"
-category: "Coding"
-type: "Post"
-status: "Published"
-tags: ["Windows", "WSL"]
-date: "2021-11-23"
-slug: "windows-development-env"
-summary: ""
-last_edited_time: "2024-03-16T08:21:00.000Z"
-blog_last_fetched_time: "2025-08-06T03:16:45.387Z"
-notion_id: "a48130c1-4826-4016-8ec3-7166c17a4082"
+title: 'Windows 开发环境搭建'
+category: 'Coding'
+type: 'Post'
+status: 'Published'
+tags: ['Windows', 'WSL']
+date: '2021-11-23'
+slug: 'windows-development-env'
+summary: ''
+last_edited_time: '2024-03-16T08:21:00.000Z'
+blog_last_fetched_time: '2025-08-06T03:16:45.387Z'
+notion_id: 'a48130c1-4826-4016-8ec3-7166c17a4082'
 ---
-
 
 ## 基于 WSL 的开发环境搭建
 
-
 > 💡 WSL 实际上分为 WSL1 和 WSL2 两个大版本，目前微软主推 WSL2。文中的 WSL 均指 WSL2。
-
 
 ### WSL，What & Why?
 
@@ -28,38 +25,28 @@ notion_id: "a48130c1-4826-4016-8ec3-7166c17a4082"
 
 ### 安装 WSL
 
-
 🔗 官方文档：[安装 WSL | Microsoft Docs](https://docs.microsoft.com/zh-cn/windows/wsl/install)
 
-
 右键点击开始菜单，以管理员身份打开一个 PowerShell 终端，输入：
-
 
 ```bash
 wsl --install
 ```
 
-
 安装完毕后重启电脑即可。
-
 
 > 💡 这条命令会默认安装 Ubuntu 20.04 LTS 发行版。你也可以去 Microsoft Store 下载其他发行版。
 
-
 重启电脑后，开始菜单就会多出一个 Ubuntu 的图标，点击打开，会让你输入 WSL 的初始用户名和密码，填写后就安装完毕了。
 
-
 ### WSL 换源
-
 
 ```bash
 sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak
 sudo vim /etc/apt/sources.list
 ```
 
-
 阿里源：
-
 
 ```bash
 deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
@@ -74,33 +61,24 @@ deb http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe mu
 deb-src http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse
 ```
 
-
 > 💡 也可以自行更换为清华大学、中科院等源。
 
-
 更新软件包：
-
 
 ```bash
 sudo apt update
 sudo apt upgrade
 ```
 
-
 ### 使用 ohmyzsh 优化 WSL 终端体验
-
 
 详见笔记：[使用 ohmyzsh 提升终端使用体验](https://www.notion.so/332a9dfa723140af899e43639847c192)。
 
-
 ### WSL 走宿主机代理
-
 
 首先，在 Clash for Windows 中打开 `Allow Lan`。接着，我们需要在 Windows 安全中心的防火墙中设置 Clash 允许通过防火墙。
 
-
 ![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e753f4ed-a9d5-4b94-80b5-b5d3a8dd4851/77ee35b4-5671-4b2c-8fc2-fee7b40013c3/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466U2Z3LICZ%2F20250806%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250806T031639Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDMaCXVzLXdlc3QtMiJIMEYCIQCMChbJj77w17biMPsvBC80JkOyWlpZnR%2Fer%2BcKV83dwgIhAPfuCR5mt%2BsainDmandnJrQ%2FpnySOmcRWON65vZFEuOkKv8DCGsQABoMNjM3NDIzMTgzODA1IgzDwFT5IqUKaeoz%2BPMq3ANex2VtZDrZ22foys1Oa2zzZqUPSHs3kze6SH69n1jKis3bOG5AhvjIXh6A7Vb5RC%2BMXWty0DgMcINMdLQrAtPfVIRTE9EaYBuAoQJjYEpU6FaM6jG7G3M1N3jjmwX8MFUIy6UuLLdA4x311ROysFP2D5C31PCh320zNJ4e%2FvZhKNljcqEMGI9kzQRx6Jm2TcRVoOb6vjECkoGiWiw66eUKW9pzxO9v6tyu12%2Fx8lIle2JZh0Puu5k4BbHgACfP4nUE6sBJ%2B2DwGOznoqhwg4F6IQ8rTyUX6SHds3FVHeSRq4UyCi3UNPcYhnkhBYqrep88nayB6JhgYtrwI25x%2B0sROmCNtIXuCrMmsmASG1PVzGmKntp95G7oIXNZOBh4XdOzbBt%2FCJqT8WQdd4itvxppNizX28kzYpvetUOVxmsfJ9iLtyAgenwzUs1uYXD%2B47p9bL7oRS1eKjLsDPAYkWsA1qABq7RlFxnvMtdJUrCYuAqAb0l28i2eZKPzmqmli%2BEfJq8aTTuCBJx2qcb9j7d%2FcRDMdlospw4N7kQLtxZBIDe7asmaYOkLiGSbouss%2BKJ%2B18klrAaYvrN4sBTUFVPBwzM9ZknLRaJp0oJ1H0%2FkFaJyxoAUFQsUS2hLBTCK%2BMrEBjqkAfWfYZPuMJx9MGwvJC2GQ2aKhMeDtPcDZ69jq%2F3mD026zEHSo%2FNKWsTSeGvtqrytMoNQrQHd1EDiBa7pk0A5Nc7nfxM7nH6JnPorUHTq%2Fy4gJzHxGFfWEPcw54mcC2RBBBF9ANk07gS%2BNfJc0lakqF1VpeLdvCETvPTR0GCn0AN9FW9XHL0sY9QGDdQh7wZA1oxJ8i2yjmIP31HHyGAg95deJdB5&X-Amz-Signature=4aa3058e4ce252f8fa45294865ebee773c10eea9ae79e8df6c5467cf3c25a406&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
-
 
 在 WSL 内添加一个脚本：
 
@@ -151,12 +129,9 @@ else
 fi
 ```
 
-
 </details>
 
-
 在 .zshrc 中添加 alias：
-
 
 ```bash
 alias myip="curl myip.ipip.net"
@@ -165,32 +140,23 @@ alias unproxy="source $HOME/Library/proxy.sh unset"
 alias proxytest="source $HOME/Library/proxy.sh test"
 ```
 
-
 这样一来，我们只需要在终端中执行 `proxy` 即可让 WSL 走宿主机代理，执行 `unproxy` 即可取消。
 
-
 也可以在 .zshrc 中设置进入终端自动代理：
-
 
 ```bash
 source $HOME/Library/proxy.sh set
 ```
 
-
 ### 安装 Docker
-
 
 去 Docker 官网下载 [Docker Desktop](https://www.docker.com/products/docker-desktop) 并安装。
 
-
 Docker Desktop 会自动检测系统是否存在 WSL，如果存在则会以 WSL 作为 Docker Based Engine。
-
 
 ![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e753f4ed-a9d5-4b94-80b5-b5d3a8dd4851/f7fbec11-d340-4d89-b9de-0ebed7e07401/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466U2Z3LICZ%2F20250806%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250806T031639Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDMaCXVzLXdlc3QtMiJIMEYCIQCMChbJj77w17biMPsvBC80JkOyWlpZnR%2Fer%2BcKV83dwgIhAPfuCR5mt%2BsainDmandnJrQ%2FpnySOmcRWON65vZFEuOkKv8DCGsQABoMNjM3NDIzMTgzODA1IgzDwFT5IqUKaeoz%2BPMq3ANex2VtZDrZ22foys1Oa2zzZqUPSHs3kze6SH69n1jKis3bOG5AhvjIXh6A7Vb5RC%2BMXWty0DgMcINMdLQrAtPfVIRTE9EaYBuAoQJjYEpU6FaM6jG7G3M1N3jjmwX8MFUIy6UuLLdA4x311ROysFP2D5C31PCh320zNJ4e%2FvZhKNljcqEMGI9kzQRx6Jm2TcRVoOb6vjECkoGiWiw66eUKW9pzxO9v6tyu12%2Fx8lIle2JZh0Puu5k4BbHgACfP4nUE6sBJ%2B2DwGOznoqhwg4F6IQ8rTyUX6SHds3FVHeSRq4UyCi3UNPcYhnkhBYqrep88nayB6JhgYtrwI25x%2B0sROmCNtIXuCrMmsmASG1PVzGmKntp95G7oIXNZOBh4XdOzbBt%2FCJqT8WQdd4itvxppNizX28kzYpvetUOVxmsfJ9iLtyAgenwzUs1uYXD%2B47p9bL7oRS1eKjLsDPAYkWsA1qABq7RlFxnvMtdJUrCYuAqAb0l28i2eZKPzmqmli%2BEfJq8aTTuCBJx2qcb9j7d%2FcRDMdlospw4N7kQLtxZBIDe7asmaYOkLiGSbouss%2BKJ%2B18klrAaYvrN4sBTUFVPBwzM9ZknLRaJp0oJ1H0%2FkFaJyxoAUFQsUS2hLBTCK%2BMrEBjqkAfWfYZPuMJx9MGwvJC2GQ2aKhMeDtPcDZ69jq%2F3mD026zEHSo%2FNKWsTSeGvtqrytMoNQrQHd1EDiBa7pk0A5Nc7nfxM7nH6JnPorUHTq%2Fy4gJzHxGFfWEPcw54mcC2RBBBF9ANk07gS%2BNfJc0lakqF1VpeLdvCETvPTR0GCn0AN9FW9XHL0sY9QGDdQh7wZA1oxJ8i2yjmIP31HHyGAg95deJdB5&X-Amz-Signature=ce3cbd878462dc0fc593251d74c238448d42fa2d200c498b9c678d49f477078f&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 
-
 如果需要换源，则打开 Docker Desktop → 设置 → Docker Engine，在 JSON 中添加以下内容：
-
 
 ```bash
 {
@@ -204,33 +170,24 @@ Docker Desktop 会自动检测系统是否存在 WSL，如果存在则会以 WSL
 }
 ```
 
-
 接着你就可以在 WSL 中正常使用 Docker，并且使用宿主机直接通过 localhost 访问各种 Docker 服务了。
-
 
 ### 安装 VSCODE 远程开发套件
 
-
 打开 VSCode，搜索并安装插件 [**Remote Development**](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)**。**点击窗口左下角的图标，即可进入 WSL 等远程环境进行开发。
-
 
 > 💡 注意：WSL2 读写宿主机文件的性能很差，因此不要把项目放在 /mnt/c/XXX 这样的挂载目录下，而是应该放在 WSL2 的 ~ 目录下。
 
-
 ### 在 WSL 中安装前端开发环境
 
-
 推荐使用 [nvm](https://github.com/nvm-sh/nvm) 管理 Node 环境。
-
 
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 nvm install node
 ```
 
-
 NPM，Yarn，及换源：
-
 
 ```bash
 npm i -g yarn
@@ -238,12 +195,9 @@ npm config set registry https://registry.npmmirror.com
 yarn config set registry https://registry.npmmirror.com
 ```
 
-
 ### Windows Terminal 及配置
 
-
 ![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e753f4ed-a9d5-4b94-80b5-b5d3a8dd4851/f1aaf12b-cb21-4ed6-89bc-d76c0e4ec900/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466U2Z3LICZ%2F20250806%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250806T031640Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDMaCXVzLXdlc3QtMiJIMEYCIQCMChbJj77w17biMPsvBC80JkOyWlpZnR%2Fer%2BcKV83dwgIhAPfuCR5mt%2BsainDmandnJrQ%2FpnySOmcRWON65vZFEuOkKv8DCGsQABoMNjM3NDIzMTgzODA1IgzDwFT5IqUKaeoz%2BPMq3ANex2VtZDrZ22foys1Oa2zzZqUPSHs3kze6SH69n1jKis3bOG5AhvjIXh6A7Vb5RC%2BMXWty0DgMcINMdLQrAtPfVIRTE9EaYBuAoQJjYEpU6FaM6jG7G3M1N3jjmwX8MFUIy6UuLLdA4x311ROysFP2D5C31PCh320zNJ4e%2FvZhKNljcqEMGI9kzQRx6Jm2TcRVoOb6vjECkoGiWiw66eUKW9pzxO9v6tyu12%2Fx8lIle2JZh0Puu5k4BbHgACfP4nUE6sBJ%2B2DwGOznoqhwg4F6IQ8rTyUX6SHds3FVHeSRq4UyCi3UNPcYhnkhBYqrep88nayB6JhgYtrwI25x%2B0sROmCNtIXuCrMmsmASG1PVzGmKntp95G7oIXNZOBh4XdOzbBt%2FCJqT8WQdd4itvxppNizX28kzYpvetUOVxmsfJ9iLtyAgenwzUs1uYXD%2B47p9bL7oRS1eKjLsDPAYkWsA1qABq7RlFxnvMtdJUrCYuAqAb0l28i2eZKPzmqmli%2BEfJq8aTTuCBJx2qcb9j7d%2FcRDMdlospw4N7kQLtxZBIDe7asmaYOkLiGSbouss%2BKJ%2B18klrAaYvrN4sBTUFVPBwzM9ZknLRaJp0oJ1H0%2FkFaJyxoAUFQsUS2hLBTCK%2BMrEBjqkAfWfYZPuMJx9MGwvJC2GQ2aKhMeDtPcDZ69jq%2F3mD026zEHSo%2FNKWsTSeGvtqrytMoNQrQHd1EDiBa7pk0A5Nc7nfxM7nH6JnPorUHTq%2Fy4gJzHxGFfWEPcw54mcC2RBBBF9ANk07gS%2BNfJc0lakqF1VpeLdvCETvPTR0GCn0AN9FW9XHL0sY9QGDdQh7wZA1oxJ8i2yjmIP31HHyGAg95deJdB5&X-Amz-Signature=a6d23162b0a3920d6cbbcf578468932e22124717af1aba0bf4694c7b2fa3467d&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
-
 
 打开 Windows Terminal 的设置，与 VSCode 一样也是基于 JSON 格式的。
 
@@ -251,91 +205,62 @@ yarn config set registry https://registry.npmmirror.com
 - 可以在 `defaultProfile` 中修改 guid 设置默认的 profile
 - 在 `schemes` 中可以添加不同的主题配置，你可以在 [Windows Terminal Themes](https://windowsterminalthemes.dev/) 中找到千奇百怪的配色。添加配置后，可以在不同的 Profile 中添加 `colorScheme` 字段设置主题
 
-	![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e753f4ed-a9d5-4b94-80b5-b5d3a8dd4851/c57adc57-55e1-4c8f-b21f-8bd42d353c23/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466SQLDNJQL%2F20250806%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250806T031644Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDMaCXVzLXdlc3QtMiJHMEUCIB1C2xvDCvo9MPDhbD5MSpJ6ofOISpXvq1ONrkc9BLFMAiEAmKbyrWSCiuqTY52Vj8HjgIAUugTxfsVQmNCCsWupIk0q%2FwMIbBAAGgw2Mzc0MjMxODM4MDUiDDRQuiNJeGIulnyOVircA%2F6gqRSPZGPFOGio72Zk5ov57EpOHYSk3MZSCTgcn6LrWapuoJKjMxRltEsUBxqANXEvmVWdRFEnteRxdWZnmBPLjN%2BP6uoUyffrpLS08oO5OqR1ZJPjm10Eous9h4MMJdSfRyk1eIdMjB9LUVD%2BO3NUw5%2FIC%2FZHSaf4F94BOgu0LRLMLJDD21Z7fI17HNt1ifWZ80GuMSIOPtR9H6G5Of2PLDjarKvwNzdYrVshx%2F8SVV%2FWx9vcIaZY0xEdU9%2BLfW1KLQzxuiikhYfb%2FYsXeFJ0cYGzAbq9BFaZCIEjwNruGfthKoPD0vBsbA80LdSkPshZrNn%2B1jW6YlJtUNxDD3Tc255%2B67T%2BJk6R%2B4e1gQ%2BTc2%2F%2Fdrgat1V3xILu8q%2BGvxbfvbSt%2FqES0msiY2kanb7SdULoj9ACVmYVrXJP2xr9JhMjkYwzRd26nV1Y9dI4wvvXxxi9plcXKNt55WdGdLyseo3Za%2BTzEcfrnvB%2FSNVtbkYrjKZRdDk5nS4thironB7fJY%2FjpcYb0fDDlkK7AaROt8lSLnhC0eqx0IQ61gwXRDvYi%2BQjD%2BSL%2FghGxTDa59lJuMNShbc%2F6I5L%2B3VvBBSc1Oc%2BZbMUs1d2U3FWSwcktEsBuuZX8bT5F5%2BAMLX5ysQGOqUByic907gO1xy5MgSrI5h%2F9FDcnd1Z1jCkXBw%2FZRGSDrSVXod7%2BFfYcM14vMvnOtkCDGbrAXkzlaOFNp%2FRGDYjjF2W1xaqgDCCGbd05qJi8K1WjMR2UirRgWg%2FrWq9L1WWXJINm2Kv6rzU4tGVkWoX1s0eIN7ssSi3BZMhn8lcF%2B6HlcG1VI9K%2F0PSvpVOV43Z6gY18bMqlbFJjWFOdbjYxd8cG3Nx&X-Amz-Signature=feacedfbcfb8a4eb7b130ffe2069f18eac332bf44f73424799efdfd50cd62372&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
-
+  ![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e753f4ed-a9d5-4b94-80b5-b5d3a8dd4851/c57adc57-55e1-4c8f-b21f-8bd42d353c23/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466SQLDNJQL%2F20250806%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250806T031644Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDMaCXVzLXdlc3QtMiJHMEUCIB1C2xvDCvo9MPDhbD5MSpJ6ofOISpXvq1ONrkc9BLFMAiEAmKbyrWSCiuqTY52Vj8HjgIAUugTxfsVQmNCCsWupIk0q%2FwMIbBAAGgw2Mzc0MjMxODM4MDUiDDRQuiNJeGIulnyOVircA%2F6gqRSPZGPFOGio72Zk5ov57EpOHYSk3MZSCTgcn6LrWapuoJKjMxRltEsUBxqANXEvmVWdRFEnteRxdWZnmBPLjN%2BP6uoUyffrpLS08oO5OqR1ZJPjm10Eous9h4MMJdSfRyk1eIdMjB9LUVD%2BO3NUw5%2FIC%2FZHSaf4F94BOgu0LRLMLJDD21Z7fI17HNt1ifWZ80GuMSIOPtR9H6G5Of2PLDjarKvwNzdYrVshx%2F8SVV%2FWx9vcIaZY0xEdU9%2BLfW1KLQzxuiikhYfb%2FYsXeFJ0cYGzAbq9BFaZCIEjwNruGfthKoPD0vBsbA80LdSkPshZrNn%2B1jW6YlJtUNxDD3Tc255%2B67T%2BJk6R%2B4e1gQ%2BTc2%2F%2Fdrgat1V3xILu8q%2BGvxbfvbSt%2FqES0msiY2kanb7SdULoj9ACVmYVrXJP2xr9JhMjkYwzRd26nV1Y9dI4wvvXxxi9plcXKNt55WdGdLyseo3Za%2BTzEcfrnvB%2FSNVtbkYrjKZRdDk5nS4thironB7fJY%2FjpcYb0fDDlkK7AaROt8lSLnhC0eqx0IQ61gwXRDvYi%2BQjD%2BSL%2FghGxTDa59lJuMNShbc%2F6I5L%2B3VvBBSc1Oc%2BZbMUs1d2U3FWSwcktEsBuuZX8bT5F5%2BAMLX5ysQGOqUByic907gO1xy5MgSrI5h%2F9FDcnd1Z1jCkXBw%2FZRGSDrSVXod7%2BFfYcM14vMvnOtkCDGbrAXkzlaOFNp%2FRGDYjjF2W1xaqgDCCGbd05qJi8K1WjMR2UirRgWg%2FrWq9L1WWXJINm2Kv6rzU4tGVkWoX1s0eIN7ssSi3BZMhn8lcF%2B6HlcG1VI9K%2F0PSvpVOV43Z6gY18bMqlbFJjWFOdbjYxd8cG3Nx&X-Amz-Signature=feacedfbcfb8a4eb7b130ffe2069f18eac332bf44f73424799efdfd50cd62372&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 
 ### WSLG (Preview)
 
-
 WSLG 旨在让你在 Windows 系统中直接运行 Linux 子系统下的 GUI 应用，除此之外，你还可以借助这项技术让 Linux 系统直接访问 GPU 实现机器学习等功能。虽然这项技术还处于 Preview 阶段，且仅支持 Windows 11，但个人感觉完成度已经很不错了。
 
-
 以 Linux 经典的文本编辑软件 gedit 为例：
-
 
 ```bash
 sudo apt install -y gedit
 ```
 
-
 ![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e753f4ed-a9d5-4b94-80b5-b5d3a8dd4851/fa6b329a-8e91-4c6b-8760-079772121747/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466U2Z3LICZ%2F20250806%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250806T031640Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDMaCXVzLXdlc3QtMiJIMEYCIQCMChbJj77w17biMPsvBC80JkOyWlpZnR%2Fer%2BcKV83dwgIhAPfuCR5mt%2BsainDmandnJrQ%2FpnySOmcRWON65vZFEuOkKv8DCGsQABoMNjM3NDIzMTgzODA1IgzDwFT5IqUKaeoz%2BPMq3ANex2VtZDrZ22foys1Oa2zzZqUPSHs3kze6SH69n1jKis3bOG5AhvjIXh6A7Vb5RC%2BMXWty0DgMcINMdLQrAtPfVIRTE9EaYBuAoQJjYEpU6FaM6jG7G3M1N3jjmwX8MFUIy6UuLLdA4x311ROysFP2D5C31PCh320zNJ4e%2FvZhKNljcqEMGI9kzQRx6Jm2TcRVoOb6vjECkoGiWiw66eUKW9pzxO9v6tyu12%2Fx8lIle2JZh0Puu5k4BbHgACfP4nUE6sBJ%2B2DwGOznoqhwg4F6IQ8rTyUX6SHds3FVHeSRq4UyCi3UNPcYhnkhBYqrep88nayB6JhgYtrwI25x%2B0sROmCNtIXuCrMmsmASG1PVzGmKntp95G7oIXNZOBh4XdOzbBt%2FCJqT8WQdd4itvxppNizX28kzYpvetUOVxmsfJ9iLtyAgenwzUs1uYXD%2B47p9bL7oRS1eKjLsDPAYkWsA1qABq7RlFxnvMtdJUrCYuAqAb0l28i2eZKPzmqmli%2BEfJq8aTTuCBJx2qcb9j7d%2FcRDMdlospw4N7kQLtxZBIDe7asmaYOkLiGSbouss%2BKJ%2B18klrAaYvrN4sBTUFVPBwzM9ZknLRaJp0oJ1H0%2FkFaJyxoAUFQsUS2hLBTCK%2BMrEBjqkAfWfYZPuMJx9MGwvJC2GQ2aKhMeDtPcDZ69jq%2F3mD026zEHSo%2FNKWsTSeGvtqrytMoNQrQHd1EDiBa7pk0A5Nc7nfxM7nH6JnPorUHTq%2Fy4gJzHxGFfWEPcw54mcC2RBBBF9ANk07gS%2BNfJc0lakqF1VpeLdvCETvPTR0GCn0AN9FW9XHL0sY9QGDdQh7wZA1oxJ8i2yjmIP31HHyGAg95deJdB5&X-Amz-Signature=f505b9abcf900e1236fe44d2eaa2ca0d38f6a8329e660afe06cdc19403a3dad6&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
-
 
 ### 微信开发者工具
 
-
 很不幸的是，前端技术栈过于花哨，很难像后端一样把所有的开发工作全部用 WSL 包揽。
-
 
 以 Pick Pick 小程序为例，在开发时需要实时启动一个 Gulp 构建任务，而微信开发者工具无法直接打开 WSL 中的项目，因此我们不得不在本机再搭建一套前端环境。
 
-
 > 💡 其实在 Windows 下做开发，根本就没有所谓的”完美体验“，WSL 的出现也仅仅是解决了一部分痛点。技术从来都是解决多少问题就会带来多少新问题，我们目前只能遵循一个原则：能用 WSL 解决的，最好都用 WSL 解决，实在解决不了的，再上宿主机。
-
 
 宿主机下的开发环境也许我们并不常用，因此我推荐尽可能使用 Portal 软件。
 
-
 ## 使用技巧
-
 
 ### 你真的需要杀毒软件吗？
 
-
 Windows 早已自带 Defender 杀毒软件，使用得当的情况下实在没有必要安装第三方杀软。
-
 
 ### 你真的需要 D 盘吗？
 
-
 可以尝试把 Windows 当成 Unix 系统来使用，只需要一个 C 盘即可。
-
 
 ### 你真的需要使用盗版软件吗？
 
-
 很多软件都会有开源和免费版本的平替。支持正版和开源软件，从我做起。
-
 
 ### 善用多桌面
 
-
 Windows 10 就已经支持多桌面了，你可以在不同的桌面放置不同应用，达到多工作区的目的。比如我习惯把杂七杂八的生活娱乐软件都放在第一屏，而第二屏只放开发相关的窗口。
-
 
 ![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e753f4ed-a9d5-4b94-80b5-b5d3a8dd4851/f6748aba-1348-4b10-b2b6-c7e592ec3141/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466U2Z3LICZ%2F20250806%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250806T031640Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDMaCXVzLXdlc3QtMiJIMEYCIQCMChbJj77w17biMPsvBC80JkOyWlpZnR%2Fer%2BcKV83dwgIhAPfuCR5mt%2BsainDmandnJrQ%2FpnySOmcRWON65vZFEuOkKv8DCGsQABoMNjM3NDIzMTgzODA1IgzDwFT5IqUKaeoz%2BPMq3ANex2VtZDrZ22foys1Oa2zzZqUPSHs3kze6SH69n1jKis3bOG5AhvjIXh6A7Vb5RC%2BMXWty0DgMcINMdLQrAtPfVIRTE9EaYBuAoQJjYEpU6FaM6jG7G3M1N3jjmwX8MFUIy6UuLLdA4x311ROysFP2D5C31PCh320zNJ4e%2FvZhKNljcqEMGI9kzQRx6Jm2TcRVoOb6vjECkoGiWiw66eUKW9pzxO9v6tyu12%2Fx8lIle2JZh0Puu5k4BbHgACfP4nUE6sBJ%2B2DwGOznoqhwg4F6IQ8rTyUX6SHds3FVHeSRq4UyCi3UNPcYhnkhBYqrep88nayB6JhgYtrwI25x%2B0sROmCNtIXuCrMmsmASG1PVzGmKntp95G7oIXNZOBh4XdOzbBt%2FCJqT8WQdd4itvxppNizX28kzYpvetUOVxmsfJ9iLtyAgenwzUs1uYXD%2B47p9bL7oRS1eKjLsDPAYkWsA1qABq7RlFxnvMtdJUrCYuAqAb0l28i2eZKPzmqmli%2BEfJq8aTTuCBJx2qcb9j7d%2FcRDMdlospw4N7kQLtxZBIDe7asmaYOkLiGSbouss%2BKJ%2B18klrAaYvrN4sBTUFVPBwzM9ZknLRaJp0oJ1H0%2FkFaJyxoAUFQsUS2hLBTCK%2BMrEBjqkAfWfYZPuMJx9MGwvJC2GQ2aKhMeDtPcDZ69jq%2F3mD026zEHSo%2FNKWsTSeGvtqrytMoNQrQHd1EDiBa7pk0A5Nc7nfxM7nH6JnPorUHTq%2Fy4gJzHxGFfWEPcw54mcC2RBBBF9ANk07gS%2BNfJc0lakqF1VpeLdvCETvPTR0GCn0AN9FW9XHL0sY9QGDdQh7wZA1oxJ8i2yjmIP31HHyGAg95deJdB5&X-Amz-Signature=b3bb6096a33acab239a0ffff28704364a473d10706c876cc82e6378cfcf720c9&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 
-
 ### PowerToys
-
 
 PowerToys 是微软官方出品的工具集，有一大堆非常好用的小工具，比如自动取色、修改快捷键等功能。
 
-
 ![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e753f4ed-a9d5-4b94-80b5-b5d3a8dd4851/fc711e5c-2723-4009-b4b1-857377870588/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466U2Z3LICZ%2F20250806%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250806T031640Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDMaCXVzLXdlc3QtMiJIMEYCIQCMChbJj77w17biMPsvBC80JkOyWlpZnR%2Fer%2BcKV83dwgIhAPfuCR5mt%2BsainDmandnJrQ%2FpnySOmcRWON65vZFEuOkKv8DCGsQABoMNjM3NDIzMTgzODA1IgzDwFT5IqUKaeoz%2BPMq3ANex2VtZDrZ22foys1Oa2zzZqUPSHs3kze6SH69n1jKis3bOG5AhvjIXh6A7Vb5RC%2BMXWty0DgMcINMdLQrAtPfVIRTE9EaYBuAoQJjYEpU6FaM6jG7G3M1N3jjmwX8MFUIy6UuLLdA4x311ROysFP2D5C31PCh320zNJ4e%2FvZhKNljcqEMGI9kzQRx6Jm2TcRVoOb6vjECkoGiWiw66eUKW9pzxO9v6tyu12%2Fx8lIle2JZh0Puu5k4BbHgACfP4nUE6sBJ%2B2DwGOznoqhwg4F6IQ8rTyUX6SHds3FVHeSRq4UyCi3UNPcYhnkhBYqrep88nayB6JhgYtrwI25x%2B0sROmCNtIXuCrMmsmASG1PVzGmKntp95G7oIXNZOBh4XdOzbBt%2FCJqT8WQdd4itvxppNizX28kzYpvetUOVxmsfJ9iLtyAgenwzUs1uYXD%2B47p9bL7oRS1eKjLsDPAYkWsA1qABq7RlFxnvMtdJUrCYuAqAb0l28i2eZKPzmqmli%2BEfJq8aTTuCBJx2qcb9j7d%2FcRDMdlospw4N7kQLtxZBIDe7asmaYOkLiGSbouss%2BKJ%2B18klrAaYvrN4sBTUFVPBwzM9ZknLRaJp0oJ1H0%2FkFaJyxoAUFQsUS2hLBTCK%2BMrEBjqkAfWfYZPuMJx9MGwvJC2GQ2aKhMeDtPcDZ69jq%2F3mD026zEHSo%2FNKWsTSeGvtqrytMoNQrQHd1EDiBa7pk0A5Nc7nfxM7nH6JnPorUHTq%2Fy4gJzHxGFfWEPcw54mcC2RBBBF9ANk07gS%2BNfJc0lakqF1VpeLdvCETvPTR0GCn0AN9FW9XHL0sY9QGDdQh7wZA1oxJ8i2yjmIP31HHyGAg95deJdB5&X-Amz-Signature=3d67234a2d53726c22103886962f8a345786c8e4887a0e058b7c43090f10ad23&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
-
 
 而我主要想介绍其中的 FancyZones 和快捷键修改这两个功能。
 
-
 FancyZones 可以实现类似 Mac 上快速分屏软件 Magnet 的效果。比如我习惯在编程时把桌面分为两大块，左边放浏览器，右边放代码编辑器，各占五分之四左右的面积。这样我既可以获得足够大的使用面积，又可以只使用一次鼠标点击就在两个窗口间切换。
-
 
 ![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e753f4ed-a9d5-4b94-80b5-b5d3a8dd4851/d53ab839-994b-4813-b2a2-2d0ffaa7d52a/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466U2Z3LICZ%2F20250806%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250806T031640Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDMaCXVzLXdlc3QtMiJIMEYCIQCMChbJj77w17biMPsvBC80JkOyWlpZnR%2Fer%2BcKV83dwgIhAPfuCR5mt%2BsainDmandnJrQ%2FpnySOmcRWON65vZFEuOkKv8DCGsQABoMNjM3NDIzMTgzODA1IgzDwFT5IqUKaeoz%2BPMq3ANex2VtZDrZ22foys1Oa2zzZqUPSHs3kze6SH69n1jKis3bOG5AhvjIXh6A7Vb5RC%2BMXWty0DgMcINMdLQrAtPfVIRTE9EaYBuAoQJjYEpU6FaM6jG7G3M1N3jjmwX8MFUIy6UuLLdA4x311ROysFP2D5C31PCh320zNJ4e%2FvZhKNljcqEMGI9kzQRx6Jm2TcRVoOb6vjECkoGiWiw66eUKW9pzxO9v6tyu12%2Fx8lIle2JZh0Puu5k4BbHgACfP4nUE6sBJ%2B2DwGOznoqhwg4F6IQ8rTyUX6SHds3FVHeSRq4UyCi3UNPcYhnkhBYqrep88nayB6JhgYtrwI25x%2B0sROmCNtIXuCrMmsmASG1PVzGmKntp95G7oIXNZOBh4XdOzbBt%2FCJqT8WQdd4itvxppNizX28kzYpvetUOVxmsfJ9iLtyAgenwzUs1uYXD%2B47p9bL7oRS1eKjLsDPAYkWsA1qABq7RlFxnvMtdJUrCYuAqAb0l28i2eZKPzmqmli%2BEfJq8aTTuCBJx2qcb9j7d%2FcRDMdlospw4N7kQLtxZBIDe7asmaYOkLiGSbouss%2BKJ%2B18klrAaYvrN4sBTUFVPBwzM9ZknLRaJp0oJ1H0%2FkFaJyxoAUFQsUS2hLBTCK%2BMrEBjqkAfWfYZPuMJx9MGwvJC2GQ2aKhMeDtPcDZ69jq%2F3mD026zEHSo%2FNKWsTSeGvtqrytMoNQrQHd1EDiBa7pk0A5Nc7nfxM7nH6JnPorUHTq%2Fy4gJzHxGFfWEPcw54mcC2RBBBF9ANk07gS%2BNfJc0lakqF1VpeLdvCETvPTR0GCn0AN9FW9XHL0sY9QGDdQh7wZA1oxJ8i2yjmIP31HHyGAg95deJdB5&X-Amz-Signature=6483ffaa3157906cda2cdf82d9bfba0412854095c5176ffd73812bc1e88265e5&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 
-
 而快捷键切换功能呢，我其实也就自定义了两个快捷键。在 MacOS 下，我最喜欢的快捷键应该就是 ctrl + 1, 2, 3，它可以让我只用左右就快速切换不同的虚拟桌面。反观 Windows 这边，你需要同时按下 win + ctrl + 方向键左右才能实现虚拟桌面的切换，需要同时动用两只手，非常费劲。因此我把 win + ctrl + ⬅ 映射为了 ctrl + 1，把 win + ctrl + ➡ 映射为了 ctrl + 2，鉴于我平时在 Windows 上只会使用两个虚拟桌面，因此这样就可以模拟 Mac 下的虚拟桌面切换体验了。
 
-
 ![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e753f4ed-a9d5-4b94-80b5-b5d3a8dd4851/48a43d92-c177-4ab8-8919-8803c78502ba/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466U2Z3LICZ%2F20250806%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250806T031640Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDMaCXVzLXdlc3QtMiJIMEYCIQCMChbJj77w17biMPsvBC80JkOyWlpZnR%2Fer%2BcKV83dwgIhAPfuCR5mt%2BsainDmandnJrQ%2FpnySOmcRWON65vZFEuOkKv8DCGsQABoMNjM3NDIzMTgzODA1IgzDwFT5IqUKaeoz%2BPMq3ANex2VtZDrZ22foys1Oa2zzZqUPSHs3kze6SH69n1jKis3bOG5AhvjIXh6A7Vb5RC%2BMXWty0DgMcINMdLQrAtPfVIRTE9EaYBuAoQJjYEpU6FaM6jG7G3M1N3jjmwX8MFUIy6UuLLdA4x311ROysFP2D5C31PCh320zNJ4e%2FvZhKNljcqEMGI9kzQRx6Jm2TcRVoOb6vjECkoGiWiw66eUKW9pzxO9v6tyu12%2Fx8lIle2JZh0Puu5k4BbHgACfP4nUE6sBJ%2B2DwGOznoqhwg4F6IQ8rTyUX6SHds3FVHeSRq4UyCi3UNPcYhnkhBYqrep88nayB6JhgYtrwI25x%2B0sROmCNtIXuCrMmsmASG1PVzGmKntp95G7oIXNZOBh4XdOzbBt%2FCJqT8WQdd4itvxppNizX28kzYpvetUOVxmsfJ9iLtyAgenwzUs1uYXD%2B47p9bL7oRS1eKjLsDPAYkWsA1qABq7RlFxnvMtdJUrCYuAqAb0l28i2eZKPzmqmli%2BEfJq8aTTuCBJx2qcb9j7d%2FcRDMdlospw4N7kQLtxZBIDe7asmaYOkLiGSbouss%2BKJ%2B18klrAaYvrN4sBTUFVPBwzM9ZknLRaJp0oJ1H0%2FkFaJyxoAUFQsUS2hLBTCK%2BMrEBjqkAfWfYZPuMJx9MGwvJC2GQ2aKhMeDtPcDZ69jq%2F3mD026zEHSo%2FNKWsTSeGvtqrytMoNQrQHd1EDiBa7pk0A5Nc7nfxM7nH6JnPorUHTq%2Fy4gJzHxGFfWEPcw54mcC2RBBBF9ANk07gS%2BNfJc0lakqF1VpeLdvCETvPTR0GCn0AN9FW9XHL0sY9QGDdQh7wZA1oxJ8i2yjmIP31HHyGAg95deJdB5&X-Amz-Signature=a41826512fa9f2573bc88478765b0afa41775e97fdea8849290a45c068bd66e5&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
-

@@ -1,17 +1,16 @@
 ---
-title: "浏览器允许的并发请求数"
-category: "Coding"
-type: "Post"
-status: "Published"
-tags: ["Browser", "八股文"]
-date: "2020-04-03"
-slug: "browser-concurrent"
-summary: ""
-last_edited_time: "2024-03-16T08:21:00.000Z"
-blog_last_fetched_time: "2025-08-06T03:19:22.504Z"
-notion_id: "778bf9c4-87cb-4953-acda-e13f8f24a144"
+title: '浏览器允许的并发请求数'
+category: 'Coding'
+type: 'Post'
+status: 'Published'
+tags: ['Browser', '八股文']
+date: '2020-04-03'
+slug: 'browser-concurrent'
+summary: ''
+last_edited_time: '2024-03-16T08:21:00.000Z'
+blog_last_fetched_time: '2025-08-06T03:19:22.504Z'
+notion_id: '778bf9c4-87cb-4953-acda-e13f8f24a144'
 ---
-
 
 ## 结论
 
@@ -20,24 +19,19 @@ notion_id: "778bf9c4-87cb-4953-acda-e13f8f24a144"
 
 ## 对页面加载的影响
 
-
-假如一个页面有120个静态资源（css、js、img），并且所有资源都在一个域名下，使用的浏览器最大网络并行请求资源数是6，假设理想一些：所有请求时间都是一样的，每个文件加载需要500ms，则所有资源加载完成需要 120/6 * 0.5 = 10s 的时间。
-
+假如一个页面有120个静态资源（css、js、img），并且所有资源都在一个域名下，使用的浏览器最大网络并行请求资源数是6，假设理想一些：所有请求时间都是一样的，每个文件加载需要500ms，则所有资源加载完成需要 120/6 \* 0.5 = 10s 的时间。
 
 ## 优化方案
 
 - 减少网络请求数
-	- 使用css spirit，将图标合成在一张图中，减少图片数量，减少http请求数
-	- 使用打包工具合并css和js，减少文件数量，减少http请求数
+  - 使用css spirit，将图标合成在一张图中，减少图片数量，减少http请求数
+  - 使用打包工具合并css和js，减少文件数量，减少http请求数
 - 增加静态资源来源
-	- 将静态资源分布在不同的服务器中，使用多个域名，加大并发量
-	- 将静态资源和html文档分放在不用的域名下也有另一个原因，每次页面请求都会将相同域名下的cookie带给服务器端，实际上静态资源带上cookie是没必要的
+  - 将静态资源分布在不同的服务器中，使用多个域名，加大并发量
+  - 将静态资源和html文档分放在不用的域名下也有另一个原因，每次页面请求都会将相同域名下的cookie带给服务器端，实际上静态资源带上cookie是没必要的
 
 ## 链接
 
-
 [bookmark](https://www.zhihu.com/question/20474326)
 
-
 [bookmark](https://segmentfault.com/a/1190000016369295)
-

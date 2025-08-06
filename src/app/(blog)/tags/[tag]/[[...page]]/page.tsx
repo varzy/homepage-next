@@ -15,7 +15,7 @@ export async function generateStaticParams() {
     const totalPages = Math.ceil(tagPosts.length / SITE_CONFIG.blogPerPage);
     return Array.from({ length: totalPages }).map((_, i) => ({
       tag: encodeURIComponent(tag),
-      page: [String(i + 1)]
+      page: [String(i + 1)],
     }));
   });
 
@@ -35,11 +35,7 @@ export default async function Tag({ params }: { params: { tag: string; page?: st
 
   return (
     <BlogPageContainer pageHero={{ title: '#' + tagText }}>
-      <PostsContainer
-        posts={allPosts}
-        currentPage={currentPage}
-        urlPrefix={`/tags/${encodeURIComponent(tagText)}`}
-      />
+      <PostsContainer posts={allPosts} currentPage={currentPage} urlPrefix={`/tags/${encodeURIComponent(tagText)}`} />
     </BlogPageContainer>
   );
 }

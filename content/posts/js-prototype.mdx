@@ -1,17 +1,16 @@
 ---
-title: "JS 的继承和原型链；new；instanceOf"
-category: "Coding"
-type: "Post"
-status: "Published"
-tags: ["JavaScript", "八股文"]
-date: "2020-04-21"
-slug: "js-prototype"
-summary: ""
-last_edited_time: "2024-03-16T08:21:00.000Z"
-blog_last_fetched_time: "2025-08-06T03:18:48.480Z"
-notion_id: "e19f5c7e-6e08-4d46-b65c-d059b6109b22"
+title: 'JS 的继承和原型链；new；instanceOf'
+category: 'Coding'
+type: 'Post'
+status: 'Published'
+tags: ['JavaScript', '八股文']
+date: '2020-04-21'
+slug: 'js-prototype'
+summary: ''
+last_edited_time: '2024-03-16T08:21:00.000Z'
+blog_last_fetched_time: '2025-08-06T03:18:48.480Z'
+notion_id: 'e19f5c7e-6e08-4d46-b65c-d059b6109b22'
 ---
-
 
 ## 继承和原型
 
@@ -31,7 +30,6 @@ o.__proto__ = Foo.prototype;
 Foo.call(o);
 ```
 
-
 ```javascript
 function Parent() {}
 let parent = new Parent();
@@ -50,41 +48,36 @@ console.log(sub.__proto__ === Sub.prototype); // true
 console.log(Sub.prototype.__proto__ === Parent.prototype); // true
 ```
 
-
 ## New
 
 - 当我们使用 new 操作符时，新对象被添加了 `__proto__` 并且链接到构造函数的原型上 (`obj.__proto__ = Fun.prototype`)
 - new 的过程
-	1. 新生成了一个对象
-	2. 链接到原型
-	3. 绑定 this
-	4. 返回新对象
+  1.  新生成了一个对象
+  2.  链接到原型
+  3.  绑定 this
+  4.  返回新对象
 - 自行实现一个 new
 
-	```javascript
-	function create() {
-		// 创建一个空的对象
-		let obj = new Object()
-		// 获得构造函数
-		let Con = [].shift.call(arguments)
-		// 链接到原型。最重要的一步：
-		obj.__proto__ = Con.prototype
-		// 绑定 this，执行构造函数
-		let result = Con.apply(obj, arguments)
-		// 确保 new 出来的是个对象
-		return typeof result === 'object' ? result : obj
-	}
-	```
-
+  ```javascript
+  function create() {
+    // 创建一个空的对象
+    let obj = new Object();
+    // 获得构造函数
+    let Con = [].shift.call(arguments);
+    // 链接到原型。最重要的一步：
+    obj.__proto__ = Con.prototype;
+    // 绑定 this，执行构造函数
+    let result = Con.apply(obj, arguments);
+    // 确保 new 出来的是个对象
+    return typeof result === 'object' ? result : obj;
+  }
+  ```
 
 ## instanceOf
 
-
 instanceof 可以正确的判断对象的类型，因为内部机制是通过判断对象的原型链中是不是能找到类型的 prototype。个人理解：可以认为它递归查找直到找到该对象的构造函数对象。
 
-
 手动实现 instanceOf:
-
 
 ```javascript
 function instanceof(left, right) {
@@ -103,12 +96,8 @@ function instanceof(left, right) {
 }
 ```
 
-
 ## 关联阅读
-
 
 [bookmark](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
 
-
 [bookmark](https://github.com/KieSun/Dream/issues/2)
-

@@ -1,20 +1,18 @@
 ---
-title: "搭建基于 Laradock 的开发环境"
-category: "Coding"
-type: "Post"
-status: "Published"
-tags: ["Docker", "PHP"]
-date: "2020-03-27"
-slug: "laradock-development"
-summary: ""
-last_edited_time: "2025-08-06T03:21:00.000Z"
-blog_last_fetched_time: "2025-08-06T03:22:36.420Z"
-notion_id: "4dc8f27d-3c91-411d-8bbf-bf9041911236"
+title: '搭建基于 Laradock 的开发环境'
+category: 'Coding'
+type: 'Post'
+status: 'Published'
+tags: ['Docker', 'PHP']
+date: '2020-03-27'
+slug: 'laradock-development'
+summary: ''
+last_edited_time: '2025-08-06T03:21:00.000Z'
+blog_last_fetched_time: '2025-08-06T03:22:36.420Z'
+notion_id: '4dc8f27d-3c91-411d-8bbf-bf9041911236'
 ---
 
-
 .env
-
 
 ```bash
 # Fix
@@ -29,9 +27,7 @@ MYSQL_VERSION=5.7
 WORKSPACE_COMPOSER_GLOBAL_PACKAGES=friendsofphp/php-cs-fixer
 ```
 
-
 docker-compose.yml
-
 
 ```yaml
 workspace:
@@ -41,9 +37,7 @@ workspace:
       - COMPOSER_GLOBAL_PACKAGES=${WORKSPACE_COMPOSER_GLOBAL_PACKAGES}
 ```
 
-
 workspace/Dockerfile
-
 
 ```docker
 ##### composer #####
@@ -55,9 +49,7 @@ RUN if [ ${COMPOSER_GLOBAL_PACKAGES} ]; then \\
 ;fi
 ```
 
-
 添加脚本 laradock.sh，用于一键起停服务
-
 
 ```bash
 #!/bin/bash
@@ -129,4 +121,3 @@ else
   exit 1
 fi
 ```
-

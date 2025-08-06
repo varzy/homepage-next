@@ -1,23 +1,20 @@
 ---
-title: "使用 ohmyzsh 提升终端使用体验"
-category: "Coding"
-type: "Post"
-status: "Published"
-tags: ["Terminal", "DevEnv"]
-date: "2021-11-27"
-slug: "ohmyzsh-terminal-usage"
-summary: ""
-last_edited_time: "2024-03-16T08:21:00.000Z"
-blog_last_fetched_time: "2025-08-06T03:16:38.086Z"
-notion_id: "332a9dfa-7231-40af-899e-43639847c192"
+title: '使用 ohmyzsh 提升终端使用体验'
+category: 'Coding'
+type: 'Post'
+status: 'Published'
+tags: ['Terminal', 'DevEnv']
+date: '2021-11-27'
+slug: 'ohmyzsh-terminal-usage'
+summary: ''
+last_edited_time: '2024-03-16T08:21:00.000Z'
+blog_last_fetched_time: '2025-08-06T03:16:38.086Z'
+notion_id: '332a9dfa-7231-40af-899e-43639847c192'
 ---
-
 
 ## 安装 ohmyzsh
 
-
 在安装 ohmyzsh 之前，需要先安装 zsh。注意：MacOS Big Sur 之后的默认终端已经是 zsh 了，无须再次安装。
-
 
 ```bash
 # 举例，在 Ubuntu 下安装 zsh
@@ -30,9 +27,7 @@ chsh -s /bin/zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-
 注意：raw.github.com 在大陆是被墙的，因此这个脚本很有可能下载不下来。你可以先给终端翻墙，或者先手动打开 [https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh](https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh) 这个地址，再把里面的内容保存到一个本地文件，再尝试安装。网络问题还是挺玄学的，如果安装失败，建议多重试几次。
-
 
 ```bash
 vim install-ohmyzsh.sh
@@ -40,142 +35,101 @@ vim install-ohmyzsh.sh
 sh ./install-ohmyzsh.sh
 ```
 
-
 ## 主题
-
 
 ohmyzsh 拥有千奇百怪的主题。你可以在 `~/.zshrc` 的 `ZSH_THEME=""` 这一行设置你喜欢的主题。
 
-
 ![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e753f4ed-a9d5-4b94-80b5-b5d3a8dd4851/eb9817a2-86cf-4367-9b4c-f971a900079d/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663FBNDHHA%2F20250806%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250806T031634Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDMaCXVzLXdlc3QtMiJGMEQCIBloEks2HQIUToJEHgb%2Fwx%2BJfSAVBr6SmZ2PuJ8rkbdJAiAmRCjUogT0xOSC1jgbgkk%2F1C9yFpKA9R4r4nzPV3Z1mir%2FAwhsEAAaDDYzNzQyMzE4MzgwNSIMFeSLbYfXfXOEPUdJKtwDfePeTJ%2FXdzPxOO6z42RjowuSGjHNdPXkqmpcXquNAqDoQBcpQ8wJron2F97NT8GnAo4TXSpbbCOia495Cdp3Qfobv10n7o8OOOeQnAy08cC%2BfaMnf5ETRPJ04QWTh7The2VqvSLYhyiaxoS%2F0KJkyi20fi6slk%2FAZOAoUhQzXF0OfatJtbeat4fQYd8cnKyGnaP8iR8WNLmx%2FLFNuVEG5xKDSn5wnRRJAdVcrH2%2BxgkodpxB9d7QDlV6Msta9CwsnL8elLh9Jrh6PTnmB6dYV3tHVuotUbNrlWo%2Btv3Sy8Y3Y%2F1cgkxv5RUdUQRfutnZBtDsfpmZWhJASMIRMEs8aM1%2FYPrJqqxZvz5TOfd4ZytPOUEBfI8moRRa6oARBcfUBFuRkDm2vd80F8ni9ToHOfAsMgtlY4GV4iyoICu0u5u1fTaYBiJCg1o%2FnDsI38tEm1rNn1EKMr%2FwfaUAYLNFOAUdzFzHtdPkf3Sja5ixNB2zLgozJQOHTanwSg3uUfpeXlfLz30U%2Fx1%2BCHI9208weAUzXnBly70q830%2F60D3YMkYtXGPUyHBPFBjQolwk62LxoLxjpksUJRCCWGZqoJXJaVfStp1UiSOjlU4eEfctXi%2Fm7b29OoCfZHCIRowp%2FnKxAY6pgGMIsLWb8yCBX%2FUan7sBkPw4BbRtPJcNw3H0NhsoeoKp2vm6rvgTujNzgzLwTSaBZtpRH42%2ByzGIudyWmdZ5evv61uNvHbIQeyTC0cJiyICIbWLWvQvXdJ6xtM0BZ8iF78W5GhMKxXKG1WYbUAfAC8aL1hPCKGG%2B82GFuJD4Go58w3%2B13CSxb3WVKReCTIjWnA2OdboUzoEn8%2BeqXJHTe6T2sxVnPQf&X-Amz-Signature=8e022889ebbcb8b16602d61aabca3c050a19cd681ee91cf641181b3e4867de1a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 
-
-你可以在  ohmyzsh wiki 的 [themes 页面](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)浏览全部自带主题。除此之外，Github 上还有非常多未被官方收录的民间主题，有一些确实花哨得夸张。。。
-
+你可以在 ohmyzsh wiki 的 [themes 页面](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)浏览全部自带主题。除此之外，Github 上还有非常多未被官方收录的民间主题，有一些确实花哨得夸张。。。
 
 > 💡 我也试用过千万主题，最终还是回到了默认的 `robbyrussell`。
 
-
-如果你是个喜欢寻求刺激的人，可以尝试设置 `ZSH_THEME="random"`，每次打开终端都是未知的体验（笑。 
-
+如果你是个喜欢寻求刺激的人，可以尝试设置 `ZSH_THEME="random"`，每次打开终端都是未知的体验（笑。
 
 ## 插件
 
-
 ### 自带插件 & 启用插件
-
 
 ohmyzsh 自带了很多插件，你可以在 ohmyzsh wiki 的 [plugins 页面](https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins)浏览全部，文件夹名字就是插件名字，你可以在 .zshrc 中直接启用。
 
-
 如何启用插件？打开 `~/.zshrc`，找到 `plugins=(git)` 这一行，括号内填入插件名称并以空格分隔，保存文件后执行 `source ~/.zshrc` 即可看到效果。
-
 
 ![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e753f4ed-a9d5-4b94-80b5-b5d3a8dd4851/59993236-d241-48db-82c3-fa24432850aa/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663FBNDHHA%2F20250806%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250806T031634Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDMaCXVzLXdlc3QtMiJGMEQCIBloEks2HQIUToJEHgb%2Fwx%2BJfSAVBr6SmZ2PuJ8rkbdJAiAmRCjUogT0xOSC1jgbgkk%2F1C9yFpKA9R4r4nzPV3Z1mir%2FAwhsEAAaDDYzNzQyMzE4MzgwNSIMFeSLbYfXfXOEPUdJKtwDfePeTJ%2FXdzPxOO6z42RjowuSGjHNdPXkqmpcXquNAqDoQBcpQ8wJron2F97NT8GnAo4TXSpbbCOia495Cdp3Qfobv10n7o8OOOeQnAy08cC%2BfaMnf5ETRPJ04QWTh7The2VqvSLYhyiaxoS%2F0KJkyi20fi6slk%2FAZOAoUhQzXF0OfatJtbeat4fQYd8cnKyGnaP8iR8WNLmx%2FLFNuVEG5xKDSn5wnRRJAdVcrH2%2BxgkodpxB9d7QDlV6Msta9CwsnL8elLh9Jrh6PTnmB6dYV3tHVuotUbNrlWo%2Btv3Sy8Y3Y%2F1cgkxv5RUdUQRfutnZBtDsfpmZWhJASMIRMEs8aM1%2FYPrJqqxZvz5TOfd4ZytPOUEBfI8moRRa6oARBcfUBFuRkDm2vd80F8ni9ToHOfAsMgtlY4GV4iyoICu0u5u1fTaYBiJCg1o%2FnDsI38tEm1rNn1EKMr%2FwfaUAYLNFOAUdzFzHtdPkf3Sja5ixNB2zLgozJQOHTanwSg3uUfpeXlfLz30U%2Fx1%2BCHI9208weAUzXnBly70q830%2F60D3YMkYtXGPUyHBPFBjQolwk62LxoLxjpksUJRCCWGZqoJXJaVfStp1UiSOjlU4eEfctXi%2Fm7b29OoCfZHCIRowp%2FnKxAY6pgGMIsLWb8yCBX%2FUan7sBkPw4BbRtPJcNw3H0NhsoeoKp2vm6rvgTujNzgzLwTSaBZtpRH42%2ByzGIudyWmdZ5evv61uNvHbIQeyTC0cJiyICIbWLWvQvXdJ6xtM0BZ8iF78W5GhMKxXKG1WYbUAfAC8aL1hPCKGG%2B82GFuJD4Go58w3%2B13CSxb3WVKReCTIjWnA2OdboUzoEn8%2BeqXJHTe6T2sxVnPQf&X-Amz-Signature=cd16bf51131478fcea0e88ba533b554da3aa7bc9bc97ebbea4488fec259c29d1&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 
-
 ### z
-
 
 z 是一个 ohmyzsh 自带的插件，它可以记录你去过的所有文件夹，并提供快速跳转。使用时并不需要输入完整的路径，z 会自动进行联想，而且准确度相当高。
 
-
 ![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e753f4ed-a9d5-4b94-80b5-b5d3a8dd4851/2a601347-3be6-4a97-9738-a005af40faab/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663FBNDHHA%2F20250806%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250806T031634Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDMaCXVzLXdlc3QtMiJGMEQCIBloEks2HQIUToJEHgb%2Fwx%2BJfSAVBr6SmZ2PuJ8rkbdJAiAmRCjUogT0xOSC1jgbgkk%2F1C9yFpKA9R4r4nzPV3Z1mir%2FAwhsEAAaDDYzNzQyMzE4MzgwNSIMFeSLbYfXfXOEPUdJKtwDfePeTJ%2FXdzPxOO6z42RjowuSGjHNdPXkqmpcXquNAqDoQBcpQ8wJron2F97NT8GnAo4TXSpbbCOia495Cdp3Qfobv10n7o8OOOeQnAy08cC%2BfaMnf5ETRPJ04QWTh7The2VqvSLYhyiaxoS%2F0KJkyi20fi6slk%2FAZOAoUhQzXF0OfatJtbeat4fQYd8cnKyGnaP8iR8WNLmx%2FLFNuVEG5xKDSn5wnRRJAdVcrH2%2BxgkodpxB9d7QDlV6Msta9CwsnL8elLh9Jrh6PTnmB6dYV3tHVuotUbNrlWo%2Btv3Sy8Y3Y%2F1cgkxv5RUdUQRfutnZBtDsfpmZWhJASMIRMEs8aM1%2FYPrJqqxZvz5TOfd4ZytPOUEBfI8moRRa6oARBcfUBFuRkDm2vd80F8ni9ToHOfAsMgtlY4GV4iyoICu0u5u1fTaYBiJCg1o%2FnDsI38tEm1rNn1EKMr%2FwfaUAYLNFOAUdzFzHtdPkf3Sja5ixNB2zLgozJQOHTanwSg3uUfpeXlfLz30U%2Fx1%2BCHI9208weAUzXnBly70q830%2F60D3YMkYtXGPUyHBPFBjQolwk62LxoLxjpksUJRCCWGZqoJXJaVfStp1UiSOjlU4eEfctXi%2Fm7b29OoCfZHCIRowp%2FnKxAY6pgGMIsLWb8yCBX%2FUan7sBkPw4BbRtPJcNw3H0NhsoeoKp2vm6rvgTujNzgzLwTSaBZtpRH42%2ByzGIudyWmdZ5evv61uNvHbIQeyTC0cJiyICIbWLWvQvXdJ6xtM0BZ8iF78W5GhMKxXKG1WYbUAfAC8aL1hPCKGG%2B82GFuJD4Go58w3%2B13CSxb3WVKReCTIjWnA2OdboUzoEn8%2BeqXJHTe6T2sxVnPQf&X-Amz-Signature=f9a836753ac623358b25346c5e8eee3b04f102a3ba829e943b892742f78da588&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 
-
 你可以直接在 `~/.zshrc` 中启用该插件：
-
 
 ```bash
 plugins=(z)
 ```
 
-
 ### autojump
 
-
 [autojump](https://github.com/wting/autojump) 是一个与 z 类似的一个自动跳转工具，但依赖 python，且需要通过 brew 额外进行安装。我个人觉得 z 就已经够用了。如果你不介意系统上多一个 python 的依赖，可以考虑使用这个插件。
-
 
 ```bash
 brew install autojump
 ```
 
-
 安装完毕后，在 `~/.zshrc` 中开启该插件：
-
 
 ```bash
 plugins=(autojump)
 ```
 
-
 ### zsh-autosuggestions
-
 
 [https://github.com/zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) 插件可以提供一些自动补全建议。
 
-
 ![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e753f4ed-a9d5-4b94-80b5-b5d3a8dd4851/e8c08493-cc95-48e6-8571-0810dd04cd3c/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663FBNDHHA%2F20250806%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250806T031634Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDMaCXVzLXdlc3QtMiJGMEQCIBloEks2HQIUToJEHgb%2Fwx%2BJfSAVBr6SmZ2PuJ8rkbdJAiAmRCjUogT0xOSC1jgbgkk%2F1C9yFpKA9R4r4nzPV3Z1mir%2FAwhsEAAaDDYzNzQyMzE4MzgwNSIMFeSLbYfXfXOEPUdJKtwDfePeTJ%2FXdzPxOO6z42RjowuSGjHNdPXkqmpcXquNAqDoQBcpQ8wJron2F97NT8GnAo4TXSpbbCOia495Cdp3Qfobv10n7o8OOOeQnAy08cC%2BfaMnf5ETRPJ04QWTh7The2VqvSLYhyiaxoS%2F0KJkyi20fi6slk%2FAZOAoUhQzXF0OfatJtbeat4fQYd8cnKyGnaP8iR8WNLmx%2FLFNuVEG5xKDSn5wnRRJAdVcrH2%2BxgkodpxB9d7QDlV6Msta9CwsnL8elLh9Jrh6PTnmB6dYV3tHVuotUbNrlWo%2Btv3Sy8Y3Y%2F1cgkxv5RUdUQRfutnZBtDsfpmZWhJASMIRMEs8aM1%2FYPrJqqxZvz5TOfd4ZytPOUEBfI8moRRa6oARBcfUBFuRkDm2vd80F8ni9ToHOfAsMgtlY4GV4iyoICu0u5u1fTaYBiJCg1o%2FnDsI38tEm1rNn1EKMr%2FwfaUAYLNFOAUdzFzHtdPkf3Sja5ixNB2zLgozJQOHTanwSg3uUfpeXlfLz30U%2Fx1%2BCHI9208weAUzXnBly70q830%2F60D3YMkYtXGPUyHBPFBjQolwk62LxoLxjpksUJRCCWGZqoJXJaVfStp1UiSOjlU4eEfctXi%2Fm7b29OoCfZHCIRowp%2FnKxAY6pgGMIsLWb8yCBX%2FUan7sBkPw4BbRtPJcNw3H0NhsoeoKp2vm6rvgTujNzgzLwTSaBZtpRH42%2ByzGIudyWmdZ5evv61uNvHbIQeyTC0cJiyICIbWLWvQvXdJ6xtM0BZ8iF78W5GhMKxXKG1WYbUAfAC8aL1hPCKGG%2B82GFuJD4Go58w3%2B13CSxb3WVKReCTIjWnA2OdboUzoEn8%2BeqXJHTe6T2sxVnPQf&X-Amz-Signature=c66348ba4949f3f84f03bb2937b79c4d49d416f8588f26ae76540c26c47ff394&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 
-
 使用 oh-my-zsh 插件方式安装，并在 `~/.zshrc` 中启用该插件：
-
 
 ```bash
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
-
 ```bash
 plugins=(zsh-autosuggestions)
 ```
 
-
 ### zsh-syntax-highlighting
-
 
 [https://github.com/zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) 插件可以让命令高亮显示，如果出现语法错误会直接显示为红色。
 
-
 ![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e753f4ed-a9d5-4b94-80b5-b5d3a8dd4851/b27e3ec9-ef10-473d-93c4-5c2e455998fb/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663FBNDHHA%2F20250806%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250806T031634Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDMaCXVzLXdlc3QtMiJGMEQCIBloEks2HQIUToJEHgb%2Fwx%2BJfSAVBr6SmZ2PuJ8rkbdJAiAmRCjUogT0xOSC1jgbgkk%2F1C9yFpKA9R4r4nzPV3Z1mir%2FAwhsEAAaDDYzNzQyMzE4MzgwNSIMFeSLbYfXfXOEPUdJKtwDfePeTJ%2FXdzPxOO6z42RjowuSGjHNdPXkqmpcXquNAqDoQBcpQ8wJron2F97NT8GnAo4TXSpbbCOia495Cdp3Qfobv10n7o8OOOeQnAy08cC%2BfaMnf5ETRPJ04QWTh7The2VqvSLYhyiaxoS%2F0KJkyi20fi6slk%2FAZOAoUhQzXF0OfatJtbeat4fQYd8cnKyGnaP8iR8WNLmx%2FLFNuVEG5xKDSn5wnRRJAdVcrH2%2BxgkodpxB9d7QDlV6Msta9CwsnL8elLh9Jrh6PTnmB6dYV3tHVuotUbNrlWo%2Btv3Sy8Y3Y%2F1cgkxv5RUdUQRfutnZBtDsfpmZWhJASMIRMEs8aM1%2FYPrJqqxZvz5TOfd4ZytPOUEBfI8moRRa6oARBcfUBFuRkDm2vd80F8ni9ToHOfAsMgtlY4GV4iyoICu0u5u1fTaYBiJCg1o%2FnDsI38tEm1rNn1EKMr%2FwfaUAYLNFOAUdzFzHtdPkf3Sja5ixNB2zLgozJQOHTanwSg3uUfpeXlfLz30U%2Fx1%2BCHI9208weAUzXnBly70q830%2F60D3YMkYtXGPUyHBPFBjQolwk62LxoLxjpksUJRCCWGZqoJXJaVfStp1UiSOjlU4eEfctXi%2Fm7b29OoCfZHCIRowp%2FnKxAY6pgGMIsLWb8yCBX%2FUan7sBkPw4BbRtPJcNw3H0NhsoeoKp2vm6rvgTujNzgzLwTSaBZtpRH42%2ByzGIudyWmdZ5evv61uNvHbIQeyTC0cJiyICIbWLWvQvXdJ6xtM0BZ8iF78W5GhMKxXKG1WYbUAfAC8aL1hPCKGG%2B82GFuJD4Go58w3%2B13CSxb3WVKReCTIjWnA2OdboUzoEn8%2BeqXJHTe6T2sxVnPQf&X-Amz-Signature=9e7c5bf5e5b18c574713c894b9efcd1929e0f96bb29e5e077c091ca1706b2178&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 
-
 使用 oh-my-zsh 插件方式安装，并在 `~/.zshrc` 中启用该插件：
-
 
 ```bash
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
-
 ```bash
 plugins=(zsh-syntax-highlighting)
 ```
 
-
 ### themes
 
-
 [themes](https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/themes/README.md) 是一个 oh-my-zsh 内建插件，用来快速切换 oh-my-zsh 主题。在 `~/.zshrc` 中启用即可。
-
 
 ```bash
 plugins=(themes)
 ```
 
-
 ### thefuck
 
-
-虽然 thefuck 并不属于 ohmyzsh 生态，但我觉得还是很有必要安利一波的。 
-
+虽然 thefuck 并不属于 ohmyzsh 生态，但我觉得还是很有必要安利一波的。
 
 [https://github.com/nvbn/thefuck](https://github.com/nvbn/thefuck) 是一个可以帮你快速纠错命令的工具，当你打错命令了，直接敲一个 fuck，它就会帮你快速纠正。
 
-
 ![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e753f4ed-a9d5-4b94-80b5-b5d3a8dd4851/699e562e-73e1-4d3b-90f8-7b1df33dd1bf/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663FBNDHHA%2F20250806%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250806T031634Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDMaCXVzLXdlc3QtMiJGMEQCIBloEks2HQIUToJEHgb%2Fwx%2BJfSAVBr6SmZ2PuJ8rkbdJAiAmRCjUogT0xOSC1jgbgkk%2F1C9yFpKA9R4r4nzPV3Z1mir%2FAwhsEAAaDDYzNzQyMzE4MzgwNSIMFeSLbYfXfXOEPUdJKtwDfePeTJ%2FXdzPxOO6z42RjowuSGjHNdPXkqmpcXquNAqDoQBcpQ8wJron2F97NT8GnAo4TXSpbbCOia495Cdp3Qfobv10n7o8OOOeQnAy08cC%2BfaMnf5ETRPJ04QWTh7The2VqvSLYhyiaxoS%2F0KJkyi20fi6slk%2FAZOAoUhQzXF0OfatJtbeat4fQYd8cnKyGnaP8iR8WNLmx%2FLFNuVEG5xKDSn5wnRRJAdVcrH2%2BxgkodpxB9d7QDlV6Msta9CwsnL8elLh9Jrh6PTnmB6dYV3tHVuotUbNrlWo%2Btv3Sy8Y3Y%2F1cgkxv5RUdUQRfutnZBtDsfpmZWhJASMIRMEs8aM1%2FYPrJqqxZvz5TOfd4ZytPOUEBfI8moRRa6oARBcfUBFuRkDm2vd80F8ni9ToHOfAsMgtlY4GV4iyoICu0u5u1fTaYBiJCg1o%2FnDsI38tEm1rNn1EKMr%2FwfaUAYLNFOAUdzFzHtdPkf3Sja5ixNB2zLgozJQOHTanwSg3uUfpeXlfLz30U%2Fx1%2BCHI9208weAUzXnBly70q830%2F60D3YMkYtXGPUyHBPFBjQolwk62LxoLxjpksUJRCCWGZqoJXJaVfStp1UiSOjlU4eEfctXi%2Fm7b29OoCfZHCIRowp%2FnKxAY6pgGMIsLWb8yCBX%2FUan7sBkPw4BbRtPJcNw3H0NhsoeoKp2vm6rvgTujNzgzLwTSaBZtpRH42%2ByzGIudyWmdZ5evv61uNvHbIQeyTC0cJiyICIbWLWvQvXdJ6xtM0BZ8iF78W5GhMKxXKG1WYbUAfAC8aL1hPCKGG%2B82GFuJD4Go58w3%2B13CSxb3WVKReCTIjWnA2OdboUzoEn8%2BeqXJHTe6T2sxVnPQf&X-Amz-Signature=c38099a5ee164f0758c575d884695e4206db9a2ca0245d4786893fa5ad5b5771&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
-
 
 ```bash
 # macos 下安装
@@ -185,11 +139,8 @@ brew install thefuck
 sudo apt install -y thefuck
 ```
 
-
 在 `~/.zshrc` 中启用：
-
 
 ```bash
 eval $(thefuck --alias)
 ```
-

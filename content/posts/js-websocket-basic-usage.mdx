@@ -1,17 +1,16 @@
 ---
-title: "在 JS 中对 WebSocket 进行简单封装"
-category: "Coding"
-type: "Post"
-status: "Published"
-tags: ["JavaScript"]
-date: "2021-04-13"
-slug: "js-websocket-basic-usage"
-summary: ""
-last_edited_time: "2024-03-16T08:21:00.000Z"
-blog_last_fetched_time: "2025-08-06T03:17:33.483Z"
-notion_id: "69768b3b-36e3-40ae-bee3-a497762b9b72"
+title: '在 JS 中对 WebSocket 进行简单封装'
+category: 'Coding'
+type: 'Post'
+status: 'Published'
+tags: ['JavaScript']
+date: '2021-04-13'
+slug: 'js-websocket-basic-usage'
+summary: ''
+last_edited_time: '2024-03-16T08:21:00.000Z'
+blog_last_fetched_time: '2025-08-06T03:17:33.483Z'
+notion_id: '69768b3b-36e3-40ae-bee3-a497762b9b72'
 ---
-
 
 RealtimeMonitor 类。支持：
 
@@ -66,7 +65,7 @@ export default class RealtimeMonitor {
       if (this.open) this.open();
     };
 
-    this.ws.onmessage = e => {
+    this.ws.onmessage = (e) => {
       if (this.message) this.message(e);
     };
 
@@ -83,9 +82,7 @@ export default class RealtimeMonitor {
 }
 ```
 
-
 使用：
-
 
 ```javascript
 import RealtimeMonitor from '../../api/realtime-monitor';
@@ -102,10 +99,9 @@ this.monitoring
     this.$message.error('实时监控发生异常，请尝试重新刷新页面');
     console.error('RealtimeMonitor error.');
   })
-  .registerMessage(e => {
+  .registerMessage((e) => {
     // 业务逻辑
-		console.log(e);
+    console.log(e);
   })
   .connect();
 ```
-

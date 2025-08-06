@@ -1,9 +1,7 @@
 import { Client } from '@notionhq/client';
 import { NotionToMarkdown } from 'notion-to-md';
 import { PostMetadata } from './types';
-import {
-  PageObjectResponse
-} from '@notionhq/client/build/src/api-endpoints';
+import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 
 export class NotionToMDXConverter {
   private notion: Client;
@@ -24,16 +22,14 @@ export class NotionToMDXConverter {
         filter: {
           and: [
             { property: 'status', select: { equals: 'Published' } },
-            { property: 'type', select: { equals: 'Post' } }
-          ]
+            { property: 'type', select: { equals: 'Post' } },
+          ],
         },
         sorts: [{ property: 'date', direction: 'descending' }],
         start_cursor: startCursor,
       });
 
-      const pagePosts = response.results.map(page =>
-        this.extractPostMeta(page as PageObjectResponse)
-      );
+      const pagePosts = response.results.map((page) => this.extractPostMeta(page as PageObjectResponse));
 
       posts.push(...pagePosts);
       startCursor = response.next_cursor || undefined;
@@ -61,10 +57,10 @@ export class NotionToMDXConverter {
         properties: {
           blog_last_fetched_time: {
             date: {
-              start: now
-            }
-          }
-        }
+              start: now,
+            },
+          },
+        },
       });
       console.log(`📝 Updated blog_last_fetched_time for page ${pageId}`);
     } catch (error) {
@@ -73,7 +69,7 @@ export class NotionToMDXConverter {
     }
   }
 
-    private extractPostMeta(page: PageObjectResponse): PostMetadata {
+  private extractPostMeta(page: PageObjectResponse): PostMetadata {
     const properties = page.properties;
 
     const getTextProperty = (prop: any): string => {
@@ -121,7 +117,7 @@ title: "${metadata.title.replace(/"/g, '\\"')}"
 category: "${metadata.category}"
 type: "${metadata.type}"
 status: "${metadata.status}"
-tags: [${metadata.tags.map(tag => `"${tag}"`).join(', ')}]
+tags: [${metadata.tags.map((tag) => `"${tag}"`).join(', ')}]
 date: "${metadata.date}"
 slug: "${metadata.slug}"
 summary: "${metadata.summary.replace(/"/g, '\\"')}"

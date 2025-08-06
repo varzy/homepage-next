@@ -1,50 +1,39 @@
 ---
-title: "使用同步盘建立自己的私有 Git 仓库"
-category: "Coding"
-type: "Post"
-status: "Published"
-tags: ["Git"]
-date: "2021-03-13"
-slug: "sync-disk-serve-git-repo"
-summary: ""
-last_edited_time: "2024-03-16T08:21:00.000Z"
-blog_last_fetched_time: "2025-08-06T03:18:10.002Z"
-notion_id: "63391f27-edbe-4f17-b944-a79d5e377df1"
+title: '使用同步盘建立自己的私有 Git 仓库'
+category: 'Coding'
+type: 'Post'
+status: 'Published'
+tags: ['Git']
+date: '2021-03-13'
+slug: 'sync-disk-serve-git-repo'
+summary: ''
+last_edited_time: '2024-03-16T08:21:00.000Z'
+blog_last_fetched_time: '2025-08-06T03:18:10.002Z'
+notion_id: '63391f27-edbe-4f17-b944-a79d5e377df1'
 ---
-
 
 ## **在同步盘中初始化一个 Git 裸仓库**
 
-
 在合适的同步盘文件夹内此处使用该命令：
-
 
 ```text
 git init --bare
 ```
 
-
 ## **将“远程仓库”克隆至其他文件夹**
 
-
 使用 git clone 的方式，将同步盘内的“远程仓库”克隆至非同步盘文件夹下。克隆的地址就是远程仓库文件夹的路径。
-
 
 ```text
 git clone [path]
 ```
 
-
 比如我的远程仓库建立在 `D:\Nutstore\CodeStudio\demo` 路径下，那么我就应当输入
-
 
 ```text
 git clone D:\Nutstore\CodeStudio\demo
 ```
 
-
 ## **不同计算机之间的代码互通**
 
-
 由于 git 不像同步盘那样可以时时同步代码，所以当我们切换电脑进行工作时，必须提交上一台电脑的代码，并在新的电脑上使用 `git fetch` 或 `git pull` 等命令进行代码同步。
-

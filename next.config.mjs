@@ -1,5 +1,5 @@
-import createMDX from '@next/mdx'
-import remarkGfm from 'remark-gfm'
+import createMDX from '@next/mdx';
+import remarkGfm from 'remark-gfm';
 
 const nextConfig = {
   reactStrictMode: false,
@@ -22,6 +22,6 @@ const withMDX = createMDX({
     remarkPlugins: [remarkGfm],
     rehypePlugins: [],
   },
-})
+});
 
 export default withMDX(nextConfig);

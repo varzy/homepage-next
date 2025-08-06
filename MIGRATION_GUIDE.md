@@ -30,6 +30,7 @@ npm run fetch
 ```
 
 此命令会：
+
 - 从 Notion Database 获取所有已发布的文章
 - 检查本地文件是否存在和是否需要更新
 - 将 Notion 页面转换为 MDX 格式
@@ -50,6 +51,7 @@ npm run build
 ```
 
 此命令会：
+
 1. 先执行 `npm run fetch` 获取最新内容
 2. 然后执行 `next build` 生成静态站点
 
@@ -93,6 +95,7 @@ npm run build
 ### 1. 拉取失败
 
 如果 `npm run fetch` 失败，检查：
+
 - Notion API 凭证是否正确
 - 网络连接是否正常
 - Notion Database 权限是否充足
@@ -100,6 +103,7 @@ npm run build
 ### 2. 构建失败
 
 如果构建失败，检查：
+
 - 是否先执行了 `npm run fetch`
 - MDX 文件格式是否正确
 - 依赖是否安装完整
@@ -107,6 +111,7 @@ npm run build
 ### 3. 内容不显示
 
 如果内容不显示，检查：
+
 - `content/posts/` 目录是否存在文件
 - MDX 文件的 frontmatter 格式是否正确
 - 文章的 `status` 是否为 `Published`

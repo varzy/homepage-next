@@ -1,20 +1,18 @@
 ---
-title: "修复 Windows 任务栏图标异常"
-category: "Coding"
-type: "Post"
-status: "Published"
-tags: ["Windows"]
-date: "2020-03-27"
-slug: "windows-taskbar-icons-abnormal"
-summary: ""
-last_edited_time: "2024-03-16T08:21:00.000Z"
-blog_last_fetched_time: "2025-08-06T03:21:10.629Z"
-notion_id: "09875fbe-6e3d-491e-9752-00c0a349d276"
+title: '修复 Windows 任务栏图标异常'
+category: 'Coding'
+type: 'Post'
+status: 'Published'
+tags: ['Windows']
+date: '2020-03-27'
+slug: 'windows-taskbar-icons-abnormal'
+summary: ''
+last_edited_time: '2024-03-16T08:21:00.000Z'
+blog_last_fetched_time: '2025-08-06T03:21:10.629Z'
+notion_id: '09875fbe-6e3d-491e-9752-00c0a349d276'
 ---
 
-
 [Rebuild_Icon_Cache.bat](https://prod-files-secure.s3.us-west-2.amazonaws.com/e753f4ed-a9d5-4b94-80b5-b5d3a8dd4851/47787731-78b3-4555-b702-282b8b73b881/Rebuild_Icon_Cache.bat?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UUNQSWTD%2F20250806%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250806T032106Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDMaCXVzLXdlc3QtMiJGMEQCIFsdAqiRAFrWNaGWSv9IxIh8IOAWNHXrKECbatuvRwHdAiB00tQngvBbXqxcRb7sJ1bxyPmwg4x8%2FdXDGSfMEBTHCCr%2FAwhrEAAaDDYzNzQyMzE4MzgwNSIM2nBX3zOqeN%2BB3GVBKtwDrS%2FOHmMyNgWBKnsMB2jNWO1zg%2F7t0isAzYQ%2BtCHBWXGOd2fmftYMPc%2FGnBMRpmpHuGYOb4SsO8LPwSHPsaqyzI6LOKlQktmtSXzzqpUvCJASjWRQeuqkB1wy7P4UnY6EfCwrX8fo5d7ql3tCnJOEwaXh29zMvxVvJGbv8cwxYrv6C3UA%2B3vdnWEvS3pQqQGDMfUzyTZ%2BoL%2BP%2FS2Htj%2FVUS0GJqwZDd1l3LrpkJd21eOZdWeeoPJkgIlh3BLfknvY%2B2lxVx7tC1FSNKUo1vxB361iKqywKTr3XNr3ExfCTx164sRN7FztDpoiG4VMqgeokU5oyfhPB2JzEGKDw1cHpusKbTkvHbX1IacBzStMH9oSvAkPDbp6oJWAhIkTx%2BUv%2BjIGsXoyXRQboZT0%2BZE8kTJZObRtRlnhl0P3U63X67LLi%2FGiVKRSlmAUnbf9VlPHNr%2BeY3WdNUFkN95V%2FbN2AmEHYf01HCKAmMWL5FRcTBXtPsAsVdsntzYYYDx7kHNs%2B7YexfWMNfQQzfRBaNlRsi2F7Bd2VEpKQBsMq9XVODdwPWk3dpsi1sYEK1Cew3OMFtuk4%2FRkhlv0xoRctzJtMxM%2FegjEfcOCqOMUajBXaGCOEh3OoLrK4dRUxrww9fjKxAY6pgHuHxx92P6nJyX08rHP%2BfwgDWvqL5LTzUt66jpznwX0u%2BBovUMaQUUt1OqlmbalOpPJ5sg9lAXNPfwzzbUsPsM3Jf2kSqTJhoOckNqshoqnWVvlVYYvEnTxYDJz4rvsHExwR2TMKXayEfY6Xkxm%2FqVDRgwGyYgH5GCfEJMJk4Kl0a63GvvdPPSf1EUDgfwVL3tMSVUNPjgSyTBCSPDOnXSWTfXgmOmb&X-Amz-Signature=d240483c143189649fe77fa8a1b6e262d5d196997b30e0c63781bdee7e6f99ee&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
-
 
 ```bash
 :: Created by: Shawn Brink
@@ -24,7 +22,7 @@ notion_id: "09875fbe-6e3d-491e-9752-00c0a349d276"
 @echo off
 set iconcache=%localappdata%\IconCache.db
 
-echo The Explorer process must be killed to delete the Icon DB. 
+echo The Explorer process must be killed to delete the Icon DB.
 echo.
 echo Please SAVE ALL OPEN WORK before continuing.
 echo.
@@ -32,7 +30,7 @@ pause
 echo.
 If exist "%iconcache%" goto delID
 echo.
-echo Icon DB has already been deleted. 
+echo Icon DB has already been deleted.
 echo.
 pause
 exit /B
@@ -41,9 +39,9 @@ exit /B
 echo Attempting to delete Icon DB...
 echo.
 ie4uinit.exe -ClearIconCache
-taskkill /IM explorer.exe /F 
+taskkill /IM explorer.exe /F
 del "%iconcache%" /A
-del "%localappdata%\Microsoft\Windows\Explorer\iconcache*" /A 
+del "%localappdata%\Microsoft\Windows\Explorer\iconcache*" /A
 echo.
 echo Icon DB has been successfully deleted. Please "restart your PC" now to rebuild your icon cache.
 echo.
@@ -51,4 +49,3 @@ start explorer.exe
 pause
 exit /B
 ```
-

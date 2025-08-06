@@ -1,0 +1,131 @@
+---
+title: "搭建基于 Laradock 的开发环境"
+category: "Coding"
+type: "Post"
+status: "Published"
+tags: ["Docker", "PHP"]
+date: "2020-03-27"
+slug: "laradock-development"
+summary: ""
+last_edited_time: "2024-03-16T08:21:00.000Z"
+notion_id: "4dc8f27d-3c91-411d-8bbf-bf9041911236"
+---
+
+
+.env
+
+
+```bash
+# Fix
+APP_CODE_PATH_HOST=../Sites
+DATA_PATH_HOST=./data
+# <https://developer.aliyun.com/composer>
+WORKSPACE_COMPOSER_REPO_PACKAGIST=https://mirrors.aliyun.com/composer/
+WORKSPACE_NPM_REGISTRY=https://registry.npm.taobao.org
+WORKSPACE_TIMEZONE=PRC
+MYSQL_VERSION=5.7
+# Add
+WORKSPACE_COMPOSER_GLOBAL_PACKAGES=friendsofphp/php-cs-fixer
+```
+
+
+docker-compose.yml
+
+
+```yaml
+workspace:
+  build:
+    context: ./workspace
+    args:
+      - COMPOSER_GLOBAL_PACKAGES=${WORKSPACE_COMPOSER_GLOBAL_PACKAGES}
+```
+
+
+workspace/Dockerfile
+
+
+```docker
+##### composer #####
+# Install composer global packages
+ARG COMPOSER_GLOBAL_PACKAGES
+
+RUN if [ ${COMPOSER_GLOBAL_PACKAGES} ]; then \\
+    composer global require ${COMPOSER_GLOBAL_PACKAGES} \\
+;fi
+```
+
+
+添加脚本 laradock.sh，用于一键起停服务
+
+
+```bash
+#!/bin/bash
+
+cd ~/Code/laradock
+
+print_style() {
+  if [ "$2" == "info" ]; then
+    COLOR="96m"
+  elif [ "$2" == "success" ]; then
+    COLOR="92m"
+  elif [ "$2" == "warning" ]; then
+    COLOR="93m"
+  elif [ "$2" == "danger" ]; then
+    COLOR="91m"
+  else
+    COLOR="0m"
+  fi
+
+  STARTCOLOR="\\e[$COLOR"
+  ENDCOLOR="\\e[0m"
+
+  printf "$STARTCOLOR%b$ENDCOLOR" "$1"
+}
+
+display_options() {
+  printf "Available options:\\n"
+  print_style "   up" "success"
+  printf "\\t Starts containers\\n"
+  print_style "   stop" "success"
+  printf "\\t Stops containers\\n"
+  print_style "   down" "success"
+  printf "\\t Removes containers\\n"
+  print_style "   bash" "success"
+  printf "\\t Opens bash on the workspace with user laradock.\\n"
+}
+
+if [[ $# -eq 0 ]]; then
+  print_style "Missing arguments.\\n" "danger"
+  display_options
+  exit 1
+fi
+
+if [ "$1" == "up" ]; then
+  if [ $# -gt 1 ]; then
+    shift
+    SERVICES="$*"
+  else
+    SERVICES="nginx php-fpm mysql redis"
+  fi
+  print_style "Starting Docker Compose\\n" "info"
+  print_style "Your services: ${SERVICES}\\n" "success"
+  docker-compose up -d ${SERVICES}
+
+elif [ "$1" == "stop" ]; then
+  print_style "Stopping Docker Compose\\n" "info"
+  docker-compose stop
+
+elif [ "$1" == "down" ]; then
+  print_style "Removing Docker Compose\\n" "info"
+  docker-compose down
+
+elif [ "$1" == "bash" ]; then
+  docker-compose exec --user=laradock workspace bash
+
+else
+  print_style "Invalid arguments.\\n" "danger"
+  display_options
+  exit 1
+fi
+```
+

@@ -1,0 +1,41 @@
+---
+title: "Promise 的一些扩展方法"
+category: "Coding"
+type: "Post"
+status: "Published"
+tags: ["JavaScript"]
+date: "2020-03-27"
+slug: "promise-apis"
+summary: ""
+last_edited_time: "2024-03-16T08:21:00.000Z"
+notion_id: "76de8c1f-eb0a-411c-a6c1-fdcde1edde81"
+---
+
+
+```javascript
+// promise.done()
+Promise.prototype.done = function (onFulfilled, onRejected) {
+  this.then(onFulfilled, onRejected)
+    .catch(function (reason) {
+      // 抛出一个全局错误
+      setTimeout(() => { throw reason }, 0)
+    })
+}
+
+// promise.finally()
+Promise.prototype.finally = function (callback) {
+  let P = this.constructor
+  return this.then(
+    value  => P.resolve(callback()).then(() => value),
+    reason => P.resolve(callback()).then(() => { throw reason })
+  )
+}
+
+// promise.if()
+Promise.prototype.if = function(flag, planAS, planBS) {
+    return flag
+		? Promise.all(planAS.map(f => f()))
+		: Promise.all(planBS.map(f => f()))
+}
+```
+

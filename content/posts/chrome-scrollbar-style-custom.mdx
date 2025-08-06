@@ -1,0 +1,33 @@
+---
+title: "更改 Chrome 进度条样式"
+category: "Coding"
+type: "Post"
+status: "Published"
+tags: ["CSS", "Browser"]
+date: "2020-06-11"
+slug: "chrome-scrollbar-style-custom"
+summary: ""
+last_edited_time: "2024-03-16T08:21:00.000Z"
+notion_id: "5c19a41b-b70c-40f5-aeef-6c250ea597d5"
+---
+
+
+```css
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-corner {
+  background-color: #fff;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #cbcbcb;
+  border: solid 2px #cbcbcb;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-track-piece {
+  background-color: #fff;
+  -webkit-border-radius: 4px;
+}
+```
+

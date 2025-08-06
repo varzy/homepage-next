@@ -1,0 +1,53 @@
+---
+title: "修复 Windows 任务栏图标异常"
+category: "Coding"
+type: "Post"
+status: "Published"
+tags: ["Windows"]
+date: "2020-03-27"
+slug: "windows-taskbar-icons-abnormal"
+summary: ""
+last_edited_time: "2024-03-16T08:21:00.000Z"
+notion_id: "09875fbe-6e3d-491e-9752-00c0a349d276"
+---
+
+
+[Rebuild_Icon_Cache.bat](https://prod-files-secure.s3.us-west-2.amazonaws.com/e753f4ed-a9d5-4b94-80b5-b5d3a8dd4851/47787731-78b3-4555-b702-282b8b73b881/Rebuild_Icon_Cache.bat?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466V2ACNCST%2F20250806%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250806T025322Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDMaCXVzLXdlc3QtMiJGMEQCIDV92zbiLkgKyxQaLNLRJrgKQWvG%2FhtP1HrDWk9rpcvgAiAYaXTF8dNpS9QHlj0hqPGp7Tr%2FJxD0Py3Oq1Wof2ijkSr%2FAwhrEAAaDDYzNzQyMzE4MzgwNSIMrIMZklVyYjxagnGOKtwDDWASJqNVON8F23LHI6thBuH4vgdlTek2S%2FXx8urFWBLYr3NHkpOkNd0ouOBshJ%2FhjUI9U%2BnwOxFyVWWtuEKjTuu%2FPWS%2BtQfN%2B%2F7sWKycbWzBxB1060cyeyomtJy8uOts%2BVRf6ay4DTiOeSXl%2BOt4t%2Bou8g16hAl0Mz9wVGxy8JvQ76awqLoNx9yBO56nLg3zMyjoxTN7A%2FXBXP%2BjrvqPF1wuM9NIPG2sqFwOiHrs%2BRpSTmHj0LdqM3kg9HHovoGOKj7tJ2%2B4CurNTmG33E8M9z3bLhow7XyengydN08pbduLwmhVBug3c5XLQyq9s9R9XSaOOVtAkT1YujJYLhIei4YzC7mnh7gp8yOTI6QfhoPEkBjgpwG1oS3xkGc%2BWSU60B8pB02l8dIDJJo51xeenx%2BQ3Abb8rhqeA0v4KuucSuYJ%2BQu7vOzqxDL6nsBcbzCgpktMXlo%2FF8nX4qZvCKSB%2BBHIl8c1BpzK16GWawtcI83tTlzYLP16ukN5DStKhAF1%2BdpTCdepjnxPbN%2Bb%2F1gpr%2B53VKCUop415gpMaRn522dSVVlw6v1eGdYY4iXWnAhtupLy%2BZNPbaF3Yf3sRPAJq1lkuaZsPylOD%2F9xPBxumYIAcPBOMeJGiC22EUwmvnKxAY6pgH0a9Jm9IBOhHOaJHU97Xgvm8KI7YJMcA7DeNJrXkNpBpy8MkT9K62HJnmlBEGlDn%2BbCRstPm5PGLLWRdUfBGINvp9Co165yYQveQRU4XLtYYPAKd7NlDGXTuM6WvvuX4pvfk8rZW65%2Brl1KuOkeDlrFtDbbq%2BYsDv7621dxATTjwfeWhk5g3l%2F8ftwpVTa%2FwHLrFgdPESgBzYzyZDUx2eiAqA3f9OK&X-Amz-Signature=b922734561b580ebb0a3024cd4995056c28a95bfb5a3ad47b6b8d1878013a714&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+
+
+```bash
+:: Created by: Shawn Brink
+:: http://www.sevenforums.com
+:: Tutorial:  http://www.sevenforums.com/tutorials/49819-icon-cache-rebuild.html
+
+@echo off
+set iconcache=%localappdata%\IconCache.db
+
+echo The Explorer process must be killed to delete the Icon DB. 
+echo.
+echo Please SAVE ALL OPEN WORK before continuing.
+echo.
+pause
+echo.
+If exist "%iconcache%" goto delID
+echo.
+echo Icon DB has already been deleted. 
+echo.
+pause
+exit /B
+
+:delID
+echo Attempting to delete Icon DB...
+echo.
+ie4uinit.exe -ClearIconCache
+taskkill /IM explorer.exe /F 
+del "%iconcache%" /A
+del "%localappdata%\Microsoft\Windows\Explorer\iconcache*" /A 
+echo.
+echo Icon DB has been successfully deleted. Please "restart your PC" now to rebuild your icon cache.
+echo.
+start explorer.exe
+pause
+exit /B
+```
+

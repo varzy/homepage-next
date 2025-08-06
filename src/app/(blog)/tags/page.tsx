@@ -1,4 +1,4 @@
-import { composeDatabaseQuery, getAllPagesWithMeta, getDatabaseTags } from '@/app/(blog)/_lib/notion-handler';
+import { getAllPosts, getAllTags } from '@/app/(blog)/_lib/content-loader';
 import PostTag from '@/app/(blog)/_components/PostTag';
 import { Metadata } from 'next';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
@@ -10,14 +10,17 @@ export const metadata: Metadata = {
 };
 
 export default async function Tag() {
-  const allPosts = await getAllPagesWithMeta(composeDatabaseQuery());
-  const tags = await getDatabaseTags(composeDatabaseQuery());
+  const allPosts = await getAllPosts();
+  const tags = await getAllTags();
 
   const tagsWithPostsCount = tags.map((tag) => {
     const tagPosts = allPosts.filter((post) => post.tags.includes(tag));
     return { tag, postsCount: tagPosts.length };
   });
-  const sortedTags = tagsWithPostsCount.filter((tag) => tag.postsCount > 0).sort((a, b) => b.postsCount - a.postsCount);
+
+  const sortedTags = tagsWithPostsCount
+    .filter((tag) => tag.postsCount > 0)
+    .sort((a, b) => b.postsCount - a.postsCount);
 
   return (
     <BlogPageContainer pageHero={{ title: 'Tags' }}>

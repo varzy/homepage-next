@@ -1,0 +1,23 @@
+---
+title: "页面渲染加速 (个人总结)"
+category: "Coding"
+type: "Post"
+status: "Published"
+tags: ["八股文"]
+date: "2020-05-11"
+slug: "page-rendering-turning"
+summary: ""
+last_edited_time: "2024-03-16T08:21:00.000Z"
+notion_id: "f8919c11-13f6-4b77-addc-a76d129a2093"
+---
+
+- 减少 HTTP 请求
+- 减小资源体积，比如压缩 css 和 js
+- 合理设置 CSS 和 JS 的位置
+- 合理给 JS 文件添加 defer 和 async 属性
+- 图片添加 lazy 属性，以及使用 srcset 属性
+- 图标打包为 base64
+- 复杂、严重占用主进程的 JS 逻辑可以用 Web Worker API
+- 减少重绘和回流
+- 为静态资源开启 CDN
+- 如果存在大量外部资源，可以使用不同的域名来分流 (每个页面对于同一个域名最多同时发起 8 个左右的请求)

@@ -38,3 +38,6 @@ next-env.d.ts
 /.idea
 /.vscode
 .env
+
+# MDX content and fetch cache
+.last-fetch

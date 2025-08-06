@@ -5,7 +5,7 @@
 - **我**: 男 | 1996 年 | Base 北京 | 河南师范大学 | 计算机科学与技术专业
 - **手机 & 微信**: +86 155 6525 2838
 - **Email**: varzyme@gmail.com
-- **Github**: <https://github.com/varzy>
+- **Github**: [https://github.com/varzy](https://github.com/varzy)
 
 ## 技能清单
 

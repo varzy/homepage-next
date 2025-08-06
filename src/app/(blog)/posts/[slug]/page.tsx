@@ -6,7 +6,6 @@ import BuyMeACoffee from '@/app/(blog)/_components/BuyMeACoffee';
 import { getEmojiFavicon } from '@/utils/favicon';
 import MDXContent from '@/app/(blog)/_components/MDXContent';
 import { MDXRemote } from 'next-mdx-remote/rsc';
-import { mdxComponents } from '@/app/(blog)/_components/MDXContent';
 
 interface PageProps {
   params: { slug: string };
@@ -49,7 +48,7 @@ export default async function Post({ params }: PageProps) {
       }}
     >
       <MDXContent>
-        <MDXRemote source={postWithContent.content} components={mdxComponents} />
+        <MDXRemote source={postWithContent.content} />
       </MDXContent>
       {postWithContent.category === 'Coding' && (
         <div className="mx-auto my-8 max-w-md">

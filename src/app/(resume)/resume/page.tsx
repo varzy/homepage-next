@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default async function Resume() {
   return (
-    <div className="container mx-auto max-w-3xl px-6 pb-32 pt-16">
+    <div className="container mx-auto max-w-3xl px-6 pt-16 pb-32">
       <MdxRenderer source={ResumeFile} />
     </div>
   );

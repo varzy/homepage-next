@@ -27,7 +27,7 @@ const CustomCodeBlock = ({ children, className, ...props }: any) => {
   }
 
   return (
-    <pre className="bg-gray-200 p-4 rounded text-sm">
+    <pre className="rounded bg-gray-200 p-4 text-sm">
       <code {...props}>{children}</code>
     </pre>
   );
@@ -35,7 +35,7 @@ const CustomCodeBlock = ({ children, className, ...props }: any) => {
 
 const CustomInlineCode = ({ children, ...props }: any) => {
   return (
-    <code className="bg-gray-200 text-rose-400 px-1 py-0.5 rounded text-sm font-medium border-0" {...props}>
+    <code className="rounded border-0 bg-gray-200 px-1 py-0.5 text-sm font-medium text-rose-400" {...props}>
       {children}
     </code>
   );
@@ -45,7 +45,7 @@ const CustomLink = (props: any) => {
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 };
 
-const CustomPre = ({ children, ...props }: any) => {
+const CustomPre = ({ children }: any) => {
   return <>{children}</>;
 };
 
@@ -71,7 +71,7 @@ const mdxComponents = {
 
 export default function MdxRenderer({ source }: MdxRendererProps) {
   return (
-    <article className="prose max-w-none font-normal prose-a:break-words prose-img:mx-auto prose-img:rounded-md prose-pre:bg-transparent prose-pre:p-0 prose-code:before:content-none prose-code:after:content-none sm:prose-img:w-[90%]">
+    <article className="prose prose-a:break-words prose-img:mx-auto prose-img:rounded-md prose-pre:bg-transparent prose-pre:p-0 prose-code:before:content-none prose-code:after:content-none sm:prose-img:w-[90%] max-w-none font-normal">
       <MDXRemote source={source} components={mdxComponents} />
     </article>
   );

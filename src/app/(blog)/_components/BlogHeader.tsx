@@ -24,7 +24,7 @@ export default function BlogHeader() {
           <div className="menu align-center flex">
             {links.map((link, index) => (
               <Link
-                className=" mr-3.5 transition-all duration-300 ease-in-out last:mr-0 hover:text-indigo-500"
+                className="mr-3.5 transition-all duration-300 ease-in-out last:mr-0 hover:text-indigo-500"
                 key={index}
                 href={link.href}
               >

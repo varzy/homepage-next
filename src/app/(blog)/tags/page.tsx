@@ -23,7 +23,7 @@ export default async function Tag() {
   return (
     <BlogPageContainer pageHero={{ title: 'Tags' }}>
       {sortedTags.map((tag, index) => (
-        <div key={index} className="mb-2 mr-4 inline-block">
+        <div key={index} className="mr-4 mb-2 inline-block">
           <PostTag tag={tag.tag} count={tag.postsCount} />
         </div>
       ))}

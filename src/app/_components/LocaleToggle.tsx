@@ -15,7 +15,7 @@ export default function LocaleToggle() {
   };
 
   return (
-    <div className="absolute right-5 top-4">
+    <div className="absolute top-4 right-5">
       {pathname === '/' ? <Switcher href="/en" label="EN" /> : <Switcher href="/" label="中文" />}
     </div>
   );

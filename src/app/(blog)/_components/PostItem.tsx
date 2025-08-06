@@ -7,7 +7,7 @@ export default function PostItem(post: PostMetaData) {
       className="post_link group mb-8 block justify-between last:mb-0 sm:mb-10 sm:flex"
       href={'/posts/' + post.slug}
     >
-      <div className="mb-1 shrink-0  font-mono text-xs text-gray-400 sm:mb-0 sm:mr-4 sm:text-base">
+      <div className="mb-1 shrink-0 font-mono text-xs text-gray-400 sm:mr-4 sm:mb-0 sm:text-base">
         {post.dateAmericaStyle}
       </div>
       <div className="flex-1">

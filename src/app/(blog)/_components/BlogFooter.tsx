@@ -17,7 +17,7 @@ export default function BlogFooter() {
     <footer>
       <div className="g-blog-container">
         <hr className="border-gray-200" />
-        <div className="pb-14 pt-6 text-sm">
+        <div className="pt-6 pb-14 text-sm">
           <p>
             &copy; {SITE_CONFIG.author} 2015 - {new Date().getFullYear()}
             {FOOTER_LINKS.map((link, index) => (

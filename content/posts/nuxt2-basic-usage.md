@@ -138,7 +138,6 @@ Nuxt 中最重要的两个生命周期之一，我们需要严格区分 asyncDat
 
 - **如果需要在生命周期中同时发起多个请求，务必使用 Promise.all (或 Promise.allSettled) 进行并发**
 - 当使用 `<nuxt-link />` 进行页面跳转时，已经加载过的页面将具备单页行为，**此时目标页面的** **`fetch`** **仍将在** **`mouted`** **之前执行，但不会等待异步操作执行完毕。**因此假如目标页面在 `mounted` 中尝试获取依赖 `fetch` 结果才能渲染的 dom 时，必定会找不到 dom 节点。解决方案：
-
   - 使用 a 标签替代 `<nuxt-link />`。不推荐。这会使目标页面完全重载，失去单页效果
   - 使用 asyncData 填充数据
   - 结合 `$fetchState.pending` 实现 loading 效果，并将 `mounted` 中的逻辑移至 `watch` API 中：

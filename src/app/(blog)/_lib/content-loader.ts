@@ -17,7 +17,6 @@ export interface PostMeta {
   notion_id: string;
   dateAmericaStyle: string;
   icon?: string;
-  id: string; // 为了兼容现有代码，使用 notion_id 作为 id
 }
 
 export interface PostWithContent extends PostMeta {
@@ -65,7 +64,6 @@ function parseMDXFile(filePath: string): PostMeta {
     blog_last_fetched_time: data.blog_last_fetched_time,
     notion_id: data.notion_id || '',
     dateAmericaStyle: formatDate(data.date || ''),
-    id: data.notion_id || '', // 使用 notion_id 作为 id
     icon: data.icon,
   };
 }
@@ -165,14 +163,10 @@ export async function getPostWithContent(slug: string): Promise<PostWithContent 
       blog_last_fetched_time: data.blog_last_fetched_time,
       notion_id: data.notion_id || '',
       dateAmericaStyle: formatDate(data.date || ''),
-      id: data.notion_id || '',
       icon: data.icon,
     };
 
-    return {
-      ...meta,
-      content,
-    };
+    return { ...meta, content };
   } catch (error) {
     console.error(`Error loading post ${slug}:`, error);
     return null;

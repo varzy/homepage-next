@@ -6,6 +6,7 @@ interface MdxRendererProps {
   source: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const CustomCodeBlock = ({ children, className, ...props }: any) => {
   const match = /language-(\w+)/.exec(className || '');
   const language = match ? match[1] : '';
@@ -33,6 +34,7 @@ const CustomCodeBlock = ({ children, className, ...props }: any) => {
   );
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const CustomInlineCode = ({ children, ...props }: any) => {
   return (
     <code className="rounded border-0 bg-gray-200 px-1 py-0.5 text-sm font-medium text-rose-400" {...props}>
@@ -41,14 +43,17 @@ const CustomInlineCode = ({ children, ...props }: any) => {
   );
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const CustomLink = (props: any) => {
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const CustomPre = ({ children }: any) => {
   return <>{children}</>;
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const SmartCode = ({ children, className, ...props }: any) => {
   const hasLanguageClass = className && /language-\w+/.test(className);
 

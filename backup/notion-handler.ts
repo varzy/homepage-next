@@ -23,6 +23,7 @@ export const composeDatabaseQuery = (
 ): QueryDatabaseParameters => {
   const { tags = ['published', 'type_post', 'date_desc'], ...extra } = options || {};
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const query: any = {
     database_id: SITE_CONFIG.notionDatabaseId,
     filter: { and: [] },
@@ -94,7 +95,6 @@ export interface PostMetaData {
   type: string;
   slug: string;
   icon?: string;
-  // isSmmsImages: boolean;
 }
 
 export const getPageMeta = (page: PageObjectResponse): PostMetaData => {

@@ -1,4 +1,4 @@
-import { PostMetaData } from '@/app/(blog)/_lib/notion-handler';
+import { PostMeta } from '@/app/(blog)/_lib/content-loader';
 import { SITE_CONFIG } from '@/site.config';
 import PostItem from './PostItem';
 import Pagination from '@/app/(blog)/_components/Pagination';
@@ -8,7 +8,7 @@ export default function PostsContainer({
   currentPage,
   urlPrefix = '/',
 }: {
-  posts: PostMetaData[];
+  posts: PostMeta[];
   currentPage: number;
   urlPrefix?: string;
 }) {

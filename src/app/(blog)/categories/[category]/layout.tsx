@@ -5,13 +5,13 @@ import { Metadata } from 'next';
 import { getEmojiFavicon } from '@/utils/favicon';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     category: keyof typeof SITE_CONFIG.categories;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { category } = params;
+  const { category } = await params;
   const categoryContext = SITE_CONFIG.categories[category];
   const categoryAlias = categoryContext.alias || '';
 
@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function BlogLayout({ children, params }: Readonly<{ children: ReactNode }> & PageProps) {
-  const { category } = params;
+  const { category } = await params;
   const availableCategories = Object.keys(SITE_CONFIG.categories);
   if (!availableCategories.includes(category)) notFound();
 

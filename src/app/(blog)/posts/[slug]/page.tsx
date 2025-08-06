@@ -7,11 +7,11 @@ import { getEmojiFavicon } from '@/utils/favicon';
 import MdxRenderer from '@/app/(blog)/_components/MdxRenderer';
 
 interface PageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const { slug } = params;
+  const { slug } = await params;
 
   const post = await getPostBySlug(slug);
   if (!post) return {};
@@ -29,7 +29,7 @@ export async function generateStaticParams() {
 }
 
 export default async function Post({ params }: PageProps) {
-  const { slug } = params;
+  const { slug } = await params;
 
   const postWithContent = await getPostWithContent(slug);
   if (!postWithContent) notFound();

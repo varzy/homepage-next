@@ -4,9 +4,6 @@ import remarkGfm from 'remark-gfm';
 const nextConfig = {
   reactStrictMode: false,
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
-  experimental: {
-    mdxRs: false,
-  },
   webpack: (config) => {
     config.module.rules.push({
       test: /\.md$/,

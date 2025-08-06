@@ -1,7 +1,7 @@
-import { PostMetaData } from '@/app/(blog)/_lib/notion-handler';
+import { PostMeta } from '@/app/(blog)/_lib/content-loader';
 import Link from 'next/link';
 
-export default function PostItem(post: PostMetaData) {
+export default function PostItem(post: PostMeta) {
   return (
     <Link
       className="post_link group mb-8 block justify-between last:mb-0 sm:mb-10 sm:flex"

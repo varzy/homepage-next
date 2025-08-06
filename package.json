@@ -2,6 +2,7 @@
   "name": "homepage-next",
   "version": "2.0.0",
   "private": true,
+  "packageManager": "pnpm@10.13.1",
   "scripts": {
     "dev": "next dev",
     "exam": "npm run fetch && npm run format && npm run lint",

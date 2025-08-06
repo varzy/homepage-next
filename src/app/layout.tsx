@@ -11,6 +11,14 @@ export const metadata: Metadata = {
   keywords: SITE_CONFIG.keywords,
   description: SITE_CONFIG.description,
   icons: getEmojiFavicon('👻'),
+  alternates: {
+    types: {
+      'application/rss+xml': `${SITE_CONFIG.siteUrl}/rss.xml`,
+    },
+  },
+  other: {
+    rss: `${SITE_CONFIG.siteUrl}/rss.xml`,
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const FOOTER_LINKS = [
   { label: 'Tags', href: '/tags' },
-  { label: 'RSS', href: '/rss' },
+  { label: 'RSS', href: '/rss.xml' },
 ];
 
 const POWERED_BY_LINKS = [

@@ -3,14 +3,15 @@ export const SITE_CONFIG = {
   notionDatabaseId: process.env.NOTION_DATABASE_ID || '',
   notionApiSecret: process.env.NOTION_API_SECRET || '',
   smmsApiToken: process.env.SMMS_API_TOKEN || '',
-  apiCallingToken: process.env.API_CALLING_TOKEN || '',
 
   title: `贼歪`,
   keywords: `贼歪, zy, 个人网站, 博客, 技术, 前端, Notion, Homepage, Blog`,
-  description: ``,
+  description: `Hi, 我是贼歪。Web 开发者，写字的人。`,
   author: `贼歪`,
   email: ``,
   lang: `zh-CN`,
+  siteUrl: `https://varzy.me`, // RSS 需要的网站 URL
+  feedPath: `/rss.xml`, // RSS 订阅路径
 
   blogPerPage: 10,
   categories: {

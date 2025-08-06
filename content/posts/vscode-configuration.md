@@ -1,0 +1,100 @@
+---
+title: '我的 VSCode 配置'
+category: 'Coding'
+type: 'Post'
+status: 'Published'
+tags: ['Editor']
+date: '2022-04-10'
+slug: 'vscode-configuration'
+summary: ''
+last_edited_time: '2025-08-06T03:15:00.000Z'
+blog_last_fetched_time: '2025-08-06T06:16:29.473Z'
+notion_id: 'a6ed621b-9ef6-4d40-887e-88393fc77cfe'
+icon: '🗝️'
+---
+
+Last Updated At: **2021-04-10**
+
+```javascript
+{
+  "editor.cursorBlinking": "phase",
+  "editor.cursorStyle": "underline",
+  "editor.fontFamily": "'Jetbrains Mono', 'Microsoft YaHei', 'Operator Mono Lig', 'Source Code Pro', 'Fira Code', Monaco, Menlo, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 13,
+  "editor.largeFileOptimizations": false,
+  "editor.mouseWheelScrollSensitivity": 1.6,
+  "editor.rulers": [80, 100],
+  "editor.smoothScrolling": true,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "emmet.triggerExpansionOnTab": true,
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.openEditors.visible": 0,
+  "extensions.ignoreRecommendations": false,
+  "files.associations": {
+    "*.wxml": "xml",
+    "*.wxss": "css"
+  },
+  "files.autoSave": "onFocusChange",
+  "files.eol": "\n",
+  "files.trimTrailingWhitespace": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "terminal.integrated.tabs.enabled": true,
+  "vetur.format.defaultFormatter.html": "prettier",
+  "window.restoreWindows": "none",
+  "workbench.colorCustomizations": {
+    "editorCursor.foreground": "#bf616a",
+    "[GitHub Light]": {
+      "editor.background": "#f6f8fa"
+    },
+    "[GitHub Light Default]": {
+      "editor.background": "#f6f8fa"
+    },
+    "[Night Owl Light (No Italics)]": {
+      "editor.background": "#f6f6f6"
+    }
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.editor.untitled.hint": "hidden",
+  "editor.minimap.showSlider": "always",
+  "editor.minimap.maxColumn": 100,
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "editor.suggestSelection": "first",
+  "redhat.telemetry.enabled": true,
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": true
+  },
+  "editor.bracketPairColorization.enabled": true,
+  "javascript.inlayHints.parameterNames.enabled": "literals",
+  "typescript.inlayHints.parameterNames.enabled": "literals",
+  "editor.suggest.preview": true,
+  "editor.guides.bracketPairs": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "terminal.external.windowsExec": "C:\\Users\\varzy\\Applications\\Git\\bin\\bash.exe",
+  "terminal.integrated.profiles.windows": {
+    "GitBash": {
+      "path": "C:\\Users\\varzy\\Applications\\Git\\bin\\bash.exe"
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "GitBash",
+  "terminal.integrated.fontSize": 12,
+  "workbench.preferredDarkColorTheme": "GitHub Dark",
+  "workbench.preferredLightColorTheme": "GitHub Light Default",
+  "code-runner.runInTerminal": true,
+  "workbench.colorTheme": "GitHub Light Default"
+}
+```

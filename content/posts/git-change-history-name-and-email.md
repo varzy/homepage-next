@@ -1,0 +1,39 @@
+---
+title: '更改 Git 提交记录中的名称和邮箱'
+category: 'Coding'
+type: 'Post'
+status: 'Published'
+tags: ['Git']
+date: '2020-03-27'
+slug: 'git-change-history-name-and-email'
+summary: ''
+last_edited_time: '2025-08-06T03:20:00.000Z'
+blog_last_fetched_time: '2025-08-06T06:20:41.083Z'
+notion_id: '9fdf779b-45fe-4a6a-96f3-d182aaba9e5e'
+icon: '⛵'
+---
+
+```bash
+git filter-branch -f --env-filter '
+OLD_EMAIL="zhaoyue@7moor.com"
+CORRECT_NAME="zy"
+CORRECT_EMAIL="varzy@live.com"
+
+if [ "$GIT_COMMITTER_EMAIL" = "$OLD_EMAIL" ]
+then
+    export GIT_COMMITTER_NAME="$CORRECT_NAME"
+    export GIT_COMMITTER_EMAIL="$CORRECT_EMAIL"
+fi
+if [ "$GIT_AUTHOR_EMAIL" = "$OLD_EMAIL" ]
+then
+    export GIT_AUTHOR_NAME="$CORRECT_NAME"
+    export GIT_AUTHOR_EMAIL="$CORRECT_EMAIL"
+fi
+' --tag-name-filter cat -- --branches --tags
+```
+
+修改完毕后需要强制推送到远程
+
+```bash
+git push origin master -f
+```

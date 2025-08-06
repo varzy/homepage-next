@@ -3,14 +3,15 @@
 import 'dotenv/config';
 import fs from 'fs';
 import path from 'path';
-import { NotionToMDXConverter, generateMDXContent } from './notion-to-mdx';
+import { NotionToMDXConverter, generateMDXContent } from './notion-to-md';
 import { FetchConfig, PostMetadata, FetchResult } from './types';
 
 class PostsFetcher {
   private config: FetchConfig;
   private converter: NotionToMDXConverter;
+  private forceMode: boolean;
 
-  constructor() {
+  constructor(forceMode: boolean = false) {
     this.config = {
       notionDatabaseId: process.env.NOTION_DATABASE_ID || '',
       notionApiSecret: process.env.NOTION_API_SECRET || '',
@@ -22,10 +23,11 @@ class PostsFetcher {
     }
 
     this.converter = new NotionToMDXConverter(this.config.notionApiSecret);
+    this.forceMode = forceMode;
   }
 
   async fetch(): Promise<FetchResult> {
-    console.log('🚀 Starting to fetch posts from Notion...');
+    console.log(`🚀 Starting to fetch posts from Notion${this.forceMode ? ' (FORCE MODE)' : ''}...`);
 
     const result: FetchResult = { updated: 0, skipped: 0, errors: 0 };
 
@@ -41,7 +43,7 @@ class PostsFetcher {
       const postsToUpdate = this.filterPostsToUpdate(allPosts);
       console.log(`🔄 Posts to update: ${postsToUpdate.length}`);
 
-      if (postsToUpdate.length === 0) {
+      if (postsToUpdate.length === 0 && !this.forceMode) {
         console.log('✅ All posts are up to date!');
         return result;
       }
@@ -77,9 +79,15 @@ class PostsFetcher {
   }
 
   private filterPostsToUpdate(posts: PostMetadata[]): PostMetadata[] {
+    // 如果是强制模式，返回所有文章
+    if (this.forceMode) {
+      console.log('🔥 Force mode enabled - will update ALL posts');
+      return posts;
+    }
+
     return posts.filter((post) => {
       // 检查本地文件是否存在
-      const localFilePath = path.join(this.config.outputDir, `${post.slug}.mdx`);
+      const localFilePath = path.join(this.config.outputDir, `${post.slug}.md`);
       const fileExists = fs.existsSync(localFilePath);
 
       // 如果本地文件不存在，肯定需要拉取
@@ -124,11 +132,11 @@ class PostsFetcher {
         blog_last_fetched_time: new Date().toISOString(),
       };
 
-      // 生成 MDX 文件内容（使用更新后的元数据）
+      // 生成 MD 文件内容（使用更新后的元数据）
       const mdxContent = generateMDXContent(updatedPost, markdownContent);
 
       // 保存到本地文件
-      const filePath = path.join(this.config.outputDir, `${post.slug}.mdx`);
+      const filePath = path.join(this.config.outputDir, `${post.slug}.md`);
       fs.writeFileSync(filePath, mdxContent, 'utf-8');
     } catch (error) {
       console.error(`Error processing post ${post.title}:`, error);
@@ -140,7 +148,12 @@ class PostsFetcher {
 // 主执行函数
 async function main() {
   try {
-    const fetcher = new PostsFetcher();
+    // 解析命令行参数
+    const args = process.argv.slice(2);
+    const forceMode = args.includes('--force');
+    console.log(`🔥 Force mode: ${forceMode}`);
+
+    const fetcher = new PostsFetcher(forceMode);
     await fetcher.fetch();
     process.exit(0);
   } catch (error) {

@@ -83,8 +83,8 @@ export async function getAllPosts(): Promise<PostMeta[]> {
       return [];
     }
 
-    // 获取所有 MDX 文件
-    const pattern = path.join(CONTENT_DIR, '*.mdx');
+    // 获取所有 MD 文件
+    const pattern = path.join(CONTENT_DIR, '*.md');
     const files = await glob(pattern);
 
     // 解析所有文件

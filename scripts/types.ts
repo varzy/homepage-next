@@ -16,6 +16,7 @@ export interface PostMetadata {
   last_edited_time: string;
   blog_last_fetched_time: string | null;
   notion_id: string;
+  icon?: string;
 }
 
 export interface FetchResult {

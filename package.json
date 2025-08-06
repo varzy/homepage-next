@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run fetch && next build",
+    "exam": "npm run fetch && npm run format && npm run lint",
+    "build": "next build",
     "build:debug": "next build --debug",
     "start": "next start",
     "lint": "next lint --fix",
-    "format": "prettier --write .",
-    "fetch": "tsx scripts/fetch-posts.ts"
+    "format": "prettier --write . --log-level warn",
+    "fetch": "tsx scripts/fetch-posts.ts",
+    "fetch:force": "tsx scripts/fetch-posts.ts --force"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.0.0",

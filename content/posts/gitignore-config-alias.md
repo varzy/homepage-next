@@ -1,0 +1,101 @@
+---
+title: '在 .gitconfig 中配置别名'
+category: 'Coding'
+type: 'Post'
+status: 'Published'
+tags: ['Git']
+date: '2020-03-27'
+slug: 'gitignore-config-alias'
+summary: ''
+last_edited_time: '2025-08-06T03:20:00.000Z'
+blog_last_fetched_time: '2025-08-06T06:20:34.870Z'
+notion_id: '6ea78241-dcff-4661-8fae-5a752ee0c9c8'
+icon: '🎀'
+---
+
+My own ".gitconfig" file.
+
+```bash
+[user]
+  name =
+  email =
+
+[alias]
+# basic
+  i = init
+  ib = init --bare
+  a = add
+  aa = add .
+  c = commit
+  cm = commit -m
+  cl = clone
+  cll = clone --depth 1
+  sts = status
+  st = stash
+  stp = stash pop
+  re = remote
+  rb = rebase
+  # sm = submodule
+
+# push
+  ps = push
+  pso = push origin
+  psom = push origin master
+  psot = push origin --tags
+  psou = push origin -u
+
+# pull
+  pl = pull
+  plr = pull --rebase
+  plo = pull origin
+  plom = pull origin master
+
+# fetch
+  fe = fetch
+  feo = fetch origin
+
+# branch
+  b = branch
+  bd = branch -d
+  bD = branch -D
+
+# tag
+  t = tag
+  td = tag -d
+
+# merge
+  mg = merge
+  mgn = merge --no-ff
+
+# checkout
+  co = checkout
+  cob = checkout -b
+  coo = checkout --orphan
+
+# reset
+  rs = reset --hard
+  rsl = reset --hard HEAD^
+
+# log
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  rlg = reflog
+
+[http "<https://github.com>"]
+  proxy = socks5://127.0.0.1:1080
+
+[https "<https://github.com>"]
+  proxy = socks5://127.0.0.1:1080
+
+# encoding
+[core]
+  quotepath = false
+
+[gui]
+  encoding = utf-8
+
+[i18n "commit"]
+  encoding = utf-8
+
+[i18n]
+  logoutputencoding = utf-8
+```

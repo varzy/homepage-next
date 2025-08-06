@@ -1,0 +1,104 @@
+---
+title: 'JS 的继承和原型链；new；instanceOf'
+category: 'Coding'
+type: 'Post'
+status: 'Published'
+tags: ['JavaScript', '八股文']
+date: '2020-04-21'
+slug: 'js-prototype'
+summary: ''
+last_edited_time: '2025-08-06T03:18:00.000Z'
+blog_last_fetched_time: '2025-08-06T06:18:44.686Z'
+notion_id: 'e19f5c7e-6e08-4d46-b65c-d059b6109b22'
+icon: '✨'
+---
+
+## 继承和原型
+
+- JS 中的 function 函数都有一个 prototype 属性。箭头函数没有 `prototype`，亦不可作为构造函数
+- 函数的 prototype 属性是一个对象，其中包含 `constructor` 和 `__proto__` 两个属性。constructor 指回了 function 函数
+- 每一个对象都拥有一个 `__proto__` 属性，指向构造函数的 `prototype`。当访问对象中的属性时，将先查找对象，如果没有，就会通过 `__proto__` 向上查找。又因为 `__proto__` 指回了构造函数对象的 `prototype`，所以只需要在 prototype 上添加属性和方法，对象就可以找到了。如此一层一层构成了原型链
+- **JS 实现继承的本质就将子函数的** **`prototype`** **指向父函数实例化出的对象。**这样当实例化子函数时，子对象的 `__proto__` 又指向了构造函数的 `prototype`，即父级对象，这样就可以通过 `__proto__` 向上继续查找了
+- 每个对象都有 `__proto__` 属性，指向了创建该对象的构造函数的原型。其实这个属性指向了 [[prototype]]，但是 [[prototype]] 是内部属性，我们并不能访问到，所以使用 `__proto__` 来访问
+
+```javascript
+// 执行下面的语句
+var o = new Foo();
+
+// 本质上是执行
+var o = new Object();
+o.__proto__ = Foo.prototype;
+Foo.call(o);
+```
+
+```javascript
+function Parent() {}
+let parent = new Parent();
+
+console.log(parent.__proto__); // Parent;
+console.log(parent.__proto__.__proto__); // Object
+console.log(parent.__proto__.__proto__.__proto__); // null
+console.log(parent.__proto__ === Parent.prototype); // true
+console.log(parent.__proto__.constructor); // function Parent() {}
+
+function Sub() {}
+Sub.prototype = new Parent();
+let sub = new Sub();
+
+console.log(sub.__proto__ === Sub.prototype); // true
+console.log(Sub.prototype.__proto__ === Parent.prototype); // true
+```
+
+## New
+
+- 当我们使用 new 操作符时，新对象被添加了 `__proto__` 并且链接到构造函数的原型上 (`obj.__proto__ = Fun.prototype`)
+- new 的过程
+  1.  新生成了一个对象
+  2.  链接到原型
+  3.  绑定 this
+  4.  返回新对象
+- 自行实现一个 new
+
+  ```javascript
+  function create() {
+    // 创建一个空的对象
+    let obj = new Object();
+    // 获得构造函数
+    let Con = [].shift.call(arguments);
+    // 链接到原型。最重要的一步：
+    obj.__proto__ = Con.prototype;
+    // 绑定 this，执行构造函数
+    let result = Con.apply(obj, arguments);
+    // 确保 new 出来的是个对象
+    return typeof result === 'object' ? result : obj;
+  }
+  ```
+
+## instanceOf
+
+instanceof 可以正确的判断对象的类型，因为内部机制是通过判断对象的原型链中是不是能找到类型的 prototype。个人理解：可以认为它递归查找直到找到该对象的构造函数对象。
+
+手动实现 instanceOf:
+
+```javascript
+function instanceof(left, right) {
+    // 获得类型的原型
+    let prototype = right.prototype
+    // 获得对象的原型
+    left = left.__proto__
+    // 判断对象的类型是否等于类型的原型
+    while (true) {
+    	if (left === null)
+    		return false
+    	if (prototype === left)
+    		return true
+    	left = left.__proto__
+    }
+}
+```
+
+## 关联阅读
+
+[bookmark](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
+
+[bookmark](https://github.com/KieSun/Dream/issues/2)

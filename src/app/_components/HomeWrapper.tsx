@@ -63,7 +63,7 @@ export default function HomeWrapper({ t, children }: { t: I18nProps; children: R
           </div>
         </Row>
         <Row title="about me">
-          <div className="[&>p]:mb-3 last:[&>p]:mb-0">{children}</div>
+          <div className="[&>p]:mb-3 [&>p]:last:mb-0">{children}</div>
         </Row>
         <Row title="find me">
           <div className="flex flex-wrap">

@@ -18,7 +18,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html className="scroll-smooth focus:scroll-auto" lang={SITE_CONFIG.lang}>
       <body>
         {children}
-        {/* <SpeedInsights /> */}
       </body>
     </html>
   );

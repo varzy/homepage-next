@@ -49,13 +49,13 @@ export const smmsUploadExternal = async (url: string, fileName: string) => {
   return await smmsUpload(fileBlob, fileName);
 };
 
-export const getSmmsUrl = (smmsUpladed: SmmsUploadResult) => {
+export const getSmmsUrl = (smmsUploaded: SmmsUploadResult) => {
   let url;
-  if (smmsUpladed.success) {
-    url = smmsUpladed.data.url;
+  if (smmsUploaded.success) {
+    url = smmsUploaded.data.url;
   }
-  if (smmsUpladed.code === `image_repeated`) {
-    url = (smmsUpladed as SmmsUploadRepeat).images;
+  if (smmsUploaded.code === `image_repeated`) {
+    url = (smmsUploaded as SmmsUploadRepeat).images;
   }
   return url;
 };

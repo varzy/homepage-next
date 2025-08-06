@@ -1,1 +1,31 @@
-@import './globals.css';
+@import 'tailwindcss';
+
+@plugin "@tailwindcss/typography";
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  @font-face {
+    font-family: 'Outfit';
+    src: url('../assets/fonts/Outfit-VariableFont_wght.ttf') format('truetype');
+    font-style: normal;
+    font-display: swap;
+  }
+  html {
+    font-family: Outfit, Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial,
+      ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  }
+  body {
+    @apply bg-[#f7f7f7] tracking-wide text-gray-600;
+  }
+}
+
+@utility g-blog-container {
+  @apply container mx-auto max-w-[800px] px-5;
+}

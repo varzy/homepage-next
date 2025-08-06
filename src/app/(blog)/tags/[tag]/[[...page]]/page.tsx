@@ -27,7 +27,14 @@ export default async function Tag({ params }: { params: Promise<{ tag: string; p
 
   if (optionalPageParam.length > 1) notFound();
 
-  const tagText = decodeURIComponent(tag);
+  let tagText = tag;
+  try {
+    tagText = decodeURIComponent(tag);
+    if (tagText.includes('%')) tagText = decodeURIComponent(tagText);
+  } catch {
+    tagText = tag;
+  }
+
   const [optionalPage] = optionalPageParam;
   const currentPage = +(optionalPage || 1);
 
@@ -35,7 +42,7 @@ export default async function Tag({ params }: { params: Promise<{ tag: string; p
 
   return (
     <BlogPageContainer pageHero={{ title: '#' + tagText }}>
-      <PostsContainer posts={allPosts} currentPage={currentPage} urlPrefix={`/tags/${encodeURIComponent(tagText)}`} />
+      <PostsContainer posts={allPosts} currentPage={currentPage} urlPrefix={`/tags/${tag}`} />
     </BlogPageContainer>
   );
 }

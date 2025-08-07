@@ -12,7 +12,7 @@ export default function FancyLink({ href, target = '_self', label, icon }: Fancy
   return (
     <Link className="group inline-block transition-all duration-200 ease-in-out" href={href} target={target}>
       <span className="flex items-center">
-        {icon && <span className="icon align-center mr-2.5 flex">{icon}</span>}
+        {icon && <span className="icon align-center me-2.5 flex">{icon}</span>}
         <span className="relative whitespace-nowrap ease-in-out">{label}</span>
       </span>
     </Link>

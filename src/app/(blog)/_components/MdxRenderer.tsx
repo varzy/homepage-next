@@ -18,7 +18,9 @@ const CustomCodeBlock = ({ children, className, ...props }: any) => {
         style={prism}
         PreTag="div"
         customStyle={{
-          fontSize: '0.875rem',
+          fontSize: '0.8rem',
+          fontWeight: 400,
+          textShadow: 'none',
         }}
         {...props}
       >
@@ -37,7 +39,7 @@ const CustomCodeBlock = ({ children, className, ...props }: any) => {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const CustomInlineCode = ({ children, ...props }: any) => {
   return (
-    <code className="rounded border-0 bg-gray-200 px-1 py-0.5 text-sm font-medium text-rose-400" {...props}>
+    <code className="rounded border-0 bg-gray-200 px-1 py-0.5 text-sm font-medium text-rose-400 shadow-none" {...props}>
       {children}
     </code>
   );
@@ -76,7 +78,7 @@ const mdxComponents = {
 
 export default function MdxRenderer({ source }: MdxRendererProps) {
   return (
-    <article className="prose prose-a:break-words prose-img:mx-auto prose-pre:bg-transparent prose-pre:p-0 prose-code:before:content-none prose-code:after:content-none max-w-none font-normal">
+    <article className="prose prose-a:break-words prose-img:mx-auto prose-pre:bg-transparent prose-pre:p-0 prose-code:before:content-none prose-code:after:content-none max-w-none text-base leading-7.5 sm:text-lg">
       <MDXRemote source={source} components={mdxComponents} />
     </article>
   );

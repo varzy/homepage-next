@@ -2,7 +2,6 @@ import { getAllPosts, getPostBySlug, getPostWithContent } from '@/app/(blog)/_li
 import { notFound } from 'next/navigation';
 import PostTagLite from '@/app/(blog)/_components/PostTagLite';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
-import BuyMeACoffee from '@/app/(blog)/_components/BuyMeACoffee';
 import { getEmojiFavicon } from '@/utils/favicon';
 import MdxRenderer from '@/app/(blog)/_components/MdxRenderer';
 
@@ -39,20 +38,14 @@ export default async function Post({ params }: PageProps) {
       pageHero={{
         title: postWithContent.title,
         after: (
-          <div className="mt-2">
-            <span className="text-sm text-gray-500">{postWithContent.dateAmericaStyle}</span>
-            <span> • </span>
+          <div className="mt-2 text-sm">
+            <span className="me-4 text-gray-500">{postWithContent.dateAmericaStyle}</span>
             {postWithContent.tags.length > 0 && postWithContent.tags.map((tag) => <PostTagLite key={tag} tag={tag} />)}
           </div>
         ),
       }}
     >
       <MdxRenderer source={postWithContent.content} />
-      {/* {postWithContent.category === 'Coding' && (
-        <div className="mx-auto my-8 max-w-md">
-          <BuyMeACoffee />
-        </div>
-      )} */}
     </BlogPageContainer>
   );
 }

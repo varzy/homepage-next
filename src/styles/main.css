@@ -2,32 +2,22 @@
 
 @plugin "@tailwindcss/typography";
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
+@layer theme {
+  --font-serif: 'Noto Serif', 'Noto Serif SC', serif;
+}
 
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
-  @font-face {
-    font-family: 'Outfit';
-    src: url('../assets/fonts/Outfit-VariableFont_wght.ttf') format('truetype');
-    font-style: normal;
-    font-display: swap;
-  }
   html {
-    @apply font-serif;
-    /* font-family:
-      Outfit, Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, ui-sans-serif,
-      system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; */
+    @apply scroll-smooth font-serif text-gray-900 antialiased focus:scroll-auto;
   }
   body {
-    @apply bg-[#f7f7f7] tracking-wide text-gray-600;
+    @apply bg-[#f7f7f7] tracking-wide;
   }
   a {
     @apply underline-offset-4;
+  }
+  img {
+    -webkit-user-drag: none;
   }
 }
 

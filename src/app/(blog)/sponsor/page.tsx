@@ -19,8 +19,8 @@ export default function Sponsor() {
   return (
     <BlogPageContainer
       pageHero={{
-        title: `☕️ Buy me a Coffee~`,
-        after: `如果你喜欢我的内容，或者它们可以给你带来帮助，或许可以请我喝一杯咖啡？`,
+        title: `Buy me a Coffee`,
+        after: `如果你喜欢我的内容，或者它们可以给你带来帮助，或许可以请我喝一杯咖啡☕️？`,
       }}
     >
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">

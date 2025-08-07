@@ -8,7 +8,7 @@
 
 @layer base {
   html {
-    @apply scroll-smooth font-serif text-gray-900 antialiased focus:scroll-auto;
+    @apply scroll-smooth text-gray-900 antialiased focus:scroll-auto;
   }
   body {
     @apply bg-[#f7f7f7] tracking-wide;

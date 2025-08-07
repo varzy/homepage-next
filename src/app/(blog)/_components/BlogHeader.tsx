@@ -24,7 +24,7 @@ export default function BlogHeader() {
               贼 歪
             </Link>
           </div>
-          <div className="menu align-center flex gap-2 sm:gap-3.5">
+          <div className="menu align-center flex gap-3 sm:gap-3.5">
             {links.map((link, index) => (
               <Link className="transition-all duration-300 ease-in-out hover:underline" key={index} href={link.href}>
                 {link.label}

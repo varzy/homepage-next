@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <HomeWrapper
       t={{
-        iam: `I’m `,
+        iam: `I&apos;m `,
         name: `ZY`,
         pronounce: `zeɪ 'waɪ`,
         telegram: `Telegram`,
@@ -23,9 +23,9 @@ export default function Home() {
       }}
     >
       <p>
-        I’m a software engineer living in Beijing. I enjoy watching anime, reading comics, playing video games, and
-        listening to music especially rock. Just like most geeks, I’m always interested at softwares and consumer
-        electronics. I’m also a minimalist.
+        I&apos;m a software engineer living in Beijing. I enjoy watching anime, reading comics, playing video games, and
+        listening to music especially rock. Just like most geeks, I&apos;m always interested at softwares and consumer
+        electronics. I&apos;m also a minimalist.
       </p>
       <p>
         There are some pieces of my <FancyLink href="/categories/nichijou" label="Everyday Life" /> and some{' '}

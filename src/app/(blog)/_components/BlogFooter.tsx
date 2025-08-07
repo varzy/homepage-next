@@ -19,7 +19,7 @@ export default function BlogFooter() {
           <p>
             {FOOTER_LINKS.map((link, index) => (
               <span key={index}>
-                {index > 0 && <span className="mx-2">•</span>}
+                {index > 0 && <span className="mx-1.5">•</span>}
                 <Link className="underline" href={link.href} target={link.target}>
                   {link.label}
                 </Link>

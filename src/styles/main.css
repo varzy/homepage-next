@@ -2,9 +2,9 @@
 
 @plugin "@tailwindcss/typography";
 
-@layer theme {
+/* @layer theme {
   --font-serif: 'Noto Serif', 'Noto Serif SC', serif;
-}
+} */
 
 @layer base {
   html {

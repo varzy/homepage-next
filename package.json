@@ -13,7 +13,7 @@
     "format": "prettier --write . --log-level warn",
     "fetch": "tsx scripts/fetch-posts.ts",
     "fetch:force": "tsx scripts/fetch-posts.ts --force",
-    "release": "npm run exam && git add . && git commit -m 'Update posts.' && git push"
+    "release": "git pull && npm run exam && git add . && git commit -m 'Release: Update posts.' && git push"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",

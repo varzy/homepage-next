@@ -47,7 +47,7 @@ export default function HomeWrapper({ t, children }: { t: I18nProps; children: R
       <LocaleToggle />
       <div className="container mx-auto max-w-3xl px-5 py-20 leading-7 tracking-wider sm:px-16 [&_a]:underline">
         <Row>
-          <div className="flex flex-col-reverse md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-col-reverse gap-4 md:flex-row md:items-center md:justify-between">
             <div className="space-y-3">
               <p className="text-4xl font-bold">Hi,</p>
               <p className="text-4xl font-bold">

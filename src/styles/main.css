@@ -18,15 +18,19 @@
     font-display: swap;
   }
   html {
-    font-family:
+    @apply font-serif;
+    /* font-family:
       Outfit, Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, ui-sans-serif,
-      system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+      system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; */
   }
   body {
     @apply bg-[#f7f7f7] tracking-wide text-gray-600;
   }
+  a {
+    @apply underline-offset-4;
+  }
 }
 
 @utility g-blog-container {
-  @apply container mx-auto max-w-[800px] px-5;
+  @apply container mx-auto max-w-[720px] px-5;
 }

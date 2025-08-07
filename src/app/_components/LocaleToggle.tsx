@@ -8,7 +8,7 @@ export default function LocaleToggle() {
 
   const Switcher = ({ label, href }: { label: string; href: string }) => {
     return (
-      <Link href={href} className="p-2 font-bold transition-all duration-200 ease-in-out hover:text-indigo-500">
+      <Link href={href} className="p-2 font-bold transition-all duration-200 ease-in-out ">
         {label}
       </Link>
     );

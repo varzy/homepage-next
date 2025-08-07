@@ -3,17 +3,15 @@ import Link from 'next/link';
 
 export default function PostItem(post: PostMeta) {
   return (
-    <Link
-      className="post_link group mb-8 block justify-between last:mb-0 sm:mb-10 sm:flex"
-      href={'/posts/' + post.slug}
-    >
-      <div className="mb-1 shrink-0 font-mono text-xs text-gray-400 sm:mr-4 sm:mb-0 sm:text-base">
-        {post.dateAmericaStyle}
+    <div className="mb-12 block">
+      <div className="block sm:flex sm:items-center sm:justify-between">
+        <div className="text-sm text-gray-400 sm:hidden">{post.dateAmericaStyle}</div>
+        <h2 className="text-lg font-bold text-gray-800">
+          <Link href={'/posts/' + post.slug}>{post.title}</Link>
+        </h2>
+        <div className="ml-4 hidden shrink-0 text-sm text-gray-400 sm:block">{post.dateAmericaStyle}</div>
       </div>
-      <div className="flex-1">
-        <h2 className="font-bold sm:group-hover:underline">{post.title}</h2>
-        {post.summary && <p className="mt-1 text-sm">{post.summary}</p>}
-      </div>
-    </Link>
+      {post.summary && <p className="mt-1 text-sm text-gray-500">{post.summary}</p>}
+    </div>
   );
 }

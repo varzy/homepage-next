@@ -2,7 +2,7 @@ import { SITE_CONFIG } from '@/site.config';
 import Link from 'next/link';
 
 const FOOTER_LINKS = [
-  { label: 'Tags', href: '/tags' },
+  // { label: 'Tags', href: '/tags' },
   { label: 'RSS', href: '/rss.xml' },
 ];
 
@@ -17,7 +17,7 @@ export default function BlogFooter() {
     <footer>
       <div className="g-blog-container">
         <hr className="border-gray-200" />
-        <div className="pt-6 pb-14 text-sm">
+        <div className="pt-8 pb-40 text-sm">
           <p>
             &copy; {SITE_CONFIG.author} 2015 - {new Date().getFullYear()}
             {FOOTER_LINKS.map((link, index) => (

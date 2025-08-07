@@ -1,6 +1,6 @@
 import { getAllPosts, getPostBySlug, getPostWithContent } from '@/app/(blog)/_lib/content-loader';
 import { notFound } from 'next/navigation';
-import PostTag from '@/app/(blog)/_components/PostTag';
+import PostTagLite from '@/app/(blog)/_components/PostTagLite';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 import BuyMeACoffee from '@/app/(blog)/_components/BuyMeACoffee';
 import { getEmojiFavicon } from '@/utils/favicon';
@@ -38,10 +38,11 @@ export default async function Post({ params }: PageProps) {
     <BlogPageContainer
       pageHero={{
         title: postWithContent.title,
-        before: postWithContent.dateAmericaStyle,
         after: (
           <div className="mt-2">
-            {postWithContent.tags.length > 0 && postWithContent.tags.map((tag) => <PostTag key={tag} tag={tag} />)}
+            <span className="text-sm text-gray-500">{postWithContent.dateAmericaStyle}</span>
+            <span> • </span>
+            {postWithContent.tags.length > 0 && postWithContent.tags.map((tag) => <PostTagLite key={tag} tag={tag} />)}
           </div>
         ),
       }}

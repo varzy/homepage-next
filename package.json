@@ -4,7 +4,7 @@
   "private": true,
   "packageManager": "pnpm@10.13.1",
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "exam": "npm run fetch && npm run format && npm run lint",
     "build": "next build",
     "build:debug": "next build --debug",
@@ -13,7 +13,7 @@
     "format": "prettier --write . --log-level warn",
     "fetch": "tsx scripts/fetch-posts.ts",
     "fetch:force": "tsx scripts/fetch-posts.ts --force",
-    "release": "git pull && npm run exam && git add . && git commit -m 'Release: Update posts.' && git push"
+    "release-posts": "git pull && npm run exam && git add . && git commit -m 'Release: Update posts.' && git push"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
@@ -23,6 +23,7 @@
     "@tailwindcss/typography": "^0.5.16",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
+    "clsx": "^2.1.1",
     "dotenv": "^17.2.1",
     "glob": "^10.4.5",
     "gray-matter": "^4.0.3",

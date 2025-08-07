@@ -76,7 +76,7 @@ const mdxComponents = {
 
 export default function MdxRenderer({ source }: MdxRendererProps) {
   return (
-    <article className="prose prose-a:break-words prose-img:mx-auto prose-img:rounded-md prose-pre:bg-transparent prose-pre:p-0 prose-code:before:content-none prose-code:after:content-none sm:prose-img:w-[90%] max-w-none font-normal">
+    <article className="prose prose-a:break-words prose-img:mx-auto prose-pre:bg-transparent prose-pre:p-0 prose-code:before:content-none prose-code:after:content-none max-w-none font-normal ">
       <MDXRemote source={source} components={mdxComponents} />
     </article>
   );

@@ -45,14 +45,14 @@ export default function HomeWrapper({ t, children }: { t: I18nProps; children: R
   return (
     <>
       <LocaleToggle />
-      <div className="container mx-auto max-w-3xl px-5 py-20 leading-7 tracking-wider sm:px-16">
+      <div className="container mx-auto max-w-3xl px-5 py-20 leading-7 tracking-wider sm:px-16 [&_a]:hover:underline">
         <Row>
           <div className="flex flex-col-reverse md:flex-row md:items-center md:justify-between">
             <div className="info">
               <p className="mb-3 text-4xl font-bold">Hi,</p>
               <p className="mb-3 text-3xl font-bold">
                 {t.iam}
-                <strong className="inline-block text-indigo-600 italic">{t.name}</strong>
+                <strong className="inline-block italic">{t.name}</strong>
                 <span className="inline-block text-base font-light text-gray-500">&nbsp;&nbsp;/{t.pronounce}/</span>
               </p>
               <p>🧑‍💻Web Developer. 📝Blogger. 🫣INFJ.</p>

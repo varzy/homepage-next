@@ -5,12 +5,12 @@ import Loading from './loading';
 
 export default function BlogLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <>
+    <div className="disable-user-select">
       <BlogHeader />
       <Suspense fallback={<Loading />}>
         <main>{children}</main>
       </Suspense>
       <BlogFooter />
-    </>
+    </div>
   );
 }

@@ -2,10 +2,6 @@
 
 @plugin "@tailwindcss/typography";
 
-/* @layer theme {
-  --font-serif: 'Noto Serif', 'Noto Serif SC', serif;
-} */
-
 @layer base {
   html {
     @apply scroll-smooth text-gray-900 antialiased focus:scroll-auto;
@@ -16,11 +12,15 @@
   a {
     @apply underline-offset-4;
   }
-  img {
-    -webkit-user-drag: none;
-  }
 }
 
 @utility g-blog-container {
   @apply container mx-auto max-w-[720px] px-5;
+}
+
+@utility disable-user-select {
+  img {
+    user-select: none;
+    -webkit-user-drag: none;
+  }
 }

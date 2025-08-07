@@ -15,7 +15,7 @@ export interface I18nProps {
   douban: string;
   neteaseMusic: string;
   resume: string;
-  iam: string;
+  iam: ReactNode;
   name: string;
   pronounce: string;
 }
@@ -48,16 +48,16 @@ export default function HomeWrapper({ t, children }: { t: I18nProps; children: R
       <div className="container mx-auto max-w-3xl px-5 py-20 leading-7 tracking-wider sm:px-16 [&_a]:underline">
         <Row>
           <div className="flex flex-col-reverse md:flex-row md:items-center md:justify-between">
-            <div className="info">
-              <p className="mb-3 text-4xl font-bold">Hi,</p>
-              <p className="mb-3 text-3xl font-bold">
-                {t.iam}
-                <strong className="inline-block italic">{t.name}</strong>
-                <span className="inline-block text-base font-light text-gray-500">&nbsp;&nbsp;/{t.pronounce}/</span>
+            <div className="space-y-3">
+              <p className="text-4xl font-bold">Hi,</p>
+              <p className="text-4xl font-bold">
+                <span>{t.iam}</span>
+                <strong className="italic">{t.name}</strong>
+                <span className="text-base font-light text-gray-500">&nbsp;&nbsp;/{t.pronounce}/</span>
               </p>
               <p>🧑‍💻Web Developer. 📝Blogger. 🫣INFJ.</p>
             </div>
-            <div className="avatar flex justify-center md:justify-end">
+            <div className="flex justify-center md:justify-end">
               <Avatar />
             </div>
           </div>

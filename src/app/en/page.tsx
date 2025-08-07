@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <HomeWrapper
       t={{
-        iam: `I&apos;m `,
+        iam: <span>I&apos;m </span>,
         name: `ZY`,
         pronounce: `zeɪ 'waɪ`,
         telegram: `Telegram`,

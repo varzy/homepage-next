@@ -21,19 +21,15 @@ export default function BlogHeader() {
         <div className="flex items-center justify-between">
           <div className="logo">
             <Link
-              className="text-lg font-bold italic transition-all duration-300 ease-in-out hover:underline"
+              className="text-lg font-bold italic transition-all duration-300 ease-in-out "
               href="/blog"
             >
               贼 歪
             </Link>
           </div>
-          <div className="menu align-center flex gap-4">
+          <div className="menu align-center flex gap-3.5">
             {links.map((link, index) => (
-              <Link
-                className="transition-all duration-300 ease-in-out hover:underline"
-                key={index}
-                href={link.href}
-              >
+              <Link className="transition-all duration-300 ease-in-out hover:underline" key={index} href={link.href}>
                 {link.label}
               </Link>
             ))}

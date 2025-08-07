@@ -22,7 +22,7 @@ export default function Pagination({ total, current, pageSize, urlPrefix }: Pagi
   return (
     <>
       {moreThanOnePage && (
-        <div className=" flex items-center justify-between py-8 font-mono text-gray-400">
+        <div className="flex items-center justify-between py-8 font-mono text-gray-400">
           <div className="prev flex-1 text-left">{showPrev && Goto(current - 1, '< Prev')}</div>
           <div className="current flex-1 text-center">
             {current} / {totalPage}

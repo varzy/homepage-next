@@ -48,11 +48,11 @@ export default async function Post({ params }: PageProps) {
       }}
     >
       <MdxRenderer source={postWithContent.content} />
-      {postWithContent.category === 'Coding' && (
+      {/* {postWithContent.category === 'Coding' && (
         <div className="mx-auto my-8 max-w-md">
           <BuyMeACoffee />
         </div>
-      )}
+      )} */}
     </BlogPageContainer>
   );
 }

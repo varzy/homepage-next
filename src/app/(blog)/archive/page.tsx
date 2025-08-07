@@ -1,6 +1,6 @@
-import BlogPageContainer from "../_components/BlogPageContainer";
-import PostItemLite from "../_components/PostItemLite";
-import { getAllPosts } from "../_lib/content-loader";
+import BlogPageContainer from '../_components/BlogPageContainer';
+import PostItemLite from '../_components/PostItemLite';
+import { getAllPosts } from '../_lib/content-loader';
 
 export default async function ArchivePage() {
   const allPosts = await getAllPosts();

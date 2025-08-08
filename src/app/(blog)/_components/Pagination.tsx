@@ -14,7 +14,7 @@ export default function Pagination({ total, current, pageSize, urlPrefix }: Pagi
   const moreThanOnePage = totalPage > 1;
 
   const Goto = (page: number, label: string) => (
-    <Link className="g-blog-link" href={`${urlPrefix}/${page}`}>
+    <Link className="hover:underline" href={`${urlPrefix}/${page}`}>
       {label}
     </Link>
   );

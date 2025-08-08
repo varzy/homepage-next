@@ -2,8 +2,8 @@ import { SITE_CONFIG } from '@/site.config';
 import Link from 'next/link';
 
 const FOOTER_LINKS = [
-  { label: 'RSS', href: '/rss.xml', target: '_blank' },
-  { label: 'Github', href: 'https://github.com/varzy/homepage-next', target: '_blank' },
+  { label: 'RSS', href: '/rss.xml', target: '_self' },
+  // { label: 'Github', href: 'https://github.com/varzy/homepage-next', target: '_blank' },
   { label: 'Sponsor', href: '/sponsor', target: '_self' },
 ];
 

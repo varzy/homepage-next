@@ -4,7 +4,7 @@ export default function Home() {
   const links = [
     { label: '我', alias: 'README', href: '/readme' },
     { label: '文章', alias: 'Blog', href: '/blog' },
-    { label: '朋友圈', alias: 'Telegram', href: 'https://t.me/aboutzy', target: '_blank' },
+    { label: '贼歪说', alias: 'Telegram', href: 'https://t.me/aboutzy', target: '_blank' },
     { label: '随手拍', alias: 'Instagram', href: 'https://instagram.com/varzyme', target: '_blank' },
     { label: '书影音', alias: 'Douban', href: 'https://www.douban.com/people/varzy/', target: '_blank' },
     {

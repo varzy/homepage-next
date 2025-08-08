@@ -1,6 +1,6 @@
 import ResumeFile from './resume.md';
 import MdxRenderer from '@/app/(blog)/_components/MdxRenderer';
-import { Metadata } from 'next';
+import { type Metadata } from 'next';
 import HeaderSimple from '@/app/_components/HeaderSimple';
 
 export const metadata: Metadata = {
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default async function Resume() {
   return (
-    <div className="pb-64">
+    <div className="pb-48">
       <HeaderSimple />
       <div className="g-container">
         <MdxRenderer source={ResumeFile} />

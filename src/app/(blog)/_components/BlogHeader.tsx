@@ -8,7 +8,6 @@ export default function BlogHeader() {
     return { label: category.alias, href: `/categories/${key}` };
   });
   const links = [
-    { label: '主页', href: '/' },
     ...categoryLinks,
     { label: '归档', href: '/archive' },
     { label: '标签', href: '/tags' },
@@ -20,11 +19,11 @@ export default function BlogHeader() {
       <div className="g-blog-container">
         <div className="flex items-center justify-between">
           <div className="logo">
-            <Link className="text-lg font-bold italic" href="/blog">
+            <Link className="text-lg font-bold italic" href="/">
               贼 歪
             </Link>
           </div>
-          <div className="menu align-center flex gap-3 sm:gap-3.5">
+          <div className="menu align-center flex gap-4">
             {links.map((link, index) => (
               <Link className="hover:underline" key={index} href={link.href}>
                 {link.label}

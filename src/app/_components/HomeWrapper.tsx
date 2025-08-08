@@ -6,6 +6,7 @@ import { RiNeteaseCloudMusicLine } from 'react-icons/ri';
 import LocaleToggle from '@/app/_components/LocaleToggle';
 import Avatar from '@/app/_components/Avatar';
 import FancyLink, { FancyLinkProps } from '@/app/_components/FancyLink';
+import Link from 'next/link';
 
 export interface I18nProps {
   blog: string;
@@ -17,22 +18,22 @@ export interface I18nProps {
   resume: string;
   iam: ReactNode;
   name: string;
-  pronounce: string;
+  readme: string;
 }
 
 export default function HomeWrapper({ t, children }: { t: I18nProps; children: ReactNode }) {
   const links: FancyLinkProps[] = [
-    { label: t.blog, href: '/blog', icon: <FaRegPenToSquare /> },
-    { label: t.telegram, href: 'https://t.me/aboutzy', target: '_blank', icon: <FaTelegramPlane /> },
-    { label: t.github, href: 'https://github.com/varzy', target: '_blank', icon: <FaGithub /> },
-    { label: t.instagram, href: 'https://instagram.com/varzyme', target: '_blank', icon: <FaInstagram /> },
-    { label: t.douban, href: 'https://www.douban.com/people/varzy/', target: '_blank', icon: <SiDoubanread /> },
+    { label: t.readme, href: '/readme' },
+    { label: t.blog, href: '/blog' },
+    { label: t.telegram, href: 'https://t.me/aboutzy', target: '_blank' },
+    { label: t.instagram, href: 'https://instagram.com/varzyme', target: '_blank' },
+    { label: t.douban, href: 'https://www.douban.com/people/varzy/', target: '_blank' },
     {
       label: t.neteaseMusic,
       href: 'https://music.163.com/playlist?id=39874340&userid=45403592',
-      icon: <RiNeteaseCloudMusicLine />,
     },
-    { label: t.resume, href: '/resume', icon: <FaRegAddressCard /> },
+    { label: t.github, href: 'https://github.com/varzy', target: '_blank' },
+    // { label: t.resume, href: '/resume' },
   ];
 
   const Row = ({ title, children }: { title?: string; children: ReactNode }) => (
@@ -45,15 +46,15 @@ export default function HomeWrapper({ t, children }: { t: I18nProps; children: R
   return (
     <>
       <LocaleToggle />
-      <div className="container mx-auto max-w-3xl px-5 py-20 leading-7 tracking-wider sm:px-16 [&_a]:underline">
+      <div className="container mx-auto max-w-3xl px-5 py-20 leading-7 tracking-wider sm:px-16 [&_a]:font-black [&_a]:text-black [&_a]:hover:underline">
         <Row>
           <div className="flex flex-col-reverse gap-4 md:flex-row md:items-center md:justify-between">
             <div className="space-y-3">
               <p className="text-4xl font-bold">Hi,</p>
               <p className="text-4xl font-bold">
                 <span>{t.iam}</span>
-                <strong className="italic">{t.name}</strong>
-                <span className="text-secondary text-base font-light">&nbsp;&nbsp;/{t.pronounce}/</span>
+                <strong className="italic">贼歪</strong>
+                <span className="text-secondary text-base font-light">&nbsp;&nbsp;/zeɪ 'waɪ/</span>
               </p>
               <p>🧑‍💻Web Developer. 📝Blogger. 🫣INFJ.</p>
             </div>
@@ -62,15 +63,15 @@ export default function HomeWrapper({ t, children }: { t: I18nProps; children: R
             </div>
           </div>
         </Row>
-        <Row title="about me">
-          <div className="[&>p]:mb-3 [&>p]:last:mb-0">{children}</div>
+        <Row>
+          <article className="[&_p]:mb-3 [&_p]:last:mb-0">{children}</article>
         </Row>
-        <Row title="find me">
-          <div className="flex flex-wrap">
+        <Row>
+          <div className="flex flex-wrap gap-6">
             {links.map((link, index) => (
-              <div className="mb-3 basis-1/2 sm:basis-1/3 md:basis-1/4" key={index}>
-                <FancyLink href={link.href} target={link.target} label={link.label} icon={link.icon} />
-              </div>
+              <Link href={link.href} target={link.target} key={index}>
+                <span>{link.label}</span>
+              </Link>
             ))}
           </div>
         </Row>

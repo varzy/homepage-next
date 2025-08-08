@@ -7,14 +7,14 @@ export default function Home() {
       t={{
         iam: `我是`,
         name: `贼歪`,
-        pronounce: `zeɪ 'waɪ`,
-        telegram: `Telegram`,
-        github: `Github`,
-        instagram: `Instagram`,
-        blog: `博 客`,
-        douban: `豆 瓣`,
-        neteaseMusic: `网 易 云`,
-        resume: `简 历`,
+        readme: '我',
+        telegram: `贼歪说`,
+        github: `代码库`,
+        instagram: `随手拍`,
+        blog: `文章`,
+        douban: `书影音`,
+        neteaseMusic: `歌单`,
+        resume: `简历`,
       }}
     >
       <p>
@@ -30,7 +30,7 @@ export default function Home() {
         <FancyLink href="https://t.me/aboutzy" label="贼歪说" target="_blank" />
         」则是朋友圈，欢迎订阅。
       </p>
-      <p>尽管平平无奇，但仍然希望这个世界的运行轨迹能因我而发生一丝偏转。我正在努力。</p>
+      {/* <p>尽管平平无奇，但仍然希望这个世界的运行轨迹能因我而发生一丝偏转。我正在努力。</p> */}
     </HomeWrapper>
   );
 }

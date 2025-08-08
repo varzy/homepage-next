@@ -34,7 +34,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html
       lang={SITE_CONFIG.lang}
-      className={clsx(notoSerif.className, 'text-ink scroll-smooth font-serif antialiased focus:scroll-auto')}
+      className={clsx(
+        notoSerif.className,
+        'text-ink [&_img]:user-select-none scroll-smooth font-serif antialiased focus:scroll-auto',
+      )}
       data-scroll-behavior="smooth"
     >
       <body className="bg-[#f7f7f7] tracking-wide">

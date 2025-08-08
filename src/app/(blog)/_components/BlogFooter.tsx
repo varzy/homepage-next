@@ -9,7 +9,7 @@ const FOOTER_LINKS = [
 
 export default function BlogFooter() {
   return (
-    <footer className="g-blog-container pt-18 pb-12 text-sm [&_a]:hover:underline">
+    <footer className="g-container pt-18 pb-12 text-sm [&_a]:hover:underline">
       <div className="mt-5 flex items-center justify-between">
         <p>
           &copy; <Link href="/">{SITE_CONFIG.author}</Link> 2015 - {new Date().getFullYear()}

@@ -15,21 +15,24 @@ export default function BlogHeader() {
   ];
 
   return (
-    <header className="relative z-50 py-8">
-      <div className="g-blog-container">
+    <header className="py-8">
+      <div className="g-container">
         <div className="flex items-center justify-between">
-          <div className="logo">
-            <Link className="text-lg font-bold italic" href="/">
-              贼 歪
-            </Link>
-          </div>
-          <div className="menu align-center flex gap-4">
-            {links.map((link, index) => (
-              <Link className="hover:underline" key={index} href={link.href}>
-                {link.label}
-              </Link>
-            ))}
-          </div>
+          <Link className="text-lg font-bold italic" href="/">
+            贼 歪
+          </Link>
+
+          <nav>
+            <ul className="menu align-center flex gap-4">
+              {links.map((link, index) => (
+                <li key={index}>
+                  <Link className="hover:underline" href={link.href}>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
       </div>
     </header>

@@ -64,7 +64,7 @@ export default function HomeWrapper({ t, children }: { t: I18nProps; children: R
   );
 
   return (
-    <div className="container mx-auto text-lg max-w-2xl px-5 py-20 leading-8 tracking-wider [&_a]:hover:underline">
+    <div className="container mx-auto max-w-2xl px-5 py-20 text-lg leading-8 tracking-wider [&_a]:hover:underline">
       <div className="">
         <div className="flex-1">
           <div className="flex flex-col-reverse gap-4 md:flex-row md:items-center md:justify-between">
@@ -79,7 +79,7 @@ export default function HomeWrapper({ t, children }: { t: I18nProps; children: R
             </div>
           </div>
         </div>
-        <div className="flex-1 text-black font-black flex gap-6 mt-10">
+        <div className="mt-10 flex flex-1 gap-6 font-black text-black">
           {linksNew.map((link, index) => (
             <p key={index}>
               {/* <span>- </span> */}

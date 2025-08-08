@@ -13,6 +13,6 @@
   }
 }
 
-@utility g-blog-container {
+@utility g-container {
   @apply container mx-auto max-w-[720px] px-5;
 }

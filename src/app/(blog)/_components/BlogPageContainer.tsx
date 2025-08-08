@@ -5,7 +5,7 @@ export default function BlogPageContainer({ children, pageHero }: { children: Re
   return (
     <>
       {pageHero && <PageHero {...pageHero}></PageHero>}
-      <div className="g-blog-container">
+      <div className="g-container">
         <div>{children}</div>
       </div>
     </>

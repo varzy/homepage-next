@@ -1,5 +1,5 @@
 import BlogPageContainer from '../_components/BlogPageContainer';
-import PostItemLite from '../_components/PostItemLite';
+import PostItemArchive from '../_components/PostItemArchive';
 import { getAllPosts } from '../_lib/content-loader';
 
 export default async function ArchivePage() {
@@ -9,7 +9,7 @@ export default async function ArchivePage() {
     <BlogPageContainer pageHero={{ title: 'Archive', after: `共有 ${allPosts.length} 篇文章。` }}>
       <div className="posts">
         {allPosts.map((post) => (
-          <PostItemLite key={post.notion_id} {...post}></PostItemLite>
+          <PostItemArchive key={post.notion_id} {...post} />
         ))}
       </div>
     </BlogPageContainer>

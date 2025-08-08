@@ -5,7 +5,7 @@ import Loading from './loading';
 
 export default function BlogLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <div className="disable-user-select">
+    <div className="[&_img]:user-select-none">
       <BlogHeader />
       <Suspense fallback={<Loading />}>
         <main>{children}</main>

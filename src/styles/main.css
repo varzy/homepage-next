@@ -3,12 +3,6 @@
 @plugin "@tailwindcss/typography";
 
 @layer base {
-  html {
-    @apply scroll-smooth text-gray-900 antialiased focus:scroll-auto;
-  }
-  body {
-    @apply bg-[#f7f7f7] tracking-wide;
-  }
   a {
     @apply underline-offset-4;
   }
@@ -16,11 +10,4 @@
 
 @utility g-blog-container {
   @apply container mx-auto max-w-[720px] px-5;
-}
-
-@utility disable-user-select {
-  img {
-    user-select: none;
-    -webkit-user-drag: none;
-  }
 }

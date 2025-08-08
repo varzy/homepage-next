@@ -10,7 +10,7 @@ const FOOTER_LINKS = [
 export default function BlogFooter() {
   return (
     <footer>
-      <div className="g-blog-container pt-14 pb-36 text-sm">
+      <div className="g-blog-container pt-18 pb-12 text-sm text-gray-500">
         <hr className="border-gray-200" />
         <div className="mt-5 flex items-center justify-between">
           <p>
@@ -20,7 +20,7 @@ export default function BlogFooter() {
             {FOOTER_LINKS.map((link, index) => (
               <span key={index}>
                 {index > 0 && <span className="mx-1.5">•</span>}
-                <Link className="underline" href={link.href} target={link.target}>
+                <Link className="hover:underline" href={link.href} target={link.target}>
                   {link.label}
                 </Link>
               </span>

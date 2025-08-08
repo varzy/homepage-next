@@ -53,7 +53,7 @@ export default function HomeWrapper({ t, children }: { t: I18nProps; children: R
               <p className="text-4xl font-bold">
                 <span>{t.iam}</span>
                 <strong className="italic">{t.name}</strong>
-                <span className="text-base font-light text-gray-500">&nbsp;&nbsp;/{t.pronounce}/</span>
+                <span className="text-secondary text-base font-light">&nbsp;&nbsp;/{t.pronounce}/</span>
               </p>
               <p>🧑‍💻Web Developer. 📝Blogger. 🫣INFJ.</p>
             </div>

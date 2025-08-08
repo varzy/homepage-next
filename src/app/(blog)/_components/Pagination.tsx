@@ -22,9 +22,9 @@ export default function Pagination({ total, current, pageSize, urlPrefix }: Pagi
   return (
     <>
       {moreThanOnePage && (
-        <div className="flex items-center justify-between text-gray-500">
+        <div className="flex items-center justify-between">
           <div className="prev flex-1 text-left">{showPrev && Goto(current - 1, '< Prev')}</div>
-          <div className="current flex-1 text-center">
+          <div className="current text-secondary flex-1 text-center">
             {current} / {totalPage}
           </div>
           <div className="next flex-1 text-right">{showNext && Goto(current + 1, 'Next >')}</div>

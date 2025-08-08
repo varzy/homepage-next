@@ -9,24 +9,21 @@ const FOOTER_LINKS = [
 
 export default function BlogFooter() {
   return (
-    <footer>
-      <div className="g-blog-container pt-18 pb-12 text-sm text-gray-500">
-        <hr className="border-gray-200" />
-        <div className="mt-5 flex items-center justify-between">
-          <p>
-            &copy; {SITE_CONFIG.author} 2015 - {new Date().getFullYear()}
-          </p>
-          <p>
-            {FOOTER_LINKS.map((link, index) => (
-              <span key={index}>
-                {index > 0 && <span className="mx-1.5">•</span>}
-                <Link className="hover:underline" href={link.href} target={link.target}>
-                  {link.label}
-                </Link>
-              </span>
-            ))}
-          </p>
-        </div>
+    <footer className="g-blog-container pt-18 pb-12 text-sm [&_a]:hover:underline">
+      <div className="mt-5 flex items-center justify-between">
+        <p>
+          &copy; <Link href="/">{SITE_CONFIG.author}</Link> 2015 - {new Date().getFullYear()}
+        </p>
+        <p>
+          {FOOTER_LINKS.map((link, index) => (
+            <span key={index}>
+              {index > 0 && <span className="mx-1.5">·</span>}
+              <Link href={link.href} target={link.target}>
+                {link.label}
+              </Link>
+            </span>
+          ))}
+        </p>
       </div>
     </footer>
   );

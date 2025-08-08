@@ -14,7 +14,7 @@ export default function PageHero({ title, after, children }: PageHeroProps) {
       ) : (
         <>
           {title && <h1 className="text-3xl font-extrabold text-black sm:text-4xl">{title}</h1>}
-          {after && typeof after === 'string' ? <p className="mt-2">{after}</p> : <>{after}</>}
+          {after && <div className="mt-3">{after}</div>}
         </>
       )}
     </div>

@@ -38,8 +38,8 @@ export default async function Post({ params }: PageProps) {
       pageHero={{
         title: postWithContent.title,
         after: (
-          <div className="mt-2 text-sm">
-            <span className="me-4 text-gray-500">{postWithContent.dateAmericaStyle}</span>
+          <div className="text-sm">
+            <span className="text-secondary me-3">{postWithContent.dateAmericaStyle}</span>
             {postWithContent.tags.length > 0 && postWithContent.tags.map((tag) => <PostTagLite key={tag} tag={tag} />)}
           </div>
         ),

@@ -10,7 +10,7 @@ export default function PostItem(post: PostMeta) {
             {post.title}
           </Link>
         </h2>
-        <div className="shrink-0 text-sm leading-6 text-gray-500">{post.dateAmericaStyle}</div>
+        <div className="text-secondary shrink-0 text-sm leading-6">{post.dateAmericaStyle}</div>
       </div>
     </div>
   );

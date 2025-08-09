@@ -1,5 +1,5 @@
 ---
-title: '升级了个人主页'
+title: '升级了个人主页架构'
 category: 'Coding'
 type: 'Post'
 status: 'Published'
@@ -7,8 +7,8 @@ tags: ['Nextjs', 'SideProject']
 date: '2025-08-06'
 slug: 'homepage-upgrading'
 summary: '一入 Next 深似海，从此迁移是路人。'
-last_edited_time: '2025-08-06T15:18:00.000Z'
-blog_last_fetched_time: '2025-08-06T15:20:40.701Z'
+last_edited_time: '2025-08-09T03:32:00.000Z'
+blog_last_fetched_time: '2025-08-09T03:35:49.556Z'
 notion_id: '247dc9c0-364a-806f-9561-fef372d1cbff'
 icon: '🕠'
 ---

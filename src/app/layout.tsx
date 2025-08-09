@@ -7,6 +7,9 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Noto_Serif_SC } from 'next/font/google';
 import clsx from 'clsx';
 
+export const dynamic = 'force-static';
+export const revalidate = false;
+
 export const metadata: Metadata = {
   title: {
     default: SITE_CONFIG.title,

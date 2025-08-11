@@ -11,7 +11,7 @@ import { unstable_cache as cache } from 'next/cache';
 import Dayjs from 'dayjs';
 import { SITE_CONFIG } from '@/site.config';
 import _merge from 'deepmerge';
-import { getSmmsUrl, smmsUploadExternal } from '@/utils/smms';
+import { getSmmsUrl, smmsUploadExternal } from '../scripts/smms-uploader';
 
 /**
  * Generate notion database query schema. Will default query pages that published and type equals post, and returns by date desc.

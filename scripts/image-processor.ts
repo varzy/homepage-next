@@ -1,6 +1,6 @@
 import { Client } from '@notionhq/client';
 import { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
-import { smmsUploadExternal, getSmmsUrl, isSmmsUrl, generateFileName } from '../src/utils/smms';
+import { smmsUploadExternal, getSmmsUrl, isSmmsUrl, generateFileName } from './smms-uploader';
 
 export interface ImageProcessingStats {
   total: number;

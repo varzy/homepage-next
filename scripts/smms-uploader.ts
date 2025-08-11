@@ -1,5 +1,3 @@
-import { SITE_CONFIG } from '@/site.config';
-
 type SmmsUploadResult = SmmsUploadSuccess | SmmsUploadRepeat | SmmsUploadError;
 
 type SmmsUploadSuccess = {
@@ -33,12 +31,11 @@ type SmmsUploadError = {
   message: string;
 };
 
-export const SMMS_BASEURL = `https://sm.ms/api/v2`;
+const SMMS_BASEURL = 'https://sm.ms/api/v2';
 
-export const SMMS_TOKEN = process.env.SMMS_API_TOKEN || SITE_CONFIG.smmsApiToken;
-
-export const smmsUpload = async (file: Blob, fileName: string): Promise<SmmsUploadResult> => {
+const smmsUpload = async (file: Blob, fileName: string): Promise<SmmsUploadResult> => {
   try {
+    const SMMS_TOKEN = process.env.SMMS_API_TOKEN;
     if (!SMMS_TOKEN) {
       throw new Error('SMMS API token is not configured');
     }
@@ -115,7 +112,8 @@ export const getSmmsUrl = (smmsUploaded: SmmsUploadResult): string | null => {
  * 检查 URL 是否已经是 SM.MS 图片链接
  */
 export const isSmmsUrl = (url: string): boolean => {
-  return url.includes('smms.app') || url.includes('s2.loli.net') || url.includes('i.loli.net');
+  const smmsUrl = ['cdn.sa.net', 'sm.ms'];
+  return smmsUrl.some((u) => url.includes(u));
 };
 
 /**

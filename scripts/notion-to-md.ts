@@ -2,14 +2,18 @@ import { Client } from '@notionhq/client';
 import { NotionToMarkdown } from 'notion-to-md';
 import { PostMetadata } from './types';
 import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+import { NotionImageProcessor, ImageProcessingStats } from './image-processor';
 
 export class NotionToMDXConverter {
   private notion: Client;
   private n2m: NotionToMarkdown;
+  private imageProcessor: NotionImageProcessor;
 
   constructor(notionApiSecret: string) {
     this.notion = new Client({ auth: notionApiSecret });
     this.n2m = new NotionToMarkdown({ notionClient: this.notion });
+    // 图片上传功能默认启用
+    this.imageProcessor = new NotionImageProcessor(notionApiSecret);
   }
 
   async getAllPosts(databaseId: string): Promise<PostMetadata[]> {
@@ -38,11 +42,23 @@ export class NotionToMDXConverter {
     return posts;
   }
 
-  async convertToMDX(pageId: string): Promise<string> {
+  async convertToMDX(pageId: string, slug?: string): Promise<{ content: string; imageStats?: ImageProcessingStats }> {
     try {
+      // 总是处理图片（图片上传功能默认启用）
+      let imageStats: ImageProcessingStats | undefined;
+      if (slug) {
+        console.log(`🖼️ Processing images for ${slug}...`);
+        imageStats = await this.imageProcessor.processPageImages(pageId, slug);
+      }
+
+      // 转换为 Markdown
       const mdBlocks = await this.n2m.pageToMarkdown(pageId);
       const mdString = this.n2m.toMarkdownString(mdBlocks);
-      return mdString.parent;
+
+      return {
+        content: mdString.parent,
+        imageStats,
+      };
     } catch (error) {
       console.error(`Error converting page ${pageId} to markdown:`, error);
       throw error;
@@ -114,6 +130,20 @@ export class NotionToMDXConverter {
       blog_last_fetched_time: getDateProperty(properties.blog_last_fetched_time),
       icon: getPageIcon(page),
     };
+  }
+
+  /**
+   * 检查页面是否有图片需要处理
+   */
+  async checkImagesNeedProcessing(pageId: string): Promise<{ needsProcessing: boolean; imageCount: number }> {
+    return this.imageProcessor.checkImagesNeedProcessing(pageId);
+  }
+
+  /**
+   * 获取图片处理器实例
+   */
+  getImageProcessor(): NotionImageProcessor {
+    return this.imageProcessor;
   }
 }
 

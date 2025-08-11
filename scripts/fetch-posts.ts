@@ -22,12 +22,14 @@ class PostsFetcher {
       throw new Error('Missing required environment variables: NOTION_DATABASE_ID, NOTION_API_SECRET');
     }
 
+    // 图片上传功能默认开启，无法禁用
     this.converter = new NotionToMDXConverter(this.config.notionApiSecret);
     this.forceMode = forceMode;
   }
 
   async fetch(): Promise<FetchResult> {
     console.log(`🚀 Starting to fetch posts from Notion${this.forceMode ? ' (FORCE MODE)' : ''}...`);
+    console.log(`📷 Image upload to SM.MS is ENABLED`);
 
     const result: FetchResult = { updated: 0, skipped: 0, errors: 0 };
 
@@ -120,8 +122,23 @@ class PostsFetcher {
 
   private async processPost(post: PostMetadata): Promise<void> {
     try {
-      // 转换 Notion 页面为 Markdown
-      const markdownContent = await this.converter.convertToMDX(post.notion_id);
+      console.log(`📄 Processing post: ${post.title}`);
+
+      // 转换 Notion 页面为 Markdown（包含图片处理）
+      const { content: markdownContent, imageStats } = await this.converter.convertToMDX(post.notion_id, post.slug);
+
+      // 输出图片处理统计
+      if (imageStats) {
+        if (imageStats.total > 0) {
+          console.log(`📊 Image processing stats for ${post.title}:`);
+          console.log(`   Total images: ${imageStats.total}`);
+          console.log(`   Processed: ${imageStats.processed}`);
+          console.log(`   Skipped: ${imageStats.skipped}`);
+          console.log(`   Errors: ${imageStats.errors}`);
+        } else {
+          console.log(`📷 No images found in ${post.title}`);
+        }
+      }
 
       // 先更新 Notion 中的 blog_last_fetched_time
       await this.converter.updateBlogLastFetchedTime(post.notion_id);
@@ -138,8 +155,10 @@ class PostsFetcher {
       // 保存到本地文件
       const filePath = path.join(this.config.outputDir, `${post.slug}.md`);
       fs.writeFileSync(filePath, mdxContent, 'utf-8');
+
+      console.log(`✅ Successfully processed: ${post.title}`);
     } catch (error) {
-      console.error(`Error processing post ${post.title}:`, error);
+      console.error(`❌ Error processing post ${post.title}:`, error);
       throw error;
     }
   }
@@ -151,7 +170,15 @@ async function main() {
     // 解析命令行参数
     const args = process.argv.slice(2);
     const forceMode = args.includes('--force');
+
     console.log(`🔥 Force mode: ${forceMode}`);
+
+    // 检查是否配置了 SMMS API Token（图片上传功能总是启用）
+    if (!process.env.SMMS_API_TOKEN) {
+      console.warn('⚠️ SMMS_API_TOKEN is not set in environment variables');
+      console.warn('⚠️ Please set SMMS_API_TOKEN to use image upload feature');
+      process.exit(1);
+    }
 
     const fetcher = new PostsFetcher(forceMode);
     await fetcher.fetch();

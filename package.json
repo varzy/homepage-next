@@ -5,14 +5,14 @@
   "packageManager": "pnpm@10.13.1",
   "scripts": {
     "dev": "next dev",
-    "exam": "npm run fetch && npm run format && npm run lint",
+    "exam": "npm run fetch-posts && npm run format && npm run lint",
     "build": "next build",
     "build:debug": "next build --debug",
     "start": "next start",
     "lint": "next lint --fix",
     "format": "prettier --write . --log-level warn",
-    "fetch": "tsx scripts/fetch-posts.ts",
-    "fetch:force": "tsx scripts/fetch-posts.ts --force",
+    "fetch-posts": "tsx scripts/fetch-posts.ts",
+    "fetch-posts:force": "tsx scripts/fetch-posts.ts --force",
     "release-posts": "git pull && npm run exam && git add . && git commit -m 'Release: Update posts.' && git push"
   },
   "dependencies": {

@@ -7,8 +7,8 @@ tags: ['Nextjs', 'SideProject']
 date: '2025-08-06'
 slug: 'homepage-upgrading'
 summary: '一入 Next 深似海，从此迁移是路人。'
-last_edited_time: '2025-08-09T03:32:00.000Z'
-blog_last_fetched_time: '2025-08-09T03:35:49.556Z'
+last_edited_time: '2025-08-12T01:46:00.000Z'
+blog_last_fetched_time: '2025-08-12T01:52:07.594Z'
 notion_id: '247dc9c0-364a-806f-9561-fef372d1cbff'
 icon: '🕠'
 ---
@@ -49,5 +49,3 @@ const needsUpdate = lastEditTime > lastFetchTime;
 我并未完全采用 Next.js 的纯 SSG 模式，事实上只需要在 next.config.mjs 文件中添加 `output: 'export'` 即可编译为纯静态网站，如此一来我还能快速迁移到 Cloudflare Pages 或 Github Pages 等平台。然而虽然我也极度诟病 Next.js 和 Vercel 如胶似漆，绑定过深，但这俩目前确实是我这套架构的最优选，因此我依旧采用了 SSR 模式 + Vercel。
 
 p.s.，Cloudflare Pages 对于 Next.js 的 SSR 模式支持太差了，如果哪天 Cloudflare Pages 好起来了，我肯定第一时间放弃 Vercel🙈。
-
-之前主页的架构过于不稳固，以至于我都不是很想更新。这次升级后希望我的三分钟热度能多坚持会，多多更新吧🌚。

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export default function PageHeader({ children }: { children: React.ReactNode }) {
+export default function PageHeader({ children }: { children?: React.ReactNode }) {
   return (
     <header className="py-8">
       <div className="g-container">

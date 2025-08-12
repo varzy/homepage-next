@@ -1,6 +1,6 @@
 import MdxRenderer from '@/app/(blog)/_components/MdxRenderer';
 import ReadmeFile from './readme.md';
-import HeaderSimple from '@/app/_components/HeaderSimple';
+import PageHeader from '@/app/_components/PageHeader';
 import { type Metadata } from 'next';
 import { getEmojiFavicon } from '@/utils/favicon';
 
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Readme() {
   return (
     <div className="pb-48">
-      <HeaderSimple />
+      <PageHeader />
       <div className="g-container">
         <div className="flex items-end gap-3.5 pt-12 pb-10">
           <div className="flex-1">

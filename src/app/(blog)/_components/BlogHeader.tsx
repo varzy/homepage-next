@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { SITE_CONFIG } from '@/site.config';
+import PageHeader from '@/app/_components/PageHeader';
 
 export default function BlogHeader() {
   const categoriesConfig = SITE_CONFIG.categories;
@@ -15,26 +16,18 @@ export default function BlogHeader() {
   ];
 
   return (
-    <header className="py-8">
-      <div className="g-container">
-        <div className="flex items-center justify-between">
-          <Link className="text-lg font-bold italic" href="/">
-            贼 歪
-          </Link>
-
-          <nav>
-            <ul className="menu align-center flex gap-4">
-              {links.map((link, index) => (
-                <li key={index}>
-                  <Link className="hover:underline" href={link.href}>
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
+    <PageHeader>
+      <nav>
+        <ul className="menu align-center flex gap-4">
+          {links.map((link, index) => (
+            <li key={index}>
+              <Link className="hover:underline" href={link.href}>
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </PageHeader>
   );
 }

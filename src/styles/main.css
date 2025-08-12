@@ -3,7 +3,7 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-ink: #191919;
+  --color-ink: #111;
   --color-secondary: var(--color-gray-500);
 }
 

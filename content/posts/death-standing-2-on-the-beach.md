@@ -1,5 +1,5 @@
 ---
-title: '死亡搁浅2简评：好玩，且让一代跌上神坛'
+title: '死亡搁浅2：好玩，且让一代跌上神坛'
 category: 'Nichijou'
 type: 'Post'
 status: 'Published'
@@ -7,8 +7,8 @@ tags: ['游戏人生', '评测']
 date: '2025-08-11'
 slug: 'death-standing-2-on-the-beach'
 summary: '玩二代之前，我给一代打 10 分。玩二代之后，我给二代打 10 分，给一代打 11 分。'
-last_edited_time: '2025-08-11T03:54:00.000Z'
-blog_last_fetched_time: '2025-08-11T04:03:26.215Z'
+last_edited_time: '2025-08-11T16:15:00.000Z'
+blog_last_fetched_time: '2025-08-12T01:21:05.578Z'
 notion_id: '23fdc9c0-364a-80d7-9ed6-f3bebfc700df'
 icon: '🚲'
 ---

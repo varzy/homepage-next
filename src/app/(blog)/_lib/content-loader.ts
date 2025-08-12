@@ -172,9 +172,3 @@ export async function getPostWithContent(slug: string): Promise<PostWithContent 
     return null;
   }
 }
-
-// 清除缓存的函数（用于开发环境热重载）
-export function clearCache(): void {
-  postsCache = null;
-  cacheTime = 0;
-}

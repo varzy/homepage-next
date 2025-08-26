@@ -5,6 +5,7 @@
 @theme {
   --color-ink: #111;
   --color-secondary: var(--color-gray-500);
+  --font-serif: "LXGW WenKai", ui-serif, system-ui, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 @layer base {

@@ -3,12 +3,12 @@ title: 'Vue (Router) 项目在子路径部署'
 category: 'Coding'
 type: 'Post'
 status: 'Published'
-tags: ['Vue', 'Nginx', 'Deploy']
+tags: ['Vue', 'CICD']
 date: '2020-03-27'
 slug: 'vue-router-deploy-sub-dir'
 summary: ''
-last_edited_time: '2025-08-06T03:20:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:20:01.220Z'
+last_edited_time: '2025-09-02T08:37:00.000Z'
+blog_last_fetched_time: '2025-09-02T08:57:03.106Z'
 notion_id: '19275676-eee2-4b8d-8d42-7b744a0b2197'
 icon: '🎬'
 ---
@@ -23,7 +23,7 @@ icon: '🎬'
 
 vue.config.js
 
-```text
+```plain text
 module.exports = {
   // 默认为 /，表示部署在顶级路径上。打包后的静态资源引用路径为 /xxx.js, /xxx.css
   // 使用 ./ 可以使得打包后的 js、css 等资源的引用路径以 ./ 开头
@@ -34,7 +34,7 @@ module.exports = {
 
 router.js
 
-```text
+```plain text
 export default new Router({
   mode: 'hash',
   ...
@@ -43,7 +43,7 @@ export default new Router({
 
 nginx.conf
 
-```text
+```plain text
 location /app1/ {
     alias /var/www/app1/dist/;
     index index.html;
@@ -60,7 +60,7 @@ location /app1/ {
 
 vue.config.js
 
-```text
+```plain text
 module.exports = {
   publicPath: '/app1/',
 }
@@ -68,7 +68,7 @@ module.exports = {
 
 router.js
 
-```text
+```plain text
 export default new Router({
   mode: 'history',
   ...
@@ -77,7 +77,7 @@ export default new Router({
 
 nginx.conf
 
-```text
+```plain text
 location /app1/ {
     alias /var/www/app1/dist/;
     index index.html;

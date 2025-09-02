@@ -3,12 +3,12 @@ title: '浏览器渲染原理；重绘，回流；关键路径渲染，阻塞'
 category: 'Coding'
 type: 'Post'
 status: 'Published'
-tags: ['八股文', 'Browser', 'JavaScript', 'HTML', 'CSS']
+tags: ['八股文', 'Browser', 'JavaScript', 'CSS']
 date: '2020-04-03'
 slug: 'browser-rendering'
 summary: ''
-last_edited_time: '2025-09-02T06:58:00.000Z'
-blog_last_fetched_time: '2025-09-02T07:57:19.726Z'
+last_edited_time: '2025-09-02T08:38:00.000Z'
+blog_last_fetched_time: '2025-09-02T08:56:54.853Z'
 notion_id: 'ad05ab17-ed47-45ca-87f8-b0387733f3b3'
 icon: '💉'
 ---

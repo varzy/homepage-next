@@ -3,12 +3,12 @@ title: '「恋」'
 category: 'Nichijou'
 type: 'Post'
 status: 'Published'
-tags: ['心情']
+tags: ['随想']
 date: '2023-05-11'
 slug: 'koi'
 summary: '一直想陪伴起左右的心情。少年体会到了爱情，才第一次知道了心痛的感觉 —— 编舟记'
-last_edited_time: '2025-09-02T07:48:00.000Z'
-blog_last_fetched_time: '2025-09-02T07:50:50.410Z'
+last_edited_time: '2025-09-02T08:30:00.000Z'
+blog_last_fetched_time: '2025-09-02T08:54:35.234Z'
 notion_id: '23c9a216-b151-4f67-b60e-c41cb83b81a2'
 icon: '❤️‍🩹'
 ---

@@ -3,12 +3,12 @@ title: 'Scss Snippets'
 category: 'Coding'
 type: 'Post'
 status: 'Published'
-tags: ['Sass']
+tags: ['CSS']
 date: '2020-03-27'
 slug: 'scss-snippets'
 summary: ''
-last_edited_time: '2025-08-06T03:20:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:20:07.267Z'
+last_edited_time: '2025-09-02T08:39:00.000Z'
+blog_last_fetched_time: '2025-09-02T08:57:04.458Z'
 notion_id: '9ded96a8-4903-48d2-b715-91db1082e034'
 icon: '💊'
 ---

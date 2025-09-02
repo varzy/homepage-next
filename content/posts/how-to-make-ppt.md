@@ -3,12 +3,12 @@ title: '打工人如何应付 PPT'
 category: 'Nichijou'
 type: 'Post'
 status: 'Published'
-tags: ['精选', '软件', '生产力']
+tags: ['软件', '生产力']
 date: '2022-05-31'
 slug: 'how-to-make-ppt'
 summary: '不管做 PPT 是因为什么，总之希望同为打工人的你我一切顺利！🤗'
-last_edited_time: '2025-08-06T03:15:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:16:13.346Z'
+last_edited_time: '2025-09-02T08:33:00.000Z'
+blog_last_fetched_time: '2025-09-02T08:55:03.939Z'
 notion_id: '45fbf175-7b59-4884-8ed5-d071b86b7aed'
 icon: '👜'
 ---

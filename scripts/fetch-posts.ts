@@ -40,12 +40,15 @@ class PostsFetcher {
       // 获取所有 Published 文章
       const allPosts = await this.converter.getAllPosts(this.config.notionDatabaseId);
       console.log(`📚 Found ${allPosts.length} published posts`);
+      const publishedSlugs = new Set(allPosts.map((p) => p.slug).filter(Boolean));
 
       // 筛选需要更新的文章
       const postsToUpdate = this.filterPostsToUpdate(allPosts);
       console.log(`🔄 Posts to update: ${postsToUpdate.length}`);
 
       if (postsToUpdate.length === 0 && !this.forceMode) {
+        // 即便没有需要更新的文章，也要执行一次孤儿文件清理
+        this.cleanupOrphanedLocalFiles(publishedSlugs, result);
         console.log('✅ All posts are up to date!');
         return result;
       }
@@ -62,37 +65,8 @@ class PostsFetcher {
         }
       }
 
-      // 处理 Archive 状态：删除本地已归档文章
-      try {
-        const archivedPosts = await this.converter.getPostsByStatus(this.config.notionDatabaseId, 'Archive');
-        if (archivedPosts.length > 0) {
-          console.log(`🗃️ Found ${archivedPosts.length} archived posts, checking local files...`);
-        }
-
-        // 构建本地文件名集合，使用 slug 命名规则
-        const archivedSlugs = new Set(archivedPosts.map((p) => p.slug).filter(Boolean));
-
-        // 枚举本地 content/posts 目录，删除命中 slug 的文件
-        const files = fs.readdirSync(this.config.outputDir);
-        for (const file of files) {
-          if (!file.endsWith('.md')) continue;
-          const slug = file.replace(/\.md$/, '');
-          if (archivedSlugs.has(slug)) {
-            const filePath = path.join(this.config.outputDir, file);
-            try {
-              fs.unlinkSync(filePath);
-              result.deleted++;
-              console.log(`🗑️ Deleted archived post file: ${file}`);
-            } catch (err) {
-              result.errors++;
-              console.error(`❌ Failed to delete archived post file ${file}:`, err);
-            }
-          }
-        }
-      } catch (err) {
-        result.errors++;
-        console.error('❌ Failed to handle archived posts cleanup:', err);
-      }
+      // 清理不存在于当前 Published 列表中的本地文件（包含已归档和 slug 改名的旧文件）
+      this.cleanupOrphanedLocalFiles(publishedSlugs, result);
 
       console.log(
         `🎉 Fetch completed! Updated: ${result.updated}, Deleted: ${result.deleted}, Skipped: ${result.skipped}, Errors: ${result.errors}`,
@@ -192,6 +166,33 @@ class PostsFetcher {
     } catch (error) {
       console.error(`❌ Error processing post ${post.title}:`, error);
       throw error;
+    }
+  }
+
+  private cleanupOrphanedLocalFiles(publishedSlugs: Set<string>, result: FetchResult): void {
+    try {
+      const files = fs.readdirSync(this.config.outputDir);
+      let localChecked = 0;
+      for (const file of files) {
+        if (!file.endsWith('.md')) continue;
+        localChecked++;
+        const slug = file.replace(/\.md$/, '');
+        if (!publishedSlugs.has(slug)) {
+          const filePath = path.join(this.config.outputDir, file);
+          try {
+            fs.unlinkSync(filePath);
+            result.deleted++;
+            console.log(`🗑️ Deleted orphaned post file: ${file}`);
+          } catch (err) {
+            result.errors++;
+            console.error(`❌ Failed to delete orphaned post file ${file}:`, err);
+          }
+        }
+      }
+      console.log(`🧹 Orphan cleanup checked ${localChecked} local files`);
+    } catch (err) {
+      result.errors++;
+      console.error('❌ Failed during orphaned files cleanup:', err);
     }
   }
 }

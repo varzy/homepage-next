@@ -3,12 +3,12 @@ title: '二〇二三年度总结：寻获与失落'
 category: 'Nichijou'
 type: 'Post'
 status: 'Published'
-tags: ['精选', '年终总结', '随想']
+tags: ['年终总结']
 date: '2023-12-31'
 slug: '2023-summary'
 summary: '有什么想做的就去做吧，且将新火试新茶，诗酒趁年华。'
-last_edited_time: '2025-08-06T03:14:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:14:41.993Z'
+last_edited_time: '2025-09-02T08:27:00.000Z'
+blog_last_fetched_time: '2025-09-02T08:54:31.066Z'
 notion_id: '32553026-a035-4c96-9988-4a0e63ba50b0'
 icon: '⛵'
 ---

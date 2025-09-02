@@ -3,12 +3,12 @@ title: '二〇二四：无法长大'
 category: 'Nichijou'
 type: 'Post'
 status: 'Published'
-tags: ['年终总结', '精选', '随想']
+tags: ['年终总结']
 date: '2024-12-28'
 slug: '2024-summary'
 summary: '我无法长大更不想长大，那就保持现状，让我再当几年孩子吧。'
-last_edited_time: '2025-08-06T06:14:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:24:08.266Z'
+last_edited_time: '2025-09-02T08:27:00.000Z'
+blog_last_fetched_time: '2025-09-02T08:54:23.558Z'
 notion_id: '122dc9c0-364a-80f4-a150-ced50d592781'
 icon: '🎑'
 ---

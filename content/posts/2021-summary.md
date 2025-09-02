@@ -3,12 +3,12 @@ title: '小结 2021'
 category: 'Nichijou'
 type: 'Post'
 status: 'Published'
-tags: ['精选', '年终总结', '心情']
+tags: ['年终总结']
 date: '2021-12-31'
 slug: '2021-summary'
 summary: '世界与我的未来皆不可捉摸，只愿世界和平🕊️，我的开心多于难过🤘。'
-last_edited_time: '2025-09-02T07:30:00.000Z'
-blog_last_fetched_time: '2025-09-02T07:51:45.998Z'
+last_edited_time: '2025-09-02T08:33:00.000Z'
+blog_last_fetched_time: '2025-09-02T08:55:20.008Z'
 notion_id: '0e72d6a0-6401-4712-842d-a0eda37acde9'
 icon: '🏅'
 ---

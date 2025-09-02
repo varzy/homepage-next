@@ -3,12 +3,12 @@ title: '2016 年度总结'
 category: 'Nichijou'
 type: 'Post'
 status: 'Published'
-tags: ['精选', '年终总结']
+tags: ['年终总结']
 date: '2016-12-31'
 slug: '2016-summary'
 summary: '我的第一篇年度总结。'
-last_edited_time: '2025-08-06T03:21:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:21:32.133Z'
+last_edited_time: '2025-09-02T08:42:00.000Z'
+blog_last_fetched_time: '2025-09-02T08:57:27.288Z'
 notion_id: 'a65902e3-cfbd-4bf3-8980-bd1b2624681e'
 icon: '🔍'
 ---

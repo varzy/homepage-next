@@ -7,8 +7,8 @@ tags: ['小形迹', '随想']
 date: '2025-09-02'
 slug: 'anecdotes-from-home'
 summary: '所谓回家就是永远不会感觉到饿。'
-last_edited_time: '2025-09-02T03:38:00.000Z'
-blog_last_fetched_time: '2025-09-02T03:38:29.920Z'
+last_edited_time: '2025-09-02T03:43:00.000Z'
+blog_last_fetched_time: '2025-09-02T04:16:35.486Z'
 notion_id: '25fdc9c0-364a-8059-b99c-c27b4cdf7a36'
 icon: '🪦'
 ---
@@ -69,7 +69,7 @@ icon: '🪦'
 
 ![MG3YcqH1CBKX8Jk.jpg](https://cdn.sa.net/2025/09/02/MG3YcqH1CBKX8Jk.jpg)
 
-再看看墙上他们曾经的照片，爷爷奶奶真的是老了。
+再看看墙上他们以前的照片，爷爷奶奶真的是老了。
 
 ![9PvLexYdQZukoEV.jpg](https://cdn.sa.net/2025/09/02/9PvLexYdQZukoEV.jpg)
 

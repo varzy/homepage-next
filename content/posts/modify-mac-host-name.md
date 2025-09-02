@@ -7,8 +7,8 @@ tags: ['MacOS', 'Terminal']
 date: '2020-03-27'
 slug: 'modify-mac-host-name'
 summary: ''
-last_edited_time: '2025-08-06T03:21:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:20:49.658Z'
+last_edited_time: '2025-08-06T06:20:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:32:54.317Z'
 notion_id: 'd8a29742-fc2b-46ed-a768-7d2292ac9353'
 icon: '🛶'
 ---

@@ -7,8 +7,8 @@ tags: ['JavaScript', '八股文']
 date: '2020-04-21'
 slug: 'js-prototype'
 summary: ''
-last_edited_time: '2025-09-02T07:09:00.000Z'
-blog_last_fetched_time: '2025-09-02T07:54:41.555Z'
+last_edited_time: '2025-09-02T07:54:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:30:10.402Z'
 notion_id: 'e19f5c7e-6e08-4d46-b65c-d059b6109b22'
 icon: '✨'
 ---

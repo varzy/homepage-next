@@ -3,12 +3,12 @@ title: '使用 ohmyzsh 提升终端使用体验'
 category: 'Coding'
 type: 'Post'
 status: 'Published'
-tags: ['Terminal', 'DevEnv']
+tags: ['Terminal']
 date: '2021-11-27'
 slug: 'ohmyzsh-terminal-usage'
 summary: ''
-last_edited_time: '2025-09-02T07:28:00.000Z'
-blog_last_fetched_time: '2025-09-02T07:52:17.150Z'
+last_edited_time: '2025-09-02T07:52:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:28:24.442Z'
 notion_id: '332a9dfa-7231-40af-899e-43639847c192'
 icon: '🧨'
 ---

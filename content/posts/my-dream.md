@@ -7,8 +7,8 @@ tags: ['梦']
 date: '2024-03-22'
 slug: 'my-dream'
 summary: ''
-last_edited_time: '2025-08-06T03:28:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:14:37.333Z'
+last_edited_time: '2025-08-06T06:14:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:26:00.420Z'
 notion_id: 'f096dc95-0a50-4818-b6ea-90b90fb12607'
 icon: '💭'
 ---

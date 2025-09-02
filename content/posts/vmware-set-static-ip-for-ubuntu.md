@@ -7,8 +7,8 @@ tags: ['Linux']
 date: '2020-03-27'
 slug: 'vmware-set-static-ip-for-ubuntu'
 summary: ''
-last_edited_time: '2025-08-06T03:20:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:19:50.833Z'
+last_edited_time: '2025-08-06T06:19:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:32:04.338Z'
 notion_id: 'd3dfd778-7e0f-4072-8cb7-b77c47e573c4'
 icon: '✒️'
 ---
@@ -44,7 +44,7 @@ sudo cp /etc/netplan/50-cloud-init.yaml /etc/netplan/50-cloud-init.yaml.bak
 sudo vim /etc/netplan/50-cloud-init.yaml
 ```
 
-```text
+```plain text
 network:
     ethernets:
         ens33:

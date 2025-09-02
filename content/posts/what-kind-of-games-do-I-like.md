@@ -7,8 +7,8 @@ tags: ['游戏人生', '随想']
 date: '2024-07-25'
 slug: 'what-kind-of-games-do-I-like'
 summary: '届到了，我届到了。'
-last_edited_time: '2025-08-06T03:28:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:14:21.153Z'
+last_edited_time: '2025-08-06T06:14:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:25:46.448Z'
 notion_id: '0648e3e8-274a-4b88-a994-d53dbd16f0dd'
 icon: '🛤️'
 ---

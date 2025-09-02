@@ -7,8 +7,8 @@ tags: ['MacOS']
 date: '2022-11-25'
 slug: 'macos-theme'
 summary: ''
-last_edited_time: '2025-09-02T07:35:00.000Z'
-blog_last_fetched_time: '2025-09-02T07:51:18.238Z'
+last_edited_time: '2025-09-02T07:51:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:26:59.859Z'
 notion_id: '76501d7c-d8a7-413d-90d6-3b2e31f8afb7'
 icon: '🎟️'
 ---

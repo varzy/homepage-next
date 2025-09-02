@@ -7,8 +7,8 @@ tags: ['Miniprogram']
 date: '2022-02-21'
 slug: 'miniprogram-page-container-reject-backing'
 summary: ''
-last_edited_time: '2025-08-06T03:15:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:16:37.978Z'
+last_edited_time: '2025-08-06T06:16:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:27:50.143Z'
 notion_id: '2b11d7ee-942d-432c-b223-f2c9d28adfe4'
 icon: '🥋'
 ---

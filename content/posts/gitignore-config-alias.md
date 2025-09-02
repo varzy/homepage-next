@@ -7,8 +7,8 @@ tags: ['Git']
 date: '2020-03-27'
 slug: 'gitignore-config-alias'
 summary: ''
-last_edited_time: '2025-08-06T03:20:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:20:34.870Z'
+last_edited_time: '2025-08-06T06:20:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:32:41.380Z'
 notion_id: '6ea78241-dcff-4661-8fae-5a752ee0c9c8'
 icon: '🎀'
 ---

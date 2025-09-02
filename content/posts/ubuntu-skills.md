@@ -7,8 +7,8 @@ tags: ['Linux']
 date: '2020-03-27'
 slug: 'ubuntu-skills'
 summary: ''
-last_edited_time: '2025-08-06T03:20:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:19:55.538Z'
+last_edited_time: '2025-08-06T06:19:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:32:09.655Z'
 notion_id: '6d832d86-e56a-4498-b391-012db20a8b25'
 icon: '🎸'
 ---
@@ -54,7 +54,7 @@ genpac --proxy="SOCKS5 127.0.0.1:1080" --gfwlist-proxy="SOCKS5 127.0.0.1:1080" -
 
 打开 `系统设置` > `Network` > `Network Proxy`，在 `Automatic` 中的 `Configuration URL` 中输入 pac 文件的路径。
 
-```text
+```plain text
 file:///home/zy/Documents/ss/autoproxy.pac
 ```
 

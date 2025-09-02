@@ -3,12 +3,12 @@ title: '过客'
 category: 'Nichijou'
 type: 'Post'
 status: 'Published'
-tags: ['心情', '随想']
+tags: ['随想']
 date: '2023-08-02'
 slug: 'cross-path-traveller'
 summary: 'Farewell～'
-last_edited_time: '2025-08-06T03:14:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:15:04.056Z'
+last_edited_time: '2025-08-06T06:15:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:26:30.397Z'
 notion_id: 'c8ef0f62-8fa5-4ac2-80d8-835d11ba514f'
 icon: '🏕️'
 ---

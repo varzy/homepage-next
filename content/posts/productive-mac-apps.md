@@ -7,8 +7,8 @@ tags: ['生产力', '软件', 'MacOS']
 date: '2022-09-02'
 slug: 'productive-mac-apps'
 summary: '用 Mac 这么多年，我也折腾过许许多多软件，然而现在已经返璞归真了。'
-last_edited_time: '2025-08-06T03:14:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:15:44.380Z'
+last_edited_time: '2025-08-06T06:15:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:27:14.694Z'
 notion_id: 'fbe5853e-092b-4f46-ad2b-206186d0a514'
 icon: '🪐'
 ---

@@ -7,8 +7,8 @@ tags: ['动画']
 date: '2022-05-11'
 slug: 'anime-k'
 summary: '我的中二病至今仍未痊愈，大概已经是终生顽疾了。'
-last_edited_time: '2025-08-06T03:15:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:16:19.494Z'
+last_edited_time: '2025-08-06T06:16:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:27:33.698Z'
 notion_id: 'ae72fbe9-f112-4854-a090-3b741f35fd2f'
 icon: '⛱️'
 ---

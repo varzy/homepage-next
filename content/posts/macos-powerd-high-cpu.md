@@ -7,8 +7,8 @@ tags: ['MacOS']
 date: '2022-08-03'
 slug: 'macos-powerd-high-cpu'
 summary: ''
-last_edited_time: '2025-08-06T03:14:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:15:48.091Z'
+last_edited_time: '2025-08-06T06:15:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:27:16.656Z'
 notion_id: '5c39bc5e-2fd9-404c-9564-3943c1a296e2'
 icon: '⏳'
 ---

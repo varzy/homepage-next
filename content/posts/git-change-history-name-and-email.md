@@ -7,8 +7,8 @@ tags: ['Git']
 date: '2020-03-27'
 slug: 'git-change-history-name-and-email'
 summary: ''
-last_edited_time: '2025-09-02T06:50:00.000Z'
-blog_last_fetched_time: '2025-09-02T07:57:39.993Z'
+last_edited_time: '2025-09-02T07:57:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:32:47.925Z'
 notion_id: '9fdf779b-45fe-4a6a-96f3-d182aaba9e5e'
 icon: '⛵'
 ---

@@ -3,12 +3,12 @@ title: 'Lumen 使用 Redis'
 category: 'Coding'
 type: 'Post'
 status: 'Published'
-tags: ['Laravel', 'PHP', 'Redis']
+tags: ['Laravel', 'PHP']
 date: '2020-03-27'
 slug: 'lumen-use-redis'
 summary: ''
-last_edited_time: '2025-08-06T03:20:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:20:15.103Z'
+last_edited_time: '2025-08-06T06:20:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:32:28.924Z'
 notion_id: '66384cdd-8a06-4010-b9f5-82cb4e4215f5'
 icon: '📇'
 ---
@@ -41,7 +41,7 @@ $app->withEloquent()
 
 `.env` 中写入
 
-```text
+```plain text
 REDIS_HOST=predis
 REDIS_HOST=192.168.1.41
 REDIS_PORT=6379

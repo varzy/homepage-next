@@ -7,8 +7,8 @@ tags: ['Git']
 date: '2021-11-28'
 slug: 'use-different-gitconfig'
 summary: ''
-last_edited_time: '2025-08-06T03:16:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:16:56.250Z'
+last_edited_time: '2025-08-06T06:16:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:28:22.630Z'
 notion_id: '621ffe9f-028d-4a9b-9f2f-0636defce6f2'
 icon: '🏏'
 ---
@@ -17,7 +17,7 @@ icon: '🏏'
 
 最简单的方案就是在每个项目目录下重新进行配置。我们可以编辑当前目录下 `.git/config` 中的 `[user]` 配置：
 
-```text
+```plain text
 [user]
     name = aiden
     email = aiden@company.com

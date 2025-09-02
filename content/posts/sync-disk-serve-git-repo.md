@@ -7,8 +7,8 @@ tags: ['Git']
 date: '2021-03-13'
 slug: 'sync-disk-serve-git-repo'
 summary: ''
-last_edited_time: '2025-08-06T03:18:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:18:15.841Z'
+last_edited_time: '2025-08-06T06:18:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:29:33.204Z'
 notion_id: '63391f27-edbe-4f17-b944-a79d5e377df1'
 icon: '🛡️'
 ---
@@ -17,7 +17,7 @@ icon: '🛡️'
 
 在合适的同步盘文件夹内此处使用该命令：
 
-```text
+```plain text
 git init --bare
 ```
 
@@ -25,13 +25,13 @@ git init --bare
 
 使用 git clone 的方式，将同步盘内的“远程仓库”克隆至非同步盘文件夹下。克隆的地址就是远程仓库文件夹的路径。
 
-```text
+```plain text
 git clone [path]
 ```
 
 比如我的远程仓库建立在 `D:\Nutstore\CodeStudio\demo` 路径下，那么我就应当输入
 
-```text
+```plain text
 git clone D:\Nutstore\CodeStudio\demo
 ```
 

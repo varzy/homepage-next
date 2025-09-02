@@ -7,8 +7,8 @@ tags: ['Miniprogram']
 date: '2021-03-18'
 slug: 'miniprogram-wxs-format-time'
 summary: ''
-last_edited_time: '2025-08-06T06:18:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:29:21.277Z'
+last_edited_time: '2025-08-06T06:29:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:29:20.258Z'
 notion_id: 'c1a9149b-9c3b-4034-9a64-81657b9c5818'
 icon: '⛴️'
 ---

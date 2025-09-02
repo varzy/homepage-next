@@ -7,8 +7,8 @@ tags: ['软件', 'Notion']
 date: '2022-05-30'
 slug: 'notion-essentials-badge'
 summary: 'Notion Certified is a program for Notion power users to validate their skills for clients and peers.'
-last_edited_time: '2025-09-02T07:32:00.000Z'
-blog_last_fetched_time: '2025-09-02T07:51:24.155Z'
+last_edited_time: '2025-09-02T07:51:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:27:27.749Z'
 notion_id: '99c26cbc-8f55-4abb-834c-97fbd7cc4807'
 icon: '🥳'
 ---

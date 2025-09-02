@@ -3,12 +3,12 @@ title: '从入职到被裁，谈谈我在紫光云的这 0.99726 年'
 category: 'Nichijou'
 type: 'Post'
 status: 'Published'
-tags: ['工作', '随想']
+tags: ['随想']
 date: '2020-04-16'
 slug: 'my-unicloud-experience'
 summary: '我在紫光云呆了 364 天。364 / 365 = 0.99726027397...'
-last_edited_time: '2025-09-02T07:08:00.000Z'
-blog_last_fetched_time: '2025-09-02T07:55:11.115Z'
+last_edited_time: '2025-09-02T07:55:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:30:12.541Z'
 notion_id: 'd1968ab6-a8d0-430d-847b-a5ebf818ffdd'
 icon: '🔖'
 ---

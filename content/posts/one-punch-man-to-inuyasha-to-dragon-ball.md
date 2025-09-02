@@ -7,8 +7,8 @@ tags: ['流光忆庭', '漫画']
 date: '2021-12-20'
 slug: 'one-punch-man-to-inuyasha-to-dragon-ball'
 summary: '感谢一拳超人和那位无名群友，让平平无奇且无趣的我多了个靠谱的爱好；感谢 Kindle 和 Vol.moe，让我能够短暂忘却地铁上的枯燥和拥挤。'
-last_edited_time: '2025-09-02T07:29:00.000Z'
-blog_last_fetched_time: '2025-09-02T07:51:47.829Z'
+last_edited_time: '2025-09-02T07:51:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:28:13.299Z'
 notion_id: 'a44182ac-cbdf-4559-b276-684992f26f5f'
 icon: '👊'
 ---

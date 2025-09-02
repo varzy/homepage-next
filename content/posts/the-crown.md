@@ -7,8 +7,8 @@ tags: ['剧']
 date: '2022-01-17'
 slug: 'the-crown'
 summary: '所以，比赛已经到了决赛圈，究竟谁能胜出呢（逃'
-last_edited_time: '2025-09-02T07:30:00.000Z'
-blog_last_fetched_time: '2025-09-02T07:51:37.438Z'
+last_edited_time: '2025-09-02T07:51:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:27:57.051Z'
 notion_id: '712a6782-80c7-43dd-83c5-3c34dea186b8'
 icon: '👸'
 ---

@@ -7,8 +7,8 @@ tags: ['随想']
 date: '2017-06-23'
 slug: 'my-birthday-of-2017'
 summary: '2017 年生日之丧。'
-last_edited_time: '2025-08-06T03:21:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:21:24.070Z'
+last_edited_time: '2025-08-06T06:21:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:33:27.436Z'
 notion_id: '6e8689c0-54d0-42cd-8978-727b8374523f'
 icon: '🏰'
 ---

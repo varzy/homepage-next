@@ -7,8 +7,8 @@ tags: ['Miniprogram', 'CICD']
 date: '2021-03-12'
 slug: 'miniprogram-version-managment'
 summary: ''
-last_edited_time: '2025-09-02T08:37:00.000Z'
-blog_last_fetched_time: '2025-09-02T08:56:08.675Z'
+last_edited_time: '2025-09-02T08:55:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:29:35.593Z'
 notion_id: 'bd24e5bb-1a14-4947-b458-fbf4d902db35'
 icon: '🏓'
 ---

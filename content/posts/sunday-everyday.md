@@ -7,8 +7,8 @@ tags: ['游戏人生', '随想']
 date: '2025-08-12'
 slug: 'sunday-everyday'
 summary: '人生苦短，我站周天哥。'
-last_edited_time: '2025-08-26T13:36:00.000Z'
-blog_last_fetched_time: '2025-09-02T03:27:38.327Z'
+last_edited_time: '2025-09-02T03:27:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:25:15.595Z'
 notion_id: '1ecdc9c0-364a-80b9-ad60-ef46255ba761'
 icon: '🛫'
 ---

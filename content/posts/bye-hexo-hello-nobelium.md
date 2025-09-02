@@ -7,8 +7,8 @@ tags: ['生产力', 'Notion']
 date: '2021-08-21'
 slug: 'bye-hexo-hello-nobelium'
 summary: '哦吼～ 博客已迁移至 Notion + Nobelium。'
-last_edited_time: '2025-09-02T08:36:00.000Z'
-blog_last_fetched_time: '2025-09-02T08:55:44.309Z'
+last_edited_time: '2025-09-02T08:55:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:28:59.938Z'
 notion_id: '29ec674a-b2f1-438d-9aa8-e477e54730ca'
 icon: '🥎'
 ---

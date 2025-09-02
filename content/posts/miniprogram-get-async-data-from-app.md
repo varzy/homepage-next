@@ -7,8 +7,8 @@ tags: ['Miniprogram']
 date: '2021-01-29'
 slug: 'miniprogram-get-async-data-from-app'
 summary: ''
-last_edited_time: '2025-08-06T03:18:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:18:19.900Z'
+last_edited_time: '2025-08-06T06:18:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:29:37.967Z'
 notion_id: 'df1bc672-2b17-4a7d-9101-0c97dbef01c9'
 icon: '🎭'
 ---
@@ -19,34 +19,34 @@ icon: '🎭'
 // app.js
 // 获取用户信息
 wx.getSetting({
-  success: res => {
+  success: (res) => {
     if (res.authSetting['scope.userInfo']) {
       wx.getUserInfo({
-        success: res => {
-          this.globalData.userInfo = res.userInfo
+        success: (res) => {
+          this.globalData.userInfo = res.userInfo;
 
-          _**if (this.userInfoReadyCallback) {
-            this.userInfoReadyCallback(res)
-          }**_
-        }
-      })
+          if (this.userInfoReadyCallback) {
+            this.userInfoReadyCallback(res);
+          }
+        },
+      });
     }
-  }
-})
+  },
+});
 
 // pages/index/index.js
 if (app.globalData.userInfo) {
   this.setData({
     userInfo: app.globalData.userInfo,
-    hasUserInfo: true
-  })
+    hasUserInfo: true,
+  });
 } else {
-  _**app.userInfoReadyCallback = res => {
+  app.userInfoReadyCallback = (res) => {
     this.setData({
       userInfo: res.userInfo,
-      hasUserInfo: true
-    })
-  }**_
+      hasUserInfo: true,
+    });
+  };
 }
 ```
 

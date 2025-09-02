@@ -7,8 +7,8 @@ tags: ['Browser', '八股文']
 date: '2020-04-03'
 slug: 'browser-concurrent'
 summary: ''
-last_edited_time: '2025-09-02T07:04:00.000Z'
-blog_last_fetched_time: '2025-09-02T07:55:54.355Z'
+last_edited_time: '2025-09-02T07:55:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:30:44.600Z'
 notion_id: '778bf9c4-87cb-4953-acda-e13f8f24a144'
 icon: '📫'
 ---

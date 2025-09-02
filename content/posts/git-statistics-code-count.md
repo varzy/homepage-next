@@ -7,8 +7,8 @@ tags: ['Git']
 date: '2020-03-27'
 slug: 'git-statistics-code-count'
 summary: ''
-last_edited_time: '2025-08-06T03:20:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:20:35.879Z'
+last_edited_time: '2025-08-06T06:20:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:32:42.495Z'
 notion_id: '17848162-2358-4506-925f-15b95de05e42'
 icon: '📋'
 ---

@@ -7,8 +7,8 @@ tags: ['外设', '评测', '数码产品']
 date: '2022-11-27'
 slug: 'nuphy-air75'
 summary: '我可别就此掉入客制化的坑吧？'
-last_edited_time: '2025-09-02T08:50:00.000Z'
-blog_last_fetched_time: '2025-09-02T08:54:53.948Z'
+last_edited_time: '2025-09-02T08:54:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:26:57.353Z'
 notion_id: '87eda1b8-08ff-424e-bb70-43f0cfcc00a8'
 icon: '🛷'
 ---

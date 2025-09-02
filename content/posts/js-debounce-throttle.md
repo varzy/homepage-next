@@ -7,8 +7,8 @@ tags: ['JavaScript']
 date: '2020-05-11'
 slug: 'js-debounce-throttle'
 summary: ''
-last_edited_time: '2025-09-02T07:10:00.000Z'
-blog_last_fetched_time: '2025-09-02T07:54:36.069Z'
+last_edited_time: '2025-09-02T07:54:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:29:58.442Z'
 notion_id: '2e170469-d4be-446e-bfc2-5c462e74c33b'
 icon: '❄️'
 ---

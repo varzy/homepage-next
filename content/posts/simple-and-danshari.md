@@ -7,8 +7,8 @@ tags: ['随想']
 date: '2021-08-24'
 slug: 'simple-and-danshari'
 summary: '最近办公室新入职了一位小姐姐，刚来第二天我就注意到她……'
-last_edited_time: '2025-09-02T07:22:00.000Z'
-blog_last_fetched_time: '2025-09-02T07:53:47.420Z'
+last_edited_time: '2025-09-02T07:53:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:28:54.382Z'
 notion_id: '80882b3d-945a-4f57-904d-d7430415ee2a'
 icon: '⬜'
 ---

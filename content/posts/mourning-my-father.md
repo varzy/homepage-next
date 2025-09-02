@@ -7,8 +7,8 @@ tags: ['随想']
 date: '2025-05-24'
 slug: 'mourning-my-father'
 summary: '父亲是个伟大的人吗？不是。我能比父亲做得更好吗？绝对不能。'
-last_edited_time: '2025-09-02T08:21:00.000Z'
-blog_last_fetched_time: '2025-09-02T08:54:21.139Z'
+last_edited_time: '2025-09-02T08:54:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:25:35.325Z'
 notion_id: '1fcdc9c0-364a-80d9-a9fa-cddf9158d6d8'
 icon: '☁️'
 ---

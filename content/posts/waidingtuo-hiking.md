@@ -7,8 +7,8 @@ tags: ['小形迹']
 date: '2024-03-24'
 slug: 'waidingtuo-hiking'
 summary: '啊？这是 Level 1？'
-last_edited_time: '2025-08-06T03:28:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:14:34.212Z'
+last_edited_time: '2025-08-06T06:14:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:25:58.811Z'
 notion_id: 'f6acd1c9-9341-4864-887c-e7d307841d08'
 icon: '🧗'
 ---

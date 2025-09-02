@@ -3,12 +3,12 @@ title: '升级了个人主页架构'
 category: 'Coding'
 type: 'Post'
 status: 'Published'
-tags: ['Nextjs', 'SideProject']
+tags: ['Nextjs']
 date: '2025-08-06'
 slug: 'homepage-upgrading'
 summary: '一入 Next 深似海，从此迁移是路人。'
-last_edited_time: '2025-08-12T01:46:00.000Z'
-blog_last_fetched_time: '2025-08-12T01:52:07.594Z'
+last_edited_time: '2025-08-12T01:52:00.000Z'
+blog_last_fetched_time: '2025-09-02T09:25:31.564Z'
 notion_id: '247dc9c0-364a-806f-9561-fef372d1cbff'
 icon: '🕠'
 ---

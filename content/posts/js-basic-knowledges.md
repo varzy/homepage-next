@@ -7,12 +7,10 @@ tags: ['JavaScript', '八股文']
 date: '2020-04-21'
 slug: 'js-basic-knowledges'
 summary: ''
-last_edited_time: '2025-08-06T03:18:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:18:49.021Z'
+last_edited_time: '2025-09-02T07:09:00.000Z'
+blog_last_fetched_time: '2025-09-02T07:55:08.157Z'
 notion_id: '6460dff0-4656-46f6-a5a1-187be7958b9a'
 icon: '⛑️'
----
-
 ---
 
 ## 类型
@@ -80,7 +78,3 @@ icon: '⛑️'
 
   // +'1' => 1
   ```
-
-## 资料 & 关联阅读
-
-[bookmark](https://yuchengkai.cn/docs/frontend)

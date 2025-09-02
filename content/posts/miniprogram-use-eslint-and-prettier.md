@@ -7,30 +7,20 @@ tags: ['Miniprogram', 'ESLint', 'Prettier']
 date: '2021-03-18'
 slug: 'miniprogram-use-eslint-and-prettier'
 summary: ''
-last_edited_time: '2025-08-06T03:17:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:18:06.093Z'
+last_edited_time: '2025-09-02T07:19:00.000Z'
+blog_last_fetched_time: '2025-09-02T07:53:51.790Z'
 notion_id: 'd8b8d8e8-1895-4173-9008-058ed75b6cd5'
 icon: '⛳'
 ---
 
-在之前的项目中，我引入了 Prettier 用于格式化微信小程序的项目代码，具体可以查看：[使用 Prettier 格式化微信小程序代码](https://www.notion.so/5c8154428abb45008492a6f8d4febe25) 。
-
-但随着项目越来越大，靠人脑去检查代码变得越来越复杂，我开始怀念使用 Vue Cli 编写代码时 ESLint 提供的强大代码检查能力。于是在上一篇引入 Prettier 的基础上，我又尝试引入了 ESLint。目前来看坑其实并不多，最终的效果也比较令人满意。
+在之前的项目中，我引入了 Prettier 用于格式化微信小程序的项目代码。但随着项目越来越大，靠人脑去检查代码变得越来越复杂，我开始怀念使用 Vue Cli 编写代码时 ESLint 提供的强大代码检查能力。于是在上一篇引入 Prettier 的基础上，我又尝试引入了 ESLint。目前来看坑其实并不多，最终的效果也比较令人满意。但随着项目越来越大，靠人脑去检查代码变得越来越复杂，我开始怀念使用 Vue Cli 编写代码时 ESLint 提供的强大代码检查能力。于是在上一篇引入 Prettier 的基础上，我又尝试引入了 ESLint。目前来看坑其实并不多，最终的效果也比较令人满意。
 
 ## 目标 & 结果
 
 - ✅ 执行一条 npm 脚本，自动使用 Prettier 格式化代码，并用 ESLint 检查 js 语法。检查结果能够在终端中输出
-
-  ![OaPjbwAl4DckuG2.png](https://cdn.sa.net/2024/03/15/OaPjbwAl4DckuG2.png)
-
 - ✅ 在 VSCode 中自动显示 ESLint 检查结果。前提是需要安装 ESLint 插件
-
-  ![MRnxPNg3sB1if8V.png](https://cdn.sa.net/2024/03/15/MRnxPNg3sB1if8V.png)
-
 - ~~❌ 在微信开发者工具中自动显示 ESLint 检查结果。~~~~_失败原因：微信开发者工具中虽然支持添加自定义的 VSCode 插件，但把 ESLint 插件复制到微信开发者工具的自定义插件目录后并不能生效_~~
 - (更新于2021.07.01) ✅ 在微信开发者工具中自动显示 ESLint 检查结果。微信开发者工具自 `Stable 1.05.2106250` 版本开始支持安装部分 VSCode 插件，因此在开发者工具中安装 ESLint 插件后即可正常开启检查
-
-  ![9Acfz1Q4RxqCheN.png](https://cdn.sa.net/2024/03/15/9Acfz1Q4RxqCheN.png)
 
 ## 原理
 
@@ -41,7 +31,7 @@ icon: '⛳'
 
 ### 引入 Prettier
 
-具体可以查看前文 [使用 Prettier 格式化微信小程序代码](https://www.notion.so/5c8154428abb45008492a6f8d4febe25) ，此处不再赘述。当然，如果你不想使用 Prettier，完全可以只修改目录结构，保证和下面的步骤兼容即可。
+具体可以查看前文 [使用 Prettier 格式化微信小程序代码](https://varzy.me/posts/use-prettier-to-format-miniprogram)，此处不再赘述。当然，如果你不想使用 Prettier，完全可以只修改目录结构，保证和下面的步骤兼容即可。
 
 ### 引入 ESLint
 
@@ -100,7 +90,7 @@ module.exports = {
 yarn add -D @babel/core @babel/eslint-parser
 ```
 
-> ⚠️ 注意：我们这里安装的是 [@babel/eslint-parser](https://github.com/babel/babel/tree/main/eslint/babel-eslint-parser) 而非网上很多老教程里的 [babel-eslint](https://github.com/babel/babel-eslint)。如果你点进 babel-eslint 的仓库就会发现这个依赖已经被归档了，现在更推荐使用前者。
+注意：我们这里安装的是 [@babel/eslint-parser](https://github.com/babel/babel/tree/main/eslint/babel-eslint-parser) 而非网上很多老教程里的 [babel-eslint](https://github.com/babel/babel-eslint)。如果你点进 babel-eslint 的仓库就会发现这个依赖已经被归档了，现在更推荐使用前者。
 
 接下来，我们还需要添加 babel 的配置。由于我们仅需要满足最基本的解析需求，所以配置文件应该怎么简单怎么来，因此我们直接选用 `@babel/pretset-env`。安装：
 
@@ -139,7 +129,7 @@ module.exports = {
 "lint": "npm run lint:prettier && npm run lint:eslint",
 ```
 
-> 💡 `lint:prettier` 中的 `--loglevel warn` 可以保证终端中不显示格式化过程。如果不想在终端中看到一大坨的文件列表，就可以添加这个配置。更多参数可以查看 [官方文档](https://prettier.io/docs/en/cli.html#--loglevel)。
+`lint:prettier` 中的 `--loglevel warn` 可以保证终端中不显示格式化过程。如果不想在终端中看到一大坨的文件列表，就可以添加这个配置。更多参数可以查看 [官方文档](https://prettier.io/docs/en/cli.html#--loglevel)。
 
 现在，我们在终端中敲入 `npm run lint` 就可以同时实现格式化代码和语法检查了。
 

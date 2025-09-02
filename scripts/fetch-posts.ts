@@ -31,13 +31,13 @@ class PostsFetcher {
     console.log(`🚀 Starting to fetch posts from Notion${this.forceMode ? ' (FORCE MODE)' : ''}...`);
     console.log(`📷 Image upload to SM.MS is ENABLED`);
 
-    const result: FetchResult = { updated: 0, skipped: 0, errors: 0 };
+    const result: FetchResult = { updated: 0, skipped: 0, errors: 0, deleted: 0 };
 
     try {
       // 确保输出目录存在
       this.ensureOutputDirectory();
 
-      // 获取所有文章
+      // 获取所有 Published 文章
       const allPosts = await this.converter.getAllPosts(this.config.notionDatabaseId);
       console.log(`📚 Found ${allPosts.length} published posts`);
 
@@ -62,8 +62,40 @@ class PostsFetcher {
         }
       }
 
+      // 处理 Archive 状态：删除本地已归档文章
+      try {
+        const archivedPosts = await this.converter.getPostsByStatus(this.config.notionDatabaseId, 'Archive');
+        if (archivedPosts.length > 0) {
+          console.log(`🗃️ Found ${archivedPosts.length} archived posts, checking local files...`);
+        }
+
+        // 构建本地文件名集合，使用 slug 命名规则
+        const archivedSlugs = new Set(archivedPosts.map((p) => p.slug).filter(Boolean));
+
+        // 枚举本地 content/posts 目录，删除命中 slug 的文件
+        const files = fs.readdirSync(this.config.outputDir);
+        for (const file of files) {
+          if (!file.endsWith('.md')) continue;
+          const slug = file.replace(/\.md$/, '');
+          if (archivedSlugs.has(slug)) {
+            const filePath = path.join(this.config.outputDir, file);
+            try {
+              fs.unlinkSync(filePath);
+              result.deleted++;
+              console.log(`🗑️ Deleted archived post file: ${file}`);
+            } catch (err) {
+              result.errors++;
+              console.error(`❌ Failed to delete archived post file ${file}:`, err);
+            }
+          }
+        }
+      } catch (err) {
+        result.errors++;
+        console.error('❌ Failed to handle archived posts cleanup:', err);
+      }
+
       console.log(
-        `🎉 Fetch completed! Updated: ${result.updated}, Skipped: ${result.skipped}, Errors: ${result.errors}`,
+        `🎉 Fetch completed! Updated: ${result.updated}, Deleted: ${result.deleted}, Skipped: ${result.skipped}, Errors: ${result.errors}`,
       );
     } catch (error) {
       console.error('💥 Fatal error during fetch:', error);

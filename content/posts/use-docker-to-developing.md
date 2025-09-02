@@ -7,13 +7,11 @@ tags: ['Docker', 'DevEnv', '精选']
 date: '2021-09-12'
 slug: 'use-docker-to-developing'
 summary: ''
-last_edited_time: '2025-08-06T03:17:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:17:17.300Z'
+last_edited_time: '2025-09-02T07:24:00.000Z'
+blog_last_fetched_time: '2025-09-02T07:53:33.502Z'
 notion_id: '1f966285-bf21-4640-9e24-11b81c8720a6'
 icon: '🐳'
 ---
-
-> 💡 本文主要面向 Docker 初学者或前端开发者。阅览本文前，请务必先了解 Docker 是什么，以及各种基本概念 (镜像、容器等)。
 
 ## Why & How?
 
@@ -69,9 +67,6 @@ services:
 
 按照这个思路，我们只需要在 `docker-compose.yml` 中添加自己需要的各种服务即可，比如 Redis、MongoDB 等。下面再给出一个添加了 Redis 和 MongoDB 的完整例子。注意，我们在这里使用了 `redis:alpine` 这个基础镜像，这是因为基于 alpine 这个 linux 发行版的 Docker 镜像体积非常小，没有特殊需求的话，应当尽可能选用 alpine 版本的镜像。
 
-<details>
-<summary>`docker-compose.yml`</summary>
-
 ```yaml
 version: '3.8'
 
@@ -111,8 +106,6 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=pass
 ```
 
-</details>
-
 ## 使用 Nginx
 
 ### 起步和初始化
@@ -141,10 +134,7 @@ services:
 
 需要注意的是，`./nginx/conf.d` 目录下是空的，而容器中的 Nginx 在 `conf.d` 下应该有一个默认配置文件 `default.conf`。如果我们直接这么启动容器，就会让容器内的 `conf.d` 目录也变成空目录。因此我们需要提前在宿主机的 `./nginx/conf.d` 下放置一个 `default.conf`。这个文件怎么获取呢？你可以创建一个一次性的 Nginx 容器，把这个配置文件拷贝到宿主机，也可以直接从网上找一个现成的。下面给出一个我从容器内拷贝出来的配置：
 
-<details>
-<summary><u>点我展开</u></summary>
-
-```text
+```plain text
 server {
     listen       80;
     listen  [::]:80;
@@ -191,8 +181,6 @@ server {
 }
 ```
 
-</details>
-
 接下来我们使用 `docker compose up -d nginx` 启动容器，成功后在浏览器打开 `http://localhost`，诶，熟悉的那个 Nginx 启动画面怎么没有了呢？与配置文件目录同理，宿主机下的 `./sites` 是空目录，因此会把容器中的 `/usr/share/nginx/html` 目录也同步为空目录。因此我们可以在 `./sites` 下创建一个 `index.html`。
 
 ```html
@@ -210,7 +198,7 @@ server {
 </html>
 ```
 
-![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e753f4ed-a9d5-4b94-80b5-b5d3a8dd4851/10500627-6640-4d35-969c-c0ec57f1771d/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UOKBYMBB%2F20250806%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250806T061713Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDYaCXVzLXdlc3QtMiJHMEUCIQCPMday3fFx3QczqKep4%2ByYIXppiTL5iVDAcr4Q9ARPwQIgZDbMOcBriiDAudZZ242cvuO4YsMET%2BGLO5Wj46%2BZzg4q%2FwMIbhAAGgw2Mzc0MjMxODM4MDUiDGOdJ0wvHx5cp0X8RSrcA3YmPgqzwqd2dZLkPtIxSdGo9GXzP6NmM3Nqjlvu7m9zSQLAqeunImElQCrTPQauRpB%2BMYF3KhmrsmOeYuFAeMk73OaOd91%2FSYiL73vUBBoiJFSzAp5T%2B2I2ONuKlqruiqNQ8oyCklgid7%2FkU0XZHpxrT5I12mQ3kSjnLYxmD1Q7A%2FcFA%2BvWeZ6bSV2xM08HEkTxansILM4vBSGI3X8Uln8Qes0r3keQcQORwdPWxZm541HmOyxXXUQFVUM0SZTsYO8KOMpiSH4H9vXMrRicf8OUO2ZgcSGhY60NbqhT96ksNE0JH%2FXg8hUgI7w6yA6ORbnDKXL9PKYgt8hk0RaE4Tz340aHVl7wos%2BLTT3LKujXAXIrIgEIqJtk5V4LbpfJfEXVtGtlnPSN31a2BYTYkQr96sRUKj71zCvKex2XzxfpCAPq35%2FvgutSrqYnXQOyNKEjrJDIy76fo8ZMApVXPkVmObr21slNhDubVqfa5LDGyd4X8EWBKXGZ0bOcFGE6Tyq80eIf41Yb0NbaiPf1PfwCFs9RGUTd%2BQEqqtmSe0JxQLoJjeLamVFr5k%2FTFvA7kanbNlly7%2FHJ9Wo2WxXWFokV%2FDoiA451YK97fU7Pcai40CKPIjOX0b0rJHKXMLLLy8QGOqUBQhyUzlXj3fojzB4swZFJowO9OMqbm0dgYvLRxLt5TVck7BeYrnQVmNCDZyQu1%2BjKmZLbw0YfObGZVF294HIm9BpNqxAP0wH5VTlmvkAW7v0Dy2tGXnaozEU7P31kgTNKRqPdN4GFDyaT1bxUAVCeqCmiK7DUx6PV7aDj6UNIH6mEHtEfVMrGzRjBZi5avCYZ3kN7nsOESc%2B%2Fkxj7%2Bb8JfwxWo3Zb&X-Amz-Signature=b4a96136c4ff0a05b1626b5ff878492d773dc99f455e31aa0b2ed545279fcaa6&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+![C9OXoWJA7fLRwt1.png](https://cdn.sa.net/2025/09/02/C9OXoWJA7fLRwt1.png)
 
 大功告成！现在 Nginx 的表现就与宿主机使用 Homebrew 等工具安装 Nginx 后的效果基本一致了。
 
@@ -262,9 +250,9 @@ index index.html;
 
 接着我们访问 `http://app.devos.com`，就可以看到已经成功了。
 
-![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e753f4ed-a9d5-4b94-80b5-b5d3a8dd4851/c1b567d8-b0bf-4ef4-a551-f655c95ad15b/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UOKBYMBB%2F20250806%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250806T061713Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDYaCXVzLXdlc3QtMiJHMEUCIQCPMday3fFx3QczqKep4%2ByYIXppiTL5iVDAcr4Q9ARPwQIgZDbMOcBriiDAudZZ242cvuO4YsMET%2BGLO5Wj46%2BZzg4q%2FwMIbhAAGgw2Mzc0MjMxODM4MDUiDGOdJ0wvHx5cp0X8RSrcA3YmPgqzwqd2dZLkPtIxSdGo9GXzP6NmM3Nqjlvu7m9zSQLAqeunImElQCrTPQauRpB%2BMYF3KhmrsmOeYuFAeMk73OaOd91%2FSYiL73vUBBoiJFSzAp5T%2B2I2ONuKlqruiqNQ8oyCklgid7%2FkU0XZHpxrT5I12mQ3kSjnLYxmD1Q7A%2FcFA%2BvWeZ6bSV2xM08HEkTxansILM4vBSGI3X8Uln8Qes0r3keQcQORwdPWxZm541HmOyxXXUQFVUM0SZTsYO8KOMpiSH4H9vXMrRicf8OUO2ZgcSGhY60NbqhT96ksNE0JH%2FXg8hUgI7w6yA6ORbnDKXL9PKYgt8hk0RaE4Tz340aHVl7wos%2BLTT3LKujXAXIrIgEIqJtk5V4LbpfJfEXVtGtlnPSN31a2BYTYkQr96sRUKj71zCvKex2XzxfpCAPq35%2FvgutSrqYnXQOyNKEjrJDIy76fo8ZMApVXPkVmObr21slNhDubVqfa5LDGyd4X8EWBKXGZ0bOcFGE6Tyq80eIf41Yb0NbaiPf1PfwCFs9RGUTd%2BQEqqtmSe0JxQLoJjeLamVFr5k%2FTFvA7kanbNlly7%2FHJ9Wo2WxXWFokV%2FDoiA451YK97fU7Pcai40CKPIjOX0b0rJHKXMLLLy8QGOqUBQhyUzlXj3fojzB4swZFJowO9OMqbm0dgYvLRxLt5TVck7BeYrnQVmNCDZyQu1%2BjKmZLbw0YfObGZVF294HIm9BpNqxAP0wH5VTlmvkAW7v0Dy2tGXnaozEU7P31kgTNKRqPdN4GFDyaT1bxUAVCeqCmiK7DUx6PV7aDj6UNIH6mEHtEfVMrGzRjBZi5avCYZ3kN7nsOESc%2B%2Fkxj7%2Bb8JfwxWo3Zb&X-Amz-Signature=b1165e3312f707e8838fd337f46a9be7e062c20772ed55108a108d7a958af827&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+![moNA9IPOuhyHd1F.png](https://cdn.sa.net/2025/09/02/moNA9IPOuhyHd1F.png)
 
-> 💡 注意，我这里使用了一个非常奇葩的虚拟域名：app.devos.com，这是因为我使用了 Surge 这款梯子，而机场的规则又设置了不认识的域名会直接拦截。。。这就导致我必须使用 .com 之类的大众域名才能访问。你当然可以像网上大部分方案一样使用 .test 作为虚拟域名。
+注意，我这里使用了一个非常奇葩的虚拟域名：app.devos.com，这是因为我使用了 Surge 这款梯子，而机场的规则又设置了不认识的域名会直接拦截。。。这就导致我必须使用 .com 之类的大众域名才能访问。你当然可以像网上大部分方案一样使用 .test 作为虚拟域名。
 
 ### 反向代理宿主机
 
@@ -274,7 +262,7 @@ index index.html;
 
 而第二种方式则是我比较推荐的。Docker 暴露了 `http://host.docker.internal` 这个地址并永远指向宿主机 localhost，因此我们可以在 Nginx 配置中使用这个域名代替宿主机地址。举例：
 
-```text
+```plain text
 server {
   listen 80;
   server_name app.devos.com;
@@ -295,9 +283,6 @@ server {
 思路其实非常简单，我们把各种繁琐的配置、语言环境安装在 Docker 容器中，再使用目录映射方式的只把项目代码映射到容器中，我们可以在宿主机编写代码，而运行、编译等过程则全部跑在 Docker 容器中。
 
 下面我们将搭建一个基于 Ubuntu 基础镜像的开发舞台。首先，我们需要对 Ubuntu 基础镜像进行简单的定制，新建 `workspace/Dockerfile` 文件：
-
-<details>
-<summary>`workspace/Dockerfile`</summary>
 
 ```bash
 FROM ubuntu:20.04
@@ -362,8 +347,6 @@ EXPOSE 22 8000-8100
 WORKDIR /workspace
 ```
 
-</details>
-
 可以看到，我们给这个镜像进行换源、设置时区、安装 Node 和 Go 开发环境等操作，并且最终暴露出了 22 和 8000-8100 这些端口，22 用来进行 SSH 链接，而其他项目则需要跑在 8000-8100 端口上。而容器的默认工作目录则是 `/workspace`。
 
 接着我们在 `docker-compose.yml` 中添加一个名为 workspace 的配置。
@@ -387,7 +370,7 @@ services:
 
 执行 `docker compose up -d workspace`，即可自动构建 workspace 镜像，并且启动一个新的容器，接下来我们就可以使用 `docker exec -it workspace /bin/bash` 进入容器了。
 
-![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e753f4ed-a9d5-4b94-80b5-b5d3a8dd4851/5f89330f-df35-4cf7-ab49-d1a94bd344a0/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UOKBYMBB%2F20250806%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250806T061714Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDYaCXVzLXdlc3QtMiJHMEUCIQCPMday3fFx3QczqKep4%2ByYIXppiTL5iVDAcr4Q9ARPwQIgZDbMOcBriiDAudZZ242cvuO4YsMET%2BGLO5Wj46%2BZzg4q%2FwMIbhAAGgw2Mzc0MjMxODM4MDUiDGOdJ0wvHx5cp0X8RSrcA3YmPgqzwqd2dZLkPtIxSdGo9GXzP6NmM3Nqjlvu7m9zSQLAqeunImElQCrTPQauRpB%2BMYF3KhmrsmOeYuFAeMk73OaOd91%2FSYiL73vUBBoiJFSzAp5T%2B2I2ONuKlqruiqNQ8oyCklgid7%2FkU0XZHpxrT5I12mQ3kSjnLYxmD1Q7A%2FcFA%2BvWeZ6bSV2xM08HEkTxansILM4vBSGI3X8Uln8Qes0r3keQcQORwdPWxZm541HmOyxXXUQFVUM0SZTsYO8KOMpiSH4H9vXMrRicf8OUO2ZgcSGhY60NbqhT96ksNE0JH%2FXg8hUgI7w6yA6ORbnDKXL9PKYgt8hk0RaE4Tz340aHVl7wos%2BLTT3LKujXAXIrIgEIqJtk5V4LbpfJfEXVtGtlnPSN31a2BYTYkQr96sRUKj71zCvKex2XzxfpCAPq35%2FvgutSrqYnXQOyNKEjrJDIy76fo8ZMApVXPkVmObr21slNhDubVqfa5LDGyd4X8EWBKXGZ0bOcFGE6Tyq80eIf41Yb0NbaiPf1PfwCFs9RGUTd%2BQEqqtmSe0JxQLoJjeLamVFr5k%2FTFvA7kanbNlly7%2FHJ9Wo2WxXWFokV%2FDoiA451YK97fU7Pcai40CKPIjOX0b0rJHKXMLLLy8QGOqUBQhyUzlXj3fojzB4swZFJowO9OMqbm0dgYvLRxLt5TVck7BeYrnQVmNCDZyQu1%2BjKmZLbw0YfObGZVF294HIm9BpNqxAP0wH5VTlmvkAW7v0Dy2tGXnaozEU7P31kgTNKRqPdN4GFDyaT1bxUAVCeqCmiK7DUx6PV7aDj6UNIH6mEHtEfVMrGzRjBZi5avCYZ3kN7nsOESc%2B%2Fkxj7%2Bb8JfwxWo3Zb&X-Amz-Signature=52285cf319c9a30026e5839669ce06119826e25e2564892604425fa54b1074f5&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+![jIJWSXu9D67GKZ8.png](https://cdn.sa.net/2025/09/02/jIJWSXu9D67GKZ8.png)
 
 ### 开发一个简单的 Go 语言项目
 
@@ -404,9 +387,6 @@ touch main.go
 ```
 
 此时，宿主机的 `./code/demo-go-iris` 目录下就会出现 `go.mod` 和 `main.go` 两个文件。接下来我们就可以在宿主机编写代码了。比如我们就在 main.go 中添加 Iris 文档中最简单的示例代码：
-
-<details>
-<summary>`main.go`。你也可以在 Iris 文档中找到这段代码</summary>
 
 ```go
 package main
@@ -467,15 +447,13 @@ func create(ctx iris.Context) {
 }
 ```
 
-</details>
-
 接下来我们回到容器内的终端，执行 `go run main.go`，就可以看到项目已经启动成功了。
 
-![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e753f4ed-a9d5-4b94-80b5-b5d3a8dd4851/a02f32b2-d4e8-44c4-bb84-d0bfde842c60/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UOKBYMBB%2F20250806%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250806T061714Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDYaCXVzLXdlc3QtMiJHMEUCIQCPMday3fFx3QczqKep4%2ByYIXppiTL5iVDAcr4Q9ARPwQIgZDbMOcBriiDAudZZ242cvuO4YsMET%2BGLO5Wj46%2BZzg4q%2FwMIbhAAGgw2Mzc0MjMxODM4MDUiDGOdJ0wvHx5cp0X8RSrcA3YmPgqzwqd2dZLkPtIxSdGo9GXzP6NmM3Nqjlvu7m9zSQLAqeunImElQCrTPQauRpB%2BMYF3KhmrsmOeYuFAeMk73OaOd91%2FSYiL73vUBBoiJFSzAp5T%2B2I2ONuKlqruiqNQ8oyCklgid7%2FkU0XZHpxrT5I12mQ3kSjnLYxmD1Q7A%2FcFA%2BvWeZ6bSV2xM08HEkTxansILM4vBSGI3X8Uln8Qes0r3keQcQORwdPWxZm541HmOyxXXUQFVUM0SZTsYO8KOMpiSH4H9vXMrRicf8OUO2ZgcSGhY60NbqhT96ksNE0JH%2FXg8hUgI7w6yA6ORbnDKXL9PKYgt8hk0RaE4Tz340aHVl7wos%2BLTT3LKujXAXIrIgEIqJtk5V4LbpfJfEXVtGtlnPSN31a2BYTYkQr96sRUKj71zCvKex2XzxfpCAPq35%2FvgutSrqYnXQOyNKEjrJDIy76fo8ZMApVXPkVmObr21slNhDubVqfa5LDGyd4X8EWBKXGZ0bOcFGE6Tyq80eIf41Yb0NbaiPf1PfwCFs9RGUTd%2BQEqqtmSe0JxQLoJjeLamVFr5k%2FTFvA7kanbNlly7%2FHJ9Wo2WxXWFokV%2FDoiA451YK97fU7Pcai40CKPIjOX0b0rJHKXMLLLy8QGOqUBQhyUzlXj3fojzB4swZFJowO9OMqbm0dgYvLRxLt5TVck7BeYrnQVmNCDZyQu1%2BjKmZLbw0YfObGZVF294HIm9BpNqxAP0wH5VTlmvkAW7v0Dy2tGXnaozEU7P31kgTNKRqPdN4GFDyaT1bxUAVCeqCmiK7DUx6PV7aDj6UNIH6mEHtEfVMrGzRjBZi5avCYZ3kN7nsOESc%2B%2Fkxj7%2Bb8JfwxWo3Zb&X-Amz-Signature=bb17a9eaceb4abc91ff1cfdb4a1c436be66a7985b7bfc7338d3f674ee3ee8d0b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+![d5XTUfnA7NRKHeL.png](https://cdn.sa.net/2025/09/02/d5XTUfnA7NRKHeL.png)
 
 接下来在宿主机浏览器中访问 `http://localhost:8080/books`。
 
-![Untitled.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/e753f4ed-a9d5-4b94-80b5-b5d3a8dd4851/b40846f9-ada4-450b-b7b2-b2d4455eb0db/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UOKBYMBB%2F20250806%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250806T061714Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDYaCXVzLXdlc3QtMiJHMEUCIQCPMday3fFx3QczqKep4%2ByYIXppiTL5iVDAcr4Q9ARPwQIgZDbMOcBriiDAudZZ242cvuO4YsMET%2BGLO5Wj46%2BZzg4q%2FwMIbhAAGgw2Mzc0MjMxODM4MDUiDGOdJ0wvHx5cp0X8RSrcA3YmPgqzwqd2dZLkPtIxSdGo9GXzP6NmM3Nqjlvu7m9zSQLAqeunImElQCrTPQauRpB%2BMYF3KhmrsmOeYuFAeMk73OaOd91%2FSYiL73vUBBoiJFSzAp5T%2B2I2ONuKlqruiqNQ8oyCklgid7%2FkU0XZHpxrT5I12mQ3kSjnLYxmD1Q7A%2FcFA%2BvWeZ6bSV2xM08HEkTxansILM4vBSGI3X8Uln8Qes0r3keQcQORwdPWxZm541HmOyxXXUQFVUM0SZTsYO8KOMpiSH4H9vXMrRicf8OUO2ZgcSGhY60NbqhT96ksNE0JH%2FXg8hUgI7w6yA6ORbnDKXL9PKYgt8hk0RaE4Tz340aHVl7wos%2BLTT3LKujXAXIrIgEIqJtk5V4LbpfJfEXVtGtlnPSN31a2BYTYkQr96sRUKj71zCvKex2XzxfpCAPq35%2FvgutSrqYnXQOyNKEjrJDIy76fo8ZMApVXPkVmObr21slNhDubVqfa5LDGyd4X8EWBKXGZ0bOcFGE6Tyq80eIf41Yb0NbaiPf1PfwCFs9RGUTd%2BQEqqtmSe0JxQLoJjeLamVFr5k%2FTFvA7kanbNlly7%2FHJ9Wo2WxXWFokV%2FDoiA451YK97fU7Pcai40CKPIjOX0b0rJHKXMLLLy8QGOqUBQhyUzlXj3fojzB4swZFJowO9OMqbm0dgYvLRxLt5TVck7BeYrnQVmNCDZyQu1%2BjKmZLbw0YfObGZVF294HIm9BpNqxAP0wH5VTlmvkAW7v0Dy2tGXnaozEU7P31kgTNKRqPdN4GFDyaT1bxUAVCeqCmiK7DUx6PV7aDj6UNIH6mEHtEfVMrGzRjBZi5avCYZ3kN7nsOESc%2B%2Fkxj7%2Bb8JfwxWo3Zb&X-Amz-Signature=534f09a80137bb27457af7d974cffe77bc42ce50ac137e79d2bf2423b0371ff9&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+![ZuRTVpJiSmCwFDG.png](https://cdn.sa.net/2025/09/02/ZuRTVpJiSmCwFDG.png)
 
 能看到这样的效果就说明已经成功了。
 
@@ -483,13 +461,7 @@ func create(ctx iris.Context) {
 
 虽然像上面这样的方案已经可以应付大部分 demo 场景，但在宿主机编写代码时，如果宿主机没有安装对应语言环境，可能会出现代码补全异常、代码高亮错误的问题。因此我们可以借助宇宙第一编辑器 VSCode 的一个官方插件：Remote - Container 直接进入容器内部进行开发。除此之外，VSCode 还推出了 SSH、WSL 等各种远程套件，都非常好用。
 
-![uEjSvtOFio7CfV5.png](https://cdn.sa.net/2024/03/15/uEjSvtOFio7CfV5.png)
-
 同时安装 `Remote - Container` 和 `Docker` 两个插件，接着我们就可以在 Docker 插件面板中右键点击 Workspace 镜像，点击 Attach Visual Studio Code，即可打开一个远程连接到容器内的 VSCode 窗口。当我们打开终端，发现默认终端就已经是容器中内的终端了，你在这个窗口内编写的全部代码本质上就已经和宿主机没有任何关系了。
-
-![Cuaxen9HSB563IP.png](https://cdn.sa.net/2024/03/15/Cuaxen9HSB563IP.png)
-
-![ANvOuYdekwqtUfc.png](https://cdn.sa.net/2024/03/15/ANvOuYdekwqtUfc.png)
 
 ## 开源项目 & DevOS
 

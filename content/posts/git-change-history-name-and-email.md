@@ -7,17 +7,17 @@ tags: ['Git']
 date: '2020-03-27'
 slug: 'git-change-history-name-and-email'
 summary: ''
-last_edited_time: '2025-08-06T03:20:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:20:41.083Z'
+last_edited_time: '2025-09-02T06:50:00.000Z'
+blog_last_fetched_time: '2025-09-02T07:57:39.993Z'
 notion_id: '9fdf779b-45fe-4a6a-96f3-d182aaba9e5e'
 icon: '⛵'
 ---
 
 ```bash
 git filter-branch -f --env-filter '
-OLD_EMAIL="zhaoyue@7moor.com"
+OLD_EMAIL="old@xxx.com"
 CORRECT_NAME="zy"
-CORRECT_EMAIL="varzy@live.com"
+CORRECT_EMAIL="new@xxx.com"
 
 if [ "$GIT_COMMITTER_EMAIL" = "$OLD_EMAIL" ]
 then

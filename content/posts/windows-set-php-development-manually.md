@@ -1,5 +1,5 @@
 ---
-title: 'Windows 下纯动手搭建 PHP 开发环境 (abandoned)'
+title: 'Windows 下纯动手搭建 PHP 开发环境'
 category: 'Coding'
 type: 'Post'
 status: 'Published'
@@ -7,8 +7,8 @@ tags: ['Windows', 'PHP']
 date: '2020-03-27'
 slug: 'windows-set-php-development-manually'
 summary: ''
-last_edited_time: '2025-08-06T03:20:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:20:27.010Z'
+last_edited_time: '2025-09-02T06:50:00.000Z'
+blog_last_fetched_time: '2025-09-02T07:57:34.131Z'
 notion_id: '27a7cc4c-9e57-4eaa-aaa5-365f7cdfdbc6'
 icon: '⚽'
 ---
@@ -73,7 +73,7 @@ mysqld --default-files="d:/amp/mysql/my.ini"
 
 设置字符编码。注意需要保持 `[mysqld]` 一项在最下方。
 
-```text
+```plain text
 [client]
 default-character-set=utf8
 
@@ -102,26 +102,26 @@ SET PASSWORD FOR 'root'@'localhost'=PASSWORD('');
 
 加载 php 模块。打开 apache 的配置文件 `httpd.conf`，在模块部分根据自己的 php 版本插入以下内容。
 
-```text
+```plain text
 LoadModule php5_module "d:/amp/php/php5apache2_4.dll"
 LoadModule php7_module "d:/amp/php/php7apache2_4.dll"
 ```
 
 为 php 模块分配任务。在上面的命令下发插入以上命令。
 
-```text
+```plain text
 AddType application/x-httpd-php .php .html
 ```
 
 引入 php 的配置文件。在 `httpd.conf` 中搜索并插入 `php.ini` 的路径。
 
-```text
+```plain text
 PHPIniDir "d:/amp/php/"
 ```
 
 修改 php 默认时区。在 php 的配置文件 `php.ini` 中搜索并修改 `date.timezone` 为 `PRC`。注意，需要去掉语句前的注释符号 (分号)。
 
-```text
+```plain text
 date.timezone = PRC
 ```
 
@@ -129,7 +129,7 @@ date.timezone = PRC
 
 打开 `http.conf` 文件，搜索并取消注释:
 
-```text
+```plain text
 Include conf/extra/httpd-vhosts.conf
 ```
 
@@ -139,7 +139,7 @@ Include conf/extra/httpd-vhosts.conf
 
 告知 php 在哪个目录下能找到 php 的扩展文件。在 `php.ini` 中搜索并设置 php 扩展的绝对路径。例如:
 
-```text
+```plain text
 extension_dir = "d:/amp/php/ext"
 ```
 
@@ -158,7 +158,7 @@ extension_dir = "d:/amp/php/ext"
 - 将文件复制到 `amp/php/ext` 目录下，并改名为 `php_xdebug.dll`
 - 在 php.ini 中添加以下内容
 
-```text
+```plain text
 [Xdebug]
 zend_extension="D:/amp/php/ext/php_xdebug.dll"
 xdebug.auto_trace=1

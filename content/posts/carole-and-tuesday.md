@@ -7,8 +7,8 @@ tags: ['动画', '音乐']
 date: '2022-01-21'
 slug: 'carole-and-tuesday'
 summary: '补番的这几天，我的上下班路途也都循环着原声辑里的三十多首歌。'
-last_edited_time: '2025-08-06T03:16:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:16:38.983Z'
+last_edited_time: '2025-09-02T07:30:00.000Z'
+blog_last_fetched_time: '2025-09-02T07:51:34.064Z'
 notion_id: '44b7afd2-1b91-4c06-b74d-278e3d94cec2'
 icon: '🎙️'
 ---

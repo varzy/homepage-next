@@ -7,8 +7,8 @@ tags: []
 date: '2020-03-27'
 slug: 'clash-chrome-connection-fail'
 summary: ''
-last_edited_time: '2025-08-06T03:20:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:20:45.264Z'
+last_edited_time: '2025-09-02T06:49:00.000Z'
+blog_last_fetched_time: '2025-09-02T07:57:41.869Z'
 notion_id: 'ea8a4e83-d2b2-4078-955b-9b1ee921ac53'
 icon: '🏸'
 ---

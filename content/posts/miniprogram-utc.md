@@ -7,14 +7,10 @@ tags: ['Miniprogram']
 date: '2021-03-15'
 slug: 'miniprogram-utc'
 summary: ''
-last_edited_time: '2025-08-06T03:17:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:18:07.840Z'
+last_edited_time: '2025-09-02T07:17:00.000Z'
+blog_last_fetched_time: '2025-09-02T07:53:53.472Z'
 notion_id: 'df57b98c-74de-4187-9f07-21c15fc68c70'
 icon: '🛥️'
----
-
-> 👉 原文于 2020-07-04 发布在我的博客，2021-03-15 迁移到此处
-
 ---
 
 最近在用原生框架开发一个微信小程序，里面涉及不少关于日期的功能，其中一个最简单的功能就是把某个时间转换成年月日去显示。于是我就使用认知中最常用的 `new Date(后端返回的时间)` 转换成 Date 对象进行处理，再结合自己实现的 `formatTime` 函数，在开发者工具中也正常显示出了我需要的 `YYYY 年 MM 月 DD 日` 格式。
@@ -35,7 +31,7 @@ console.log(formatTime(new Date(timeFromApi)));
 
 上面这段代码在开发者工具中输出：
 
-```text
+```plain text
 2020-07-01T02:14:53.000+0000
 Wed Jul 01 2020 10:14:53 GMT+0800 (China Standard Time)
 {year: "2020", month: "07", day: "01", hour: "10", minute: "14", …}
@@ -43,7 +39,7 @@ Wed Jul 01 2020 10:14:53 GMT+0800 (China Standard Time)
 
 而在手机端输出：
 
-```text
+```plain text
 2020-07-01T02:14:53.000+0000
 <Date: null>
 Object {day:"NaN", hour: "NaN"...}

@@ -7,15 +7,13 @@ tags: ['Windows', 'Terminal']
 date: '2020-04-07'
 slug: 'windows-terminal-configuration'
 summary: ''
-last_edited_time: '2025-08-06T03:19:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:19:01.636Z'
+last_edited_time: '2025-09-02T07:05:00.000Z'
+blog_last_fetched_time: '2025-09-02T07:55:34.085Z'
 notion_id: '01a946d5-d7d0-40ae-8c00-df3d475737cf'
 icon: '📪'
 ---
 
-UUID 生成器：
-
-[bookmark](https://www.uuidgenerator.net/version1)
+UUID 生成器：[https://www.uuidgenerator.net/version1](https://www.uuidgenerator.net/version1)
 
 ```json
 // To view the default settings, hold "alt" while clicking on the "Settings" button.

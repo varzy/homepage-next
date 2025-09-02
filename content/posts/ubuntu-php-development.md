@@ -1,5 +1,5 @@
 ---
-title: '手工初始化一个基于 Ubuntu 的 PHP 开发环境 (abandoned)'
+title: '手工初始化一个基于 Ubuntu 的 PHP 开发环境'
 category: 'Coding'
 type: 'Post'
 status: 'Published'
@@ -7,8 +7,8 @@ tags: ['Linux']
 date: '2020-03-27'
 slug: 'ubuntu-php-development'
 summary: ''
-last_edited_time: '2025-08-06T03:20:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:19:53.949Z'
+last_edited_time: '2025-09-02T06:52:00.000Z'
+blog_last_fetched_time: '2025-09-02T07:57:29.479Z'
 notion_id: '000201da-d54d-4584-a21b-281605c181c8'
 icon: '🏌️‍♀️'
 ---

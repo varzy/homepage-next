@@ -1,5 +1,5 @@
 ---
-title: '页面渲染加速 (个人总结)'
+title: '提升页面渲染速度的手段'
 category: 'Coding'
 type: 'Post'
 status: 'Published'
@@ -7,8 +7,8 @@ tags: ['八股文']
 date: '2020-05-11'
 slug: 'page-rendering-turning'
 summary: ''
-last_edited_time: '2025-08-06T03:18:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:18:40.475Z'
+last_edited_time: '2025-09-02T07:11:00.000Z'
+blog_last_fetched_time: '2025-09-02T07:54:31.050Z'
 notion_id: 'f8919c11-13f6-4b77-addc-a76d129a2093'
 icon: '📕'
 ---

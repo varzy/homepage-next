@@ -23,4 +23,5 @@ export interface FetchResult {
   updated: number;
   skipped: number;
   errors: number;
+  deleted: number;
 }

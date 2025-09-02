@@ -7,14 +7,10 @@ tags: ['Docker', 'Laravel', 'PHP']
 date: '2021-03-14'
 slug: 'laradock-usage'
 summary: ''
-last_edited_time: '2025-08-06T03:17:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:18:12.342Z'
+last_edited_time: '2025-09-02T07:17:00.000Z'
+blog_last_fetched_time: '2025-09-02T07:54:00.642Z'
 notion_id: 'e4bc02cb-799b-4efd-bb2f-0965bf16b66e'
 icon: '🏸'
----
-
-> 👉 原文于 2019-03-09 发布在我的博客，2021-03-15 迁移到此处
-
 ---
 
 ## Why laradock
@@ -33,7 +29,7 @@ Laradock 官方文档: [https://laradock.io/](https://laradock.io/)
 
 获取 Laracode 源码:
 
-```text
+```plain text
 git clone https://github.com/Laradock/laradock.gitcd laradockcp env-example .env
 ```
 
@@ -49,7 +45,7 @@ Laradock 提供了多种使用方式，详见: [https://laradock.io/getting-star
 
 关于 `APP_CODE_PATH_HOST` 参数，我认为有必要再解释一下。`APP_CODE_PATH_HOST` 默认参数是 `../`，这是由于 Laradock 默认认为 Laradock 应为项目的一个 Git 子模块，但现在我们需要让多个项目使用同一套 Laradock 配置，因此需要将 `APP_CODE_PATH_HOST` 指向项目共同的父文件夹，这样能够方便未来 web server 配置虚拟主机。假如我们有如下的项目结构:
 
-```text
+```plain text
 + laradock
 + sites
   + blog
@@ -60,13 +56,13 @@ Laradock 提供了多种使用方式，详见: [https://laradock.io/getting-star
 
 配置完成 .env 文件，就可以启动 Laradock 了。
 
-```text
+```plain text
 docker-compose up -d nginx mysql redis php-fpm workspace
 ```
 
 首次执行此命令，docker 将生成这些镜像文件，因此这个过程会比较久，请保证网络连接通畅。启动容器后，整个 PHP 开发环境就搭建起来了。可以通过下面的命令进入 Laradock 的容器中:
 
-```text
+```plain text
 docker-compose exec -it --user=laradock workspace bash
 ```
 
@@ -78,7 +74,7 @@ docker-compose exec -it --user=laradock workspace bash
 
 首先配置 Laradock 中 Nginx 的站点。
 
-```text
+```plain text
 cd ./nginx/sites
 cp laravel.conf.example blog.conf
 vim blog.conf
@@ -91,7 +87,7 @@ root /var/www/blog/public;
 
 再配置本机的虚拟域名。
 
-```text
+```plain text
 sudo vim /etc/hosts
 
 # 加入配置
@@ -100,7 +96,7 @@ sudo vim /etc/hosts
 
 重新启动 Laradock 容器。
 
-```text
+```plain text
 docker stop $(docker ps -aq)
 docker-compose up -d nginx mysql redis php-fpm workspace
 ```
@@ -202,7 +198,7 @@ Laravel Mix 提供了 `mix.browserSync()` 方法实现前端代码的热重载�
 
 首先编辑 `docker-compose.yml`，在 `workspace` > `ports` 中加入 BrowserSync 的端口映射。
 
-```text
+```plain text
 ports:
   - "${WORKSPACE_SSH_PORT}:22"
   # BrowserSync 的默认端口，可以根据自己的配置进行修改

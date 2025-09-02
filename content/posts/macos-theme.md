@@ -7,13 +7,13 @@ tags: ['MacOS']
 date: '2022-11-25'
 slug: 'macos-theme'
 summary: ''
-last_edited_time: '2025-08-06T03:14:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:15:30.876Z'
+last_edited_time: '2025-09-02T07:35:00.000Z'
+blog_last_fetched_time: '2025-09-02T07:51:18.238Z'
 notion_id: '76501d7c-d8a7-413d-90d6-3b2e31f8afb7'
 icon: '🎟️'
 ---
 
-[https://georgegarside.com/blog/macos/imac-m1-accent-colours-any-mac/#:~:text=The%20accent%20colour%20configuration%20is,usually](https://georgegarside.com/blog/macos/imac-m1-accent-colours-any-mac/#:~:text=The%20accent%20colour%20configuration%20is,usually)
+参考：[Use iMac M1 accent colours on any Mac](https://georgegarside.com/blog/macos/imac-m1-accent-colours-any-mac/#:~:text=The%20accent%20colour%20configuration%20is,usually)
 
 这篇博客有讲，是 m1 iMac 彩色版推出以后的功能，可以有对应 iMac 配色的 accent color ，都很好看。感谢楼主发现这个事。
 

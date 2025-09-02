@@ -7,8 +7,8 @@ tags: ['书', '随想']
 date: '2022-12-18'
 slug: 'three-body'
 summary: '如果我的记忆没有出现偏差，以上就是我找到的删改内容，仅三处。'
-last_edited_time: '2025-08-06T03:14:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:15:28.255Z'
+last_edited_time: '2025-09-02T07:35:00.000Z'
+blog_last_fetched_time: '2025-09-02T07:51:16.945Z'
 notion_id: '4001fd0e-6523-426e-b711-d28a9a827b7f'
 icon: '🪐'
 ---
@@ -17,7 +17,7 @@ icon: '🪐'
 
 那除了影视作品，三体的原著小说有删减吗？这句话听起来可能有点怪，都原著了还怎么删减？其实《三体》最早是 05 年开始在《科幻世界》杂志上连载更新的，原名《地球往事》，直到 08 年才由重庆出版社出版了第一部单行本，也就是大家最熟悉的封面上印有叶文洁背影的这套书，而单行本并不完全与连载版一致。
 
-![7BaP9zdAT5cVZIO.jpg](https://cdn.sa.net/2024/03/15/7BaP9zdAT5cVZIO.jpg)
+![pGCOBZ64IEw9YHL.jpg](https://cdn.sa.net/2025/09/02/pGCOBZ64IEw9YHL.jpg)
 
 在网上以「三体 小说 删减」为关键词搜索，几乎找不到像样的讨论，那我又是如何得知被删减的内容呢？
 

@@ -7,8 +7,8 @@ tags: ['小形迹']
 date: '2023-06-26'
 slug: 'dragon-boat-festival-trip'
 summary: '我也多希望这个假期不止是我工作上的分界点。加油啊 ZY！'
-last_edited_time: '2025-08-06T03:14:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:15:07.312Z'
+last_edited_time: '2025-09-02T07:36:00.000Z'
+blog_last_fetched_time: '2025-09-02T07:50:45.409Z'
 notion_id: '94f766ab-b091-4780-bd7b-10260b536d09'
 icon: '🐲'
 ---
@@ -72,8 +72,6 @@ icon: '🐲'
 洛阳人的一天从一碗汤开始，而洛阳游子的归途也必定伴随着一碗汤。从我开始北漂到现在，每次回家总要至少喝一次牛肉汤，我印象中应该是从未落下过的。关于牛肉汤我也有好多故事可以讲，等我有空再好好写一写吧。
 
 ![1drngKoamOE35bD.jpg](https://cdn.sa.net/2024/03/16/1drngKoamOE35bD.jpg)
-
-![Z93eLEDFmrIlABJ.png](https://cdn.sa.net/2024/03/16/Z93eLEDFmrIlABJ.png)
 
 除了热情的牛肉汤，还有麻麻做的窝窝头。小时候姥姥家养猪，猪食槽差不多就是窝头的形状，有一次我拉着我妈说想吃「猪碗」，给我妈整一愣一愣的。这也成了我的一个梗，被她们取笑至今🤣。
 

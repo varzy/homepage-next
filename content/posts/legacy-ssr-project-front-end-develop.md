@@ -7,14 +7,10 @@ tags: ['JavaScript']
 date: '2021-03-13'
 slug: 'legacy-ssr-project-front-end-develop'
 summary: ''
-last_edited_time: '2025-08-06T03:18:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:18:14.013Z'
+last_edited_time: '2025-09-02T07:16:00.000Z'
+blog_last_fetched_time: '2025-09-02T07:54:04.078Z'
 notion_id: 'dadd4c37-7881-4ba1-99f4-cd51210c3922'
 icon: '🚎'
----
-
-> 👉 原文于 2019-10-24 发布在我的博客，2021-03-15 迁移到此处
-
 ---
 
 实不相瞒我已经很久没有写过前后端不分离的项目了，几乎都是 `vue create xxx` 一把梭。我喜欢前后端分离的开发模式，好处是不会相互干扰，各干各的，前端不需要装 PHP 或者 Python 才能把项目跑起来，后端也不需要再去套模板渲染数据。但往往处于 SEO 等各种需求，有些项目还真就不能前后端分离了事，这种情况下怎么优雅得编写前端代码就是个大坑。
@@ -161,7 +157,7 @@ if (mix.inProduction()) mix.version();
 
 当把所有的基建工作都做完之后，就要考虑如何有效得组织资源。下面是我目前正在使用的项目结构。
 
-```text
+```plain text
 ├── favicon.ico
 ├── iconfont
 │   └── ...

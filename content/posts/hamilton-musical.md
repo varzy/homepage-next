@@ -3,12 +3,12 @@ title: '聊聊 Hamilton 音乐剧里的爱情故事'
 category: 'Nichijou'
 type: 'Post'
 status: 'Published'
-tags: ['精选', '音乐']
+tags: ['音乐']
 date: '2022-11-17'
 slug: 'hamilton-musical'
 summary: '假如这篇文章能让你对这部剧，这些人，这段历史产生丝毫的兴趣，那我也算是别样的 Tell his story 了，我想，That would be enough。'
-last_edited_time: '2025-08-06T03:14:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:15:37.012Z'
+last_edited_time: '2025-09-02T07:34:00.000Z'
+blog_last_fetched_time: '2025-09-02T07:51:21.154Z'
 notion_id: '2b7bca57-7909-491c-b113-7231512caff7'
 icon: '💵'
 ---

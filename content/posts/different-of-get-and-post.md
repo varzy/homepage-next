@@ -1,5 +1,5 @@
 ---
-title: 'Get 和 Post 的区别 (个人总结)'
+title: 'Get 和 Post 的区别'
 category: 'Coding'
 type: 'Post'
 status: 'Published'
@@ -7,8 +7,8 @@ tags: ['八股文']
 date: '2020-05-12'
 slug: 'different-of-get-and-post'
 summary: ''
-last_edited_time: '2025-08-06T03:18:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:18:37.027Z'
+last_edited_time: '2025-09-02T07:11:00.000Z'
+blog_last_fetched_time: '2025-09-02T07:54:29.772Z'
 notion_id: '749806c1-0246-4fb0-99d3-a675318aa2e7'
 icon: '📍'
 ---

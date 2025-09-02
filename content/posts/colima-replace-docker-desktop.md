@@ -7,8 +7,8 @@ tags: ['Docker', 'MacOS']
 date: '2022-06-09'
 slug: 'colima-replace-docker-desktop'
 summary: ''
-last_edited_time: '2025-08-06T03:15:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:16:05.855Z'
+last_edited_time: '2025-09-02T07:33:00.000Z'
+blog_last_fetched_time: '2025-09-02T07:51:22.889Z'
 notion_id: 'a1f214cb-8dfa-4644-ad8c-c90e00b969ea'
 icon: '🎴'
 ---
@@ -17,11 +17,9 @@ Dcoker Desktop 前段时间开始对企业用户收费了，由于我都是使�
 
 说是替代品，但其实我也不怎么用 Docker Desktop 的 GUI，大部分情况下我在使用 VSCode 里的 Docker 插件。因此我的需求并非是 GUI，而仅仅是一个能跑容器的环境罢了。
 
-![ciPwBXqWp5mOAxf.png](https://cdn.sa.net/2024/03/15/ciPwBXqWp5mOAxf.png)
-
 经过一系列调研，我最终选择了 [Colima](https://github.com/abiosoft/colima)。Colima 是一个开源的 Docker 容器运行时，旨在通过最小化设置运行容器和 Kubernetes。
 
-> 💡 注意：我在本机跑 Docker 主要是为了承载一部分开发环境，使用场景比较简单，也没有 k8s 之类的需求。项目 README 也表明目前 Colima 仍处于早期开发阶段，请谨慎使用。
+注意：我在本机跑 Docker 主要是为了承载一部分开发环境，使用场景比较简单，也没有 k8s 之类的需求。项目 README 也表明目前 Colima 仍处于早期开发阶段，请谨慎使用。
 
 ## 安装 & 启动
 

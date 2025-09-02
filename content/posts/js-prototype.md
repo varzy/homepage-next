@@ -7,8 +7,8 @@ tags: ['JavaScript', '八股文']
 date: '2020-04-21'
 slug: 'js-prototype'
 summary: ''
-last_edited_time: '2025-08-06T03:18:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:18:44.686Z'
+last_edited_time: '2025-09-02T07:09:00.000Z'
+blog_last_fetched_time: '2025-09-02T07:54:41.555Z'
 notion_id: 'e19f5c7e-6e08-4d46-b65c-d059b6109b22'
 icon: '✨'
 ---
@@ -53,10 +53,10 @@ console.log(Sub.prototype.__proto__ === Parent.prototype); // true
 
 - 当我们使用 new 操作符时，新对象被添加了 `__proto__` 并且链接到构造函数的原型上 (`obj.__proto__ = Fun.prototype`)
 - new 的过程
-  1.  新生成了一个对象
-  2.  链接到原型
-  3.  绑定 this
-  4.  返回新对象
+  1. 新生成了一个对象
+  2. 链接到原型
+  3. 绑定 this
+  4. 返回新对象
 - 自行实现一个 new
 
   ```javascript
@@ -99,6 +99,5 @@ function instanceof(left, right) {
 
 ## 关联阅读
 
-[bookmark](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
-
-[bookmark](https://github.com/KieSun/Dream/issues/2)
+- [继承与原型链](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain)
+- [深度解析原型中的各个难点](https://github.com/KieSun/Dream/issues/2)

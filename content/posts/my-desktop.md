@@ -7,8 +7,8 @@ tags: ['桌面', '软件', '数码']
 date: '2019-12-22'
 slug: 'my-desktop'
 summary: '当我第一次注重桌面体验。'
-last_edited_time: '2025-08-06T03:21:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:21:14.299Z'
+last_edited_time: '2025-09-02T06:48:00.000Z'
+blog_last_fetched_time: '2025-09-02T07:57:57.524Z'
 notion_id: '45c832f0-49a6-46b8-9285-e28315fd9dbb'
 icon: '♠️'
 ---

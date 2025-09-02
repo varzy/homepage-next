@@ -7,8 +7,8 @@ tags: ['评测', '数码', 'Apple']
 date: '2023-09-23'
 slug: 'iphone-15-pro-max-review'
 summary: '距离今年的攒钱目标又坚实得后退了一步呢'
-last_edited_time: '2025-08-06T03:14:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:14:48.213Z'
+last_edited_time: '2025-09-02T07:37:00.000Z'
+blog_last_fetched_time: '2025-09-02T07:50:26.797Z'
 notion_id: '6c254a86-acb8-4734-acda-b366569c781c'
 icon: '😊'
 ---

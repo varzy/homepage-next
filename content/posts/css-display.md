@@ -7,8 +7,8 @@ tags: ['CSS', '八股文']
 date: '2020-04-03'
 slug: 'css-display'
 summary: ''
-last_edited_time: '2025-08-06T03:19:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:19:07.492Z'
+last_edited_time: '2025-09-02T07:04:00.000Z'
+blog_last_fetched_time: '2025-09-02T07:55:48.961Z'
 notion_id: '6bc201dc-dec5-40d1-9049-6b260f33cfc5'
 icon: '🏰'
 ---
@@ -36,8 +36,6 @@ icon: '🏰'
 - inline-flex
   - 形成 FFC
   - 元素表现类似 inline
-
-[bookmark](https://developer.mozilla.org/zh-CN/docs/Web/CSS/display)
 
 ## 内联元素保护块级元素
 
@@ -90,5 +88,3 @@ icon: '🏰'
   </body>
 </html>
 ```
-
-![VqnrYMU3gIvRK4z.png](https://cdn.sa.net/2024/03/15/VqnrYMU3gIvRK4z.png)

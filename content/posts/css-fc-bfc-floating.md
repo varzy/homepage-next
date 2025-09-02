@@ -7,12 +7,10 @@ tags: ['CSS', '八股文']
 date: '2020-04-03'
 slug: 'css-fc-bfc-floating'
 summary: ''
-last_edited_time: '2025-08-06T03:19:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:19:22.163Z'
+last_edited_time: '2025-09-02T07:03:00.000Z'
+blog_last_fetched_time: '2025-09-02T07:56:07.498Z'
 notion_id: '4126a3e5-cbc3-4f06-8ea6-6ded178779c7'
 icon: '🤽‍♀️'
----
-
 ---
 
 ## FC & BFC
@@ -42,25 +40,13 @@ FC 有以下几种：
 - GFC：GridLayout Formatting Contexts = 网格布局格式化上下文。CSS3 支持
   - display 为 grid 时产生
 
----
-
-链接：
-
-[bookmark](https://juejin.im/entry/5938daf7a0bb9f006b2295db)
-
-关联阅读：
-
-[link_to_page](6bc201dc-dec5-40d1-9049-6b260f33cfc5)
+链接：[小科普：到底什么是 BFC、IFC、GFC 和 FFC](https://juejin.cn/post/6844903480801525773)
 
 ## 浮动
 
 - 浮动最早只是为了实现文字环绕图片的效果
 - 设置 float 后，元素将脱离标准流，从而导致高度塌陷，高度塌陷后原本想放在下面的元素会自动向上补充
 - 容器依据浮动方式进行补充后，容器内的文字仍会产生环绕效果。下图中的 div2，div3 设置了左浮动，但 div4 中的文字仍然产生了环绕效果
-
-  ![p9Gl5ZOPkESus4U.png](https://cdn.sa.net/2024/03/15/p9Gl5ZOPkESus4U.png)
-
-[bookmark](https://juejin.im/post/5c740c5b51882562e7481771)
 
 ## 清除浮动的两种方式
 
@@ -116,11 +102,11 @@ FC 有以下几种：
 - `display: table-cell | table-caption | inline-block`：无法兼容低版本 IE
 - `position: absolute | fixed`：改变了元素的定位方法，如果定位方式不是我们需要的，则会很麻烦
 
-前端的清除浮动？ - Shelley Lee的回答 - 知乎
-
-[bookmark](https://www.zhihu.com/question/56171813/answer/147952955)
+[前端的清除浮动？ - Shelley Lee的回答 - 知乎](https://www.zhihu.com/question/56171813/answer/147952955)
 
 ## 尼古拉斯大师的清除浮动方案
+
+[https://nicolasgallagher.com/micro-clearfix-hack/](https://nicolasgallagher.com/micro-clearfix-hack/)
 
 ```css
 .cf:before,
@@ -140,5 +126,3 @@ FC 有以下几种：
   *zoom: 1;
 }
 ```
-
-[bookmark](http://nicolasgallagher.com/micro-clearfix-hack/)

@@ -7,8 +7,8 @@ tags: ['CSS', 'Stylelint']
 date: '2021-10-05'
 slug: 'stylelint-basic-usage'
 summary: ''
-last_edited_time: '2025-08-06T03:16:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:17:09.558Z'
+last_edited_time: '2025-09-02T07:53:00.000Z'
+blog_last_fetched_time: '2025-09-02T08:00:15.996Z'
 notion_id: 'daf51441-5527-4fca-b73b-cb1615d57093'
 icon: '🎣'
 ---
@@ -99,7 +99,8 @@ module.exports = {
 经过我的实际使用体验，我个人认为 [`stylelint-config-recess-order`](https://github.com/stormwarning/stylelint-config-recess-order) 是其中最好的一个。因此我们可以安装并使用这个规则集：
 
 ```shell
-yarn add -D [stylelint-config-recess-order](https://github.com/stormwarning/stylelint-config-recess-order)
+yarn add -D
+stylelint-config-recess-order
 ```
 
 ```javascript
@@ -140,7 +141,7 @@ module.exports = {
 
 你可以创建类似 `.gitignore` `.prettierignore` 和 `.eslintignore` 这样的 `.stylelintignore` 文件用于忽略你不需要进行检查的样式文件。
 
-```text
+```plain text
 src/miniprogram_npm/
 src/vendor/
 ```

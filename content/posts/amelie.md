@@ -7,8 +7,8 @@ tags: ['电影', '流光忆庭']
 date: '2023-04-24'
 slug: 'amelie'
 summary: '如果说起我小腿控的起源，艾米丽绝对占一份功劳。'
-last_edited_time: '2025-08-06T03:14:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:15:08.136Z'
+last_edited_time: '2025-09-02T07:36:00.000Z'
+blog_last_fetched_time: '2025-09-02T07:50:59.765Z'
 notion_id: '7ee31462-dbcd-4cf5-830f-7c548703bc73'
 icon: '🏐'
 ---

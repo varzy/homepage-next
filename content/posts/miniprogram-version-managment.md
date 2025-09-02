@@ -7,13 +7,11 @@ tags: ['Miniprogram', 'Node.js', 'Deploy']
 date: '2021-03-12'
 slug: 'miniprogram-version-managment'
 summary: ''
-last_edited_time: '2025-08-06T03:18:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:18:16.934Z'
+last_edited_time: '2025-09-02T07:16:00.000Z'
+blog_last_fetched_time: '2025-09-02T07:54:06.057Z'
 notion_id: 'bd24e5bb-1a14-4947-b458-fbf4d902db35'
 icon: '🏓'
 ---
-
-> 🚫 **注意：文章已过期。请移步** [**一个微信小程序的渐进式优化之路**](https://www.notion.so/60ab9222edfb47608b2ed833f77638d8) **。**
 
 最近我也是从头开发了一个小程序，其中最 boring 的大概就是发版。而在开发过程中，我也在发布版本这件事上琢磨了很久，目前总算是搞了个似乎不赖的方法。下面就按照开发流程讲一下我的心路历程。
 
@@ -37,7 +35,7 @@ export const BASE_URL_API = ENV === 'DEV' ? 测试接口 : 正式接口;
 
 当小程序进入测试阶段后，我们通常需要发布专门的体验版给测试同事使用。但经常会出现这样的对话🤦‍♀️：
 
-```text
+```plain text
 测试同事：你改好了吗？
 我：好了好了，已经提交新版了。
 测试同事：还是没有啊？你啥时候提交的？
@@ -57,9 +55,9 @@ export const ENV = 'DEV';
 export const VERSION = '2.1.3.d1';
 ```
 
-![fAzmkEaSbcZhI9M.png](https://cdn.sa.net/2024/03/15/fAzmkEaSbcZhI9M.png)
-
 至此，测试人员可以精确得针对某个版本的 Bug 进行记录，开发人员修复后，也可以记录在哪个版本修复完毕，方便进行回测。Nice！
+
+---
 
 但这是完美的方案吗？至此，我们每次发布新的版本，都需要：
 
@@ -80,9 +78,7 @@ export const VERSION = '2.1.3.d1';
 
 ## 第三步：引入 miniprogram-ci
 
-实际上小程序提供了 miniprogram-ci 扩展包，我们只需要使用到其中的“上传”功能。官方文档👇：
-
-[bookmark](https://developers.weixin.qq.com/miniprogram/dev/devtools/ci.html)
+实际上小程序提供了 [miniprogram-ci](https://developers.weixin.qq.com/miniprogram/dev/devtools/ci.html) 扩展包，我们只需要使用到其中的“上传”功能。
 
 为了更好得实现目的，我们定义了一套新的版本号规范，由三部分组成：
 
@@ -90,9 +86,7 @@ export const VERSION = '2.1.3.d1';
 2. 小程序主版本号。2.1.3
 3. 用于开发和测试时内部使用的次版本号。1, 2, 3 递增。当小程序是正式版时，次版本号永远为 0
 
-一个完整的版本号例子：
-
-![NqwhlCO3tc85PTx.png](https://cdn.sa.net/2024/03/15/NqwhlCO3tc85PTx.png)
+一个完整的版本号例子：`DEV-2.1.3-4`
 
 抛去使用 miniprogram-ci 自动上传的部分，主版本号只需要在开发前定义一次即可，而次版本号的维护完全可以通过读取上一次的版本简单 +1 得到。
 

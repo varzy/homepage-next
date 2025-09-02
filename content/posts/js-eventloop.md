@@ -7,12 +7,10 @@ tags: ['JavaScript', '八股文']
 date: '2020-04-07'
 slug: 'js-eventloop'
 summary: ''
-last_edited_time: '2025-08-06T06:19:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:29:25.594Z'
+last_edited_time: '2025-09-02T07:06:00.000Z'
+blog_last_fetched_time: '2025-09-02T07:55:32.161Z'
 notion_id: '19432983-024c-4bda-b71d-1318eb406037'
 icon: '🥎'
----
-
 ---
 
 ## JS 事件循环
@@ -20,8 +18,6 @@ icon: '🥎'
 - JS 是单线程的语言，JS 里面的任务要一个一个执行。为了提高运行速度，JS 将任务分为 `同步` 和 `异步` 两类，但本质上异步是 JS 用同步的方法模拟的
 - js 事件循环机制，决定了代码执行顺序
 - 在单次的事件循环中，JS 执行某个宏任务后会检查是否有微任务存在，如果有则处理完微任务，再开启下一个宏任务。如果没有下一个宏任务，则开启下一次事件循环
-
-![deba5QqYSVwguDn.png](https://cdn.sa.net/2024/03/15/deba5QqYSVwguDn.png)
 
 表述：
 
@@ -57,9 +53,7 @@ console.log('代码执行结束');
   - 具体是宏任务还是微任务，与浏览器、运行环境都有关系
 - 在一个 Event Loop 中，微任务未执行完毕前，不会执行下一个宏任务
 - 宏任务和微任务执行完成后都会判断是否还有微任务，有的话执行微任务，没有就执行宏任务，如此循坏
-- **setTimeout 作为一个宏任务，延迟参数设为 0 时，只能表示尽快执行。一**般浏览器中其 delay 时间最短为 `4ms`。详细信息见 MDN：
-
-  [bookmark](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/setTimeout#%E5%AE%9E%E9%99%85%E5%BB%B6%E6%97%B6%E6%AF%94%E8%AE%BE%E5%AE%9A%E5%80%BC%E6%9B%B4%E4%B9%85%E7%9A%84%E5%8E%9F%E5%9B%A0%EF%BC%9A%E6%9C%80%E5%B0%8F%E5%BB%B6%E8%BF%9F%E6%97%B6%E9%97%B4)
+- **setTimeout 作为一个宏任务，延迟参数设为 0 时，只能表示尽快执行。一**般浏览器中其 delay 时间最短为 `4ms`。详细信息见 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/setTimeout#%E5%AE%9E%E9%99%85%E5%BB%B6%E6%97%B6%E6%AF%94%E8%AE%BE%E5%AE%9A%E5%80%BC%E6%9B%B4%E4%B9%85%E7%9A%84%E5%8E%9F%E5%9B%A0%EF%BC%9A%E6%9C%80%E5%B0%8F%E5%BB%B6%E8%BF%9F%E6%97%B6%E9%97%B4)。
 
 举例1：
 
@@ -161,9 +155,7 @@ console.log('end');
 - 最后再次检查微任务队列，没有啦。再检查宏任务队列，也没啦
 - 进入下一个事件循环
 
-例子来源：
-
-[bookmark](https://github.com/gauseen/blog/issues/6)
+例子来源：[https://github.com/gauseen/blog/issues/6](https://github.com/gauseen/blog/issues/6)
 
 ## JOJO 的奇妙比喻
 
@@ -181,6 +173,5 @@ console.log('end');
 
 ## 关联阅读
 
-[bookmark](https://juejin.im/post/59e85eebf265da430d571f89)
-
-[bookmark](https://juejin.im/post/5b73d7a6518825610072b42b)
+- [这一次，彻底弄懂 JavaScript 执行机制](https://juejin.cn/post/6844903512845860872)
+- [微任务、宏任务与Event-Loop](https://juejin.cn/post/6844903657264136200)

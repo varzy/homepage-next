@@ -7,8 +7,8 @@ tags: ['Browser', '八股文']
 date: '2020-04-03'
 slug: 'browser-concurrent'
 summary: ''
-last_edited_time: '2025-08-06T03:19:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:19:11.436Z'
+last_edited_time: '2025-09-02T07:04:00.000Z'
+blog_last_fetched_time: '2025-09-02T07:55:54.355Z'
 notion_id: '778bf9c4-87cb-4953-acda-e13f8f24a144'
 icon: '📫'
 ---
@@ -33,6 +33,5 @@ icon: '📫'
 
 ## 链接
 
-[bookmark](https://www.zhihu.com/question/20474326)
-
-[bookmark](https://segmentfault.com/a/1190000016369295)
+- [浏览器允许的并发请求资源数是什么意思？](https://www.zhihu.com/question/20474326)
+- [理解浏览器允许的并发请求资源数](https://segmentfault.com/a/1190000016369295)

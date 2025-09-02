@@ -1,5 +1,5 @@
 ---
-title: 'Nuxt2 技巧及开发手册'
+title: 'Nuxt2 框架开发准备'
 category: 'Coding'
 type: 'Post'
 status: 'Published'
@@ -7,8 +7,8 @@ tags: ['Vue', 'Nuxt']
 date: '2022-04-11'
 slug: 'nuxt2-basic-usage'
 summary: ''
-last_edited_time: '2025-08-06T03:15:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:16:28.388Z'
+last_edited_time: '2025-09-02T07:32:00.000Z'
+blog_last_fetched_time: '2025-09-02T07:51:32.338Z'
 notion_id: 'a51f70e4-8d64-456a-9266-fad7eb1841ce'
 icon: '🎉'
 ---
@@ -112,8 +112,6 @@ export default {
 ```
 
 在 `main.scss` 严格遵守样式加载的先后顺序，尽可能避免样式干扰。
-
-![6GW5do9gzPqUhlI.png](https://cdn.sa.net/2024/03/15/6GW5do9gzPqUhlI.png)
 
 ### asyncData 和 fetch
 

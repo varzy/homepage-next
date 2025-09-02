@@ -7,21 +7,17 @@ tags: ['Deploy']
 date: '2020-03-28'
 slug: 'github-pages-deploy-static-page'
 summary: ''
-last_edited_time: '2025-08-06T03:22:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:19:45.660Z'
+last_edited_time: '2025-09-02T06:54:00.000Z'
+blog_last_fetched_time: '2025-09-02T07:57:21.468Z'
 notion_id: '7c7d4b50-2427-4465-aa1b-754d479ad349'
 icon: '🎌'
 ---
 
 ## Updated At 2021.03.15
 
-> ⚠️ 目前这种方式不再被推荐使用了。你应该使用 Github Actions 部署你的静态项目。
+目前这种方式不再被推荐使用了。你应该使用 Github Actions 部署你的静态项目。
 
 ---
-
-参考 Vuepress 部署这一节：
-
-[bookmark](https://vuepress.vuejs.org/zh/guide/deploy.html)
 
 以主页为例，在项目根目录下添加 `deploy.sh`，填入以下内容：
 

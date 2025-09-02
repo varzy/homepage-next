@@ -7,8 +7,8 @@ tags: ['Browser']
 date: '2020-03-27'
 slug: 'chrome-evernote-ext-can-not-login'
 summary: ''
-last_edited_time: '2025-08-06T03:21:00.000Z'
-blog_last_fetched_time: '2025-08-06T06:20:55.231Z'
+last_edited_time: '2025-09-02T06:48:00.000Z'
+blog_last_fetched_time: '2025-09-02T07:57:45.067Z'
 notion_id: 'd1415bea-fc64-4bec-a456-fca5fa7dbb13'
 icon: '🖨️'
 ---

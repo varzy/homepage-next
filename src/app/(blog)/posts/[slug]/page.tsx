@@ -4,6 +4,7 @@ import PostTagLite from '@/app/(blog)/_components/PostTagLite';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 import { getEmojiFavicon } from '@/utils/favicon';
 import MdxRenderer from '@/app/(blog)/_components/MdxRenderer';
+import { SITE_CONFIG } from '@/site.config';
 
 interface PageProps {
   params: Promise<{ slug: string }>;

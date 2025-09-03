@@ -1,4 +1,4 @@
-import { PostMeta } from '@/app/(blog)/_lib/content-loader';
+import { PostMeta } from '@/app/_lib/content-loader';
 import Link from 'next/link';
 
 export default function PostItem(post: PostMeta) {

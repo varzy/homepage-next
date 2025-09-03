@@ -1,4 +1,4 @@
-import { PostMeta } from '@/app/(blog)/_lib/content-loader';
+import { PostMeta } from '@/app/_lib/content-loader';
 import { SITE_CONFIG } from '@/site.config';
 import PostItem from './PostItem';
 import Pagination from '@/app/(blog)/_components/Pagination';

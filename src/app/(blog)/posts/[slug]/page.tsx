@@ -1,4 +1,4 @@
-import { getAllPosts, getPostBySlug, getPostWithContent } from '@/app/(blog)/_lib/content-loader';
+import { getAllPosts, getPostBySlug, getPostWithContent } from '@/app/_lib/content-loader';
 import { notFound } from 'next/navigation';
 import PostTagLite from '@/app/(blog)/_components/PostTagLite';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';

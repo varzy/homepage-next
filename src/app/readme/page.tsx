@@ -1,15 +1,19 @@
 import MdxRenderer from '@/app/(blog)/_components/MdxRenderer';
-import ReadmeFile from './readme.md';
+import { getPageWithContent } from '@/app/_lib/content-loader';
 import PageHeader from '@/app/_components/PageHeader';
 import { type Metadata } from 'next';
 import { getEmojiFavicon } from '@/utils/favicon';
+import { notFound } from 'next/navigation';
 
 export const metadata: Metadata = {
   title: `README`,
   icons: getEmojiFavicon('❤️'),
 };
 
-export default function Readme() {
+export default async function Readme() {
+  const postWithContent = await getPageWithContent('readme');
+  if (!postWithContent) notFound();
+
   return (
     <div className="pb-48">
       <PageHeader />
@@ -23,7 +27,7 @@ export default function Readme() {
           </div>
         </div>
 
-        <MdxRenderer source={ReadmeFile} />
+        <MdxRenderer source={postWithContent.content} />
       </div>
     </div>
   );

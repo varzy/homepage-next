@@ -1,6 +1,6 @@
 import BlogPageContainer from '../_components/BlogPageContainer';
 import PostItemArchive from '../_components/PostItemArchive';
-import { getAllPosts } from '../_lib/content-loader';
+import { getAllPosts } from '../../_lib/content-loader';
 import { type Metadata } from 'next';
 import { getEmojiFavicon } from '@/utils/favicon';
 

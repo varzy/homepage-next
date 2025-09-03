@@ -17,7 +17,15 @@ export class NotionToMDXConverter {
   }
 
   async getAllPosts(databaseId: string): Promise<PostMetadata[]> {
-    const posts: PostMetadata[] = [];
+    return this.getAllByType(databaseId, 'Post');
+  }
+
+  async getAllPages(databaseId: string): Promise<PostMetadata[]> {
+    return this.getAllByType(databaseId, 'Page');
+  }
+
+  async getAllByType(databaseId: string, type: string): Promise<PostMetadata[]> {
+    const items: PostMetadata[] = [];
     let startCursor: string | undefined;
 
     do {
@@ -26,20 +34,19 @@ export class NotionToMDXConverter {
         filter: {
           and: [
             { property: 'status', select: { equals: 'Published' } },
-            { property: 'type', select: { equals: 'Post' } },
+            { property: 'type', select: { equals: type } },
           ],
         },
         sorts: [{ property: 'date', direction: 'descending' }],
         start_cursor: startCursor,
       });
 
-      const pagePosts = response.results.map((page) => this.extractPostMeta(page as PageObjectResponse));
-
-      posts.push(...pagePosts);
+      const pageItems = response.results.map((page) => this.extractPostMeta(page as PageObjectResponse));
+      items.push(...pageItems);
       startCursor = response.next_cursor || undefined;
     } while (startCursor);
 
-    return posts;
+    return items;
   }
 
   async getPostsByStatus(databaseId: string, status: string): Promise<PostMetadata[]> {

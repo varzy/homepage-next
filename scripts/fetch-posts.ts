@@ -15,7 +15,8 @@ class PostsFetcher {
     this.config = {
       notionDatabaseId: process.env.NOTION_DATABASE_ID || '',
       notionApiSecret: process.env.NOTION_API_SECRET || '',
-      outputDir: path.join(process.cwd(), 'content/posts'),
+      postsOutputDir: path.join(process.cwd(), 'content/posts'),
+      pagesOutputDir: path.join(process.cwd(), 'content/pages'),
     };
 
     if (!this.config.notionDatabaseId || !this.config.notionApiSecret) {
@@ -34,39 +35,60 @@ class PostsFetcher {
     const result: FetchResult = { updated: 0, skipped: 0, errors: 0, deleted: 0 };
 
     try {
-      // 确保输出目录存在
-      this.ensureOutputDirectory();
+      // 确保输出目录存在（posts/pages）
+      this.ensureDirectory(this.config.postsOutputDir);
+      this.ensureDirectory(this.config.pagesOutputDir);
 
-      // 获取所有 Published 文章
-      const allPosts = await this.converter.getAllPosts(this.config.notionDatabaseId);
+      // 获取所有 Published 文章（Post）与页面（Page）
+      const [allPosts, allPages] = await Promise.all([
+        this.converter.getAllPosts(this.config.notionDatabaseId),
+        this.converter.getAllPages(this.config.notionDatabaseId),
+      ]);
       console.log(`📚 Found ${allPosts.length} published posts`);
-      const publishedSlugs = new Set(allPosts.map((p) => p.slug).filter(Boolean));
+      console.log(`📄 Found ${allPages.length} published pages`);
+      const publishedPostSlugs = new Set(allPosts.map((p) => p.slug).filter(Boolean));
+      const publishedPageSlugs = new Set(allPages.map((p) => p.slug).filter(Boolean));
 
       // 筛选需要更新的文章
-      const postsToUpdate = this.filterPostsToUpdate(allPosts);
+      const postsToUpdate = this.filterItemsToUpdate(allPosts, this.config.postsOutputDir);
+      const pagesToUpdate = this.filterItemsToUpdate(allPages, this.config.pagesOutputDir);
       console.log(`🔄 Posts to update: ${postsToUpdate.length}`);
+      console.log(`🔁 Pages to update: ${pagesToUpdate.length}`);
 
-      if (postsToUpdate.length === 0 && !this.forceMode) {
-        // 即便没有需要更新的文章，也要执行一次孤儿文件清理
-        this.cleanupOrphanedLocalFiles(publishedSlugs, result);
-        console.log('✅ All posts are up to date!');
+      if (postsToUpdate.length === 0 && pagesToUpdate.length === 0 && !this.forceMode) {
+        // 即便没有需要更新的内容，也要执行一次孤儿文件清理（文章与页面）
+        this.cleanupOrphanedLocalFiles(publishedPostSlugs, this.config.postsOutputDir, result);
+        this.cleanupOrphanedLocalFiles(publishedPageSlugs, this.config.pagesOutputDir, result);
+        console.log('✅ All contents are up to date!');
         return result;
       }
 
-      // 批量处理更新
-      for (const post of postsToUpdate) {
-        try {
-          await this.processPost(post);
-          result.updated++;
-          console.log(`✅ Updated: ${post.title}`);
-        } catch (error) {
-          result.errors++;
-          console.error(`❌ Failed to update ${post.title}:`, error);
+      // 批量处理更新（统一按集合配置）
+      const collectionsToUpdate: Array<{ label: string; items: PostMetadata[]; dir: string }> = [
+        { label: 'post', items: postsToUpdate, dir: this.config.postsOutputDir },
+        { label: 'page', items: pagesToUpdate, dir: this.config.pagesOutputDir },
+      ];
+      for (const { label, items, dir } of collectionsToUpdate) {
+        for (const item of items) {
+          try {
+            await this.processItem(item, dir);
+            result.updated++;
+            console.log(`✅ Updated ${label}: ${item.title}`);
+          } catch (error) {
+            result.errors++;
+            console.error(`❌ Failed to update ${label} ${item.title}:`, error);
+          }
         }
       }
 
       // 清理不存在于当前 Published 列表中的本地文件（包含已归档和 slug 改名的旧文件）
-      this.cleanupOrphanedLocalFiles(publishedSlugs, result);
+      const cleanupCollections: Array<{ slugs: Set<string>; dir: string }> = [
+        { slugs: publishedPostSlugs, dir: this.config.postsOutputDir },
+        { slugs: publishedPageSlugs, dir: this.config.pagesOutputDir },
+      ];
+      for (const { slugs, dir } of cleanupCollections) {
+        this.cleanupOrphanedLocalFiles(slugs, dir, result);
+      }
 
       console.log(
         `🎉 Fetch completed! Updated: ${result.updated}, Deleted: ${result.deleted}, Skipped: ${result.skipped}, Errors: ${result.errors}`,
@@ -79,14 +101,14 @@ class PostsFetcher {
     return result;
   }
 
-  private ensureOutputDirectory(): void {
-    if (!fs.existsSync(this.config.outputDir)) {
-      fs.mkdirSync(this.config.outputDir, { recursive: true });
-      console.log(`📁 Created output directory: ${this.config.outputDir}`);
+  private ensureDirectory(dir: string): void {
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+      console.log(`📁 Created directory: ${dir}`);
     }
   }
 
-  private filterPostsToUpdate(posts: PostMetadata[]): PostMetadata[] {
+  private filterItemsToUpdate(posts: PostMetadata[], postsOutputDir: string): PostMetadata[] {
     // 如果是强制模式，返回所有文章
     if (this.forceMode) {
       console.log('🔥 Force mode enabled - will update ALL posts');
@@ -95,7 +117,7 @@ class PostsFetcher {
 
     return posts.filter((post) => {
       // 检查本地文件是否存在
-      const localFilePath = path.join(this.config.outputDir, `${post.slug}.md`);
+      const localFilePath = path.join(postsOutputDir, `${post.slug}.md`);
       const fileExists = fs.existsSync(localFilePath);
 
       // 如果本地文件不存在，肯定需要拉取
@@ -126,7 +148,7 @@ class PostsFetcher {
     });
   }
 
-  private async processPost(post: PostMetadata): Promise<void> {
+  private async processItem(post: PostMetadata, postsOutputDir: string): Promise<void> {
     try {
       console.log(`📄 Processing post: ${post.title}`);
 
@@ -159,7 +181,7 @@ class PostsFetcher {
       const mdxContent = generateMDXContent(updatedPost, markdownContent);
 
       // 保存到本地文件
-      const filePath = path.join(this.config.outputDir, `${post.slug}.md`);
+      const filePath = path.join(postsOutputDir, `${post.slug}.md`);
       fs.writeFileSync(filePath, mdxContent, 'utf-8');
 
       console.log(`✅ Successfully processed: ${post.title}`);
@@ -169,27 +191,27 @@ class PostsFetcher {
     }
   }
 
-  private cleanupOrphanedLocalFiles(publishedSlugs: Set<string>, result: FetchResult): void {
+  private cleanupOrphanedLocalFiles(publishedSlugs: Set<string>, dir: string, result: FetchResult): void {
     try {
-      const files = fs.readdirSync(this.config.outputDir);
+      const files = fs.readdirSync(dir);
       let localChecked = 0;
       for (const file of files) {
         if (!file.endsWith('.md')) continue;
         localChecked++;
         const slug = file.replace(/\.md$/, '');
         if (!publishedSlugs.has(slug)) {
-          const filePath = path.join(this.config.outputDir, file);
+          const filePath = path.join(dir, file);
           try {
             fs.unlinkSync(filePath);
             result.deleted++;
-            console.log(`🗑️ Deleted orphaned post file: ${file}`);
+            console.log(`🗑️ Deleted orphaned file: ${file}`);
           } catch (err) {
             result.errors++;
-            console.error(`❌ Failed to delete orphaned post file ${file}:`, err);
+            console.error(`❌ Failed to delete orphaned file ${file}:`, err);
           }
         }
       }
-      console.log(`🧹 Orphan cleanup checked ${localChecked} local files`);
+      console.log(`🧹 Orphan cleanup checked ${localChecked} files in ${dir}`);
     } catch (err) {
       result.errors++;
       console.error('❌ Failed during orphaned files cleanup:', err);

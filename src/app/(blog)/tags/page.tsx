@@ -1,4 +1,4 @@
-import { getAllPosts, getAllTags } from '@/app/(blog)/_lib/content-loader';
+import { getAllPosts, getAllTags } from '@/app/_lib/content-loader';
 import PostTag from '@/app/(blog)/_components/PostTag';
 import { Metadata } from 'next';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';

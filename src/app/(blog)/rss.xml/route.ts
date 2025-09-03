@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getAllPosts, type PostMeta } from '@/app/(blog)/_lib/content-loader';
+import { getAllPosts, type PostMeta } from '@/app/_lib/content-loader';
 import RSS from 'rss';
 import { SITE_CONFIG } from '@/site.config';
 

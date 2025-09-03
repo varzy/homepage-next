@@ -23,7 +23,7 @@ export default function Home() {
         <h1 className="italic">贼歪</h1>
         <strong className="text-secondary ms-4 text-base font-light">/zeɪ &apos;waɪ/</strong>
       </div>
-      <h2 className="mt-3">🧑‍💻Web Developer. 📝Blogger. 🫣INFJ.</h2>
+      <h2 className="mt-3">🧑‍💻Developer. 📝Blogger. 🫣INFJ.</h2>
 
       {/* Links */}
       <nav>

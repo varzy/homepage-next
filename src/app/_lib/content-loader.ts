@@ -23,7 +23,8 @@ export interface PostWithContent extends PostMeta {
   content: string;
 }
 
-const CONTENT_DIR = path.join(process.cwd(), 'content/posts');
+const CONTENT_POSTS_DIR = path.join(process.cwd(), 'content/posts');
+const CONTENT_PAGES_DIR = path.join(process.cwd(), 'content/pages');
 
 // 缓存机制
 let postsCache: PostMeta[] | null = null;
@@ -47,10 +48,22 @@ function formatDate(dateString: string): string {
   }
 }
 
-function parseMDXFile(filePath: string): PostMeta {
-  const fileContent = fs.readFileSync(filePath, 'utf-8');
-  const { data } = matter(fileContent);
+type FrontmatterData = {
+  title?: string;
+  category?: string;
+  type?: string;
+  status?: string;
+  tags?: string[] | undefined;
+  date?: string;
+  slug?: string;
+  summary?: string;
+  last_edited_time?: string;
+  blog_last_fetched_time?: string;
+  notion_id?: string;
+  icon?: string;
+};
 
+function buildMetaFromData(data: FrontmatterData): PostMeta {
   return {
     title: data.title || '',
     category: data.category || '',
@@ -68,6 +81,12 @@ function parseMDXFile(filePath: string): PostMeta {
   };
 }
 
+function parseMetaFromFile(filePath: string): PostMeta {
+  const fileContent = fs.readFileSync(filePath, 'utf-8');
+  const parsed = matter(fileContent);
+  return buildMetaFromData(parsed.data as FrontmatterData);
+}
+
 export async function getAllPosts(): Promise<PostMeta[]> {
   // 检查缓存
   if (isCacheValid() && postsCache) {
@@ -76,17 +95,17 @@ export async function getAllPosts(): Promise<PostMeta[]> {
 
   try {
     // 确保内容目录存在
-    if (!fs.existsSync(CONTENT_DIR)) {
-      console.warn(`Content directory does not exist: ${CONTENT_DIR}`);
+    if (!fs.existsSync(CONTENT_POSTS_DIR)) {
+      console.warn(`Content directory does not exist: ${CONTENT_POSTS_DIR}`);
       return [];
     }
 
     // 获取所有 MD 文件
-    const pattern = path.join(CONTENT_DIR, '*.md');
+    const pattern = path.join(CONTENT_POSTS_DIR, '*.md');
     const files = await glob(pattern);
 
     // 解析所有文件
-    const posts = files.map(parseMDXFile);
+    const posts = files.map(parseMetaFromFile);
 
     // 按日期降序排序
     posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
@@ -139,36 +158,30 @@ export async function getAllCategories(): Promise<string[]> {
   return Array.from(categorySet).sort();
 }
 
-export async function getPostWithContent(slug: string): Promise<PostWithContent | null> {
+export async function parseContent(contentType: 'posts' | 'pages', slug: string): Promise<PostWithContent | null> {
   try {
-    const filePath = path.join(CONTENT_DIR, `${slug}.md`);
+    const baseDir = contentType === 'posts' ? CONTENT_POSTS_DIR : CONTENT_PAGES_DIR;
+    const filePath = path.join(baseDir, `${slug}.md`);
 
     if (!fs.existsSync(filePath)) {
       return null;
     }
 
     const fileContent = fs.readFileSync(filePath, 'utf-8');
-    const { data, content } = matter(fileContent);
-
-    const meta: PostMeta = {
-      title: data.title || '',
-      category: data.category || '',
-      type: data.type || '',
-      status: data.status || '',
-      tags: Array.isArray(data.tags) ? data.tags : [],
-      date: data.date || '',
-      slug: data.slug || '',
-      summary: data.summary || '',
-      last_edited_time: data.last_edited_time || '',
-      blog_last_fetched_time: data.blog_last_fetched_time,
-      notion_id: data.notion_id || '',
-      dateAmericaStyle: formatDate(data.date || ''),
-      icon: data.icon,
-    };
-
+    const parsed = matter(fileContent);
+    const meta = buildMetaFromData(parsed.data as FrontmatterData);
+    const content = parsed.content;
     return { ...meta, content };
   } catch (error) {
     console.error(`Error loading post ${slug}:`, error);
     return null;
   }
+}
+
+export async function getPostWithContent(slug: string) {
+  return parseContent('posts', slug);
+}
+
+export async function getPageWithContent(slug: string) {
+  return parseContent('pages', slug);
 }

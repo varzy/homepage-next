@@ -1,7 +1,8 @@
 export interface FetchConfig {
   notionDatabaseId: string;
   notionApiSecret: string;
-  outputDir: string;
+  postsOutputDir: string; // posts 目录
+  pagesOutputDir: string; // pages 目录
 }
 
 export interface PostMetadata {

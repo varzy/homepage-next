@@ -1,6 +1,6 @@
 import { SITE_CONFIG } from '@/site.config';
 import { notFound } from 'next/navigation';
-import { getAllPosts, getPostsByTag, getAllTags } from '@/app/(blog)/_lib/content-loader';
+import { getAllPosts, getPostsByTag, getAllTags } from '@/app/_lib/content-loader';
 import PostsContainer from '@/app/(blog)/_components/PostsContainer';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 

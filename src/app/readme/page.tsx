@@ -4,7 +4,6 @@ import PageHeader from '@/app/_components/PageHeader';
 import { type Metadata } from 'next';
 import { getEmojiFavicon } from '@/utils/favicon';
 import { notFound } from 'next/navigation';
-import Comments from '../(blog)/_components/Comments';
 
 export const metadata: Metadata = {
   title: `README`,
@@ -29,7 +28,6 @@ export default async function Readme() {
         </div>
 
         <MdxRenderer source={postWithContent.content} />
-        <Comments />
       </div>
     </div>
   );

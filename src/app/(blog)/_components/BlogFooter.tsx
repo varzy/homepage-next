@@ -3,16 +3,23 @@ import Link from 'next/link';
 
 const FOOTER_LINKS = [
   { label: 'RSS', href: '/rss.xml', target: '_self' },
-  // { label: 'Github', href: 'https://github.com/varzy/homepage-next', target: '_blank' },
   { label: 'Sponsor', href: '/sponsor', target: '_self' },
 ];
 
 export default function BlogFooter() {
   return (
-    <footer className="g-container pt-18 pb-12 text-sm [&_a]:hover:underline">
+    <footer className="g-container pt-20 pb-12 text-sm [&_a]:hover:underline">
       <div className="mt-5 flex items-center justify-between">
         <p>
-          &copy; <Link href="/">{SITE_CONFIG.author}</Link> 2015 - {new Date().getFullYear()}
+          <span>
+            &copy; 2015-{new Date().getFullYear()} <Link href="/">{SITE_CONFIG.author}</Link>
+          </span>
+          <span className="mx-1.5">·</span>
+          <span>
+            <Link href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">
+              CC BY-NC 4.0
+            </Link>
+          </span>
         </p>
         <p>
           {FOOTER_LINKS.map((link, index) => (

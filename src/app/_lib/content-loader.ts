@@ -126,6 +126,23 @@ export async function getPostBySlug(slug: string): Promise<PostMeta | null> {
   return posts.find((post) => post.slug === slug) || null;
 }
 
+export async function getCategoryPosts(category: string): Promise<PostMeta[]> {
+  const posts = await getAllPosts();
+  return posts.filter((post) => post.category === category);
+}
+
+export async function getPrevPost(category: string, slug: string): Promise<PostMeta | null> {
+  const posts = await getCategoryPosts(category);
+  const index = posts.findIndex((post) => post.slug === slug);
+  return posts[index - 1] || null;
+}
+
+export async function getNextPost(category: string, slug: string): Promise<PostMeta | null> {
+  const posts = await getCategoryPosts(category);
+  const index = posts.findIndex((post) => post.slug === slug);
+  return posts[index + 1] || null;
+}
+
 export async function getPostsByCategory(category: string): Promise<PostMeta[]> {
   const posts = await getAllPosts();
   return posts.filter((post) => post.category === category);

@@ -1,5 +1,5 @@
 ---
-title: '让 Nuxt I18n 支持类型推导'
+title: 'Nuxt I18n 支持类型推导'
 category: 'Coding'
 type: 'Post'
 status: 'Published'
@@ -7,8 +7,8 @@ tags: ['Nuxt']
 date: '2025-09-03'
 slug: 'typescript-support-for-nuxt-i18n'
 summary: ''
-last_edited_time: '2025-09-03T06:14:00.000Z'
-blog_last_fetched_time: '2025-09-03T06:15:11.876Z'
+last_edited_time: '2025-09-03T08:26:00.000Z'
+blog_last_fetched_time: '2025-09-03T08:32:13.629Z'
 notion_id: '263dc9c0-364a-80aa-b2ac-e71835a1ec39'
 icon: '🩰'
 ---

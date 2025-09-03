@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function PostItem(post: PostMeta) {
   return (
-    <div className="mb-8 sm:mb-10">
+    <div className="mb-8 last:mb-0 sm:mb-10">
       <div className="text-secondary text-xs sm:text-sm">{post.dateAmericaStyle}</div>
       <h2 className="py-1.5 text-base font-extrabold text-black sm:py-2 sm:text-lg">
         <Link className="hover:underline" href={'/posts/' + post.slug}>

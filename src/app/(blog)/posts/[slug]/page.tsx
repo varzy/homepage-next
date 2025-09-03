@@ -1,9 +1,10 @@
-import { getAllPosts, getPostBySlug, getPostWithContent } from '@/app/_lib/content-loader';
+import { getAllPosts, getNextPost, getPostBySlug, getPostWithContent, getPrevPost } from '@/app/_lib/content-loader';
 import { notFound } from 'next/navigation';
 import PostTagLite from '@/app/(blog)/_components/PostTagLite';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 import { getEmojiFavicon } from '@/utils/favicon';
 import MdxRenderer from '@/app/(blog)/_components/MdxRenderer';
+import PrevAndNextPosts from '@/app/(blog)/_components/PrevAndNextPosts';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -33,6 +34,9 @@ export default async function Post({ params }: PageProps) {
   const postWithContent = await getPostWithContent(slug);
   if (!postWithContent) notFound();
 
+  const prevPost = await getPrevPost(postWithContent.category, postWithContent.slug);
+  const nextPost = await getNextPost(postWithContent.category, postWithContent.slug);
+
   return (
     <BlogPageContainer
       pageHero={{
@@ -46,6 +50,7 @@ export default async function Post({ params }: PageProps) {
       }}
     >
       <MdxRenderer source={postWithContent.content} />
+      <PrevAndNextPosts prevPost={prevPost} nextPost={nextPost} />
     </BlogPageContainer>
   );
 }

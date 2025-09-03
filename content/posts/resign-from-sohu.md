@@ -3,12 +3,12 @@ title: '离职啦'
 category: 'Nichijou'
 type: 'Post'
 status: 'Published'
-tags: ['流光忆庭']
+tags: ['随想']
 date: '2024-05-21'
 slug: 'resign-from-sohu'
 summary: '1400 多天，我确实“攒下”了很多交心的朋友。'
-last_edited_time: '2025-09-02T08:00:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:25:50.651Z'
+last_edited_time: '2025-09-03T01:32:00.000Z'
+blog_last_fetched_time: '2025-09-03T01:32:50.759Z'
 notion_id: '58b87f17-723f-4c4c-be62-ed24fe534ace'
 icon: '👋'
 ---

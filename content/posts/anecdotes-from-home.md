@@ -3,12 +3,12 @@ title: '老家轶事'
 category: 'Nichijou'
 type: 'Post'
 status: 'Published'
-tags: ['小形迹', '随想']
+tags: ['小形迹', '流水账']
 date: '2025-09-02'
 slug: 'anecdotes-from-home'
 summary: '所谓回家就是永远不会感觉到饿。'
-last_edited_time: '2025-09-02T04:16:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:25:10.174Z'
+last_edited_time: '2025-09-03T05:45:00.000Z'
+blog_last_fetched_time: '2025-09-03T05:54:41.989Z'
 notion_id: '25fdc9c0-364a-8059-b99c-c27b4cdf7a36'
 icon: '🪦'
 ---

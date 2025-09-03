@@ -3,12 +3,12 @@ title: '周末闪现回了趟家'
 category: 'Nichijou'
 type: 'Post'
 status: 'Published'
-tags: ['小形迹']
+tags: ['小形迹', '流水账']
 date: '2023-09-04'
 slug: 'home-trip'
 summary: '真的，各种意义上的，好累啊。'
-last_edited_time: '2025-08-06T06:14:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:26:23.163Z'
+last_edited_time: '2025-09-03T05:47:00.000Z'
+blog_last_fetched_time: '2025-09-03T05:54:56.723Z'
 notion_id: 'c992d407-16fa-496f-9ada-16a470b84fa5'
 icon: '🏛️'
 ---

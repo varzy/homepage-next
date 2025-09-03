@@ -3,12 +3,12 @@ title: '回忆一份「痛苦」的工作经历'
 category: 'Nichijou'
 type: 'Post'
 status: 'Published'
-tags: ['随想']
+tags: ['随想', '流光忆庭']
 date: '2022-08-02'
 slug: 'painful-work-experience'
 summary: '在我离开 Z 再次工作两年有余，我却开始觉得那次选择似乎也没有错得那么离谱。'
-last_edited_time: '2025-08-06T06:15:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:27:18.563Z'
+last_edited_time: '2025-09-03T05:48:00.000Z'
+blog_last_fetched_time: '2025-09-03T05:55:04.937Z'
 notion_id: 'a93779a5-9151-44e4-ad3f-78bd5e36cff7'
 icon: '🧨'
 ---

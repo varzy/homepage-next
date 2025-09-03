@@ -3,12 +3,12 @@ title: '羽生结弦与花滑'
 category: 'Nichijou'
 type: 'Post'
 status: 'Published'
-tags: ['随想']
+tags: ['随想', '流水账']
 date: '2021-08-23'
 slug: 'yuzuru-hanyu'
 summary: '“容颜如玉，身姿如松，翩若惊鸿，婉若游龙”。'
-last_edited_time: '2025-08-06T06:17:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:28:56.396Z'
+last_edited_time: '2025-09-03T05:49:00.000Z'
+blog_last_fetched_time: '2025-09-03T05:55:12.783Z'
 notion_id: '7a5630b0-2880-46b4-a281-490c14b2f96d'
 icon: '🎹'
 ---

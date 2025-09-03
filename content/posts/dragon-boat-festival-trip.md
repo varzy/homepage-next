@@ -3,12 +3,12 @@ title: '端午假期随记'
 category: 'Nichijou'
 type: 'Post'
 status: 'Published'
-tags: ['小形迹']
+tags: ['小形迹', '流水账']
 date: '2023-06-26'
 slug: 'dragon-boat-festival-trip'
 summary: '我也多希望这个假期不止是我工作上的分界点。加油啊 ZY！'
-last_edited_time: '2025-09-02T07:50:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:26:36.318Z'
+last_edited_time: '2025-09-03T05:47:00.000Z'
+blog_last_fetched_time: '2025-09-03T05:55:03.658Z'
 notion_id: '94f766ab-b091-4780-bd7b-10260b536d09'
 icon: '🐲'
 ---

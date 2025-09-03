@@ -3,12 +3,12 @@ title: '老照片'
 category: 'Nichijou'
 type: 'Post'
 status: 'Published'
-tags: ['流光忆庭', '随想']
+tags: ['流光忆庭', '流水账']
 date: '2024-08-13'
 slug: 'old-photos'
 summary: '我不知道自己会不会还有孩子了，但如果有，我也一定会将这些回忆传承下去。'
-last_edited_time: '2025-08-06T06:14:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:25:43.051Z'
+last_edited_time: '2025-09-03T05:46:00.000Z'
+blog_last_fetched_time: '2025-09-03T05:54:44.545Z'
 notion_id: '2ca77267-9e9d-49d9-8f78-fb01adcd7a81'
 icon: '🏑'
 ---

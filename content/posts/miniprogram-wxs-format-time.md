@@ -7,8 +7,8 @@ tags: ['Miniprogram']
 date: '2021-03-18'
 slug: 'miniprogram-wxs-format-time'
 summary: ''
-last_edited_time: '2025-08-06T06:29:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:29:20.258Z'
+last_edited_time: '2025-09-03T04:18:00.000Z'
+blog_last_fetched_time: '2025-09-03T04:18:41.380Z'
 notion_id: 'c1a9149b-9c3b-4034-9a64-81657b9c5818'
 icon: '⛴️'
 ---
@@ -79,7 +79,7 @@ module.exports = {
 
 如果需要支持更多的时间格式，理论上只需要扩展 `_getRegularDate` 方法即可。在上面的代码中支持三种时间格式：
 
-- UTC：`2021-04-11T10:00:49.000+0000`。这种时间格式用了额外的 `_utcToDate` 方法来处理。关于这种时间格式，以及在小程序中的处理，可以查看这篇文章：[从微信小程序里的 UTC 日期说起](https://www.notion.so/df57b98c74de41879f0721c15fc68c70)
+- UTC：`2021-04-11T10:00:49.000+0000`。这种时间格式用了额外的 `_utcToDate` 方法来处理。关于这种时间格式，以及在小程序中的处理，可以查看这篇文章：[从微信小程序里的 UTC 日期说起](https://varzy.me/posts/miniprogram-utc)
 - TimestampByS：`1611544428`。精确到秒的 10 位时间戳
 - TimestampByMS：`1616053302090`。最常见的精确到毫秒的 13 位时间戳
 

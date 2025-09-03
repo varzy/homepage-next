@@ -7,8 +7,8 @@ tags: []
 date: ''
 slug: 'readme'
 summary: ''
-last_edited_time: '2025-09-03T04:24:00.000Z'
-blog_last_fetched_time: '2025-09-03T04:24:25.416Z'
+last_edited_time: '2025-09-03T09:58:00.000Z'
+blog_last_fetched_time: '2025-09-03T09:58:22.093Z'
 notion_id: '263dc9c0-364a-8032-9368-cc0f8f18d4e9'
 ---
 
@@ -26,10 +26,10 @@ ACG 爱好者，常玩 PS5 平台游戏。机核电台资深听众。半个极�
 
 「贼歪」即 ZY，是我名字首字母的音译。域名的含义是 `var zy = "me"`。
 
-网站使用 Next.js 驱动，Vercel 托管，Notion 作为 CMS。代码已开源：[varzy/homepage-next](https://github.com/varzy/homepage-next)。网站主题由本人设计。文字内容截至目前未有任何 AI 参与编纂，并且承诺未来很长一段时间内都不会有 AIGC 内容。网站没有在国内备案的计划。
+网站使用 Next.js 驱动，Vercel 托管，Notion 作为 CMS，并使用 giscus 作为评论系统。代码已开源：[varzy/homepage-next](https://github.com/varzy/homepage-next)。
 
-博客更新频率成谜，暂时不打算开放评论区。转载请注明出处。
+网站主题由本人设计。文字内容截至目前未有任何 AI 参与编纂，并且承诺未来很长一段时间内都不会有 AIGC 内容。没有在国内备案的计划。博客转载请注明出处。
 
 ## 来往
 
-如果你有什么想说的想聊的，欢迎发送邮件联系我：varzyme#gmail.com。
+如果你有什么想说的想聊的，可以直接在下方留言，或者发邮件给我：varzyme#gmail.com。

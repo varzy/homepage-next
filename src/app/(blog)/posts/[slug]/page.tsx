@@ -5,6 +5,7 @@ import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 import { getEmojiFavicon } from '@/utils/favicon';
 import MdxRenderer from '@/app/(blog)/_components/MdxRenderer';
 import PrevAndNextPosts from '@/app/(blog)/_components/PrevAndNextPosts';
+import Comments from '@/app/(blog)/_components/Comments';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -51,6 +52,7 @@ export default async function Post({ params }: PageProps) {
     >
       <MdxRenderer source={postWithContent.content} />
       <PrevAndNextPosts prevPost={prevPost} nextPost={nextPost} />
+      <Comments />
     </BlogPageContainer>
   );
 }

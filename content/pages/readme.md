@@ -1,5 +1,5 @@
 ---
-title: 'README'
+title: 'Readme'
 category: ''
 type: 'Page'
 status: 'Published'
@@ -7,8 +7,8 @@ tags: []
 date: ''
 slug: 'readme'
 summary: ''
-last_edited_time: '2025-09-03T02:50:00.000Z'
-blog_last_fetched_time: '2025-09-03T03:20:27.617Z'
+last_edited_time: '2025-09-03T04:24:00.000Z'
+blog_last_fetched_time: '2025-09-03T04:24:25.416Z'
 notion_id: '263dc9c0-364a-8032-9368-cc0f8f18d4e9'
 ---
 
@@ -32,4 +32,4 @@ ACG 爱好者，常玩 PS5 平台游戏。机核电台资深听众。半个极�
 
 ## 来往
 
-如果你有什么想说的想聊的，欢迎发送邮件联系我：varzyme#[gmail.com](http://gmail.com/)。
+如果你有什么想说的想聊的，欢迎发送邮件联系我：varzyme#gmail.com。

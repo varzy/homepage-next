@@ -3,12 +3,12 @@ title: 'iPhone 13 Pro 上手试玩'
 category: 'Nichijou'
 type: 'Post'
 status: 'Published'
-tags: ['Apple', '评测', '数码产品']
+tags: ['Apple', '评测', '数码产品', '流水账']
 date: '2021-09-24'
 slug: 'iphone-13-pro-review'
 summary: '希望我能陪伴这台手机多一点时间，也希望我能真的用上这三枚目前摸起来突兀无比的镜头，多记录一些值得老来下酒的回忆吧。'
-last_edited_time: '2025-09-02T08:55:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:28:43.646Z'
+last_edited_time: '2025-09-03T06:05:00.000Z'
+blog_last_fetched_time: '2025-09-03T06:05:57.699Z'
 notion_id: '4fa43419-4ec9-4338-9649-378a8d583904'
 icon: '📱'
 ---

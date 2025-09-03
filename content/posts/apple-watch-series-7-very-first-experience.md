@@ -3,12 +3,12 @@ title: 'Apple Watch 7 初体验'
 category: 'Nichijou'
 type: 'Post'
 status: 'Published'
-tags: ['评测', 'Apple', '数码产品']
+tags: ['评测', 'Apple', '数码产品', '流水账']
 date: '2021-12-13'
 slug: 'apple-watch-series-7-very-first-experience'
 summary: '当我设置好用 Apple Watch 解锁手机，戴上口罩，点亮屏幕，上滑，看到主屏的那一瞬间，泪水不争气得射了出来（'
-last_edited_time: '2025-09-02T08:55:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:28:15.518Z'
+last_edited_time: '2025-09-03T06:03:00.000Z'
+blog_last_fetched_time: '2025-09-03T06:05:52.960Z'
 notion_id: 'f79f116b-843a-4085-a1e3-423fe8352d3a'
 icon: '⌚'
 ---

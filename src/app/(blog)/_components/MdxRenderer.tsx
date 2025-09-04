@@ -1,6 +1,15 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { prism } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import {
+  prism,
+  coldarkCold,
+  coldarkDark,
+  coy,
+  base16AteliersulphurpoolLight,
+  duotoneLight,
+  materialLight,
+  oneLight,
+} from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
 interface MdxRendererProps {
   source: string;
@@ -27,9 +36,9 @@ const SmartCode = ({ children, className, ...props }: MdxCustomComponentProps) =
     return (
       <SyntaxHighlighter
         language={language}
-        style={prism}
+        style={oneLight}
         PreTag="div"
-        customStyle={{ fontSize: '0.875rem' }} // 14px
+        customStyle={{ fontSize: '0.95rem' }}
         wrapLongLines
         {...props}
       >

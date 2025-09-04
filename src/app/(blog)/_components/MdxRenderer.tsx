@@ -1,15 +1,6 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import {
-  prism,
-  coldarkCold,
-  coldarkDark,
-  coy,
-  base16AteliersulphurpoolLight,
-  duotoneLight,
-  materialLight,
-  oneLight,
-} from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { oneLight } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
 interface MdxRendererProps {
   source: string;

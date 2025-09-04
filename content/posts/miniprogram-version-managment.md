@@ -3,12 +3,12 @@ title: '如何更优雅得管理小程序版本'
 category: 'Coding'
 type: 'Post'
 status: 'Published'
-tags: ['Miniprogram', 'CICD']
+tags: ['Miniprogram', 'Node.js', 'CICD']
 date: '2021-03-12'
 slug: 'miniprogram-version-managment'
 summary: ''
-last_edited_time: '2025-09-02T08:55:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:29:35.593Z'
+last_edited_time: '2025-09-04T03:05:00.000Z'
+blog_last_fetched_time: '2025-09-04T03:05:31.859Z'
 notion_id: 'bd24e5bb-1a14-4947-b458-fbf4d902db35'
 icon: '🏓'
 ---

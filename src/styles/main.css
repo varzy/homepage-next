@@ -14,5 +14,5 @@
 }
 
 @utility g-container {
-  @apply container mx-auto max-w-[720px] px-5;
+  @apply container mx-auto max-w-[720px] px-4;
 }

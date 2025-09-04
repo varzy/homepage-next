@@ -12,7 +12,7 @@ export default function PrevAndNextPosts({
   const posts = [prevPost, nextPost];
 
   return (
-    <div className="mt-12 flex justify-between gap-3">
+    <div className="mt-14 flex justify-between gap-3">
       {posts.map((post, index) => (
         <div className="flex-1" key={index}>
           <div className={clsx(index === 1 && 'text-right')}>

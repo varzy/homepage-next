@@ -4,7 +4,7 @@ import Giscus from '@giscus/react';
 
 export default function Comments() {
   return (
-    <div className="mt-12">
+    <div className="mt-14">
       <Giscus
         id="comments"
         repo="varzy/homepage-comments"

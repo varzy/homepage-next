@@ -20,7 +20,7 @@ export default function Pagination({ total, current, pageSize, urlPrefix }: Pagi
   );
 
   return (
-    <div className="mt-12">
+    <div className="mt-14">
       {moreThanOnePage && (
         <div className="flex items-center justify-between">
           <div className="prev flex-1 text-left">{showPrev && Goto(current - 1, '< Prev')}</div>

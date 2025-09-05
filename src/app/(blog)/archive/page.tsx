@@ -15,7 +15,7 @@ export default async function ArchivePage() {
   const totalWords = await getPostsTotalWords();
 
   return (
-    <BlogPageContainer pageHero={{ title: 'Archive', after: `共有 ${totalPosts} 篇文章，累计约 ${totalWords} 字。` }}>
+    <BlogPageContainer pageHero={{ title: 'Archive', after: `共 ${totalPosts} 篇文章，约 ${totalWords} 字。` }}>
       <div className="posts">
         {allPosts.map((post) => (
           <PostItemArchive key={post.notion_id} {...post} />

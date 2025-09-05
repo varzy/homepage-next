@@ -23,48 +23,48 @@ export interface PostWithContent extends PostMeta {
   content: string;
 }
 
-const CONTENT_POSTS_DIR = path.join(process.cwd(), 'content/posts');
-const CONTENT_PAGES_DIR = path.join(process.cwd(), 'content/pages');
+const CONFIG = {
+  CACHE_DURATION: 5 * 60 * 1000, // 5分钟缓存
+  CONTENT_POSTS_DIR: path.join(process.cwd(), 'content/posts'),
+  CONTENT_PAGES_DIR: path.join(process.cwd(), 'content/pages'),
+  TEXT_CLEANUP_PATTERNS: [
+    /```[\s\S]*?```/g, // 三引号代码块
+    /`[^`]*`/g, // 行内代码
+    /!\[[^\]]*\]\([^)]*\)/g, // 图片
+    /^#+\s+/gm, // 标题标记
+    /^>\s?/gm, // 引用标记
+    /^[-*+]\s+/gm, // 列表项标记
+    /[\*_~]/g, // 粗体/斜体/删除线符号
+  ],
+};
 
-// 缓存机制
-let postsCache: PostMeta[] | null = null;
-let cacheTime: number = 0;
-const CACHE_DURATION = 5 * 60 * 1000; // 5分钟缓存
+class CacheManager<T> {
+  private cache: T | null = null;
+  private cacheTime = 0;
 
-// 复用的文件列表缓存，避免多处重复 glob
-let postFilesCache: string[] | null = null;
-let postFilesCacheTime = 0;
+  constructor(private duration: number = CONFIG.CACHE_DURATION) {}
 
-async function listPostFiles(): Promise<string[]> {
-  if (!fs.existsSync(CONTENT_POSTS_DIR)) {
-    return [];
+  isValid(): boolean {
+    return this.cache !== null && Date.now() - this.cacheTime < this.duration;
   }
-  if (postFilesCache && Date.now() - postFilesCacheTime < CACHE_DURATION) {
-    return postFilesCache;
+
+  get(): T | null {
+    return this.isValid() ? this.cache : null;
   }
-  const pattern = path.join(CONTENT_POSTS_DIR, '*.md');
-  const files = await glob(pattern);
-  postFilesCache = files;
-  postFilesCacheTime = Date.now();
-  return files;
-}
 
-function isCacheValid(): boolean {
-  return postsCache !== null && Date.now() - cacheTime < CACHE_DURATION;
-}
+  set(data: T): void {
+    this.cache = data;
+    this.cacheTime = Date.now();
+  }
 
-function formatDate(dateString: string): string {
-  try {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'short',
-      day: '2-digit',
-    });
-  } catch {
-    return dateString;
+  clear(): void {
+    this.cache = null;
+    this.cacheTime = 0;
   }
 }
+
+const postsCache = new CacheManager<PostMeta[]>();
+const postFilesCache = new CacheManager<string[]>();
 
 type FrontmatterData = {
   title?: string;
@@ -81,47 +81,132 @@ type FrontmatterData = {
   icon?: string;
 };
 
-function buildMetaFromData(data: FrontmatterData): PostMeta {
-  return {
-    title: data.title || '',
-    category: data.category || '',
-    type: data.type || '',
-    status: data.status || '',
-    tags: Array.isArray(data.tags) ? data.tags : [],
-    date: data.date || '',
-    slug: data.slug || '',
-    summary: data.summary || '',
-    last_edited_time: data.last_edited_time || '',
-    blog_last_fetched_time: data.blog_last_fetched_time,
-    notion_id: data.notion_id || '',
-    dateAmericaStyle: formatDate(data.date || ''),
-    icon: data.icon,
-  };
+class FileUtils {
+  static dirExists(dirPath: string): boolean {
+    try {
+      return fs.existsSync(dirPath);
+    } catch {
+      return false;
+    }
+  }
+
+  static readFileSync(filePath: string): string | null {
+    try {
+      return fs.readFileSync(filePath, 'utf-8');
+    } catch (error) {
+      console.error(`Error reading file ${filePath}:`, error);
+      return null;
+    }
+  }
+
+  static parseFrontmatter(filePath: string): { data: FrontmatterData; content: string } | null {
+    const fileContent = this.readFileSync(filePath);
+    if (!fileContent) return null;
+
+    try {
+      const parsed = matter(fileContent);
+      return {
+        data: parsed.data as FrontmatterData,
+        content: parsed.content,
+      };
+    } catch (error) {
+      console.error(`Error parsing frontmatter in ${filePath}:`, error);
+      return null;
+    }
+  }
 }
 
-function parseMetaFromFile(filePath: string): PostMeta {
-  const fileContent = fs.readFileSync(filePath, 'utf-8');
-  const parsed = matter(fileContent);
-  return buildMetaFromData(parsed.data as FrontmatterData);
+class DataUtils {
+  static formatDate(dateString: string): string {
+    try {
+      const date = new Date(dateString);
+      return date.toLocaleDateString('en-US', {
+        year: 'numeric' as const,
+        month: 'short' as const,
+        day: '2-digit' as const,
+      });
+    } catch {
+      return dateString;
+    }
+  }
+
+  static buildPostMeta(data: FrontmatterData): PostMeta {
+    return {
+      title: data.title || '',
+      category: data.category || '',
+      type: data.type || '',
+      status: data.status || '',
+      tags: Array.isArray(data.tags) ? data.tags : [],
+      date: data.date || '',
+      slug: data.slug || '',
+      summary: data.summary || '',
+      last_edited_time: data.last_edited_time || '',
+      blog_last_fetched_time: data.blog_last_fetched_time,
+      notion_id: data.notion_id || '',
+      dateAmericaStyle: this.formatDate(data.date || ''),
+      icon: data.icon,
+    };
+  }
+
+  static cleanTextForWordCount(text: string): string {
+    let cleanedText = text;
+
+    CONFIG.TEXT_CLEANUP_PATTERNS.forEach((pattern) => {
+      cleanedText = cleanedText.replace(pattern, '');
+    });
+
+    cleanedText = cleanedText.replace(/\[([^\]]+)\]\([^)]*\)/g, '$1');
+
+    return cleanedText;
+  }
+}
+
+async function listPostFiles(): Promise<string[]> {
+  if (!FileUtils.dirExists(CONFIG.CONTENT_POSTS_DIR)) {
+    return [];
+  }
+
+  const cachedFiles = postFilesCache.get();
+  if (cachedFiles) {
+    return cachedFiles;
+  }
+
+  try {
+    const pattern = path.join(CONFIG.CONTENT_POSTS_DIR, '*.md');
+    const files = await glob(pattern);
+    postFilesCache.set(files);
+    return files;
+  } catch (error) {
+    console.error('Error listing post files:', error);
+    return [];
+  }
+}
+
+function parseMetaFromFile(filePath: string): PostMeta | null {
+  const parsed = FileUtils.parseFrontmatter(filePath);
+  if (!parsed) return null;
+
+  return DataUtils.buildPostMeta(parsed.data);
 }
 
 export async function getAllPosts(): Promise<PostMeta[]> {
-  if (isCacheValid() && postsCache) {
-    return postsCache;
+  const cachedPosts = postsCache.get();
+  if (cachedPosts) {
+    return cachedPosts;
   }
 
-  if (!fs.existsSync(CONTENT_POSTS_DIR)) {
-    console.warn(`Content directory does not exist: ${CONTENT_POSTS_DIR}`);
+  if (!FileUtils.dirExists(CONFIG.CONTENT_POSTS_DIR)) {
+    console.warn(`Content directory does not exist: ${CONFIG.CONTENT_POSTS_DIR}`);
     return [];
   }
 
   const files = await listPostFiles();
-  const posts = files.map(parseMetaFromFile);
-  posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  const posts = files
+    .map(parseMetaFromFile)
+    .filter((post): post is PostMeta => post !== null)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-  postsCache = posts;
-  cacheTime = Date.now();
-
+  postsCache.set(posts);
   return posts;
 }
 
@@ -140,21 +225,19 @@ export async function getCategoryPosts(category: string): Promise<PostMeta[]> {
   return posts.filter((post) => post.category === category);
 }
 
+function findAdjacentPost(category: string, slug: string, offset: number): Promise<PostMeta | null> {
+  return getCategoryPosts(category).then((posts) => {
+    const index = posts.findIndex((post) => post.slug === slug);
+    return posts[index + offset] || null;
+  });
+}
+
 export async function getPrevPost(category: string, slug: string): Promise<PostMeta | null> {
-  const posts = await getCategoryPosts(category);
-  const index = posts.findIndex((post) => post.slug === slug);
-  return posts[index - 1] || null;
+  return findAdjacentPost(category, slug, -1);
 }
 
 export async function getNextPost(category: string, slug: string): Promise<PostMeta | null> {
-  const posts = await getCategoryPosts(category);
-  const index = posts.findIndex((post) => post.slug === slug);
-  return posts[index + 1] || null;
-}
-
-export async function getPostsByCategory(category: string): Promise<PostMeta[]> {
-  const posts = await getAllPosts();
-  return posts.filter((post) => post.category === category);
+  return findAdjacentPost(category, slug, 1);
 }
 
 export async function getPostsByTag(tag: string): Promise<PostMeta[]> {
@@ -186,57 +269,42 @@ export async function getAllCategories(): Promise<string[]> {
 
 export async function parseContent(contentType: 'posts' | 'pages', slug: string): Promise<PostWithContent | null> {
   try {
-    const baseDir = contentType === 'posts' ? CONTENT_POSTS_DIR : CONTENT_PAGES_DIR;
+    const baseDir = contentType === 'posts' ? CONFIG.CONTENT_POSTS_DIR : CONFIG.CONTENT_PAGES_DIR;
     const filePath = path.join(baseDir, `${slug}.md`);
 
-    if (!fs.existsSync(filePath)) {
-      return null;
-    }
+    const parsed = FileUtils.parseFrontmatter(filePath);
+    if (!parsed) return null;
 
-    const fileContent = fs.readFileSync(filePath, 'utf-8');
-    const parsed = matter(fileContent);
-    const meta = buildMetaFromData(parsed.data as FrontmatterData);
-    const content = parsed.content;
-    return { ...meta, content };
+    const meta = DataUtils.buildPostMeta(parsed.data);
+    return { ...meta, content: parsed.content };
   } catch (error) {
-    console.error(`Error loading post ${slug}:`, error);
+    console.error(`Error loading ${contentType} ${slug}:`, error);
     return null;
   }
 }
 
-export async function getPostWithContent(slug: string) {
+export async function getPostWithContent(slug: string): Promise<PostWithContent | null> {
   return parseContent('posts', slug);
 }
 
-export async function getPageWithContent(slug: string) {
+export async function getPageWithContent(slug: string): Promise<PostWithContent | null> {
   return parseContent('pages', slug);
 }
 
 export async function getPostsTotalWords(): Promise<number> {
-  if (!fs.existsSync(CONTENT_POSTS_DIR)) {
+  if (!FileUtils.dirExists(CONFIG.CONTENT_POSTS_DIR)) {
     return 0;
   }
 
   const files = await listPostFiles();
-
   let total = 0;
+
   for (const filePath of files) {
-    const fileContent = fs.readFileSync(filePath, 'utf-8');
-    const parsed = matter(fileContent);
-    let text = parsed.content;
+    const parsed = FileUtils.parseFrontmatter(filePath);
+    if (!parsed) continue;
 
-    // 去除代码块、行内代码、图片与链接的 URL，仅保留可读文本
-    text = text.replace(/```[\s\S]*?```/g, ''); // 三引号代码块
-    text = text.replace(/`[^`]*`/g, ''); // 行内代码
-    text = text.replace(/!\[[^\]]*\]\([^)]*\)/g, ''); // 图片
-    text = text.replace(/\[([^\]]+)\]\([^)]*\)/g, '$1'); // 链接保留可见文本
-    text = text.replace(/^#+\s+/gm, ''); // 标题标记
-    text = text.replace(/^>\s?/gm, ''); // 引用标记
-    text = text.replace(/^[-*+]\s+/gm, ''); // 列表项标记
-    text = text.replace(/[\*_~]/g, ''); // 粗体/斜体/删除线符号
-
-    // 去掉所有空白字符后统计字数
-    const lengthWithoutWhitespace = text.replace(/\s+/g, '').length;
+    const cleanedText = DataUtils.cleanTextForWordCount(parsed.content);
+    const lengthWithoutWhitespace = cleanedText.replace(/\s+/g, '').length;
     total += lengthWithoutWhitespace;
   }
 

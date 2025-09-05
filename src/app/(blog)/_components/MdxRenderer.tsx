@@ -42,7 +42,7 @@ const SmartCode = ({ children, className, ...props }: MdxCustomComponentProps) =
 
   return (
     <code
-      className="rounded border-0 bg-gray-200 px-1 py-0.5 font-mono text-sm font-medium text-rose-500 shadow-none"
+      className="rounded border-0 bg-gray-200 px-1 py-0.5 font-mono text-sm font-medium text-rose-700 shadow-none"
       {...props}
     >
       {children}

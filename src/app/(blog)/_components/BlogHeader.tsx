@@ -12,7 +12,7 @@ export default function BlogHeader() {
     ...categoryLinks,
     { label: '归档', href: '/archive' },
     { label: '标签', href: '/tags' },
-    { label: '朋友们', href: '/friends' },
+    { label: '友人', href: '/friends' },
   ];
 
   return (

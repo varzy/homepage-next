@@ -1,6 +1,6 @@
 import { SITE_CONFIG } from '@/site.config';
 import { notFound } from 'next/navigation';
-import { getAllPosts, getPostsByCategory } from '@/app/_lib/content-loader';
+import { getAllPosts, getCategoryPosts } from '@/app/_lib/content-loader';
 import PostsContainer from '@/app/(blog)/_components/PostsContainer';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 
@@ -32,16 +32,11 @@ export default async function Page({
   const { category: categoryParam, page: optionalPageParam = [] } = await params;
   if (optionalPageParam.length > 1) notFound();
 
-  // 页码
   const [optionalPage] = optionalPageParam;
   const currentPage = +(optionalPage || 1);
-
-  // 类别
   const categoryCtx = SITE_CONFIG.categories[categoryParam];
   const categoryField = categoryCtx.notionField;
-
-  // 获取当前类别下全部文章
-  const allPosts = await getPostsByCategory(categoryField);
+  const allPosts = await getCategoryPosts(categoryField);
 
   return (
     <BlogPageContainer pageHero={{ title: categoryCtx.alias, after: categoryCtx.description }}>

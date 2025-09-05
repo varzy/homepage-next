@@ -1,6 +1,7 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneLight } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import Prose from './Prose';
 
 interface MdxRendererProps {
   source: string;
@@ -51,7 +52,7 @@ const SmartCode = ({ children, className, ...props }: MdxCustomComponentProps) =
 
 export default function MdxRenderer({ source }: MdxRendererProps) {
   return (
-    <article className="prose prose-code:before:content-none prose-code:after:content-none prose-a:font-normal prose-a:text-inherit prose-a:decoration-1 prose-blockquote:[&_p]:before:content-none prose-blockquote:[&_p]:after:content-none max-w-none text-base leading-loose break-words sm:text-lg">
+    <Prose>
       <MDXRemote
         source={source}
         components={{
@@ -60,6 +61,6 @@ export default function MdxRenderer({ source }: MdxRendererProps) {
           a: CustomLink,
         }}
       />
-    </article>
+    </Prose>
   );
 }

@@ -1,36 +1,25 @@
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
-import Image from 'next/image';
-import SponsorWechat from '../../../assets/sponsor_wechat.jpg';
-import SponsorAlipay from '../../../assets/sponsor_alipay.jpg';
 import { Metadata } from 'next';
 import { getEmojiFavicon } from '@/utils/favicon';
+import Prose from '@/app/(blog)/_components/Prose';
+import { getAllPosts } from '@/app/_lib/content-loader';
 
 export const metadata: Metadata = {
   title: `Buy me a Coffee`,
   icons: getEmojiFavicon('☕️'),
 };
 
-export default function Sponsor() {
-  const channels = [
-    { label: `微信`, qrcode: SponsorWechat },
-    { label: `支付宝`, qrcode: SponsorAlipay },
-  ];
+export default async function Sponsor() {
+  const posts = await getAllPosts();
+  const totalPosts = posts.length;
 
   return (
-    <BlogPageContainer
-      pageHero={{
-        title: `Buy me a Coffee`,
-        after: `如果你喜欢我的内容，或者它们可以给你带来帮助，或许可以请我喝一杯咖啡☕️？`,
-      }}
-    >
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        {channels.map((channel, index) => (
-          <div key={index}>
-            <div className="text-lg">{channel.label}</div>
-            <Image className="mt-2 w-full" src={channel.qrcode} alt={channel.label} />
-          </div>
-        ))}
-      </div>
+    <BlogPageContainer pageHero={{ title: `Buy me a Coffee` }}>
+      <Prose>
+        <p>博客目前共有 {totalPosts} 篇文章。如果你喜欢我的内容，或者它们给你带来帮助，或许可以请我喝一杯咖啡☕️？</p>
+        <p></p>
+        <img src="https://cdn.sa.net/2025/09/05/wFI1csOjDp8A96f.jpg" alt="zy 的支付宝赞赏码" />
+      </Prose>
     </BlogPageContainer>
   );
 }

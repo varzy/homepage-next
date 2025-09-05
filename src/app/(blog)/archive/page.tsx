@@ -1,6 +1,6 @@
 import BlogPageContainer from '../_components/BlogPageContainer';
 import PostItemArchive from '../_components/PostItemArchive';
-import { getAllPosts } from '../../_lib/content-loader';
+import { getAllPosts, getAllPostsCount, getPostsTotalWords } from '../../_lib/content-loader';
 import { type Metadata } from 'next';
 import { getEmojiFavicon } from '@/utils/favicon';
 
@@ -11,9 +11,11 @@ export const metadata: Metadata = {
 
 export default async function ArchivePage() {
   const allPosts = await getAllPosts();
+  const totalPosts = await getAllPostsCount();
+  const totalWords = await getPostsTotalWords();
 
   return (
-    <BlogPageContainer pageHero={{ title: 'Archive', after: `共有 ${allPosts.length} 篇文章。` }}>
+    <BlogPageContainer pageHero={{ title: 'Archive', after: `共有 ${totalPosts} 篇文章，累计约 ${totalWords} 字。` }}>
       <div className="posts">
         {allPosts.map((post) => (
           <PostItemArchive key={post.notion_id} {...post} />

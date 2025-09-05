@@ -9,12 +9,12 @@ export default function PrevAndNextPosts({ nextPost }: { nextPost: PostMeta | nu
           <div>
             <div>
               <p className="text-secondary text-sm">下一篇</p>
-              <h2 className="py-1.5 text-base font-extrabold text-black sm:text-lg">
+              <h2 className="py-1.5 text-base font-extrabold text-black sm:py-2 sm:text-lg">
                 <Link className="hover:underline" href={'/posts/' + nextPost.slug}>
                   {nextPost.title}
                 </Link>
               </h2>
-              {nextPost.summary && <p className="text-sm text-gray-700">{nextPost.summary}</p>}
+              {nextPost.summary && <p className="text-sm text-gray-700 sm:text-base">{nextPost.summary}</p>}
             </div>
           </div>
         </div>

@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { getEmojiFavicon } from '@/utils/favicon';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 import Link from 'next/link';
+import Prose from '@/app/(blog)/_components/Prose';
 
 export const metadata: Metadata = {
   title: '友情链接',
@@ -9,11 +10,21 @@ export const metadata: Metadata = {
 };
 
 export default function Friends() {
+  const friends = [{ label: '林深时觉寒', href: 'https://ikangjia.cn/' }];
+
   return (
-    <BlogPageContainer pageHero={{ title: `友情链接`, after: `欢迎互换友链。你可以发送邮件到 varzyme#gmail.com 告知我你的站点信息。` }}>
-      <Link className="underline" target="_blank" href="https://ikangjia.cn/">
-        林深时觉寒
-      </Link>
+    <BlogPageContainer pageHero={{ title: `友情链接` }}>
+      <Prose>
+        <p>欢迎互换友链。你可以发送邮件到 varzyme#gmail.com 告知我你的站点信息。以下是我的朋友们的站点，去看看吧。</p>
+      </Prose>
+
+      <div className="mt-8">
+        {friends.map((friend) => (
+          <Link className="underline" key={friend.label} target="_blank" href={friend.href}>
+            {friend.label}
+          </Link>
+        ))}
+      </div>
     </BlogPageContainer>
   );
 }

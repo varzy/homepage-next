@@ -31,6 +31,24 @@ let postsCache: PostMeta[] | null = null;
 let cacheTime: number = 0;
 const CACHE_DURATION = 5 * 60 * 1000; // 5分钟缓存
 
+// 复用的文件列表缓存，避免多处重复 glob
+let postFilesCache: string[] | null = null;
+let postFilesCacheTime = 0;
+
+async function listPostFiles(): Promise<string[]> {
+  if (!fs.existsSync(CONTENT_POSTS_DIR)) {
+    return [];
+  }
+  if (postFilesCache && Date.now() - postFilesCacheTime < CACHE_DURATION) {
+    return postFilesCache;
+  }
+  const pattern = path.join(CONTENT_POSTS_DIR, '*.md');
+  const files = await glob(pattern);
+  postFilesCache = files;
+  postFilesCacheTime = Date.now();
+  return files;
+}
+
 function isCacheValid(): boolean {
   return postsCache !== null && Date.now() - cacheTime < CACHE_DURATION;
 }
@@ -88,37 +106,28 @@ function parseMetaFromFile(filePath: string): PostMeta {
 }
 
 export async function getAllPosts(): Promise<PostMeta[]> {
-  // 检查缓存
   if (isCacheValid() && postsCache) {
     return postsCache;
   }
 
-  try {
-    // 确保内容目录存在
-    if (!fs.existsSync(CONTENT_POSTS_DIR)) {
-      console.warn(`Content directory does not exist: ${CONTENT_POSTS_DIR}`);
-      return [];
-    }
-
-    // 获取所有 MD 文件
-    const pattern = path.join(CONTENT_POSTS_DIR, '*.md');
-    const files = await glob(pattern);
-
-    // 解析所有文件
-    const posts = files.map(parseMetaFromFile);
-
-    // 按日期降序排序
-    posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-
-    // 更新缓存
-    postsCache = posts;
-    cacheTime = Date.now();
-
-    return posts;
-  } catch (error) {
-    console.error('Error loading posts:', error);
+  if (!fs.existsSync(CONTENT_POSTS_DIR)) {
+    console.warn(`Content directory does not exist: ${CONTENT_POSTS_DIR}`);
     return [];
   }
+
+  const files = await listPostFiles();
+  const posts = files.map(parseMetaFromFile);
+  posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+  postsCache = posts;
+  cacheTime = Date.now();
+
+  return posts;
+}
+
+export async function getAllPostsCount(): Promise<number> {
+  const posts = await getAllPosts();
+  return posts.length;
 }
 
 export async function getPostBySlug(slug: string): Promise<PostMeta | null> {
@@ -201,4 +210,35 @@ export async function getPostWithContent(slug: string) {
 
 export async function getPageWithContent(slug: string) {
   return parseContent('pages', slug);
+}
+
+export async function getPostsTotalWords(): Promise<number> {
+  if (!fs.existsSync(CONTENT_POSTS_DIR)) {
+    return 0;
+  }
+
+  const files = await listPostFiles();
+
+  let total = 0;
+  for (const filePath of files) {
+    const fileContent = fs.readFileSync(filePath, 'utf-8');
+    const parsed = matter(fileContent);
+    let text = parsed.content;
+
+    // 去除代码块、行内代码、图片与链接的 URL，仅保留可读文本
+    text = text.replace(/```[\s\S]*?```/g, ''); // 三引号代码块
+    text = text.replace(/`[^`]*`/g, ''); // 行内代码
+    text = text.replace(/!\[[^\]]*\]\([^)]*\)/g, ''); // 图片
+    text = text.replace(/\[([^\]]+)\]\([^)]*\)/g, '$1'); // 链接保留可见文本
+    text = text.replace(/^#+\s+/gm, ''); // 标题标记
+    text = text.replace(/^>\s?/gm, ''); // 引用标记
+    text = text.replace(/^[-*+]\s+/gm, ''); // 列表项标记
+    text = text.replace(/[\*_~]/g, ''); // 粗体/斜体/删除线符号
+
+    // 去掉所有空白字符后统计字数
+    const lengthWithoutWhitespace = text.replace(/\s+/g, '').length;
+    total += lengthWithoutWhitespace;
+  }
+
+  return total;
 }

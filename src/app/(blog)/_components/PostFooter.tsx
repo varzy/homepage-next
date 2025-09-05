@@ -10,16 +10,14 @@ export default function Comments() {
   const [commentCount, setCommentCount] = useState(0);
 
   function handleGiscusMessageEvent(event: MessageEvent) {
-    console.log('handleGiscusMessageEvent');
-    console.log(event);
     if (event.origin !== 'https://giscus.app') return;
     if (!(typeof event.data === 'object' && event.data.giscus)) return;
+
     const giscusData = event.data.giscus;
     if (!giscusData.discussion) return;
 
-    const totalCommentCount = giscusData.discussion.totalCommentCount;
-    console.log(totalCommentCount);
-    setCommentCount(totalCommentCount);
+    const totalCommentCount = giscusData.discussion?.totalCommentCount;
+    if (totalCommentCount) setCommentCount(totalCommentCount);
   }
 
   useEffect(() => {
@@ -31,7 +29,7 @@ export default function Comments() {
 
   return (
     <div className="mt-20">
-      <div className="flex items-center justify-between font-black">
+      <div className="flex items-center justify-between font-extrabold">
         <div className="cursor-pointer">
           {!isShowComments && <span onClick={() => setIsShowComments(true)}>评论 ({commentCount})</span>}
         </div>
@@ -43,7 +41,7 @@ export default function Comments() {
         </div>
       </div>
 
-      <div className={clsx('mt-6', isShowComments ? 'block' : 'hidden')}>
+      <div className={clsx('mt-4', isShowComments ? 'block' : 'hidden')}>
         <Giscus
           id="comments"
           repo="varzy/homepage-comments"

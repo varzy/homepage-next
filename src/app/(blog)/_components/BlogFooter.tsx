@@ -12,7 +12,7 @@ export default function BlogFooter() {
       <div className="mt-5 flex items-center justify-between">
         <p>
           <span>
-            &copy; 2015-{new Date().getFullYear()} <Link href="/">{SITE_CONFIG.author}</Link>
+            &copy; 2015 - {new Date().getFullYear()} <Link href="/">{SITE_CONFIG.author}</Link>
           </span>
         </p>
         <p>

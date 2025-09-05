@@ -13,6 +13,10 @@
   }
 }
 
+@utility g-lefty-container {
+  @apply container px-4 pt-36 pb-24 sm:pl-12 md:pl-24 lg:pl-36 xl:pl-48;
+}
+
 @utility g-container {
   @apply container mx-auto max-w-[720px] px-4;
 }

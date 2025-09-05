@@ -1,9 +1,9 @@
 'use client';
 
-import Giscus from '@giscus/react';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import GiscusComment from './GiscusComment';
 
 export default function Comments() {
   const [isShowComments, setIsShowComments] = useState(false);
@@ -42,19 +42,7 @@ export default function Comments() {
       </div>
 
       <div className={clsx('mt-4', isShowComments ? 'block' : 'hidden')}>
-        <Giscus
-          id="comments"
-          repo="varzy/homepage-comments"
-          repoId="MDEwOlJlcG9zaXRvcnk0MDUzODQyMDA="
-          category="Comments"
-          categoryId="DIC_kwDOGCmsCM4Cu6iH"
-          mapping="pathname"
-          reactionsEnabled="0"
-          emitMetadata="1"
-          inputPosition="top"
-          theme="noborder_light"
-          lang="en"
-        />
+        <GiscusComment />
       </div>
     </div>
   );

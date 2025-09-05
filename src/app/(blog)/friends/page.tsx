@@ -10,7 +10,10 @@ export const metadata: Metadata = {
 };
 
 export default function Friends() {
-  const friends = [{ label: '林深时觉寒', href: 'https://ikangjia.cn/' }];
+  const friends = [
+    { label: '林深时觉寒', href: 'https://ikangjia.cn/' },
+    { label: 'Airing 的小屋', href: 'https://blog.ursb.me/' },
+  ];
 
   return (
     <BlogPageContainer pageHero={{ title: `Friends` }}>
@@ -20,9 +23,11 @@ export default function Friends() {
 
       <div className="mt-8">
         {friends.map((friend) => (
-          <Link className="underline" key={friend.label} target="_blank" href={friend.href}>
-            {friend.label}
-          </Link>
+          <p key={friend.label} className="pb-4">
+            <Link className="underline" target="_blank" href={friend.href}>
+              {friend.label}
+            </Link>
+          </p>
         ))}
       </div>
     </BlogPageContainer>

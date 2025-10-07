@@ -3,12 +3,12 @@ title: '《天使爱美丽》'
 category: 'Nichijou'
 type: 'Post'
 status: 'Published'
-tags: ['电影', '流光忆庭']
+tags: ['电影', '我记得']
 date: '2023-04-24'
 slug: 'amelie'
 summary: '如果说起我小腿控的起源，艾米丽绝对占一份功劳。'
-last_edited_time: '2025-09-02T07:50:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:26:39.929Z'
+last_edited_time: '2025-10-07T14:00:00.000Z'
+blog_last_fetched_time: '2025-10-07T14:02:58.658Z'
 notion_id: '7ee31462-dbcd-4cf5-830f-7c548703bc73'
 icon: '🏐'
 ---

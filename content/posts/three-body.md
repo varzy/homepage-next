@@ -3,12 +3,12 @@ title: '三体原著小说的删减'
 category: 'Nichijou'
 type: 'Post'
 status: 'Published'
-tags: ['书', '流光忆庭']
+tags: ['书', '我记得']
 date: '2022-12-18'
 slug: 'three-body'
 summary: '如果我的记忆没有出现偏差，以上就是我找到的删改内容，仅三处。'
-last_edited_time: '2025-09-02T08:54:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:26:52.591Z'
+last_edited_time: '2025-10-07T14:00:00.000Z'
+blog_last_fetched_time: '2025-10-07T14:03:01.912Z'
 notion_id: '4001fd0e-6523-426e-b711-d28a9a827b7f'
 icon: '🪐'
 ---

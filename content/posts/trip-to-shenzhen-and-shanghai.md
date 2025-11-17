@@ -7,8 +7,8 @@ tags: ['小形迹', '我记得']
 date: '2025-11-13'
 slug: 'trip-to-shenzhen-and-shanghai'
 summary: '这一天我一共走了 25.32km，27994 步。'
-last_edited_time: '2025-11-17T07:49:00.000Z'
-blog_last_fetched_time: '2025-11-17T07:53:20.866Z'
+last_edited_time: '2025-11-17T08:01:00.000Z'
+blog_last_fetched_time: '2025-11-17T08:01:59.582Z'
 notion_id: '2aadc9c0-364a-80d5-87a2-ed84b31e23f6'
 icon: '🏐'
 ---
@@ -25,7 +25,7 @@ icon: '🏐'
 
 我在深圳这一年上的小学叫做「乐群小学」，爷爷说这是孙中山创办的第一所小学。由于课本的差异和爷爷奶奶的溺爱，我在学校里只知道坐在最后一排和同桌玩闹，天天盼着放学了让奶奶带我去买一串 4 个，淋了番茄酱的鱼丸。那时候的学习成绩可谓是惨不忍睹，完全是班级倒数，以至于三年级从文明社会重回村里的小学后经历了很长一段时间的阵痛期。仔细想想我也是经历过「变形记」的孩子了。
 
-![IDG_20251107_104822_881.jpg](https://prod-files-secure.s3.us-west-2.amazonaws.com/e753f4ed-a9d5-4b94-80b5-b5d3a8dd4851/f3da5906-26c0-42c8-8c6b-59ae05f1fe8d/IDG_20251107_104822_881.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662KMQTS3W%2F20251117%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251117T075322Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEN3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQD12GqBL6WNSxn0CNNmIDGRPDY74Z%2BhMY6WnAymWHNw4AIhAJDRycO%2FV1U0rH%2F9ttNmcWK3gpy3Wx0DXFkpGzv03W%2BAKogECKb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1Igzk1M%2B7r1VMKw9XIUcq3AMkp%2BMTsVw5WrcXk%2BlVtlTJ660Mquo5Wo5ZH7FTBod41Oog2xaOpxLtWDidnyUCVheU4cy2Bza8Q7ZynWLr4%2BbP7Sqwx31tV2%2BFQ0SKRwJkoVYdzUi3O%2B%2BIfJBmzmsvQ18UjROmpqqwCSiifeW40f0EtTlPi7sGzltnaJ6fURcEwY5W4lYnq64h7sbp%2F2Nar7sBf9wd5Mev%2B97P506P4S7P8T9CmmF05lYOVbtrD6ywQscDpuoJlZnjISYRy8AKyVHh8zWP9KOAAK0Kml1Txjr44dZ2OjUaMM5eP1g0wQVS%2BRIzf2WK3vN8g%2BDaMV9judXpKS%2BwSk8hfwi%2FvdDMb99zlHia%2F8akPvXoZDtFpHGK5iggAQgeIpl1cYvA9B6hbD7gWSGKbjgW1eaE6Cb470AIIc3lTTTdwVJugtb0jrb5CqeV5XHWT8bsfZhcG2052tA%2F96WXVmZgTl6RhJS8XXoj1AT2iLcPRLdZMivWIt%2F0cIYPaZD2LMz2JM7gOTHXqna6U2A3yLEzVO7vpZTFZ9lVdT5wEobJF9mBSVBQkwjZLzlKSyPoxRCtpVm60rn0pGUjY8p4%2FIVxPp2BvYurWQ53pi6BBun4bhxHf8zGKct%2FfmEIoclB6jtlPA%2FX5zCx1erIBjqkAcDJw%2Fkn2GhX4eRjUhacIFwf%2FBp1%2BYxgy1Oub81pSBMonAViJF%2BKPNgEnC4JU0WL8wsogJc7EAslhvo3xwdXCYCEBvCpkewpVcQBTpcCAjJGLZcAWFOQ9yUW3fTAKaoQyRKA3%2BaMbAK1ALmKMMG09F2jx5ZAt5smdCNpReqHt1gWkMLlULEUk2VTjovw8%2FJxyA%2F8pwYN0IMeLlw7gXwadx%2Fc32KC&X-Amz-Signature=4c1fe7a34cabba869f83f547bc27f8fb608b3e0a58b28c1e1e039f44b00fbe5a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+![VCTdhRt47gIN1c6.jpg](https://cdn.sa.net/2025/11/17/VCTdhRt47gIN1c6.jpg)
 
 ![aJyGt3WqkOxcbvj.jpg](https://cdn.sa.net/2025/11/17/aJyGt3WqkOxcbvj.jpg)
 
@@ -41,7 +41,7 @@ icon: '🏐'
 
 北京已经如此肃杀的季节，深圳依旧花草盛开。
 
-![DSCF5988.jpg](https://prod-files-secure.s3.us-west-2.amazonaws.com/e753f4ed-a9d5-4b94-80b5-b5d3a8dd4851/484413ea-210a-479b-9dfd-c5c581d00583/DSCF5988.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662KMQTS3W%2F20251117%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251117T075322Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEN3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQD12GqBL6WNSxn0CNNmIDGRPDY74Z%2BhMY6WnAymWHNw4AIhAJDRycO%2FV1U0rH%2F9ttNmcWK3gpy3Wx0DXFkpGzv03W%2BAKogECKb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1Igzk1M%2B7r1VMKw9XIUcq3AMkp%2BMTsVw5WrcXk%2BlVtlTJ660Mquo5Wo5ZH7FTBod41Oog2xaOpxLtWDidnyUCVheU4cy2Bza8Q7ZynWLr4%2BbP7Sqwx31tV2%2BFQ0SKRwJkoVYdzUi3O%2B%2BIfJBmzmsvQ18UjROmpqqwCSiifeW40f0EtTlPi7sGzltnaJ6fURcEwY5W4lYnq64h7sbp%2F2Nar7sBf9wd5Mev%2B97P506P4S7P8T9CmmF05lYOVbtrD6ywQscDpuoJlZnjISYRy8AKyVHh8zWP9KOAAK0Kml1Txjr44dZ2OjUaMM5eP1g0wQVS%2BRIzf2WK3vN8g%2BDaMV9judXpKS%2BwSk8hfwi%2FvdDMb99zlHia%2F8akPvXoZDtFpHGK5iggAQgeIpl1cYvA9B6hbD7gWSGKbjgW1eaE6Cb470AIIc3lTTTdwVJugtb0jrb5CqeV5XHWT8bsfZhcG2052tA%2F96WXVmZgTl6RhJS8XXoj1AT2iLcPRLdZMivWIt%2F0cIYPaZD2LMz2JM7gOTHXqna6U2A3yLEzVO7vpZTFZ9lVdT5wEobJF9mBSVBQkwjZLzlKSyPoxRCtpVm60rn0pGUjY8p4%2FIVxPp2BvYurWQ53pi6BBun4bhxHf8zGKct%2FfmEIoclB6jtlPA%2FX5zCx1erIBjqkAcDJw%2Fkn2GhX4eRjUhacIFwf%2FBp1%2BYxgy1Oub81pSBMonAViJF%2BKPNgEnC4JU0WL8wsogJc7EAslhvo3xwdXCYCEBvCpkewpVcQBTpcCAjJGLZcAWFOQ9yUW3fTAKaoQyRKA3%2BaMbAK1ALmKMMG09F2jx5ZAt5smdCNpReqHt1gWkMLlULEUk2VTjovw8%2FJxyA%2F8pwYN0IMeLlw7gXwadx%2Fc32KC&X-Amz-Signature=09c3ef937a554643d61df77c5d817fd095d7922256a4762cb240551a96bc4ae6&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+![yrMFAXvwKt7Z24Q.jpg](https://cdn.sa.net/2025/11/17/yrMFAXvwKt7Z24Q.jpg)
 
 走路的过程没有什么好讲的，天气很好，阳光也不晒。老妈到现在还没有见过大海，我在面向大梅沙的拐角给她开了视频。确实是要抽时间带老妈出来走走了。
 

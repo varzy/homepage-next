@@ -6,12 +6,18 @@ import { getEmojiFavicon } from '@/utils/favicon';
 
 interface PageProps {
   params: Promise<{
-    category: keyof typeof SITE_CONFIG.categories;
+    category: string;
   }>;
+}
+
+function isCategoryKey(value: string): value is keyof typeof SITE_CONFIG.categories {
+  return value in SITE_CONFIG.categories;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { category } = await params;
+  if (!isCategoryKey(category)) return {};
+
   const categoryContext = SITE_CONFIG.categories[category];
   const categoryAlias = categoryContext.alias || '';
 
@@ -20,8 +26,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function BlogLayout({ children, params }: Readonly<{ children: ReactNode }> & PageProps) {
   const { category } = await params;
-  const availableCategories = Object.keys(SITE_CONFIG.categories);
-  if (!availableCategories.includes(category)) notFound();
+  if (!isCategoryKey(category)) notFound();
 
   return <>{children}</>;
 }

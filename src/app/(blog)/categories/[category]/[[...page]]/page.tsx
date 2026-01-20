@@ -4,6 +4,10 @@ import { getAllPosts, getCategoryPosts } from '@/app/_lib/content-loader';
 import PostsContainer from '@/app/(blog)/_components/PostsContainer';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 
+function isCategoryKey(value: string): value is keyof typeof SITE_CONFIG.categories {
+  return value in SITE_CONFIG.categories;
+}
+
 export async function generateStaticParams() {
   const categoriesConfig = SITE_CONFIG.categories;
   const allPosts = await getAllPosts();
@@ -27,13 +31,14 @@ export async function generateStaticParams() {
 export default async function Page({
   params,
 }: {
-  params: Promise<{ category: keyof typeof SITE_CONFIG.categories; page?: string[] }>;
+  params: Promise<{ category: string; page?: string[] }>;
 }) {
   const { category: categoryParam, page: optionalPageParam = [] } = await params;
   if (optionalPageParam.length > 1) notFound();
 
   const [optionalPage] = optionalPageParam;
   const currentPage = +(optionalPage || 1);
+  if (!isCategoryKey(categoryParam)) notFound();
   const categoryCtx = SITE_CONFIG.categories[categoryParam];
   const categoryField = categoryCtx.notionField;
   const allPosts = await getCategoryPosts(categoryField);

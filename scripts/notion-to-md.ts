@@ -29,8 +29,8 @@ export class NotionToMDXConverter {
     let startCursor: string | undefined;
 
     do {
-      const response = await this.notion.databases.query({
-        database_id: databaseId,
+      const response = await this.notion.dataSources.query({
+        data_source_id: databaseId,
         filter: {
           and: [
             { property: 'status', select: { equals: 'Published' } },
@@ -54,8 +54,8 @@ export class NotionToMDXConverter {
     let startCursor: string | undefined;
 
     do {
-      const response = await this.notion.databases.query({
-        database_id: databaseId,
+      const response = await this.notion.dataSources.query({
+        data_source_id: databaseId,
         filter: {
           and: [
             { property: 'status', select: { equals: status } },

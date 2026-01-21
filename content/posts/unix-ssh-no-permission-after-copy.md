@@ -9,7 +9,7 @@ slug: 'unix-ssh-no-permission-after-copy'
 summary: ''
 last_edited_time: '2025-08-06T06:20:00.000Z'
 blog_last_fetched_time: '2025-09-02T09:32:51.643Z'
-notion_id: '3c9d627e-6af9-4a26-bd31-26bd5d60bd32'
+page_id: '3c9d627e-6af9-4a26-bd31-26bd5d60bd32'
 icon: '♟️'
 ---
 

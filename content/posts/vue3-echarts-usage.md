@@ -9,7 +9,7 @@ slug: 'vue3-echarts-usage'
 summary: ''
 last_edited_time: '2025-08-06T06:16:00.000Z'
 blog_last_fetched_time: '2025-09-02T09:27:35.165Z'
-notion_id: 'ba1a6a3b-cfc3-4be8-9f7d-bf6c0334ab80'
+page_id: 'ba1a6a3b-cfc3-4be8-9f7d-bf6c0334ab80'
 icon: '📊'
 ---
 

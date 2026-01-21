@@ -19,7 +19,7 @@ export default function PostsContainer({
     <>
       <div className="posts">
         {currentPagePosts.map((post) => (
-          <PostItem key={post.notion_id} {...post}></PostItem>
+          <PostItem key={post.page_id} {...post}></PostItem>
         ))}
       </div>
       <Pagination

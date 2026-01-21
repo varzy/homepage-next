@@ -9,7 +9,7 @@ slug: 'sin-cos-tan'
 summary: '人不能同时拥有当下和对当下的理解。'
 last_edited_time: '2025-08-06T06:14:00.000Z'
 blog_last_fetched_time: '2025-09-02T09:25:49.201Z'
-notion_id: '43e005fb-df6f-4be5-8999-283267d11b79'
+page_id: '43e005fb-df6f-4be5-8999-283267d11b79'
 icon: '📐'
 ---
 

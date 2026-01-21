@@ -158,7 +158,7 @@ class PostsFetcher {
 
       // 转换 Notion 页面为 Markdown（包含图片处理）
       const { content: markdownContent, imageStats } = await this.converter.convertToMDX(
-        post.notion_id,
+        post.page_id,
         post.slug,
       );
 
@@ -176,7 +176,7 @@ class PostsFetcher {
       }
 
       // 先更新 Notion 中的 blog_last_fetched_time
-      await this.converter.updateBlogLastFetchedTime(post.notion_id);
+      await this.converter.updateBlogLastFetchedTime(post.page_id);
 
       // 创建更新后的元数据对象（包含当前时间作为 blog_last_fetched_time）
       const updatedPost: PostMetadata = {

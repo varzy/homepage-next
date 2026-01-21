@@ -9,7 +9,7 @@ slug: 'github-pages-deploy-static-page'
 summary: ''
 last_edited_time: '2025-09-02T08:56:00.000Z'
 blog_last_fetched_time: '2025-09-02T09:31:49.026Z'
-notion_id: '7c7d4b50-2427-4465-aa1b-754d479ad349'
+page_id: '7c7d4b50-2427-4465-aa1b-754d479ad349'
 icon: '🎌'
 ---
 

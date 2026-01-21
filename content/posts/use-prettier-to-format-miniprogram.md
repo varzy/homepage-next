@@ -9,7 +9,7 @@ slug: 'use-prettier-to-format-miniprogram'
 summary: ''
 last_edited_time: '2025-08-06T06:18:00.000Z'
 blog_last_fetched_time: '2025-09-02T09:29:44.121Z'
-notion_id: '5c815442-8abb-4500-8492-a6f8d4febe25'
+page_id: '5c815442-8abb-4500-8492-a6f8d4febe25'
 icon: '🏆'
 ---
 

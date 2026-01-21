@@ -9,7 +9,7 @@ slug: 'cross-path-traveller'
 summary: 'Farewell～'
 last_edited_time: '2025-08-06T06:15:00.000Z'
 blog_last_fetched_time: '2025-09-02T09:26:30.397Z'
-notion_id: 'c8ef0f62-8fa5-4ac2-80d8-835d11ba514f'
+page_id: 'c8ef0f62-8fa5-4ac2-80d8-835d11ba514f'
 icon: '🏕️'
 ---
 

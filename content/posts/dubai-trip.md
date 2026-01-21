@@ -9,7 +9,7 @@ slug: 'dubai-trip'
 summary: '反正在我坐上返程飞机的那一刻，我和同事还是不约而同产生了「下次再也不来」的想法。'
 last_edited_time: '2026-01-20T07:45:00.000Z'
 blog_last_fetched_time: '2026-01-20T07:48:32.632Z'
-notion_id: '2eddc9c0-364a-80bd-ac61-f95f08df11ca'
+page_id: '2eddc9c0-364a-80bd-ac61-f95f08df11ca'
 icon: '🛥️'
 ---
 

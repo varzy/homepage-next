@@ -9,7 +9,7 @@ slug: 'death-standing-2-on-the-beach'
 summary: '玩二代之前，我给一代打 10 分。玩二代之后，我给二代打 10 分，给一代打 11 分。'
 last_edited_time: '2025-08-12T01:21:00.000Z'
 blog_last_fetched_time: '2025-09-02T09:25:23.238Z'
-notion_id: '23fdc9c0-364a-80d7-9ed6-f3bebfc700df'
+page_id: '23fdc9c0-364a-80d7-9ed6-f3bebfc700df'
 icon: '🚲'
 ---
 

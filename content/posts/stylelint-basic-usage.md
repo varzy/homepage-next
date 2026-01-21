@@ -9,7 +9,7 @@ slug: 'stylelint-basic-usage'
 summary: ''
 last_edited_time: '2025-09-02T08:00:00.000Z'
 blog_last_fetched_time: '2025-09-02T09:28:38.232Z'
-notion_id: 'daf51441-5527-4fca-b73b-cb1615d57093'
+page_id: 'daf51441-5527-4fca-b73b-cb1615d57093'
 icon: '🎣'
 ---
 

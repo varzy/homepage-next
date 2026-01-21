@@ -9,7 +9,7 @@ slug: 'vue-router-deploy-sub-dir'
 summary: ''
 last_edited_time: '2025-09-02T08:57:00.000Z'
 blog_last_fetched_time: '2025-09-02T09:32:19.520Z'
-notion_id: '19275676-eee2-4b8d-8d42-7b744a0b2197'
+page_id: '19275676-eee2-4b8d-8d42-7b744a0b2197'
 icon: '🎬'
 ---
 

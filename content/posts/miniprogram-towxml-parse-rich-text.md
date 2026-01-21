@@ -9,7 +9,7 @@ slug: 'miniprogram-towxml-parse-rich-text'
 summary: ''
 last_edited_time: '2025-09-02T07:53:00.000Z'
 blog_last_fetched_time: '2025-09-02T09:29:02.578Z'
-notion_id: 'c13ffbf0-e647-41f4-bc1f-a7952dd4bc4d'
+page_id: 'c13ffbf0-e647-41f4-bc1f-a7952dd4bc4d'
 icon: '🗼'
 ---
 

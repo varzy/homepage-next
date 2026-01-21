@@ -9,7 +9,7 @@ slug: 'iphone-15-pro-max-review'
 summary: '距离今年的攒钱目标又坚实得后退了一步呢'
 last_edited_time: '2025-09-03T06:04:00.000Z'
 blog_last_fetched_time: '2025-09-03T06:05:45.553Z'
-notion_id: '6c254a86-acb8-4734-acda-b366569c781c'
+page_id: '6c254a86-acb8-4734-acda-b366569c781c'
 icon: '😊'
 ---
 

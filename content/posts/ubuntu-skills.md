@@ -9,7 +9,7 @@ slug: 'ubuntu-skills'
 summary: ''
 last_edited_time: '2025-08-06T06:19:00.000Z'
 blog_last_fetched_time: '2025-09-02T09:32:09.655Z'
-notion_id: '6d832d86-e56a-4498-b391-012db20a8b25'
+page_id: '6d832d86-e56a-4498-b391-012db20a8b25'
 icon: '🎸'
 ---
 

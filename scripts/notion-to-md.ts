@@ -157,7 +157,7 @@ export class NotionToMDXConverter {
     };
 
     return {
-      notion_id: page.id,
+      page_id: page.id,
       title: getTextProperty(properties.title),
       category: getSelectProperty(properties.category),
       type: getSelectProperty(properties.type),
@@ -201,7 +201,7 @@ slug: "${metadata.slug}"
 summary: "${metadata.summary.replace(/"/g, '\\"')}"
 last_edited_time: "${metadata.last_edited_time}"
 blog_last_fetched_time: "${metadata.blog_last_fetched_time || ''}"
-notion_id: "${metadata.notion_id}"${metadata.icon ? `\nicon: "${metadata.icon}"` : ''}
+page_id: "${metadata.page_id}"${metadata.icon ? `\nicon: "${metadata.icon}"` : ''}
 ---
 
 ${content}`;

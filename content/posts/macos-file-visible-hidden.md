@@ -9,7 +9,7 @@ slug: 'macos-file-visible-hidden'
 summary: ''
 last_edited_time: '2025-08-06T06:20:00.000Z'
 blog_last_fetched_time: '2025-09-02T09:32:59.062Z'
-notion_id: '39b56c5a-f869-48b1-b87b-3b855c974cb8'
+page_id: '39b56c5a-f869-48b1-b87b-3b855c974cb8'
 icon: '📎'
 ---
 

@@ -9,7 +9,7 @@ slug: 'gitignore-config-alias'
 summary: ''
 last_edited_time: '2025-08-06T06:20:00.000Z'
 blog_last_fetched_time: '2025-09-02T09:32:41.380Z'
-notion_id: '6ea78241-dcff-4661-8fae-5a752ee0c9c8'
+page_id: '6ea78241-dcff-4661-8fae-5a752ee0c9c8'
 icon: '🎀'
 ---
 

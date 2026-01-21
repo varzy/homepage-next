@@ -9,7 +9,7 @@ slug: 'my-sspai-methodology'
 summary: '"少数派致力于更好地运用数字产品或科学方法，帮助用户提升工作效率和生活品质."'
 last_edited_time: '2025-09-02T08:57:00.000Z'
 blog_last_fetched_time: '2025-09-02T09:33:17.746Z'
-notion_id: '17ec8f8a-6ceb-4d14-8c25-265434c60b5c'
+page_id: '17ec8f8a-6ceb-4d14-8c25-265434c60b5c'
 icon: '🎲'
 ---
 

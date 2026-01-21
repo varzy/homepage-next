@@ -9,7 +9,7 @@ slug: 'my-unicloud-experience'
 summary: '我在紫光云呆了 364 天。364 / 365 = 0.99726027397...'
 last_edited_time: '2025-09-03T06:01:00.000Z'
 blog_last_fetched_time: '2025-09-03T06:06:12.276Z'
-notion_id: 'd1968ab6-a8d0-430d-847b-a5ebf818ffdd'
+page_id: 'd1968ab6-a8d0-430d-847b-a5ebf818ffdd'
 icon: '🔖'
 ---
 

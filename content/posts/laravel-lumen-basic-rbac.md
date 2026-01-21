@@ -9,7 +9,7 @@ slug: 'laravel-lumen-basic-rbac'
 summary: ''
 last_edited_time: '2025-08-06T06:20:00.000Z'
 blog_last_fetched_time: '2025-09-02T09:32:37.716Z'
-notion_id: '6866dba4-df89-434a-9e1c-bdf259223549'
+page_id: '6866dba4-df89-434a-9e1c-bdf259223549'
 icon: '🌇'
 ---
 

@@ -9,7 +9,7 @@ slug: 'hello-blog'
 summary: '我的人生注定少不了折腾。'
 last_edited_time: '2025-08-06T06:21:00.000Z'
 blog_last_fetched_time: '2025-09-02T09:33:32.889Z'
-notion_id: 'f9b0eed9-60fd-4c0f-8e86-d8943d665f5e'
+page_id: 'f9b0eed9-60fd-4c0f-8e86-d8943d665f5e'
 icon: '⛸️'
 ---
 

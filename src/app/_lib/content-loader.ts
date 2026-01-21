@@ -14,7 +14,7 @@ export interface PostMeta {
   summary: string;
   last_edited_time: string;
   blog_last_fetched_time?: string;
-  notion_id: string;
+  page_id: string;
   dateAmericaStyle: string;
   icon?: string;
 }
@@ -77,7 +77,7 @@ type FrontmatterData = {
   summary?: string;
   last_edited_time?: string;
   blog_last_fetched_time?: string;
-  notion_id?: string;
+  page_id?: string;
   icon?: string;
 };
 
@@ -142,7 +142,7 @@ class DataUtils {
       summary: data.summary || '',
       last_edited_time: data.last_edited_time || '',
       blog_last_fetched_time: data.blog_last_fetched_time,
-      notion_id: data.notion_id || '',
+      page_id: data.page_id || '',
       dateAmericaStyle: this.formatDate(data.date || ''),
       icon: data.icon,
     };

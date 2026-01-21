@@ -9,7 +9,7 @@ slug: 'windows-change-disk-type-when-install'
 summary: ''
 last_edited_time: '2025-08-06T06:20:00.000Z'
 blog_last_fetched_time: '2025-09-02T09:33:02.687Z'
-notion_id: '6fef0035-1561-4959-a5a4-f95f65a01f27'
+page_id: '6fef0035-1561-4959-a5a4-f95f65a01f27'
 icon: '💴'
 ---
 

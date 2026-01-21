@@ -9,7 +9,7 @@ slug: 'windows-terminal-configuration'
 summary: ''
 last_edited_time: '2025-09-02T07:55:00.000Z'
 blog_last_fetched_time: '2025-09-02T09:30:25.514Z'
-notion_id: '01a946d5-d7d0-40ae-8c00-df3d475737cf'
+page_id: '01a946d5-d7d0-40ae-8c00-df3d475737cf'
 icon: '📪'
 ---
 

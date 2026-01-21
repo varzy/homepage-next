@@ -9,7 +9,7 @@ slug: 'legacy-ssr-project-front-end-develop'
 summary: ''
 last_edited_time: '2025-09-02T07:54:00.000Z'
 blog_last_fetched_time: '2025-09-02T09:29:31.198Z'
-notion_id: 'dadd4c37-7881-4ba1-99f4-cd51210c3922'
+page_id: 'dadd4c37-7881-4ba1-99f4-cd51210c3922'
 icon: '🚎'
 ---
 

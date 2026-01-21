@@ -9,7 +9,7 @@ slug: 'js-mutliple-click'
 summary: ''
 last_edited_time: '2025-09-02T07:54:00.000Z'
 blog_last_fetched_time: '2025-09-02T09:29:51.560Z'
-notion_id: '49e37246-de0d-4cc4-b8b9-dc075f71b0a8'
+page_id: '49e37246-de0d-4cc4-b8b9-dc075f71b0a8'
 icon: '🧨'
 ---
 

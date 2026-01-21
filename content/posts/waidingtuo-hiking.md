@@ -9,7 +9,7 @@ slug: 'waidingtuo-hiking'
 summary: '啊？这是 Level 1？'
 last_edited_time: '2025-09-03T05:46:00.000Z'
 blog_last_fetched_time: '2025-09-03T05:54:49.128Z'
-notion_id: 'f6acd1c9-9341-4864-887c-e7d307841d08'
+page_id: 'f6acd1c9-9341-4864-887c-e7d307841d08'
 icon: '🧗'
 ---
 

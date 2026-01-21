@@ -9,7 +9,7 @@ slug: '2023-summary'
 summary: '有什么想做的就去做吧，且将新火试新茶，诗酒趁年华。'
 last_edited_time: '2025-11-19T06:51:00.000Z'
 blog_last_fetched_time: '2026-01-20T07:48:35.544Z'
-notion_id: '32553026-a035-4c96-9988-4a0e63ba50b0'
+page_id: '32553026-a035-4c96-9988-4a0e63ba50b0'
 icon: '⛵'
 ---
 

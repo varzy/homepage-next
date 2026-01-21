@@ -9,7 +9,7 @@ slug: 'miniprogram-get-async-data-from-app'
 summary: ''
 last_edited_time: '2025-08-06T06:18:00.000Z'
 blog_last_fetched_time: '2025-09-02T09:29:37.967Z'
-notion_id: 'df1bc672-2b17-4a7d-9101-0c97dbef01c9'
+page_id: 'df1bc672-2b17-4a7d-9101-0c97dbef01c9'
 icon: '🎭'
 ---
 

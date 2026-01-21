@@ -9,7 +9,7 @@ slug: 'my-keyboard-evolution-and-niz-plum-review'
 summary: '程序员每天看的最多的不是女朋友的脸，而是显示器；摸的最多的不是女朋友的手，而是鼠标和键盘。'
 last_edited_time: '2025-09-03T06:03:00.000Z'
 blog_last_fetched_time: '2025-09-03T06:05:55.786Z'
-notion_id: '6ccaf870-a34f-4458-8248-edb51e112374'
+page_id: '6ccaf870-a34f-4458-8248-edb51e112374'
 icon: '⌨️'
 ---
 

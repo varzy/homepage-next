@@ -9,7 +9,7 @@ slug: 'scss-snippets'
 summary: ''
 last_edited_time: '2025-09-02T08:57:00.000Z'
 blog_last_fetched_time: '2025-09-02T09:32:27.442Z'
-notion_id: '9ded96a8-4903-48d2-b715-91db1082e034'
+page_id: '9ded96a8-4903-48d2-b715-91db1082e034'
 icon: '💊'
 ---
 

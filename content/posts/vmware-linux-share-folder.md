@@ -9,7 +9,7 @@ slug: 'vmware-linux-share-folder'
 summary: ''
 last_edited_time: '2025-08-06T06:20:00.000Z'
 blog_last_fetched_time: '2025-09-02T09:33:04.017Z'
-notion_id: '79444376-6948-479b-9bae-1ca5d2e75054'
+page_id: '79444376-6948-479b-9bae-1ca5d2e75054'
 icon: '🏺'
 ---
 

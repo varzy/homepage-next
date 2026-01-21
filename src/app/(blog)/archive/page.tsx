@@ -20,7 +20,7 @@ export default async function ArchivePage() {
     >
       <div className="posts">
         {allPosts.map((post) => (
-          <PostItemArchive key={post.notion_id} {...post} />
+          <PostItemArchive key={post.page_id} {...post} />
         ))}
       </div>
     </BlogPageContainer>

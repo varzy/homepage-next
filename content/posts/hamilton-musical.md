@@ -9,7 +9,7 @@ slug: 'hamilton-musical'
 summary: '假如这篇文章能让你对这部剧，这些人，这段历史产生丝毫的兴趣，那我也算是别样的 Tell his story 了，我想，That would be enough。'
 last_edited_time: '2025-09-02T08:54:00.000Z'
 blog_last_fetched_time: '2025-09-02T09:27:03.009Z'
-notion_id: '2b7bca57-7909-491c-b113-7231512caff7'
+page_id: '2b7bca57-7909-491c-b113-7231512caff7'
 icon: '💵'
 ---
 

@@ -9,7 +9,7 @@ slug: 'trip-to-shenzhen-and-shanghai'
 summary: '这一天我一共走了 25.32km，27994 步。'
 last_edited_time: '2025-11-17T08:01:00.000Z'
 blog_last_fetched_time: '2025-11-17T08:01:59.582Z'
-notion_id: '2aadc9c0-364a-80d5-87a2-ed84b31e23f6'
+page_id: '2aadc9c0-364a-80d5-87a2-ed84b31e23f6'
 icon: '🏐'
 ---
 

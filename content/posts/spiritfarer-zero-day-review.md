@@ -9,7 +9,7 @@ slug: 'spiritfarer-zero-day-review'
 summary: '一款让我这种不太能玩得动的老年人一下子肝了 8 个小时的宝藏游戏。'
 last_edited_time: '2025-08-06T06:17:00.000Z'
 blog_last_fetched_time: '2025-09-02T09:28:48.574Z'
-notion_id: 'a662a70a-2baf-4c28-860e-e4f93bebceeb'
+page_id: 'a662a70a-2baf-4c28-860e-e4f93bebceeb'
 icon: '🕹️'
 ---
 

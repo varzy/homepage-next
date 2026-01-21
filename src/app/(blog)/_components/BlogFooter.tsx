@@ -1,8 +1,12 @@
-import { SITE_CONFIG } from '@/site.config';
 import Link from 'next/link';
+import { SITE_CONFIG } from '@/site.config';
 
 const FOOTER_LINKS = [
-  { label: 'CC BY-NC 4.0', href: 'https://creativecommons.org/licenses/by-nc/4.0/', target: '_self' },
+  {
+    label: 'CC BY-NC 4.0',
+    href: 'https://creativecommons.org/licenses/by-nc/4.0/',
+    target: '_self',
+  },
   { label: 'RSS', href: '/rss.xml', target: '_self' },
 ];
 

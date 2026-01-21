@@ -1,8 +1,8 @@
-import { SITE_CONFIG } from '@/site.config';
 import { notFound } from 'next/navigation';
-import { getAllPosts, getPostsByTag, getAllTags } from '@/app/_lib/content-loader';
-import PostsContainer from '@/app/(blog)/_components/PostsContainer';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
+import PostsContainer from '@/app/(blog)/_components/PostsContainer';
+import { getAllPosts, getPostsByTag, getAllTags } from '@/app/_lib/content-loader';
+import { SITE_CONFIG } from '@/site.config';
 
 export async function generateStaticParams() {
   const tags = await getAllTags();
@@ -22,7 +22,11 @@ export async function generateStaticParams() {
   return renderingGroups.reduce((all, group) => [...all, ...group], []);
 }
 
-export default async function Tag({ params }: { params: Promise<{ tag: string; page?: string[] }> }) {
+export default async function Tag({
+  params,
+}: {
+  params: Promise<{ tag: string; page?: string[] }>;
+}) {
   const { tag, page: optionalPageParam = [] } = await params;
 
   if (optionalPageParam.length > 1) notFound();

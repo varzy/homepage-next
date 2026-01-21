@@ -5,8 +5,18 @@ export default function Home() {
     { label: '我', alias: 'README', href: '/readme' },
     { label: '文章', alias: 'Blog', href: '/blog' },
     { label: '贼歪说', alias: 'Telegram', href: 'https://t.me/aboutzy', target: '_blank' },
-    { label: '随手拍', alias: 'Instagram', href: 'https://instagram.com/varzyme', target: '_blank' },
-    { label: '书影音', alias: 'Douban', href: 'https://www.douban.com/people/varzy/', target: '_blank' },
+    {
+      label: '随手拍',
+      alias: 'Instagram',
+      href: 'https://instagram.com/varzyme',
+      target: '_blank',
+    },
+    {
+      label: '书影音',
+      alias: 'Douban',
+      href: 'https://www.douban.com/people/varzy/',
+      target: '_blank',
+    },
     {
       label: '歌单',
       alias: 'NeteaseMusic',
@@ -31,7 +41,11 @@ export default function Home() {
           {links.map((link, index) => (
             <li key={index}>
               <span>/&nbsp;</span>
-              <Link href={link.href} target={link.target} className="inline-flex items-center hover:underline">
+              <Link
+                href={link.href}
+                target={link.target}
+                className="inline-flex items-center hover:underline"
+              >
                 <span className="w-22 font-bold tracking-widest text-black">{link.label}</span>
                 <span className="text-secondary font-normal">{link.alias}</span>
               </Link>

@@ -20,7 +20,9 @@ class PostsFetcher {
     };
 
     if (!this.config.notionDatabaseId || !this.config.notionApiSecret) {
-      throw new Error('Missing required environment variables: NOTION_DATABASE_ID, NOTION_API_SECRET');
+      throw new Error(
+        'Missing required environment variables: NOTION_DATABASE_ID, NOTION_API_SECRET',
+      );
     }
 
     // 图片上传功能默认开启，无法禁用
@@ -29,7 +31,9 @@ class PostsFetcher {
   }
 
   async fetch(): Promise<FetchResult> {
-    console.log(`🚀 Starting to fetch posts from Notion${this.forceMode ? ' (FORCE MODE)' : ''}...`);
+    console.log(
+      `🚀 Starting to fetch posts from Notion${this.forceMode ? ' (FORCE MODE)' : ''}...`,
+    );
     console.log(`📷 Image upload to SM.MS is ENABLED`);
 
     const result: FetchResult = { updated: 0, skipped: 0, errors: 0, deleted: 0 };
@@ -153,7 +157,10 @@ class PostsFetcher {
       console.log(`📄 Processing post: ${post.title}`);
 
       // 转换 Notion 页面为 Markdown（包含图片处理）
-      const { content: markdownContent, imageStats } = await this.converter.convertToMDX(post.notion_id, post.slug);
+      const { content: markdownContent, imageStats } = await this.converter.convertToMDX(
+        post.notion_id,
+        post.slug,
+      );
 
       // 输出图片处理统计
       if (imageStats) {
@@ -191,7 +198,11 @@ class PostsFetcher {
     }
   }
 
-  private cleanupOrphanedLocalFiles(publishedSlugs: Set<string>, dir: string, result: FetchResult): void {
+  private cleanupOrphanedLocalFiles(
+    publishedSlugs: Set<string>,
+    dir: string,
+    result: FetchResult,
+  ): void {
     try {
       const files = fs.readdirSync(dir);
       let localChecked = 0;

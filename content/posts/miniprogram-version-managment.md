@@ -110,7 +110,10 @@ const specifiedAdornVersion = process.argv[4];
 
 const buildFullVersion = (env, major, adorn) => `${env}-${major}-${adorn}`;
 
-console.log('\x1b[36m%s\x1b[0m', `Original Version: ${buildFullVersion(ENV, MAJOR_VERSION, ADORN_VERSION)}`);
+console.log(
+  '\x1b[36m%s\x1b[0m',
+  `Original Version: ${buildFullVersion(ENV, MAJOR_VERSION, ADORN_VERSION)}`,
+);
 
 const nextEnv = (() => {
   if (!specifiedEnv) return ENV;

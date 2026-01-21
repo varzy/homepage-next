@@ -1,8 +1,8 @@
-import MdxRenderer from '@/app/(blog)/_components/MdxRenderer';
 import { type Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import MdxRenderer from '@/app/(blog)/_components/MdxRenderer';
 import PageHeader from '@/app/_components/PageHeader';
 import { getPageWithContent } from '@/app/_lib/content-loader';
-import { notFound } from 'next/navigation';
 import { getEmojiFavicon } from '@/utils/favicon';
 
 export const metadata: Metadata = {

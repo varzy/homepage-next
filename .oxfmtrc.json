@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "singleQuote": true,
+  "experimentalTailwindcss": {
+    "enabled": true
+  },
+  "experimentalSortImports": {
+    "enabled": true,
+    "newlinesBetween": false
+  }
+}

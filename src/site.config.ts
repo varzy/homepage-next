@@ -8,7 +8,17 @@ export const SITE_CONFIG = {
   feedPath: `/rss.xml`, // RSS 订阅路径
   blogPerPage: 10,
   categories: {
-    nichijou: { notionField: 'Nichijou', alias: '日常', favicon: '🍀', description: '一个普通人的思考与呓语。' },
-    coding: { notionField: 'Coding', alias: '编程', favicon: '🧑‍💻', description: '一堆没有干货的技术笔记。' },
+    nichijou: {
+      notionField: 'Nichijou',
+      alias: '日常',
+      favicon: '🍀',
+      description: '一个普通人的思考与呓语。',
+    },
+    coding: {
+      notionField: 'Coding',
+      alias: '编程',
+      favicon: '🧑‍💻',
+      description: '一堆没有干货的技术笔记。',
+    },
   },
 };

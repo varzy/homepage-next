@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { SITE_CONFIG } from '@/site.config';
 import PageHeader from '@/app/_components/PageHeader';
+import { SITE_CONFIG } from '@/site.config';
 
 export default function BlogHeader() {
   const categoriesConfig = SITE_CONFIG.categories;

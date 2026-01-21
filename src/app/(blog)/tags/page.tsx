@@ -1,7 +1,7 @@
-import { getAllPosts, getAllTags } from '@/app/_lib/content-loader';
-import PostTag from '@/app/(blog)/_components/PostTag';
 import { Metadata } from 'next';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
+import PostTag from '@/app/(blog)/_components/PostTag';
+import { getAllPosts, getAllTags } from '@/app/_lib/content-loader';
 import { getEmojiFavicon } from '@/utils/favicon';
 
 export const metadata: Metadata = {
@@ -18,7 +18,9 @@ export default async function Tag() {
     return { tag, postsCount: tagPosts.length };
   });
 
-  const sortedTags = tagsWithPostsCount.filter((tag) => tag.postsCount > 0).sort((a, b) => b.postsCount - a.postsCount);
+  const sortedTags = tagsWithPostsCount
+    .filter((tag) => tag.postsCount > 0)
+    .sort((a, b) => b.postsCount - a.postsCount);
 
   return (
     <BlogPageContainer pageHero={{ title: 'Tags' }}>

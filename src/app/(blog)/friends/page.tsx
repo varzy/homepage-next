@@ -1,9 +1,9 @@
 import { Metadata } from 'next';
-import { getEmojiFavicon } from '@/utils/favicon';
-import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
-import MdxRenderer from '../_components/MdxRenderer';
 import { notFound } from 'next/navigation';
+import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 import { getPageWithContent } from '@/app/_lib/content-loader';
+import { getEmojiFavicon } from '@/utils/favicon';
+import MdxRenderer from '../_components/MdxRenderer';
 
 export const metadata: Metadata = {
   title: 'Friends',

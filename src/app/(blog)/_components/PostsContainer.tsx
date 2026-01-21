@@ -1,7 +1,7 @@
+import Pagination from '@/app/(blog)/_components/Pagination';
 import { PostMeta } from '@/app/_lib/content-loader';
 import { SITE_CONFIG } from '@/site.config';
 import PostItem from './PostItem';
-import Pagination from '@/app/(blog)/_components/Pagination';
 
 export default function PostsContainer({
   posts,
@@ -22,7 +22,12 @@ export default function PostsContainer({
           <PostItem key={post.notion_id} {...post}></PostItem>
         ))}
       </div>
-      <Pagination current={currentPage} pageSize={prePage} urlPrefix={urlPrefix} total={posts.length} />
+      <Pagination
+        current={currentPage}
+        pageSize={prePage}
+        urlPrefix={urlPrefix}
+        total={posts.length}
+      />
     </>
   );
 }

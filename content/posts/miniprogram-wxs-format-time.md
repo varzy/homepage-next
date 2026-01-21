@@ -63,7 +63,10 @@ var stringifyDate = function (date, type, format = 'yyyy-MM-dd hh:mm:ss') {
     var v = date[i][1];
     var reg2 = getRegExp('(' + k + ')').exec(format);
     if (reg2) {
-      format = format.replace(reg2[1], reg2[1].length == 1 ? v : ('00' + v).substring(('' + v).length));
+      format = format.replace(
+        reg2[1],
+        reg2[1].length == 1 ? v : ('00' + v).substring(('' + v).length),
+      );
     }
   }
 

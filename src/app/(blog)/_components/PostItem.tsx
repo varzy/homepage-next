@@ -1,5 +1,5 @@
-import { PostMeta } from '@/app/_lib/content-loader';
 import Link from 'next/link';
+import { PostMeta } from '@/app/_lib/content-loader';
 
 export default function PostItem(post: PostMeta) {
   return (

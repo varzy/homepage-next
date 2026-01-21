@@ -31,10 +31,15 @@ export default function Comments() {
     <div className="mt-20">
       <div className="flex items-center justify-between font-extrabold">
         <div className="cursor-pointer">
-          {!isShowComments && <span onClick={() => setIsShowComments(true)}>评论 ({commentCount})</span>}
+          {!isShowComments && (
+            <span onClick={() => setIsShowComments(true)}>评论 ({commentCount})</span>
+          )}
         </div>
         <div className="space-x-4">
-          <span className="cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          <span
+            className="cursor-pointer"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
             ⭡ 顶部
           </span>
           <Link href="/sponsor">£ 赞赏</Link>

@@ -68,7 +68,10 @@ const smmsUpload = async (file: Blob, fileName: string): Promise<SmmsUploadResul
   }
 };
 
-export const smmsUploadExternal = async (url: string, fileName: string): Promise<SmmsUploadResult> => {
+export const smmsUploadExternal = async (
+  url: string,
+  fileName: string,
+): Promise<SmmsUploadResult> => {
   try {
     console.log(`📥 Downloading image: ${url}`);
 

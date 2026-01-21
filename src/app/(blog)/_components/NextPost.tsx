@@ -14,7 +14,9 @@ export default function PrevAndNextPosts({ nextPost }: { nextPost: PostMeta | nu
                   {nextPost.title}
                 </Link>
               </h2>
-              {nextPost.summary && <p className="text-sm text-gray-700 sm:text-base">{nextPost.summary}</p>}
+              {nextPost.summary && (
+                <p className="text-sm text-gray-700 sm:text-base">{nextPost.summary}</p>
+              )}
             </div>
           </div>
         </div>

@@ -1,11 +1,16 @@
-import { getAllPosts, getNextPost, getPostBySlug, getPostWithContent } from '@/app/_lib/content-loader';
 import { notFound } from 'next/navigation';
-import PostTagLite from '@/app/(blog)/_components/PostTagLite';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
-import { getEmojiFavicon } from '@/utils/favicon';
 import MdxRenderer from '@/app/(blog)/_components/MdxRenderer';
-import PostFooter from '@/app/(blog)/_components/PostFooter';
 import NextPost from '@/app/(blog)/_components/NextPost';
+import PostFooter from '@/app/(blog)/_components/PostFooter';
+import PostTagLite from '@/app/(blog)/_components/PostTagLite';
+import {
+  getAllPosts,
+  getNextPost,
+  getPostBySlug,
+  getPostWithContent,
+} from '@/app/_lib/content-loader';
+import { getEmojiFavicon } from '@/utils/favicon';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -44,7 +49,8 @@ export default async function Post({ params }: PageProps) {
         after: (
           <div className="text-sm">
             <span className="text-secondary me-3">{postWithContent.dateAmericaStyle}</span>
-            {postWithContent.tags.length > 0 && postWithContent.tags.map((tag) => <PostTagLite key={tag} tag={tag} />)}
+            {postWithContent.tags.length > 0 &&
+              postWithContent.tags.map((tag) => <PostTagLite key={tag} tag={tag} />)}
           </div>
         ),
       }}

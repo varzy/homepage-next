@@ -1,9 +1,9 @@
-import MdxRenderer from '@/app/(blog)/_components/MdxRenderer';
-import { getPageWithContent } from '@/app/_lib/content-loader';
-import PageHeader from '@/app/_components/PageHeader';
 import { type Metadata } from 'next';
-import { getEmojiFavicon } from '@/utils/favicon';
 import { notFound } from 'next/navigation';
+import MdxRenderer from '@/app/(blog)/_components/MdxRenderer';
+import PageHeader from '@/app/_components/PageHeader';
+import { getPageWithContent } from '@/app/_lib/content-loader';
+import { getEmojiFavicon } from '@/utils/favicon';
 
 export const metadata: Metadata = {
   title: `README`,

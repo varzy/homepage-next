@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import '../styles/main.css';
-import { SITE_CONFIG } from '@/site.config';
-import { getEmojiFavicon } from '@/utils/favicon';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Noto_Serif_SC } from 'next/font/google';
 import clsx from 'clsx';
+import { Noto_Serif_SC } from 'next/font/google';
+import { SITE_CONFIG } from '@/site.config';
+import { getEmojiFavicon } from '@/utils/favicon';
 
 export const dynamic = 'force-static';
 export const revalidate = false;

@@ -1,7 +1,7 @@
 import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
 import { glob } from 'glob';
+import matter from 'gray-matter';
+import path from 'path';
 
 export interface PostMeta {
   title: string;
@@ -225,7 +225,11 @@ export async function getCategoryPosts(category: string): Promise<PostMeta[]> {
   return posts.filter((post) => post.category === category);
 }
 
-function findAdjacentPost(category: string, slug: string, offset: number): Promise<PostMeta | null> {
+function findAdjacentPost(
+  category: string,
+  slug: string,
+  offset: number,
+): Promise<PostMeta | null> {
   return getCategoryPosts(category).then((posts) => {
     const index = posts.findIndex((post) => post.slug === slug);
     return posts[index + offset] || null;
@@ -267,7 +271,10 @@ export async function getAllCategories(): Promise<string[]> {
   return Array.from(categorySet).sort();
 }
 
-export async function parseContent(contentType: 'posts' | 'pages', slug: string): Promise<PostWithContent | null> {
+export async function parseContent(
+  contentType: 'posts' | 'pages',
+  slug: string,
+): Promise<PostWithContent | null> {
   try {
     const baseDir = contentType === 'posts' ? CONFIG.CONTENT_POSTS_DIR : CONFIG.CONTENT_PAGES_DIR;
     const filePath = path.join(baseDir, `${slug}.md`);

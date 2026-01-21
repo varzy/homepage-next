@@ -1,8 +1,8 @@
-import { SITE_CONFIG } from '@/site.config';
 import { notFound } from 'next/navigation';
-import { getAllPosts, getCategoryPosts } from '@/app/_lib/content-loader';
-import PostsContainer from '@/app/(blog)/_components/PostsContainer';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
+import PostsContainer from '@/app/(blog)/_components/PostsContainer';
+import { getAllPosts, getCategoryPosts } from '@/app/_lib/content-loader';
+import { SITE_CONFIG } from '@/site.config';
 
 function isCategoryKey(value: string): value is keyof typeof SITE_CONFIG.categories {
   return value in SITE_CONFIG.categories;
@@ -28,7 +28,11 @@ export async function generateStaticParams() {
   return renderingGroups.reduce((all, group) => [...all, ...group], []);
 }
 
-export default async function Page({ params }: { params: Promise<{ category: string; page?: string[] }> }) {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ category: string; page?: string[] }>;
+}) {
   const { category: categoryParam, page: optionalPageParam = [] } = await params;
   if (optionalPageParam.length > 1) notFound();
 
@@ -41,7 +45,11 @@ export default async function Page({ params }: { params: Promise<{ category: str
 
   return (
     <BlogPageContainer pageHero={{ title: categoryCtx.alias, after: categoryCtx.description }}>
-      <PostsContainer posts={allPosts} currentPage={currentPage} urlPrefix={`/categories/${categoryParam}`} />
+      <PostsContainer
+        posts={allPosts}
+        currentPage={currentPage}
+        urlPrefix={`/categories/${categoryParam}`}
+      />
     </BlogPageContainer>
   );
 }

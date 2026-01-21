@@ -1,8 +1,8 @@
 import { Client } from '@notionhq/client';
-import { NotionToMarkdown } from 'notion-to-md';
-import { PostMetadata } from './types';
 import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+import { NotionToMarkdown } from 'notion-to-md';
 import { NotionImageProcessor, ImageProcessingStats } from './image-processor';
+import { PostMetadata } from './types';
 
 export class NotionToMDXConverter {
   private notion: Client;
@@ -41,7 +41,9 @@ export class NotionToMDXConverter {
         start_cursor: startCursor,
       });
 
-      const pageItems = response.results.map((page) => this.extractPostMeta(page as PageObjectResponse));
+      const pageItems = response.results.map((page) =>
+        this.extractPostMeta(page as PageObjectResponse),
+      );
       items.push(...pageItems);
       startCursor = response.next_cursor || undefined;
     } while (startCursor);
@@ -66,7 +68,9 @@ export class NotionToMDXConverter {
         start_cursor: startCursor,
       });
 
-      const pagePosts = response.results.map((page) => this.extractPostMeta(page as PageObjectResponse));
+      const pagePosts = response.results.map((page) =>
+        this.extractPostMeta(page as PageObjectResponse),
+      );
 
       posts.push(...pagePosts);
       startCursor = response.next_cursor || undefined;
@@ -75,7 +79,10 @@ export class NotionToMDXConverter {
     return posts;
   }
 
-  async convertToMDX(pageId: string, slug?: string): Promise<{ content: string; imageStats?: ImageProcessingStats }> {
+  async convertToMDX(
+    pageId: string,
+    slug?: string,
+  ): Promise<{ content: string; imageStats?: ImageProcessingStats }> {
     try {
       // 总是处理图片（图片上传功能默认启用）
       let imageStats: ImageProcessingStats | undefined;
@@ -168,7 +175,9 @@ export class NotionToMDXConverter {
   /**
    * 检查页面是否有图片需要处理
    */
-  async checkImagesNeedProcessing(pageId: string): Promise<{ needsProcessing: boolean; imageCount: number }> {
+  async checkImagesNeedProcessing(
+    pageId: string,
+  ): Promise<{ needsProcessing: boolean; imageCount: number }> {
     return this.imageProcessor.checkImagesNeedProcessing(pageId);
   }
 

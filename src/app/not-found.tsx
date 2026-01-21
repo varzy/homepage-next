@@ -1,7 +1,7 @@
-import { getEmojiFavicon } from '@/utils/favicon';
 import { Metadata } from 'next';
-import Prose from '@/app/(blog)/_components/Prose';
 import Link from 'next/link';
+import Prose from '@/app/(blog)/_components/Prose';
+import { getEmojiFavicon } from '@/utils/favicon';
 
 export const metadata: Metadata = {
   title: '404',

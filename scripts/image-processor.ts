@@ -170,7 +170,9 @@ export class NotionImageProcessor {
   /**
    * 检查是否有图片需要处理（预览模式）
    */
-  async checkImagesNeedProcessing(pageId: string): Promise<{ needsProcessing: boolean; imageCount: number }> {
+  async checkImagesNeedProcessing(
+    pageId: string,
+  ): Promise<{ needsProcessing: boolean; imageCount: number }> {
     let imageCount = 0;
     let needsProcessing = false;
 

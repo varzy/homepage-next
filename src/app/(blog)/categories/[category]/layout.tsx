@@ -1,7 +1,7 @@
-import { SITE_CONFIG } from '@/site.config';
+import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ReactNode } from 'react';
-import { Metadata } from 'next';
+import { SITE_CONFIG } from '@/site.config';
 import { getEmojiFavicon } from '@/utils/favicon';
 
 interface PageProps {
@@ -24,7 +24,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return { title: categoryAlias, icons: getEmojiFavicon(categoryContext.favicon) };
 }
 
-export default async function BlogLayout({ children, params }: Readonly<{ children: ReactNode }> & PageProps) {
+export default async function BlogLayout({
+  children,
+  params,
+}: Readonly<{ children: ReactNode }> & PageProps) {
   const { category } = await params;
   if (!isCategoryKey(category)) notFound();
 

@@ -28,11 +28,7 @@ export async function generateStaticParams() {
   return renderingGroups.reduce((all, group) => [...all, ...group], []);
 }
 
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ category: string; page?: string[] }>;
-}) {
+export default async function Page({ params }: { params: Promise<{ category: string; page?: string[] }> }) {
   const { category: categoryParam, page: optionalPageParam = [] } = await params;
   if (optionalPageParam.length > 1) notFound();
 

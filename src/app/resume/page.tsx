@@ -3,9 +3,11 @@ import { type Metadata } from 'next';
 import PageHeader from '@/app/_components/PageHeader';
 import { getPageWithContent } from '@/app/_lib/content-loader';
 import { notFound } from 'next/navigation';
+import { getEmojiFavicon } from '@/utils/favicon';
 
 export const metadata: Metadata = {
   title: `赵越的简历`,
+  icons: getEmojiFavicon('🔖'),
 };
 
 export default async function Resume() {

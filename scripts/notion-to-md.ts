@@ -121,26 +121,26 @@ export class NotionToMDXConverter {
   private extractPostMeta(page: PageObjectResponse): PostMetadata {
     const properties = page.properties;
 
-    const getTextProperty = (prop: any): string => {
+    const getTextProperty = (prop): string => {
       if (!prop) return '';
       if (prop.type === 'title') {
-        return prop.title.map((text: any) => text.plain_text).join('');
+        return prop.title.map((text) => text.plain_text).join('');
       }
       if (prop.type === 'rich_text') {
-        return prop.rich_text.map((text: any) => text.plain_text).join('');
+        return prop.rich_text.map((text) => text.plain_text).join('');
       }
       return '';
     };
 
-    const getSelectProperty = (prop: any): string => {
+    const getSelectProperty = (prop): string => {
       return prop?.select?.name || '';
     };
 
-    const getMultiSelectProperty = (prop: any): string[] => {
-      return prop?.multi_select?.map((item: any) => item.name) || [];
+    const getMultiSelectProperty = (prop): string[] => {
+      return prop?.multi_select?.map((item) => item.name) || [];
     };
 
-    const getDateProperty = (prop: any): string => {
+    const getDateProperty = (prop): string => {
       return prop?.date?.start || '';
     };
 

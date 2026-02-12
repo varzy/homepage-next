@@ -31,7 +31,7 @@ type SmmsUploadError = {
   message: string;
 };
 
-const SMMS_BASEURL = 'https://sm.ms/api/v2';
+const SMMS_BASEURL = 'https://s.ee/api/v1/file';
 
 const smmsUpload = async (file: Blob, fileName: string): Promise<SmmsUploadResult> => {
   try {

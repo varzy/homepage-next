@@ -29,7 +29,7 @@
     "glob": "^13.0.0",
     "gray-matter": "^4.0.3",
     "next": "16.1.4",
-    "next-mdx-remote": "^5.0.0",
+    "next-mdx-remote": "^6.0.0",
     "notion-to-md": "^3.1.9",
     "react": "19.2.3",
     "react-dom": "19.2.3",

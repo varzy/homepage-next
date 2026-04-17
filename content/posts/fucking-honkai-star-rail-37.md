@@ -1,0 +1,42 @@
+---
+title: '锐评星穹铁道 3.7'
+category: 'Nichijou'
+type: 'Post'
+status: 'Published'
+tags: ['游戏人生', '评测']
+date: '2026-04-17'
+slug: 'fucking-honkai-star-rail-37'
+summary: '崩铁项目组的 AI 已经脱离了 Transformer 模型的限制，有了真正的思想。'
+last_edited_time: '2026-04-17T15:00:00.000Z'
+blog_last_fetched_time: '2026-04-17T15:05:33.161Z'
+page_id: '345dc9c0-364a-8036-a803-f1b58b643b96'
+icon: '🎈'
+---
+
+3.7 的剧情我反反复复点开又关掉好几遍了，折磨，太特么折磨了。这会刚把铁墓打完，咱也是亲自品尝了这坨不明所以的狗屎，后面的剧情实在是力竭了，以后再说吧。
+
+现在这个逼时代，想找到个能把话说明白的人都很难，更何况是写。我光是工作和生活就已经接触到了太多智力似乎正常但言语总是不清的隐性唐氏综合症患者，结果一回家打开游戏，还得看这群编剧生造出来的各种前后矛盾的台词。
+
+![cd6aefb017d30b33aa23ee685f84ee00_compressed.webp](https://prod-files-secure.s3.us-west-2.amazonaws.com/e753f4ed-a9d5-4b94-80b5-b5d3a8dd4851/ccd7a220-371d-44ca-8c5b-adb5e715731c/cd6aefb017d30b33aa23ee685f84ee00_compressed.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663XT3MDHA%2F20260417%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260417T150532Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA4aCXVzLXdlc3QtMiJIMEYCIQCkg0TTeIPIlaT6et36scQvNUgD%2B4eciMDjheGf%2BwGfQQIhAKWwvzls4dLzBqfAyYBWulO5JuHNR3pPP4Z1TYtgQJq8KogECNf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgyVeenWNct3ms%2Fj1rIq3ANrEGbOGnzW93qI3HcU0ITY1YVckqWWO9mUlrWSWOxUeMYpYGcDKLOnKjYyexlXFDxW4OD%2FGfFtB93eCtIkJIBE1smNnJVkDCZQz0jBN%2B2EwEtoblw4qQnegHh87hmr2P%2Bz3ZPoCwxigRym%2FiwT1jrCogS3aOdwO1LnClQaQ1wJwxp6oqRIii%2Bnl2OQAECiDIOilwN6NmlMCz4AqKbuXbwVY9E9ucb2Q5HRKakMmu%2BFin5%2FDZzFr%2B75vkMyPKHVHerz%2FIhJlVlZsbbxu65ha1X3J%2FF2muqxG6vGENch2sLubbnTsHssEL9Zk85krotDg8kxDf%2B7O4G3wBufTUoZgGrYe7OauK0f%2FRI1novB7pQqvgDf1Oo9y9WGZBP4iZCLp5vtBLSbhPdYAktgYNFPsWxqqGxLbLwNqASIAWtKjrOdkUS2EUOWRyR8zK3E3MslX%2BONP1OElaMwqabRVo%2BaF0YJXXdPRiZSTniB8qPuHhY42WnYEKCHahM1XtgVDl44Ulg4ji%2B%2BAyDEMRc%2FtKYelnLInmJUb4KXc1755lBa3TNOsyAD2w7rATMU8zywwTsNTfifJixR5rTlZ5pDR1bB9G4zDXne0ueuHHaKkYqb1IqRAe6qryyGbLPrHmDOzjDp%2FIjPBjqkAUf7Nr9bsJfMJsPJxevyfHqXB9h%2FspuIKsAHIpcErz8hcSNE3vaVyvawQny1monF5CG7yp4Gjbl89sw0j4zaYN%2BXJGtfkdHzHSjtdMALJzUcAg90dG92bL3rMuouTk1ZmkzkzKZW10Rn4KIqD0V4JVjWZPe%2BbEO1oE5JtNMPCpRpAHaDwJeNkPqmRENpySq5z8dCTiP5cnhyUjz9VNem%2Ffz0LEAS&X-Amz-Signature=ed20787da793ed9436b1535747620a0849b1c1819f53c4e6a6bd4d9b22a627e0&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+
+![f45884be651959985b4f844e384d97b8_compressed.webp](https://prod-files-secure.s3.us-west-2.amazonaws.com/e753f4ed-a9d5-4b94-80b5-b5d3a8dd4851/be101e3e-fbf9-4ca1-811a-2f95f4cdb17e/f45884be651959985b4f844e384d97b8_compressed.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663XT3MDHA%2F20260417%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260417T150532Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA4aCXVzLXdlc3QtMiJIMEYCIQCkg0TTeIPIlaT6et36scQvNUgD%2B4eciMDjheGf%2BwGfQQIhAKWwvzls4dLzBqfAyYBWulO5JuHNR3pPP4Z1TYtgQJq8KogECNf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgyVeenWNct3ms%2Fj1rIq3ANrEGbOGnzW93qI3HcU0ITY1YVckqWWO9mUlrWSWOxUeMYpYGcDKLOnKjYyexlXFDxW4OD%2FGfFtB93eCtIkJIBE1smNnJVkDCZQz0jBN%2B2EwEtoblw4qQnegHh87hmr2P%2Bz3ZPoCwxigRym%2FiwT1jrCogS3aOdwO1LnClQaQ1wJwxp6oqRIii%2Bnl2OQAECiDIOilwN6NmlMCz4AqKbuXbwVY9E9ucb2Q5HRKakMmu%2BFin5%2FDZzFr%2B75vkMyPKHVHerz%2FIhJlVlZsbbxu65ha1X3J%2FF2muqxG6vGENch2sLubbnTsHssEL9Zk85krotDg8kxDf%2B7O4G3wBufTUoZgGrYe7OauK0f%2FRI1novB7pQqvgDf1Oo9y9WGZBP4iZCLp5vtBLSbhPdYAktgYNFPsWxqqGxLbLwNqASIAWtKjrOdkUS2EUOWRyR8zK3E3MslX%2BONP1OElaMwqabRVo%2BaF0YJXXdPRiZSTniB8qPuHhY42WnYEKCHahM1XtgVDl44Ulg4ji%2B%2BAyDEMRc%2FtKYelnLInmJUb4KXc1755lBa3TNOsyAD2w7rATMU8zywwTsNTfifJixR5rTlZ5pDR1bB9G4zDXne0ueuHHaKkYqb1IqRAe6qryyGbLPrHmDOzjDp%2FIjPBjqkAUf7Nr9bsJfMJsPJxevyfHqXB9h%2FspuIKsAHIpcErz8hcSNE3vaVyvawQny1monF5CG7yp4Gjbl89sw0j4zaYN%2BXJGtfkdHzHSjtdMALJzUcAg90dG92bL3rMuouTk1ZmkzkzKZW10Rn4KIqD0V4JVjWZPe%2BbEO1oE5JtNMPCpRpAHaDwJeNkPqmRENpySq5z8dCTiP5cnhyUjz9VNem%2Ffz0LEAS&X-Amz-Signature=dc4f06f84452df228243bba48fdd10b5b5b8563a6985a85d6e10b1138d3a443a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+
+「你我曾是不是神明人子因罪行祝福降临陨落凡间经你我之手写下抹去的诗将是曾是你我在善见天的记忆忘却」。这什么几把玩意？这句台词能顺利上线我认为只有这么几种可能。
+
+第一种，我是傻逼，我智商低到不足以欣赏这段话。但鉴于社区中大部分玩家似乎都看不懂这句话，那么我暂且认为我就算弱智也弱智在了平均线附近。
+
+第二种，编剧是傻逼，而且得是世俗意义上的脑子不清醒的人。但鉴于米哈游这种大公司一般都会有入职体检，我暂且抛弃这种可能性。
+
+第三种，编剧是天才，而且得是世俗意义上不被理解的究极天才。这种人一般得死了之后才会被理解，所以我衷心祝福这位天才早日被理解。
+
+第四种，崩铁项目组在雇佣小学没毕业的童工，因为我觉得任何一个掀开过小学语言课本的人都至少知道现代中文里存在标点符号这种东西。但考虑到国内劳动法的健全和执行力度，这种可能性勉强可以被排除。
+
+所以，当排除了所有不可能，那么唯一的可能性就是：崩铁项目组的 AI 已经脱离了 Transformer 模型的限制，有了真正的思想。毕竟，我看不懂，别人也看不懂，我喂给了其他 AI 它们也说看不懂，甚至我才坐在电脑前调教 AI 的编剧也不一定看得懂。
+
+所谓再喜欢操逼的人也扛不住去做妇产科大夫。文案坐在电脑前盯着这个无聊到极致的背景故事愣是用 AI 填充了几十万字的文本，对比之下王阳明格竹子似乎都变得有趣了起来。突然有一天他看到 AI 吐出了这样一条长难句，他心想什么意思呢？不管了，我老牛逼了，我老会用 AI 了，摩多摩多，AI 酱快把你又粗又大的思想狠狠得顶到我的脑花深处，让我好好体会 AI 吧！
+
+什么 AI，这分明是爱啊！于是，崩铁 3.7 的主旨就这么被定下来了，编剧如此写道，「这一定是一个不同以往的，有关爱的浪漫故事吧」。再于是，昔涟一个版本说了 46 次爱字。
+
+爱爱爱，爱你妈逼呢。
+
+我翻遍了《如我所书》，这书里没有故事，歪歪斜斜的每页上都写着“黄金史诗”几个字。我睡得很香甜，每次手机拍在我脸上把我惊醒，才从字缝里看出来，满本都写着“吃屎”。

@@ -7,8 +7,8 @@ tags: ['游戏人生', '评测']
 date: '2026-04-17'
 slug: 'fucking-honkai-star-rail-37'
 summary: '崩铁项目组的 AI 已经脱离了 Transformer 模型的限制，有了真正的思想。'
-last_edited_time: '2026-04-17T15:00:00.000Z'
-blog_last_fetched_time: '2026-04-17T15:05:33.161Z'
+last_edited_time: '2026-04-17T15:08:00.000Z'
+blog_last_fetched_time: '2026-04-17T15:09:47.405Z'
 page_id: '345dc9c0-364a-8036-a803-f1b58b643b96'
 icon: '🎈'
 ---
@@ -17,9 +17,9 @@ icon: '🎈'
 
 现在这个逼时代，想找到个能把话说明白的人都很难，更何况是写。我光是工作和生活就已经接触到了太多智力似乎正常但言语总是不清的隐性唐氏综合症患者，结果一回家打开游戏，还得看这群编剧生造出来的各种前后矛盾的台词。
 
-![cd6aefb017d30b33aa23ee685f84ee00_compressed.webp](https://prod-files-secure.s3.us-west-2.amazonaws.com/e753f4ed-a9d5-4b94-80b5-b5d3a8dd4851/ccd7a220-371d-44ca-8c5b-adb5e715731c/cd6aefb017d30b33aa23ee685f84ee00_compressed.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663XT3MDHA%2F20260417%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260417T150532Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA4aCXVzLXdlc3QtMiJIMEYCIQCkg0TTeIPIlaT6et36scQvNUgD%2B4eciMDjheGf%2BwGfQQIhAKWwvzls4dLzBqfAyYBWulO5JuHNR3pPP4Z1TYtgQJq8KogECNf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgyVeenWNct3ms%2Fj1rIq3ANrEGbOGnzW93qI3HcU0ITY1YVckqWWO9mUlrWSWOxUeMYpYGcDKLOnKjYyexlXFDxW4OD%2FGfFtB93eCtIkJIBE1smNnJVkDCZQz0jBN%2B2EwEtoblw4qQnegHh87hmr2P%2Bz3ZPoCwxigRym%2FiwT1jrCogS3aOdwO1LnClQaQ1wJwxp6oqRIii%2Bnl2OQAECiDIOilwN6NmlMCz4AqKbuXbwVY9E9ucb2Q5HRKakMmu%2BFin5%2FDZzFr%2B75vkMyPKHVHerz%2FIhJlVlZsbbxu65ha1X3J%2FF2muqxG6vGENch2sLubbnTsHssEL9Zk85krotDg8kxDf%2B7O4G3wBufTUoZgGrYe7OauK0f%2FRI1novB7pQqvgDf1Oo9y9WGZBP4iZCLp5vtBLSbhPdYAktgYNFPsWxqqGxLbLwNqASIAWtKjrOdkUS2EUOWRyR8zK3E3MslX%2BONP1OElaMwqabRVo%2BaF0YJXXdPRiZSTniB8qPuHhY42WnYEKCHahM1XtgVDl44Ulg4ji%2B%2BAyDEMRc%2FtKYelnLInmJUb4KXc1755lBa3TNOsyAD2w7rATMU8zywwTsNTfifJixR5rTlZ5pDR1bB9G4zDXne0ueuHHaKkYqb1IqRAe6qryyGbLPrHmDOzjDp%2FIjPBjqkAUf7Nr9bsJfMJsPJxevyfHqXB9h%2FspuIKsAHIpcErz8hcSNE3vaVyvawQny1monF5CG7yp4Gjbl89sw0j4zaYN%2BXJGtfkdHzHSjtdMALJzUcAg90dG92bL3rMuouTk1ZmkzkzKZW10Rn4KIqD0V4JVjWZPe%2BbEO1oE5JtNMPCpRpAHaDwJeNkPqmRENpySq5z8dCTiP5cnhyUjz9VNem%2Ffz0LEAS&X-Amz-Signature=ed20787da793ed9436b1535747620a0849b1c1819f53c4e6a6bd4d9b22a627e0&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+![blog_fucking-honkai-star-rail-37.webp](https://i.see.you/2026/04/17/Xtn0/blog_fucking-honkai-star-rail-37.webp)
 
-![f45884be651959985b4f844e384d97b8_compressed.webp](https://prod-files-secure.s3.us-west-2.amazonaws.com/e753f4ed-a9d5-4b94-80b5-b5d3a8dd4851/be101e3e-fbf9-4ca1-811a-2f95f4cdb17e/f45884be651959985b4f844e384d97b8_compressed.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4663XT3MDHA%2F20260417%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260417T150532Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA4aCXVzLXdlc3QtMiJIMEYCIQCkg0TTeIPIlaT6et36scQvNUgD%2B4eciMDjheGf%2BwGfQQIhAKWwvzls4dLzBqfAyYBWulO5JuHNR3pPP4Z1TYtgQJq8KogECNf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgyVeenWNct3ms%2Fj1rIq3ANrEGbOGnzW93qI3HcU0ITY1YVckqWWO9mUlrWSWOxUeMYpYGcDKLOnKjYyexlXFDxW4OD%2FGfFtB93eCtIkJIBE1smNnJVkDCZQz0jBN%2B2EwEtoblw4qQnegHh87hmr2P%2Bz3ZPoCwxigRym%2FiwT1jrCogS3aOdwO1LnClQaQ1wJwxp6oqRIii%2Bnl2OQAECiDIOilwN6NmlMCz4AqKbuXbwVY9E9ucb2Q5HRKakMmu%2BFin5%2FDZzFr%2B75vkMyPKHVHerz%2FIhJlVlZsbbxu65ha1X3J%2FF2muqxG6vGENch2sLubbnTsHssEL9Zk85krotDg8kxDf%2B7O4G3wBufTUoZgGrYe7OauK0f%2FRI1novB7pQqvgDf1Oo9y9WGZBP4iZCLp5vtBLSbhPdYAktgYNFPsWxqqGxLbLwNqASIAWtKjrOdkUS2EUOWRyR8zK3E3MslX%2BONP1OElaMwqabRVo%2BaF0YJXXdPRiZSTniB8qPuHhY42WnYEKCHahM1XtgVDl44Ulg4ji%2B%2BAyDEMRc%2FtKYelnLInmJUb4KXc1755lBa3TNOsyAD2w7rATMU8zywwTsNTfifJixR5rTlZ5pDR1bB9G4zDXne0ueuHHaKkYqb1IqRAe6qryyGbLPrHmDOzjDp%2FIjPBjqkAUf7Nr9bsJfMJsPJxevyfHqXB9h%2FspuIKsAHIpcErz8hcSNE3vaVyvawQny1monF5CG7yp4Gjbl89sw0j4zaYN%2BXJGtfkdHzHSjtdMALJzUcAg90dG92bL3rMuouTk1ZmkzkzKZW10Rn4KIqD0V4JVjWZPe%2BbEO1oE5JtNMPCpRpAHaDwJeNkPqmRENpySq5z8dCTiP5cnhyUjz9VNem%2Ffz0LEAS&X-Amz-Signature=dc4f06f84452df228243bba48fdd10b5b5b8563a6985a85d6e10b1138d3a443a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+![blog_fucking-honkai-star-rail-37.webp](https://i.see.you/2026/04/17/8ilN/blog_fucking-honkai-star-rail-37.webp)
 
 「你我曾是不是神明人子因罪行祝福降临陨落凡间经你我之手写下抹去的诗将是曾是你我在善见天的记忆忘却」。这什么几把玩意？这句台词能顺利上线我认为只有这么几种可能。
 

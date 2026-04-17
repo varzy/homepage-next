@@ -115,7 +115,7 @@ export const getSmmsUrl = (smmsUploaded: SmmsUploadResult): string | null => {
  * 检查 URL 是否已经是 SM.MS 图片链接
  */
 export const isSmmsUrl = (url: string): boolean => {
-  const smmsUrl = ['cdn.sa.net', 'sm.ms'];
+  const smmsUrl = ['cdn.sa.net', 'sm.ms', 'i.see.you'];
   return smmsUrl.some((u) => url.includes(u));
 };
 

@@ -1,7 +1,7 @@
 import fs from 'fs';
+import path from 'path';
 import { glob } from 'glob';
 import matter from 'gray-matter';
-import path from 'path';
 
 export interface PostMeta {
   title: string;
@@ -34,7 +34,7 @@ const CONFIG = {
     /^#+\s+/gm, // 标题标记
     /^>\s?/gm, // 引用标记
     /^[-*+]\s+/gm, // 列表项标记
-    /[\*_~]/g, // 粗体/斜体/删除线符号
+    /[*_~]/g, // 粗体/斜体/删除线符号
   ],
 };
 

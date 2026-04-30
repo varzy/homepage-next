@@ -1,8 +1,8 @@
-import type { Metadata } from 'next';
-import '../styles/main.css';
 import { Analytics } from '@vercel/analytics/next';
+import '../styles/main.css';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import clsx from 'clsx';
+import type { Metadata } from 'next';
 import { Noto_Serif_SC } from 'next/font/google';
 import { SITE_CONFIG } from '@/site.config';
 import { getEmojiFavicon } from '@/utils/favicon';

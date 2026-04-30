@@ -38,7 +38,7 @@ const CONFIG = {
   ],
 };
 
-class CacheManager<T> {
+export class CacheManager<T> {
   private cache: T | null = null;
   private cacheTime = 0;
 
@@ -81,7 +81,7 @@ type FrontmatterData = {
   icon?: string;
 };
 
-class FileUtils {
+export class FileUtils {
   static dirExists(dirPath: string): boolean {
     try {
       return fs.existsSync(dirPath);
@@ -116,7 +116,7 @@ class FileUtils {
   }
 }
 
-class DataUtils {
+export class DataUtils {
   static formatDate(dateString: string): string {
     try {
       const date = new Date(dateString);

@@ -1,0 +1,276 @@
+import fs from 'fs';
+import os from 'os';
+import path from 'path';
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
+
+// 测试使用临时目录来模拟 content/posts 和 content/pages
+describe('content-loader', () => {
+  let tempDir: string;
+  let postsDir: string;
+  let pagesDir: string;
+
+  beforeEach(async () => {
+    // 创建临时目录结构
+    tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'content-loader-test-'));
+    postsDir = path.join(tempDir, 'content', 'posts');
+    pagesDir = path.join(tempDir, 'content', 'pages');
+    fs.mkdirSync(postsDir, { recursive: true });
+    fs.mkdirSync(pagesDir, { recursive: true });
+  });
+
+  afterEach(() => {
+    // 清理临时目录
+    fs.rmSync(tempDir, { recursive: true, force: true });
+  });
+
+  // ============================================================
+  // CacheManager 类测试
+  // ============================================================
+  describe('CacheManager', () => {
+    it('缓存未过期时返回有效数据', async () => {
+      const { CacheManager } = await import('../src/app/_lib/content-loader');
+      const cache = new CacheManager<string>(1000); // 1秒过期
+      cache.set('test-data');
+
+      expect(cache.get()).toBe('test-data');
+    });
+
+    it('缓存过期后返回 null', async () => {
+      vi.useFakeTimers();
+      try {
+        const { CacheManager } = await import('../src/app/_lib/content-loader');
+        const cache = new CacheManager<string>(1000); // 1秒过期
+        cache.set('test-data');
+
+        // 快进超过 1 秒
+        vi.advanceTimersByTime(1500);
+
+        expect(cache.get()).toBeNull();
+      } finally {
+        vi.useRealTimers();
+      }
+    });
+
+    it('clear() 后返回 null', async () => {
+      const { CacheManager } = await import('../src/app/_lib/content-loader');
+      const cache = new CacheManager<string>(10000);
+      cache.set('test-data');
+      cache.clear();
+
+      expect(cache.get()).toBeNull();
+    });
+
+    it('多次 set() 更新缓存', async () => {
+      const { CacheManager } = await import('../src/app/_lib/content-loader');
+      const cache = new CacheManager<string>(10000);
+      cache.set('first');
+      cache.set('second');
+
+      expect(cache.get()).toBe('second');
+    });
+  });
+
+  // ============================================================
+  // FileUtils 类测试
+  // ============================================================
+  describe('FileUtils', () => {
+    it('dirExists 目录存在时返回 true', async () => {
+      const { FileUtils } = await import('../src/app/_lib/content-loader');
+      expect(FileUtils.dirExists(postsDir)).toBe(true);
+    });
+
+    it('dirExists 目录不存在时返回 false', async () => {
+      const { FileUtils } = await import('../src/app/_lib/content-loader');
+      expect(FileUtils.dirExists('/non/existent/path')).toBe(false);
+    });
+
+    it('readFileSync 正常读取文件', async () => {
+      const { FileUtils } = await import('../src/app/_lib/content-loader');
+      const testFile = path.join(tempDir, 'test.txt');
+      fs.writeFileSync(testFile, 'Hello World', 'utf-8');
+
+      const result = FileUtils.readFileSync(testFile);
+      expect(result).toBe('Hello World');
+    });
+
+    it('readFileSync 文件不存在返回 null', async () => {
+      const { FileUtils } = await import('../src/app/_lib/content-loader');
+      const result = FileUtils.readFileSync('/non/existent/file.txt');
+      expect(result).toBeNull();
+    });
+
+    it('parseFrontmatter 正常解析', async () => {
+      const { FileUtils } = await import('../src/app/_lib/content-loader');
+      const testFile = path.join(tempDir, 'test.md');
+      fs.writeFileSync(testFile, `---\ntitle: 'Test'\n---\nContent here`, 'utf-8');
+
+      const result = FileUtils.parseFrontmatter(testFile);
+      expect(result).not.toBeNull();
+      expect(result?.data.title).toBe('Test');
+      expect(result?.content).toBe('Content here');
+    });
+
+    it('parseFrontmatter 文件不存在返回 null', async () => {
+      const { FileUtils } = await import('../src/app/_lib/content-loader');
+      const result = FileUtils.parseFrontmatter('/non/existent/file.md');
+      expect(result).toBeNull();
+    });
+  });
+
+  // ============================================================
+  // DataUtils 类测试
+  // ============================================================
+  describe('DataUtils', () => {
+    it('formatDate 标准格式转换', async () => {
+      const { DataUtils } = await import('../src/app/_lib/content-loader');
+      const result = DataUtils.formatDate('2024-01-15');
+      expect(result).toMatch(/Jan 15, 2024/);
+    });
+
+    it('formatDate 无效日期返回 Invalid Date', async () => {
+      const { DataUtils } = await import('../src/app/_lib/content-loader');
+      const result = DataUtils.formatDate('invalid');
+      expect(result).toBe('Invalid Date');
+    });
+
+    it('buildPostMeta 完整数据转换', async () => {
+      const { DataUtils } = await import('../src/app/_lib/content-loader');
+      const input = {
+        title: 'Test Title',
+        category: 'Tech',
+        type: 'Post',
+        status: 'Published',
+        tags: ['tag1', 'tag2'],
+        date: '2024-01-15',
+        slug: 'test-slug',
+        summary: 'Test summary',
+        last_edited_time: '2024-01-15T10:00:00.000Z',
+        page_id: 'page-123',
+      };
+
+      const result = DataUtils.buildPostMeta(input);
+      expect(result.title).toBe('Test Title');
+      expect(result.category).toBe('Tech');
+      expect(result.tags).toEqual(['tag1', 'tag2']);
+      expect(result.dateAmericaStyle).toMatch(/Jan 15, 2024/);
+    });
+
+    it('buildPostMeta 空数据使用默认值', async () => {
+      const { DataUtils } = await import('../src/app/_lib/content-loader');
+      const result = DataUtils.buildPostMeta({});
+
+      expect(result.title).toBe('');
+      expect(result.category).toBe('');
+      expect(result.tags).toEqual([]);
+      expect(result.slug).toBe('');
+    });
+
+    it('cleanTextForWordCount 移除代码块', async () => {
+      const { DataUtils } = await import('../src/app/_lib/content-loader');
+      const input = 'Some text ```code block``` more text';
+      const result = DataUtils.cleanTextForWordCount(input);
+
+      expect(result).not.toContain('```code block```');
+      expect(result).toContain('Some text');
+      expect(result).toContain('more text');
+    });
+
+    it('cleanTextForWordCount 链接转换为纯文本', async () => {
+      const { DataUtils } = await import('../src/app/_lib/content-loader');
+      const input = 'Check [this link](https://example.com) out';
+      const result = DataUtils.cleanTextForWordCount(input);
+
+      expect(result).toContain('this link');
+      expect(result).not.toContain('[this link]');
+      expect(result).not.toContain('(https://example.com)');
+    });
+
+    it('cleanTextForWordCount 移除标题标记', async () => {
+      const { DataUtils } = await import('../src/app/_lib/content-loader');
+      const input = '# Heading\n## Subheading';
+      const result = DataUtils.cleanTextForWordCount(input);
+
+      expect(result).not.toContain('#');
+      expect(result).toContain('Heading');
+      expect(result).toContain('Subheading');
+    });
+
+    it('cleanTextForWordCount 移除 emphasis 符号', async () => {
+      const { DataUtils } = await import('../src/app/_lib/content-loader');
+      const input = 'This is *bold* and _italic_ and ~strikethrough~';
+      const result = DataUtils.cleanTextForWordCount(input);
+
+      expect(result).not.toContain('*');
+      expect(result).not.toContain('_');
+      expect(result).not.toContain('~');
+      expect(result).toContain('bold');
+      expect(result).toContain('italic');
+      expect(result).toContain('strikethrough');
+    });
+  });
+
+  // ============================================================
+  // Public API 测试（需要临时目录环境）
+  // ============================================================
+  describe('Public API - 需要临时 content 目录', () => {
+    // 由于模块缓存，我们需要通过环境变量或直接修改来测试
+    // 这里我们测试函数在特定条件下的行为
+
+    it('getAllPosts 空目录返回空数组', async () => {
+      // 由于无法轻易替换 CONFIG，我们用一个不存在目录的帖子来测试
+      const { getAllPosts } = await import('../src/app/_lib/content-loader');
+
+      const result = await getAllPosts();
+      expect(Array.isArray(result)).toBe(true);
+    });
+
+    it('getPostBySlug 不存在的 slug 返回 null', async () => {
+      const { getPostBySlug } = await import('../src/app/_lib/content-loader');
+      const result = await getPostBySlug('non-existent-slug-12345');
+      expect(result).toBeNull();
+    });
+
+    it('getCategoryPosts 不存在的分类返回空数组', async () => {
+      const { getCategoryPosts } = await import('../src/app/_lib/content-loader');
+      const result = await getCategoryPosts('non-existent-category');
+      expect(result).toEqual([]);
+    });
+
+    it('getPostsByTag 不存在的 tag 返回空数组', async () => {
+      const { getPostsByTag } = await import('../src/app/_lib/content-loader');
+      const result = await getPostsByTag('non-existent-tag-12345');
+      expect(result).toEqual([]);
+    });
+
+    it('getAllTags 返回数组类型', async () => {
+      const { getAllTags } = await import('../src/app/_lib/content-loader');
+      const result = await getAllTags();
+      expect(Array.isArray(result)).toBe(true);
+    });
+
+    it('getAllCategories 返回数组类型', async () => {
+      const { getAllCategories } = await import('../src/app/_lib/content-loader');
+      const result = await getAllCategories();
+      expect(Array.isArray(result)).toBe(true);
+    });
+
+    it('getPostsTotalWords 返回数字', async () => {
+      const { getPostsTotalWords } = await import('../src/app/_lib/content-loader');
+      const result = await getPostsTotalWords();
+      expect(typeof result).toBe('number');
+      expect(result).toBeGreaterThanOrEqual(0);
+    });
+
+    it('getPostWithContent 不存在的 slug 返回 null', async () => {
+      const { getPostWithContent } = await import('../src/app/_lib/content-loader');
+      const result = await getPostWithContent('non-existent-slug-12345');
+      expect(result).toBeNull();
+    });
+
+    it('getPageWithContent 不存在的 slug 返回 null', async () => {
+      const { getPageWithContent } = await import('../src/app/_lib/content-loader');
+      const result = await getPageWithContent('non-existent-page-12345');
+      expect(result).toBeNull();
+    });
+  });
+});

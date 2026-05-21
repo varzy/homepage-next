@@ -41,3 +41,5 @@ next-env.d.ts
 
 # MDX content and fetch cache
 .last-fetch
+
+docs

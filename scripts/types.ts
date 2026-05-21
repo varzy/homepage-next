@@ -26,3 +26,15 @@ export interface FetchResult {
   errors: number;
   deleted: number;
 }
+
+export interface KotobaMetadata {
+  page_id: string;
+  title: string;
+  status: string;
+  tags: string[];
+  title_url: string;
+  with_title: boolean;
+  published_date: string;
+  last_edited_time: string;
+  blog_last_fetched_time: string | null;
+}

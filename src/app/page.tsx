@@ -23,6 +23,7 @@ export default function Home() {
       href: 'https://music.163.com/playlist?id=39874340&userid=45403592',
       target: '_blank',
     },
+    { label: '言叶', alias: 'Kotoba', href: '/kotoba' },
     { label: '代码库', alias: 'Github', href: 'https://github.com/varzy', target: '_blank' },
   ];
 

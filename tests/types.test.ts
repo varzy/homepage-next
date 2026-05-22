@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { PostMetadata, FetchResult } from '../scripts/types';
+import { PostMetadata, FetchResult, PageMetadata, KotobaMetadata } from '../scripts/types';
 
 describe('scripts/types.ts', () => {
   describe('PostMetadata', () => {
@@ -111,6 +111,98 @@ describe('scripts/types.ts', () => {
       expect(typeof result.skipped).toBe('number');
       expect(typeof result.errors).toBe('number');
       expect(typeof result.deleted).toBe('number');
+    });
+  });
+
+  describe('PageMetadata', () => {
+    it('包含所有必要字段', () => {
+      const meta: PageMetadata = {
+        page_id: 'page-abc',
+        title: 'About',
+        slug: 'about',
+        status: 'Published',
+        last_edited_time: '2024-03-01T10:00:00.000Z',
+        last_fetched_time: '2024-03-01T12:00:00.000Z',
+      };
+
+      expect(meta.page_id).toBe('page-abc');
+      expect(meta.title).toBe('About');
+      expect(meta.slug).toBe('about');
+      expect(meta.status).toBe('Published');
+      expect(meta.last_edited_time).toBe('2024-03-01T10:00:00.000Z');
+      expect(meta.last_fetched_time).toBe('2024-03-01T12:00:00.000Z');
+    });
+
+    it('last_fetched_time 可以为 null', () => {
+      const meta: PageMetadata = {
+        page_id: 'page-abc',
+        title: 'About',
+        slug: 'about',
+        status: 'Published',
+        last_edited_time: '2024-03-01T10:00:00.000Z',
+        last_fetched_time: null,
+      };
+
+      expect(meta.last_fetched_time).toBeNull();
+    });
+  });
+
+  describe('KotobaMetadata', () => {
+    it('包含所有必要字段', () => {
+      const meta: KotobaMetadata = {
+        page_id: 'kotoba-123',
+        title: '以心伝心',
+        status: 'Published',
+        tags: ['N2', '四字熟語'],
+        title_url: 'https://example.com',
+        with_title: true,
+        published_time: '2024-05-01',
+        last_edited_time: '2024-05-01T10:00:00.000Z',
+        last_fetched_time: '2024-05-01T12:00:00.000Z',
+      };
+
+      expect(meta.page_id).toBe('kotoba-123');
+      expect(meta.title).toBe('以心伝心');
+      expect(meta.tags).toEqual(['N2', '四字熟語']);
+      expect(meta.title_url).toBe('https://example.com');
+      expect(meta.with_title).toBe(true);
+      expect(meta.published_time).toBe('2024-05-01');
+      expect(meta.last_fetched_time).toBe('2024-05-01T12:00:00.000Z');
+    });
+
+    it('last_fetched_time 可以为 null', () => {
+      const meta: KotobaMetadata = {
+        page_id: 'kotoba-123',
+        title: '以心伝心',
+        status: 'Published',
+        tags: [],
+        title_url: '',
+        with_title: false,
+        published_time: '2024-05-01',
+        last_edited_time: '2024-05-01T10:00:00.000Z',
+        last_fetched_time: null,
+      };
+
+      expect(meta.last_fetched_time).toBeNull();
+    });
+
+    it('with_title 为布尔类型', () => {
+      const metaTrue: KotobaMetadata = {
+        page_id: 'k1',
+        title: 'テスト',
+        status: 'Published',
+        tags: [],
+        title_url: '',
+        with_title: true,
+        published_time: '',
+        last_edited_time: '',
+        last_fetched_time: null,
+      };
+      const metaFalse: KotobaMetadata = { ...metaTrue, with_title: false };
+
+      expect(typeof metaTrue.with_title).toBe('boolean');
+      expect(metaTrue.with_title).toBe(true);
+      expect(metaFalse.with_title).toBe(false);
     });
   });
 });

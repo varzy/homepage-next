@@ -30,7 +30,7 @@ function extractKotobaMeta(page: PageObjectResponse): KotobaMetadata {
   };
 }
 
-function generateKotobaContent(meta: KotobaMetadata, content: string): string {
+export function generateKotobaContent(meta: KotobaMetadata, content: string): string {
   return `---
 page_id: "${meta.page_id}"
 title: "${meta.title.replace(/"/g, '\\"')}"

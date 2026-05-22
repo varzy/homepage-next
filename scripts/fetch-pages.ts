@@ -24,7 +24,7 @@ function extractPageMeta(page: PageObjectResponse): PageMetadata {
   };
 }
 
-function generatePageContent(meta: PageMetadata, content: string): string {
+export function generatePageContent(meta: PageMetadata, content: string): string {
   return `---
 page_id: "${meta.page_id}"
 title: "${meta.title.replace(/"/g, '\\"')}"

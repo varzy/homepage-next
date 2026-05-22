@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "exam": "pnpm run typecheck && pnpm run lint && pnpm run format",
+    "exam": "pnpm run format && pnpm run lint && pnpm run typecheck && pnpm run test",
     "build:debug": "next build  --debug",
     "fetch": "pnpm run fetch-pages && pnpm run fetch-posts && pnpm run fetch-kotoba",
     "release": "git pull && pnpm fetch && pnpm run exam && git add . && git commit -m 'Release.' && git push",

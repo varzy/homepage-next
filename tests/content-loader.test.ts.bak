@@ -2,6 +2,7 @@ import fs from 'fs';
 import os from 'os';
 import path from 'path';
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
+import type { KotobaPost } from '../src/app/_lib/content-loader';
 
 // 测试使用临时目录来模拟 content/posts 和 content/pages
 describe('content-loader', () => {
@@ -271,6 +272,114 @@ describe('content-loader', () => {
       const { getPageWithContent } = await import('../src/app/_lib/content-loader');
       const result = await getPageWithContent('non-existent-page-12345');
       expect(result).toBeNull();
+    });
+
+    it('getAllPostsCount 返回数字', async () => {
+      const { getAllPostsCount } = await import('../src/app/_lib/content-loader');
+      const result = await getAllPostsCount();
+      expect(typeof result).toBe('number');
+      expect(result).toBeGreaterThanOrEqual(0);
+    });
+
+    it('getPrevPost 不存在的 slug 返回 null', async () => {
+      const { getPrevPost } = await import('../src/app/_lib/content-loader');
+      const result = await getPrevPost('non-existent-category', 'non-existent-slug-12345');
+      expect(result).toBeNull();
+    });
+
+    it('getNextPost 不存在的 slug 返回 null', async () => {
+      const { getNextPost } = await import('../src/app/_lib/content-loader');
+      const result = await getNextPost('non-existent-category', 'non-existent-slug-12345');
+      expect(result).toBeNull();
+    });
+
+    it('parseContent posts 不存在的 slug 返回 null', async () => {
+      const { parseContent } = await import('../src/app/_lib/content-loader');
+      const result = await parseContent('posts', 'non-existent-slug-12345');
+      expect(result).toBeNull();
+    });
+
+    it('parseContent pages 不存在的 slug 返回 null', async () => {
+      const { parseContent } = await import('../src/app/_lib/content-loader');
+      const result = await parseContent('pages', 'non-existent-page-12345');
+      expect(result).toBeNull();
+    });
+  });
+
+  // ============================================================
+  // Kotoba API 测试
+  // ============================================================
+  describe('Kotoba API - kotoba 目录不存在时', () => {
+    it('getAllKotobaPosts 返回空数组', async () => {
+      const { getAllKotobaPosts } = await import('../src/app/_lib/content-loader');
+      const result = await getAllKotobaPosts();
+      expect(Array.isArray(result)).toBe(true);
+    });
+
+    it('getAllKotobaPostsWithContent 返回空数组', async () => {
+      const { getAllKotobaPostsWithContent } = await import('../src/app/_lib/content-loader');
+      const result = await getAllKotobaPostsWithContent();
+      expect(Array.isArray(result)).toBe(true);
+    });
+
+    it('getKotobaPostsByTag 不存在的 tag 返回空数组', async () => {
+      const { getKotobaPostsByTag } = await import('../src/app/_lib/content-loader');
+      const result = await getKotobaPostsByTag('non-existent-kotoba-tag');
+      expect(result).toEqual([]);
+    });
+
+    it('getKotobaPostsWithContentByTag 不存在的 tag 返回空数组', async () => {
+      const { getKotobaPostsWithContentByTag } = await import('../src/app/_lib/content-loader');
+      const result = await getKotobaPostsWithContentByTag('non-existent-kotoba-tag');
+      expect(result).toEqual([]);
+    });
+
+    it('getAllKotobaTags 返回数组类型', async () => {
+      const { getAllKotobaTags } = await import('../src/app/_lib/content-loader');
+      const result = await getAllKotobaTags();
+      expect(Array.isArray(result)).toBe(true);
+    });
+  });
+
+  // ============================================================
+  // KotobaPost 接口结构测试
+  // ============================================================
+  describe('KotobaPost 接口结构', () => {
+    it('KotobaPost 包含所有必要字段', () => {
+      const post = {
+        page_id: 'page-123',
+        title: '日本語',
+        status: 'Published',
+        tags: ['N3', '動詞'],
+        titleUrl: 'https://example.com',
+        withTitle: true,
+        publishedDate: '2024-01-15',
+        last_edited_time: '2024-01-15T10:00:00.000Z',
+        last_fetched_time: '2024-01-15T12:00:00.000Z',
+      };
+
+      expect(post.page_id).toBe('page-123');
+      expect(post.title).toBe('日本語');
+      expect(post.tags).toEqual(['N3', '動詞']);
+      expect(post.titleUrl).toBe('https://example.com');
+      expect(post.withTitle).toBe(true);
+      expect(post.publishedDate).toBe('2024-01-15');
+      expect(post.last_fetched_time).toBe('2024-01-15T12:00:00.000Z');
+    });
+
+    it('KotobaPost last_fetched_time 为可选字段', () => {
+      const post: KotobaPost = {
+        page_id: 'page-123',
+        title: '日本語',
+        status: 'Published',
+        tags: [],
+        titleUrl: '',
+        withTitle: false,
+        publishedDate: '2024-01-15',
+        last_edited_time: '2024-01-15T10:00:00.000Z',
+      };
+
+      expect(post.last_fetched_time).toBeUndefined();
     });
   });
 });

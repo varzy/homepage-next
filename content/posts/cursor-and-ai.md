@@ -8,7 +8,7 @@ date: '2024-09-28'
 slug: 'cursor-and-ai'
 summary: '至少时至现在这个时点，本人博客中的每一个文字都是我亲自编纂的，没有任何 AI 参与。希望我的坚持能稍微减缓互联网熵增的速度。'
 last_edited_time: '2025-08-06T06:14:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:25:40.347Z'
+last_fetched_time: '2025-09-02T09:25:40.347Z'
 page_id: '10fdc9c0-364a-808a-990a-cc0e57429176'
 icon: '🚽'
 ---

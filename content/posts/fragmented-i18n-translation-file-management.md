@@ -8,7 +8,7 @@ date: '2025-09-04'
 slug: 'fragmented-i18n-translation-file-management'
 summary: '碎片管理，产物统一。'
 last_edited_time: '2025-09-04T02:14:00.000Z'
-blog_last_fetched_time: '2025-09-04T02:15:34.190Z'
+last_fetched_time: '2025-09-04T02:15:34.190Z'
 page_id: '264dc9c0-364a-80ec-8a67-c8e64a0549c6'
 icon: '⚗️'
 ---

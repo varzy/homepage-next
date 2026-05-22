@@ -1,8 +1,8 @@
-export interface FetchConfig {
-  notionDatabaseId: string;
-  notionApiSecret: string;
-  postsOutputDir: string; // posts 目录
-  pagesOutputDir: string; // pages 目录
+export interface FetchResult {
+  updated: number;
+  skipped: number;
+  errors: number;
+  deleted: number;
 }
 
 export interface PostMetadata {
@@ -15,16 +15,18 @@ export interface PostMetadata {
   slug: string;
   summary: string;
   last_edited_time: string;
-  blog_last_fetched_time: string | null;
+  last_fetched_time: string | null;
   page_id: string;
   icon?: string;
 }
 
-export interface FetchResult {
-  updated: number;
-  skipped: number;
-  errors: number;
-  deleted: number;
+export interface PageMetadata {
+  page_id: string;
+  title: string;
+  slug: string;
+  status: string;
+  last_edited_time: string;
+  last_fetched_time: string | null;
 }
 
 export interface KotobaMetadata {
@@ -34,7 +36,7 @@ export interface KotobaMetadata {
   tags: string[];
   title_url: string;
   with_title: boolean;
-  published_date: string;
+  published_time: string;
   last_edited_time: string;
-  blog_last_fetched_time: string | null;
+  last_fetched_time: string | null;
 }

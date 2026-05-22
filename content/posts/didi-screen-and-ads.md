@@ -8,7 +8,7 @@ date: '2021-08-27'
 slug: 'didi-screen-and-ads'
 summary: '我不得不一边感到烦躁，一边感叹某些无良产品经理的鬼才。'
 last_edited_time: '2025-09-03T06:01:00.000Z'
-blog_last_fetched_time: '2025-09-03T06:06:04.444Z'
+last_fetched_time: '2025-09-03T06:06:04.444Z'
 page_id: '2a14eb34-6ff8-480d-b329-80f6bf6af014'
 icon: '👑'
 ---

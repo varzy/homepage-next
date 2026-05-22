@@ -8,7 +8,7 @@ date: '2023-07-20'
 slug: 'miniprogram-custom-customer-button-style'
 summary: ''
 last_edited_time: '2025-09-02T07:50:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:26:31.738Z'
+last_fetched_time: '2025-09-02T09:26:31.738Z'
 page_id: 'c6499b75-9fc3-4f8a-a138-80a670d53b32'
 icon: '🎊'
 ---

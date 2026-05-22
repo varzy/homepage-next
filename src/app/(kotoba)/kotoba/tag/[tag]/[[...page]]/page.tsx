@@ -6,9 +6,9 @@ import {
   getAllKotobaTags,
   getKotobaPostsWithContentByTag,
 } from '@/app/_lib/content-loader';
-import { KOTOBA_PER_PAGE } from '../../../../_lib/kotoba-utils';
 import KotobaContainer from '../../../../_components/KotobaContainer';
 import KotobaTag from '../../../../_components/KotobaTag';
+import { KOTOBA_PER_PAGE } from '../../../../_lib/kotoba-utils';
 
 export async function generateStaticParams() {
   const [allPosts, allTags] = await Promise.all([getAllKotobaPosts(), getAllKotobaTags()]);

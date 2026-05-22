@@ -8,7 +8,7 @@ date: '2021-03-15'
 slug: 'miniprogram-utc'
 summary: ''
 last_edited_time: '2025-09-02T07:53:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:29:24.719Z'
+last_fetched_time: '2025-09-02T09:29:24.719Z'
 page_id: 'df57b98c-74de-4187-9f07-21c15fc68c70'
 icon: '🛥️'
 ---

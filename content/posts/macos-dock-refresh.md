@@ -8,7 +8,7 @@ date: '2020-11-29'
 slug: 'macos-dock-refresh'
 summary: ''
 last_edited_time: '2025-09-02T07:54:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:29:50.208Z'
+last_fetched_time: '2025-09-02T09:29:50.208Z'
 page_id: '0b1815f0-2969-4d0b-97ec-a54a7be15acb'
 icon: '🌈'
 ---

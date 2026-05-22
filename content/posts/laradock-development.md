@@ -8,7 +8,7 @@ date: '2020-03-27'
 slug: 'laradock-development'
 summary: ''
 last_edited_time: '2025-08-06T06:20:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:32:53.071Z'
+last_fetched_time: '2025-09-02T09:32:53.071Z'
 page_id: '4dc8f27d-3c91-411d-8bbf-bf9041911236'
 icon: '🚦'
 ---

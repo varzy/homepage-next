@@ -8,7 +8,7 @@ date: '2021-11-27'
 slug: 'ohmyzsh-terminal-usage'
 summary: ''
 last_edited_time: '2025-09-02T07:52:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:28:24.442Z'
+last_fetched_time: '2025-09-02T09:28:24.442Z'
 page_id: '332a9dfa-7231-40af-899e-43639847c192'
 icon: '🧨'
 ---

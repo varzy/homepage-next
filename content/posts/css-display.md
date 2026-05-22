@@ -8,7 +8,7 @@ date: '2020-04-03'
 slug: 'css-display'
 summary: ''
 last_edited_time: '2025-09-02T07:55:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:30:36.982Z'
+last_fetched_time: '2025-09-02T09:30:36.982Z'
 page_id: '6bc201dc-dec5-40d1-9049-6b260f33cfc5'
 icon: '🏰'
 ---

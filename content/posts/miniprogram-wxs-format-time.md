@@ -8,7 +8,7 @@ date: '2021-03-18'
 slug: 'miniprogram-wxs-format-time'
 summary: ''
 last_edited_time: '2025-09-03T04:18:00.000Z'
-blog_last_fetched_time: '2025-09-03T04:18:41.380Z'
+last_fetched_time: '2025-09-03T04:18:41.380Z'
 page_id: 'c1a9149b-9c3b-4034-9a64-81657b9c5818'
 icon: '⛴️'
 ---

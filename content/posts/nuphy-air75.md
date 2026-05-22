@@ -8,7 +8,7 @@ date: '2022-11-27'
 slug: 'nuphy-air75'
 summary: '我可别就此掉入客制化的坑吧？'
 last_edited_time: '2025-09-03T06:03:00.000Z'
-blog_last_fetched_time: '2025-09-03T06:05:50.865Z'
+last_fetched_time: '2025-09-03T06:05:50.865Z'
 page_id: '87eda1b8-08ff-424e-bb70-43f0cfcc00a8'
 icon: '🛷'
 ---

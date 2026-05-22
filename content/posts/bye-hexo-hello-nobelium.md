@@ -8,7 +8,7 @@ date: '2021-08-21'
 slug: 'bye-hexo-hello-nobelium'
 summary: '哦吼～ 博客已迁移至 Notion + Nobelium。'
 last_edited_time: '2025-09-03T06:02:00.000Z'
-blog_last_fetched_time: '2025-09-03T06:06:07.623Z'
+last_fetched_time: '2025-09-03T06:06:07.623Z'
 page_id: '29ec674a-b2f1-438d-9aa8-e477e54730ca'
 icon: '🥎'
 ---

@@ -8,7 +8,7 @@ date: '2021-12-31'
 slug: '2021-summary'
 summary: '世界与我的未来皆不可捉摸，只愿世界和平🕊️，我的开心多于难过🤘。'
 last_edited_time: '2025-09-03T04:16:00.000Z'
-blog_last_fetched_time: '2025-09-03T04:18:36.817Z'
+last_fetched_time: '2025-09-03T04:18:36.817Z'
 page_id: '0e72d6a0-6401-4712-842d-a0eda37acde9'
 icon: '🏅'
 ---

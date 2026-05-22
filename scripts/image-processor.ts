@@ -11,9 +11,11 @@ export interface ImageProcessingStats {
 
 export class NotionImageProcessor {
   private notion: Client;
+  private imagePrefix: string;
 
-  constructor(notionApiSecret: string) {
+  constructor(notionApiSecret: string, imagePrefix: string = 'blog') {
     this.notion = new Client({ auth: notionApiSecret });
+    this.imagePrefix = imagePrefix;
   }
 
   /**
@@ -124,7 +126,7 @@ export class NotionImageProcessor {
       }
 
       // 生成文件名
-      const fileName = generateFileName(imageUrl, `blog_${slug}`, block.id);
+      const fileName = generateFileName(imageUrl, `${this.imagePrefix}_${slug}`, block.id);
 
       try {
         // 上传到 SM.MS

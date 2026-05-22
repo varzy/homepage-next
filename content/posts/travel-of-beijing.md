@@ -8,7 +8,7 @@ date: '2017-03-11'
 slug: 'travel-of-beijing'
 summary: '自此，我也成为了一名北漂。'
 last_edited_time: '2025-08-06T06:21:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:33:29.769Z'
+last_fetched_time: '2025-09-02T09:33:29.769Z'
 page_id: '45504b86-d40f-4069-ba1c-7253475f51bf'
 icon: '🎾'
 ---

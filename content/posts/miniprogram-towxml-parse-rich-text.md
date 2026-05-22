@@ -8,7 +8,7 @@ date: '2021-08-15'
 slug: 'miniprogram-towxml-parse-rich-text'
 summary: ''
 last_edited_time: '2025-09-02T07:53:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:29:02.578Z'
+last_fetched_time: '2025-09-02T09:29:02.578Z'
 page_id: 'c13ffbf0-e647-41f4-bc1f-a7952dd4bc4d'
 icon: '🗼'
 ---
@@ -19,7 +19,7 @@ icon: '🗼'
 
 为了解决这个问题，我们可以使用开源的 [sbfkcel/towxml](https://github.com/sbfkcel/towxml) 库。
 
-> Towxml 是一个可将HTML、Markdown转为微信小程序WXML(WeiXin Markup Language)的渲染库。用于解决在微信小程序中Markdown、HTML不能直接渲染的问题。  
+> Towxml 是一个可将HTML、Markdown转为微信小程序WXML(WeiXin Markup Language)的渲染库。用于解决在微信小程序中Markdown、HTML不能直接渲染的问题。
 > —— towxml 的 Github README
 
 ## towxml 的构建

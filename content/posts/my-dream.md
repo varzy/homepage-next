@@ -8,7 +8,7 @@ date: '2024-03-22'
 slug: 'my-dream'
 summary: ''
 last_edited_time: '2025-09-03T05:47:00.000Z'
-blog_last_fetched_time: '2025-09-03T05:54:54.358Z'
+last_fetched_time: '2025-09-03T05:54:54.358Z'
 page_id: 'f096dc95-0a50-4818-b6ea-90b90fb12607'
 icon: '💭'
 ---

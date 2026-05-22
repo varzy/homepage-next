@@ -8,7 +8,7 @@ date: '2020-03-27'
 slug: 'ubuntu-install-sougou-input'
 summary: ''
 last_edited_time: '2025-08-06T06:19:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:31:54.124Z'
+last_fetched_time: '2025-09-02T09:31:54.124Z'
 page_id: 'd8e8999a-e83d-46b0-b242-7ddf5322046b'
 icon: '🤺'
 ---

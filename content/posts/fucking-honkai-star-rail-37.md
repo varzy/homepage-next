@@ -8,7 +8,7 @@ date: '2026-04-17'
 slug: 'fucking-honkai-star-rail-37'
 summary: '崩铁项目组的 AI 已经脱离了 Transformer 模型的限制，有了真正的思想。'
 last_edited_time: '2026-04-17T15:28:00.000Z'
-blog_last_fetched_time: '2026-04-17T15:28:58.139Z'
+last_fetched_time: '2026-04-17T15:28:58.139Z'
 page_id: '345dc9c0-364a-8036-a803-f1b58b643b96'
 icon: '🎈'
 ---

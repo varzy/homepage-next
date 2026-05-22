@@ -5,9 +5,7 @@ import KotobaImageGrid from './KotobaImageGrid';
 
 // MDX component overrides for card context
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const CardLink = (props: any) => (
-  <a target="_blank" rel="noopener noreferrer" {...props} />
-);
+const CardLink = (props: any) => <a target="_blank" rel="noopener noreferrer" {...props} />;
 
 interface KotobaCardProps {
   post: KotobaPostWithContent;

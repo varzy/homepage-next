@@ -8,7 +8,7 @@ date: '2025-09-24'
 slug: 'my-trip-packing'
 summary: '持续优化自己的出行装备和工作流对我这种装备党 + J 人来说是个非常有趣的事情。'
 last_edited_time: '2025-10-02T14:29:00.000Z'
-blog_last_fetched_time: '2025-10-02T15:49:48.443Z'
+last_fetched_time: '2025-10-02T15:49:48.443Z'
 page_id: '264dc9c0-364a-80bf-8bd6-c6b09eb285f2'
 icon: '🪁'
 ---

@@ -8,7 +8,7 @@ date: '2026-02-09'
 slug: 'four-dimensional-space'
 summary: '我们有独属于我们的「四维空泡」，我仅希望这些空泡能慢一些划过这片土地。'
 last_edited_time: '2026-02-09T06:53:00.000Z'
-blog_last_fetched_time: '2026-02-09T06:54:03.050Z'
+last_fetched_time: '2026-02-09T06:54:03.050Z'
 page_id: '301dc9c0-364a-803a-a0d4-d09722cf72cc'
 icon: '💉'
 ---

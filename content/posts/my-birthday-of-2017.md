@@ -8,7 +8,7 @@ date: '2017-06-23'
 slug: 'my-birthday-of-2017'
 summary: '2017 年生日之丧。'
 last_edited_time: '2025-09-03T05:52:00.000Z'
-blog_last_fetched_time: '2025-09-03T05:55:26.385Z'
+last_fetched_time: '2025-09-03T05:55:26.385Z'
 page_id: '6e8689c0-54d0-42cd-8978-727b8374523f'
 icon: '🏰'
 ---

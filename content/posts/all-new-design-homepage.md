@@ -8,7 +8,7 @@ date: '2025-08-09'
 slug: 'all-new-design-homepage'
 summary: '希望你喜欢我的主页风格。'
 last_edited_time: '2025-09-02T08:54:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:25:25.403Z'
+last_fetched_time: '2025-09-02T09:25:25.403Z'
 page_id: '24adc9c0-364a-8006-bb2c-c9d392d67a62'
 icon: '🖨️'
 ---

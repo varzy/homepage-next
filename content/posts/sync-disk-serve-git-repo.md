@@ -8,7 +8,7 @@ date: '2021-03-13'
 slug: 'sync-disk-serve-git-repo'
 summary: ''
 last_edited_time: '2025-08-06T06:18:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:29:33.204Z'
+last_fetched_time: '2025-09-02T09:29:33.204Z'
 page_id: '63391f27-edbe-4f17-b944-a79d5e377df1'
 icon: '🛡️'
 ---

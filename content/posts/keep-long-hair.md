@@ -8,7 +8,7 @@ date: '2021-09-08'
 slug: 'keep-long-hair'
 summary: '决定把头发留长几乎就是一瞬间的想法，我称之为迟到的叛逆。'
 last_edited_time: '2025-09-03T06:01:00.000Z'
-blog_last_fetched_time: '2025-09-03T06:05:59.910Z'
+last_fetched_time: '2025-09-03T06:05:59.910Z'
 page_id: '008942a8-ec5c-49eb-8201-df1bb00fb7ab'
 icon: '🪡'
 ---

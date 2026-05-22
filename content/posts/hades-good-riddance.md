@@ -8,7 +8,7 @@ date: '2022-01-06'
 slug: 'hades-good-riddance'
 summary: '虽然不记得俄耳甫斯和欧律狄刻这两个复杂的人名字，可我一直对这段神话故事的印象非常深刻。'
 last_edited_time: '2025-09-02T07:51:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:27:59.097Z'
+last_fetched_time: '2025-09-02T09:27:59.097Z'
 page_id: 'eaa803b6-85a8-4a39-9587-3c339ce4d2de'
 icon: '🥦'
 ---

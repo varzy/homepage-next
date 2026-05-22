@@ -8,7 +8,7 @@ date: '2022-06-09'
 slug: 'colima-replace-docker-desktop'
 summary: ''
 last_edited_time: '2025-09-02T07:51:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:27:21.943Z'
+last_fetched_time: '2025-09-02T09:27:21.943Z'
 page_id: 'a1f214cb-8dfa-4644-ad8c-c90e00b969ea'
 icon: '🎴'
 ---

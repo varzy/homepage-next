@@ -1,6 +1,14 @@
 import Link from 'next/link';
 
-export default function KotobaTag({ tag, count, active }: { tag: string; count?: number; active?: boolean }) {
+export default function KotobaTag({
+  tag,
+  count,
+  active,
+}: {
+  tag: string;
+  count?: number;
+  active?: boolean;
+}) {
   return (
     <Link
       href={`/kotoba/tag/${encodeURIComponent(tag)}`}

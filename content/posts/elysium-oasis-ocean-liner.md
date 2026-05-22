@@ -8,7 +8,7 @@ date: '2025-09-08'
 slug: 'elysium-oasis-ocean-liner'
 summary: '约翰掀开邮箱的盖子，里面空无一物。约翰拿起闹钟，拧了几圈发条，定了个半小时的倒计时。'
 last_edited_time: '2025-09-09T06:07:00.000Z'
-blog_last_fetched_time: '2025-09-09T06:07:59.545Z'
+last_fetched_time: '2025-09-09T06:07:59.545Z'
 page_id: 'b7aac74c-41a4-4e09-ba4a-d5a7e339a198'
 icon: '🚢'
 ---

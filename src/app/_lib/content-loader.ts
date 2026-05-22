@@ -14,7 +14,7 @@ export interface KotobaPost {
   withTitle: boolean;
   publishedDate: string;
   last_edited_time: string;
-  blog_last_fetched_time?: string;
+  last_fetched_time?: string;
 }
 
 export interface KotobaPostWithContent extends KotobaPost {
@@ -31,7 +31,7 @@ export interface PostMeta {
   slug: string;
   summary: string;
   last_edited_time: string;
-  blog_last_fetched_time?: string;
+  last_fetched_time?: string;
   page_id: string;
   dateAmericaStyle: string;
   icon?: string;
@@ -94,7 +94,7 @@ type FrontmatterData = {
   slug?: string;
   summary?: string;
   last_edited_time?: string;
-  blog_last_fetched_time?: string;
+  last_fetched_time?: string;
   page_id?: string;
   icon?: string;
 };
@@ -159,7 +159,7 @@ export class DataUtils {
       slug: data.slug || '',
       summary: data.summary || '',
       last_edited_time: data.last_edited_time || '',
-      blog_last_fetched_time: data.blog_last_fetched_time,
+      last_fetched_time: data.last_fetched_time,
       page_id: data.page_id || '',
       dateAmericaStyle: this.formatDate(data.date || ''),
       icon: data.icon,
@@ -347,9 +347,9 @@ type KotobaFrontmatterData = {
   tags?: string[];
   title_url?: string;
   with_title?: boolean;
-  published_date?: string;
+  published_time?: string;
   last_edited_time?: string;
-  blog_last_fetched_time?: string;
+  last_fetched_time?: string;
 };
 
 const kotobaCache = new CacheManager<KotobaPost[]>();
@@ -367,9 +367,9 @@ function parseKotobaFrontmatter(filePath: string): KotobaPost | null {
       tags: Array.isArray(data.tags) ? data.tags : [],
       titleUrl: data.title_url || '',
       withTitle: data.with_title ?? false,
-      publishedDate: data.published_date || '',
+      publishedDate: data.published_time || '',
       last_edited_time: data.last_edited_time || '',
-      blog_last_fetched_time: data.blog_last_fetched_time,
+      last_fetched_time: data.last_fetched_time,
     };
   } catch (error) {
     console.error(`Error parsing kotoba file ${filePath}:`, error);
@@ -421,9 +421,9 @@ export async function getAllKotobaPostsWithContent(): Promise<KotobaPostWithCont
           tags: Array.isArray(data.tags) ? data.tags : [],
           titleUrl: data.title_url || '',
           withTitle: data.with_title ?? false,
-          publishedDate: data.published_date || '',
+          publishedDate: data.published_time || '',
           last_edited_time: data.last_edited_time || '',
-          blog_last_fetched_time: data.blog_last_fetched_time,
+          last_fetched_time: data.last_fetched_time,
         };
         return { ...meta, content };
       } catch (error) {
@@ -442,7 +442,9 @@ export async function getKotobaPostsByTag(tag: string): Promise<KotobaPost[]> {
   return posts.filter((p) => p.tags.includes(tag));
 }
 
-export async function getKotobaPostsWithContentByTag(tag: string): Promise<KotobaPostWithContent[]> {
+export async function getKotobaPostsWithContentByTag(
+  tag: string,
+): Promise<KotobaPostWithContent[]> {
   const all = await getAllKotobaPostsWithContent();
   return all.filter((p) => p.tags.includes(tag));
 }

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { generateMDXContent } from '../scripts/notion-to-md';
+import { generateMDXContent } from '../scripts/fetch-posts';
 import { PostMetadata } from '../scripts/types';
 
 describe('scripts/notion-to-md.ts', () => {
@@ -15,7 +15,7 @@ describe('scripts/notion-to-md.ts', () => {
         slug: 'test-slug',
         summary: 'Test summary',
         last_edited_time: '2024-01-15T10:00:00.000Z',
-        blog_last_fetched_time: '2024-01-15T12:00:00.000Z',
+        last_fetched_time: '2024-01-15T12:00:00.000Z',
         page_id: 'page-123',
         icon: '📝',
       };
@@ -33,7 +33,7 @@ describe('scripts/notion-to-md.ts', () => {
       expect(result).toContain('slug: "test-slug"');
       expect(result).toContain('summary: "Test summary"');
       expect(result).toContain('last_edited_time: "2024-01-15T10:00:00.000Z"');
-      expect(result).toContain('blog_last_fetched_time: "2024-01-15T12:00:00.000Z"');
+      expect(result).toContain('last_fetched_time: "2024-01-15T12:00:00.000Z"');
       expect(result).toContain('page_id: "page-123"');
       expect(result).toContain('icon: "📝"');
       expect(result).toContain('This is the post content.');
@@ -50,7 +50,7 @@ describe('scripts/notion-to-md.ts', () => {
         slug: 'test-slug',
         summary: 'Summary',
         last_edited_time: '',
-        blog_last_fetched_time: null,
+        last_fetched_time: null,
         page_id: 'page-123',
       };
 
@@ -70,7 +70,7 @@ describe('scripts/notion-to-md.ts', () => {
         slug: 'test-slug',
         summary: 'Summary with "quotes"',
         last_edited_time: '',
-        blog_last_fetched_time: null,
+        last_fetched_time: null,
         page_id: 'page-123',
       };
 
@@ -90,7 +90,7 @@ describe('scripts/notion-to-md.ts', () => {
         slug: 'test-slug',
         summary: 'Summary',
         last_edited_time: '',
-        blog_last_fetched_time: null,
+        last_fetched_time: null,
         page_id: 'page-123',
       };
 
@@ -99,7 +99,7 @@ describe('scripts/notion-to-md.ts', () => {
       expect(result).not.toContain('icon:');
     });
 
-    it('blog_last_fetched_time 为 null 时显示为空字符串', () => {
+    it('last_fetched_time 为 null 时显示为空字符串', () => {
       const metadata: PostMetadata = {
         title: 'Title',
         category: 'Tech',
@@ -110,13 +110,13 @@ describe('scripts/notion-to-md.ts', () => {
         slug: 'test-slug',
         summary: 'Summary',
         last_edited_time: '',
-        blog_last_fetched_time: null,
+        last_fetched_time: null,
         page_id: 'page-123',
       };
 
       const result = generateMDXContent(metadata, '');
 
-      expect(result).toContain('blog_last_fetched_time: ""');
+      expect(result).toContain('last_fetched_time: ""');
     });
 
     it('空 tags 数组生成空数组', () => {
@@ -130,7 +130,7 @@ describe('scripts/notion-to-md.ts', () => {
         slug: 'test-slug',
         summary: 'Summary',
         last_edited_time: '',
-        blog_last_fetched_time: null,
+        last_fetched_time: null,
         page_id: 'page-123',
       };
 
@@ -150,7 +150,7 @@ describe('scripts/notion-to-md.ts', () => {
         slug: 'test-slug',
         summary: 'Summary',
         last_edited_time: '',
-        blog_last_fetched_time: null,
+        last_fetched_time: null,
         page_id: 'page-123',
       };
 

@@ -8,7 +8,7 @@ date: '2025-08-11'
 slug: 'death-standing-2-on-the-beach'
 summary: '玩二代之前，我给一代打 10 分。玩二代之后，我给二代打 10 分，给一代打 11 分。'
 last_edited_time: '2025-08-12T01:21:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:25:23.238Z'
+last_fetched_time: '2025-09-02T09:25:23.238Z'
 page_id: '23fdc9c0-364a-80d7-9ed6-f3bebfc700df'
 icon: '🚲'
 ---
@@ -41,7 +41,7 @@ icon: '🚲'
 
 我并非不喜欢二代，相反死亡搁浅2依旧让我在出差途中也心心念念想要赶紧回家送上几单快递，只是二代有取有舍，一代在我心中塑起的高山又实在不可逾越。玩二代之前，我给一代打 10 分。玩二代之后，我给二代打 10 分，给一代打 11 分。
 
-> THOUGH THE FUTURE IS A PRODUCT OF EVERY PRESENT THAT PRECEDES IT,  
+> THOUGH THE FUTURE IS A PRODUCT OF EVERY PRESENT THAT PRECEDES IT,
 > TOMORROW DOES NOT BELONG TO TODAY.
 
 最后以 Tomorrow 结尾。期待岛哥哥的新作。

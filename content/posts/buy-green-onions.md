@@ -8,7 +8,7 @@ date: '2022-05-13'
 slug: 'buy-green-onions'
 summary: '我就把海淀区融科 B 座有确诊，我在搜狐媒体大厦上班，海淀区昨天给我打电话，你们要我三天两测所以我今天来领抗原的事情又又完整阐述了一遍。'
 last_edited_time: '2025-09-03T05:49:00.000Z'
-blog_last_fetched_time: '2025-09-03T05:55:08.522Z'
+last_fetched_time: '2025-09-03T05:55:08.522Z'
 page_id: '07a1eec3-f7d4-47e4-8f45-7cd210a35adc'
 icon: '🚿'
 ---

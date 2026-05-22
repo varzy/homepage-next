@@ -1,37 +1,7 @@
 import { describe, it, expect } from 'vitest';
-import { FetchConfig, PostMetadata, FetchResult } from '../scripts/types';
+import { PostMetadata, FetchResult } from '../scripts/types';
 
 describe('scripts/types.ts', () => {
-  describe('FetchConfig', () => {
-    it('包含所有必要字段', () => {
-      const config: FetchConfig = {
-        notionDatabaseId: 'test-id',
-        notionApiSecret: 'test-secret',
-        postsOutputDir: 'content/posts',
-        pagesOutputDir: 'content/pages',
-      };
-
-      expect(config.notionDatabaseId).toBe('test-id');
-      expect(config.notionApiSecret).toBe('test-secret');
-      expect(config.postsOutputDir).toBe('content/posts');
-      expect(config.pagesOutputDir).toBe('content/pages');
-    });
-
-    it('字段类型正确', () => {
-      const config: FetchConfig = {
-        notionDatabaseId: '',
-        notionApiSecret: '',
-        postsOutputDir: '',
-        pagesOutputDir: '',
-      };
-
-      expect(typeof config.notionDatabaseId).toBe('string');
-      expect(typeof config.notionApiSecret).toBe('string');
-      expect(typeof config.postsOutputDir).toBe('string');
-      expect(typeof config.pagesOutputDir).toBe('string');
-    });
-  });
-
   describe('PostMetadata', () => {
     it('包含所有必要字段', () => {
       const metadata: PostMetadata = {
@@ -44,7 +14,7 @@ describe('scripts/types.ts', () => {
         slug: 'test-slug',
         summary: 'Test summary',
         last_edited_time: '2024-01-15T10:00:00.000Z',
-        blog_last_fetched_time: '2024-01-15T12:00:00.000Z',
+        last_fetched_time: '2024-01-15T12:00:00.000Z',
         page_id: 'page-123',
         icon: '📝',
       };
@@ -58,7 +28,7 @@ describe('scripts/types.ts', () => {
       expect(metadata.slug).toBe('test-slug');
       expect(metadata.summary).toBe('Test summary');
       expect(metadata.last_edited_time).toBe('2024-01-15T10:00:00.000Z');
-      expect(metadata.blog_last_fetched_time).toBe('2024-01-15T12:00:00.000Z');
+      expect(metadata.last_fetched_time).toBe('2024-01-15T12:00:00.000Z');
       expect(metadata.page_id).toBe('page-123');
       expect(metadata.icon).toBe('📝');
     });
@@ -74,14 +44,14 @@ describe('scripts/types.ts', () => {
         slug: 'test-slug',
         summary: '',
         last_edited_time: '',
-        blog_last_fetched_time: null,
+        last_fetched_time: null,
         page_id: 'page-123',
       };
 
       expect(metadata.icon).toBeUndefined();
     });
 
-    it('blog_last_fetched_time 可以为 null', () => {
+    it('last_fetched_time 可以为 null', () => {
       const metadata: PostMetadata = {
         title: 'Test Post',
         category: 'Tech',
@@ -92,11 +62,11 @@ describe('scripts/types.ts', () => {
         slug: 'test-slug',
         summary: '',
         last_edited_time: '',
-        blog_last_fetched_time: null,
+        last_fetched_time: null,
         page_id: 'page-123',
       };
 
-      expect(metadata.blog_last_fetched_time).toBeNull();
+      expect(metadata.last_fetched_time).toBeNull();
     });
   });
 

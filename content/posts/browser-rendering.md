@@ -8,7 +8,7 @@ date: '2020-04-03'
 slug: 'browser-rendering'
 summary: ''
 last_edited_time: '2025-09-02T08:56:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:31:44.421Z'
+last_fetched_time: '2025-09-02T09:31:44.421Z'
 page_id: 'ad05ab17-ed47-45ca-87f8-b0387733f3b3'
 icon: '💉'
 ---

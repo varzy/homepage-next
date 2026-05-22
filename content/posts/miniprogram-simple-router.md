@@ -8,7 +8,7 @@ date: '2021-01-28'
 slug: 'miniprogram-simple-router'
 summary: ''
 last_edited_time: '2025-09-02T07:54:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:29:40.565Z'
+last_fetched_time: '2025-09-02T09:29:40.565Z'
 page_id: '78d0d43e-be92-4e50-8b1b-2823d5c13d57'
 icon: '🥈'
 ---

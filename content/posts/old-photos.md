@@ -8,7 +8,7 @@ date: '2024-08-13'
 slug: 'old-photos'
 summary: '我不知道自己会不会还有孩子了，但如果有，我也一定会将这些回忆传承下去。'
 last_edited_time: '2025-10-07T14:00:00.000Z'
-blog_last_fetched_time: '2025-10-07T14:02:55.919Z'
+last_fetched_time: '2025-10-07T14:02:55.919Z'
 page_id: '2ca77267-9e9d-49d9-8f78-fb01adcd7a81'
 icon: '🏑'
 ---

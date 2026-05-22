@@ -8,7 +8,7 @@ date: '2024-02-29'
 slug: 'starrail-cocona'
 summary: '你会用何种手段毁掉自己的纯真、善良、诚实、还有原则？是痛快地一刀两断…还是通过经年累月的折磨？'
 last_edited_time: '2025-10-02T15:48:00.000Z'
-blog_last_fetched_time: '2025-10-02T15:49:53.440Z'
+last_fetched_time: '2025-10-02T15:49:53.440Z'
 page_id: '9cb405cf-e615-4b68-bdf6-953c2d56b030'
 icon: '🥥'
 ---

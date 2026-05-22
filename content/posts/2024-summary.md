@@ -8,7 +8,7 @@ date: '2024-12-28'
 slug: '2024-summary'
 summary: '我无法长大更不想长大，那就保持现状，让我再当几年孩子吧。'
 last_edited_time: '2025-09-02T08:54:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:25:37.911Z'
+last_fetched_time: '2025-09-02T09:25:37.911Z'
 page_id: '122dc9c0-364a-80f4-a150-ced50d592781'
 icon: '🎑'
 ---

@@ -8,7 +8,7 @@ date: '2026-02-12'
 slug: '2025-summary'
 summary: '今年的相册或许不如以往那么精彩，2026 年的事情谁又说得准呢？'
 last_edited_time: '2026-02-12T16:44:00.000Z'
-blog_last_fetched_time: '2026-04-17T15:06:31.813Z'
+last_fetched_time: '2026-04-17T15:06:31.813Z'
 page_id: '2b0dc9c0-364a-80c6-a0b1-d8050fe942f4'
 icon: '🧶'
 ---

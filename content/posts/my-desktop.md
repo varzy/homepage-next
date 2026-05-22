@@ -8,7 +8,7 @@ date: '2019-12-22'
 slug: 'my-desktop'
 summary: '当我第一次注重桌面体验。'
 last_edited_time: '2025-09-02T08:57:00.000Z'
-blog_last_fetched_time: '2025-09-02T09:33:14.405Z'
+last_fetched_time: '2025-09-02T09:33:14.405Z'
 page_id: '45c832f0-49a6-46b8-9285-e28315fd9dbb'
 icon: '♠️'
 ---

@@ -8,7 +8,7 @@ date: '2025-09-02'
 slug: 'anecdotes-from-home'
 summary: '所谓回家就是永远不会感觉到饿。'
 last_edited_time: '2025-09-03T05:45:00.000Z'
-blog_last_fetched_time: '2025-09-03T05:54:41.989Z'
+last_fetched_time: '2025-09-03T05:54:41.989Z'
 page_id: '25fdc9c0-364a-8059-b99c-c27b4cdf7a36'
 icon: '🪦'
 ---

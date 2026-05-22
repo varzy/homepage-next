@@ -8,7 +8,7 @@ date: '2022-08-02'
 slug: 'painful-work-experience'
 summary: '在我离开 Z 再次工作两年有余，我却开始觉得那次选择似乎也没有错得那么离谱。'
 last_edited_time: '2025-10-07T14:00:00.000Z'
-blog_last_fetched_time: '2025-10-07T14:03:05.177Z'
+last_fetched_time: '2025-10-07T14:03:05.177Z'
 page_id: 'a93779a5-9151-44e4-ad3f-78bd5e36cff7'
 icon: '🧨'
 ---

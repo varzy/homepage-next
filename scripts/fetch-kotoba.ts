@@ -1,10 +1,13 @@
 #!/usr/bin/env tsx
 
-import 'dotenv/config';
-import path from 'path';
-import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
-import { NotionDatabaseFetcher, NotionFetcherConfig } from './notion-database-fetcher';
-import { KotobaMetadata } from './types';
+import "dotenv/config";
+import path from "path";
+import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import {
+  NotionDatabaseFetcher,
+  NotionFetcherConfig,
+} from "./notion-database-fetcher";
+import { KotobaMetadata } from "./types";
 import {
   getTextProperty,
   getSelectProperty,
@@ -13,7 +16,9 @@ import {
   getCheckboxProperty,
   getDateProperty,
   getLastEditedTimeProperty,
-} from './utils';
+} from "./utils";
+
+const TAG_WHITELIST = ["断舍离日记"];
 
 function extractKotobaMeta(page: PageObjectResponse): KotobaMetadata {
   const p = page.properties;
@@ -30,35 +35,48 @@ function extractKotobaMeta(page: PageObjectResponse): KotobaMetadata {
   };
 }
 
-export function generateKotobaContent(meta: KotobaMetadata, content: string): string {
+export function generateKotobaContent(
+  meta: KotobaMetadata,
+  content: string,
+): string {
   return `---
 page_id: "${meta.page_id}"
 title: "${meta.title.replace(/"/g, '\\"')}"
 status: "${meta.status}"
-tags: [${meta.tags.map((tag) => `"${tag}"`).join(', ')}]
+tags: [${meta.tags.map((tag) => `"${tag}"`).join(", ")}]
 title_url: "${meta.title_url}"
 with_title: ${meta.with_title}
 published_time: "${meta.published_time}"
 last_edited_time: "${meta.last_edited_time}"
-last_fetched_time: "${meta.last_fetched_time || ''}"
+last_fetched_time: "${meta.last_fetched_time || ""}"
 ---
 
 ${content}`;
 }
 
 const kotobaConfig: NotionFetcherConfig<KotobaMetadata> = {
-  databaseId: process.env.NOTION_KOTOBA_DATABASE_ID || '',
-  notionApiSecret: process.env.NOTION_API_SECRET || '',
-  outputDir: path.join(process.cwd(), 'content/kotoba'),
-  lastFetchedTimeProperty: 'last_fetched_time',
-  label: 'kotoba',
-  imagePrefix: 'kotoba',
-  buildFilter: () => ({ property: 'status', select: { equals: 'Published' } }),
-  buildSort: () => [{ property: 'published_time', direction: 'descending' }],
+  databaseId: process.env.NOTION_KOTOBA_DATABASE_ID || "",
+  notionApiSecret: process.env.NOTION_API_SECRET || "",
+  outputDir: path.join(process.cwd(), "content/kotoba"),
+  lastFetchedTimeProperty: "last_fetched_time",
+  label: "kotoba",
+  imagePrefix: "kotoba",
+  buildFilter: () => ({
+    and: [
+      { property: "status", select: { equals: "Published" } },
+      {
+        or: TAG_WHITELIST.map((tag) => ({
+          property: "tags",
+          multi_select: { contains: tag },
+        })),
+      },
+    ],
+  }),
+  buildSort: () => [{ property: "published_time", direction: "descending" }],
   extractMetadata: extractKotobaMeta,
-  getFileKey: (e) => `${e.published_time}-${e.page_id.split('-').pop()}`,
+  getFileKey: (e) => `${e.published_time}-${e.page_id.split("-").pop()}`,
   getPageId: (e) => e.page_id,
-  getConvertIdentifier: (e) => e.page_id.replace(/-/g, '').slice(0, 8),
+  getConvertIdentifier: (e) => e.page_id.replace(/-/g, "").slice(0, 8),
   getLastFetchedTime: (e) => e.last_fetched_time,
   getLastEditedTime: (e) => e.last_edited_time,
   generateContent: generateKotobaContent,
@@ -68,16 +86,16 @@ const kotobaConfig: NotionFetcherConfig<KotobaMetadata> = {
 async function main() {
   if (!kotobaConfig.databaseId || !kotobaConfig.notionApiSecret) {
     throw new Error(
-      'Missing required environment variables: NOTION_KOTOBA_DATABASE_ID, NOTION_API_SECRET',
+      "Missing required environment variables: NOTION_KOTOBA_DATABASE_ID, NOTION_API_SECRET",
     );
   }
 
   if (!process.env.SMMS_API_TOKEN) {
-    console.warn('⚠️ SMMS_API_TOKEN is not set — image upload will fail');
+    console.warn("⚠️ SMMS_API_TOKEN is not set — image upload will fail");
     process.exit(1);
   }
 
-  const forceMode = process.argv.includes('--force');
+  const forceMode = process.argv.includes("--force");
   console.log(`🔥 Force mode: ${forceMode}`);
 
   await new NotionDatabaseFetcher(kotobaConfig, forceMode).fetch();
@@ -85,6 +103,6 @@ async function main() {
 }
 
 main().catch((error) => {
-  console.error('💥 Script failed:', error);
+  console.error("💥 Script failed:", error);
   process.exit(1);
 });

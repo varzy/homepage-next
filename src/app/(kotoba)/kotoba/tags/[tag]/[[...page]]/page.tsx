@@ -1,15 +1,15 @@
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
-import PageHero from "@/app/_components/PageHero";
+import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import PageHero from '@/app/_components/PageHero';
 import {
   getAllKotobaPosts,
   getAllKotobaTags,
   getKotobaPostsWithContentByTag,
-} from "@/app/_lib/kotoba-loader";
-import { buildTagPageParams } from "@/app/_lib/pagination-utils";
-import { SITE_CONFIG } from "@/site.config";
-import { safeDecodeTag } from "@/utils/url";
-import KotobaContainer from "../../../../_components/KotobaContainer";
+} from '@/app/_lib/kotoba-loader';
+import { buildTagPageParams } from '@/app/_lib/pagination-utils';
+import { SITE_CONFIG } from '@/site.config';
+import { safeDecodeTag } from '@/utils/url';
+import KotobaContainer from '../../../../_components/KotobaContainer';
 
 export const dynamicParams = false;
 
@@ -46,7 +46,7 @@ export default async function KotobaTagPage({
 
   return (
     <>
-      <PageHero title={"#" + tagText} />
+      <PageHero title={'#' + tagText} />
       <div className="g-container pb-20">
         <KotobaContainer
           posts={posts}

@@ -17,7 +17,7 @@ export default async function Friends() {
   return (
     <div className="pb-48">
       <PageHeader />
-      <div className="g-container">
+      <div className="g-container pt-10">
         <MdxRenderer source={postWithContent.content} />
       </div>
     </div>

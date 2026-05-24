@@ -17,6 +17,24 @@ export function extractImagesFromMdx(content: string): {
   return { images, cleanContent };
 }
 
+const SEVEN_DAYS_MS = 7 * 24 * 60 * 60 * 1000;
+
+export function formatDisplayDate(dateStr: string, now: Date = new Date()): string {
+  const past = new Date(dateStr);
+  if (Number.isNaN(past.getTime())) return dateStr;
+
+  const diffMs = now.getTime() - past.getTime();
+  if (diffMs < SEVEN_DAYS_MS) {
+    return formatRelativeTime(dateStr, now);
+  }
+
+  return past.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: '2-digit',
+  });
+}
+
 export function formatRelativeTime(dateStr: string, now: Date = new Date()): string {
   const past = new Date(dateStr);
   if (Number.isNaN(past.getTime())) return '';

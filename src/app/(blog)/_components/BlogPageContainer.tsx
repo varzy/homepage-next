@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import PageHero, { PageHeroProps } from './PageHero';
+import PageHero, { PageHeroProps } from '@/app/_components/PageHero';
 
 export default function BlogPageContainer({
   children,

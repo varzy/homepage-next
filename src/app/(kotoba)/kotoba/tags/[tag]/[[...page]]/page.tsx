@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import PageHero from '@/app/(blog)/_components/PageHero';
+import PageHero from '@/app/_components/PageHero';
 import {
   getAllKotobaPosts,
   getAllKotobaTags,

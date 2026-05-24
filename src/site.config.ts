@@ -7,7 +7,7 @@ export const SITE_CONFIG = {
   siteUrl: `https://varzy.me`, // RSS 需要的网站 URL
   feedPath: `/rss.xml`, // RSS 订阅路径
   blogPerPage: 10,
-  kotobaPerPage: 3,
+  kotobaPerPage: 50,
   categories: {
     nichijou: {
       notionField: 'Nichijou',

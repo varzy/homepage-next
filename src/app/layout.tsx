@@ -4,6 +4,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import clsx from 'clsx';
 import type { Metadata } from 'next';
 import { Noto_Serif_SC } from 'next/font/google';
+import LightboxProvider from '@/app/_components/LightboxProvider';
 import { SITE_CONFIG } from '@/site.config';
 import { getEmojiFavicon } from '@/utils/favicon';
 
@@ -44,7 +45,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       data-scroll-behavior="smooth"
     >
       <body className="bg-[#f7f7f7] tracking-wide">
-        {children}
+        <LightboxProvider>{children}</LightboxProvider>
         <Analytics />
         <SpeedInsights />
       </body>

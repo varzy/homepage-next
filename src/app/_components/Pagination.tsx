@@ -11,7 +11,6 @@ export default function Pagination({ total, current, pageSize, urlPrefix }: Pagi
   const showPrev = current > 1;
   const showNext = current * pageSize < total;
   const totalPage = Math.ceil(total / pageSize);
-  const moreThanOnePage = totalPage > 1;
 
   const Goto = (page: number, label: string) => (
     <Link className="hover:underline" href={`${urlPrefix}/${page}`}>
@@ -21,15 +20,15 @@ export default function Pagination({ total, current, pageSize, urlPrefix }: Pagi
 
   return (
     <div className="mt-14">
-      {moreThanOnePage && (
-        <div className="flex items-center justify-between">
-          <div className="prev flex-1 text-left">{showPrev && Goto(current - 1, '< Prev')}</div>
-          <div className="current text-secondary flex-1 text-center">
-            {current} / {totalPage}
+      {
+        <div className="grid grid-cols-[1fr_auto_1fr] items-center">
+          <div className="prev text-left">{showPrev && Goto(current - 1, '< Prev')}</div>
+          <div className="current text-secondary text-center">
+            Page {current} of {totalPage} · Total {total}
           </div>
-          <div className="next flex-1 text-right">{showNext && Goto(current + 1, 'Next >')}</div>
+          <div className="next text-right">{showNext && Goto(current + 1, 'Next >')}</div>
         </div>
-      )}
+      }
     </div>
   );
 }

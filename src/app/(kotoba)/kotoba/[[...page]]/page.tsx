@@ -1,9 +1,10 @@
 import { Metadata } from 'next';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import PageHero from '@/app/(blog)/_components/PageHero';
+import PageHero from '@/app/_components/PageHero';
 import { getAllKotobaPosts, getAllKotobaPostsWithContent } from '@/app/_lib/content-loader';
-import { getEmojiFavicon } from '@/utils/favicon';
 import { SITE_CONFIG } from '@/site.config';
+import { getEmojiFavicon } from '@/utils/favicon';
 import KotobaContainer from '../../_components/KotobaContainer';
 
 export const metadata: Metadata = {
@@ -14,7 +15,9 @@ export const metadata: Metadata = {
 export async function generateStaticParams() {
   const posts = await getAllKotobaPosts();
   const totalPages = Math.max(1, Math.ceil(posts.length / SITE_CONFIG.kotobaPerPage));
-  return Array.from({ length: totalPages }, (_, i) => ({ page: [String(i + 1)] }));
+  return Array.from({ length: totalPages }, (_, i) => ({
+    page: [String(i + 1)],
+  }));
 }
 
 export default async function KotobaPage({ params }: { params: Promise<{ page?: string[] }> }) {
@@ -28,7 +31,23 @@ export default async function KotobaPage({ params }: { params: Promise<{ page?: 
 
   return (
     <>
-      <PageHero title="言叶" />
+      <PageHero
+        title="贼歪说"
+        after={
+          <div>
+            我的日常碎片和随口说说。你可以在我的 Telegram 频道「
+            <Link
+              href="https://t.me/aboutzy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              贼歪说
+            </Link>
+            」浏览更古早的内容，也欢迎你与我留言互动。
+          </div>
+        }
+      />
       <div className="g-container pb-20">
         <KotobaContainer posts={posts} currentPage={currentPage} urlPrefix="/kotoba" />
       </div>

@@ -1,6 +1,7 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneLight } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import LightboxImage from '@/app/_components/LightboxImage';
 import Prose from './Prose';
 
 interface MdxRendererProps {
@@ -59,6 +60,7 @@ export default function MdxRenderer({ source }: MdxRendererProps) {
           code: SmartCode,
           pre: CustomPre,
           a: CustomLink,
+          img: LightboxImage,
         }}
       />
     </Prose>

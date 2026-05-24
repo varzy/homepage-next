@@ -1,13 +1,11 @@
-import Link from "next/link";
-import { MDXRemote } from "next-mdx-remote/rsc";
-import { KotobaPostWithContent } from "@/app/_lib/content-loader";
-import { extractImagesFromMdx, formatRelativeTime } from "../_lib/kotoba-utils";
-import KotobaImageGrid from "./KotobaImageGrid";
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import Link from 'next/link';
+import { KotobaPostWithContent } from '@/app/_lib/content-loader';
+import { extractImagesFromMdx, formatRelativeTime } from '../_lib/kotoba-utils';
+import KotobaImageGrid from './KotobaImageGrid';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const CardLink = (props: any) => (
-  <a target="_blank" rel="noopener noreferrer" {...props} />
-);
+const CardLink = (props: any) => <a target="_blank" rel="noopener noreferrer" {...props} />;
 
 interface KotobaCardProps {
   post: KotobaPostWithContent;

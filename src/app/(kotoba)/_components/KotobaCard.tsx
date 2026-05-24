@@ -17,7 +17,7 @@ export default function KotobaCard({ post }: KotobaCardProps) {
   const displayDate = formatDisplayDate(post.publishedDate);
 
   return (
-    <article className="mb-4 border-black/10 bg-white p-4 sm:p-8">
+    <article className="mb-4 border-black/10 bg-white p-5 sm:p-8">
       <div className="text-secondary mb-3 flex flex-wrap items-baseline gap-x-4 gap-y-1 text-xs">
         {displayDate && <time dateTime={post.publishedDate}>{displayDate}</time>}
         {post.tags.map((tag) => (

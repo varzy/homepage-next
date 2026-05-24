@@ -1,16 +1,19 @@
-import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import PageHero from '@/app/_components/PageHero';
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import PageHero from "@/app/_components/PageHero";
 import {
   getAllKotobaPosts,
   getAllKotobaTags,
   getKotobaPostsWithContentByTag,
-} from '@/app/_lib/content-loader';
-import { SITE_CONFIG } from '@/site.config';
-import KotobaContainer from '../../../../_components/KotobaContainer';
+} from "@/app/_lib/content-loader";
+import { SITE_CONFIG } from "@/site.config";
+import KotobaContainer from "../../../../_components/KotobaContainer";
 
 export async function generateStaticParams() {
-  const [allPosts, allTags] = await Promise.all([getAllKotobaPosts(), getAllKotobaTags()]);
+  const [allPosts, allTags] = await Promise.all([
+    getAllKotobaPosts(),
+    getAllKotobaTags(),
+  ]);
 
   return allTags.flatMap((tag) => {
     const count = allPosts.filter((p) => p.tags.includes(tag)).length;
@@ -30,13 +33,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { tag } = await params;
   const decoded = safeDecodeTag(tag);
-  return { title: `#${decoded} · 言叶` };
+  return { title: `#${decoded}` };
 }
 
 function safeDecodeTag(raw: string): string {
   try {
     const once = decodeURIComponent(raw);
-    return once.includes('%') ? decodeURIComponent(once) : once;
+    return once.includes("%") ? decodeURIComponent(once) : once;
   } catch {
     return raw;
   }
@@ -60,7 +63,7 @@ export default async function KotobaTagPage({
 
   return (
     <>
-      <PageHero title="言叶" />
+      <PageHero title={"#" + tagText} />
       <div className="g-container pb-20">
         <KotobaContainer
           posts={posts}

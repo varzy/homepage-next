@@ -1,30 +1,44 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 export default function Home() {
   const links = [
-    { label: '我', alias: 'README', href: '/readme' },
-    { label: '文章', alias: 'Blog', href: '/blog' },
-    // { label: '言叶', alias: 'Kotoba', href: '/kotoba' },
-    { label: '贼歪说', alias: 'Telegram', href: 'https://t.me/aboutzy', target: '_blank' },
+    { label: "我", alias: "README", href: "/readme" },
+    { label: "文章", alias: "Blog", href: "/blog" },
     {
-      label: '随手拍',
-      alias: 'Instagram',
-      href: 'https://instagram.com/varzyme',
-      target: '_blank',
+      label: "言叶",
+      alias: "Kotoba",
+      href: "/kotoba",
     },
     {
-      label: '书影音',
-      alias: 'Douban',
-      href: 'https://www.douban.com/people/varzy/',
-      target: '_blank',
+      label: "贼歪说",
+      alias: "Telegram",
+      href: "https://t.me/aboutzy",
+      target: "_blank",
     },
     {
-      label: '歌单',
-      alias: 'NeteaseMusic',
-      href: 'https://music.163.com/playlist?id=39874340&userid=45403592',
-      target: '_blank',
+      label: "随手拍",
+      alias: "Instagram",
+      href: "https://instagram.com/varzyme",
+      target: "_blank",
     },
-    { label: '代码库', alias: 'Github', href: 'https://github.com/varzy', target: '_blank' },
+    {
+      label: "书影音",
+      alias: "Douban",
+      href: "https://www.douban.com/people/varzy/",
+      target: "_blank",
+    },
+    {
+      label: "歌单",
+      alias: "NeteaseMusic",
+      href: "https://music.163.com/playlist?id=39874340&userid=45403592",
+      target: "_blank",
+    },
+    {
+      label: "代码库",
+      alias: "Github",
+      href: "https://github.com/varzy",
+      target: "_blank",
+    },
   ];
 
   return (
@@ -46,7 +60,9 @@ export default function Home() {
                 target={link.target}
                 className="inline-flex items-center hover:underline"
               >
-                <span className="w-22 font-bold tracking-widest text-black">{link.label}</span>
+                <span className="w-22 font-bold tracking-widest text-black">
+                  {link.label}
+                </span>
                 <span className="text-secondary font-normal">{link.alias}</span>
               </Link>
             </li>

@@ -1,6 +1,6 @@
 import Pagination from '@/app/(blog)/_components/Pagination';
 import { KotobaPostWithContent } from '@/app/_lib/content-loader';
-import { KOTOBA_PER_PAGE } from '../_lib/kotoba-utils';
+import { SITE_CONFIG } from '@/site.config';
 import KotobaCard from './KotobaCard';
 
 interface KotobaContainerProps {
@@ -10,8 +10,8 @@ interface KotobaContainerProps {
 }
 
 export default function KotobaContainer({ posts, currentPage, urlPrefix }: KotobaContainerProps) {
-  const start = (currentPage - 1) * KOTOBA_PER_PAGE;
-  const pagePosts = posts.slice(start, start + KOTOBA_PER_PAGE);
+  const start = (currentPage - 1) * SITE_CONFIG.kotobaPerPage;
+  const pagePosts = posts.slice(start, start + SITE_CONFIG.kotobaPerPage);
 
   return (
     <>
@@ -22,7 +22,7 @@ export default function KotobaContainer({ posts, currentPage, urlPrefix }: Kotob
       </div>
       <Pagination
         current={currentPage}
-        pageSize={KOTOBA_PER_PAGE}
+        pageSize={SITE_CONFIG.kotobaPerPage}
         urlPrefix={urlPrefix}
         total={posts.length}
       />

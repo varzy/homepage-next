@@ -11,7 +11,7 @@ export default function KotobaImageGrid({ images }: KotobaImageGridProps) {
         <img
           src={images[0]}
           alt=""
-          className="max-h-96 w-full rounded-lg object-cover"
+          className="max-h-96 w-full object-cover"
           loading="lazy"
         />
       </div>
@@ -21,7 +21,7 @@ export default function KotobaImageGrid({ images }: KotobaImageGridProps) {
   const gridCols = images.length === 2 ? 'grid-cols-2' : 'grid-cols-3';
 
   return (
-    <div className={`mt-3 grid ${gridCols} gap-1 overflow-hidden rounded-lg`}>
+    <div className={`mt-3 grid ${gridCols} gap-1`}>
       {images.map((src, i) => (
         <div key={i} className="aspect-square overflow-hidden">
           <img src={src} alt="" className="h-full w-full object-cover" loading="lazy" />

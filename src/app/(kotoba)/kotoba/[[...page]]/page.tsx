@@ -3,9 +3,8 @@ import { notFound } from 'next/navigation';
 import PageHero from '@/app/(blog)/_components/PageHero';
 import { getAllKotobaPosts, getAllKotobaPostsWithContent } from '@/app/_lib/content-loader';
 import { getEmojiFavicon } from '@/utils/favicon';
+import { SITE_CONFIG } from '@/site.config';
 import KotobaContainer from '../../_components/KotobaContainer';
-import KotobaTag from '../../_components/KotobaTag';
-import { KOTOBA_PER_PAGE } from '../../_lib/kotoba-utils';
 
 export const metadata: Metadata = {
   title: '言叶',
@@ -14,7 +13,7 @@ export const metadata: Metadata = {
 
 export async function generateStaticParams() {
   const posts = await getAllKotobaPosts();
-  const totalPages = Math.max(1, Math.ceil(posts.length / KOTOBA_PER_PAGE));
+  const totalPages = Math.max(1, Math.ceil(posts.length / SITE_CONFIG.kotobaPerPage));
   return Array.from({ length: totalPages }, (_, i) => ({ page: [String(i + 1)] }));
 }
 
@@ -27,26 +26,9 @@ export default async function KotobaPage({ params }: { params: Promise<{ page?: 
 
   const posts = await getAllKotobaPostsWithContent();
 
-  // Build tag list sorted by post count
-  const tagCountMap = new Map<string, number>();
-  posts.forEach((p) =>
-    p.tags.forEach((tag) => tagCountMap.set(tag, (tagCountMap.get(tag) ?? 0) + 1)),
-  );
-  const sortedTags = Array.from(tagCountMap.entries())
-    .sort((a, b) => b[1] - a[1])
-    .map(([tag, count]) => ({ tag, count }));
-
-  const TagSection = sortedTags.length > 0 && (
-    <div className="mt-3 flex flex-wrap gap-y-2">
-      {sortedTags.map(({ tag, count }) => (
-        <KotobaTag key={tag} tag={tag} count={count} />
-      ))}
-    </div>
-  );
-
   return (
     <>
-      <PageHero title="言叶" after={TagSection || undefined} />
+      <PageHero title="言叶" />
       <div className="g-container pb-20">
         <KotobaContainer posts={posts} currentPage={currentPage} urlPrefix="/kotoba" />
       </div>

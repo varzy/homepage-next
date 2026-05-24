@@ -6,9 +6,8 @@ import {
   getAllKotobaTags,
   getKotobaPostsWithContentByTag,
 } from '@/app/_lib/content-loader';
+import { SITE_CONFIG } from '@/site.config';
 import KotobaContainer from '../../../../_components/KotobaContainer';
-import KotobaTag from '../../../../_components/KotobaTag';
-import { KOTOBA_PER_PAGE } from '../../../../_lib/kotoba-utils';
 
 export async function generateStaticParams() {
   const [allPosts, allTags] = await Promise.all([getAllKotobaPosts(), getAllKotobaTags()]);
@@ -16,7 +15,7 @@ export async function generateStaticParams() {
   return allTags.flatMap((tag) => {
     const count = allPosts.filter((p) => p.tags.includes(tag)).length;
     if (count === 0) return [];
-    const totalPages = Math.ceil(count / KOTOBA_PER_PAGE);
+    const totalPages = Math.ceil(count / SITE_CONFIG.kotobaPerPage);
     return Array.from({ length: totalPages }, (_, i) => ({
       tag: encodeURIComponent(tag),
       page: [String(i + 1)],
@@ -55,37 +54,18 @@ export default async function KotobaTagPage({
   if (isNaN(currentPage) || currentPage < 1) notFound();
 
   const tagText = safeDecodeTag(rawTag);
-
-  const [allPosts, posts] = await Promise.all([
-    getAllKotobaPosts(),
-    getKotobaPostsWithContentByTag(tagText),
-  ]);
+  const posts = await getKotobaPostsWithContentByTag(tagText);
 
   if (posts.length === 0) notFound();
 
-  // Build tag list for the header, sorted by count, marking the active one
-  const tagCountMap = new Map<string, number>();
-  allPosts.forEach((p) => p.tags.forEach((t) => tagCountMap.set(t, (tagCountMap.get(t) ?? 0) + 1)));
-  const sortedTags = Array.from(tagCountMap.entries())
-    .sort((a, b) => b[1] - a[1])
-    .map(([tag, count]) => ({ tag, count }));
-
-  const TagSection = (
-    <div className="mt-3 flex flex-wrap gap-y-2">
-      {sortedTags.map(({ tag, count }) => (
-        <KotobaTag key={tag} tag={tag} count={count} active={tag === tagText} />
-      ))}
-    </div>
-  );
-
   return (
     <>
-      <PageHero title="言叶" after={TagSection} />
+      <PageHero title="言叶" />
       <div className="g-container pb-20">
         <KotobaContainer
           posts={posts}
           currentPage={currentPage}
-          urlPrefix={`/kotoba/tag/${rawTag}`}
+          urlPrefix={`/kotoba/tags/${rawTag}`}
         />
       </div>
     </>

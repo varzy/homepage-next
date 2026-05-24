@@ -1,5 +1,5 @@
 import Pagination from '@/app/_components/Pagination';
-import { KotobaPostWithContent } from '@/app/_lib/content-loader';
+import { KotobaPostWithContent } from '@/app/_lib/kotoba-loader';
 import { SITE_CONFIG } from '@/site.config';
 import KotobaCard from './KotobaCard';
 

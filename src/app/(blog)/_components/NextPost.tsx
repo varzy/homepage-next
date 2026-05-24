@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { PostMeta } from '@/app/_lib/content-loader';
+import { PostMeta } from '@/app/_lib/blog-loader';
 
-export default function PrevAndNextPosts({ nextPost }: { nextPost: PostMeta | null }) {
+export default function NextPost({ nextPost }: { nextPost: PostMeta | null }) {
   return (
     nextPost && (
       <div className="mt-14 flex justify-between gap-3">

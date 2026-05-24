@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 import PostTag from '@/app/(blog)/_components/PostTag';
-import { getAllPosts, getAllTags } from '@/app/_lib/content-loader';
+import { getAllPosts, getAllTags } from '@/app/_lib/blog-loader';
 import { getEmojiFavicon } from '@/utils/favicon';
 
 export const metadata: Metadata = {

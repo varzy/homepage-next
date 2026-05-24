@@ -9,7 +9,7 @@ import {
   getNextPost,
   getPostBySlug,
   getPostWithContent,
-} from '@/app/_lib/content-loader';
+} from '@/app/_lib/blog-loader';
 import { getEmojiFavicon } from '@/utils/favicon';
 
 interface PageProps {

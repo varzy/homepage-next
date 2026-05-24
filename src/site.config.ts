@@ -23,3 +23,7 @@ export const SITE_CONFIG = {
     },
   },
 };
+
+export function isCategoryKey(value: string): value is keyof typeof SITE_CONFIG.categories {
+  return value in SITE_CONFIG.categories;
+}

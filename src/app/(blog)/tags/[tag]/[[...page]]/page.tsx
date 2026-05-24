@@ -1,25 +1,14 @@
 import { notFound } from 'next/navigation';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 import PostsContainer from '@/app/(blog)/_components/PostsContainer';
-import { getAllPosts, getPostsByTag, getAllTags } from '@/app/_lib/content-loader';
+import { getAllPosts, getPostsByTag, getAllTags } from '@/app/_lib/blog-loader';
+import { buildTagPageParams } from '@/app/_lib/pagination-utils';
 import { SITE_CONFIG } from '@/site.config';
+import { safeDecodeTag } from '@/utils/url';
 
 export async function generateStaticParams() {
-  const tags = await getAllTags();
-  const allPosts = await getAllPosts();
-
-  const renderingGroups = tags.map((tag) => {
-    const tagPosts = allPosts.filter((post) => post.tags.includes(tag));
-    if (tagPosts.length === 0) return [];
-
-    const totalPages = Math.ceil(tagPosts.length / SITE_CONFIG.blogPerPage);
-    return Array.from({ length: totalPages }).map((_, i) => ({
-      tag: encodeURIComponent(tag),
-      page: [String(i + 1)],
-    }));
-  });
-
-  return renderingGroups.reduce((all, group) => [...all, ...group], []);
+  const [allPosts, allTags] = await Promise.all([getAllPosts(), getAllTags()]);
+  return buildTagPageParams(allPosts, allTags, SITE_CONFIG.blogPerPage);
 }
 
 export default async function Tag({
@@ -31,13 +20,7 @@ export default async function Tag({
 
   if (optionalPageParam.length > 1) notFound();
 
-  let tagText = tag;
-  try {
-    tagText = decodeURIComponent(tag);
-    if (tagText.includes('%')) tagText = decodeURIComponent(tagText);
-  } catch {
-    tagText = tag;
-  }
+  const tagText = safeDecodeTag(tag);
 
   const [optionalPage] = optionalPageParam;
   const currentPage = +(optionalPage || 1);

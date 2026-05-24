@@ -1,6 +1,6 @@
 import { type Metadata } from 'next';
 import { getEmojiFavicon } from '@/utils/favicon';
-import { getAllPosts, getAllPostsCount, getPostsTotalWords } from '../../_lib/content-loader';
+import { getAllPosts, getAllPostsCount, getPostsTotalWords } from '../../_lib/blog-loader';
 import BlogPageContainer from '../_components/BlogPageContainer';
 import PostItemArchive from '../_components/PostItemArchive';
 

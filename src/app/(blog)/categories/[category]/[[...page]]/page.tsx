@@ -1,12 +1,8 @@
 import { notFound } from 'next/navigation';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 import PostsContainer from '@/app/(blog)/_components/PostsContainer';
-import { getAllPosts, getCategoryPosts } from '@/app/_lib/content-loader';
-import { SITE_CONFIG } from '@/site.config';
-
-function isCategoryKey(value: string): value is keyof typeof SITE_CONFIG.categories {
-  return value in SITE_CONFIG.categories;
-}
+import { getAllPosts, getCategoryPosts } from '@/app/_lib/blog-loader';
+import { SITE_CONFIG, isCategoryKey } from '@/site.config';
 
 export async function generateStaticParams() {
   const categoriesConfig = SITE_CONFIG.categories;

@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import PageHero from '@/app/_components/PageHero';
-import { getAllKotobaPosts, getAllKotobaPostsWithContent } from '@/app/_lib/content-loader';
+import { getAllKotobaPosts, getAllKotobaPostsWithContent } from '@/app/_lib/kotoba-loader';
 import { SITE_CONFIG } from '@/site.config';
 import { getEmojiFavicon } from '@/utils/favicon';
 import KotobaContainer from '../../_components/KotobaContainer';

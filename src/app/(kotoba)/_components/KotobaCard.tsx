@@ -1,7 +1,8 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import Link from 'next/link';
-import { KotobaPostWithContent } from '@/app/_lib/content-loader';
-import { extractImagesFromMdx, formatDisplayDate } from '../_lib/kotoba-utils';
+import { KotobaPostWithContent } from '@/app/_lib/kotoba-loader';
+import { formatDisplayDate } from '@/utils/date';
+import { extractImagesFromMdx } from '../_lib/kotoba-utils';
 import KotobaImageGrid from './KotobaImageGrid';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

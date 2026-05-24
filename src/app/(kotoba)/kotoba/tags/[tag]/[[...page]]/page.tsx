@@ -11,6 +11,8 @@ import { SITE_CONFIG } from "@/site.config";
 import { safeDecodeTag } from "@/utils/url";
 import KotobaContainer from "../../../../_components/KotobaContainer";
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   const [allPosts, allTags] = await Promise.all([getAllKotobaPosts(), getAllKotobaTags()]);
   return buildTagPageParams(allPosts, allTags, SITE_CONFIG.kotobaPerPage);

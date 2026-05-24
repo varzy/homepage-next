@@ -9,7 +9,7 @@ export function buildTagPageParams(
     const totalPages = Math.ceil(count / perPage);
     return Array.from({ length: totalPages }, (_, i) => ({
       tag: encodeURIComponent(tag),
-      page: [String(i + 1)],
+      page: i === 0 ? [] : [String(i + 1)],
     }));
   });
 }

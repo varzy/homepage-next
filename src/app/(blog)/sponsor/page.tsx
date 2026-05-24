@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
-import Prose from '@/app/(blog)/_components/Prose';
 import LightboxImage from '@/app/_components/LightboxImage';
+import Prose from '@/app/_components/Prose';
 import { getEmojiFavicon } from '@/utils/favicon';
 
 export const metadata: Metadata = {

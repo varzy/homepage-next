@@ -35,7 +35,7 @@ export default async function KotobaPage({ params }: { params: Promise<{ page?: 
         title="贼歪说"
         after={
           <div>
-            我的日常碎片和随口说说。你可以在我的 Telegram 频道「
+            我的日常碎片和随口说说。你也可以在我的 Telegram 频道「
             <Link
               href="https://t.me/aboutzy"
               target="_blank"
@@ -44,7 +44,7 @@ export default async function KotobaPage({ params }: { params: Promise<{ page?: 
             >
               贼歪说
             </Link>
-            」浏览更古早的内容，也欢迎你与我留言互动。
+            」浏览更古早的内容。
           </div>
         }
       />

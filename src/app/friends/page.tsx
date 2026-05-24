@@ -1,9 +1,9 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 import { getPageWithContent } from '@/app/_lib/blog-loader';
 import { getEmojiFavicon } from '@/utils/favicon';
 import MdxRenderer from '../_components/MdxRenderer';
+import PageHeader from '../_components/PageHeader';
 
 export const metadata: Metadata = {
   title: 'Friends',
@@ -15,8 +15,11 @@ export default async function Friends() {
   if (!postWithContent) notFound();
 
   return (
-    <BlogPageContainer pageHero={{ title: `Friends` }}>
-      <MdxRenderer source={postWithContent.content} />
-    </BlogPageContainer>
+    <div className="pb-48">
+      <PageHeader />
+      <div className="g-container">
+        <MdxRenderer source={postWithContent.content} />
+      </div>
+    </div>
   );
 }

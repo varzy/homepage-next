@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import Prose from '@/app/(blog)/_components/Prose';
+import Prose from '@/app/_components/Prose';
 import { getEmojiFavicon } from '@/utils/favicon';
 
 export const metadata: Metadata = {

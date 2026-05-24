@@ -1,9 +1,9 @@
 import { notFound } from 'next/navigation';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
-import MdxRenderer from '@/app/(blog)/_components/MdxRenderer';
 import NextPost from '@/app/(blog)/_components/NextPost';
 import PostFooter from '@/app/(blog)/_components/PostFooter';
 import PostTagLite from '@/app/(blog)/_components/PostTagLite';
+import MdxRenderer from '@/app/_components/MdxRenderer';
 import {
   getAllPosts,
   getNextPost,

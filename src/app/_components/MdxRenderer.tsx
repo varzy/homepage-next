@@ -1,6 +1,6 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { oneLight } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { oneDark, oneLight } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import LightboxImage from '@/app/_components/LightboxImage';
 import Prose from './Prose';
 
@@ -25,25 +25,33 @@ const SmartCode = ({ children, className, ...props }: MdxCustomComponentProps) =
   if (hasLanguageClass) {
     const match = /language-(\w+)/.exec(className || '');
     const language = match ? match[1] : 'text';
+    const sharedProps = {
+      language,
+      PreTag: 'div' as const,
+      customStyle: { fontSize: '0.95rem' },
+      wrapLongLines: true,
+      ...props,
+    };
 
     return (
-      <SyntaxHighlighter
-        language={language}
-        style={oneLight}
-        PreTag="div"
-        customStyle={{ fontSize: '0.95rem' }}
-        wrapLongLines
-        {...props}
-      >
-        {/* {String(children).replace(/\n$/, '')} */}
-        {children}
-      </SyntaxHighlighter>
+      <>
+        <div className="dark:hidden">
+          <SyntaxHighlighter style={oneLight} {...sharedProps}>
+            {children}
+          </SyntaxHighlighter>
+        </div>
+        <div className="hidden dark:block">
+          <SyntaxHighlighter style={oneDark} {...sharedProps}>
+            {children}
+          </SyntaxHighlighter>
+        </div>
+      </>
     );
   }
 
   return (
     <code
-      className="rounded border-0 bg-gray-200 px-1 py-0.5 font-mono text-sm font-medium text-rose-600 shadow-none"
+      className="bg-code-bg text-code-fg rounded border-0 px-1 py-0.5 font-mono text-sm font-medium shadow-none"
       {...props}
     >
       {children}

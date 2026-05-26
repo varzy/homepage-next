@@ -5,7 +5,7 @@ export default function PostItem(post: PostMeta) {
   return (
     <div className="mb-3 block last:mb-0">
       <div className="flex gap-3">
-        <h2 className="flex-1 leading-6 text-black">
+        <h2 className="text-ink flex-1 leading-6">
           <Link href={'/posts/' + post.slug} className="hover:underline">
             {post.title}
           </Link>

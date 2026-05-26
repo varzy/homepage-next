@@ -65,7 +65,7 @@ export default function Home() {
                 target={link.target}
                 className="inline-flex items-center hover:underline"
               >
-                <span className="w-22 font-bold tracking-widest text-black">{link.label}</span>
+                <span className="text-ink w-22 font-bold tracking-widest">{link.label}</span>
                 <span className="text-secondary font-normal">{link.alias}</span>
               </Link>
             </li>

@@ -44,7 +44,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       )}
       data-scroll-behavior="smooth"
     >
-      <body className="bg-[#f7f7f7] tracking-wide">
+      <body className="bg-background tracking-wide">
         <LightboxProvider>{children}</LightboxProvider>
         <Analytics />
         <SpeedInsights />

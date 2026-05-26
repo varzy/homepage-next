@@ -1,8 +1,21 @@
 'use client';
 
 import Giscus from '@giscus/react';
+import { useEffect, useState } from 'react';
+
+type GiscusTheme = 'noborder_light' | 'noborder_dark';
 
 export default function GiscusComment() {
+  const [theme, setTheme] = useState<GiscusTheme>('noborder_light');
+
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-color-scheme: dark)');
+    const update = () => setTheme(mq.matches ? 'noborder_dark' : 'noborder_light');
+    update();
+    mq.addEventListener('change', update);
+    return () => mq.removeEventListener('change', update);
+  }, []);
+
   return (
     <Giscus
       id="comments"
@@ -14,7 +27,7 @@ export default function GiscusComment() {
       reactionsEnabled="0"
       emitMetadata="1"
       inputPosition="top"
-      theme="noborder_light"
+      theme={theme}
       lang="en"
     />
   );

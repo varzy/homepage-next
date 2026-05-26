@@ -13,7 +13,7 @@ export default function PageHero({ title, after, children }: PageHeroProps) {
         <>{children}</>
       ) : (
         <>
-          {title && <h1 className="text-3xl font-extrabold text-black sm:text-4xl">{title}</h1>}
+          {title && <h1 className="text-ink text-3xl font-extrabold sm:text-4xl">{title}</h1>}
           {after && <div className="mt-3">{after}</div>}
         </>
       )}

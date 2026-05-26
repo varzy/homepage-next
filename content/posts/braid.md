@@ -6,9 +6,9 @@ status: 'Published'
 tags: ['梦', '精选']
 date: '2024-05-19'
 slug: 'braid'
-summary: ''
-last_edited_time: '2026-05-26T15:50:00.000Z'
-last_fetched_time: '2026-05-26T15:51:12.178Z'
+summary: '它蜷缩着身子，翅膀被扯掉了一半，丑陋不堪。'
+last_edited_time: '2026-05-26T15:52:00.000Z'
+last_fetched_time: '2026-05-26T15:54:03.487Z'
 page_id: '73da2548-707d-4d4e-a505-54b6dd010321'
 icon: '🔓'
 ---

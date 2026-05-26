@@ -1,14 +1,14 @@
 ---
 title: 'Braid'
-category: 'Nichijou'
+category: 'Nebulous'
 type: 'Post'
 status: 'Published'
 tags: ['梦', '精选']
 date: '2024-05-19'
 slug: 'braid'
 summary: ''
-last_edited_time: '2025-10-02T15:19:00.000Z'
-last_fetched_time: '2025-10-02T15:49:51.526Z'
+last_edited_time: '2026-05-26T15:50:00.000Z'
+last_fetched_time: '2026-05-26T15:51:12.178Z'
 page_id: '73da2548-707d-4d4e-a505-54b6dd010321'
 icon: '🔓'
 ---

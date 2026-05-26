@@ -21,6 +21,12 @@ export const SITE_CONFIG = {
       favicon: '🧑‍💻',
       description: '一堆没有干货的技术笔记。',
     },
+    nebulous: {
+      notionField: 'Nebulous',
+      alias: '迷津',
+      favicon: '💤',
+      description: '虚构叙事，又或是南柯一梦？',
+    },
   },
 };
 

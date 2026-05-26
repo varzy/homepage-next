@@ -1,10 +1,7 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin '@tailwindcss/typography';
 
-/* =========================================================
-   Semantic color tokens — Light (default, white-paper)
-   ========================================================= */
 @theme {
   /* Surfaces ─ 页面与卡片背景 */
   --color-background: #f7f7f7; /* 全站页面底色 */
@@ -24,12 +21,10 @@
   --color-code-fg: #be3b6c; /* 行内 `code` 文字（玫红）*/
 }
 
-/* =========================================================
-   Dark — Warm Ink-on-Paper
-   ========================================================= */
+/* Dark · Warm Ink-on-Paper（暖纸感）*/
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: #121314;
+    --color-background: #1d2021;
     --color-surface: #191a1b;
     --color-ink: #e8e4dc;
     --color-secondary: #8a8378;

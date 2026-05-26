@@ -9,7 +9,7 @@ export type FooterLink = {
 
 export default function SiteFooter({ links }: { links: FooterLink[] }) {
   return (
-    <footer className="g-container pt-20 pb-12 text-sm [&_a]:hover:underline">
+    <footer className="g-container pt-20 pb-16 text-sm [&_a]:hover:underline">
       <div className="mt-5 flex items-center justify-between">
         <p>
           <span>

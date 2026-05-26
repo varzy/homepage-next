@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <div className="g-lefty-container">
+    <div className="g-container-lefty">
       <Prose>
         <h1>404 Not Found.</h1>
         <Link href="/">Back to /</Link>

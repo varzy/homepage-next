@@ -8,7 +8,7 @@ export function buildTagPageParams(
     if (count === 0) return [];
     const totalPages = Math.ceil(count / perPage);
     return Array.from({ length: totalPages }, (_, i) => ({
-      tag: encodeURIComponent(tag),
+      tag,
       page: i === 0 ? [] : [String(i + 1)],
     }));
   });

@@ -48,7 +48,7 @@ export default async function KotobaPage({ params }: { params: Promise<{ page?: 
           </div>
         }
       />
-      <div className="g-container pb-20">
+      <div className="g-container">
         <KotobaContainer posts={posts} currentPage={currentPage} urlPrefix="/kotoba" />
       </div>
     </>

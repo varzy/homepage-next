@@ -47,7 +47,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="g-lefty-container leading-8 tracking-wider">
+    <div className="g-container-lefty leading-8 tracking-wider">
       {/* Heading */}
       <div className="flex items-end text-5xl font-bold">
         <h1 className="italic">贼歪</h1>

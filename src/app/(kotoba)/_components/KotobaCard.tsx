@@ -19,7 +19,7 @@ export default function KotobaCard({ post }: KotobaCardProps) {
 
   return (
     <article className="mb-4 border-black/10 bg-white p-5 sm:p-8">
-      <div className="text-secondary mb-3 flex flex-wrap items-baseline gap-x-4 gap-y-1 text-xs">
+      <div className="text-secondary mb-3 flex flex-wrap items-baseline gap-x-4 gap-y-1 text-sm">
         {displayDate && <time dateTime={post.publishedDate}>{displayDate}</time>}
         {post.tags.map((tag) => (
           <Link
@@ -52,7 +52,7 @@ export default function KotobaCard({ post }: KotobaCardProps) {
       )}
 
       {hasContent && (
-        <div className="prose prose-sm prose-p:my-3 prose-ul:my-3 prose-ol:my-3 prose-blockquote:my-3 prose-code:before:content-none prose-code:after:content-none prose-a:font-normal prose-a:text-inherit prose-a:decoration-1 prose-blockquote:[&_p]:before:content-none prose-blockquote:[&_p]:after:content-none max-w-none leading-relaxed wrap-break-word">
+        <div className="prose prose-p:my-3 prose-ul:my-3 prose-ol:my-3 prose-blockquote:my-3 prose-code:before:content-none prose-code:after:content-none prose-a:font-normal prose-a:text-inherit prose-a:decoration-1 prose-blockquote:[&_p]:before:content-none prose-blockquote:[&_p]:after:content-none max-w-none text-[15px] leading-relaxed wrap-break-word">
           <MDXRemote source={cleanContent} components={{ a: CardLink }} />
         </div>
       )}

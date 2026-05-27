@@ -15,7 +15,7 @@ interface KotobaCardProps {
 export default function KotobaCard({ post }: KotobaCardProps) {
   const { images, cleanContent } = extractImagesFromMdx(post.content);
   const hasContent = cleanContent.length > 0;
-  const publishedTimeLabel = formatAbsoluteDate(post.publishedDate, 'MM/DD/YYYY hh:mm A');
+  const publishedTimeLabel = formatAbsoluteDate(post.publishedDate, 'MM/DD/YYYY HH:mm');
   const publishedRelativeNowLabel = formatRelativeDate(post.publishedDate);
   const displayDate = `${publishedRelativeNowLabel} · ${publishedTimeLabel} `;
 

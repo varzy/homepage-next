@@ -24,7 +24,7 @@ export default function Pagination({ total, current, pageSize, urlPrefix }: Pagi
         <div className="grid grid-cols-[1fr_auto_1fr] items-center">
           <div className="prev text-left">{showPrev && Goto(current - 1, '< Prev')}</div>
           <div className="current text-secondary text-center">
-            Page {current} of {totalPage} · Total {total}
+            {current} of {totalPage}, {total} total
           </div>
           <div className="next text-right">{showNext && Goto(current + 1, 'Next >')}</div>
         </div>

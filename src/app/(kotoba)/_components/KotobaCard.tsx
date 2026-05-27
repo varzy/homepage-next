@@ -1,7 +1,7 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import Link from 'next/link';
 import { KotobaPostWithContent } from '@/app/_lib/kotoba-loader';
-import { formatAdaptiveDate } from '@/utils/date';
+import { formatAbsoluteDate, formatRelativeDate } from '@/utils/date';
 import { extractImagesFromMdx } from '../_lib/kotoba-utils';
 import KotobaImageGrid from './KotobaImageGrid';
 
@@ -15,7 +15,9 @@ interface KotobaCardProps {
 export default function KotobaCard({ post }: KotobaCardProps) {
   const { images, cleanContent } = extractImagesFromMdx(post.content);
   const hasContent = cleanContent.length > 0;
-  const displayDate = formatAdaptiveDate(post.publishedDate);
+  const publishedTimeLabel = formatAbsoluteDate(post.publishedDate, 'MM/DD/YYYY hh:mm A');
+  const publishedRelativeNowLabel = formatRelativeDate(post.publishedDate);
+  const displayDate = `${publishedRelativeNowLabel} · ${publishedTimeLabel} `;
 
   return (
     <article className="bg-surface border-border mb-4 p-5 sm:p-8">

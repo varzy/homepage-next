@@ -32,6 +32,7 @@ export default async function Tag({
       <PostsContainer
         posts={allPosts}
         currentPage={currentPage}
+        showCategory={false}
         showTags={false}
         urlPrefix={`/tags/${tag}`}
       />

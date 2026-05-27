@@ -29,6 +29,7 @@
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
     "clsx": "^2.1.1",
+    "dayjs": "^1.11.21",
     "dotenv": "^17.4.2",
     "glob": "^13.0.6",
     "gray-matter": "^4.0.3",

@@ -58,7 +58,7 @@ const kotobaConfig: NotionFetcherConfig<KotobaMetadata> = {
   }),
   buildSort: () => [{ property: 'published_time', direction: 'descending' }],
   extractMetadata: extractKotobaMeta,
-  getFileKey: (e) => `${e.published_time}-${e.page_id.split('-').pop()}`,
+  getFileKey: (e) => `${e.published_time.slice(0, 10)}-${e.page_id.split('-').pop()}`,
   getPageId: (e) => e.page_id,
   getConvertIdentifier: (e) => e.page_id.replace(/-/g, '').slice(0, 8),
   getLastFetchedTime: (e) => e.last_fetched_time,

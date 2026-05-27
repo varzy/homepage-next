@@ -11,7 +11,7 @@ export default function PostItem(post: PostMetaData) {
             {post.title}
           </Link>
         </h2>
-        <PostMeta post={post} showCategory={false} showTags={false} showYear={false}></PostMeta>
+        <PostMeta post={post} showCategory={false} showTags={false} dateTpl="MMM DD"></PostMeta>
       </div>
     </div>
   );

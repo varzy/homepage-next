@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 import PostsContainer from '@/app/(blog)/_components/PostsContainer';
-import { getAllPosts } from '@/app/_lib/blog-loader';
+import { getAllPosts } from '@/app/_lib/post-loader';
 import { SITE_CONFIG } from '@/site.config';
 import { getEmojiFavicon } from '@/utils/favicon';
 
@@ -31,7 +31,12 @@ export default async function BlogPage({ params }: { params: Promise<{ page?: st
 
   return (
     <BlogPageContainer pageHero={{ title: 'Articles' }}>
-      <PostsContainer posts={allPosts} currentPage={currentPage} urlPrefix="/blog" />
+      <PostsContainer
+        posts={allPosts}
+        currentPage={currentPage}
+        showTags={false}
+        urlPrefix="/blog"
+      />
     </BlogPageContainer>
   );
 }

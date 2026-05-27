@@ -1,7 +1,7 @@
 import { type Metadata } from 'next';
 import { getEmojiFavicon } from '@/utils/favicon';
-import { getAllPosts, getAllPostsCount, getPostsTotalWords } from '../../_lib/blog-loader';
-import type { PostMeta } from '../../_lib/blog-loader';
+import { getAllPosts, getAllPostsCount, getPostsTotalWords } from '../../_lib/post-loader';
+import type { PostMeta } from '../../_lib/post-loader';
 import BlogPageContainer from '../_components/BlogPageContainer';
 import BlogSection from '../_components/BlogSection';
 import PostItemArchive from '../_components/PostItemArchive';

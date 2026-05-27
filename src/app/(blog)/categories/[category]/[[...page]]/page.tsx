@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 import PostsContainer from '@/app/(blog)/_components/PostsContainer';
-import { getCategoryPosts } from '@/app/_lib/blog-loader';
+import { getCategoryPosts } from '@/app/_lib/post-loader';
 import { SITE_CONFIG, isCategoryKey } from '@/site.config';
 
 export async function generateStaticParams() {
@@ -9,8 +9,7 @@ export async function generateStaticParams() {
 
   const renderingGroups = await Promise.all(
     Object.keys(categoriesConfig).map(async (key) => {
-      const categoryField = categoriesConfig[key as keyof typeof categoriesConfig].notionField;
-      const categoryPosts = await getCategoryPosts(categoryField);
+      const categoryPosts = await getCategoryPosts(key);
 
       if (categoryPosts.length === 0) return [];
 
@@ -37,8 +36,7 @@ export default async function CategoryPage({
   const currentPage = +(optionalPage || 1);
   if (!isCategoryKey(categoryParam)) notFound();
   const categoryCtx = SITE_CONFIG.categories[categoryParam];
-  const categoryField = categoryCtx.notionField;
-  const allPosts = await getCategoryPosts(categoryField);
+  const allPosts = await getCategoryPosts(categoryParam);
 
   return (
     <BlogPageContainer pageHero={{ title: categoryCtx.alias, after: categoryCtx.description }}>
@@ -46,6 +44,7 @@ export default async function CategoryPage({
         posts={allPosts}
         currentPage={currentPage}
         showCategory={false}
+        showTags={false}
         urlPrefix={`/categories/${categoryParam}`}
       />
     </BlogPageContainer>

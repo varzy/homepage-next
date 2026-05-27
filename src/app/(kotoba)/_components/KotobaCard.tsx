@@ -1,7 +1,7 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import Link from 'next/link';
 import { KotobaPostWithContent } from '@/app/_lib/kotoba-loader';
-import { formatDisplayDate } from '@/utils/date';
+import { formatAdaptiveDate } from '@/utils/date';
 import { extractImagesFromMdx } from '../_lib/kotoba-utils';
 import KotobaImageGrid from './KotobaImageGrid';
 
@@ -15,17 +15,21 @@ interface KotobaCardProps {
 export default function KotobaCard({ post }: KotobaCardProps) {
   const { images, cleanContent } = extractImagesFromMdx(post.content);
   const hasContent = cleanContent.length > 0;
-  const displayDate = formatDisplayDate(post.publishedDate);
+  const displayDate = formatAdaptiveDate(post.publishedDate);
 
   return (
     <article className="bg-surface border-border mb-4 p-5 sm:p-8">
-      <div className="text-secondary mb-3 flex flex-wrap items-baseline gap-x-4 gap-y-1 text-sm">
-        {displayDate && <time dateTime={post.publishedDate}>{displayDate}</time>}
+      <div className="mb-3 flex flex-wrap items-baseline gap-x-4 gap-y-1 text-sm">
+        {displayDate && (
+          <time className="text-secondary" dateTime={post.publishedDate}>
+            {displayDate}
+          </time>
+        )}
         {post.tags.map((tag) => (
           <Link
             key={tag}
             href={`/kotoba/tags/${encodeURIComponent(tag)}`}
-            className="hover:text-ink"
+            className="hover:underline"
           >
             #{tag}
           </Link>

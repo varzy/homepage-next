@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import PageHeader from '@/app/_components/PageHeader';
-import { getPageWithContent } from '@/app/_lib/blog-loader';
+import { getPageWithContent } from '@/app/_lib/page-loader';
 import { getEmojiFavicon } from '@/utils/favicon';
 
 export const metadata: Metadata = {

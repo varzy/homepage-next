@@ -1,16 +1,16 @@
-import { notFound } from "next/navigation";
-import BlogPageContainer from "@/app/(blog)/_components/BlogPageContainer";
-import NextPost from "@/app/(blog)/_components/NextPost";
-import PostFooter from "@/app/(blog)/_components/PostFooter";
-import MdxRenderer from "@/app/_components/MdxRenderer";
+import { notFound } from 'next/navigation';
+import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
+import NextPost from '@/app/(blog)/_components/NextPost';
+import PostFooter from '@/app/(blog)/_components/PostFooter';
+import MdxRenderer from '@/app/_components/MdxRenderer';
 import {
   getAllPosts,
   getCurrentCategoryNextPost,
   getPostBySlug,
   getPostWithContent,
-} from "@/app/_lib/blog-loader";
-import { getEmojiFavicon } from "@/utils/favicon";
-import PostTag from "../../_components/PostTag";
+} from '@/app/_lib/post-loader';
+import { getEmojiFavicon } from '@/utils/favicon';
+import PostMeta from '../../_components/PostMeta';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -41,7 +41,7 @@ export default async function Post({ params }: PageProps) {
   if (!postWithContent) notFound();
 
   const nextPost = await getCurrentCategoryNextPost(
-    postWithContent.category,
+    postWithContent.categoryKey,
     postWithContent.slug,
   );
 
@@ -49,21 +49,7 @@ export default async function Post({ params }: PageProps) {
     <BlogPageContainer
       pageHero={{
         title: postWithContent.title,
-        after: (
-          <div className="text-sm">
-            <span className="text-secondary">
-              {postWithContent.dateAmericaStyle}
-            </span>
-            <span>, in </span>
-            <span>日常</span>
-            <span className="ms-5">
-              {postWithContent.tags.length > 0 &&
-                postWithContent.tags.map((tag) => (
-                  <PostTag key={tag} tag={tag} />
-                ))}
-            </span>
-          </div>
-        ),
+        after: <PostMeta post={postWithContent}></PostMeta>,
       }}
     >
       <MdxRenderer source={postWithContent.content} />

@@ -1,15 +1,15 @@
-import { Metadata } from "next";
-import Link from "next/link";
-import BlogPageContainer from "@/app/(blog)/_components/BlogPageContainer";
-import PostTag from "@/app/(blog)/_components/PostTag";
-import { getAllPosts, getAllTags } from "@/app/_lib/blog-loader";
-import { SITE_CONFIG } from "@/site.config";
-import { getEmojiFavicon } from "@/utils/favicon";
-import BlogSection from "../_components/BlogSection";
+import { Metadata } from 'next';
+import Link from 'next/link';
+import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
+import PostTag from '@/app/(blog)/_components/PostTag';
+import { getAllPosts, getAllTags } from '@/app/_lib/post-loader';
+import { SITE_CONFIG } from '@/site.config';
+import { getEmojiFavicon } from '@/utils/favicon';
+import BlogSection from '../_components/BlogSection';
 
 export const metadata: Metadata = {
-  title: "Tags",
-  icons: getEmojiFavicon("🏷️"),
+  title: 'Tags',
+  icons: getEmojiFavicon('🏷️'),
 };
 
 export default async function ColumnsPage() {
@@ -36,20 +36,18 @@ export default async function ColumnsPage() {
     .sort((a, b) => b.postsCount - a.postsCount);
 
   return (
-    <BlogPageContainer pageHero={{ title: "Columns" }}>
+    <BlogPageContainer pageHero={{ title: 'Columns' }}>
       <BlogSection title="Categories">
         {categoryLinks.map((category, index) => (
           <div className="mt-5" key={index}>
-            <h2 className="font-bold text-base sm:text-lg">
+            <h2 className="text-base font-bold sm:text-lg">
               「
               <Link className="hover:underline" href={category.href}>
                 {category.label}
               </Link>
               」
             </h2>
-            <p className="text-muted text-sm sm:text-base mt-1.5 ">
-              {category.desc}
-            </p>
+            <p className="text-muted mt-1.5 text-sm sm:text-base">{category.desc}</p>
           </div>
         ))}
       </BlogSection>

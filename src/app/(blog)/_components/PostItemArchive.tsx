@@ -1,7 +1,8 @@
 import Link from 'next/link';
-import { PostMeta } from '@/app/_lib/blog-loader';
+import { type PostMeta as PostMetaData } from '@/app/_lib/post-loader';
+import PostMeta from './PostMeta';
 
-export default function PostItem(post: PostMeta) {
+export default function PostItem(post: PostMetaData) {
   return (
     <div className="mb-3 block last:mb-0">
       <div className="flex gap-3">
@@ -10,7 +11,7 @@ export default function PostItem(post: PostMeta) {
             {post.title}
           </Link>
         </h2>
-        <div className="text-secondary shrink-0 text-sm leading-6">{post.dateAmericaStyle}</div>
+        <PostMeta post={post} showCategory={false} showTags={false} showYear={false}></PostMeta>
       </div>
     </div>
   );

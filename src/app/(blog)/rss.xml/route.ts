@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import RSS from 'rss';
-import { getAllPosts, type PostMeta } from '@/app/_lib/blog-loader';
+import { getAllPosts, type PostMeta } from '@/app/_lib/post-loader';
 import { SITE_CONFIG } from '@/site.config';
 
 function generateRSSFeed(posts: PostMeta[]): string {

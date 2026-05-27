@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getPageWithContent } from '@/app/_lib/blog-loader';
+import { getPageWithContent } from '@/app/_lib/page-loader';
 import { getEmojiFavicon } from '@/utils/favicon';
 import MdxRenderer from '../../_components/MdxRenderer';
 

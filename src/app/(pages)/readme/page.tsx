@@ -2,7 +2,7 @@ import { type Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import LightboxImage from '@/app/_components/LightboxImage';
 import MdxRenderer from '@/app/_components/MdxRenderer';
-import { getPageWithContent } from '@/app/_lib/blog-loader';
+import { getPageWithContent } from '@/app/_lib/page-loader';
 import { getEmojiFavicon } from '@/utils/favicon';
 
 export const metadata: Metadata = {

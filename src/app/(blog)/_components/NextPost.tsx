@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { PostMeta } from '@/app/_lib/blog-loader';
+import { PostMeta } from '@/app/_lib/post-loader';
 
 export default function NextPost({ nextPost }: { nextPost: PostMeta | null }) {
   return (

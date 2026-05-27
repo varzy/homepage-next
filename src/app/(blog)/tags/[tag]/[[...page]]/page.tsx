@@ -1,8 +1,8 @@
 import { notFound } from 'next/navigation';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 import PostsContainer from '@/app/(blog)/_components/PostsContainer';
-import { getAllPosts, getPostsByTag, getAllTags } from '@/app/_lib/blog-loader';
 import { buildTagPageParams } from '@/app/_lib/pagination-utils';
+import { getAllPosts, getPostsByTag, getAllTags } from '@/app/_lib/post-loader';
 import { SITE_CONFIG } from '@/site.config';
 import { safeDecodeTag } from '@/utils/url';
 
@@ -29,7 +29,12 @@ export default async function Tag({
 
   return (
     <BlogPageContainer pageHero={{ title: '#' + tagText }}>
-      <PostsContainer posts={allPosts} currentPage={currentPage} urlPrefix={`/tags/${tag}`} />
+      <PostsContainer
+        posts={allPosts}
+        currentPage={currentPage}
+        showTags={false}
+        urlPrefix={`/tags/${tag}`}
+      />
     </BlogPageContainer>
   );
 }

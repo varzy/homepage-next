@@ -1,6 +1,17 @@
 const SEVEN_DAYS_MS = 7 * 24 * 60 * 60 * 1000;
 
-export function formatDisplayDate(dateStr: string, now: Date = new Date()): string {
+export function formatAbsoluteDate(dateStr: string, showYear: boolean = true): string {
+  const date = new Date(dateStr);
+  if (Number.isNaN(date.getTime())) return dateStr;
+
+  return date.toLocaleDateString('en-US', {
+    year: showYear ? 'numeric' : undefined,
+    month: 'short',
+    day: '2-digit',
+  });
+}
+
+export function formatAdaptiveDate(dateStr: string, now: Date = new Date()): string {
   const past = new Date(dateStr);
   if (Number.isNaN(past.getTime())) return dateStr;
 

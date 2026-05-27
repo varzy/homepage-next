@@ -28,7 +28,9 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
-    "src/app/(blog)/blog/route.ts.bak"
+    "src/app/(blog)/blog/route.ts.bak",
+    "tests/fetch-posts.test.ts.bak",
+    "tests/generate-content.test.ts.bak"
   ],
   "exclude": ["node_modules", "backup/**/*", ".next/**/*"]
 }

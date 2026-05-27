@@ -166,7 +166,7 @@ export async function getPrevPost(category: string, slug: string): Promise<PostM
   return findAdjacentPost(category, slug, -1);
 }
 
-export async function getNextPost(category: string, slug: string): Promise<PostMeta | null> {
+export async function getCurrentCategoryNextPost(category: string, slug: string): Promise<PostMeta | null> {
   return findAdjacentPost(category, slug, 1);
 }
 

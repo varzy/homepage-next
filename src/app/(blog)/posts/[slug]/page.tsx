@@ -6,7 +6,7 @@ import PostTagLite from '@/app/(blog)/_components/PostTagLite';
 import MdxRenderer from '@/app/_components/MdxRenderer';
 import {
   getAllPosts,
-  getNextPost,
+  getCurrentCategoryNextPost,
   getPostBySlug,
   getPostWithContent,
 } from '@/app/_lib/blog-loader';
@@ -40,7 +40,7 @@ export default async function Post({ params }: PageProps) {
   const postWithContent = await getPostWithContent(slug);
   if (!postWithContent) notFound();
 
-  const nextPost = await getNextPost(postWithContent.category, postWithContent.slug);
+  const nextPost = await getCurrentCategoryNextPost(postWithContent.category, postWithContent.slug);
 
   return (
     <BlogPageContainer

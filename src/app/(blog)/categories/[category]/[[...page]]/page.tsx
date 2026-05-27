@@ -1,30 +1,31 @@
 import { notFound } from 'next/navigation';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 import PostsContainer from '@/app/(blog)/_components/PostsContainer';
-import { getAllPosts, getCategoryPosts } from '@/app/_lib/blog-loader';
+import { getCategoryPosts } from '@/app/_lib/blog-loader';
 import { SITE_CONFIG, isCategoryKey } from '@/site.config';
 
 export async function generateStaticParams() {
   const categoriesConfig = SITE_CONFIG.categories;
-  const allPosts = await getAllPosts();
 
-  const renderingGroups = Object.keys(categoriesConfig).map((key) => {
-    const categoryField = categoriesConfig[key as keyof typeof categoriesConfig].notionField;
-    const categoryPosts = allPosts.filter((post) => post.category === categoryField);
+  const renderingGroups = await Promise.all(
+    Object.keys(categoriesConfig).map(async (key) => {
+      const categoryField = categoriesConfig[key as keyof typeof categoriesConfig].notionField;
+      const categoryPosts = await getCategoryPosts(categoryField);
 
-    if (categoryPosts.length === 0) return [];
+      if (categoryPosts.length === 0) return [];
 
-    const totalPages = Math.ceil(categoryPosts.length / SITE_CONFIG.blogPerPage);
-    return Array.from({ length: totalPages }).map((_, i) => ({
-      category: key,
-      page: [String(i + 1)],
-    }));
-  });
+      const totalPages = Math.ceil(categoryPosts.length / SITE_CONFIG.blogPerPage);
+      return Array.from({ length: totalPages }).map((_, i) => ({
+        category: key,
+        page: [String(i + 1)],
+      }));
+    }),
+  );
 
   return renderingGroups.reduce((all, group) => [...all, ...group], []);
 }
 
-export default async function Page({
+export default async function CategoryPage({
   params,
 }: {
   params: Promise<{ category: string; page?: string[] }>;

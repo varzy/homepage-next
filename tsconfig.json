@@ -27,7 +27,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts"
-, "src/app/(blog)/blog/route.ts.bak"  ],
+    ".next/dev/types/**/*.ts",
+    "src/app/(blog)/blog/route.ts.bak"
+  ],
   "exclude": ["node_modules", "backup/**/*", ".next/**/*"]
 }

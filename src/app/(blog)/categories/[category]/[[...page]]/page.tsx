@@ -45,6 +45,7 @@ export default async function CategoryPage({
       <PostsContainer
         posts={allPosts}
         currentPage={currentPage}
+        showCategory={false}
         urlPrefix={`/categories/${categoryParam}`}
       />
     </BlogPageContainer>

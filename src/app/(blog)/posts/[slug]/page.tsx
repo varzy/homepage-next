@@ -1,16 +1,16 @@
-import { notFound } from 'next/navigation';
-import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
-import NextPost from '@/app/(blog)/_components/NextPost';
-import PostFooter from '@/app/(blog)/_components/PostFooter';
-import PostTagLite from '@/app/(blog)/_components/PostTagLite';
-import MdxRenderer from '@/app/_components/MdxRenderer';
+import { notFound } from "next/navigation";
+import BlogPageContainer from "@/app/(blog)/_components/BlogPageContainer";
+import NextPost from "@/app/(blog)/_components/NextPost";
+import PostFooter from "@/app/(blog)/_components/PostFooter";
+import MdxRenderer from "@/app/_components/MdxRenderer";
 import {
   getAllPosts,
   getCurrentCategoryNextPost,
   getPostBySlug,
   getPostWithContent,
-} from '@/app/_lib/blog-loader';
-import { getEmojiFavicon } from '@/utils/favicon';
+} from "@/app/_lib/blog-loader";
+import { getEmojiFavicon } from "@/utils/favicon";
+import PostTag from "../../_components/PostTag";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -40,7 +40,10 @@ export default async function Post({ params }: PageProps) {
   const postWithContent = await getPostWithContent(slug);
   if (!postWithContent) notFound();
 
-  const nextPost = await getCurrentCategoryNextPost(postWithContent.category, postWithContent.slug);
+  const nextPost = await getCurrentCategoryNextPost(
+    postWithContent.category,
+    postWithContent.slug,
+  );
 
   return (
     <BlogPageContainer
@@ -48,16 +51,23 @@ export default async function Post({ params }: PageProps) {
         title: postWithContent.title,
         after: (
           <div className="text-sm">
-            <span className="text-secondary me-3">{postWithContent.dateAmericaStyle}</span>
-            {postWithContent.tags.length > 0 &&
-              postWithContent.tags.map((tag) => <PostTagLite key={tag} tag={tag} />)}
+            <span className="text-secondary">
+              {postWithContent.dateAmericaStyle}
+            </span>
+            <span>, in </span>
+            <span>日常</span>
+            <span className="ms-5">
+              {postWithContent.tags.length > 0 &&
+                postWithContent.tags.map((tag) => (
+                  <PostTag key={tag} tag={tag} />
+                ))}
+            </span>
           </div>
         ),
       }}
     >
       <MdxRenderer source={postWithContent.content} />
       <PostFooter />
-      {/* <Comments /> */}
       <NextPost nextPost={nextPost} />
     </BlogPageContainer>
   );

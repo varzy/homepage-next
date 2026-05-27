@@ -1,8 +1,15 @@
+import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 import PostsContainer from '@/app/(blog)/_components/PostsContainer';
 import { getAllPosts } from '@/app/_lib/blog-loader';
 import { SITE_CONFIG } from '@/site.config';
+import { getEmojiFavicon } from '@/utils/favicon';
+
+export const metadata: Metadata = {
+  title: 'Tags',
+  icons: getEmojiFavicon('📝'),
+};
 
 export async function generateStaticParams() {
   const allPosts = await getAllPosts();
@@ -14,11 +21,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function BlogPage({
-  params,
-}: {
-  params: Promise<{ page?: string[] }>;
-}) {
+export default async function BlogPage({ params }: { params: Promise<{ page?: string[] }> }) {
   const { page: optionalPageParam = [] } = await params;
   if (optionalPageParam.length > 1) notFound();
 
@@ -27,7 +30,7 @@ export default async function BlogPage({
   const allPosts = await getAllPosts();
 
   return (
-    <BlogPageContainer pageHero={{ title: '文章' }}>
+    <BlogPageContainer pageHero={{ title: 'Articles' }}>
       <PostsContainer posts={allPosts} currentPage={currentPage} urlPrefix="/blog" />
     </BlogPageContainer>
   );

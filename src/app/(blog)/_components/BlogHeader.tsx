@@ -9,9 +9,10 @@ export default function BlogHeader() {
     return { label: category.alias, href: `/categories/${key}` };
   });
   const links = [
-    ...categoryLinks,
+    // ...categoryLinks,
+    { label: '文章', href: '/blog' },
+    { label: '专栏', href: '/columns' },
     { label: '归档', href: '/archive' },
-    { label: '标签', href: '/tags' },
   ];
 
   return (

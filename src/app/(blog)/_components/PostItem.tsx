@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { PostMeta } from "@/app/_lib/blog-loader";
-import { SITE_CONFIG } from "@/site.config";
+import Link from 'next/link';
+import { PostMeta } from '@/app/_lib/blog-loader';
+import { SITE_CONFIG } from '@/site.config';
 
 function getCategoryMeta(notionField: string) {
   const matched = Object.entries(SITE_CONFIG.categories).find(
@@ -25,24 +25,19 @@ export default function PostItem({
         {post.dateAmericaStyle}
         {showCategory && categoryMeta && (
           <>
-            <span>. In </span>
-            <Link
-              className="hover:underline text-ink"
-              href={`/categories/${categoryMeta.key}`}
-            >
+            <span>, in </span>
+            <Link className="text-ink hover:underline" href={`/categories/${categoryMeta.key}`}>
               {categoryMeta.alias}
             </Link>
           </>
         )}
       </div>
       <h2 className="text-ink py-1.5 text-base font-extrabold sm:py-2 sm:text-lg">
-        <Link className="hover:underline" href={"/posts/" + post.slug}>
+        <Link className="hover:underline" href={'/posts/' + post.slug}>
           {post.title}
         </Link>
       </h2>
-      {post.summary && (
-        <p className="text-muted text-sm sm:text-base">{post.summary}</p>
-      )}
+      {post.summary && <p className="text-muted text-sm sm:text-base">{post.summary}</p>}
     </div>
   );
 }

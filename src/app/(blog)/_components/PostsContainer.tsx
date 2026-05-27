@@ -6,11 +6,13 @@ import PostItem from './PostItem';
 export default function PostsContainer({
   posts,
   currentPage,
+  showCategory = true,
   urlPrefix = '/',
 }: {
   posts: PostMeta[];
   currentPage: number;
   urlPrefix?: string;
+  showCategory?: boolean;
 }) {
   const prePage = SITE_CONFIG.blogPerPage;
   const currentPagePosts = posts.slice((currentPage - 1) * prePage, currentPage * prePage);
@@ -19,7 +21,7 @@ export default function PostsContainer({
     <>
       <div className="posts">
         {currentPagePosts.map((post) => (
-          <PostItem key={post.page_id} {...post}></PostItem>
+          <PostItem key={post.page_id} showCategory={showCategory} {...post}></PostItem>
         ))}
       </div>
       <Pagination

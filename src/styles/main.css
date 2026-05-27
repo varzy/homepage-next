@@ -52,7 +52,7 @@
 }
 
 @utility g-container-lefty {
-  @apply container px-4 pt-32 pb-20 sm:pl-12 md:pl-16 lg:pl-40 xl:pl-56 2xl:pl-90;
+  @apply container px-4 pt-32 pb-20 sm:pl-12 md:pl-16 lg:pl-32 xl:pl-48 2xl:pl-60;
 }
 
 @utility g-container {

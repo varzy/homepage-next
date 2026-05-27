@@ -9,12 +9,6 @@ export default function Home() {
       alias: 'Kotoba',
       href: '/kotoba',
     },
-    // {
-    //   label: "贼歪说",
-    //   alias: "Telegram",
-    //   href: "https://t.me/aboutzy",
-    //   target: "_blank",
-    // },
     {
       label: '随手拍',
       alias: 'Instagram',

@@ -3,12 +3,12 @@ title: '升级了个人主页架构'
 category: 'Coding'
 type: 'Post'
 status: 'Published'
-tags: ['Nextjs']
+tags: ['Nextjs', '个人主页']
 date: '2025-08-06'
 slug: 'homepage-upgrading'
 summary: '一入 Next 深似海，从此迁移是路人。'
-last_edited_time: '2025-08-12T01:52:00.000Z'
-last_fetched_time: '2025-09-02T09:25:31.564Z'
+last_edited_time: '2026-05-28T05:05:00.000Z'
+last_fetched_time: '2026-05-28T05:06:31.449Z'
 page_id: '247dc9c0-364a-806f-9561-fef372d1cbff'
 icon: '🕠'
 ---
@@ -36,11 +36,11 @@ export function GET() {
 
 后续 Next.js 的更新，再加上代码也年久失修，主页的问题越来越多。这次升级前有些页面无论怎么调用 revalidate 也无法重新，我终于决定狠下心升级一下架构了。新架构其实很简单，就是把使用 Notion API 拿 Markdown 这一步前置，提前把所有博客文章拉取到本地得到纯粹的 Markdown 文件，Next.js 只负责渲染 Markdown。
 
-拉取文章的脚本并不复杂，我此前的代码实现是完全可用的， 让 Cursor 参考原有代码几分钟便实现了该脚本。其中最核心的点在于实现脚本的增量更新，即如何知晓哪些文章有更新，需要重新拉取。我的解决方案是在 Notion 的博客数据库中添加一个新的时间戳字段 `last_fetched_time`，而每个页面都有一个由 Notion 自动维护的 `last_edited_time` 字段，该字段将在页面有任意修改时自动更新为最新时间，通过对比这两个字段，只要在执行拉取脚本时 `last_edited_time` 晚于 `last_fetched_time`，则说明需要重新拉取该文章了。拉取完毕后，脚本将再次更新 `last_fetched_time` 为最新时间。
+拉取文章的脚本并不复杂，我此前的代码实现是完全可用的， 让 Cursor 参考原有代码几分钟便实现了该脚本。其中最核心的点在于实现脚本的增量更新，即如何知晓哪些文章有更新，需要重新拉取。我的解决方案是在 Notion 的博客数据库中添加一个新的时间戳字段 `blog_last_fetched_time`，而每个页面都有一个由 Notion 自动维护的 `last_edited_time` 字段，该字段将在页面有任意修改时自动更新为最新时间，通过对比这两个字段，只要在执行拉取脚本时 `last_edited_time` 晚于 `blog_last_fetched_time`，则说明需要重新拉取该文章了。拉取完毕后，脚本将再次更新 `blog_last_fetched_time` 为最新时间。
 
 ```javascript
 const lastEditTime = new Date(post.last_edited_time);
-const lastFetchTime = new Date(post.last_fetched_time);
+const lastFetchTime = new Date(post.blog_last_fetched_time);
 const needsUpdate = lastEditTime > lastFetchTime;
 ```
 

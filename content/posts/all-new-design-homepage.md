@@ -3,12 +3,12 @@ title: '我的新版主页设计'
 category: 'Nichijou'
 type: 'Post'
 status: 'Published'
-tags: ['Design']
+tags: ['Design', '个人主页']
 date: '2025-08-09'
 slug: 'all-new-design-homepage'
 summary: '希望你喜欢我的主页风格。'
-last_edited_time: '2025-09-02T08:54:00.000Z'
-last_fetched_time: '2025-09-02T09:25:25.403Z'
+last_edited_time: '2026-05-28T05:05:00.000Z'
+last_fetched_time: '2026-05-28T05:06:29.653Z'
 page_id: '24adc9c0-364a-8006-bb2c-c9d392d67a62'
 icon: '🖨️'
 ---

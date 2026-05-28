@@ -8,7 +8,7 @@ import { getEmojiFavicon } from '@/utils/favicon';
 import KotobaContainer from '../../_components/KotobaContainer';
 
 export const metadata: Metadata = {
-  title: '言叶',
+  title: '贼歪说',
   icons: getEmojiFavicon('🍃'),
 };
 

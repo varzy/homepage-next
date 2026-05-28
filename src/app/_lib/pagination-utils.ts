@@ -5,7 +5,7 @@ export function buildPageSegments(
 ): string[][] {
   if (count === 0) return options?.keepEmpty ? [[]] : [];
   const totalPages = Math.ceil(count / perPage);
-  return Array.from({ length: totalPages }, (_, i) => (i === 0 ? [] : [String(i + 1)]));
+  return [[], ...Array.from({ length: totalPages }, (_, i) => [String(i + 1)])];
 }
 
 export function buildIndexPageParams(

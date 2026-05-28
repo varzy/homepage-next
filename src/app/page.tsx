@@ -33,11 +33,6 @@ export default function Home() {
       href: 'https://github.com/varzy',
       target: '_blank',
     },
-    {
-      label: '友人',
-      alias: 'Friends',
-      href: '/friends',
-    },
   ];
 
   return (

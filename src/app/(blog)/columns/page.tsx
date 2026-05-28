@@ -9,7 +9,7 @@ import BlogSection from '../_components/BlogSection';
 
 export const metadata: Metadata = {
   title: 'Columns',
-  icons: getEmojiFavicon('🏷️'),
+  icons: getEmojiFavicon('📰'),
 };
 
 export default async function ColumnsPage() {

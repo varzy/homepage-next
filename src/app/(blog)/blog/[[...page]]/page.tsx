@@ -8,7 +8,7 @@ import { getEmojiFavicon } from '@/utils/favicon';
 
 export const metadata: Metadata = {
   title: 'Articles',
-  icons: getEmojiFavicon('📝'),
+  icons: getEmojiFavicon('✏️'),
 };
 
 export async function generateStaticParams() {

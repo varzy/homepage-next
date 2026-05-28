@@ -7,7 +7,7 @@ import { SITE_CONFIG } from '@/site.config';
 import { getEmojiFavicon } from '@/utils/favicon';
 
 export const metadata: Metadata = {
-  title: 'Tags',
+  title: 'Articles',
   icons: getEmojiFavicon('📝'),
 };
 

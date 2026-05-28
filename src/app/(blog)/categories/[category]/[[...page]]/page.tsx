@@ -1,10 +1,10 @@
-import { Metadata } from "next";
-import { notFound } from "next/navigation";
-import BlogPageContainer from "@/app/(blog)/_components/BlogPageContainer";
-import PostsContainer from "@/app/(blog)/_components/PostsContainer";
-import { getCategoryPosts } from "@/app/_lib/post-loader";
-import { SITE_CONFIG, isCategoryKey } from "@/site.config";
-import { getEmojiFavicon } from "@/utils/favicon";
+import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
+import PostsContainer from '@/app/(blog)/_components/PostsContainer';
+import { getCategoryPosts } from '@/app/_lib/post-loader';
+import { SITE_CONFIG, isCategoryKey } from '@/site.config';
+import { getEmojiFavicon } from '@/utils/favicon';
 
 export async function generateMetadata({
   params,
@@ -29,9 +29,7 @@ export async function generateStaticParams() {
 
       if (categoryPosts.length === 0) return [];
 
-      const totalPages = Math.ceil(
-        categoryPosts.length / SITE_CONFIG.blogPerPage,
-      );
+      const totalPages = Math.ceil(categoryPosts.length / SITE_CONFIG.blogPerPage);
       return Array.from({ length: totalPages }).map((_, i) => ({
         category: key,
         page: [String(i + 1)],
@@ -47,8 +45,7 @@ export default async function CategoryPage({
 }: {
   params: Promise<{ category: string; page?: string[] }>;
 }) {
-  const { category: categoryParam, page: optionalPageParam = [] } =
-    await params;
+  const { category: categoryParam, page: optionalPageParam = [] } = await params;
   if (optionalPageParam.length > 1) notFound();
 
   const [optionalPage] = optionalPageParam;
@@ -58,9 +55,7 @@ export default async function CategoryPage({
   const allPosts = await getCategoryPosts(categoryParam);
 
   return (
-    <BlogPageContainer
-      pageHero={{ title: categoryCtx.alias, after: categoryCtx.description }}
-    >
+    <BlogPageContainer pageHero={{ title: categoryCtx.alias, after: categoryCtx.description }}>
       <PostsContainer
         posts={allPosts}
         currentPage={currentPage}

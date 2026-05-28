@@ -4,7 +4,7 @@ import PageHeader from '@/app/_components/PageHeader';
 export default function BlogHeader() {
   const links = [
     { label: '文章', href: '/blog' },
-    { label: '专栏', href: '/columns' },
+    { label: '栏目', href: '/columns' },
     { label: '归档', href: '/archive' },
   ];
 

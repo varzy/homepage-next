@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import PageHero from '@/app/_components/PageHero';
 import { getAllKotobaPosts, getAllKotobaPostsWithContent } from '@/app/_lib/kotoba-loader';
+import { buildIndexPageParams } from '@/app/_lib/pagination-utils';
 import { SITE_CONFIG } from '@/site.config';
 import { getEmojiFavicon } from '@/utils/favicon';
 import KotobaContainer from '../../_components/KotobaContainer';
@@ -14,10 +15,7 @@ export const metadata: Metadata = {
 
 export async function generateStaticParams() {
   const posts = await getAllKotobaPosts();
-  const totalPages = Math.max(1, Math.ceil(posts.length / SITE_CONFIG.kotobaPerPage));
-  return Array.from({ length: totalPages }, (_, i) => ({
-    page: [String(i + 1)],
-  }));
+  return buildIndexPageParams(posts.length, SITE_CONFIG.kotobaPerPage, { keepEmpty: true });
 }
 
 export default async function KotobaPage({ params }: { params: Promise<{ page?: string[] }> }) {

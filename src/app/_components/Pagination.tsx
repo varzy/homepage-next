@@ -13,7 +13,7 @@ export default function Pagination({ total, current, pageSize, urlPrefix }: Pagi
   const totalPage = Math.ceil(total / pageSize);
 
   const Goto = (page: number, label: string) => (
-    <Link className="hover:underline" href={`${urlPrefix}/${page}`}>
+    <Link className="hover:underline" href={page === 1 ? urlPrefix : `${urlPrefix}/${page}`}>
       {label}
     </Link>
   );

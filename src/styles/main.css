@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin '@tailwindcss/typography';
 
@@ -57,4 +57,9 @@
 
 @utility g-container {
   @apply container mx-auto max-w-180 px-4;
+}
+
+@utility prose-invert {
+  --tw-prose-body: var(--color-ink);
+  --tw-prose-headings: var(--color-ink);
 }

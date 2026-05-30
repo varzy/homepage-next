@@ -20,7 +20,7 @@ function parseDate(dateStr: string): dayjs.Dayjs {
 }
 
 export function formatAbsoluteDate(dateStr: string, tpl: string = 'MMM DD, YYYY'): string {
-  const date = dayjs(dateStr);
+  const date = dayjs(dateStr).tz('Asia/Shanghai');
   if (!date.isValid()) return dateStr;
 
   return date.locale('en').format(tpl);

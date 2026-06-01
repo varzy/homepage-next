@@ -1,18 +1,8 @@
-import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import PageHeader from '@/app/_components/PageHeader';
-import { getPageWithContent } from '@/app/_lib/page-loader';
-import { getEmojiFavicon } from '@/utils/favicon';
+import PageHeader from "@/app/_components/PageHeader";
 
-export const metadata: Metadata = {
-  title: 'Friends',
-  icons: getEmojiFavicon('✌️'),
-};
-
-export default async function PagesLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const postWithContent = await getPageWithContent('friends');
-  if (!postWithContent) notFound();
-
+export default async function PagesLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <div className="pb-48">
       <PageHeader />

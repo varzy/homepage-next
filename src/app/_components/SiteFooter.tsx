@@ -10,8 +10,8 @@ export type FooterLink = {
 export default function SiteFooter({ links }: { links: FooterLink[] }) {
   const footerLinks = [
     {
-      label: 'CC BY-NC 4.0',
-      href: 'https://creativecommons.org/licenses/by-nc/4.0/',
+      label: 'CC BY-NC-SA 4.0',
+      href: 'https://creativecommons.org/licenses/by-nc-sa/4.0',
       target: '_blank',
     },
     ...links,

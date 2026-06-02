@@ -30,6 +30,7 @@ export interface NotionFetcherConfig<T> {
   getLastEditedTime(entry: T): string;
   generateContent(entry: T, content: string): string;
   withLastFetchedTime(entry: T, time: string): T;
+  beforeGenerateContent?: (entry: T) => Promise<T>;
 }
 
 export class NotionDatabaseFetcher<T> {
@@ -143,6 +144,13 @@ export class NotionDatabaseFetcher<T> {
     const identifier = this.config.getConvertIdentifier(entry);
     const pageId = this.config.getPageId(entry);
 
+    // 处理 page property 中 files 类型的图片，上传到 SM.MS 并更新 Notion
+    const rawPage = (await this.notion.pages.retrieve({ page_id: pageId })) as PageObjectResponse;
+    const updatedPage = await this.converter
+      .getImageProcessor()
+      .processPageFileProperties(rawPage, identifier);
+    const updatedEntry = this.config.extractMetadata(updatedPage);
+
     const { content, imageStats } = await this.converter.convertToMDX(pageId, identifier);
 
     if (imageStats && imageStats.total > 0) {
@@ -153,8 +161,11 @@ export class NotionDatabaseFetcher<T> {
 
     await this.converter.updateBlogLastFetchedTime(pageId, this.config.lastFetchedTimeProperty);
 
-    const updatedEntry = this.config.withLastFetchedTime(entry, new Date().toISOString());
-    const mdContent = this.config.generateContent(updatedEntry, content);
+    let finalEntry = this.config.withLastFetchedTime(updatedEntry, new Date().toISOString());
+    if (this.config.beforeGenerateContent) {
+      finalEntry = await this.config.beforeGenerateContent(finalEntry);
+    }
+    const mdContent = this.config.generateContent(finalEntry, content);
 
     const filePath = path.join(this.config.outputDir, `${this.config.getFileKey(entry)}.md`);
     fs.writeFileSync(filePath, mdContent, 'utf-8');

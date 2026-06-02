@@ -10,7 +10,7 @@ export default function Home() {
       href: '/kotoba',
     },
     {
-      label: '随手拍',
+      label: '拾光',
       alias: 'Instagram',
       href: 'https://instagram.com/varzyme',
       target: '_blank',
@@ -28,10 +28,9 @@ export default function Home() {
       target: '_blank',
     },
     {
-      label: '代码库',
-      alias: 'Github',
-      href: 'https://github.com/varzy',
-      target: '_blank',
+      label: '友人',
+      alias: 'Friends',
+      href: '/friends',
     },
   ];
 

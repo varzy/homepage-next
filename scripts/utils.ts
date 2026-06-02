@@ -31,6 +31,16 @@ export const getDateProperty = (prop: any): string => prop?.date?.start || '';
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const getLastEditedTimeProperty = (prop: any): string => prop?.last_edited_time || '';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const getFilesProperty = (prop: any): string => {
+  const files = prop?.files;
+  if (!Array.isArray(files) || files.length === 0) return '';
+  const first = files[0];
+  if (first.type === 'file') return first.file.url;
+  if (first.type === 'external') return first.external.url;
+  return '';
+};
+
 // ─── File system helpers ──────────────────────────────────────────────────────
 
 export function ensureDirectory(dir: string): void {

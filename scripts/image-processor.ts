@@ -1,5 +1,5 @@
 import { Client } from '@notionhq/client';
-import { BlockObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+import { BlockObjectResponse, PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 import { smmsUploadExternal, getSmmsUrl, isSmmsUrl, generateFileName } from './smms-uploader';
 
 export interface ImageProcessingStats {
@@ -160,6 +160,91 @@ export class NotionImageProcessor {
       stats.errors++;
       console.error(`❌ Error processing image block ${block.id}:`, error);
     }
+  }
+
+  /**
+   * 处理页面 property 中所有 files 类型字段，将非 SM.MS 的图片上传到 SM.MS 并更新 Notion 页面属性
+   */
+  async processPageFileProperties(
+    page: PageObjectResponse,
+    slug: string,
+  ): Promise<PageObjectResponse> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const updatedProperties: Record<string, any> = {};
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const patchedProps: Record<string, any> = {};
+
+    for (const [propName, prop] of Object.entries(page.properties)) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const p = prop as any;
+      if (p.type !== 'files') continue;
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const files: any[] = p.files;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const newFiles: any[] = [];
+      let anyUpdated = false;
+
+      for (const file of files) {
+        let url: string;
+        let needsUpload = false;
+
+        if (file.type === 'file') {
+          url = file.file.url;
+          needsUpload = true;
+          console.log(`🔄 Found Notion-hosted property image in "${propName}": ${file.name}`);
+        } else if (file.type === 'external') {
+          url = file.external.url;
+          needsUpload = !isSmmsUrl(url);
+          if (needsUpload) {
+            console.log(`🔄 Found external property image (non-SMMS) in "${propName}": ${url}`);
+          } else {
+            console.log(`✅ Property image already on SMMS in "${propName}"`);
+          }
+        } else {
+          newFiles.push(file);
+          continue;
+        }
+
+        if (!needsUpload) {
+          newFiles.push(file);
+          continue;
+        }
+
+        const fileName = generateFileName(url, `${this.imagePrefix}_${slug}`);
+        try {
+          const result = await smmsUploadExternal(url, fileName);
+          const smmsUrl = getSmmsUrl(result);
+          if (smmsUrl) {
+            newFiles.push({ type: 'external', name: file.name || '', external: { url: smmsUrl } });
+            anyUpdated = true;
+            console.log(`✅ Property image uploaded: ${fileName} -> ${smmsUrl}`);
+          } else {
+            newFiles.push(file);
+          }
+        } catch (err) {
+          console.warn(`⚠️ Failed to upload property image for "${propName}":`, err);
+          newFiles.push(file);
+        }
+      }
+
+      if (anyUpdated) {
+        patchedProps[propName] = { files: newFiles };
+        updatedProperties[propName] = { ...p, files: newFiles };
+      }
+    }
+
+    if (Object.keys(patchedProps).length === 0) return page;
+
+    await this.notion.pages.update({
+      page_id: page.id,
+      properties: patchedProps,
+    });
+
+    return {
+      ...page,
+      properties: { ...page.properties, ...updatedProperties },
+    };
   }
 
   /**

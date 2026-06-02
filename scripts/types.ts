@@ -40,3 +40,15 @@ export interface KotobaMetadata {
   last_edited_time: string;
   last_fetched_time: string | null;
 }
+
+export interface TasteMetadata {
+  page_id: string;
+  title: string;
+  status: string;
+  category: string;
+  cover: string;
+  url?: string;
+  label?: string;
+  last_edited_time: string;
+  last_fetched_time: string | null;
+}

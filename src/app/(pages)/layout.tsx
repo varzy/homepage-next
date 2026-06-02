@@ -1,8 +1,6 @@
-import PageHeader from "@/app/_components/PageHeader";
+import PageHeader from '@/app/_components/PageHeader';
 
-export default async function PagesLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+export default async function PagesLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <div className="pb-48">
       <PageHeader />

@@ -32,6 +32,18 @@ type SmmsUploadError = {
 };
 
 const SMMS_BASEURL = 'https://s.ee/api/v1/file';
+const SMMS_URLS = [
+  'cdn.sa.net',
+  'sm.ms',
+  'see.you',
+  'fs.to',
+  'files.to',
+  'fileshare.to',
+  'filesharing.to',
+  'seecdn.com',
+  'seecdn.net',
+  'seeusercontent.com',
+];
 
 const smmsUpload = async (file: Blob, fileName: string): Promise<SmmsUploadResult> => {
   try {
@@ -115,8 +127,7 @@ export const getSmmsUrl = (smmsUploaded: SmmsUploadResult): string | null => {
  * 检查 URL 是否已经是 SM.MS 图片链接
  */
 export const isSmmsUrl = (url: string): boolean => {
-  const smmsUrl = ['cdn.sa.net', 'sm.ms', 'i.see.you'];
-  return smmsUrl.some((u) => url.includes(u));
+  return SMMS_URLS.some((u) => url.includes(u));
 };
 
 /**

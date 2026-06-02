@@ -3,8 +3,8 @@ page_id: '2efdc9c0-364a-8077-9c62-e5c2e4ef1889'
 title: 'Friends'
 slug: 'friends'
 status: 'Published'
-last_edited_time: '2026-05-24T07:39:00.000Z'
-last_fetched_time: '2026-05-24T07:48:08.648Z'
+last_edited_time: '2026-06-02T01:09:00.000Z'
+last_fetched_time: '2026-06-02T01:13:08.275Z'
 ---
 
 # 友人
@@ -14,3 +14,5 @@ last_fetched_time: '2026-05-24T07:48:08.648Z'
 [和光同尘](https://ikangjia.cn/)
 
 [Airing 的小屋](https://blog.ursb.me/)
+
+[Restrive14](https://yzhthinking.top/)

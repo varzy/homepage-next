@@ -39,13 +39,13 @@ export default function KotobaCard({ post }: KotobaCardProps) {
       <hr className="border-border-soft" />
 
       {post.withTitle && post.title && (
-        <div className="text-ink py-1.5 font-bold sm:py-2">
+        <div className="text-ink my-4 text-[15px] font-extrabold">
           {post.titleUrl ? (
             <Link
               href={post.titleUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:underline"
+              className="underline"
             >
               {post.title}
             </Link>

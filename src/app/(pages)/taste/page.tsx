@@ -11,10 +11,12 @@ export const metadata: Metadata = {
 };
 
 export default async function Taste() {
+  const CATEGORY_ORDER = ['书', '影', '音', '剧', 'Anime', 'Comic', 'Game', '音乐剧', '播客'];
+
   const page = await getPageWithContent('taste');
   const items = await getAllTasteItemsWithContent();
   const grouped = groupTasteByCategory(items);
-  const categories = Object.keys(grouped).sort();
+  const categories = CATEGORY_ORDER.filter((category) => grouped[category]);
 
   return (
     <div>
@@ -22,9 +24,9 @@ export default async function Taste() {
 
       <div className="mt-12">
         {categories.map((category) => (
-          <section key={category} className="mb-12 last:mb-0">
-            <h3 className="mb-4 font-bold">{category}</h3>
-            <div className="grid grid-cols-3 gap-4 md:grid-cols-4 lg:grid-cols-4">
+          <section key={category} className="mb-8 last:mb-0">
+            <h3 className="mb-4 text-lg font-bold">{category}</h3>
+            <div className="grid grid-cols-3 gap-3 md:grid-cols-4 md:gap-4">
               {grouped[category].map((item) => (
                 <TasteCard key={item.page_id} item={item} />
               ))}

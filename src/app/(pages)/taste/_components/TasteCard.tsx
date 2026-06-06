@@ -5,7 +5,7 @@ export default function TasteCard({ item }: { item: TasteItemWithContent }) {
   const inner = (
     <div title={item.title}>
       {item.cover && (
-        <div className="mb-2 aspect-4/5 overflow-hidden">
+        <div className="mb-2 aspect-2/3 overflow-hidden">
           <img src={item.cover} alt={item.title} className="h-full w-full object-cover" />
         </div>
       )}
@@ -14,11 +14,6 @@ export default function TasteCard({ item }: { item: TasteItemWithContent }) {
         <div className="line-clamp-2 text-sm font-medium">{item.title}</div>
         {/* label */}
         {item.label && <div className="text-secondary mt-1">{item.label}</div>}
-        {/* {item.content && (
-        <div className="text-secondary mt-1 text-xs">
-          <MdxRenderer source={item.content} />
-        </div>
-      )} */}
       </div>
     </div>
   );

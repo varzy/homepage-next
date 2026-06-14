@@ -10,11 +10,11 @@
 
 用三种模式取代现有的单一 `forceMode: boolean`：
 
-| 模式 | 触发参数 | Notion 查询范围 | 本地时间戳二次比对 | 孤儿文件清理 | 写入状态文件 |
-|---|---|---|---|---|---|
-| `incremental`（默认）| 无 | 只查 `last_edited_time >= lastSuccessfulRun` | 是（双保险） | 否 | 有内容变化时写入 |
-| `full-sync` | `--full-sync` | 全量 | 是 | 是 | 有内容变化时写入 |
-| `force` | `--force` | 全量 | 否（强制处理） | 是 | 有内容变化时写入 |
+| 模式                  | 触发参数      | Notion 查询范围                              | 本地时间戳二次比对 | 孤儿文件清理 | 写入状态文件     |
+| --------------------- | ------------- | -------------------------------------------- | ------------------ | ------------ | ---------------- |
+| `incremental`（默认） | 无            | 只查 `last_edited_time >= lastSuccessfulRun` | 是（双保险）       | 否           | 有内容变化时写入 |
+| `full-sync`           | `--full-sync` | 全量                                         | 是                 | 是           | 有内容变化时写入 |
+| `force`               | `--force`     | 全量                                         | 否（强制处理）     | 是           | 有内容变化时写入 |
 
 **首次运行**（无状态文件或对应 label 无记录）：自动降级为 `full-sync`，打印提示日志。
 
@@ -60,7 +60,7 @@ export type SyncMode = 'incremental' | 'full-sync' | 'force';
 
 export interface FetchStateEntry {
   lastSuccessfulRun: string; // ISO 8601
-  lastFullSync: string;      // ISO 8601
+  lastFullSync: string; // ISO 8601
 }
 
 export interface FetchState {
@@ -99,6 +99,7 @@ constructor(private config: NotionFetcherConfig<T>, private syncMode: SyncMode)
 **新增私有方法：`writeState`**
 
 接受 `SyncMode`，写入 `.fetch-state.json`：
+
 - 任意模式：更新 `lastSuccessfulRun`
 - `full-sync` / `force`：同时更新 `lastFullSync`
 - 使用读-改-写，不覆盖其他 label 的数据
@@ -247,13 +248,13 @@ jobs:
 
 ## 三、运行行为对照
 
-| 命令 | 改动前 | 改动后 |
-|---|---|---|
-| `pnpm fetch:kotoba` | 全量元数据 + 增量处理 + 孤儿清理 | 增量元数据 + 增量处理，不清理孤儿 |
-| `pnpm fetch:kotoba --full-sync` | 不存在 | 全量元数据 + 增量处理 + 孤儿清理 |
-| `pnpm fetch:kotoba --force` | 全量元数据 + 强制处理全部 + 孤儿清理 | 同左（行为不变） |
-| `pnpm fetch:all` | 全量元数据 + 增量处理 + 孤儿清理 | 增量元数据 + 增量处理，不清理孤儿 |
-| `pnpm fetch:full-sync` | 不存在 | 所有 fetcher 跑 full-sync |
+| 命令                            | 改动前                               | 改动后                            |
+| ------------------------------- | ------------------------------------ | --------------------------------- |
+| `pnpm fetch:kotoba`             | 全量元数据 + 增量处理 + 孤儿清理     | 增量元数据 + 增量处理，不清理孤儿 |
+| `pnpm fetch:kotoba --full-sync` | 不存在                               | 全量元数据 + 增量处理 + 孤儿清理  |
+| `pnpm fetch:kotoba --force`     | 全量元数据 + 强制处理全部 + 孤儿清理 | 同左（行为不变）                  |
+| `pnpm fetch:all`                | 全量元数据 + 增量处理 + 孤儿清理     | 增量元数据 + 增量处理，不清理孤儿 |
+| `pnpm fetch:full-sync`          | 不存在                               | 所有 fetcher 跑 full-sync         |
 
 ---
 

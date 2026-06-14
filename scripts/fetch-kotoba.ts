@@ -57,7 +57,12 @@ const kotobaConfig: NotionFetcherConfig<KotobaMetadata> = {
     and: [
       { property: 'status', select: { equals: 'Published' } },
       ...(since
-        ? [{ timestamp: 'last_edited_time', last_edited_time: { on_or_after: since.toISOString() } }]
+        ? [
+            {
+              timestamp: 'last_edited_time',
+              last_edited_time: { on_or_after: since.toISOString() },
+            },
+          ]
         : []),
     ],
   }),

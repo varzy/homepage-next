@@ -61,7 +61,12 @@ const postConfig: NotionFetcherConfig<PostMetadata> = {
       { property: 'status', select: { equals: 'Published' } },
       { property: 'type', select: { equals: 'Post' } },
       ...(since
-        ? [{ timestamp: 'last_edited_time', last_edited_time: { on_or_after: since.toISOString() } }]
+        ? [
+            {
+              timestamp: 'last_edited_time',
+              last_edited_time: { on_or_after: since.toISOString() },
+            },
+          ]
         : []),
     ],
   }),

@@ -8,6 +8,7 @@
     "exam": "pnpm run format && pnpm run lint && pnpm run typecheck && pnpm run test",
     "build:debug": "next build  --debug",
     "fetch:all": "pnpm run fetch:pages && pnpm run fetch:posts && pnpm run fetch:kotoba && pnpm run fetch:taste",
+    "fetch:full-sync": "pnpm run fetch:pages -- --full-sync && pnpm run fetch:posts -- --full-sync && pnpm run fetch:kotoba -- --full-sync && pnpm run fetch:taste -- --full-sync",
     "fetch:taste": "tsx scripts/fetch-taste.ts",
     "release": "git pull && pnpm fetch:all && pnpm run exam && git add . && git commit -m 'Release.' && git push",
     "start": "next start",

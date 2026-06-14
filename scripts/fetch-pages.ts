@@ -4,7 +4,7 @@ import 'dotenv/config';
 import path from 'path';
 import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 import { NotionDatabaseFetcher, NotionFetcherConfig } from './notion-database-fetcher';
-import { PageMetadata } from './types';
+import { PageMetadata, SyncMode } from './types';
 import {
   getTextProperty,
   getSelectProperty,
@@ -44,7 +44,18 @@ const pagesConfig: NotionFetcherConfig<PageMetadata> = {
   lastFetchedTimeProperty: 'last_fetched_time',
   label: 'page',
   imagePrefix: 'pages',
-  buildFilter: () => ({ property: 'status', select: { equals: 'Published' } }),
+  buildFilter: (since?: Date) =>
+    since
+      ? {
+          and: [
+            { property: 'status', select: { equals: 'Published' } },
+            {
+              timestamp: 'last_edited_time',
+              last_edited_time: { on_or_after: since.toISOString() },
+            },
+          ],
+        }
+      : { property: 'status', select: { equals: 'Published' } },
   buildSort: () => [],
   extractMetadata: extractPageMeta,
   getFileKey: (e) => e.slug,
@@ -68,10 +79,13 @@ async function main() {
     process.exit(1);
   }
 
-  const forceMode = process.argv.includes('--force');
-  console.log(`🔥 Force mode: ${forceMode}`);
+  const syncMode: SyncMode = process.argv.includes('--force')
+    ? 'force'
+    : process.argv.includes('--full-sync')
+      ? 'full-sync'
+      : 'incremental';
 
-  await new NotionDatabaseFetcher(pagesConfig, forceMode).fetch();
+  await new NotionDatabaseFetcher(pagesConfig, syncMode).fetch();
   process.exit(0);
 }
 

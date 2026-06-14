@@ -4,7 +4,7 @@ import 'dotenv/config';
 import path from 'path';
 import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 import { NotionDatabaseFetcher, NotionFetcherConfig } from './notion-database-fetcher';
-import { PostMetadata } from './types';
+import { PostMetadata, SyncMode } from './types';
 import {
   getTextProperty,
   getSelectProperty,
@@ -56,10 +56,13 @@ const postConfig: NotionFetcherConfig<PostMetadata> = {
   label: 'post',
   imagePrefix: 'posts',
   lastFetchedTimeProperty: 'last_fetched_time',
-  buildFilter: () => ({
+  buildFilter: (since?: Date) => ({
     and: [
       { property: 'status', select: { equals: 'Published' } },
       { property: 'type', select: { equals: 'Post' } },
+      ...(since
+        ? [{ timestamp: 'last_edited_time', last_edited_time: { on_or_after: since.toISOString() } }]
+        : []),
     ],
   }),
   buildSort: () => [{ property: 'date', direction: 'descending' }],
@@ -85,11 +88,13 @@ async function main() {
     process.exit(1);
   }
 
-  const forceMode = process.argv.includes('--force');
-  console.log(`🔥 Force mode: ${forceMode}`);
-  console.log(`📷 Image upload to SM.MS is ENABLED`);
+  const syncMode: SyncMode = process.argv.includes('--force')
+    ? 'force'
+    : process.argv.includes('--full-sync')
+      ? 'full-sync'
+      : 'incremental';
 
-  await new NotionDatabaseFetcher(postConfig, forceMode).fetch();
+  await new NotionDatabaseFetcher(postConfig, syncMode).fetch();
   process.exit(0);
 }
 

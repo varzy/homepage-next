@@ -4,7 +4,7 @@ import 'dotenv/config';
 import path from 'path';
 import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 import { NotionDatabaseFetcher, NotionFetcherConfig } from './notion-database-fetcher';
-import { KotobaMetadata } from './types';
+import { KotobaMetadata, SyncMode } from './types';
 import {
   getTextProperty,
   getSelectProperty,
@@ -53,8 +53,13 @@ const kotobaConfig: NotionFetcherConfig<KotobaMetadata> = {
   lastFetchedTimeProperty: 'last_fetched_time',
   label: 'kotoba',
   imagePrefix: 'kotoba',
-  buildFilter: () => ({
-    and: [{ property: 'status', select: { equals: 'Published' } }],
+  buildFilter: (since?: Date) => ({
+    and: [
+      { property: 'status', select: { equals: 'Published' } },
+      ...(since
+        ? [{ timestamp: 'last_edited_time', last_edited_time: { on_or_after: since.toISOString() } }]
+        : []),
+    ],
   }),
   buildSort: () => [{ property: 'published_time', direction: 'descending' }],
   extractMetadata: extractKotobaMeta,
@@ -79,10 +84,13 @@ async function main() {
     process.exit(1);
   }
 
-  const forceMode = process.argv.includes('--force');
-  console.log(`🔥 Force mode: ${forceMode}`);
+  const syncMode: SyncMode = process.argv.includes('--force')
+    ? 'force'
+    : process.argv.includes('--full-sync')
+      ? 'full-sync'
+      : 'incremental';
 
-  await new NotionDatabaseFetcher(kotobaConfig, forceMode).fetch();
+  await new NotionDatabaseFetcher(kotobaConfig, syncMode).fetch();
   process.exit(0);
 }
 

@@ -4,7 +4,7 @@ import 'dotenv/config';
 import path from 'path';
 import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 import { NotionDatabaseFetcher, NotionFetcherConfig } from './notion-database-fetcher';
-import { TasteMetadata } from './types';
+import { TasteMetadata, SyncMode } from './types';
 import {
   getTextProperty,
   getSelectProperty,
@@ -52,7 +52,14 @@ const tasteConfig: NotionFetcherConfig<TasteMetadata> = {
   lastFetchedTimeProperty: 'last_fetched_time',
   label: 'taste',
   imagePrefix: 'taste',
-  buildFilter: () => ({ and: [{ property: 'status', select: { equals: 'Published' } }] }),
+  buildFilter: (since?: Date) => ({
+    and: [
+      { property: 'status', select: { equals: 'Published' } },
+      ...(since
+        ? [{ timestamp: 'last_edited_time', last_edited_time: { on_or_after: since.toISOString() } }]
+        : []),
+    ],
+  }),
   buildSort: () => [{ property: 'category', direction: 'ascending' }],
   extractMetadata: extractTasteMeta,
   getFileKey: (e) => e.page_id,
@@ -76,10 +83,13 @@ async function main() {
     process.exit(1);
   }
 
-  const forceMode = process.argv.includes('--force');
-  console.log(`🔥 Force mode: ${forceMode}`);
+  const syncMode: SyncMode = process.argv.includes('--force')
+    ? 'force'
+    : process.argv.includes('--full-sync')
+      ? 'full-sync'
+      : 'incremental';
 
-  await new NotionDatabaseFetcher(tasteConfig, forceMode).fetch();
+  await new NotionDatabaseFetcher(tasteConfig, syncMode).fetch();
   process.exit(0);
 }
 

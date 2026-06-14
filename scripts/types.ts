@@ -5,6 +5,17 @@ export interface FetchResult {
   deleted: number;
 }
 
+export type SyncMode = 'incremental' | 'full-sync' | 'force';
+
+export interface FetchStateEntry {
+  lastSuccessfulRun: string;
+  lastFullSync: string;
+}
+
+export interface FetchState {
+  [label: string]: FetchStateEntry;
+}
+
 export interface PostMetadata {
   title: string;
   category: string;

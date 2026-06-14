@@ -3,7 +3,7 @@ import path from 'path';
 import { Client } from '@notionhq/client';
 import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 import { NotionToMDXConverter } from './notion-to-md';
-import { FetchResult } from './types';
+import { FetchResult, FetchState, FetchStateEntry, SyncMode } from './types';
 import { ensureDirectory, cleanupOrphanedFiles } from './utils';
 
 export interface NotionFetcherConfig<T> {
@@ -17,7 +17,7 @@ export interface NotionFetcherConfig<T> {
   /** SMMS 图片文件名前缀，如 "posts"、"pages"、"kotoba" */
   imagePrefix: string;
 
-  buildFilter(): object;
+  buildFilter(since?: Date): object;
   buildSort(): object[];
 
   extractMetadata(page: PageObjectResponse): T;
@@ -33,37 +33,62 @@ export interface NotionFetcherConfig<T> {
   beforeGenerateContent?: (entry: T) => Promise<T>;
 }
 
+const STATE_FILE = path.join(process.cwd(), '.fetch-state.json');
+
 export class NotionDatabaseFetcher<T> {
   private notion: Client;
   private converter: NotionToMDXConverter;
 
   constructor(
     private config: NotionFetcherConfig<T>,
-    private forceMode: boolean,
+    private syncMode: SyncMode,
   ) {
     this.notion = new Client({ auth: config.notionApiSecret });
     this.converter = new NotionToMDXConverter(config.notionApiSecret, config.imagePrefix);
   }
 
   async fetch(): Promise<FetchResult> {
+    let effectiveSyncMode = this.syncMode;
+    let since: Date | undefined;
+
+    const existingState = this.readState();
+    const isFirstRun = existingState === null;
+
+    if (this.syncMode === 'incremental') {
+      if (!existingState?.lastSuccessfulRun) {
+        console.log(
+          `⚠️  No previous run state for "${this.config.label}", falling back to full-sync`,
+        );
+        effectiveSyncMode = 'full-sync';
+      } else {
+        since = new Date(existingState.lastSuccessfulRun);
+      }
+    }
+
     console.log(
-      `🚀 Starting to fetch ${this.config.label}${this.forceMode ? ' (FORCE MODE)' : ''}...`,
+      `🚀 Starting to fetch ${this.config.label} [${effectiveSyncMode}]${since ? ` since ${since.toISOString()}` : ''}...`,
     );
 
     const result: FetchResult = { updated: 0, skipped: 0, errors: 0, deleted: 0 };
+    const shouldCleanOrphans = effectiveSyncMode !== 'incremental';
 
     ensureDirectory(this.config.outputDir);
 
-    const allEntries = await this.queryAllEntries();
+    const allEntries = await this.queryAllEntries(since);
     console.log(`📚 Found ${allEntries.length} published ${this.config.label} entries`);
 
     const publishedIds = new Set(allEntries.map((e) => this.config.getFileKey(e)).filter(Boolean));
-    const toUpdate = this.filterToUpdate(allEntries);
+    const toUpdate = this.filterToUpdate(allEntries, effectiveSyncMode);
     console.log(`🔄 ${this.config.label} entries to update: ${toUpdate.length}`);
 
-    if (toUpdate.length === 0 && !this.forceMode) {
-      cleanupOrphanedFiles(this.config.outputDir, publishedIds, result);
+    if (toUpdate.length === 0 && effectiveSyncMode !== 'force') {
+      if (shouldCleanOrphans) {
+        cleanupOrphanedFiles(this.config.outputDir, publishedIds, result);
+      }
       console.log(`✅ All ${this.config.label} entries are up to date!`);
+      if (result.updated > 0 || result.deleted > 0 || isFirstRun) {
+        this.writeState(effectiveSyncMode);
+      }
       return result;
     }
 
@@ -79,16 +104,51 @@ export class NotionDatabaseFetcher<T> {
       }
     }
 
-    cleanupOrphanedFiles(this.config.outputDir, publishedIds, result);
+    if (shouldCleanOrphans) {
+      cleanupOrphanedFiles(this.config.outputDir, publishedIds, result);
+    }
 
     console.log(
       `🎉 Done fetching ${this.config.label}! Updated: ${result.updated}, Deleted: ${result.deleted}, Skipped: ${result.skipped}, Errors: ${result.errors}`,
     );
 
+    if (result.updated > 0 || result.deleted > 0 || isFirstRun) {
+      this.writeState(effectiveSyncMode);
+    }
+
     return result;
   }
 
-  private async queryAllEntries(): Promise<T[]> {
+  private readState(): FetchStateEntry | null {
+    if (!fs.existsSync(STATE_FILE)) return null;
+    try {
+      const state: FetchState = JSON.parse(fs.readFileSync(STATE_FILE, 'utf-8'));
+      return state[this.config.label] || null;
+    } catch {
+      return null;
+    }
+  }
+
+  private writeState(mode: SyncMode): void {
+    let state: FetchState = {};
+    if (fs.existsSync(STATE_FILE)) {
+      try {
+        state = JSON.parse(fs.readFileSync(STATE_FILE, 'utf-8'));
+      } catch {
+        state = {};
+      }
+    }
+    const now = new Date().toISOString();
+    const existing = state[this.config.label] || { lastSuccessfulRun: '', lastFullSync: '' };
+    state[this.config.label] = {
+      lastSuccessfulRun: now,
+      lastFullSync: mode === 'full-sync' || mode === 'force' ? now : existing.lastFullSync,
+    };
+    fs.writeFileSync(STATE_FILE, JSON.stringify(state, null, 2), 'utf-8');
+    console.log(`💾 State saved for "${this.config.label}" [${mode}]`);
+  }
+
+  private async queryAllEntries(since?: Date): Promise<T[]> {
     const entries: T[] = [];
     let startCursor: string | undefined;
 
@@ -96,7 +156,7 @@ export class NotionDatabaseFetcher<T> {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const response = await (this.notion as any).dataSources.query({
         data_source_id: this.config.databaseId,
-        filter: this.config.buildFilter(),
+        filter: this.config.buildFilter(since),
         sorts: this.config.buildSort(),
         start_cursor: startCursor,
       });
@@ -111,8 +171,8 @@ export class NotionDatabaseFetcher<T> {
     return entries;
   }
 
-  private filterToUpdate(entries: T[]): T[] {
-    if (this.forceMode) {
+  private filterToUpdate(entries: T[], effectiveSyncMode: SyncMode): T[] {
+    if (effectiveSyncMode === 'force') {
       console.log(`🔥 Force mode enabled - will update ALL ${this.config.label} entries`);
       return entries;
     }

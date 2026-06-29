@@ -7,8 +7,8 @@ tags: ['随想']
 date: '2026-06-29'
 slug: 'sans-la-liberte-de-blamer-il-nest-point-deloge-flatteur'
 summary: '当一个有理想的人，被冠以「理想主义者」之名的时候，说明他的理想已经死了。'
-last_edited_time: '2026-06-29T08:01:00.000Z'
-last_fetched_time: '2026-06-29T08:05:15.859Z'
+last_edited_time: '2026-06-29T11:25:00.000Z'
+last_fetched_time: '2026-06-29T11:43:17.787Z'
 page_id: '38edc9c0-364a-80b6-ab6d-f10e28ab3bd7'
 icon: '🧭'
 ---

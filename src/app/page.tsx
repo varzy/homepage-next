@@ -35,7 +35,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="g-container-lefty leading-8 tracking-wider">
+    <div className="container px-4 pt-32 pb-20 sm:pl-12 md:pl-16 lg:pl-32 xl:pl-48 2xl:pl-80 leading-8 tracking-wider">
       {/* Heading */}
       <div className="flex items-end text-5xl font-bold">
         <h1 className="italic">贼歪</h1>

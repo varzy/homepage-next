@@ -10,6 +10,11 @@ export default function Home() {
       href: '/kotoba',
     },
     {
+      label: '器用',
+      alias: 'Gear',
+      href: '/gear',
+    },
+    {
       label: '拾光',
       alias: 'Instagram',
       href: 'https://instagram.com/varzyme',

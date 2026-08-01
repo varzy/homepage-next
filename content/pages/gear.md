@@ -3,8 +3,8 @@ page_id: '372dc9c0-364a-80f3-9b8a-e7cf3c61d44d'
 title: 'Gear'
 slug: 'gear'
 status: 'Published'
-last_edited_time: '2026-08-01T05:50:00.000Z'
-last_fetched_time: '2026-08-01T05:51:04.473Z'
+last_edited_time: '2026-08-01T08:37:00.000Z'
+last_fetched_time: '2026-08-01T09:22:27.475Z'
 ---
 
 我正在践行极简主义，并致力于优化自己的物品。我希望自己的每一件物品都可以「随手拿起，皆是所爱」。以下是一些我正在使用的器物，那些我觉得不好看，不心动，不常用，或是堪堪能用的不会列出。
@@ -47,7 +47,7 @@ last_fetched_time: '2026-08-01T05:51:04.473Z'
 - 文石 Leaf 3
 - 毕亚兹雷雳5 编织数据线
 
-## Mac Setup
+## MacOS Setup
 
 生产力工具
 

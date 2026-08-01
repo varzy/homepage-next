@@ -3,9 +3,11 @@ page_id: '372dc9c0-364a-80f3-9b8a-e7cf3c61d44d'
 title: 'Gear'
 slug: 'gear'
 status: 'Published'
-last_edited_time: '2026-08-01T08:37:00.000Z'
-last_fetched_time: '2026-08-01T09:22:27.475Z'
+last_edited_time: '2026-08-01T10:22:00.000Z'
+last_fetched_time: '2026-08-01T11:04:40.671Z'
 ---
+
+# 器用
 
 我正在践行极简主义，并致力于优化自己的物品。我希望自己的每一件物品都可以「随手拿起，皆是所爱」。以下是一些我正在使用的器物，那些我觉得不好看，不心动，不常用，或是堪堪能用的不会列出。
 

@@ -10,6 +10,7 @@ export default function TasteCard({
   const aspectStyle = { aspectRatio: aspect };
   const inner = (
     <div>
+      {/* cover */}
       {item.cover && (
         <div className="mb-2 overflow-hidden border-4 border-white" style={aspectStyle}>
           <img src={item.cover} alt={item.title} className="h-full w-full object-cover" />

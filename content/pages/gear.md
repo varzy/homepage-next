@@ -3,8 +3,8 @@ page_id: '372dc9c0-364a-80f3-9b8a-e7cf3c61d44d'
 title: 'Gear'
 slug: 'gear'
 status: 'Published'
-last_edited_time: '2026-08-01T10:22:00.000Z'
-last_fetched_time: '2026-08-01T11:04:40.671Z'
+last_edited_time: '2026-08-07T09:12:00.000Z'
+last_fetched_time: '2026-08-07T09:42:14.390Z'
 ---
 
 # 器用
@@ -51,7 +51,7 @@ last_fetched_time: '2026-08-01T11:04:40.671Z'
 
 ## MacOS Setup
 
-生产力工具
+生产力
 
 - Surge / FlClash
 - 滴答清单 - _已经是 11 年老用户了_
@@ -76,3 +76,9 @@ CLI
 - eza
 - glances
 - [mole](https://github.com/tw93/mole)
+
+## LLMs
+
+- z.ai / glm5.2
+- Anthropic / Claude Sonnet 5
+- Anthropic / Claude Opus 5

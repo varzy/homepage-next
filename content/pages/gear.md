@@ -3,8 +3,8 @@ page_id: '372dc9c0-364a-80f3-9b8a-e7cf3c61d44d'
 title: 'Gear'
 slug: 'gear'
 status: 'Published'
-last_edited_time: '2026-08-07T09:12:00.000Z'
-last_fetched_time: '2026-08-07T09:42:14.390Z'
+last_edited_time: '2026-08-07T09:49:00.000Z'
+last_fetched_time: '2026-08-07T09:53:06.188Z'
 ---
 
 # 器用
@@ -79,6 +79,6 @@ CLI
 
 ## LLMs
 
-- z.ai / glm5.2
+- Z.ai / GLM-5.2
 - Anthropic / Claude Sonnet 5
 - Anthropic / Claude Opus 5

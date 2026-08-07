@@ -16,7 +16,7 @@ export default async function Taste() {
   const page = await getPageWithContent('taste');
   const items = await getAllTasteItemsWithContent();
   const grouped = groupTasteByCategory(items);
-  const categories = CATEGORY_ORDER.filter((category) => grouped[category])
+  const categories = CATEGORY_ORDER.filter((category) => grouped[category]);
 
   return (
     <div>
@@ -28,15 +28,14 @@ export default async function Taste() {
             <h3 className="mb-6 text-lg font-bold">{category}</h3>
             <div className="grid grid-cols-3 gap-3 md:grid-cols-4 md:gap-4">
               {grouped[category]
-                .slice()
                 .sort((a, b) => a.title.localeCompare(b.title))
                 .map((item) => (
-                <TasteCard
-                  key={item.page_id}
-                  item={item}
-                  aspect={category === '音' ? 1 : 618 / 1000}
-                />
-              ))}
+                  <TasteCard
+                    key={item.page_id}
+                    item={item}
+                    aspect={category === '音' ? 1 : 618 / 1000}
+                  />
+                ))}
             </div>
           </section>
         ))}

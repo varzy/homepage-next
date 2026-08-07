@@ -1,4 +1,4 @@
-import type { TasteItemWithContent } from "@/app/_lib/taste-loader";
+import type { TasteItemWithContent } from '@/app/_lib/taste-loader';
 
 export default function TasteCard({
   item,
@@ -11,15 +11,8 @@ export default function TasteCard({
   const inner = (
     <div>
       {item.cover && (
-        <div
-          className="mb-2 overflow-hidden border-4 border-white"
-          style={aspectStyle}
-        >
-          <img
-            src={item.cover}
-            alt={item.title}
-            className="h-full w-full object-cover"
-          />
+        <div className="mb-2 overflow-hidden border-4 border-white" style={aspectStyle}>
+          <img src={item.cover} alt={item.title} className="h-full w-full object-cover" />
         </div>
       )}
       <div className="">
@@ -28,9 +21,7 @@ export default function TasteCard({
           <span>{item.title}</span>
         </div>
         {/* label */}
-        {item.label && (
-          <div className="text-muted mt-1.5 text-xs">{item.label}</div>
-        )}
+        {item.label && <div className="text-muted mt-1.5 text-xs">{item.label}</div>}
         {/* content */}
         {item.content && <p className="mt-1.5 text-xs">{item.content}</p>}
       </div>
@@ -39,12 +30,7 @@ export default function TasteCard({
 
   if (item.url) {
     return (
-      <a
-        href={item.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block"
-      >
+      <a href={item.url} target="_blank" rel="noopener noreferrer" className="block">
         {inner}
       </a>
     );

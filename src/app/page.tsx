@@ -10,11 +10,6 @@ export default function Home() {
       href: '/kotoba',
     },
     {
-      label: '器用',
-      alias: 'Gear',
-      href: '/gear',
-    },
-    {
       label: '拾光',
       alias: 'Instagram',
       href: 'https://instagram.com/varzyme',
@@ -22,15 +17,13 @@ export default function Home() {
     },
     {
       label: '书影音',
-      alias: 'Douban',
-      href: 'https://www.douban.com/people/varzy/',
-      target: '_blank',
+      alias: 'Taste',
+      href: '/taste',
     },
     {
-      label: '歌单',
-      alias: 'NeteaseMusic',
-      href: 'https://music.163.com/playlist?id=39874340&userid=45403592',
-      target: '_blank',
+      label: '器用',
+      alias: 'Gear',
+      href: '/gear',
     },
     {
       label: '友人',

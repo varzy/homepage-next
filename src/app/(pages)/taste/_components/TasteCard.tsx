@@ -1,19 +1,29 @@
-// import MdxRenderer from '@/app/_components/MdxRenderer';
 import type { TasteItemWithContent } from '@/app/_lib/taste-loader';
 
-export default function TasteCard({ item }: { item: TasteItemWithContent }) {
+export default function TasteCard({
+  item,
+  aspect = 3 / 4,
+}: {
+  item: TasteItemWithContent;
+  aspect?: number;
+}) {
+  const aspectStyle = { aspectRatio: aspect };
   const inner = (
-    <div title={item.title}>
+    <div title={item.content} className="rotate-0">
       {item.cover && (
-        <div className="mb-2 aspect-2/3 overflow-hidden">
+        <div className="mb-2 overflow-hidden border-4 border-white" style={aspectStyle}>
           <img src={item.cover} alt={item.title} className="h-full w-full object-cover" />
         </div>
       )}
       <div className="text-xs">
         {/* title */}
-        <div className="line-clamp-2 text-sm font-medium">{item.title}</div>
+        <div className="line-clamp-2 text-sm font-bold">
+          <span>{item.title}</span>
+        </div>
         {/* label */}
-        {item.label && <div className="text-secondary mt-1">{item.label}</div>}
+        {item.label && <div className="text-secondary mt-1 text-xs">{item.label}</div>}
+        {/* content */}
+        {item.content && <p>{item.content}</p>}
       </div>
     </div>
   );

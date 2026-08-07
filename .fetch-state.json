@@ -1,6 +1,6 @@
 {
   "page": {
-    "lastSuccessfulRun": "2026-08-07T06:33:31.457Z",
+    "lastSuccessfulRun": "2026-08-01T11:04:40.671Z",
     "lastFullSync": "2026-06-14T14:28:55.413Z"
   },
   "post": {
@@ -8,11 +8,11 @@
     "lastFullSync": "2026-06-14T14:28:57.742Z"
   },
   "kotoba": {
-    "lastSuccessfulRun": "2026-08-07T03:18:03.398Z",
+    "lastSuccessfulRun": "2026-08-06T13:45:35.038Z",
     "lastFullSync": "2026-06-14T14:28:59.079Z"
   },
   "taste": {
-    "lastSuccessfulRun": "2026-08-07T08:48:13.553Z",
-    "lastFullSync": "2026-06-14T14:29:00.512Z"
+    "lastSuccessfulRun": "2026-08-07T07:36:08.401Z",
+    "lastFullSync": "2026-08-07T07:36:08.401Z"
   }
 }

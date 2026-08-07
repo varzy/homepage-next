@@ -19,6 +19,7 @@ function extractTasteMeta(page: PageObjectResponse): TasteMetadata {
   return {
     page_id: page.id,
     title: getTextProperty(p.title),
+    alias: getTextProperty(p.alias),
     status: getSelectProperty(p.status),
     category: getSelectProperty(p.category),
     cover: getFilesProperty(p.cover),
@@ -33,6 +34,7 @@ export function generateTasteContent(meta: TasteMetadata, content: string): stri
   return `---
 page_id: "${meta.page_id}"
 title: "${meta.title.replace(/"/g, '\\"')}"
+alias: "${meta.alias}"
 status: "${meta.status}"
 category: "${meta.category}"
 cover: "${meta.cover}"

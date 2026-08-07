@@ -55,6 +55,7 @@ export interface KotobaMetadata {
 export interface TasteMetadata {
   page_id: string;
   title: string;
+  alias?: string;
   status: string;
   category: string;
   cover: string;

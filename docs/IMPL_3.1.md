@@ -191,7 +191,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  full-sync:
+  sync:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:

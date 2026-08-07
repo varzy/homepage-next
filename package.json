@@ -19,11 +19,11 @@
     "fetch:taste": "tsx scripts/fetch-taste.ts",
     "fetch:pages": "tsx scripts/fetch-pages.ts",
     "fetch:all": "pnpm run fetch:pages && pnpm run fetch:posts && pnpm run fetch:kotoba && pnpm run fetch:taste",
-    "full-sync:posts": "tsx scripts/fetch-posts.ts -- --full-sync",
-    "full-sync:kotoba": "tsx scripts/fetch-kotoba.ts -- --full-sync",
-    "full-sync:taste": "tsx scripts/fetch-taste.ts -- --full-sync",
-    "full-sync:pages": "tsx scripts/fetch-pages.ts -- --full-sync",
-    "full-sync:all": "pnpm run full-sync:posts && pnpm run full-sync:kotoba && pnpm run full-sync:taste && pnpm run full-sync:pages"
+    "sync:posts": "tsx scripts/fetch-posts.ts -- --full-sync",
+    "sync:kotoba": "tsx scripts/fetch-kotoba.ts -- --full-sync",
+    "sync:taste": "tsx scripts/fetch-taste.ts -- --full-sync",
+    "sync:pages": "tsx scripts/fetch-pages.ts -- --full-sync",
+    "sync:all": "pnpm run sync:posts && pnpm run sync:kotoba && pnpm run sync:taste && pnpm run sync:pages"
   },
   "dependencies": {
     "@giscus/react": "^3.1.0",

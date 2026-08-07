@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  full-sync:
+  sync:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
@@ -32,7 +32,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Full sync content from Notion
-        run: pnpm full-sync:all
+        run: pnpm sync:all
         env:
           NOTION_API_SECRET: ${{ secrets.NOTION_API_SECRET }}
           NOTION_POSTS_DATABASE_ID: ${{ secrets.NOTION_POSTS_DATABASE_ID }}

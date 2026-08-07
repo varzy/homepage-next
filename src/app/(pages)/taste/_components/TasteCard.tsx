@@ -17,11 +17,12 @@ export default function TasteCard({
       )}
       <div className="">
         {/* title */}
-        <div className="line-clamp-2 text-sm font-bold">
+        <div className="text-sm font-bold">
           <span>{item.title}</span>
+          {item.alias && <span className="text-muted font-light"> {item.alias}</span>}
         </div>
         {/* label */}
-        {item.label && <div className="text-muted mt-1.5 text-xs">{item.label}</div>}
+        {item.label && <div className="text-secondary mt-1.5 text-xs">{item.label}</div>}
         {/* content */}
         {item.content && <p className="mt-1.5 text-xs">{item.content}</p>}
       </div>

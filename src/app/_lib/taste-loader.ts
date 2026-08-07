@@ -8,6 +8,7 @@ const TASTE_DIR = path.join(process.cwd(), 'content/taste');
 type TasteFrontmatterData = {
   page_id?: string;
   title?: string;
+  alias?: string;
   status?: string;
   category?: string;
   cover?: string;
@@ -20,6 +21,7 @@ type TasteFrontmatterData = {
 export interface TasteItem {
   page_id: string;
   title: string;
+  alias?: string;
   status: string;
   category: string;
   cover: string;
@@ -37,6 +39,7 @@ function buildTasteItem(data: TasteFrontmatterData): TasteItem {
   return {
     page_id: data.page_id || '',
     title: data.title || '',
+    alias: data.alias || '',
     status: data.status || '',
     category: data.category || '',
     cover: data.cover || '',

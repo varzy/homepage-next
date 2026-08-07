@@ -32,7 +32,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Full sync content from Notion
-        run: pnpm fetch:full-sync
+        run: pnpm full-sync:all
         env:
           NOTION_API_SECRET: ${{ secrets.NOTION_API_SECRET }}
           NOTION_POSTS_DATABASE_ID: ${{ secrets.NOTION_POSTS_DATABASE_ID }}

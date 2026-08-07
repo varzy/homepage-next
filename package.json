@@ -5,12 +5,15 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "exam": "pnpm run format && pnpm run lint && pnpm run typecheck && pnpm run test",
     "build:debug": "next build  --debug",
     "release": "git pull && pnpm fetch:all && pnpm run exam && git add . && git commit -m 'Release.' && git push",
     "start": "next start",
     "lint": "oxlint --fix",
     "format": "oxfmt",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "exam": "pnpm run format && pnpm run lint && pnpm run typecheck && pnpm run test",
     "fetch:posts": "tsx scripts/fetch-posts.ts",
     "fetch:kotoba": "tsx scripts/fetch-kotoba.ts",
     "fetch:taste": "tsx scripts/fetch-taste.ts",
@@ -20,10 +23,7 @@
     "full-sync:kotoba": "tsx scripts/fetch-kotoba.ts -- --full-sync",
     "full-sync:taste": "tsx scripts/fetch-taste.ts -- --full-sync",
     "full-sync:pages": "tsx scripts/fetch-pages.ts -- --full-sync",
-    "full-sync:all": "pnpm run full-sync:posts && pnpm run full-sync:kotoba && pnpm run full-sync:taste && pnpm run full-sync:pages",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "typecheck": "tsc --noEmit"
+    "full-sync:all": "pnpm run full-sync:posts && pnpm run full-sync:kotoba && pnpm run full-sync:taste && pnpm run full-sync:pages"
   },
   "dependencies": {
     "@giscus/react": "^3.1.0",

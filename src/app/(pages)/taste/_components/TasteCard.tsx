@@ -22,7 +22,7 @@ export default function TasteCard({
         {/* title */}
         <div className="text-sm font-bold">
           <span>{item.title}</span>
-          {showExtra && item.alias && <span className="text-muted font-light"> {item.alias}</span>}
+          {showExtra && item.alias && <span className="text-secondary font-extralight"> {item.alias}</span>}
         </div>
         {/* label */}
         {item.label && <div className="text-muted mt-1.5 text-xs">{item.label}</div>}

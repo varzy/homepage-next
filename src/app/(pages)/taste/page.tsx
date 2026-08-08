@@ -25,7 +25,6 @@ export default async function Taste() {
   return (
     <div>
       {page && <MdxRenderer source={page.content} />}
-
       <TasteGallery groups={groups} />
     </div>
   );

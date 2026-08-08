@@ -47,7 +47,7 @@
     color: var(--color-ink);
   }
   a {
-    @apply underline-offset-4;
+    @apply cursor-pointer underline-offset-4;
   }
 }
 

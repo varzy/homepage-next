@@ -3,8 +3,8 @@ page_id: '372dc9c0-364a-80f3-9b8a-e7cf3c61d44d'
 title: 'Gear'
 slug: 'gear'
 status: 'Published'
-last_edited_time: '2026-08-07T09:49:00.000Z'
-last_fetched_time: '2026-08-07T09:53:06.188Z'
+last_edited_time: '2026-08-09T12:37:00.000Z'
+last_fetched_time: '2026-08-09T13:33:24.327Z'
 ---
 
 # 器用
@@ -22,11 +22,12 @@ last_fetched_time: '2026-08-07T09:53:06.188Z'
 
 ## 出行
 
-- Muji 双拉链收纳袋 - _EDC 小包。放纸巾，耳机等日用品_
+- MUJI 双拉链收纳袋 - _EDC 小包。放纸巾，耳机等日用品_
 - DOOMGEAR 白洞 - _PSK 小包。放牙线，创可贴，充电宝等应急物品_
 - Bellroy Lite Sling Mini 4L 斜挎包
 - F/CE 420 Travel BP 33L 双肩包
 - Waterfront 折叠伞 - _极致轻薄的雨伞，有记忆贴片，收缩后无需手动整理伞布_
+- FUJIFILM X100VI - _腹肌_南波_万_
 - Jellycat 小花生挂件
 
 ## 衣着
@@ -45,7 +46,6 @@ last_fetched_time: '2026-08-07T09:53:06.188Z'
 - VGN 蜻蜓3 大师+
 - 小米台灯 Pro
 - Play Station 5
-- FUJIFILM X100VI
 - 文石 Leaf 3
 - 毕亚兹雷雳5 编织数据线
 

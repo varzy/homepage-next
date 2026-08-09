@@ -3,8 +3,8 @@ page_id: '372dc9c0-364a-80f3-9b8a-e7cf3c61d44d'
 title: 'Gear'
 slug: 'gear'
 status: 'Published'
-last_edited_time: '2026-08-09T12:37:00.000Z'
-last_fetched_time: '2026-08-09T13:33:24.327Z'
+last_edited_time: '2026-08-09T14:05:00.000Z'
+last_fetched_time: '2026-08-09T14:16:39.257Z'
 ---
 
 # 器用
@@ -27,7 +27,7 @@ last_fetched_time: '2026-08-09T13:33:24.327Z'
 - Bellroy Lite Sling Mini 4L 斜挎包
 - F/CE 420 Travel BP 33L 双肩包
 - Waterfront 折叠伞 - _极致轻薄的雨伞，有记忆贴片，收缩后无需手动整理伞布_
-- FUJIFILM X100VI - _腹肌_南波_万_
+- FUJIFILM X100VI - _腹肌南波万_
 - Jellycat 小花生挂件
 
 ## 衣着
@@ -42,7 +42,7 @@ last_fetched_time: '2026-08-09T13:33:24.327Z'
 ## Battle Station
 
 - MacBook Air 13’ M2
-- Rainy 75
+- Rainy 75 雪顶可可轴
 - VGN 蜻蜓3 大师+
 - 小米台灯 Pro
 - Play Station 5
@@ -72,8 +72,8 @@ CLI
 
 - zsh + [ohmyzsh](https://ohmyz.sh/)
 - neovim + [lazyvim](https://www.lazyvim.org/)
-- bat
-- eza
+- eza - `alias ls='eza --icons'`
+- bat - `alias cat='bat'`
 - glances
 - [mole](https://github.com/tw93/mole)
 

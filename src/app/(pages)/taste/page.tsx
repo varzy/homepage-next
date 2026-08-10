@@ -19,7 +19,7 @@ export default async function Taste() {
   const groups = CATEGORY_ORDER.filter((category) => grouped[category]).map((category) => ({
     category,
     items: grouped[category].sort((a, b) => a.title.localeCompare(b.title)),
-    aspect: category === '音' ? 1 : 618 / 1000,
+    aspect: category === '音' ? 1 : 2 / 3,
   }));
 
   return (

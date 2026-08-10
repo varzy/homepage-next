@@ -3,8 +3,8 @@ page_id: '372dc9c0-364a-80f3-9b8a-e7cf3c61d44d'
 title: 'Gear'
 slug: 'gear'
 status: 'Published'
-last_edited_time: '2026-08-09T14:05:00.000Z'
-last_fetched_time: '2026-08-09T14:16:39.257Z'
+last_edited_time: '2026-08-10T01:18:00.000Z'
+last_fetched_time: '2026-08-10T03:19:00.618Z'
 ---
 
 # 器用
@@ -72,8 +72,8 @@ CLI
 
 - zsh + [ohmyzsh](https://ohmyz.sh/)
 - neovim + [lazyvim](https://www.lazyvim.org/)
-- eza - `alias ls='eza --icons'`
-- bat - `alias cat='bat'`
+- eza
+- bat
 - glances
 - [mole](https://github.com/tw93/mole)
 

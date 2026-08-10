@@ -3,8 +3,8 @@ page_id: '372dc9c0-364a-80f3-9b8a-e7cf3c61d44d'
 title: 'Gear'
 slug: 'gear'
 status: 'Published'
-last_edited_time: '2026-08-10T01:18:00.000Z'
-last_fetched_time: '2026-08-10T03:19:00.618Z'
+last_edited_time: '2026-08-10T03:24:00.000Z'
+last_fetched_time: '2026-08-10T04:58:14.986Z'
 ---
 
 # 器用
@@ -70,7 +70,7 @@ Coding
 
 CLI
 
-- zsh + [ohmyzsh](https://ohmyz.sh/)
+- zsh + [ohmyzsh](https://ohmyz.sh/) + [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) + [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 - neovim + [lazyvim](https://www.lazyvim.org/)
 - eza
 - bat

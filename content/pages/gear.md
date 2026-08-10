@@ -3,8 +3,8 @@ page_id: '372dc9c0-364a-80f3-9b8a-e7cf3c61d44d'
 title: 'Gear'
 slug: 'gear'
 status: 'Published'
-last_edited_time: '2026-08-10T03:24:00.000Z'
-last_fetched_time: '2026-08-10T04:58:14.986Z'
+last_edited_time: '2026-08-10T07:31:00.000Z'
+last_fetched_time: '2026-08-10T07:32:05.442Z'
 ---
 
 # 器用
@@ -13,72 +13,72 @@ last_fetched_time: '2026-08-10T04:58:14.986Z'
 
 ## EDC
 
-- iPhone 15 Pro Max - _主力机_
-- Redmi K90 Pro Max - _游戏机，流量机_
-- AirPods Pro 3
-- Casio GST-B400BB-1A
-- 奈特科尔 NB Air - _极致轻薄的充电宝，可放进白洞收纳包中随身携带_
-- 纳拓小水手 S11 Pro - _极致轻薄的多功能工具钳，可放进白洞收纳包中随身携带_
+- **iPhone 15 Pro Max** - 主力机
+- **Redmi K90 Pro Max** - 游戏机，流量机
+- **AirPods Pro 3**
+- **Casio GST-B400BB-1A**
+- **奈特科尔 NB Air** - 极致轻薄的充电宝，可放进白洞收纳包中随身携带
+- **纳拓小水手 S11 Pro** - 极致轻薄的多功能工具钳，可放进白洞收纳包中随身携带
 
 ## 出行
 
-- MUJI 双拉链收纳袋 - _EDC 小包。放纸巾，耳机等日用品_
-- DOOMGEAR 白洞 - _PSK 小包。放牙线，创可贴，充电宝等应急物品_
-- Bellroy Lite Sling Mini 4L 斜挎包
-- F/CE 420 Travel BP 33L 双肩包
-- Waterfront 折叠伞 - _极致轻薄的雨伞，有记忆贴片，收缩后无需手动整理伞布_
-- FUJIFILM X100VI - _腹肌南波万_
-- Jellycat 小花生挂件
+- **MUJI 双拉链收纳袋** - EDC 小包。放纸巾，耳机等日用品
+- **DOOMGEAR 白洞** - PSK 小包。放牙线，创可贴，充电宝等应急物品
+- **Bellroy Lite Sling Mini 4L 斜挎包**
+- **F/CE 420 Travel BP 33L 双肩包**
+- **Waterfront 折叠伞** - 极致轻薄的雨伞，有记忆贴片，收缩后无需手动整理伞布
+- **FUJIFILM X100VI** - 腹肌南波万
+- **Jellycat 小花生挂件**
 
 ## 衣着
 
-- 优衣库 Airism 白色短袖 - _焊死在身上的打底衫，夏穿 L 冬穿 M_
-- 美津浓 FIYI TL V2 运动鞋
+- **优衣库 Airism 白色短袖** - 焊死在身上的打底衫，夏穿 L 冬穿 M
+- **美津浓 FIYI TL V2 运动鞋**
 
 ## 个护
 
-- 可复美重组胶原蛋白修复敷料
+- **可复美重组胶原蛋白修复敷料**
 
 ## Battle Station
 
-- MacBook Air 13’ M2
-- Rainy 75 雪顶可可轴
-- VGN 蜻蜓3 大师+
-- 小米台灯 Pro
-- Play Station 5
-- 文石 Leaf 3
-- 毕亚兹雷雳5 编织数据线
+- **MacBook Air 13' M2**
+- **Rainy 75 雪顶可可轴**
+- **VGN 蜻蜓3 大师+**
+- **小米台灯 Pro**
+- **Play Station 5**
+- **文石 Leaf 3**
+- **毕亚兹雷雳5 编织数据线**
 
 ## MacOS Setup
 
 生产力
 
-- Surge / FlClash
-- 滴答清单 - _已经是 11 年老用户了_
-- Notion - _存放我所有的笔记，并且配合 Notion API 玩出了不少花样_
-- Raycast - _最常用的功能是 Calculator, Clipboard History & Window Management_
-- 1Password
-- OneDrive
-- Snipaste - _截图 & 贴图_
+- **Surge / FlClash**
+- **滴答清单** - 已经是 11 年老用户了
+- **Notion** - 存放我所有的笔记，并且配合 Notion API 玩出了不少花样
+- **Raycast** - 最常用的功能是 Calculator, Clipboard History & Window Management
+- **1Password**
+- **OneDrive**
+- **Snipaste** - 截图 & 贴图
 
 Coding
 
-- VSCode + Claude Code Extension + [Catppuccin Theme](https://catppuccin.com/)
-- [Maple Mono NF CN](https://font.subf.dev/)
-- iTerm + [Dracula Theme](https://draculatheme.com/iterm)
-- CC Switch + [Zenmux.ai](https://zenmux.ai/)
+- **VSCode** + **Claude Code Extension** + [**Catppuccin Theme**](https://catppuccin.com/)
+- [**Maple Mono NF CN**](https://font.subf.dev/)
+- **iTerm** + [**Dracula Theme**](https://draculatheme.com/iterm)
+- **CC Switch** + [**Zenmux.ai**](https://zenmux.ai/)
 
 CLI
 
-- zsh + [ohmyzsh](https://ohmyz.sh/) + [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) + [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
-- neovim + [lazyvim](https://www.lazyvim.org/)
-- eza
-- bat
-- glances
-- [mole](https://github.com/tw93/mole)
+- **zsh** + **ohmyzsh** + **zsh-autosuggestions** + **zsh-syntax-highlighting**
+- **neovim** + **LazyVim**
+- **eza**
+- **bat**
+- **glances**
+- [**mole**](https://github.com/tw93/mole)
 
 ## LLMs
 
-- Z.ai / GLM-5.2
-- Anthropic / Claude Sonnet 5
-- Anthropic / Claude Opus 5
+- **Z.ai / GLM-5.2**
+- **Anthropic / Claude Sonnet 5**
+- **Anthropic / Claude Opus 5**

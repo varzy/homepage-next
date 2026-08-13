@@ -11,12 +11,12 @@ export default function PostItem({
   return (
     <div className="mb-8 last:mb-0 sm:mb-10">
       <PostMeta post={post} showCategory={showCategory} showTags={showTags} dateTpl={dateTpl} />
-      <h2 className="text-ink py-1.5 text-base font-extrabold sm:py-2 sm:text-lg">
+      <h2 className="text-ink py-2 text-lg font-extrabold">
         <Link className="hover:underline" href={'/posts/' + post.slug}>
           {post.title}
         </Link>
       </h2>
-      {post.summary && <p className="text-muted text-sm sm:text-base">{post.summary}</p>}
+      {post.summary && <p className="text-muted text-sm">{post.summary}</p>}
     </div>
   );
 }

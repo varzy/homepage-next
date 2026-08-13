@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import BlogHeader from '@/app/(blog)/_components/BlogHeader';
 import SiteFooter from '@/app/_components/SiteFooter';
-import Loading from './loading';
+import Loading from '../loading';
 
 export default function BlogLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (

@@ -42,7 +42,7 @@ export default function Comments() {
           >
             ⭡ 顶部
           </span>
-          <Link href="/sponsor">£ 赞赏</Link>
+          <Link href="/sponsor">$ 赞赏</Link>
         </div>
       </div>
 

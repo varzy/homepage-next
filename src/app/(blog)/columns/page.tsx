@@ -40,14 +40,14 @@ export default async function ColumnsPage() {
       <BlogSection title="Categories">
         {categoryLinks.map((category, index) => (
           <div className="mt-5" key={index}>
-            <h2 className="text-base font-bold sm:text-lg">
+            <h2 className="text-base font-bold">
               「
               <Link className="hover:underline" href={category.href}>
                 {category.label}
               </Link>
               」
             </h2>
-            <p className="text-muted mt-1.5 text-sm sm:text-base">{category.desc}</p>
+            <p className="text-muted mt-1.5 text-sm">{category.desc}</p>
           </div>
         ))}
       </BlogSection>

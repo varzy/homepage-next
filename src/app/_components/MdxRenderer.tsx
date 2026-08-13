@@ -6,6 +6,7 @@ import Prose from './Prose';
 
 interface MdxRendererProps {
   source: string;
+  withProse?: boolean;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -59,18 +60,18 @@ const SmartCode = ({ children, className, ...props }: MdxCustomComponentProps) =
   );
 };
 
-export default function MdxRenderer({ source }: MdxRendererProps) {
-  return (
-    <Prose>
-      <MDXRemote
-        source={source}
-        components={{
-          code: SmartCode,
-          pre: CustomPre,
-          a: CustomLink,
-          img: LightboxImage,
-        }}
-      />
-    </Prose>
+export default function MdxRenderer({ source, withProse = true }: MdxRendererProps) {
+  const inner = (
+    <MDXRemote
+      source={source}
+      components={{
+        code: SmartCode,
+        pre: CustomPre,
+        a: CustomLink,
+        img: LightboxImage,
+      }}
+    />
   );
+
+  return withProse ? <Prose>{inner}</Prose> : inner;
 }

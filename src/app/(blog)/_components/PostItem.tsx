@@ -11,7 +11,7 @@ export default function PostItem({
   return (
     <div className="mb-8 last:mb-0 sm:mb-10">
       <PostMeta post={post} showCategory={showCategory} showTags={showTags} dateTpl={dateTpl} />
-      <h2 className="text-ink py-2 text-lg font-extrabold">
+      <h2 className="text-ink py-2 font-extrabold">
         <Link className="hover:underline" href={'/posts/' + post.slug}>
           {post.title}
         </Link>

@@ -7,7 +7,7 @@ export default function NextPost({ nextPost }: { nextPost: PostMeta | null }) {
       <div className="mt-14">
         <div>
           <p className="text-secondary text-sm">下一篇</p>
-          <h2 className="text-ink py-2 text-lg font-extrabold">
+          <h2 className="text-ink py-2 font-extrabold">
             <Link className="hover:underline" href={'/posts/' + nextPost.slug}>
               {nextPost.title}
             </Link>

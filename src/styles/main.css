@@ -3,6 +3,9 @@
 @plugin '@tailwindcss/typography';
 
 @theme {
+  /* 字号 */
+  --text-paragraph: 0.9375rem;
+
   /* Surfaces ─ 页面与卡片背景 */
   --color-background: #f7f7f7; /* 全站页面底色 */
   --color-surface: #ffffff; /* 卡片 / 高出一层的容器（如 KotobaCard）*/
@@ -58,4 +61,8 @@
 @utility prose-invert {
   --tw-prose-body: var(--color-ink);
   --tw-prose-headings: var(--color-ink);
+}
+
+@utility g-with-prose {
+  @apply prose dark:prose-invert prose-code:before:content-none prose-code:after:content-none prose-a:font-normal prose-a:text-inherit prose-a:decoration-1 prose-blockquote:[&_p]:before:content-none prose-blockquote:[&_p]:after:content-none max-w-none text-base leading-loose wrap-break-word;
 }

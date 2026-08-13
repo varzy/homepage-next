@@ -1,12 +1,12 @@
-import PageHeader from '@/app/_components/PageHeader';
 import SiteFooter from '@/app/_components/SiteFooter';
+import SiteHeader from '@/app/_components/SiteHeader';
 
 export default function KotobaLayout({ children }: { children: React.ReactNode }) {
   return (
     <div>
-      <PageHeader />
+      <SiteHeader />
       <main>{children}</main>
-      <SiteFooter links={[{ label: 'Telegram', href: 'https://t.me/varzyme', target: '_blank' }]} />
+      <SiteFooter />
     </div>
   );
 }

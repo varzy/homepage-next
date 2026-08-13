@@ -47,7 +47,7 @@ export default function TasteGallery({ groups }: { groups: TasteCategoryGroup[] 
         {groups.map((group) => (
           <section key={group.category} className="mb-12 last:mb-0">
             <h3 className="mb-6 text-xl font-bold">{group.category}</h3>
-            <div className="grid grid-cols-3 gap-x-3 gap-y-4 md:grid-cols-5 md:gap-y-6">
+            <div className="grid grid-cols-3 gap-x-3 gap-y-4 sm:grid-cols-5 sm:gap-y-6">
               {group.items.map((item) => (
                 <TasteCard
                   key={item.page_id}

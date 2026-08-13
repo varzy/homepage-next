@@ -51,7 +51,7 @@ export default async function KotobaTagPage({
         <KotobaContainer
           posts={posts}
           currentPage={currentPage}
-          urlPrefix={`/kotoba/tags/${encodeURIComponent(rawTag)}`}
+          urlPrefix={`/kotoba/tags/${rawTag}`}
         />
       </div>
     </>

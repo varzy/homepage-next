@@ -16,7 +16,7 @@ export default function KotobaCard({ post }: KotobaCardProps) {
   const publishedTimeLabel = formatAbsoluteDate(post.publishedDate, 'MMM DD, YYYY HH:mm');
 
   return (
-    <section className="bg-surface border-border mb-4 p-6">
+    <article className="bg-surface border-border mb-4 p-6">
       <div className="mb-3 flex flex-wrap items-baseline gap-x-4 gap-y-1 text-sm">
         {publishedTimeLabel && (
           <time className="text-secondary" dateTime={post.publishedDate}>
@@ -37,7 +37,7 @@ export default function KotobaCard({ post }: KotobaCardProps) {
       <hr className="border-border-soft" />
 
       {post.withTitle && post.title && (
-        <div className="text-ink text-paragraph my-4 font-extrabold">
+        <h2 className="text-ink text-paragraph my-4 font-extrabold">
           {post.titleUrl ? (
             <Link
               href={post.titleUrl}
@@ -50,7 +50,7 @@ export default function KotobaCard({ post }: KotobaCardProps) {
           ) : (
             post.title
           )}
-        </div>
+        </h2>
       )}
 
       {hasContent && (
@@ -60,6 +60,6 @@ export default function KotobaCard({ post }: KotobaCardProps) {
       )}
 
       <KotobaImageGrid images={images} />
-    </section>
+    </article>
   );
 }

@@ -1,7 +1,10 @@
 {
   "$schema": "./node_modules/oxfmt/configuration_schema.json",
   "singleQuote": true,
-  "sortTailwindcss": true,
+  "sortTailwindcss": {
+    "preserveDuplicates": true,
+    "preserveWhitespace": true
+  },
   "sortImports": {
     "newlinesBetween": false
   }

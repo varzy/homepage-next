@@ -28,27 +28,36 @@ export default function Comments() {
   });
 
   return (
-    <div className="mt-20">
+    <section className="mt-20" aria-label="评论">
       <div className="flex items-center justify-between font-extrabold">
         <div className="cursor-pointer">
           {!isShowComments && (
-            <span onClick={() => setIsShowComments(true)}>评论 ({commentCount})</span>
+            <button
+              type="button"
+              aria-expanded={isShowComments}
+              aria-controls="giscus-comments"
+              onClick={() => setIsShowComments(true)}
+              className="g-plain-button"
+            >
+              评论 ({commentCount})
+            </button>
           )}
         </div>
         <div className="space-x-4">
-          <span
-            className="cursor-pointer"
+          <button
+            type="button"
+            className="g-plain-button"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             ⭡ 顶部
-          </span>
+          </button>
           <Link href="/sponsor">$ 赞赏</Link>
         </div>
       </div>
 
-      <div className={clsx('mt-4', isShowComments ? 'block' : 'hidden')}>
+      <div id="giscus-comments" className={clsx('mt-4', isShowComments ? 'block' : 'hidden')}>
         <GiscusComment />
       </div>
-    </div>
+    </section>
   );
 }

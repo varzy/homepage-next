@@ -14,7 +14,7 @@ export default function SiteHeader({ links = [] }: { links?: HeaderLink[] }) {
           <Link className="text-lg font-bold tracking-wider italic" href="/">
             贼歪
           </Link>
-          <nav>
+          <nav aria-label="主导航">
             <ul className="menu align-center flex gap-4">
               {links.map((link, index) => (
                 <li key={index}>

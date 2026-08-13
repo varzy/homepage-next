@@ -11,7 +11,7 @@ export default function TasteCard({
 }) {
   const aspectStyle = { aspectRatio: aspect };
   const inner = (
-    <div className="text-sm">
+    <article className="text-sm">
       {/* cover */}
       {item.cover && (
         <div className="mb-2 overflow-hidden" style={aspectStyle}>
@@ -20,18 +20,18 @@ export default function TasteCard({
       )}
       <div className="">
         {/* title */}
-        <div className="text-sm font-bold">
+        <h3 className="m-0 text-sm font-bold">
           <span>{item.title}</span>
           {showExtra && item.alias && (
             <span className="text-secondary font-extralight"> ({item.alias})</span>
           )}
-        </div>
+        </h3>
         {/* label */}
         {item.label && <div className="text-muted mt-1.5 text-xs">{item.label}</div>}
         {/* content */}
         {showExtra && item.content && <p className="mt-1.5 text-xs">{item.content}</p>}
       </div>
-    </div>
+    </article>
   );
 
   if (item.url) {
@@ -42,5 +42,5 @@ export default function TasteCard({
     );
   }
 
-  return <div>{inner}</div>;
+  return inner;
 }

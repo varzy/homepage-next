@@ -9,7 +9,7 @@ export default function PostItem({
   ...post
 }: PostMetaData & { showCategory?: boolean; showTags?: boolean; dateTpl?: string }) {
   return (
-    <div className="mb-8 last:mb-0">
+    <article className="mb-8 last:mb-0">
       <PostMeta post={post} showCategory={showCategory} showTags={showTags} dateTpl={dateTpl} />
       <h2 className="text-ink py-2 font-extrabold">
         <Link className="hover:underline" href={'/posts/' + post.slug}>
@@ -17,6 +17,6 @@ export default function PostItem({
         </Link>
       </h2>
       {post.summary && <p className="text-muted text-sm">{post.summary}</p>}
-    </div>
+    </article>
   );
 }

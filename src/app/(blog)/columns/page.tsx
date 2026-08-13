@@ -40,24 +40,26 @@ export default async function ColumnsPage() {
       <BlogSection title="Categories">
         {categoryLinks.map((category, index) => (
           <div className="mt-5" key={index}>
-            <h2 className="text-base font-bold">
+            <h3 className="text-base font-bold">
               「
               <Link className="hover:underline" href={category.href}>
                 {category.label}
               </Link>
               」
-            </h2>
+            </h3>
             <p className="text-muted mt-1.5 text-sm">{category.desc}</p>
           </div>
         ))}
       </BlogSection>
 
       <BlogSection title="Tags">
-        {sortedTags.map((tag, index) => (
-          <div key={index} className="me-5 mb-3 inline-block">
-            <PostTag tag={tag.tag} count={tag.postsCount} />
-          </div>
-        ))}
+        <ul className="m-0 list-none p-0">
+          {sortedTags.map((tag, index) => (
+            <li key={index} className="me-5 mb-3 inline-block">
+              <PostTag tag={tag.tag} count={tag.postsCount} />
+            </li>
+          ))}
+        </ul>
       </BlogSection>
     </BlogPageContainer>
   );

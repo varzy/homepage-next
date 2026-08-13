@@ -66,3 +66,7 @@
 @utility g-with-prose {
   @apply prose dark:prose-invert prose-code:before:content-none prose-code:after:content-none prose-a:font-normal prose-a:text-inherit prose-a:decoration-1 prose-blockquote:[&_p]:before:content-none prose-blockquote:[&_p]:after:content-none max-w-none text-base leading-loose wrap-break-word;
 }
+
+@utility g-plain-button {
+  @apply font-inherit cursor-pointer border-0 bg-transparent p-0;
+}

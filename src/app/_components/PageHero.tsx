@@ -8,7 +8,7 @@ export interface PageHeroProps {
 
 export default function PageHero({ title, after, children }: PageHeroProps) {
   return (
-    <div className="g-container py-10">
+    <header className="g-container py-10">
       {children ? (
         <>{children}</>
       ) : (
@@ -18,6 +18,6 @@ export default function PageHero({ title, after, children }: PageHeroProps) {
           {after && <div className="mt-3">{after}</div>}
         </>
       )}
-    </div>
+    </header>
   );
 }

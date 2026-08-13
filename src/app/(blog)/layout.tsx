@@ -1,11 +1,9 @@
-import { Suspense } from 'react';
 import SiteFooter from '@/app/_components/SiteFooter';
 import SiteHeader from '@/app/_components/SiteHeader';
-import Loading from '../loading';
 
 export default function BlogLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <div>
+    <>
       <SiteHeader
         links={[
           { label: '文章', href: '/blog' },
@@ -14,10 +12,8 @@ export default function BlogLayout({ children }: Readonly<{ children: React.Reac
           { label: 'RSS', href: '/rss.xml', target: '_blank' },
         ]}
       />
-      <Suspense fallback={<Loading />}>
-        <main>{children}</main>
-      </Suspense>
+      <main>{children}</main>
       <SiteFooter />
-    </div>
+    </>
   );
 }

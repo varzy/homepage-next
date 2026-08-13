@@ -51,7 +51,7 @@ export default function Comments() {
           >
             ⭡ 顶部
           </button>
-          <Link href="/sponsor">$ 赞赏</Link>
+          <Link href="/sponsor">£ 赞赏</Link>
         </div>
       </div>
 

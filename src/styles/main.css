@@ -68,5 +68,5 @@
 }
 
 @utility g-plain-button {
-  @apply font-inherit cursor-pointer border-0 bg-transparent p-0;
+  @apply cursor-pointer border-0 bg-transparent p-0;
 }

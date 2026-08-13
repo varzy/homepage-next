@@ -4,8 +4,12 @@ import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 import PostsContainer from '@/app/(blog)/_components/PostsContainer';
 import { buildPageSegments } from '@/app/_lib/pagination-utils';
 import { getCategoryPosts } from '@/app/_lib/post-loader';
-import { SITE_CONFIG, isCategoryKey } from '@/site.config';
+import { SITE_CONFIG } from '@/site.config';
 import { getEmojiFavicon } from '@/utils/favicon';
+
+function isCategoryKey(value: string): value is keyof typeof SITE_CONFIG.categories {
+  return value in SITE_CONFIG.categories;
+}
 
 export async function generateMetadata({
   params,

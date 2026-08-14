@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Taste() {
-  const CATEGORY_ORDER = ['书', '影', '音', '剧', '动画', '漫画', '游戏', '音乐剧'];
+  const CATEGORY_ORDER = ['书', '影', '音', '剧', '动画', '漫画', '游戏', '音乐剧', '播客'];
 
   const page = await getPageWithContent('taste');
   const items = await getAllTasteItemsWithContent();
@@ -19,7 +19,7 @@ export default async function Taste() {
   const groups = CATEGORY_ORDER.filter((category) => grouped[category]).map((category) => ({
     category,
     items: grouped[category].sort((a, b) => a.title.localeCompare(b.title)),
-    aspect: category === '音' ? 1 : 2 / 3,
+    aspect: category === '音' || category === '播客' ? 1 : 2 / 3,
   }));
 
   return (

@@ -5,10 +5,10 @@ type: 'Post'
 status: 'Published'
 tags: ['Docker']
 date: '2021-09-12'
-slug: 'use-docker-to-developing'
+slug: 'use-docker-for-development'
 summary: ''
-last_edited_time: '2025-09-02T08:55:00.000Z'
-last_fetched_time: '2025-09-02T09:28:45.618Z'
+last_edited_time: '2026-08-14T17:03:00.000Z'
+last_fetched_time: '2026-08-14T17:07:57.848Z'
 page_id: '1f966285-bf21-4640-9e24-11b81c8720a6'
 icon: '🐳'
 ---

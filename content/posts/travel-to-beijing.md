@@ -5,10 +5,10 @@ type: 'Post'
 status: 'Published'
 tags: ['随想']
 date: '2017-03-11'
-slug: 'travel-of-beijing'
+slug: 'travel-to-beijing'
 summary: '自此，我也成为了一名北漂。'
-last_edited_time: '2025-08-06T06:21:00.000Z'
-last_fetched_time: '2025-09-02T09:33:29.769Z'
+last_edited_time: '2026-08-14T17:04:00.000Z'
+last_fetched_time: '2026-08-14T17:08:23.792Z'
 page_id: '45504b86-d40f-4069-ba1c-7253475f51bf'
 icon: '🎾'
 ---

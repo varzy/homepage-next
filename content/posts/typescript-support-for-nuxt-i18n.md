@@ -3,12 +3,12 @@ title: 'Nuxt I18n 支持类型推导'
 category: 'Coding'
 type: 'Post'
 status: 'Published'
-tags: ['Nuxt']
+tags: ['Nuxt', '工程化']
 date: '2025-09-03'
 slug: 'typescript-support-for-nuxt-i18n'
 summary: ''
-last_edited_time: '2025-09-03T08:26:00.000Z'
-last_fetched_time: '2025-09-03T08:32:13.629Z'
+last_edited_time: '2026-08-14T16:35:00.000Z'
+last_fetched_time: '2026-08-14T16:39:59.827Z'
 page_id: '263dc9c0-364a-80aa-b2ac-e71835a1ec39'
 icon: '🩰'
 ---

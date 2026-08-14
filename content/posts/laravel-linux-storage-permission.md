@@ -5,10 +5,10 @@ type: 'Post'
 status: 'Published'
 tags: ['Laravel', 'PHP', 'Linux']
 date: '2020-03-27'
-slug: 'laravel-linux-store-page-no-permission'
+slug: 'laravel-linux-storage-permission'
 summary: ''
-last_edited_time: '2025-08-06T06:19:00.000Z'
-last_fetched_time: '2025-09-02T09:32:06.164Z'
+last_edited_time: '2026-08-14T17:01:00.000Z'
+last_fetched_time: '2026-08-14T17:08:14.190Z'
 page_id: '0779e43f-d639-4784-83dd-c49d09e95b5b'
 icon: '🗝️'
 ---

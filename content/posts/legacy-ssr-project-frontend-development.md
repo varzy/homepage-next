@@ -3,12 +3,12 @@ title: '前后端不分离，也要优雅得写前端！'
 category: 'Coding'
 type: 'Post'
 status: 'Published'
-tags: ['JavaScript']
+tags: ['JavaScript', '工程化']
 date: '2021-03-13'
-slug: 'legacy-ssr-project-front-end-develop'
+slug: 'legacy-ssr-project-frontend-development'
 summary: ''
-last_edited_time: '2025-09-02T07:54:00.000Z'
-last_fetched_time: '2025-09-02T09:29:31.198Z'
+last_edited_time: '2026-08-14T17:01:00.000Z'
+last_fetched_time: '2026-08-14T17:08:00.289Z'
 page_id: 'dadd4c37-7881-4ba1-99f4-cd51210c3922'
 icon: '🚎'
 ---

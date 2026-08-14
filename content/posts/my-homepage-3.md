@@ -3,12 +3,12 @@ title: '主页 3.0'
 category: 'Nichijou'
 type: 'Post'
 status: 'Published'
-tags: ['Design', '个人主页']
+tags: ['个人主页']
 date: '2026-05-28'
 slug: 'my-homepage-3'
 summary: '我希望我的网站是安静的，不喧嚣的，是简洁而不失条理的。'
-last_edited_time: '2026-08-10T01:07:00.000Z'
-last_fetched_time: '2026-08-10T03:19:04.416Z'
+last_edited_time: '2026-08-14T16:49:00.000Z'
+last_fetched_time: '2026-08-14T16:57:19.811Z'
 page_id: '36edc9c0-364a-80cf-aadf-e6fccdd6d094'
 icon: '✉️'
 ---

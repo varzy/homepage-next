@@ -5,10 +5,10 @@ type: 'Post'
 status: 'Published'
 tags: ['Git']
 date: '2020-03-27'
-slug: 'gitignore-config-alias'
+slug: 'gitconfig-alias'
 summary: ''
-last_edited_time: '2025-08-06T06:20:00.000Z'
-last_fetched_time: '2025-09-02T09:32:41.380Z'
+last_edited_time: '2026-08-14T17:01:00.000Z'
+last_fetched_time: '2026-08-14T17:08:17.069Z'
 page_id: '6ea78241-dcff-4661-8fae-5a752ee0c9c8'
 icon: '🎀'
 ---

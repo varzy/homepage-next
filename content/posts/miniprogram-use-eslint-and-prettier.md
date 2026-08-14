@@ -3,12 +3,12 @@ title: '在微信小程序项目中引入 ESLint 和 Prettier'
 category: 'Coding'
 type: 'Post'
 status: 'Published'
-tags: ['Miniprogram', 'ESLint', 'Prettier']
+tags: ['微信小程序']
 date: '2021-03-18'
 slug: 'miniprogram-use-eslint-and-prettier'
 summary: ''
-last_edited_time: '2025-09-02T07:53:00.000Z'
-last_fetched_time: '2025-09-02T09:29:23.190Z'
+last_edited_time: '2026-08-14T16:32:00.000Z'
+last_fetched_time: '2026-08-14T16:40:16.915Z'
 page_id: 'd8b8d8e8-1895-4173-9008-058ed75b6cd5'
 icon: '⛳'
 ---

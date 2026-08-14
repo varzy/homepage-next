@@ -3,12 +3,12 @@ title: '更改 Chrome 进度条样式'
 category: 'Coding'
 type: 'Post'
 status: 'Published'
-tags: ['CSS', 'Browser']
+tags: ['CSS', '浏览器']
 date: '2020-06-11'
 slug: 'chrome-scrollbar-style-custom'
 summary: ''
-last_edited_time: '2025-08-06T06:18:00.000Z'
-last_fetched_time: '2025-09-02T09:29:53.597Z'
+last_edited_time: '2026-08-14T16:27:00.000Z'
+last_fetched_time: '2026-08-14T16:40:31.099Z'
 page_id: '5c19a41b-b70c-40f5-aeef-6c250ea597d5'
 icon: '👠'
 ---

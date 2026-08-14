@@ -3,12 +3,12 @@ title: '微信小程序中定制「加入群聊」插件的样式'
 category: 'Coding'
 type: 'Post'
 status: 'Published'
-tags: ['Miniprogram']
+tags: ['微信小程序']
 date: '2023-07-20'
-slug: 'miniprogram-custom-customer-button-style'
+slug: 'miniprogram-join-group-button-style'
 summary: ''
-last_edited_time: '2025-09-02T07:50:00.000Z'
-last_fetched_time: '2025-09-02T09:26:31.738Z'
+last_edited_time: '2026-08-14T17:02:00.000Z'
+last_fetched_time: '2026-08-14T17:07:54.173Z'
 page_id: 'c6499b75-9fc3-4f8a-a138-80a670d53b32'
 icon: '🎊'
 ---

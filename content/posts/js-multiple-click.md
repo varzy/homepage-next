@@ -5,10 +5,10 @@ type: 'Post'
 status: 'Published'
 tags: ['JavaScript']
 date: '2020-09-17'
-slug: 'js-mutliple-click'
+slug: 'js-multiple-click'
 summary: ''
-last_edited_time: '2025-09-02T07:54:00.000Z'
-last_fetched_time: '2025-09-02T09:29:51.560Z'
+last_edited_time: '2026-08-14T17:01:00.000Z'
+last_fetched_time: '2026-08-14T17:08:07.962Z'
 page_id: '49e37246-de0d-4cc4-b8b9-dc075f71b0a8'
 icon: '🧨'
 ---

@@ -3,12 +3,12 @@ title: 'hello, blog'
 category: 'Nichijou'
 type: 'Post'
 status: 'Published'
-tags: ['随想']
+tags: ['随想', '个人主页']
 date: '2015-12-31'
 slug: 'hello-blog'
 summary: '我的人生注定少不了折腾。'
-last_edited_time: '2025-08-06T06:21:00.000Z'
-last_fetched_time: '2025-09-02T09:33:32.889Z'
+last_edited_time: '2026-08-14T16:44:00.000Z'
+last_fetched_time: '2026-08-14T16:57:33.377Z'
 page_id: 'f9b0eed9-60fd-4c0f-8e86-d8943d665f5e'
 icon: '⛸️'
 ---

@@ -3,12 +3,12 @@ title: '聊聊 Hamilton 音乐剧里的爱情故事'
 category: 'Nichijou'
 type: 'Post'
 status: 'Published'
-tags: ['音乐', '剧']
+tags: ['音乐', '音乐剧']
 date: '2022-11-17'
 slug: 'hamilton-musical'
 summary: '假如这篇文章能让你对这部剧，这些人，这段历史产生丝毫的兴趣，那我也算是别样的 Tell his story 了，我想，That would be enough。'
-last_edited_time: '2025-09-02T08:54:00.000Z'
-last_fetched_time: '2025-09-02T09:27:03.009Z'
+last_edited_time: '2026-08-14T16:48:00.000Z'
+last_fetched_time: '2026-08-14T16:57:27.185Z'
 page_id: '2b7bca57-7909-491c-b113-7231512caff7'
 icon: '💵'
 ---
@@ -41,7 +41,7 @@ Hamilton 的作者是 [Lin-Manuel Miranda](https://en.wikipedia.org/wiki/Lin-Ma
 
 时值美国独立战争之际，名门 Schuyler (斯凯勒)家有三位千金，分别是长女 Angelica (安杰莉卡)，次女 Elizabeth (伊丽莎白)，小名 Eliza (伊莱莎) 和三妹 Peggy (佩姬)。一个冬季的舞会上，Eliza 对舞池另一侧的 Alexander Hamilton 一见钟情 (想想 10 美元上的人像)，她抓住姐姐 Angelica 说「Yo, this one’s mine」，大姐径直穿过舞厅挽起 Ham 的手，Eliza 以为「I’m through」时，大姐却把 Ham 带到了自己面前。Eliza 感谢 Ham 为国家的付出，Ham 高情商得回复了一句：
 
-> If it takes fighting a war for us to meet, it will have been worth it
+> If it takes fighting a war for us to meet, it will have been worth it  
 > 倘若战争使我们相遇，那这仗打得值！
 
 两周后 Ham 上门求亲，饭桌上 Eliza 的父亲板着脸，当 Eliza 再次以为「we’re through」时，父亲握起 Ham 的手，只提出了一个要求：Be true。
@@ -74,17 +74,17 @@ Angelica 太聪明了，她知道自己和 Ham 并非不能，而是不合适，
 
 虽然大姐和 Ham 没有在一起，但两人互相欣赏，之后也一直保持着通信和…暧昧的关系。这在「[Take a Break](https://music.163.com/song?id=35804624&userid=45403592)」一曲中也有所体现：
 
-> In a letter I received from you two weeks ago
-> 两周以前你那封来信的开头
-> I noticed a comma in the middle of a phrase
-> 我发现句子中的一个逗号
-> It changed the meaning. Did you intend this?
-> 这句话的意思就此改变 你可是故意而为？
-> One stroke and you’ve consumed my waking days
-> 一个笔画，就使我彻夜难眠
-> “My dearest Angelica”
-> 我亲爱的 Angelica
-> “My dearest, Angelica.”
+> In a letter I received from you two weeks ago  
+> 两周以前你那封来信的开头  
+> I noticed a comma in the middle of a phrase  
+> 我发现句子中的一个逗号  
+> It changed the meaning. Did you intend this?  
+> 这句话的意思就此改变 你可是故意而为？  
+> One stroke and you’ve consumed my waking days  
+> 一个笔画，就使我彻夜难眠  
+> “My dearest Angelica”  
+> 我亲爱的 Angelica  
+> “My dearest, Angelica.”  
 > 我的至爱，Angelica
 
 我没有考证这三人之间的关系究竟如何，不过据说原著传记中还提到 Eliza 其实很乐于与 Angelica 分享 Ham😅
@@ -149,7 +149,7 @@ Ham 和 Jefferson 处处不和，但最终 Ham 却把选票投给了 Jefferson �
 
 在 Ham 决斗的前一晚，Eliza 呼唤仍在不停写作的 Ham 去睡觉，Ham 承诺自己会早早回来，早到 Eliza 察觉不到自己的离开。Eliza 转身前，Ham 拉着她的手说道：
 
-> Hey! Best of wives and best of women!
+> Hey! Best of wives and best of women!  
 > 嘿，你是最好的妻子，完美的女人
 
 ![ekTSU3mOab8conM.jpg](https://cdn.sa.net/2024/03/16/ekTSU3mOab8conM.jpg)
@@ -184,7 +184,7 @@ Hamilton 这部剧里也简单交代了 Burr 的爱情故事。
 
 倒数第二曲「[The World Was Wide Enough](https://music.163.com/song?id=35804643&userid=45403592)」，Burr 和 Ham 决斗前，Burr 情绪激动、带着哭腔唱了一句：
 
-> This man will not make an orphan of my daughter
+> This man will not make an orphan of my daughter  
 > 这个男人绝不能让我的女儿成为孤儿
 
 这是因为这时候 Burr 的妻子已经去世了😭。

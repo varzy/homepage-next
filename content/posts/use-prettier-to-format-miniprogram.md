@@ -3,12 +3,12 @@ title: '使用 Prettier 格式化微信小程序代码'
 category: 'Coding'
 type: 'Post'
 status: 'Published'
-tags: ['Miniprogram', 'Prettier']
+tags: ['微信小程序', '工程化']
 date: '2021-01-22'
 slug: 'use-prettier-to-format-miniprogram'
 summary: ''
-last_edited_time: '2025-08-06T06:18:00.000Z'
-last_fetched_time: '2025-09-02T09:29:44.121Z'
+last_edited_time: '2026-08-14T16:36:00.000Z'
+last_fetched_time: '2026-08-14T16:40:29.657Z'
 page_id: '5c815442-8abb-4500-8492-a6f8d4febe25'
 icon: '🏆'
 ---

@@ -3,12 +3,12 @@ title: '微信小程序中使用 page-container 拦截返回操作'
 category: 'Coding'
 type: 'Post'
 status: 'Published'
-tags: ['Miniprogram']
+tags: ['微信小程序']
 date: '2022-02-21'
-slug: 'miniprogram-page-container-reject-backing'
+slug: 'miniprogram-page-container-intercept-back'
 summary: ''
-last_edited_time: '2025-08-06T06:16:00.000Z'
-last_fetched_time: '2025-09-02T09:27:50.143Z'
+last_edited_time: '2026-08-14T17:02:00.000Z'
+last_fetched_time: '2026-08-14T17:07:55.541Z'
 page_id: '2b11d7ee-942d-432c-b223-f2c9d28adfe4'
 icon: '🥋'
 ---

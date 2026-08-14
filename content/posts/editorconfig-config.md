@@ -3,12 +3,12 @@ title: '.editorconfig 自用配置'
 category: 'Coding'
 type: 'Post'
 status: 'Published'
-tags: ['Git']
+tags: ['工程化']
 date: '2020-03-27'
-slug: 'myself-editorconfig-config'
+slug: 'editorconfig-config'
 summary: ''
-last_edited_time: '2025-08-06T06:20:00.000Z'
-last_fetched_time: '2025-09-02T09:32:43.792Z'
+last_edited_time: '2026-08-14T17:02:00.000Z'
+last_fetched_time: '2026-08-14T17:08:19.129Z'
 page_id: 'b13f1dd7-a207-43c7-b6c2-bee6c469fe43'
 icon: '🚡'
 ---

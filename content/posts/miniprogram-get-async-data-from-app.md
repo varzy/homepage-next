@@ -3,12 +3,12 @@ title: '微信小程序页面中获取 app.js 中的异步数据'
 category: 'Coding'
 type: 'Post'
 status: 'Published'
-tags: ['Miniprogram']
+tags: ['微信小程序']
 date: '2021-01-29'
 slug: 'miniprogram-get-async-data-from-app'
 summary: ''
-last_edited_time: '2025-08-06T06:18:00.000Z'
-last_fetched_time: '2025-09-02T09:29:37.967Z'
+last_edited_time: '2026-08-14T16:32:00.000Z'
+last_fetched_time: '2026-08-14T16:40:24.299Z'
 page_id: 'df1bc672-2b17-4a7d-9101-0c97dbef01c9'
 icon: '🎭'
 ---

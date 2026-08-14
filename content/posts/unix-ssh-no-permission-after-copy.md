@@ -3,12 +3,12 @@ title: '解决 Unix 系统复制 .ssh 文件夹后提示权限过于开放的问
 category: 'Coding'
 type: 'Post'
 status: 'Published'
-tags: ['Linux']
+tags: ['Linux', 'Terminal']
 date: '2020-03-27'
 slug: 'unix-ssh-no-permission-after-copy'
 summary: ''
-last_edited_time: '2025-08-06T06:20:00.000Z'
-last_fetched_time: '2025-09-02T09:32:51.643Z'
+last_edited_time: '2026-08-14T16:35:00.000Z'
+last_fetched_time: '2026-08-14T16:40:59.232Z'
 page_id: '3c9d627e-6af9-4a26-bd31-26bd5d60bd32'
 icon: '♟️'
 ---

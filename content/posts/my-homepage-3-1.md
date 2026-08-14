@@ -7,11 +7,13 @@ tags: ['个人主页']
 date: '2026-08-14'
 slug: 'my-homepage-3-1'
 summary: '新的页面，和更多的减法。'
-last_edited_time: '2026-08-14T15:59:00.000Z'
-last_fetched_time: '2026-08-14T16:00:06.459Z'
+last_edited_time: '2026-08-14T16:59:00.000Z'
+last_fetched_time: '2026-08-14T17:07:48.702Z'
 page_id: '3b8dc9c0-364a-8014-96cf-cc25a5545aee'
 icon: '🌠'
 ---
+
+上个版本的更新日志：[主页 3.0](https://varzy.me/posts/my-homepage-3)。
 
 ## 新增了书影音页面
 

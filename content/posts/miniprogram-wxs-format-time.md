@@ -3,12 +3,12 @@ title: '微信小程序中使用 wxs 格式化时间'
 category: 'Coding'
 type: 'Post'
 status: 'Published'
-tags: ['Miniprogram']
+tags: ['微信小程序']
 date: '2021-03-18'
 slug: 'miniprogram-wxs-format-time'
 summary: ''
-last_edited_time: '2025-09-03T04:18:00.000Z'
-last_fetched_time: '2025-09-03T04:18:41.380Z'
+last_edited_time: '2026-08-14T16:32:00.000Z'
+last_fetched_time: '2026-08-14T16:40:13.650Z'
 page_id: 'c1a9149b-9c3b-4034-9a64-81657b9c5818'
 icon: '⛴️'
 ---

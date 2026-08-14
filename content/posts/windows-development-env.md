@@ -3,12 +3,12 @@ title: '基于 WSL 的 Windows 开发环境搭建'
 category: 'Coding'
 type: 'Post'
 status: 'Published'
-tags: ['Windows']
+tags: ['Windows', 'Linux']
 date: '2021-11-23'
 slug: 'windows-development-env'
 summary: ''
-last_edited_time: '2025-09-02T09:21:00.000Z'
-last_fetched_time: '2025-09-02T09:28:33.023Z'
+last_edited_time: '2026-08-14T16:36:00.000Z'
+last_fetched_time: '2026-08-14T16:40:08.639Z'
 page_id: 'a48130c1-4826-4016-8ec3-7166c17a4082'
 icon: '🪟'
 ---

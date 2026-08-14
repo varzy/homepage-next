@@ -3,12 +3,12 @@ title: '我当下的 AI Coding 方案'
 category: 'Coding'
 type: 'Post'
 status: 'Published'
-tags: ['AI']
+tags: ['AI', '软件']
 date: '2026-05-27'
 slug: 'my-ai-coding-solution'
 summary: 'VSCode + Claude Code 插件 + CodeX 插件 + ZenMux + CC Switch'
-last_edited_time: '2026-05-27T13:07:00.000Z'
-last_fetched_time: '2026-05-27T13:34:49.741Z'
+last_edited_time: '2026-08-14T16:34:00.000Z'
+last_fetched_time: '2026-08-14T16:39:56.270Z'
 page_id: '36ddc9c0-364a-80ea-a2d1-e62b1e0020af'
 icon: '🏒'
 ---

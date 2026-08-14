@@ -5,10 +5,10 @@ type: 'Post'
 status: 'Published'
 tags: ['JavaScript', '八股文']
 date: '2020-05-11'
-slug: 'js-events-knowledges'
+slug: 'js-event-bubbling-and-delegation'
 summary: ''
-last_edited_time: '2025-09-02T07:54:00.000Z'
-last_fetched_time: '2025-09-02T09:29:56.868Z'
+last_edited_time: '2026-08-14T17:01:00.000Z'
+last_fetched_time: '2026-08-14T17:08:09.626Z'
 page_id: '1b119ff4-ab59-424b-9831-b836ea4982c8'
 icon: '💷'
 ---

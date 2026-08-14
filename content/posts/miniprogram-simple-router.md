@@ -3,12 +3,12 @@ title: '微信小程序构建简单的路由系统'
 category: 'Coding'
 type: 'Post'
 status: 'Published'
-tags: ['Miniprogram']
+tags: ['微信小程序']
 date: '2021-01-28'
 slug: 'miniprogram-simple-router'
 summary: ''
-last_edited_time: '2025-09-02T07:54:00.000Z'
-last_fetched_time: '2025-09-02T09:29:40.565Z'
+last_edited_time: '2026-08-14T16:32:00.000Z'
+last_fetched_time: '2026-08-14T16:40:26.910Z'
 page_id: '78d0d43e-be92-4e50-8b1b-2823d5c13d57'
 icon: '🥈'
 ---

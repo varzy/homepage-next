@@ -3,8 +3,8 @@ page_id: '372dc9c0-364a-80f3-9b8a-e7cf3c61d44d'
 title: 'Gear'
 slug: 'gear'
 status: 'Published'
-last_edited_time: '2026-08-10T07:43:00.000Z'
-last_fetched_time: '2026-08-10T08:05:26.248Z'
+last_edited_time: '2026-08-14T17:30:00.000Z'
+last_fetched_time: '2026-08-14T17:33:27.573Z'
 ---
 
 # 器用
@@ -38,6 +38,7 @@ last_fetched_time: '2026-08-10T08:05:26.248Z'
 ## 个护
 
 - **可复美重组胶原蛋白修复敷料**
+- **CeraVe 保湿乳液**
 
 ## Battle Station
 

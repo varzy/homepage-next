@@ -3,13 +3,13 @@ page_id: '2efdc9c0-364a-8077-9c62-e5c2e4ef1889'
 title: 'Friends'
 slug: 'friends'
 status: 'Published'
-last_edited_time: '2026-08-17T08:26:00.000Z'
-last_fetched_time: '2026-08-17T08:26:50.683Z'
+last_edited_time: '2026-08-17T08:40:00.000Z'
+last_fetched_time: '2026-08-17T09:02:06.368Z'
 ---
 
 # 友人
 
-欢迎互换友链。我偏好版面简洁，内容扎实且没有 AI 内容的站点，如果你的站点符合要求，可以发送邮件到 varzyme#gmail.com 告知我你的站点信息。
+欢迎互换友链。我偏好版面简洁，有自我表达，且没有 AI 参与编撰的站点，如果你的站点符合要求，可以发送邮件到 varzyme#gmail.com 告知我你的站点信息。
 
 本站信息：
 
@@ -18,7 +18,7 @@ last_fetched_time: '2026-08-17T08:26:50.683Z'
   "name": "贼歪",
   "url": "https://varzy.me",
   "motto": "Developer. Blogger. INFJ.",
-  "avatar": "https://gravatar.com/avatar/11ed82d5b17d1de8c61ead04453dae2e"
+  "avatar": "https://i.see.you/2026/08/17/6Ovi/avatar.png"
 }
 ```
 

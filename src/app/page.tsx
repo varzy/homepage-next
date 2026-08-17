@@ -32,7 +32,7 @@ export default function Home() {
       target: '_blank',
     },
     {
-      label: '友人',
+      label: '往来',
       alias: 'Friends',
       href: '/friends',
     },

@@ -3,8 +3,8 @@ page_id: '263dc9c0-364a-8032-9368-cc0f8f18d4e9'
 title: 'Readme'
 slug: 'readme'
 status: 'Published'
-last_edited_time: '2026-08-14T09:29:00.000Z'
-last_fetched_time: '2026-08-14T10:17:55.865Z'
+last_edited_time: '2026-08-17T17:35:00.000Z'
+last_fetched_time: '2026-08-17T17:36:49.991Z'
 ---
 
 ## 我
@@ -21,10 +21,10 @@ ACG 爱好者，在等 GTA6。半个极客，喜欢捣鼓软件和数码产品�
 
 「贼歪」即 ZY，是我名字首字母的音译，域名的含义是 `var zy = me`。
 
-网站由 Next.js 驱动，Vercel 托管，Notion 作为 CMS，图片由 [s.ee](http://s.ee/) 托管，并使用 [giscus](https://giscus.app/) 作为评论系统。代码已开源：[varzy/homepage-next](https://github.com/varzy/homepage-next)。网站主题由本人设计。文字内容截至目前未有任何 AI 参与编纂，并且承诺未来很长一段时间内都不会有 AIGC 内容。没有在国内备案的计划。
+网站由 Next.js 驱动，Vercel 部署，Notion 作为 CMS，图片托管于 [s.ee](http://s.ee/)，并使用 [giscus](https://giscus.app/) 作为评论系统。网站主题由本人设计。没有在国内备案的计划。
 
-所有内容以 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans) 协议授权，转载请注明出处，禁止用于商业目的。
+代码已开源：[varzy/homepage-next](https://github.com/varzy/homepage-next)。
 
-## 来往
+## 内容
 
-如果你有什么想说的想聊的，欢迎发送邮件给我：varzyme#gmail.com。
+文字内容截至目前未有任何 AI 参与编纂，并且承诺未来很长一段时间内都不会有 AIGC 内容。所有内容均以 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans) 协议授权，转载请注明出处，禁止用于商业目的。

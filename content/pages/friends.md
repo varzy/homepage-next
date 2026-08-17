@@ -3,8 +3,8 @@ page_id: '2efdc9c0-364a-8077-9c62-e5c2e4ef1889'
 title: 'Friends'
 slug: 'friends'
 status: 'Published'
-last_edited_time: '2026-08-17T09:23:00.000Z'
-last_fetched_time: '2026-08-17T09:24:07.931Z'
+last_edited_time: '2026-08-17T09:40:00.000Z'
+last_fetched_time: '2026-08-17T09:58:58.371Z'
 ---
 
 # 友人
@@ -22,7 +22,7 @@ avatar: https://i.see.you/2026/08/17/6Ovi/avatar.png
 
 ## 朋友们
 
-这些是与我互换友链的朋友。
+这些是与我互换了友链的朋友。
 
 - [和光同尘](https://ikangjia.cn/)
 - [Airing 的小屋](https://blog.ursb.me/)

@@ -3,13 +3,15 @@ page_id: '2efdc9c0-364a-8077-9c62-e5c2e4ef1889'
 title: 'Friends'
 slug: 'friends'
 status: 'Published'
-last_edited_time: '2026-08-17T07:57:00.000Z'
-last_fetched_time: '2026-08-17T07:57:40.057Z'
+last_edited_time: '2026-08-17T08:26:00.000Z'
+last_fetched_time: '2026-08-17T08:26:50.683Z'
 ---
 
 # 友人
 
-欢迎互换友链，你可以发送邮件到 varzyme#gmail.com 告知我你的站点信息。我的站点：
+欢迎互换友链。我偏好版面简洁，内容扎实且没有 AI 内容的站点，如果你的站点符合要求，可以发送邮件到 varzyme#gmail.com 告知我你的站点信息。
+
+本站信息：
 
 ```json
 {
@@ -19,6 +21,8 @@ last_fetched_time: '2026-08-17T07:57:40.057Z'
   "avatar": "https://gravatar.com/avatar/11ed82d5b17d1de8c61ead04453dae2e"
 }
 ```
+
+---
 
 这些是与我互换友链的朋友。
 
@@ -32,6 +36,7 @@ last_fetched_time: '2026-08-17T07:57:40.057Z'
 
 - [BlogsClub](https://www.blogsclub.org/)
 - [BlogFinder](https://bf.zzxworld.com/)
+- [开往 · 成员列表](https://list.travellings.cn/)
 
 ---
 

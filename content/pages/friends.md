@@ -3,13 +3,13 @@ page_id: '2efdc9c0-364a-8077-9c62-e5c2e4ef1889'
 title: 'Friends'
 slug: 'friends'
 status: 'Published'
-last_edited_time: '2026-08-17T09:40:00.000Z'
-last_fetched_time: '2026-08-17T09:58:58.371Z'
+last_edited_time: '2026-08-17T10:11:00.000Z'
+last_fetched_time: '2026-08-17T10:15:51.499Z'
 ---
 
 # 友人
 
-欢迎互换友链。我偏好版面简洁，有自我表达，且没有 AI 参与编撰的站点，如果你的站点符合要求，可以发送邮件到 varzyme#gmail.com 告知我你的站点信息。
+欢迎互换友链。我偏好版面简洁，有自我表达，且没有 AI 参与编撰的网站，如果你的站点符合要求，可以发送邮件到 varzyme#gmail.com 告知我你的站点信息。
 
 ## 本站信息
 

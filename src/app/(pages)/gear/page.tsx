@@ -13,9 +13,5 @@ export default async function Readme() {
   const postWithContent = await getPageWithContent('gear');
   if (!postWithContent) notFound();
 
-  return (
-    <div>
-      <MdxRenderer source={postWithContent.content} />
-    </div>
-  );
+  return <MdxRenderer source={postWithContent.content} />;
 }

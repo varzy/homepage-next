@@ -3,8 +3,8 @@ page_id: '372dc9c0-364a-80f3-9b8a-e7cf3c61d44d'
 title: 'Gear'
 slug: 'gear'
 status: 'Published'
-last_edited_time: '2026-08-17T16:39:00.000Z'
-last_fetched_time: '2026-08-17T16:41:45.758Z'
+last_edited_time: '2026-08-17T16:47:00.000Z'
+last_fetched_time: '2026-08-17T16:48:44.059Z'
 ---
 
 # 器用
@@ -56,7 +56,7 @@ last_fetched_time: '2026-08-17T16:41:45.758Z'
 - **VGN 蜻蜓3 大师+**
 - **小米台灯 Pro**
 - **Play Station 5** - 从朋友那收的二手，或将成为近年来最值得的一笔投资
-- **文石 Leaf 3** - 在旅行路上看漫画，以及睡前看垃圾小说助眠
+- **文石 Leaf 3** - 在旅途中看漫画，以及睡前看垃圾小说助眠
 - **毕亚兹雷雳5 编织数据线**
 
 ## MacOS Setup

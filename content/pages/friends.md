@@ -3,8 +3,8 @@ page_id: '2efdc9c0-364a-8077-9c62-e5c2e4ef1889'
 title: 'Friends'
 slug: 'friends'
 status: 'Published'
-last_edited_time: '2026-08-17T07:15:00.000Z'
-last_fetched_time: '2026-08-17T07:17:10.581Z'
+last_edited_time: '2026-08-17T07:17:00.000Z'
+last_fetched_time: '2026-08-17T07:18:00.962Z'
 ---
 
 # 友人

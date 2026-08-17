@@ -3,15 +3,15 @@ page_id: '2efdc9c0-364a-8077-9c62-e5c2e4ef1889'
 title: 'Friends'
 slug: 'friends'
 status: 'Published'
-last_edited_time: '2026-08-17T08:40:00.000Z'
-last_fetched_time: '2026-08-17T09:02:06.368Z'
+last_edited_time: '2026-08-17T09:13:00.000Z'
+last_fetched_time: '2026-08-17T09:13:50.488Z'
 ---
 
 # 友人
 
 欢迎互换友链。我偏好版面简洁，有自我表达，且没有 AI 参与编撰的站点，如果你的站点符合要求，可以发送邮件到 varzyme#gmail.com 告知我你的站点信息。
 
-本站信息：
+## 本站信息
 
 ```json
 {
@@ -22,7 +22,7 @@ last_fetched_time: '2026-08-17T09:02:06.368Z'
 }
 ```
 
----
+## 朋友们
 
 这些是与我互换友链的朋友。
 
@@ -30,15 +30,11 @@ last_fetched_time: '2026-08-17T09:02:06.368Z'
 - [Airing 的小屋](https://blog.ursb.me/)
 - [Restrive14](https://yzhthinking.top/)
 
----
-
 这些是我用来发现其他博客的平台。
 
 - [BlogsClub](https://www.blogsclub.org/)
 - [BlogFinder](https://bf.zzxworld.com/)
 - [开往 · 成员列表](https://list.travellings.cn/)
-
----
 
 这些是我不时闲逛的站点。
 

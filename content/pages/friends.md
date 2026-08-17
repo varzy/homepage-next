@@ -3,38 +3,29 @@ page_id: '2efdc9c0-364a-8077-9c62-e5c2e4ef1889'
 title: 'Friends'
 slug: 'friends'
 status: 'Published'
-last_edited_time: '2026-08-17T06:38:00.000Z'
-last_fetched_time: '2026-08-17T06:39:07.659Z'
+last_edited_time: '2026-08-17T07:06:00.000Z'
+last_fetched_time: '2026-08-17T07:06:12.019Z'
 ---
 
 # 友人
 
 欢迎互换友链，你可以发送邮件到 varzyme#gmail.com 告知我你的站点信息。
 
----
-
 这些是与我互换友链的朋友。
 
-[和光同尘](https://ikangjia.cn/)
+- [和光同尘](https://ikangjia.cn/)
+- [Airing 的小屋](https://blog.ursb.me/)
+- [Restrive14](https://yzhthinking.top/)
 
-[Airing 的小屋](https://blog.ursb.me/)
+这些是我用来发现其他博客的平台。
 
-[Restrive14](https://yzhthinking.top/)
-
-这些是我用来发现其他博客的聚合平台。
-
-[BlogsClub](https://www.blogsclub.org/)
-
-[BlogFinder](https://bf.zzxworld.com/)
+- [BlogsClub](https://www.blogsclub.org/)
+- [BlogFinder](https://bf.zzxworld.com/)
 
 这些是我不时闲逛的站点。
 
-[Another Dayu](https://anotherdayu.com/)
-
-[極客死亡計劃](https://www.geedea.pro/)
-
-[天仙子](https://www.tianxianzi.me/)
-
-[SO!AZY](https://blog.solazy.me/)
-
-[二丫讲梵](https://wiki.eryajf.net/)
+- [Another Dayu](https://anotherdayu.com/)
+- [極客死亡計劃](https://www.geedea.pro/)
+- [天仙子](https://www.tianxianzi.me/)
+- [SO!AZY](https://blog.solazy.me/)
+- [二丫讲梵](https://wiki.eryajf.net/)

@@ -3,7 +3,7 @@
 import clsx from 'clsx';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import GiscusComment from './GiscusComment';
+import GiscusComment from '@/app/_components/GiscusComment';
 
 export default function Comments() {
   const [isShowComments, setIsShowComments] = useState(false);

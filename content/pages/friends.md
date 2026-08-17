@@ -3,8 +3,8 @@ page_id: '2efdc9c0-364a-8077-9c62-e5c2e4ef1889'
 title: 'Friends'
 slug: 'friends'
 status: 'Published'
-last_edited_time: '2026-08-17T09:13:00.000Z'
-last_fetched_time: '2026-08-17T09:13:50.488Z'
+last_edited_time: '2026-08-17T09:23:00.000Z'
+last_fetched_time: '2026-08-17T09:24:07.931Z'
 ---
 
 # 友人
@@ -13,13 +13,11 @@ last_fetched_time: '2026-08-17T09:13:50.488Z'
 
 ## 本站信息
 
-```json
-{
-  "name": "贼歪",
-  "url": "https://varzy.me",
-  "motto": "Developer. Blogger. INFJ.",
-  "avatar": "https://i.see.you/2026/08/17/6Ovi/avatar.png"
-}
+```plain text
+name: 贼歪
+url: https://varzy.me
+motto: Developer. Blogger. INFJ.
+avatar: https://i.see.you/2026/08/17/6Ovi/avatar.png
 ```
 
 ## 朋友们

@@ -3,23 +3,34 @@ import MdxRenderer from '@/app/_components/MdxRenderer';
 import { getPageWithContent } from '@/app/_lib/page-loader';
 import { getAllTasteItemsWithContent, groupTasteByCategory } from '@/app/_lib/taste-loader';
 import { getEmojiFavicon } from '@/utils/favicon';
-import TasteGallery from './_components/TasteGallery';
+import TasteGallery, { type TasteCategory } from './_components/TasteGallery';
 
 export const metadata: Metadata = {
   title: '书影音',
   icons: getEmojiFavicon('🎬'),
 };
 
-export default async function Taste() {
-  const CATEGORY_ORDER = ['书', '影', '音', '剧', '动画', '漫画', '游戏', '音乐剧', '播客'];
+const CATEGORIES: TasteCategory[] = [
+  { name: '书', aspect: 2 / 3 },
+  { name: '影', aspect: 2 / 3 },
+  { name: '音', aspect: 1 },
+  { name: '剧', aspect: 2 / 3 },
+  { name: '动画', aspect: 2 / 3 },
+  { name: '漫画', aspect: 2 / 3 },
+  { name: '游戏', aspect: 2 / 3 },
+  { name: '音乐剧', aspect: 2 / 3 },
+  { name: '播客', aspect: 1 },
+  { name: '视频', aspect: 500 / 309 },
+];
 
+export default async function Taste() {
   const page = await getPageWithContent('taste');
   const items = await getAllTasteItemsWithContent();
   const grouped = groupTasteByCategory(items);
-  const groups = CATEGORY_ORDER.filter((category) => grouped[category]).map((category) => ({
-    category,
-    items: grouped[category].sort((a, b) => a.title.localeCompare(b.title)),
-    aspect: category === '音' || category === '播客' ? 1 : 2 / 3,
+  const groups = CATEGORIES.filter(({ name }) => grouped[name]).map(({ name, aspect }) => ({
+    name,
+    aspect,
+    items: grouped[name].sort((a, b) => a.title.localeCompare(b.title)),
   }));
 
   return (

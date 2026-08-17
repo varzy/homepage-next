@@ -5,10 +5,13 @@ import { useState } from 'react';
 import type { TasteItemWithContent } from '@/app/_lib/taste-loader';
 import TasteCard from './TasteCard';
 
-export type TasteCategoryGroup = {
-  category: string;
-  items: TasteItemWithContent[];
+export type TasteCategory = {
+  name: string;
   aspect: number;
+};
+
+export type TasteCategoryGroup = TasteCategory & {
+  items: TasteItemWithContent[];
 };
 
 const OPTIONS = [
@@ -45,8 +48,8 @@ export default function TasteGallery({ groups }: { groups: TasteCategoryGroup[] 
 
       <div className="mt-12">
         {groups.map((group) => (
-          <section key={group.category} className="mb-12 last:mb-0">
-            <h2 className="mb-6 text-xl font-bold">{group.category}</h2>
+          <section key={group.name} className="mb-12 last:mb-0">
+            <h2 className="mb-6 text-xl font-bold">{group.name}</h2>
             <div className="grid grid-cols-3 gap-x-3 gap-y-4 sm:grid-cols-5 sm:gap-y-6">
               {group.items.map((item) => (
                 <TasteCard

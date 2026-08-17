@@ -3,8 +3,8 @@ page_id: '372dc9c0-364a-80f3-9b8a-e7cf3c61d44d'
 title: 'Gear'
 slug: 'gear'
 status: 'Published'
-last_edited_time: '2026-08-14T17:30:00.000Z'
-last_fetched_time: '2026-08-14T17:33:27.573Z'
+last_edited_time: '2026-08-17T15:52:00.000Z'
+last_fetched_time: '2026-08-17T16:17:23.989Z'
 ---
 
 # 器用
@@ -42,12 +42,12 @@ last_fetched_time: '2026-08-14T17:33:27.573Z'
 
 ## Battle Station
 
-- **MacBook Air 13' M2**
+- **MacBook Air 13' M2** - 没有任何换机的动力，我大概会把它用到坏掉
 - **Rainy 75 雪顶可可轴**
 - **VGN 蜻蜓3 大师+**
 - **小米台灯 Pro**
-- **Play Station 5**
-- **文石 Leaf 3**
+- **Play Station 5** - 从朋友那收的二手，或将成为近年来最值得的一笔投资
+- **文石 Leaf 3** - 主要用来看漫画，以及睡前看垃圾小说助眠
 - **毕亚兹雷雳5 编织数据线**
 
 ## MacOS Setup

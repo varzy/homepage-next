@@ -7,7 +7,7 @@
   --text-paragraph: 0.9375rem;
 
   /* Surfaces ─ 页面与卡片背景 */
-  --color-background: #f7f7f7; /* 全站页面底色 */
+  --color-background: #f6f6f6; /* 全站页面底色 */
   --color-surface: #ffffff; /* 卡片 / 高出一层的容器（如 KotobaCard）*/
   /* Text ─ 文字层级 */
   --color-ink: #111111; /* 主文字：标题、正文强调 */

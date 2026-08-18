@@ -74,6 +74,38 @@ export const is404 = (error: unknown): boolean => {
   return e.name === 'NoSuchKey' || e.name === 'NotFound' || e.$metadata?.httpStatusCode === 404;
 };
 
+/**
+ * 从环境变量构造共享 R2 S3 客户端（与 R2ImageUploader 同组配置）。
+ * 供迁移脚本中需要 list/head/put/delete 的场景复用，避免在每个脚本重复配置。
+ * 必需 env：R2_ACCOUNT_ID、R2_ACCESS_KEY_ID、R2_SECRET_ACCESS_KEY。
+ */
+export function createR2S3Client(): S3Client {
+  const accountId = process.env.R2_ACCOUNT_ID;
+  const accessKeyId = process.env.R2_ACCESS_KEY_ID;
+  const secretAccessKey = process.env.R2_SECRET_ACCESS_KEY;
+  if (!accountId || !accessKeyId || !secretAccessKey) {
+    throw new Error(
+      'R2 S3 client is not fully configured. Required env: R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY',
+    );
+  }
+  return new S3Client({
+    region: 'auto',
+    endpoint: `https://${accountId}.r2.cloudflarestorage.com`,
+    credentials: { accessKeyId, secretAccessKey },
+  });
+}
+
+/**
+ * 当前 R2 桶名（env R2_BUCKET_NAME），缺失时抛错。
+ */
+export function getR2Bucket(): string {
+  const bucket = process.env.R2_BUCKET_NAME;
+  if (!bucket) {
+    throw new Error('Missing required environment variable: R2_BUCKET_NAME');
+  }
+  return bucket;
+}
+
 class R2ImageUploader implements ImageUploader {
   private client: S3Client;
   private bucket: string;

@@ -2,9 +2,9 @@
 // 临时只读脚本：扫描 taste 库 files 属性中指向「纯哈希 R2 key」的封面（测试残留），
 // 并验证其哈希是否与已知的原始 s.ee 链接候选匹配。不写任何数据。
 import 'dotenv/config';
+import { createHash } from 'node:crypto';
 import { Client } from '@notionhq/client';
 import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
-import { createHash } from 'node:crypto';
 
 const R2_PUBLIC = (process.env.R2_PUBLIC_DOMAIN ?? '').replace(/\/$/, '');
 const TASTE_DB = process.env.NOTION_TASTE_DATABASE_ID;
@@ -82,8 +82,7 @@ async function main() {
   }
   const unmatched = findings.filter((f) => !f.restoreTo);
   console.log(`\n匹配: ${findings.length - unmatched.length}  未匹配: ${unmatched.length}`);
-  if (unmatched.length)
-    console.log('⚠️ 存在未匹配项，请勿自动回退，需人工核对原始 s.ee 链接。');
+  if (unmatched.length) console.log('⚠️ 存在未匹配项，请勿自动回退，需人工核对原始 s.ee 链接。');
 }
 main().catch((e) => {
   console.error(e);

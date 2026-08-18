@@ -25,16 +25,16 @@
 
 ### 2.2 SMMS 接入细节（[scripts/smms-uploader.ts](../scripts/smms-uploader.ts)）
 
-| 项目 | 现状 |
-| --- | --- |
-| API 基址 | `https://s.ee/api/v1/file` |
-| 鉴权 | `Authorization: <token>`（无 `Bearer` 前缀），token 来自环境变量 `SMMS_API_TOKEN` |
-| 上传字段 | FormData 字段名 `smfile` |
-| 文件大小限制 | **5MB**（代码中硬编码校验 `fileBlob.size > 5 * 1024 * 1024`） |
-| 去重机制 | 服务端按 hash 去重，命中时返回 `code: 'image_repeated'` 与一个已存在的 URL |
-| 返回结构 | 成功返回 `data.url`；重复返回 `images` 字段；失败返回 `code` + `message` |
-| 已识别域名 | `cdn.sa.net`、`sm.ms`、`see.you`、`fs.to` 等多个（见 `SMMS_URLS` 数组） |
-| 调用方 | [image-processor.ts](../scripts/image-processor.ts) 的 `processImageBlock` 与 `processPageFileProperties` |
+| 项目         | 现状                                                                                                      |
+| ------------ | --------------------------------------------------------------------------------------------------------- |
+| API 基址     | `https://s.ee/api/v1/file`                                                                                |
+| 鉴权         | `Authorization: <token>`（无 `Bearer` 前缀），token 来自环境变量 `SMMS_API_TOKEN`                         |
+| 上传字段     | FormData 字段名 `smfile`                                                                                  |
+| 文件大小限制 | **5MB**（代码中硬编码校验 `fileBlob.size > 5 * 1024 * 1024`）                                             |
+| 去重机制     | 服务端按 hash 去重，命中时返回 `code: 'image_repeated'` 与一个已存在的 URL                                |
+| 返回结构     | 成功返回 `data.url`；重复返回 `images` 字段；失败返回 `code` + `message`                                  |
+| 已识别域名   | `cdn.sa.net`、`sm.ms`、`see.you`、`fs.to` 等多个（见 `SMMS_URLS` 数组）                                   |
+| 调用方       | [image-processor.ts](../scripts/image-processor.ts) 的 `processImageBlock` 与 `processPageFileProperties` |
 
 ### 2.3 环境变量（[.env.example](../.env.example)）
 
@@ -42,18 +42,18 @@
 
 ## 三、SMMS vs Cloudflare R2 对比
 
-| 维度 | SMMS（s.ee） | Cloudflare R2 |
-| --- | --- | --- |
-| 出口流量（egress） | 受限于平台策略 | **免费（$0）**，不限量 |
-| 存储成本 | 平台托管，不透明 | 10GB/月免费，超出约 $0.015/GB·月 |
-| 写操作（Class A） | 受频率限制 | 100 万次/月免费 |
-| 读操作（Class B） | 受频率限制 | 1000 万次/月免费 |
-| 单文件大小上限 | 5MB | 单次 PUT 5GB，分片可达 5TB |
-| 数据所有权 | 第三方托管，存在跑路/政策风险 | 完全自有，S3 兼容，可随时导出 |
-| 自定义域名 | 受限于平台域名列表 | 可绑定自有域名（如 `img.varzy.me`），走 Cloudflare CDN |
-| 链接稳定性 | 依赖平台域名不更换（历史上 s.ee 多次更换域名） | 自有域名，永久稳定 |
-| 去重 | 服务端自动去重 | 无内置去重，需自行实现（可选） |
-| 接入复杂度 | 简单（单一 HTTP 接口） | 中等（S3 SDK + 凭证 + 域名配置） |
+| 维度               | SMMS（s.ee）                                   | Cloudflare R2                                          |
+| ------------------ | ---------------------------------------------- | ------------------------------------------------------ |
+| 出口流量（egress） | 受限于平台策略                                 | **免费（$0）**，不限量                                 |
+| 存储成本           | 平台托管，不透明                               | 10GB/月免费，超出约 $0.015/GB·月                       |
+| 写操作（Class A）  | 受频率限制                                     | 100 万次/月免费                                        |
+| 读操作（Class B）  | 受频率限制                                     | 1000 万次/月免费                                       |
+| 单文件大小上限     | 5MB                                            | 单次 PUT 5GB，分片可达 5TB                             |
+| 数据所有权         | 第三方托管，存在跑路/政策风险                  | 完全自有，S3 兼容，可随时导出                          |
+| 自定义域名         | 受限于平台域名列表                             | 可绑定自有域名（如 `img.varzy.me`），走 Cloudflare CDN |
+| 链接稳定性         | 依赖平台域名不更换（历史上 s.ee 多次更换域名） | 自有域名，永久稳定                                     |
+| 去重               | 服务端自动去重                                 | 无内置去重，需自行实现（可选）                         |
+| 接入复杂度         | 简单（单一 HTTP 接口）                         | 中等（S3 SDK + 凭证 + 域名配置）                       |
 
 > 本站特点：图片**写入只在 fetch 时发生**（低频），**读取发生在每次访客访问页面**（高频）。R2「写少量免费、读海量免费、egress 免费」的计费模型与本站画像高度吻合，正常情况下成本将无限趋近于 $0。
 
@@ -93,12 +93,14 @@ const r2 = new S3Client({
 });
 
 // 上传：key 即为对象路径，公开 URL = 自定义域名 + key
-await r2.send(new PutObjectCommand({
-  Bucket: process.env.R2_BUCKET_NAME,
-  Key: fileName,        // 例：posts_blog-slug_1234567890.jpg
-  Body: fileBlob,
-  ContentType: 'image/...',
-}));
+await r2.send(
+  new PutObjectCommand({
+    Bucket: process.env.R2_BUCKET_NAME,
+    Key: fileName, // 例：posts_blog-slug_1234567890.jpg
+    Body: fileBlob,
+    ContentType: 'image/...',
+  }),
+);
 // 返回 URL：https://img.varzy.me/<fileName>
 ```
 
@@ -111,16 +113,16 @@ await r2.send(new PutObjectCommand({
 
 ### 4.3 代码改造清单
 
-| 文件 | 改动 |
-| --- | --- |
-| `scripts/image-uploader.ts`（新增） | 定义 `ImageUploader` 接口 |
-| `scripts/r2-uploader.ts`（新增） | R2 实现：`uploadExternal`、`isHostedUrl` |
-| `scripts/smms-uploader.ts`（保留/适配） | 适配 `ImageUploader` 接口，作为 fallback |
-| [scripts/image-processor.ts](../scripts/image-processor.ts) | 注入 `ImageUploader` 依赖，替换对 `smmsUploadExternal`/`getSmmsUrl`/`isSmmsUrl` 的直接调用 |
-| [scripts/notion-to-md.ts](../scripts/notion-to-md.ts) | 构造 `NotionImageProcessor` 时传入选定的 uploader |
-| [scripts/fetch-*.ts](../scripts/fetch-pages.ts)（4 个） | 根据环境变量实例化 R2 或 SMMS uploader |
-| [.env](../.env) / [.env.example](../.env.example) | 新增 R2 相关变量（见 4.4），`SMMS_API_TOKEN` 标记为可选 |
-| [tests/smms-uploader.test.ts](../tests/smms-uploader.test.ts) | 补充 R2 uploader 的单测；保留 SMMS 测试 |
+| 文件                                                          | 改动                                                                                       |
+| ------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| `scripts/image-uploader.ts`（新增）                           | 定义 `ImageUploader` 接口                                                                  |
+| `scripts/r2-uploader.ts`（新增）                              | R2 实现：`uploadExternal`、`isHostedUrl`                                                   |
+| `scripts/smms-uploader.ts`（保留/适配）                       | 适配 `ImageUploader` 接口，作为 fallback                                                   |
+| [scripts/image-processor.ts](../scripts/image-processor.ts)   | 注入 `ImageUploader` 依赖，替换对 `smmsUploadExternal`/`getSmmsUrl`/`isSmmsUrl` 的直接调用 |
+| [scripts/notion-to-md.ts](../scripts/notion-to-md.ts)         | 构造 `NotionImageProcessor` 时传入选定的 uploader                                          |
+| [scripts/fetch-*.ts](../scripts/fetch-pages.ts)（4 个）       | 根据环境变量实例化 R2 或 SMMS uploader                                                     |
+| [.env](../.env) / [.env.example](../.env.example)             | 新增 R2 相关变量（见 4.4），`SMMS_API_TOKEN` 标记为可选                                    |
+| [tests/smms-uploader.test.ts](../tests/smms-uploader.test.ts) | 补充 R2 uploader 的单测；保留 SMMS 测试                                                    |
 
 ### 4.4 环境变量变更
 

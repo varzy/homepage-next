@@ -1,4 +1,4 @@
-import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
+import { HeadObjectCommand, PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
 import type { ImageUploader, ImageUploadResult } from './image-uploader';
 import { isSmmsUrl } from './smms-uploader';
 
@@ -64,6 +64,16 @@ export const getContentType = (fileName: string, fallback?: string): string => {
   return CONTENT_TYPE_MAP[ext || ''] || 'application/octet-stream';
 };
 
+/**
+ * 判断 S3/R2 错误是否为「对象不存在」（HEAD 幂等检查用）。
+ * AWS S3 抛 NoSuchKey，Cloudflare R2 抛 NotFound；两者 $metadata.httpStatusCode 均为 404。
+ */
+export const is404 = (error: unknown): boolean => {
+  if (typeof error !== 'object' || error === null) return false;
+  const e = error as { name?: string; $metadata?: { httpStatusCode?: number } };
+  return e.name === 'NoSuchKey' || e.name === 'NotFound' || e.$metadata?.httpStatusCode === 404;
+};
+
 class R2ImageUploader implements ImageUploader {
   private client: S3Client;
   private bucket: string;
@@ -92,6 +102,26 @@ class R2ImageUploader implements ImageUploader {
   }
 
   async uploadExternal(url: string, fileName: string): Promise<ImageUploadResult> {
+    return this.fetchAndPut(url, fileName);
+  }
+
+  async uploadExternalIdempotent(url: string, fileName: string): Promise<ImageUploadResult> {
+    const key = composeR2Key(fileName);
+    const expectedUrl = `${this.publicDomain}/${key}`;
+
+    const head = await this.headObject(key);
+    if (head) {
+      console.log(`✅ Already on R2, skip upload: ${key}`);
+      return { url: expectedUrl, fileName: key, size: head.size ?? 0 };
+    }
+
+    return this.fetchAndPut(url, fileName);
+  }
+
+  /**
+   * 下载外部图片并 PutObject 到 R2（不含存在性检查）。
+   */
+  private async fetchAndPut(url: string, fileName: string): Promise<ImageUploadResult> {
     console.log(`📥 Downloading image: ${url}`);
 
     const res = await fetch(url, {
@@ -121,6 +151,19 @@ class R2ImageUploader implements ImageUploader {
 
     const publicUrl = `${this.publicDomain}/${key}`;
     return { url: publicUrl, fileName: key, size: buffer.length };
+  }
+
+  /**
+   * HEAD 探测对象是否存在；不存在（404）返回 null，其余错误向上抛出。
+   */
+  private async headObject(key: string): Promise<{ size?: number } | null> {
+    try {
+      const res = await this.client.send(new HeadObjectCommand({ Bucket: this.bucket, Key: key }));
+      return { size: res.ContentLength };
+    } catch (error) {
+      if (is404(error)) return null;
+      throw error;
+    }
   }
 
   isHostedUrl(url: string): boolean {

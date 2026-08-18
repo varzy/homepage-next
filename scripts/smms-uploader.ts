@@ -145,6 +145,14 @@ class SmmsImageUploader implements ImageUploader {
     return { url: finalUrl, fileName, size: result.success ? result.data.size : 0 };
   }
 
+  /**
+   * SMMS 服务端按内容哈希去重（image_repeated 时返回既有链接），
+   * 因此重复上传同一图片会得到稳定的结果 URL，直接复用 uploadExternal 即可。
+   */
+  async uploadExternalIdempotent(url: string, fileName: string): Promise<ImageUploadResult> {
+    return this.uploadExternal(url, fileName);
+  }
+
   isHostedUrl(url: string): boolean {
     return isSmmsUrl(url);
   }

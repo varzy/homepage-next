@@ -1,5 +1,11 @@
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
-import { composeR2Key, isR2Url, getContentType, r2ImageUploader } from '../scripts/r2-uploader';
+import {
+  composeR2Key,
+  isR2Url,
+  getContentType,
+  is404,
+  r2ImageUploader,
+} from '../scripts/r2-uploader';
 
 describe('scripts/r2-uploader.ts', () => {
   describe('isR2Url', () => {
@@ -117,6 +123,38 @@ describe('scripts/r2-uploader.ts', () => {
     it('空前缀时直接使用文件名', () => {
       process.env.R2_KEY_PREFIX = '';
       expect(composeR2Key('a.jpg')).toBe('a.jpg');
+    });
+  });
+
+  describe('is404', () => {
+    it('Cloudflare R2 的 NotFound 错误视为 404', () => {
+      const err = { name: 'NotFound', $metadata: { httpStatusCode: 404 } };
+      expect(is404(err)).toBe(true);
+    });
+
+    it('AWS S3 的 NoSuchKey 错误视为 404', () => {
+      const err = { name: 'NoSuchKey', $metadata: { httpStatusCode: 404 } };
+      expect(is404(err)).toBe(true);
+    });
+
+    it('仅 httpStatusCode 为 404 即视为 404（忽略 name）', () => {
+      const err = { name: 'SomethingElse', $metadata: { httpStatusCode: 404 } };
+      expect(is404(err)).toBe(true);
+    });
+
+    it('非 404 状态码不视为 404', () => {
+      expect(is404({ name: 'NoSuchKey', $metadata: { httpStatusCode: 200 } })).toBe(true);
+      expect(is404({ name: 'AccessDenied', $metadata: { httpStatusCode: 403 } })).toBe(false);
+    });
+
+    it('httpStatusCode 缺失且 name 不匹配时返回 false', () => {
+      expect(is404({ name: 'AccessDenied', $metadata: {} })).toBe(false);
+    });
+
+    it('非对象 / null / undefined 返回 false', () => {
+      expect(is404(null)).toBe(false);
+      expect(is404(undefined)).toBe(false);
+      expect(is404('string')).toBe(false);
     });
   });
 });

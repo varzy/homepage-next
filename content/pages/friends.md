@@ -3,8 +3,8 @@ page_id: '2efdc9c0-364a-8077-9c62-e5c2e4ef1889'
 title: 'Friends'
 slug: 'friends'
 status: 'Published'
-last_edited_time: '2026-08-18T06:13:00.000Z'
-last_fetched_time: '2026-08-18T06:16:08.957Z'
+last_edited_time: '2026-08-18T06:30:00.000Z'
+last_fetched_time: '2026-08-18T06:32:30.013Z'
 ---
 
 # 往来
@@ -33,6 +33,7 @@ avatar: https://i.see.you/2026/08/17/6Ovi/avatar.png
 这些是我用来发现其他博客的平台。
 
 - [BlogsClub](https://www.blogsclub.org/)
+- [bo.ke](http://bo.ke/)
 - [BlogFinder](https://bf.zzxworld.com/)
 
 这些是我不时闲逛的站点。
@@ -50,3 +51,4 @@ avatar: https://i.see.you/2026/08/17/6Ovi/avatar.png
 - [重生云](https://xiaochopin.github.io/)
 - [映屿](https://blog.verdant.ee/)
 - [SEISAMUSE](https://www.seis-jun.xyz/)
+- [Kar's Blog](https://hellokar.org/)

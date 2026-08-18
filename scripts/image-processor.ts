@@ -1,6 +1,7 @@
 import { Client } from '@notionhq/client';
 import { BlockObjectResponse, PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
-import { smmsUploadExternal, getSmmsUrl, isSmmsUrl, generateFileName } from './smms-uploader';
+import { createImageUploader, generateFileName } from './image-uploader';
+import type { ImageUploader } from './image-uploader';
 
 export interface ImageProcessingStats {
   total: number;
@@ -12,14 +13,16 @@ export interface ImageProcessingStats {
 export class NotionImageProcessor {
   private notion: Client;
   private imagePrefix: string;
+  private uploader: ImageUploader;
 
   constructor(notionApiSecret: string, imagePrefix: string = 'blog') {
     this.notion = new Client({ auth: notionApiSecret });
     this.imagePrefix = imagePrefix;
+    this.uploader = createImageUploader();
   }
 
   /**
-   * 处理页面中的所有图片，将 Notion 托管的图片和非 SM.MS 的外部图片上传到 SM.MS
+   * 处理页面中的所有图片，将 Notion 托管的图片和未托管的外部图片上传到当前图床
    */
   async processPageImages(pageId: string, slug: string): Promise<ImageProcessingStats> {
     console.log(`📷 Processing images for page: ${slug}`);
@@ -106,14 +109,14 @@ export class NotionImageProcessor {
         needsUpload = true;
         console.log(`🔄 Found Notion-hosted image: ${block.id}`);
       } else if (imageBlock.type === 'external') {
-        // 外部图片，检查是否已经是 SM.MS 链接
+        // 外部图片，检查是否已托管在当前图床
         imageUrl = imageBlock.external.url;
-        needsUpload = !isSmmsUrl(imageUrl);
+        needsUpload = !this.uploader.isHostedUrl(imageUrl);
 
         if (needsUpload) {
-          console.log(`🔄 Found external image (non-SMMS): ${imageUrl}`);
+          console.log(`🔄 Found external image (not yet hosted): ${imageUrl}`);
         } else {
-          console.log(`✅ Image already on SMMS: ${imageUrl}`);
+          console.log(`✅ Image already hosted: ${imageUrl}`);
         }
       } else {
         stats.skipped++;
@@ -129,24 +132,19 @@ export class NotionImageProcessor {
       const fileName = generateFileName(imageUrl, `${this.imagePrefix}_${slug}`, block.id);
 
       try {
-        // 上传到 SM.MS
-        const uploadResult = await smmsUploadExternal(imageUrl, fileName);
-        const smmsUrl = getSmmsUrl(uploadResult);
-
-        if (!smmsUrl) {
-          throw new Error('Failed to get SMMS URL from upload result');
-        }
+        // 上传到当前图床
+        const uploadResult = await this.uploader.uploadExternal(imageUrl, fileName);
 
         // 更新 Notion 块
         await this.notion.blocks.update({
           block_id: block.id,
           image: {
-            external: { url: smmsUrl },
+            external: { url: uploadResult.url },
           },
         });
 
         stats.processed++;
-        console.log(`✅ Image uploaded and updated: ${fileName} -> ${smmsUrl}`);
+        console.log(`✅ Image uploaded and updated: ${fileName} -> ${uploadResult.url}`);
 
         // 添加延迟以避免频率限制
         await this.delay(100);
@@ -163,7 +161,7 @@ export class NotionImageProcessor {
   }
 
   /**
-   * 处理页面 property 中所有 files 类型字段，将非 SM.MS 的图片上传到 SM.MS 并更新 Notion 页面属性
+   * 处理页面 property 中所有 files 类型字段，将未托管的图片上传到当前图床并更新 Notion 页面属性
    */
   async processPageFileProperties(
     page: PageObjectResponse,
@@ -195,11 +193,13 @@ export class NotionImageProcessor {
           console.log(`🔄 Found Notion-hosted property image in "${propName}": ${file.name}`);
         } else if (file.type === 'external') {
           url = file.external.url;
-          needsUpload = !isSmmsUrl(url);
+          needsUpload = !this.uploader.isHostedUrl(url);
           if (needsUpload) {
-            console.log(`🔄 Found external property image (non-SMMS) in "${propName}": ${url}`);
+            console.log(
+              `🔄 Found external property image (not yet hosted) in "${propName}": ${url}`,
+            );
           } else {
-            console.log(`✅ Property image already on SMMS in "${propName}"`);
+            console.log(`✅ Property image already hosted in "${propName}"`);
           }
         } else {
           newFiles.push(file);
@@ -213,15 +213,10 @@ export class NotionImageProcessor {
 
         const fileName = generateFileName(url, `${this.imagePrefix}_${slug}`);
         try {
-          const result = await smmsUploadExternal(url, fileName);
-          const smmsUrl = getSmmsUrl(result);
-          if (smmsUrl) {
-            newFiles.push({ type: 'external', name: file.name || '', external: { url: smmsUrl } });
-            anyUpdated = true;
-            console.log(`✅ Property image uploaded: ${fileName} -> ${smmsUrl}`);
-          } else {
-            newFiles.push(file);
-          }
+          const result = await this.uploader.uploadExternal(url, fileName);
+          newFiles.push({ type: 'external', name: file.name || '', external: { url: result.url } });
+          anyUpdated = true;
+          console.log(`✅ Property image uploaded: ${fileName} -> ${result.url}`);
         } catch (err) {
           console.warn(`⚠️ Failed to upload property image for "${propName}":`, err);
           newFiles.push(file);
@@ -278,7 +273,10 @@ export class NotionImageProcessor {
           const imageBlock = block.image;
           if (imageBlock.type === 'file') {
             needsProcessing = true;
-          } else if (imageBlock.type === 'external' && !isSmmsUrl(imageBlock.external.url)) {
+          } else if (
+            imageBlock.type === 'external' &&
+            !this.uploader.isHostedUrl(imageBlock.external.url)
+          ) {
             needsProcessing = true;
           }
         }

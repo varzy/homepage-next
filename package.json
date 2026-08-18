@@ -26,6 +26,7 @@
     "sync:all": "pnpm run sync:posts && pnpm run sync:kotoba && pnpm run sync:taste && pnpm run sync:pages"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1112.0",
     "@giscus/react": "^3.1.0",
     "@mdx-js/loader": "^3.1.1",
     "@mdx-js/react": "^3.1.1",

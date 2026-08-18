@@ -1,3 +1,5 @@
+import type { ImageUploader, ImageUploadResult } from './image-uploader';
+
 type SmmsUploadResult = SmmsUploadSuccess | SmmsUploadRepeat | SmmsUploadError;
 
 type SmmsUploadSuccess = {
@@ -131,20 +133,24 @@ export const isSmmsUrl = (url: string): boolean => {
 };
 
 /**
- * 生成合适的文件名
+ * 将现有 SMMS 上传函数适配为 ImageUploader 接口，作为 r2 之外的回退实现。
  */
-export const generateFileName = (url: string, prefix: string = '', blockId?: string): string => {
-  const urlObj = new URL(url);
-  const pathParts = urlObj.pathname.split('/');
-  const originalName = pathParts[pathParts.length - 1];
-  const extension = originalName.includes('.') ? originalName.split('.').pop() : 'jpg';
-
-  const timestamp = Date.now();
-  const randomStr = Math.random().toString(36).substring(2, 8);
-
-  if (blockId) {
-    return `${prefix}_${blockId}_${timestamp}.${extension}`;
+class SmmsImageUploader implements ImageUploader {
+  async uploadExternal(url: string, fileName: string): Promise<ImageUploadResult> {
+    const result = await smmsUploadExternal(url, fileName);
+    const finalUrl = getSmmsUrl(result);
+    if (!finalUrl) {
+      throw new Error('Failed to get SMMS URL from upload result');
+    }
+    return { url: finalUrl, fileName, size: result.success ? result.data.size : 0 };
   }
 
-  return `${prefix}_${timestamp}_${randomStr}.${extension}`;
-};
+  isHostedUrl(url: string): boolean {
+    return isSmmsUrl(url);
+  }
+}
+
+/**
+ * 创建 SMMS 图片上传器实例。
+ */
+export const smmsImageUploader = (): ImageUploader => new SmmsImageUploader();

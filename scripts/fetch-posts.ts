@@ -3,6 +3,7 @@
 import 'dotenv/config';
 import path from 'path';
 import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+import { ensureImageUploaderConfigured } from './image-uploader';
 import { NotionDatabaseFetcher, NotionFetcherConfig } from './notion-database-fetcher';
 import { PostMetadata, SyncMode } from './types';
 import {
@@ -88,10 +89,7 @@ async function main() {
     );
   }
 
-  if (!process.env.SMMS_API_TOKEN) {
-    console.warn('⚠️ SMMS_API_TOKEN is not set — image upload will fail');
-    process.exit(1);
-  }
+  ensureImageUploaderConfigured();
 
   const syncMode: SyncMode = process.argv.includes('--force')
     ? 'force'

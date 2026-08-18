@@ -7,8 +7,8 @@ tags: ['微信小程序']
 date: '2021-08-15'
 slug: 'miniprogram-towxml-parse-rich-text'
 summary: ''
-last_edited_time: '2026-08-14T16:32:00.000Z'
-last_fetched_time: '2026-08-14T16:40:12.183Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:02:44.582Z'
 page_id: 'c13ffbf0-e647-41f4-bc1f-a7952dd4bc4d'
 icon: '🗼'
 ---

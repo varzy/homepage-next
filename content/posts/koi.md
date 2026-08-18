@@ -7,15 +7,15 @@ tags: ['随想']
 date: '2023-05-11'
 slug: 'koi'
 summary: '一直想陪伴起左右的心情。少年体会到了爱情，才第一次知道了心痛的感觉 —— 编舟记'
-last_edited_time: '2025-09-02T08:54:00.000Z'
-last_fetched_time: '2025-09-02T09:26:37.805Z'
+last_edited_time: '2026-08-18T17:44:00.000Z'
+last_fetched_time: '2026-08-18T18:01:12.913Z'
 page_id: '23c9a216-b151-4f67-b60e-c41cb83b81a2'
 icon: '❤️‍🩹'
 ---
 
 最近在看动画「编舟记」，讲述的是编纂辞典的故事，每集结尾都会用一个词及它的释义点题。第三集的标题是「恋」，释义是「一直想陪伴起左右的心情。少年体会到了爱情，才第一次知道了心痛的感觉」。
 
-![1lgUe2Bh3uxR6NV.png](https://cdn.sa.net/2025/09/02/1lgUe2Bh3uxR6NV.png)
+![1lgUe2Bh3uxR6NV.png](https://cdn.varzy.me/legacy/2025/09/02/1lgUe2Bh3uxR6NV.png)
 
 很让我共情的解释。
 

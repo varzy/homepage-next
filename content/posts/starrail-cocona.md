@@ -7,8 +7,8 @@ tags: ['游戏人生', '随想']
 date: '2024-02-29'
 slug: 'starrail-cocona'
 summary: '你会用何种手段毁掉自己的纯真、善良、诚实、还有原则？是痛快地一刀两断…还是通过经年累月的折磨？'
-last_edited_time: '2025-10-02T15:48:00.000Z'
-last_fetched_time: '2025-10-02T15:49:53.440Z'
+last_edited_time: '2026-08-18T17:43:00.000Z'
+last_fetched_time: '2026-08-18T18:00:59.168Z'
 page_id: '9cb405cf-e615-4b68-bdf6-953c2d56b030'
 icon: '🥥'
 ---
@@ -17,11 +17,11 @@ icon: '🥥'
 
 主角柯柯娜有出众的歌唱天赋，但当选择从事音乐相关的工作时，却受到了父母的百般阻挠，只得进入奢侈品店当店员。她没得选。大概是因为我从小就生活在这种挫败式教育和强掌控欲父母的环境中，我在过这段剧情时相当不适。
 
-![ZzRw9noULWEljhg.png](https://cdn.sa.net/2024/03/15/ZzRw9noULWEljhg.png)
+![ZzRw9noULWEljhg.png](https://cdn.varzy.me/legacy/2024/03/15/ZzRw9noULWEljhg.png)
 
-![dZFQeakB7WsS6c9.png](https://cdn.sa.net/2024/03/15/dZFQeakB7WsS6c9.png)
+![dZFQeakB7WsS6c9.png](https://cdn.varzy.me/legacy/2024/03/15/dZFQeakB7WsS6c9.png)
 
-![X8RiEWo7bkg1DUx.png](https://cdn.sa.net/2024/03/15/X8RiEWo7bkg1DUx.png)
+![X8RiEWo7bkg1DUx.png](https://cdn.varzy.me/legacy/2024/03/15/X8RiEWo7bkg1DUx.png)
 
 后来她做出了更好的业绩，但却被同事嫉妒，诋毁她只是动用了自己的美貌和甜美的嗓音。再想想我身边越是美丽漂亮的女性，往往更容易成为工作狂。这个世界充满恶意，她们需要十二分努力才能证明自己不止拥有外在。如果是女生来玩这个任务，可能会有更深的感触吧。
 
@@ -29,15 +29,15 @@ icon: '🥥'
 
 从这一刻起，柯柯娜的灵魂也丢了，她成为了一个站在奢侈品店门前毫无生气的躯壳，她开始依赖药物，直到钟表小子的钟表把戏也无法改变她的情绪。
 
-![ODj9brx1J4gX6Wz.png](https://cdn.sa.net/2024/03/15/ODj9brx1J4gX6Wz.png)
+![ODj9brx1J4gX6Wz.png](https://cdn.varzy.me/legacy/2024/03/15/ODj9brx1J4gX6Wz.png)
 
-![62zxcBnLbVQrl9I.png](https://cdn.sa.net/2024/03/15/62zxcBnLbVQrl9I.png)
+![62zxcBnLbVQrl9I.png](https://cdn.varzy.me/legacy/2024/03/15/62zxcBnLbVQrl9I.png)
 
 柯柯娜的英文名是 Cocona，我想很多人都能联想到 Coconut，即椰子。回顾柯柯娜的经历，她放弃了梦想，做着完全不喜欢的工作，受尽同事排挤，但最终她成为了奢侈品店的店长。这个过程中她放弃了很多也学会了很多，于是她拥有了一个坚强，又粗糙的外壳。
 
 终于，柯柯娜的内心走到了悬崖边上，编剧说，是时候做出你的选择了。
 
-![kg3hMz285nBp7vQ.png](https://cdn.sa.net/2024/03/19/kg3hMz285nBp7vQ.png)
+![kg3hMz285nBp7vQ.png](https://cdn.varzy.me/legacy/2024/03/19/kg3hMz285nBp7vQ.png)
 
 流萤被刀我平淡如水，柯柯娜面前的两个选项却让我心如刀割。其实在各种文学影视作品里，我无论如何都会支持 HE，大家已经够苦了，我多希望这个宇宙中快乐的人能多一些。
 
@@ -47,13 +47,13 @@ icon: '🥥'
 
 > 你会用何种手段毁掉自己的纯真、善良、诚实、还有原则？是痛快地一刀两断…还是通过经年累月的折磨？
 
-![RrvOXKUdhNHVBbT.png](https://cdn.sa.net/2024/03/15/RrvOXKUdhNHVBbT.png)
+![RrvOXKUdhNHVBbT.png](https://cdn.varzy.me/legacy/2024/03/15/RrvOXKUdhNHVBbT.png)
 
 我尝试抓住柯柯娜了两次，画面逐渐变得多彩，但每一次尝试抓住她，她的内心独白告诉我这并不是她想要的。我是无名客，是浩瀚星海中的过客。这是柯柯娜自己的决定，这是她的不破不立，无论是我还是钟表小子无权干涉。说得俗套一点，莫经他人苦，莫劝他人善。
 
 我选择了放手。「柯柯娜转过头，向你投来最后一瞥，她的眸中饱含悲伤，孤寂，还有...感激」。
 
-![KRMuHbvyapfJLAz.png](https://cdn.sa.net/2024/03/15/KRMuHbvyapfJLAz.png)
+![KRMuHbvyapfJLAz.png](https://cdn.varzy.me/legacy/2024/03/15/KRMuHbvyapfJLAz.png)
 
 跳下去吧柯柯娜，匹诺康尼不配听到你的歌声。连同你的身体一起，砸碎你丑陋的外壳，给这个银河染上一丝你的洁白柔软吧。
 

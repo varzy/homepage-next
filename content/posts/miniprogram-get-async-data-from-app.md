@@ -7,8 +7,8 @@ tags: ['微信小程序']
 date: '2021-01-29'
 slug: 'miniprogram-get-async-data-from-app'
 summary: ''
-last_edited_time: '2026-08-14T16:32:00.000Z'
-last_fetched_time: '2026-08-14T16:40:24.299Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:03:04.866Z'
 page_id: 'df1bc672-2b17-4a7d-9101-0c97dbef01c9'
 icon: '🎭'
 ---

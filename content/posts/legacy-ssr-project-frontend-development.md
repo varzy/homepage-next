@@ -7,8 +7,8 @@ tags: ['JavaScript', '工程化']
 date: '2021-03-13'
 slug: 'legacy-ssr-project-frontend-development'
 summary: ''
-last_edited_time: '2026-08-14T17:01:00.000Z'
-last_fetched_time: '2026-08-14T17:08:00.289Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:02:59.130Z'
 page_id: 'dadd4c37-7881-4ba1-99f4-cd51210c3922'
 icon: '🚎'
 ---

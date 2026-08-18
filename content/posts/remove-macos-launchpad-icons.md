@@ -7,8 +7,8 @@ tags: ['MacOS']
 date: '2021-04-10'
 slug: 'remove-macos-launchpad-icons'
 summary: ''
-last_edited_time: '2025-08-06T06:17:00.000Z'
-last_fetched_time: '2025-09-02T09:29:08.163Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:02:50.678Z'
 page_id: '0fb66447-03f9-4631-a46a-76ae28912a72'
 icon: '🛁'
 ---

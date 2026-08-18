@@ -7,8 +7,8 @@ tags: ['Git']
 date: '2020-03-27'
 slug: 'git-commands'
 summary: ''
-last_edited_time: '2025-08-06T06:20:00.000Z'
-last_fetched_time: '2025-09-02T09:32:50.281Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:05:05.313Z'
 page_id: '4adbd600-cca4-4c09-845b-0790d95916e2'
 icon: '🛤️'
 ---
@@ -107,7 +107,7 @@ git checkout {file} [commit]
 # 恢复目前暂存区的所有文件到工作区
 git checkout .
 
-# 重置暂存区与工作区，与上一次 commit 保持一致​
+# 重置暂存区与工作区，与上一次 commit 保持一致
 git reset --hard
 
 # 将文件版本快速回退至上一个版本。在 Git 中，HEAD 表示当前版本，上一个版本是 HEAD^，上上一个版本是 HEAD^^。也可以用数字表示，比如上 100 个版本是 HEAD~100
@@ -144,7 +144,7 @@ git checkout -b {branch}
 # 在本地新建一个分支，并将其与某个远程分支建立追踪
 git checkout -b {branch} origin/{branch}
 
-# 新建一个空白分支​。可用于创建 gh-pages 分支
+# 新建一个空白分支。可用于创建 gh-pages 分支
 git checkout --orphan {branch}
 
 # 删除本地分支
@@ -155,7 +155,7 @@ git push origin -d {branch}
 git branch -dr {remote/branch}
 
 # 使用快速合并，合并指定分支到当前分支
-# `--no-ff`: 使用正常合并，合并指定分支到当前分支​
+# `--no-ff`: 使用正常合并，合并指定分支到当前分支
 git merge [--no-ff] {branch}
 
 # 在一个分支里提交的改变移到另一个分支里重放一遍

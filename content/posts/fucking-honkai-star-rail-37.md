@@ -7,8 +7,8 @@ tags: ['游戏人生', '评测']
 date: '2026-04-17'
 slug: 'fucking-honkai-star-rail-37'
 summary: '崩铁项目组的 AI 已经脱离了 Transformer 模型的限制，有了真正的思想。'
-last_edited_time: '2026-04-17T15:28:00.000Z'
-last_fetched_time: '2026-04-17T15:28:58.139Z'
+last_edited_time: '2026-08-18T17:41:00.000Z'
+last_fetched_time: '2026-08-18T17:59:55.844Z'
 page_id: '345dc9c0-364a-8036-a803-f1b58b643b96'
 icon: '🎈'
 ---
@@ -17,9 +17,9 @@ icon: '🎈'
 
 现在这个逼时代，想找到个能把话说明白的人都很难，更何况是写。我光是工作和生活就已经接触到了太多智力似乎正常但言语总是不清的隐性唐氏综合症患者，结果一回家打开游戏，还得看这群编剧生造出来的各种前后矛盾的台词。我自认为自己还算是个能写点字的人，而我又好死不死的曾经深深喜欢着这款游戏，所以我愤恨。
 
-![blog_fucking-honkai-star-rail-37.webp](https://i.see.you/2026/04/17/Xtn0/blog_fucking-honkai-star-rail-37.webp)
+![blog_fucking-honkai-star-rail-37.webp](https://cdn.varzy.me/legacy/2026/04/17/Xtn0/blog_fucking-honkai-star-rail-37.webp)
 
-![blog_fucking-honkai-star-rail-37.webp](https://i.see.you/2026/04/17/8ilN/blog_fucking-honkai-star-rail-37.webp)
+![blog_fucking-honkai-star-rail-37.webp](https://cdn.varzy.me/legacy/2026/04/17/8ilN/blog_fucking-honkai-star-rail-37.webp)
 
 「你我曾是不是神明人子因罪行祝福降临陨落凡间经你我之手写下抹去的诗将是曾是你我在善见天的记忆忘却」。这什么逼玩意？这句台词能顺利上线我认为只有这么几种可能。
 

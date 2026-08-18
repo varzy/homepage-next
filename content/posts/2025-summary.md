@@ -7,8 +7,8 @@ tags: ['年终总结']
 date: '2026-02-12'
 slug: '2025-summary'
 summary: '今年的相册或许不如以往那么精彩，2026 年的事情谁又说得准呢？'
-last_edited_time: '2026-08-14T17:11:00.000Z'
-last_fetched_time: '2026-08-14T17:12:51.433Z'
+last_edited_time: '2026-08-18T17:42:00.000Z'
+last_fetched_time: '2026-08-18T17:59:57.617Z'
 page_id: '2b0dc9c0-364a-80c6-a0b1-d8050fe942f4'
 icon: '🧶'
 ---
@@ -19,23 +19,23 @@ hi，这是我的第八篇年终总结，比往年来得更晚一些。25 年的
 
 年初的时候回了趟老家，依照惯例给老家的院子拍了张照片。
 
-![blog_2025-summary_2f2dc9c0-364a-.webp](https://i.see.you/2026/02/12/dxX4/blog_2025-summary_2f2dc9c0-364a-.webp)
+![blog_2025-summary_2f2dc9c0-364a-.webp](https://cdn.varzy.me/legacy/2026/02/12/dxX4/blog_2025-summary_2f2dc9c0-364a-.webp)
 
 从丰台站到保定的高铁只消 30 分钟，春天的某个周末临时起意决定来个一日游。早上随便找店吃了俩圆圆的驴火，之后坐公交到河边的一个公园，开始沿着小红书上的轨迹漫步。我给晚上安排了小吃街，但可惜那天发高烧，走到中午脚步虚浮，就临时改签回了北京。
 
 年初和樊老师去了趟雍和宫和国博，展品确实好，只是入场前的排队和安检过分痛苦，入馆后的人流亦堪称恐怖，很难让我有再去一趟的念头。
 
-![blog_2025-summary_2f2dc9c0-364a-.webp](https://i.see.you/2026/02/12/ua7Y/blog_2025-summary_2f2dc9c0-364a-.webp)
+![blog_2025-summary_2f2dc9c0-364a-.webp](https://cdn.varzy.me/legacy/2026/02/12/ua7Y/blog_2025-summary_2f2dc9c0-364a-.webp)
 
-![blog_2025-summary_2f2dc9c0-364a-.webp](https://i.see.you/2026/02/12/rz7D/blog_2025-summary_2f2dc9c0-364a-.webp)
+![blog_2025-summary_2f2dc9c0-364a-.webp](https://cdn.varzy.me/legacy/2026/02/12/rz7D/blog_2025-summary_2f2dc9c0-364a-.webp)
 
 来北京 7 年有余，终于在年初抽时间爬了次香山，结果走岔路到了最远最陡的红叶线上，加上没吃早饭，小小香山竟让我爬得有些许艰难。这次香山行本意是给后面的徒步计划复个健，然而 5 月份爬了趟陈家裕野长城，后半段几乎全程攀岩，差点没把我这种恐高患者给吓丢半条命。这一次确实给我整怕了，后半年再也没产生过徒步的念头😂。
 
-![blog_2025-summary_2f2dc9c0-364a-.webp](https://i.see.you/2026/02/12/zhC5/blog_2025-summary_2f2dc9c0-364a-.webp)
+![blog_2025-summary_2f2dc9c0-364a-.webp](https://cdn.varzy.me/legacy/2026/02/12/zhC5/blog_2025-summary_2f2dc9c0-364a-.webp)
 
 这一年着实是去了不少城市，多数都是趁着出差走走逛逛。我依旧喜欢用脚步丈量城市，青岛的海滨栈道，宜昌的江边，威海的海岸线，上海的外滩，香港的维多利亚港都留下了我的足迹。11 月去深圳出差也抽空回了趟自己读过的小学，感兴趣的话不妨看看我的 [深沪之行](https://varzy.me/posts/trip-to-shenzhen-and-shanghai)**。**
 
-![aJyGt3WqkOxcbvj.jpg](https://cdn.sa.net/2025/11/17/aJyGt3WqkOxcbvj.jpg)
+![aJyGt3WqkOxcbvj.jpg](https://cdn.varzy.me/legacy/2025/11/17/aJyGt3WqkOxcbvj.jpg)
 
 唯一抱憾的是今年 5 月 22 日，我人正在香港，上午 10 点接到母亲的电话，告知我父亲病情急转直下。我立即订了从深圳回郑州的车票，又从郑州直接打车回村，然而当我 23 日凌晨 1 点半进了家门时，父亲已然换上寿衣了。这是我第一次经历亲人的离去，直到现在我都不太敢去咀嚼这段记忆。
 
@@ -45,27 +45,27 @@ hi，这是我的第八篇年终总结，比往年来得更晚一些。25 年的
 
 说点不那么沉重的。感谢我的各位朋友，今年依旧和老朋友们吃了不少饭，逛了不少地方，在 pp 的张罗下看了场究极 old school 的 Lenka 的现场，又坐着 pp 究极 old school 的二手车回了家。感谢各位给了我许多温暖的陪伴。当然今年也认识了不少新朋友，跟着 yuhan 去港理工蹭了节课，面基了加微信多年但一直未见的子薇，和 Naam 一起爬了百望山，吃了北平机器。看得出来我确实是 E 了许多。
 
-![blog_2025-summary_304dc9c0-364a-.webp](https://i.see.you/2026/02/12/Jpu5/blog_2025-summary_304dc9c0-364a-.webp)
+![blog_2025-summary_304dc9c0-364a-.webp](https://cdn.varzy.me/legacy/2026/02/12/Jpu5/blog_2025-summary_304dc9c0-364a-.webp)
 
 依旧单身。今年相亲的次数几近为零，看得出来不只是我，连家人都快放弃了。唯一有趣的一次是家里介绍了个在北京上班的女生，加微信时便对她的名字有种既视感，见面后更是如此，直到问起高中的事情，发现她果然是与我同一届但不同班的姑娘。这时死去的记忆如潮水般开始攻击我，我大概率是在某场考试时坐在她旁边，和她聊过天，还抄过她的英语试卷。缘，妙不可言。
 
-![blog_2025-summary_2f2dc9c0-364a-.webp](https://i.see.you/2026/02/12/j1pB/blog_2025-summary_2f2dc9c0-364a-.webp)
+![blog_2025-summary_2f2dc9c0-364a-.webp](https://cdn.varzy.me/legacy/2026/02/12/j1pB/blog_2025-summary_2f2dc9c0-364a-.webp)
 
 还有就是，大学的前女友订婚了，衷心祝福她幸福。
 
 7 月有幸以工作人员的身份参加了影之刃零的线下试玩会（但我并非在此就职）。体验的时间很短，但也 get 到了个中魅力，好游戏，期待！
 
-![blog_2025-summary_304dc9c0-364a-.webp](https://i.see.you/2026/02/12/Ied2/blog_2025-summary_304dc9c0-364a-.webp)
+![blog_2025-summary_304dc9c0-364a-.webp](https://cdn.varzy.me/legacy/2026/02/12/Ied2/blog_2025-summary_304dc9c0-364a-.webp)
 
 我是一个挺喜欢买包的人，各种数码包、收纳包都买了不少，我也很喜欢琢磨往里面塞什么东西才能让我的出行更加 smooth。今年出差频繁，加之基本落实了一个半月回一趟老家的计划，我确实从折腾包包和行李上获得了莫大的愉悦感。如果你感兴趣，可以看看 [我的差旅打包方案](https://varzy.me/posts/my-trip-packing)。
 
 今年买的比较满意的一个包是狐蝠工业的蜜獾二代，换掉了我高强度背了一年半的优衣库斜挎包。我用东西还算是爱惜的，这支 199 的优衣库斜挎包最终在闲鱼上还回血了大几十块钱。换包的起因是下半年我开始尝试每天都带相机出门，再加上离我家最近的地铁站严格得就像有病一样的安检，稍微大点的包就强制要求过安检机，不能像以前一样给安检员看一眼就放行，因此我需要一款体积更小且有一定保护性的包包。用了好几个月，好玩又好用～
 
-![blog_2025-summary_305dc9c0-364a-.webp](https://i.see.you/2026/02/12/mMd8/blog_2025-summary_305dc9c0-364a-.webp)
+![blog_2025-summary_305dc9c0-364a-.webp](https://cdn.varzy.me/legacy/2026/02/12/mMd8/blog_2025-summary_305dc9c0-364a-.webp)
 
 每年拼一个大积木的传统怎么能落下呢，今年的是老亮 03 号跑车。
 
-![blog_2025-summary_305dc9c0-364a-.webp](https://i.see.you/2026/02/12/ui2D/blog_2025-summary_305dc9c0-364a-.webp)
+![blog_2025-summary_305dc9c0-364a-.webp](https://cdn.varzy.me/legacy/2026/02/12/ui2D/blog_2025-summary_305dc9c0-364a-.webp)
 
 在公司实验室里被强磁铁夹伤了手指😭，从此之后便对成摞的磁铁产生了心理阴影，直到现在某两块磁铁之间应该都还有我的一块肉。
 
@@ -73,11 +73,11 @@ hi，这是我的第八篇年终总结，比往年来得更晚一些。25 年的
 
 在入冬前换了床厚被子，非常暖，睡眠幸福感直线提升。躺进去的那一晚是今年为数不多，记忆犹新的小确幸🥹。
 
-![blog_2025-summary_305dc9c0-364a-.webp](https://i.see.you/2026/02/12/2lEy/blog_2025-summary_305dc9c0-364a-.webp)
+![blog_2025-summary_305dc9c0-364a-.webp](https://cdn.varzy.me/legacy/2026/02/12/2lEy/blog_2025-summary_305dc9c0-364a-.webp)
 
 最后，纪念北京今年依旧吝啬的雪。
 
-![blog_2025-summary_305dc9c0-364a-.webp](https://i.see.you/2026/02/12/tj1F/blog_2025-summary_305dc9c0-364a-.webp)
+![blog_2025-summary_305dc9c0-364a-.webp](https://cdn.varzy.me/legacy/2026/02/12/tj1F/blog_2025-summary_305dc9c0-364a-.webp)
 
 ## Coins
 
@@ -111,7 +111,7 @@ hi，这是我的第八篇年终总结，比往年来得更晚一些。25 年的
 
 年初给手机换了张香香的壁纸，很喜欢，用了很久🥰。
 
-![blog_2025-summary_2f2dc9c0-364a-.webp](https://i.see.you/2026/02/12/jdU1/blog_2025-summary_2f2dc9c0-364a-.webp)
+![blog_2025-summary_2f2dc9c0-364a-.webp](https://cdn.varzy.me/legacy/2026/02/12/jdU1/blog_2025-summary_2f2dc9c0-364a-.webp)
 
 首发购入了 AirPods Pro 3，从一代升级过来续航和降噪的提升还是非常明显的。还购入了一把雨 75 键盘，换掉了用了四年的 F 键逐渐失灵的 Niz Plum 静电容键盘，雨 75 几乎是一把毕业级别的键盘，声音好听，手感也不错。
 
@@ -137,7 +137,7 @@ hi，这是我的第八篇年终总结，比往年来得更晚一些。25 年的
 
 在 PS5 平台通关了死亡搁浅2，感想见「[死亡搁浅2：好玩，且让一代跌上神坛](https://varzy.me/posts/death-stranding-2-on-the-beach)」。还打通了最终幻想7重制版及 DLC 尤菲篇，光是冲着女角色的颜值就值回票价了，可惜第二部迟迟不入会员库，五百多的原价又实在不好剁手，或许我还是等等最终章出了再一起玩吧。
 
-![blog_2025-summary_2f2dc9c0-364a-.jpg](https://i.see.you/2026/02/12/J2nr/blog_2025-summary_2f2dc9c0-364a-.jpg)
+![blog_2025-summary_2f2dc9c0-364a-.jpg](https://cdn.varzy.me/legacy/2026/02/12/J2nr/blog_2025-summary_2f2dc9c0-364a-.jpg)
 
 🎸 音乐。
 

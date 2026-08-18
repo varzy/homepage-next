@@ -7,8 +7,8 @@ tags: ['Git']
 date: '2021-11-28'
 slug: 'use-different-gitconfig'
 summary: ''
-last_edited_time: '2025-08-06T06:16:00.000Z'
-last_fetched_time: '2025-09-02T09:28:22.630Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:02:12.632Z'
 page_id: '621ffe9f-028d-4a9b-9f2f-0636defce6f2'
 icon: '🏏'
 ---

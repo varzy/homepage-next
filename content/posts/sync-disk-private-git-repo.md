@@ -7,8 +7,8 @@ tags: ['Git']
 date: '2021-03-13'
 slug: 'sync-disk-private-git-repo'
 summary: ''
-last_edited_time: '2026-08-14T17:03:00.000Z'
-last_fetched_time: '2026-08-14T17:08:02.197Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:03:00.658Z'
 page_id: '63391f27-edbe-4f17-b944-a79d5e377df1'
 icon: '🛡️'
 ---

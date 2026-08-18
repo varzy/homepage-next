@@ -7,15 +7,15 @@ tags: ['随想']
 date: '2026-06-29'
 slug: 'sans-la-liberte-de-blamer-il-nest-point-deloge-flatteur'
 summary: '当一个有理想的人，被冠以「理想主义者」之名的时候，说明他的理想已经死了。'
-last_edited_time: '2026-06-29T11:25:00.000Z'
-last_fetched_time: '2026-06-29T11:43:17.787Z'
+last_edited_time: '2026-08-18T17:41:00.000Z'
+last_fetched_time: '2026-08-18T17:59:49.613Z'
 page_id: '38edc9c0-364a-80b6-ab6d-f10e28ab3bd7'
 icon: '🧭'
 ---
 
 [FView Friday](https://www.bilibili.com/video/BV1Dk7L66EkG) 停播了。
 
-![posts_sans-la-liberte-de-blamer-.png](https://i.see.you/2026/06/29/Fw4v/posts_sans-la-liberte-de-blamer-.png)
+![posts_sans-la-liberte-de-blamer-.png](https://cdn.varzy.me/legacy/2026/06/29/Fw4v/posts_sans-la-liberte-de-blamer-.png)
 
 彭总在直播中其实已经把话说得相当明白了，“以前在直播里能说点真心话。后来有一家不能骂。再后来我们只能骂苹果。现在媒体说的每一句都需要自证。你身边有更重要的人需要保护。” 很多人批判科技圈的舆论环境都会提到「饭圈化」，但饭圈，大概是科技圈中最不重要的问题。
 

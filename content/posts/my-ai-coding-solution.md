@@ -7,8 +7,8 @@ tags: ['AI', '软件']
 date: '2026-05-27'
 slug: 'my-ai-coding-solution'
 summary: 'VSCode + Claude Code 插件 + CodeX 插件 + ZenMux + CC Switch'
-last_edited_time: '2026-08-14T16:34:00.000Z'
-last_fetched_time: '2026-08-14T16:39:56.270Z'
+last_edited_time: '2026-08-18T17:41:00.000Z'
+last_fetched_time: '2026-08-18T17:59:54.283Z'
 page_id: '36ddc9c0-364a-80ea-a2d1-e62b1e0020af'
 icon: '🏒'
 ---
@@ -32,8 +32,8 @@ CC Switch 是一个可一键切换模型提供商的应用，应用本身做得�
 
 我会在 CC Switch 中添加三套模型，分别是 Deepseek，CodeX 和 Claude Code，分别对应低、中、高三种强度的工作。
 
-![posts_my-ai-coding-solution_36dd.png](https://i.see.you/2026/05/27/4wlF/posts_my-ai-coding-solution_36dd.png)
+![posts_my-ai-coding-solution_36dd.png](https://cdn.varzy.me/legacy/2026/05/27/4wlF/posts_my-ai-coding-solution_36dd.png)
 
 我个人不怎么用得惯模型厂家自己开发的 TUI，因此我还是会搭配 VSCode 中的插件来使用。我习惯将 Claude Code 和 CodeX 插件放置在右侧边栏，如此一来按下 ⌘ + ⌥ + B 即可快速呼出侧边栏。需要注意的是，每次使用 CC Switch 切换模型后，都需要按下 ⇧ + ⌥ + P 呼出指令面板，再选择 Reload Window 重载一次编辑器窗口。
 
-![posts_my-ai-coding-solution_36dd.png](https://i.see.you/2026/05/27/Shw5/posts_my-ai-coding-solution_36dd.png)
+![posts_my-ai-coding-solution_36dd.png](https://cdn.varzy.me/legacy/2026/05/27/Shw5/posts_my-ai-coding-solution_36dd.png)

@@ -7,8 +7,8 @@ tags: ['JavaScript']
 date: '2020-03-27'
 slug: 'promise-apis'
 summary: ''
-last_edited_time: '2025-08-06T06:19:00.000Z'
-last_fetched_time: '2025-09-02T09:32:11.892Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:04:45.314Z'
 page_id: '76de8c1f-eb0a-411c-a6c1-fdcde1edde81'
 icon: '⏱️'
 ---

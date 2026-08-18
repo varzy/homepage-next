@@ -7,8 +7,8 @@ tags: ['年终总结']
 date: '2021-12-31'
 slug: '2021-summary'
 summary: '世界与我的未来皆不可捉摸，只愿世界和平🕊️，我的开心多于难过🤘。'
-last_edited_time: '2025-09-03T04:16:00.000Z'
-last_fetched_time: '2025-09-03T04:18:36.817Z'
+last_edited_time: '2026-08-18T17:46:00.000Z'
+last_fetched_time: '2026-08-18T18:02:08.216Z'
 page_id: '0e72d6a0-6401-4712-842d-a0eda37acde9'
 icon: '🏅'
 ---
@@ -19,7 +19,7 @@ icon: '🏅'
 
 翻开相册，2021 年的第一张照片就是小侄女。那时候小侄女刚刚开始“女孩”起来，身材变瘦，头发也开始留长，终于能戴上花卡子了。我给小侄女拍照时经常会连拍很多，因为小孩子的表情千变万化，很多精彩的表情只能靠抓拍捕捉（所以现在我相册里已经有 2500 张她的照片了）。
 
-![KuQ9DX64ba1SqJN.jpg](https://cdn.sa.net/2024/03/16/KuQ9DX64ba1SqJN.jpg)
+![KuQ9DX64ba1SqJN.jpg](https://cdn.varzy.me/legacy/2024/03/16/KuQ9DX64ba1SqJN.jpg)
 
 ### 你又不让我走，又不给我发北京户口
 
@@ -29,17 +29,17 @@ icon: '🏅'
 
 春节假期的前几天，地铁已经相当空落了，我也终于可以“坐”地铁到公司了。
 
-![AOHoBRP3xmVkvnf.jpg](https://cdn.sa.net/2024/03/16/AOHoBRP3xmVkvnf.jpg)
+![AOHoBRP3xmVkvnf.jpg](https://cdn.varzy.me/legacy/2024/03/16/AOHoBRP3xmVkvnf.jpg)
 
 除夕当天自然不必工作，抢抢红包，领点鸡零狗碎的小周边，到了中午就可以回家了。其中有一个台历的盒子正好可以完美容纳我的四驱车😄。
 
-![N8wVs4ipkY3cZE2.jpg](https://cdn.sa.net/2024/03/16/N8wVs4ipkY3cZE2.jpg)
+![N8wVs4ipkY3cZE2.jpg](https://cdn.varzy.me/legacy/2024/03/16/N8wVs4ipkY3cZE2.jpg)
 
 ### 北京真脏
 
 315 当天，我经历了或许是有生以来最严重的沙尘暴，PM10 指数达到了难以想象的 1291。出门时我特意取了个新的 N95 口罩，走到公司就已经脏得不成样子，早上洗过的头发也在硅晶的附魔下变成了锈发。
 
-![YhLcuKTtk4zCx8s.jpg](https://cdn.sa.net/2024/03/16/YhLcuKTtk4zCx8s.jpg)
+![YhLcuKTtk4zCx8s.jpg](https://cdn.varzy.me/legacy/2024/03/16/YhLcuKTtk4zCx8s.jpg)
 
 ### 我的第一次旅行
 
@@ -55,27 +55,27 @@ icon: '🏅'
 
 26 号晚，我和几个程序员朋友相聚于腾讯大厦附近的木屋烧烤，饭后又去了深圳湾公园遛弯。我们一边吹海风一边吹牛逼，在深圳湾一号和春笋大楼附近留下了我的第一张照片（衰仔如我，拍照时刚好有几层黑了）。
 
-![zRFB5i9lUeDQCuk.jpg](https://cdn.sa.net/2024/03/16/zRFB5i9lUeDQCuk.jpg)
+![zRFB5i9lUeDQCuk.jpg](https://cdn.varzy.me/legacy/2024/03/16/zRFB5i9lUeDQCuk.jpg)
 
 表妹在深大读研，她男朋友则在广州的中山大学读研，来这里之前我就提议一起见个面。表妹很早之前就告诉我她有男友的事情，不过一直瞒着家人，直到我来深圳前不久才公之于众，所以我是全家与她对象会面的第一人。
 
 27 号早上，我处理了冰箱里被冻到爆炸的无糖可乐（一个悲伤的小插曲），先到丽湖校区找到表妹，在校门口一家小店里来了份觊觎已久的肠粉。我可太爱这玩意了，以至于后来几天的早饭基本全是肠粉🌚。
 
-![ZFMxGgidzYf8VAI.jpg](https://cdn.sa.net/2024/03/16/ZFMxGgidzYf8VAI.jpg)
+![ZFMxGgidzYf8VAI.jpg](https://cdn.varzy.me/legacy/2024/03/16/ZFMxGgidzYf8VAI.jpg)
 
 之后和表妹一起坐高铁到广州，在点都德和表妹的对象碰面。我们三个河南人用上学时磨练出的干饭速度，只消半小时就了结了传说中广州人要吃一上午的早茶👀。
 
 饭后我自然不能当小两口的电灯泡，于是奔赴下一站，在东山口和之前光遇里结识的网友 DD 会合。或许是东山口的建筑和当天的天气比较适合拍照，随便一堵墙前面就有一大排姑娘眼一闭，腿一伸，头一仰，手一挡，摆出各种教科书级的小红书拍照姿势。原来并不是我身边没有人拍网红照，而是拍网红照的都去了东山口。DD 作为真·后浪，七拐八拐把我带到了一家如果不是她请客我可能这辈子都不会消费的甜品店 （[Polaberry](https://www.google.com.hk/url?sa=t&rct=j&q=&esrc=s&cd=&ved=2ahUKEwjTzsrvrPv0AhWHd94KHQToDksQFnoECBIQAQ&url=https%3A%2F%2Fpolaberry.com%2F&usg=AOvVaw0lbxYDIO0-pPRnyKiWAR4U)），有幸蹭了几个均价 30+ 的巧克力。
 
-![Synh7KWGgJArm2F.jpg](https://cdn.sa.net/2024/03/16/Synh7KWGgJArm2F.jpg)
+![Synh7KWGgJArm2F.jpg](https://cdn.varzy.me/legacy/2024/03/16/Synh7KWGgJArm2F.jpg)
 
 之后我们逛了充满干货鲜腥味的海勤盛市场，作为一个不怎么吃海货的北方人，确实有些闻不惯这里的味道。DD 建筑系出身，一边走一边给我科普干货市场里各的“骑楼”。之后又去到另一个网红景点沙面岛，面积很小，只消几十分钟就能走完。这里曾是英法租界，感觉和天津的五大道异曲同工。
 
-![dm12LRYWezvUKp7.jpg](https://cdn.sa.net/2024/03/16/dm12LRYWezvUKp7.jpg)
+![dm12LRYWezvUKp7.jpg](https://cdn.varzy.me/legacy/2024/03/16/dm12LRYWezvUKp7.jpg)
 
 当天的最后一站则拐进小巷，来到了广州当地似乎很有名的“吴财记面家”，这也是我一天中最满意的一程。作为面食爱好者，DD 为我挑选的这份竹生面也让我感受到和北方面条完全不一样的风味。可惜当天实在是吃了太多东西，纵使走了两万步也难以光盘。
 
-![s1adOKLetkrDJvq.jpg](https://cdn.sa.net/2024/03/16/s1adOKLetkrDJvq.jpg)
+![s1adOKLetkrDJvq.jpg](https://cdn.varzy.me/legacy/2024/03/16/s1adOKLetkrDJvq.jpg)
 
 虽然这趟深圳之行只给广州安排了一天不到的时间，但却让我感受了和北方城市不一样的风土人情，这种差异是深圳缺失的、只有老城市老商圈才能散发出来的味道。或许下次我会在广州多待几天，正儿八经花一整个上午吃一次早茶。
 
@@ -83,7 +83,7 @@ icon: '🏅'
 
 还记得小时候在深圳时偶尔会去楼下买椰子🥥，5 块钱一个。老板从冰箱里拿出新鲜椰子，劈个小口，插上吸管，喝完椰汁后还可以把椰子劈开吃里面的椰肉。对比其他零食饮料，椰子性价比太低，因此一年时间里我也仅仅尝过几次。这次来深圳前我就决定要重温一次椰子的味道，于是我不只吃了椰子鸡，还把菜单上的椰青和椰奶冻都给点了😆。
 
-![c9gNZLxisqBJmXF.jpg](https://cdn.sa.net/2024/03/16/c9gNZLxisqBJmXF.jpg)
+![c9gNZLxisqBJmXF.jpg](https://cdn.varzy.me/legacy/2024/03/16/c9gNZLxisqBJmXF.jpg)
 
 然而当我写下这段文字的时候，即使看着照片，也再也想不起椰汁到底什么味。看来我并不是喜欢椰子，只是小时候经历的事情太少，以至于味蕾早已看淡，记忆却可以把这种小事尘封十年有余。
 
@@ -91,27 +91,27 @@ icon: '🏅'
 
 饭后 NX 又带我乘上号称深圳最快的电梯，来到了深圳最高的建筑：平安金融中心的顶楼。我属实心疼 NX 的门票钱，这里或许可以登上我心目中的“最不值得景点”排行榜了。不过也算是难为 NX 了，想在深圳中心区域找个好玩的地方着实不易。
 
-![DU7n8bEwV2gkXeK.jpg](https://cdn.sa.net/2024/03/16/DU7n8bEwV2gkXeK.jpg)
+![DU7n8bEwV2gkXeK.jpg](https://cdn.varzy.me/legacy/2024/03/16/DU7n8bEwV2gkXeK.jpg)
 
 NX 是我所有朋友里被工作摧残得最严重的一个没有之一。NX 用在律所的亲身经历告诉我，原来这批看起来最懂法的人也完全不会遵循什么所谓的劳动法。写下这段文字时，我又打开微信问起 NX 的近况，NX 表示最近没有工作，正在休养生息，“是一点点变正常的迹象”。挺好。
 
 告别了 NX，我又要与大学时期的好友 LV 和胖子会面（LV 并不姓吕，这样叫只是因为我觉得有趣）。LV 和胖子也是 WOWer，在大学宿舍全员 LOL 的时候，我们几个哥们则一直在艾泽拉斯征战四方，陆陆续续也练了好几个满级号。后来我因为电脑太垃圾而早早地 AFK，直到工作后换了新电脑才重回 WOW，在 8.0 版本开启了一段每晚推钥石的肝帝生活。有一晚我们团灭了上百次，终于在地渊孢林终于留下了这张值得让我再发一次的合影（大树是我，熊是胖子，熊猫人是 LV）。
 
-![yLJ1k6P2WQxSNjR.png](https://cdn.sa.net/2024/03/16/yLJ1k6P2WQxSNjR.png)
+![yLJ1k6P2WQxSNjR.png](https://cdn.varzy.me/legacy/2024/03/16/yLJ1k6P2WQxSNjR.png)
 
 这张照片我说他俩没有牵手，你信吗😏？不过必须澄清，照片因为广角畸变和一些鸽子为什么这么大的原因导致 LV 看起来比本人宽得多，他本人还是很瘦的（
 
-![A1MBTknlHOX2DZ5.jpg](https://cdn.sa.net/2024/03/16/A1MBTknlHOX2DZ5.jpg)
+![A1MBTknlHOX2DZ5.jpg](https://cdn.varzy.me/legacy/2024/03/16/A1MBTknlHOX2DZ5.jpg)
 
 之后我们吃了顿牛腩煲，我也是第一次吃到马蹄莲这种水果。随后又去了满是小吃和盗版服装店的老街（老街地铁站的那个老街），这里总给我一种我们县城的感觉，甚至有那么几个瞬间会让我忘记我正身处一线城市。
 
-![9oP6CafRE5lWuAQ.jpg](https://cdn.sa.net/2024/03/16/9oP6CafRE5lWuAQ.jpg)
+![9oP6CafRE5lWuAQ.jpg](https://cdn.varzy.me/legacy/2024/03/16/9oP6CafRE5lWuAQ.jpg)
 
 29 号下午，我见到了大学时的另一个好友 Penny。Penny 工作远在龙岗区，而且工作很忙，下午这半天假也请的比较艰难。我们在泡泡玛特买了两个海贼王盲盒，怎么就那么寸，正正好好抽到了我俩都不想要的两个人物🤦‍♂️。这概率是多少来着？三十六分之一？晚上和 Penny 吃了顿酸菜鱼，住处较远的她也要早早赶回去。与 Penny 告别后，我高强度的会晤工作终于告一段落。
 
 30 号，我刷了很久的大众点评，实在找不出有什么值得一玩的地方，算了，还是再去趟深圳湾公园吹吹风吧。下午我先到深圳湾万象城填饱肚子，买了杯冷饮，沿着第一天来到深圳湾公园时的反方向走去。我的心情无比放松，就这么晃晃悠悠得溜达，从太阳低斜走到海水涨潮，一路走到了深圳湾公园的最南端，与香港隔海相望。海的那边，是让我能够登录 Google 的服务器啊。
 
-![MJqbD79doTuOgjA.jpg](https://cdn.sa.net/2024/03/16/MJqbD79doTuOgjA.jpg)
+![MJqbD79doTuOgjA.jpg](https://cdn.varzy.me/legacy/2024/03/16/MJqbD79doTuOgjA.jpg)
 
 吹着海风，我不禁羡慕起晚上在这里跑步的人。北京是一个没有跑步环境的地方，到处都乌漆麻黑，坑坑洼洼。等等，真的是北京没有跑步环境吗？就如同我晚上不能去奥森跑步一样，我在深圳的朋友们也都住在宝安、龙岗，他们即使在南山区上班，晚上也不可能过来这里跑步。我真的是羡慕可以在深圳湾公园跑步吗？不是的，我只是羡慕这群或许本来就住在深圳湾一号的人家赢家们，至于跑步的地方是深圳湾公园，还是奥森，还是我老家县城里的广场，并不重要。
 
@@ -125,9 +125,9 @@ NX 是我所有朋友里被工作摧残得最严重的一个没有之一。NX �
 
 五一回来后，我和 C 按原计划搬完了家，到新住处后我直接把卧室里廉价的双人床和桌子给拆了（得到了房东的许可），之后以算上运费也才 90 元的价格买了俩木头拍子，铺上 C 送我的旧床垫，再把之前床上的床头换了个方向作为靠背，新床✅。后来又上咸鱼自费购入了一张自如同款桌子，基本确定了屋子的布局。经历了 7 个月的反复微调，现在长这个样子。
 
-![HQmhqS4gXtD8rjO.jpg](https://cdn.sa.net/2024/03/16/HQmhqS4gXtD8rjO.jpg)
+![HQmhqS4gXtD8rjO.jpg](https://cdn.varzy.me/legacy/2024/03/16/HQmhqS4gXtD8rjO.jpg)
 
-![oNGzEsMcWUrALy8.jpg](https://cdn.sa.net/2024/03/16/oNGzEsMcWUrALy8.jpg)
+![oNGzEsMcWUrALy8.jpg](https://cdn.varzy.me/legacy/2024/03/16/oNGzEsMcWUrALy8.jpg)
 
 比起 B 站上那些“爆改出租屋”的视频，我的房间要简陋太多了。我不求房间看起来多么美观，也不会过分收纳，但起码要求房间整洁、干净、实用。实际上只要做好物品分类，随手归位，以及每天早上叠被子，观感就不会太差了。好歹自己还是个断舍离主义者，目前我的柜子都还远远没有填满，而我唯一占用公共空间的物件则只有一瓶洗发水。Plus，为什么每个房东都爱红木家具啊摔！
 
@@ -135,7 +135,7 @@ NX 是我所有朋友里被工作摧残得最严重的一个没有之一。NX �
 
 有幸工作这几年里我的发量不减当年，7 月份也终于决定留一次长发试试看。心路历程我也写了另一篇文章：[决定留长发的第二个月](https://varzy.me/posts/keep-long-hair)。5 个月过去了，现在长这样。
 
-![N3RB5mGuPsKqrt1.jpg](https://cdn.sa.net/2024/03/16/N3RB5mGuPsKqrt1.jpg)
+![N3RB5mGuPsKqrt1.jpg](https://cdn.varzy.me/legacy/2024/03/16/N3RB5mGuPsKqrt1.jpg)
 
 我的脸型是标准的 Poker Face，与主流审美严重脱节，把头发留长至少能显得脸部线条柔和一些。10 月到 11 月之间是头发的尴尬期，发箍别不上，皮筋扎不住，刘海还特别扎眼睛，只能靠戴发带勉强见人。而现在的长度基本已经脱离尴尬期，平时也都披散着了。下一步打算扎个小辫试试武士头，或者艾伦耶格尔变身艾导后的发型。
 
@@ -153,27 +153,27 @@ NX 是我所有朋友里被工作摧残得最严重的一个没有之一。NX �
 
 7 月底 DD 来北京了一趟，在什刹海和南锣鼓巷随便溜达了一圈，晚上在风铃酒馆重温了涨价颇为离谱的招牌菜手杵红烧肉。
 
-![649ziRbBTFEASGC.jpg](https://cdn.sa.net/2024/03/16/649ziRbBTFEASGC.jpg)
+![649ziRbBTFEASGC.jpg](https://cdn.varzy.me/legacy/2024/03/16/649ziRbBTFEASGC.jpg)
 
 晒晒我少女心爆棚的书包和贴纸。
 
-![ArhCF1gTbUJHueM.jpg](https://cdn.sa.net/2024/03/16/ArhCF1gTbUJHueM.jpg)
+![ArhCF1gTbUJHueM.jpg](https://cdn.varzy.me/legacy/2024/03/16/ArhCF1gTbUJHueM.jpg)
 
 和 C 搬进新房子后不久，C 的老婆孩子也过来了，于是继小侄女后我又有娃可以抱了。巧合的是我住进大姨家时小侄女大概 7 个月，C 的宝宝过来时也是 7 个月。
 
 8 月 26 号，下班时分下了一场雨，那时候我和同事一起去吃重庆小面，出来后正好雨过天晴，录下了一小段视频：[前有绝景](https://www.bilibili.com/video/BV1Vr4y1U7Q2/)，还在办公室拍下了这张年度最佳天气。
 
-![DoMsiwHxbIm6zKA.jpg](https://cdn.sa.net/2024/03/16/DoMsiwHxbIm6zKA.jpg)
+![DoMsiwHxbIm6zKA.jpg](https://cdn.varzy.me/legacy/2024/03/16/DoMsiwHxbIm6zKA.jpg)
 
 9 月 29 日，我提前开始了国庆假期。之前把自己的 iPad Mini 5 拿回家给奶奶看电视用了，好评如潮。于是这次又收了个二手 Mini 4 带给姥姥姥爷，让他们可以听听戏看看书法。
 
 30 晚上则和另一批朋友在郑州集合，吃了个路边摊。在北京呆了几年后，再次看见路边摊竟然有一种陌生的感觉。晚上我们在电竞酒店过夜，果不其然没有任何一个人能够通宵，不到凌晨一点就纷纷躺倒。次日中午，得益于店员小哥的神级拍照技术，我们好歹留下了这张尬的要死的集体照。
 
-![j56qWFmTrNbDwnX.jpg](https://cdn.sa.net/2024/03/16/j56qWFmTrNbDwnX.jpg)
+![j56qWFmTrNbDwnX.jpg](https://cdn.varzy.me/legacy/2024/03/16/j56qWFmTrNbDwnX.jpg)
 
 每次回家自然是少不了来一碗牛肉汤，即使喝一碗要上火两天。
 
-![xP6YUnKNHrQtIWs.jpg](https://cdn.sa.net/2024/03/16/xP6YUnKNHrQtIWs.jpg)
+![xP6YUnKNHrQtIWs.jpg](https://cdn.varzy.me/legacy/2024/03/16/xP6YUnKNHrQtIWs.jpg)
 
 ## 关于我“自身”
 
@@ -189,7 +189,7 @@ NX 是我所有朋友里被工作摧残得最严重的一个没有之一。NX �
 
 想起我的第一份体检报告，里面只有普遍的“窦性心律不齐”这一项，而且（大概率）还是因为给我做心电图的姐姐太漂亮搞得我太紧张导致的。而今年我也参加了公司安排的年度体检，总检建议已经写满了整整一页。如今 Apple Watch 都买了，给自己设定的每天 500 大卡的目标也并不算难，真的真的真的再也没有理由不动弹了。不就是运动嘛，奥力给✊！干了兄弟们！
 
-![WKOp1TwXCkyqlnj.jpg](https://cdn.sa.net/2024/03/16/WKOp1TwXCkyqlnj.jpg)
+![WKOp1TwXCkyqlnj.jpg](https://cdn.varzy.me/legacy/2024/03/16/WKOp1TwXCkyqlnj.jpg)
 
 ## 输入，产出
 

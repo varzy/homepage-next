@@ -7,8 +7,8 @@ tags: ['CSS', '浏览器']
 date: '2020-06-11'
 slug: 'chrome-scrollbar-style-custom'
 summary: ''
-last_edited_time: '2026-08-14T16:27:00.000Z'
-last_fetched_time: '2026-08-14T16:40:31.099Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:03:23.711Z'
 page_id: '5c19a41b-b70c-40f5-aeef-6c250ea597d5'
 icon: '👠'
 ---

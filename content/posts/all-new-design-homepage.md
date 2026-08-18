@@ -7,8 +7,8 @@ tags: ['个人主页']
 date: '2025-08-09'
 slug: 'all-new-design-homepage'
 summary: '希望你喜欢我的主页风格。'
-last_edited_time: '2026-08-14T16:50:00.000Z'
-last_fetched_time: '2026-08-14T16:57:21.457Z'
+last_edited_time: '2026-08-18T17:42:00.000Z'
+last_fetched_time: '2026-08-18T18:00:26.851Z'
 page_id: '24adc9c0-364a-8006-bb2c-c9d392d67a62'
 icon: '🖨️'
 ---
@@ -17,7 +17,7 @@ icon: '🖨️'
 
 在此之前，我的主页使用了很长时间的这一版本的样式：
 
-![tsEIf5YOg4SRQcC.png](https://cdn.sa.net/2025/08/09/tsEIf5YOg4SRQcC.png)
+![tsEIf5YOg4SRQcC.png](https://cdn.varzy.me/legacy/2025/08/09/tsEIf5YOg4SRQcC.png)
 
 个人觉得不能说难看，只能说是普普通通吧。之前数次想要改版，但都未果，这次的重构正好是一个更新迭代的好时机。
 
@@ -25,7 +25,7 @@ icon: '🖨️'
 
 这是截至本文发出之时的主页样式，下属的 Blog 页面亦有大幅调整。
 
-![olPF8ZhBvS5M93i.png](https://cdn.sa.net/2025/08/09/olPF8ZhBvS5M93i.png)
+![olPF8ZhBvS5M93i.png](https://cdn.varzy.me/legacy/2025/08/09/olPF8ZhBvS5M93i.png)
 
 ## 极简
 

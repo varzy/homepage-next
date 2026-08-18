@@ -7,8 +7,8 @@ tags: ['JavaScript']
 date: '2020-09-17'
 slug: 'js-multiple-click'
 summary: ''
-last_edited_time: '2026-08-14T17:01:00.000Z'
-last_fetched_time: '2026-08-14T17:08:07.962Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:03:19.698Z'
 page_id: '49e37246-de0d-4cc4-b8b9-dc075f71b0a8'
 icon: '🧨'
 ---

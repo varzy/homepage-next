@@ -7,8 +7,8 @@ tags: ['Linux']
 date: '2020-03-27'
 slug: 'ubuntu-php-development'
 summary: ''
-last_edited_time: '2025-09-02T07:57:00.000Z'
-last_fetched_time: '2025-09-02T09:32:07.996Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:04:42.191Z'
 page_id: '000201da-d54d-4584-a21b-281605c181c8'
 icon: '🏌️‍♀️'
 ---

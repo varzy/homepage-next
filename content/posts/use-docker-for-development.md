@@ -7,8 +7,8 @@ tags: ['Docker']
 date: '2021-09-12'
 slug: 'use-docker-for-development'
 summary: ''
-last_edited_time: '2026-08-14T17:03:00.000Z'
-last_fetched_time: '2026-08-14T17:07:57.848Z'
+last_edited_time: '2026-08-18T17:47:00.000Z'
+last_fetched_time: '2026-08-18T18:02:31.872Z'
 page_id: '1f966285-bf21-4640-9e24-11b81c8720a6'
 icon: '🐳'
 ---
@@ -198,7 +198,7 @@ server {
 </html>
 ```
 
-![C9OXoWJA7fLRwt1.png](https://cdn.sa.net/2025/09/02/C9OXoWJA7fLRwt1.png)
+![C9OXoWJA7fLRwt1.png](https://cdn.varzy.me/legacy/2025/09/02/C9OXoWJA7fLRwt1.png)
 
 大功告成！现在 Nginx 的表现就与宿主机使用 Homebrew 等工具安装 Nginx 后的效果基本一致了。
 
@@ -250,7 +250,7 @@ index index.html;
 
 接着我们访问 `http://app.devos.com`，就可以看到已经成功了。
 
-![moNA9IPOuhyHd1F.png](https://cdn.sa.net/2025/09/02/moNA9IPOuhyHd1F.png)
+![moNA9IPOuhyHd1F.png](https://cdn.varzy.me/legacy/2025/09/02/moNA9IPOuhyHd1F.png)
 
 注意，我这里使用了一个非常奇葩的虚拟域名：app.devos.com，这是因为我使用了 Surge 这款梯子，而机场的规则又设置了不认识的域名会直接拦截。。。这就导致我必须使用 .com 之类的大众域名才能访问。你当然可以像网上大部分方案一样使用 .test 作为虚拟域名。
 
@@ -370,7 +370,7 @@ services:
 
 执行 `docker compose up -d workspace`，即可自动构建 workspace 镜像，并且启动一个新的容器，接下来我们就可以使用 `docker exec -it workspace /bin/bash` 进入容器了。
 
-![jIJWSXu9D67GKZ8.png](https://cdn.sa.net/2025/09/02/jIJWSXu9D67GKZ8.png)
+![jIJWSXu9D67GKZ8.png](https://cdn.varzy.me/legacy/2025/09/02/jIJWSXu9D67GKZ8.png)
 
 ### 开发一个简单的 Go 语言项目
 
@@ -449,11 +449,11 @@ func create(ctx iris.Context) {
 
 接下来我们回到容器内的终端，执行 `go run main.go`，就可以看到项目已经启动成功了。
 
-![d5XTUfnA7NRKHeL.png](https://cdn.sa.net/2025/09/02/d5XTUfnA7NRKHeL.png)
+![d5XTUfnA7NRKHeL.png](https://cdn.varzy.me/legacy/2025/09/02/d5XTUfnA7NRKHeL.png)
 
 接下来在宿主机浏览器中访问 `http://localhost:8080/books`。
 
-![ZuRTVpJiSmCwFDG.png](https://cdn.sa.net/2025/09/02/ZuRTVpJiSmCwFDG.png)
+![ZuRTVpJiSmCwFDG.png](https://cdn.varzy.me/legacy/2025/09/02/ZuRTVpJiSmCwFDG.png)
 
 能看到这样的效果就说明已经成功了。
 

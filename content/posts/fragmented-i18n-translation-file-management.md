@@ -7,8 +7,8 @@ tags: ['Node.js', '工程化']
 date: '2025-09-04'
 slug: 'fragmented-i18n-translation-file-management'
 summary: '碎片管理，产物统一。'
-last_edited_time: '2026-08-14T16:29:00.000Z'
-last_fetched_time: '2026-08-14T16:39:58.023Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:00:13.690Z'
 page_id: '264dc9c0-364a-80ec-8a67-c8e64a0549c6'
 icon: '⚗️'
 ---

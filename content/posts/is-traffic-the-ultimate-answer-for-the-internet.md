@@ -7,8 +7,8 @@ tags: ['随想']
 date: '2026-07-03'
 slug: 'is-traffic-the-ultimate-answer-for-the-internet'
 summary: '希望 iPhone 早日加上陀螺仪权限。'
-last_edited_time: '2026-07-05T02:16:00.000Z'
-last_fetched_time: '2026-07-05T02:22:50.094Z'
+last_edited_time: '2026-08-18T17:41:00.000Z'
+last_fetched_time: '2026-08-18T17:59:44.126Z'
 page_id: '391dc9c0-364a-8079-94a2-f07091a1bd78'
 icon: '♥️'
 ---
@@ -23,7 +23,7 @@ icon: '♥️'
 
 像影视飓风一样的故事并不只发生在国内，有一个我认为非常相似的频道可以拿来类比，就是 LinusTechTips。老莱多次表达想要激流勇退让新人上位，甚至给自己安了个 CVO (Chief Vision Officer) 的名头，尝试只在公司的大是大非上给出方向性决策。但直到现在，几乎每一期视频都依旧由他本人出镜。
 
-![posts_is-traffic-the-ultimate-an.png](https://i.see.you/2026/07/04/Of2f/posts_is-traffic-the-ultimate-an.png)
+![posts_is-traffic-the-ultimate-an.png](https://cdn.varzy.me/legacy/2026/07/04/Of2f/posts_is-traffic-the-ultimate-an.png)
 
 ---
 
@@ -47,6 +47,6 @@ B2B2C 的商业模式大抵是全球互联网链条探索出来的能让每一�
 
 不管是曾经课本上地球村的概念，还是互联网转向民用后提出的平等、自由、开放这些概念，现在似乎都已然消逝殆尽。人类早已想象了飞行汽车，但现在我们不仅没开上飞行汽车，打开任何一个国产 App 都要先看五六秒的广告，还要死死端稳手机，否则一不小心就蹦到了淘宝或京东。兄弟，这简直太不酷了。
 
-![posts_is-traffic-the-ultimate-an.jpg](https://i.see.you/2026/07/04/oK6w/posts_is-traffic-the-ultimate-an.jpg)
+![posts_is-traffic-the-ultimate-an.jpg](https://cdn.varzy.me/legacy/2026/07/04/oK6w/posts_is-traffic-the-ultimate-an.jpg)
 
 最后说点实际的，希望 iPhone 早日加上陀螺仪权限。

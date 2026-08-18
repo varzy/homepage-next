@@ -7,8 +7,8 @@ tags: ['JavaScript', '八股文']
 date: '2020-04-10'
 slug: 'js-this-scope'
 summary: ''
-last_edited_time: '2025-09-02T07:55:00.000Z'
-last_fetched_time: '2025-09-02T09:30:16.399Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:03:35.015Z'
 page_id: '3cb5e506-4acd-4e4b-806e-c5128aa41882'
 icon: '🎊'
 ---

@@ -7,8 +7,8 @@ tags: ['Linux', 'Terminal']
 date: '2020-03-27'
 slug: 'unix-ssh-no-permission-after-copy'
 summary: ''
-last_edited_time: '2026-08-14T16:35:00.000Z'
-last_fetched_time: '2026-08-14T16:40:59.232Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:05:06.564Z'
 page_id: '3c9d627e-6af9-4a26-bd31-26bd5d60bd32'
 icon: '♟️'
 ---

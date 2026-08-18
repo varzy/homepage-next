@@ -7,8 +7,8 @@ tags: ['Windows', 'Linux']
 date: '2021-11-23'
 slug: 'windows-development-env'
 summary: ''
-last_edited_time: '2026-08-14T16:36:00.000Z'
-last_fetched_time: '2026-08-14T16:40:08.639Z'
+last_edited_time: '2026-08-18T17:46:00.000Z'
+last_fetched_time: '2026-08-18T18:02:19.818Z'
 page_id: 'a48130c1-4826-4016-8ec3-7166c17a4082'
 icon: '🪟'
 ---
@@ -71,7 +71,7 @@ sudo apt upgrade
 
 首先，在 Clash for Windows 中打开 `Allow Lan`。接着，我们需要在 Windows 安全中心的防火墙中设置 Clash 允许通过防火墙。
 
-![CeHUBfM2a58XutZ.png](https://cdn.sa.net/2025/09/02/CeHUBfM2a58XutZ.png)
+![CeHUBfM2a58XutZ.png](https://cdn.varzy.me/legacy/2025/09/02/CeHUBfM2a58XutZ.png)
 
 在 WSL 内添加一个脚本：
 
@@ -142,7 +142,7 @@ source $HOME/Library/proxy.sh set
 
 Docker Desktop 会自动检测系统是否存在 WSL，如果存在则会以 WSL 作为 Docker Based Engine。
 
-![78UIjJ6GefKHQrc.png](https://cdn.sa.net/2025/09/02/78UIjJ6GefKHQrc.png)
+![78UIjJ6GefKHQrc.png](https://cdn.varzy.me/legacy/2025/09/02/78UIjJ6GefKHQrc.png)
 
 如果需要换源，则打开 Docker Desktop → 设置 → Docker Engine，在 JSON 中添加以下内容：
 
@@ -185,7 +185,7 @@ yarn config set registry https://registry.npmmirror.com
 
 ### Windows Terminal 及配置
 
-![g2WrwHmeOilvLM1.png](https://cdn.sa.net/2025/09/02/g2WrwHmeOilvLM1.png)
+![g2WrwHmeOilvLM1.png](https://cdn.varzy.me/legacy/2025/09/02/g2WrwHmeOilvLM1.png)
 
 打开 Windows Terminal 的设置，与 VSCode 一样也是基于 JSON 格式的。
 
@@ -193,7 +193,7 @@ yarn config set registry https://registry.npmmirror.com
 - 可以在 `defaultProfile` 中修改 guid 设置默认的 profile
 - 在 `schemes` 中可以添加不同的主题配置，你可以在 [Windows Terminal Themes](https://windowsterminalthemes.dev/) 中找到千奇百怪的配色。添加配置后，可以在不同的 Profile 中添加 `colorScheme` 字段设置主题
 
-  ![TbGNZQarDf5tIi4.png](https://cdn.sa.net/2025/09/02/TbGNZQarDf5tIi4.png)
+  ![TbGNZQarDf5tIi4.png](https://cdn.varzy.me/legacy/2025/09/02/TbGNZQarDf5tIi4.png)
 
 ### WSLG (Preview)
 
@@ -205,7 +205,7 @@ WSLG 旨在让你在 Windows 系统中直接运行 Linux 子系统下的 GUI 应
 sudo apt install -y gedit
 ```
 
-![X3tcGDLZoV8sEmT.png](https://cdn.sa.net/2025/09/02/X3tcGDLZoV8sEmT.png)
+![X3tcGDLZoV8sEmT.png](https://cdn.varzy.me/legacy/2025/09/02/X3tcGDLZoV8sEmT.png)
 
 ### 微信开发者工具
 
@@ -235,20 +235,20 @@ Windows 早已自带 Defender 杀毒软件，使用得当的情况下实在没�
 
 Windows 10 就已经支持多桌面了，你可以在不同的桌面放置不同应用，达到多工作区的目的。比如我习惯把杂七杂八的生活娱乐软件都放在第一屏，而第二屏只放开发相关的窗口。
 
-![8LbfNciDtrVR4Y9.png](https://cdn.sa.net/2025/09/02/8LbfNciDtrVR4Y9.png)
+![8LbfNciDtrVR4Y9.png](https://cdn.varzy.me/legacy/2025/09/02/8LbfNciDtrVR4Y9.png)
 
 ### PowerToys
 
 PowerToys 是微软官方出品的工具集，有一大堆非常好用的小工具，比如自动取色、修改快捷键等功能。
 
-![etZ8l1gmJ3E2WPc.png](https://cdn.sa.net/2025/09/02/etZ8l1gmJ3E2WPc.png)
+![etZ8l1gmJ3E2WPc.png](https://cdn.varzy.me/legacy/2025/09/02/etZ8l1gmJ3E2WPc.png)
 
 而我主要想介绍其中的 FancyZones 和快捷键修改这两个功能。
 
 FancyZones 可以实现类似 Mac 上快速分屏软件 Magnet 的效果。比如我习惯在编程时把桌面分为两大块，左边放浏览器，右边放代码编辑器，各占五分之四左右的面积。这样我既可以获得足够大的使用面积，又可以只使用一次鼠标点击就在两个窗口间切换。
 
-![jSakxJACT25WKhG.png](https://cdn.sa.net/2025/09/02/jSakxJACT25WKhG.png)
+![jSakxJACT25WKhG.png](https://cdn.varzy.me/legacy/2025/09/02/jSakxJACT25WKhG.png)
 
 而快捷键切换功能呢，我其实也就自定义了两个快捷键。在 MacOS 下，我最喜欢的快捷键应该就是 ctrl + 1, 2, 3，它可以让我只用左右就快速切换不同的虚拟桌面。反观 Windows 这边，你需要同时按下 win + ctrl + 方向键左右才能实现虚拟桌面的切换，需要同时动用两只手，非常费劲。因此我把 win + ctrl + ⬅ 映射为了 ctrl + 1，把 win + ctrl + ➡ 映射为了 ctrl + 2，鉴于我平时在 Windows 上只会使用两个虚拟桌面，因此这样就可以模拟 Mac 下的虚拟桌面切换体验了。
 
-![i8jvWhuf765xNQR.png](https://cdn.sa.net/2025/09/02/i8jvWhuf765xNQR.png)
+![i8jvWhuf765xNQR.png](https://cdn.varzy.me/legacy/2025/09/02/i8jvWhuf765xNQR.png)

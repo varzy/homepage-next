@@ -7,8 +7,8 @@ tags: ['微信小程序']
 date: '2023-07-20'
 slug: 'miniprogram-join-group-button-style'
 summary: ''
-last_edited_time: '2026-08-14T17:02:00.000Z'
-last_fetched_time: '2026-08-14T17:07:54.173Z'
+last_edited_time: '2026-08-18T17:43:00.000Z'
+last_fetched_time: '2026-08-18T18:01:09.305Z'
 page_id: 'c6499b75-9fc3-4f8a-a138-80a670d53b32'
 icon: '🎊'
 ---
@@ -63,6 +63,6 @@ icon: '🎊'
 
 最终效果如下：
 
-![KpZBV9LNdYU5rJb.png](https://cdn.sa.net/2025/09/02/KpZBV9LNdYU5rJb.png)
+![KpZBV9LNdYU5rJb.png](https://cdn.varzy.me/legacy/2025/09/02/KpZBV9LNdYU5rJb.png)
 
 不过需要注意的是：**覆盖元素的尺寸和形状都不能与「加入群聊」的差距过大，毕竟我们本质上还是在点击「加入群聊」按钮本身。**

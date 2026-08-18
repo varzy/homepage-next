@@ -7,8 +7,8 @@ tags: ['Laravel', 'PHP']
 date: '2020-03-27'
 slug: 'lumen-use-redis'
 summary: ''
-last_edited_time: '2025-08-06T06:20:00.000Z'
-last_fetched_time: '2025-09-02T09:32:28.924Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:04:53.370Z'
 page_id: '66384cdd-8a06-4010-b9f5-82cb4e4215f5'
 icon: '📇'
 ---

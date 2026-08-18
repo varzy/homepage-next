@@ -7,8 +7,8 @@ tags: ['软件', '生产力']
 date: '2022-05-31'
 slug: 'how-to-make-ppt'
 summary: '不管做 PPT 是因为什么，总之希望同为打工人的你我一切顺利！🤗'
-last_edited_time: '2025-09-02T08:55:00.000Z'
-last_fetched_time: '2025-09-02T09:27:24.842Z'
+last_edited_time: '2026-08-18T17:45:00.000Z'
+last_fetched_time: '2026-08-18T18:01:44.604Z'
 page_id: '45fbf175-7b59-4884-8ed5-d071b86b7aed'
 icon: '👜'
 ---
@@ -31,7 +31,7 @@ icon: '👜'
 
 我个人习惯使用思维导图编写大纲。每个一级节点就是 PPT 里的每一节，而每个节点都是一个页面，非常清晰。
 
-![rwE7LcobVeiJOsF.png](https://cdn.sa.net/2024/03/16/rwE7LcobVeiJOsF.png)
+![rwE7LcobVeiJOsF.png](https://cdn.varzy.me/legacy/2024/03/16/rwE7LcobVeiJOsF.png)
 
 ## 3. **明确 PPT 风格**
 
@@ -68,25 +68,25 @@ PPT 模板网站多如牛毛，这里推荐两个我常用的：
 
 根据上一步选定的颜色，我们可以绘制出最基础的色块，比如下图最左侧的三个色块就是我选定的主色、副色和点缀色(好利来配色)，当然还可以结合渐变、边框、透明度等各种技巧得到更多样的选择。
 
-![dxQMnXTZjoWtJCe.png](https://cdn.sa.net/2024/03/16/dxQMnXTZjoWtJCe.png)
+![dxQMnXTZjoWtJCe.png](https://cdn.varzy.me/legacy/2024/03/16/dxQMnXTZjoWtJCe.png)
 
 我们可以任意拉伸、组合这些色块，像搭积木一样「拼」出一个个页面。
 
-![WFUgAMyGjlf9ncE.png](https://cdn.sa.net/2024/03/16/WFUgAMyGjlf9ncE.png)
+![WFUgAMyGjlf9ncE.png](https://cdn.varzy.me/legacy/2024/03/16/WFUgAMyGjlf9ncE.png)
 
 甚至是技术架构图也可以通过这些基础色块轻松实现。
 
-![qW8KSHBAuNp4Zjg.png](https://cdn.sa.net/2024/03/16/qW8KSHBAuNp4Zjg.png)
+![qW8KSHBAuNp4Zjg.png](https://cdn.varzy.me/legacy/2024/03/16/qW8KSHBAuNp4Zjg.png)
 
 **小标题**。通常放置在页面左上角，用来突出当前页在说什么。一个小技巧：可以从已经定好位置的页面复制小标题，再修改内容，这样标题的位置永远都是固定的。
 
 **页面点缀元素**。专门用来让页面更多美观的元素，可能几个简单的圆形和三角形有效提升页面的生气。
 
-![OU6LEHgtNYeSRZu.png](https://cdn.sa.net/2024/03/16/OU6LEHgtNYeSRZu.png)
+![OU6LEHgtNYeSRZu.png](https://cdn.varzy.me/legacy/2024/03/16/OU6LEHgtNYeSRZu.png)
 
 **目录页**。既可以用来凑页数，也可以把 PPT 明确分成几个小节。关于目录页可以多发挥一些想象力，尤其是内容死板的 PPT，可以通过目录页有效提升观感。
 
-![MWh8eZTNLX5k7yI.png](https://cdn.sa.net/2024/03/16/MWh8eZTNLX5k7yI.png)
+![MWh8eZTNLX5k7yI.png](https://cdn.varzy.me/legacy/2024/03/16/MWh8eZTNLX5k7yI.png)
 
 ## 5. 填充内容，突出重点
 

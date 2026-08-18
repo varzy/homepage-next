@@ -7,8 +7,8 @@ tags: ['我记得', '流水账']
 date: '2024-08-13'
 slug: 'old-photos'
 summary: '我不知道自己会不会还有孩子了，但如果有，我也一定会将这些回忆传承下去。'
-last_edited_time: '2025-10-07T14:00:00.000Z'
-last_fetched_time: '2025-10-07T14:02:55.919Z'
+last_edited_time: '2026-08-18T17:43:00.000Z'
+last_fetched_time: '2026-08-18T18:00:43.680Z'
 page_id: '2ca77267-9e9d-49d9-8f78-fb01adcd7a81'
 icon: '🏑'
 ---
@@ -27,37 +27,37 @@ icon: '🏑'
 
 把手机静置一晚，然后去「重复项目」里进行批量合并，最终我得到了 16293 张照片 + 5 个视频。
 
-![amSextsKVFr4dR3.jpg](https://cdn.sa.net/2024/08/13/amSextsKVFr4dR3.jpg)
+![amSextsKVFr4dR3.jpg](https://cdn.varzy.me/legacy/2024/08/13/amSextsKVFr4dR3.jpg)
 
 就如上面所言，很多照片的时间信息已经错乱，相册里最后的几张甚至被识别成了 2047 年的照片😨。但从我老奶奶(爷爷的妈妈)的黑白照片算起，到 16 年底的最后一批，我目测下来的时间跨度也有半个世纪那么久。其中有不少照片是此前的纸质照片扫描成的电子版，虽然画质低劣，但用作唤起回忆的钩子还是足够用了。
 
 弟弟出生在有数码相机的时代，所以他小时候的照片是最多的。他继承了老妈柔和的面相，小时候真是逆天颜值。
 
-![duD7w1I8gAQZ9pj.jpg](https://cdn.sa.net/2024/08/13/duD7w1I8gAQZ9pj.jpg)
+![duD7w1I8gAQZ9pj.jpg](https://cdn.varzy.me/legacy/2024/08/13/duD7w1I8gAQZ9pj.jpg)
 
 而那时候的软件或许也没多少发达，老爸早期所谓的 PS 也大都是给照片加个花哨的边框。
 
-![wznUQgvAFcYjieJ.jpg](https://cdn.sa.net/2024/08/13/wznUQgvAFcYjieJ.jpg)
+![wznUQgvAFcYjieJ.jpg](https://cdn.varzy.me/legacy/2024/08/13/wznUQgvAFcYjieJ.jpg)
 
 在我有记忆后不久老奶奶就过世了，我对她的印象早已模糊。这张照片我也是第一次见到。
 
-![LFkVBr3bcNKwA72.jpg](https://cdn.sa.net/2024/08/13/LFkVBr3bcNKwA72.jpg)
+![LFkVBr3bcNKwA72.jpg](https://cdn.varzy.me/legacy/2024/08/13/LFkVBr3bcNKwA72.jpg)
 
 这张照片里的木头桌子至今都在服役。
 
-![lqrgIGCoKH2t7La.jpg](https://cdn.sa.net/2024/08/13/lqrgIGCoKH2t7La.jpg)
+![lqrgIGCoKH2t7La.jpg](https://cdn.varzy.me/legacy/2024/08/13/lqrgIGCoKH2t7La.jpg)
 
 我究竟是从什么时候开始变得抗拒镜头的呢？明明小时候那么能凹造型。
 
-![8cry3KXeuS6CE2R.jpg](https://cdn.sa.net/2024/08/13/8cry3KXeuS6CE2R.jpg)
+![8cry3KXeuS6CE2R.jpg](https://cdn.varzy.me/legacy/2024/08/13/8cry3KXeuS6CE2R.jpg)
 
-![3QylYEohwdBRf6J.jpg](https://cdn.sa.net/2024/08/13/3QylYEohwdBRf6J.jpg)
+![3QylYEohwdBRf6J.jpg](https://cdn.varzy.me/legacy/2024/08/13/3QylYEohwdBRf6J.jpg)
 
-![ZRsJKLzNO92Tv7F.jpg](https://cdn.sa.net/2024/08/13/ZRsJKLzNO92Tv7F.jpg)
+![ZRsJKLzNO92Tv7F.jpg](https://cdn.varzy.me/legacy/2024/08/13/ZRsJKLzNO92Tv7F.jpg)
 
 每个男孩长大过程中多少都得沾点奥特曼😅
 
-![ncOX5ESaVIz9DJL.jpg](https://cdn.sa.net/2024/08/13/ncOX5ESaVIz9DJL.jpg)
+![ncOX5ESaVIz9DJL.jpg](https://cdn.varzy.me/legacy/2024/08/13/ncOX5ESaVIz9DJL.jpg)
 
 我甚至还找到了小时候自己穿裙子的照片🌚，算了，还是不放出来了。。。
 

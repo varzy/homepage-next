@@ -7,8 +7,8 @@ tags: ['游戏人生', '音乐', '精选']
 date: '2022-01-06'
 slug: 'hades-good-riddance'
 summary: '虽然不记得俄耳甫斯和欧律狄刻这两个复杂的人名字，可我一直对这段神话故事的印象非常深刻。'
-last_edited_time: '2025-09-02T07:51:00.000Z'
-last_fetched_time: '2025-09-02T09:27:59.097Z'
+last_edited_time: '2026-08-18T17:45:00.000Z'
+last_fetched_time: '2026-08-18T18:02:02.325Z'
 page_id: 'eaa803b6-85a8-4a39-9587-3c339ce4d2de'
 icon: '🥦'
 ---
@@ -17,11 +17,11 @@ icon: '🥦'
 
 Hades 是一款基于希腊神话背景的 Rouge Like 动作游戏，在国内被译为黑帝斯或哈迪斯，其实就是希腊神话里冥王的名字。Hades 曾获得 TGA 2020 年度最佳动作游戏奖，同时也获得了最佳游戏、玩家之声、最佳美术指导等诸多提名。我们需要扮演冥王哈迪斯的儿子扎格列欧斯，试图逃离冥府，路上则需要对抗各种怪物。每当我们失败就会重新回到冥府，用收集到的道具强化自己，努力让下一次征程走得更远，直至打败自己的老爹（父慈子孝行为）。
 
-![SbKrj9WyXAcEUsw.jpg](https://cdn.sa.net/2024/03/16/SbKrj9WyXAcEUsw.jpg)
+![SbKrj9WyXAcEUsw.jpg](https://cdn.varzy.me/legacy/2024/03/16/SbKrj9WyXAcEUsw.jpg)
 
 进入游戏，我们在冥王哈迪斯身边就会见到一个抱着竖琴的爆炸头，他就是我们的冥府乐师俄耳甫斯(Orpheus)。
 
-![N1bFgxwioJOWnEQ.jpg](https://cdn.sa.net/2024/03/16/N1bFgxwioJOWnEQ.jpg)
+![N1bFgxwioJOWnEQ.jpg](https://cdn.varzy.me/legacy/2024/03/16/N1bFgxwioJOWnEQ.jpg)
 
 相传，俄耳甫斯由阿波罗与卡利俄珀所生，音乐天资超凡入化。他的演奏让木石生悲、猛兽驯服。伊阿宋组织阿耳戈英雄远征，去涛汹地险的黑海王国寻取金羊毛，俄耳甫斯踊跃参加，在征途中用神乐压倒了塞壬的艳迷歌声，挽救了行将触礁的征船和战友。塞壬们沮丧不堪，纷纷投海自尽。
 
@@ -31,7 +31,7 @@ Hades 是一款基于希腊神话背景的 Rouge Like 动作游戏，在国内�
 
 在游戏里，随着扎格列欧斯一点点变强，我们终于可以打败命运三姐妹，进入游戏中的第二张大地图：水仙花平原。别看名字很美，实际上这张地图满是炙热的岩浆，纵使我们操作的冥府王子天生脚底冒火，站进去了也得嗷嗷掉血。我们清理了一个又一个满是怪物的房间，突然偶遇吟唱这首《Good Riddance》的西兰花头小姐姐，与她聊天便会给我们提供第二张地图里最强力的祝福。而她正是再次坠入冥界的欧律狄刻。
 
-![5vj24gikbPNtHGO.jpg](https://cdn.sa.net/2024/03/16/5vj24gikbPNtHGO.jpg)
+![5vj24gikbPNtHGO.jpg](https://cdn.varzy.me/legacy/2024/03/16/5vj24gikbPNtHGO.jpg)
 
 当我们见过欧律狄刻，重新死回冥府大厅后再次和俄耳甫斯聊天，扎格列欧斯就会劝他去见欧律狄刻，但俄耳甫斯却说自己因为那次回头而愧疚一生，难以释怀，即使死后到了冥界，也没脸去见远在水仙花平原的欧律狄刻。
 
@@ -39,7 +39,7 @@ Hades 是一款基于希腊神话背景的 Rouge Like 动作游戏，在国内�
 
 随着我们作为传话筒给双方带去的消息越来越多，终于有一天，大厅里的俄耳甫斯不见了。当我们再次踏上逃脱冥府的征程，在水仙花平原进入奖励房间时，发现俄耳甫斯已经来到了欧律狄刻身边，二人共同吟唱着二重奏版的[《Good Riddance》](https://music.163.com/song?id=1498591559)。
 
-![SmfFRKZvaDV58G3.jpg](https://cdn.sa.net/2024/03/16/SmfFRKZvaDV58G3.jpg)
+![SmfFRKZvaDV58G3.jpg](https://cdn.varzy.me/legacy/2024/03/16/SmfFRKZvaDV58G3.jpg)
 
 我非常喜欢 Hades 这款游戏。去年一年里我也累计游玩超过 34 小时，完成了众神团聚结局，也收集到了终极武器路西法。除了爽快的战斗，游戏的剧情和对神话的改编也非常引入入胜，通过与众神之间片段的对话也可以建立起非常立体而复杂的人物形象。
 

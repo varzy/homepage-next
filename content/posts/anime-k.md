@@ -7,8 +7,8 @@ tags: ['动画']
 date: '2022-05-11'
 slug: 'anime-k'
 summary: '我的中二病至今仍未痊愈，大概已经是终生顽疾了。'
-last_edited_time: '2025-08-06T06:16:00.000Z'
-last_fetched_time: '2025-09-02T09:27:33.698Z'
+last_edited_time: '2026-08-18T17:45:00.000Z'
+last_fetched_time: '2026-08-18T18:01:48.893Z'
 page_id: 'ae72fbe9-f112-4854-a090-3b741f35fd2f'
 icon: '⛱️'
 ---
@@ -19,7 +19,7 @@ icon: '⛱️'
 
 淡岛：「全员拔头！」牛郎团：「秋山拔头！」「手本拔头！」「道明寺拔头！」... 如果你不知道我在说什么，可以先看看这个视频：[【K】青组拔刀](https://www.bilibili.com/video/BV1Js41127Em?p=2)。
 
-![qHDPRBTCQNwO4zc.png](https://cdn.sa.net/2024/03/16/qHDPRBTCQNwO4zc.png)
+![qHDPRBTCQNwO4zc.png](https://cdn.varzy.me/legacy/2024/03/16/qHDPRBTCQNwO4zc.png)
 
 K 共有两季、一个剧场版以及一大堆广播剧等衍生作品，豆瓣评分都在 7.6 左右，但我个人都给出了五星的评分。首先声明我不是 Gay，毕竟后来官方都在疯狂卖腐🌚。以现在的眼光来看， K 那光污染一般的画面和分镜仍然别具一格，当然不得不说第二季和之后的新作《[Hand Shakers](https://movie.douban.com/subject/26754982/)》着实有些用力过猛。。。K 的音乐也绝对精彩，第一集开头的音乐《[Suoh MiKoto](https://music.163.com/song?id=27580971&userid=45403592)》更是一下子就抓住了我。我非常喜欢 K 的设定，至于故事讲得如何只能说是见仁见智了。
 

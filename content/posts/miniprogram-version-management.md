@@ -7,8 +7,8 @@ tags: ['微信小程序', 'Node.js', '工程化', 'CICD']
 date: '2021-03-12'
 slug: 'miniprogram-version-management'
 summary: ''
-last_edited_time: '2026-08-14T17:02:00.000Z'
-last_fetched_time: '2026-08-14T17:08:04.549Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:03:03.340Z'
 page_id: 'bd24e5bb-1a14-4947-b458-fbf4d902db35'
 icon: '🏓'
 ---

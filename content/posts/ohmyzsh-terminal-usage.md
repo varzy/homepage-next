@@ -7,8 +7,8 @@ tags: ['Terminal']
 date: '2021-11-27'
 slug: 'ohmyzsh-terminal-usage'
 summary: ''
-last_edited_time: '2025-09-02T07:52:00.000Z'
-last_fetched_time: '2025-09-02T09:28:24.442Z'
+last_edited_time: '2026-08-18T17:46:00.000Z'
+last_fetched_time: '2026-08-18T18:02:14.313Z'
 page_id: '332a9dfa-7231-40af-899e-43639847c192'
 icon: '🧨'
 ---
@@ -40,7 +40,7 @@ sh ./install-ohmyzsh.sh
 
 ohmyzsh 拥有千奇百怪的主题。你可以在 `~/.zshrc` 的 `ZSH_THEME=""` 这一行设置你喜欢的主题。
 
-![r9M16o32xTGOWwc.png](https://cdn.sa.net/2025/09/02/r9M16o32xTGOWwc.png)
+![r9M16o32xTGOWwc.png](https://cdn.varzy.me/legacy/2025/09/02/r9M16o32xTGOWwc.png)
 
 你可以在 ohmyzsh wiki 的 [themes 页面](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes)浏览全部自带主题。除此之外，Github 上还有非常多未被官方收录的民间主题，有一些确实花哨得夸张。。。
 
@@ -54,13 +54,13 @@ ohmyzsh 自带了很多插件，你可以在 ohmyzsh wiki 的 [plugins 页面](h
 
 如何启用插件？打开 `~/.zshrc`，找到 `plugins=(git)` 这一行，括号内填入插件名称并以空格分隔，保存文件后执行 `source ~/.zshrc` 即可看到效果。
 
-![Rbs1KpUT4gAzvI6.png](https://cdn.sa.net/2025/09/02/Rbs1KpUT4gAzvI6.png)
+![Rbs1KpUT4gAzvI6.png](https://cdn.varzy.me/legacy/2025/09/02/Rbs1KpUT4gAzvI6.png)
 
 ### z
 
 z 是一个 ohmyzsh 自带的插件，它可以记录你去过的所有文件夹，并提供快速跳转。使用时并不需要输入完整的路径，z 会自动进行联想，而且准确度相当高。
 
-![joKYNZIQHExfivV.png](https://cdn.sa.net/2025/09/02/joKYNZIQHExfivV.png)
+![joKYNZIQHExfivV.png](https://cdn.varzy.me/legacy/2025/09/02/joKYNZIQHExfivV.png)
 
 你可以直接在 `~/.zshrc` 中启用该插件：
 
@@ -86,7 +86,7 @@ plugins=(autojump)
 
 [https://github.com/zsh-users/zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) 插件可以提供一些自动补全建议。
 
-![a8Yzlfj9ZAptnR6.png](https://cdn.sa.net/2025/09/02/a8Yzlfj9ZAptnR6.png)
+![a8Yzlfj9ZAptnR6.png](https://cdn.varzy.me/legacy/2025/09/02/a8Yzlfj9ZAptnR6.png)
 
 使用 oh-my-zsh 插件方式安装，并在 `~/.zshrc` 中启用该插件：
 
@@ -102,7 +102,7 @@ plugins=(zsh-autosuggestions)
 
 [https://github.com/zsh-users/zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) 插件可以让命令高亮显示，如果出现语法错误会直接显示为红色。
 
-![Zd7wUB1u8g2czvV.png](https://cdn.sa.net/2025/09/02/Zd7wUB1u8g2czvV.png)
+![Zd7wUB1u8g2czvV.png](https://cdn.varzy.me/legacy/2025/09/02/Zd7wUB1u8g2czvV.png)
 
 使用 oh-my-zsh 插件方式安装，并在 `~/.zshrc` 中启用该插件：
 
@@ -128,7 +128,7 @@ plugins=(themes)
 
 [https://github.com/nvbn/thefuck](https://github.com/nvbn/thefuck) 是一个可以帮你快速纠错命令的工具，当你打错命令了，直接敲一个 fuck，它就会帮你快速纠正。
 
-![qzbJme6pdI8vsRo.png](https://cdn.sa.net/2025/09/02/qzbJme6pdI8vsRo.png)
+![qzbJme6pdI8vsRo.png](https://cdn.varzy.me/legacy/2025/09/02/qzbJme6pdI8vsRo.png)
 
 ```bash
 # macos 下安装

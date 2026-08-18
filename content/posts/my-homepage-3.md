@@ -7,8 +7,8 @@ tags: ['个人主页']
 date: '2026-05-28'
 slug: 'my-homepage-3'
 summary: '我希望我的网站是安静的，不喧嚣的，是简洁而不失条理的。'
-last_edited_time: '2026-08-14T16:49:00.000Z'
-last_fetched_time: '2026-08-14T16:57:19.811Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T17:59:52.812Z'
 page_id: '36edc9c0-364a-80cf-aadf-e6fccdd6d094'
 icon: '✉️'
 ---

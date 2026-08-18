@@ -7,8 +7,8 @@ tags: ['JavaScript', '八股文']
 date: '2020-04-07'
 slug: 'js-eventloop'
 summary: ''
-last_edited_time: '2025-09-02T07:55:00.000Z'
-last_fetched_time: '2025-09-02T09:30:23.684Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:03:39.161Z'
 page_id: '19432983-024c-4bda-b71d-1318eb406037'
 icon: '🥎'
 ---

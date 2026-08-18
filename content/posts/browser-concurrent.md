@@ -7,8 +7,8 @@ tags: ['浏览器', '八股文']
 date: '2020-04-03'
 slug: 'browser-concurrent'
 summary: ''
-last_edited_time: '2026-08-14T16:28:00.000Z'
-last_fetched_time: '2026-08-14T16:40:33.598Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:03:48.390Z'
 page_id: '778bf9c4-87cb-4953-acda-e13f8f24a144'
 icon: '📫'
 ---

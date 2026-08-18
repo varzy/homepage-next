@@ -7,8 +7,8 @@ tags: ['微信小程序', '工程化']
 date: '2021-01-22'
 slug: 'use-prettier-to-format-miniprogram'
 summary: ''
-last_edited_time: '2026-08-14T16:36:00.000Z'
-last_fetched_time: '2026-08-14T16:40:29.657Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:03:09.077Z'
 page_id: '5c815442-8abb-4500-8492-a6f8d4febe25'
 icon: '🏆'
 ---

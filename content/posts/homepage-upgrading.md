@@ -7,8 +7,8 @@ tags: ['Nextjs', '个人主页', 'Notion']
 date: '2025-08-06'
 slug: 'homepage-upgrading'
 summary: '一入 Next 深似海，从此迁移是路人。'
-last_edited_time: '2026-08-14T16:47:00.000Z'
-last_fetched_time: '2026-08-14T16:57:23.004Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:00:32.317Z'
 page_id: '247dc9c0-364a-806f-9561-fef372d1cbff'
 icon: '🕠'
 ---

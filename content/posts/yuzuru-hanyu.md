@@ -7,8 +7,8 @@ tags: ['随想', '流水账']
 date: '2021-08-23'
 slug: 'yuzuru-hanyu'
 summary: '“容颜如玉，身姿如松，翩若惊鸿，婉若游龙”。'
-last_edited_time: '2025-09-03T05:49:00.000Z'
-last_fetched_time: '2025-09-03T05:55:12.783Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:02:39.242Z'
 page_id: '7a5630b0-2880-46b4-a281-490c14b2f96d'
 icon: '🎹'
 ---

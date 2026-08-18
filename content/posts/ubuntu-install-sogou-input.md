@@ -7,8 +7,8 @@ tags: ['Linux']
 date: '2020-03-27'
 slug: 'ubuntu-install-sogou-input'
 summary: ''
-last_edited_time: '2026-08-14T17:03:00.000Z'
-last_fetched_time: '2026-08-14T17:08:12.137Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:04:37.861Z'
 page_id: 'd8e8999a-e83d-46b0-b242-7ddf5322046b'
 icon: '🤺'
 ---

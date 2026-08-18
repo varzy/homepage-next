@@ -7,8 +7,8 @@ tags: ['JavaScript', '八股文']
 date: '2020-05-11'
 slug: 'js-event-bubbling-and-delegation'
 summary: ''
-last_edited_time: '2026-08-14T17:01:00.000Z'
-last_fetched_time: '2026-08-14T17:08:09.626Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:03:25.336Z'
 page_id: '1b119ff4-ab59-424b-9831-b836ea4982c8'
 icon: '💷'
 ---

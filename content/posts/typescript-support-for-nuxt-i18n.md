@@ -7,8 +7,8 @@ tags: ['Nuxt', '工程化']
 date: '2025-09-03'
 slug: 'typescript-support-for-nuxt-i18n'
 summary: ''
-last_edited_time: '2026-08-14T16:35:00.000Z'
-last_fetched_time: '2026-08-14T16:39:59.827Z'
+last_edited_time: '2026-08-18T17:42:00.000Z'
+last_fetched_time: '2026-08-18T18:00:15.591Z'
 page_id: '263dc9c0-364a-80aa-b2ac-e71835a1ec39'
 icon: '🩰'
 ---
@@ -44,8 +44,8 @@ export default function () {
 
 Before:
 
-![RYIj2hLODyxeU4K.png](https://cdn.sa.net/2025/09/03/RYIj2hLODyxeU4K.png)
+![RYIj2hLODyxeU4K.png](https://cdn.varzy.me/legacy/2025/09/03/RYIj2hLODyxeU4K.png)
 
 After:
 
-![bkqPdySfjaROr9l.png](https://cdn.sa.net/2025/09/03/bkqPdySfjaROr9l.png)
+![bkqPdySfjaROr9l.png](https://cdn.varzy.me/legacy/2025/09/03/bkqPdySfjaROr9l.png)

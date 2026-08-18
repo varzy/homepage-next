@@ -7,8 +7,8 @@ tags: ['音乐', '音乐剧']
 date: '2022-11-17'
 slug: 'hamilton-musical'
 summary: '假如这篇文章能让你对这部剧，这些人，这段历史产生丝毫的兴趣，那我也算是别样的 Tell his story 了，我想，That would be enough。'
-last_edited_time: '2026-08-14T16:48:00.000Z'
-last_fetched_time: '2026-08-14T16:57:27.185Z'
+last_edited_time: '2026-08-18T17:45:00.000Z'
+last_fetched_time: '2026-08-18T18:01:33.873Z'
 page_id: '2b7bca57-7909-491c-b113-7231512caff7'
 icon: '💵'
 ---
@@ -21,7 +21,7 @@ icon: '💵'
 
 Hamilton 即美国国父之一 [Alexander Hamilton](https://zh.wikipedia.org/wiki/%E4%BA%9A%E5%8E%86%E5%B1%B1%E5%A4%A7%C2%B7%E6%B1%89%E5%AF%86%E5%B0%94%E9%A1%BF) (亚历山大·汉密尔顿)，他生于加勒比海某小岛上的无名家庭，十岁时父亲出走，十二岁时母亲重病身亡，后来被人收养并去往纽约学习。美国独立战争期间表现卓越，成为 George Washington (乔治·华盛顿) 的副手，深受信赖，华盛顿的很多稿件都是由 Ham 代笔的。美国建国后，华盛顿成为第一任总统，而 Ham 则受邀成为第一任财政部长。十美元上的人像就是他，所以他也被称为 The ten-dollar founding father，十美元国父。
 
-![IKxlZ5azjvD2Obs.jpg](https://cdn.sa.net/2024/03/16/IKxlZ5azjvD2Obs.jpg)
+![IKxlZ5azjvD2Obs.jpg](https://cdn.varzy.me/legacy/2024/03/16/IKxlZ5azjvD2Obs.jpg)
 
 ## Hamilton 这部剧
 
@@ -33,7 +33,7 @@ Hamilton 的作者是 [Lin-Manuel Miranda](https://en.wikipedia.org/wiki/Lin-Ma
 
 哦对了，作者 LMM 除了作词和编曲，还亲自饰演了剧中的 Alexander Hamilton 嗷～
 
-![d7nhc2fTGMy6EWH.jpg](https://cdn.sa.net/2024/03/16/d7nhc2fTGMy6EWH.jpg)
+![d7nhc2fTGMy6EWH.jpg](https://cdn.varzy.me/legacy/2024/03/16/d7nhc2fTGMy6EWH.jpg)
 
 ## [Helpless](https://music.163.com/song?id=35804608&userid=45403592)
 
@@ -48,7 +48,7 @@ Hamilton 的作者是 [Lin-Manuel Miranda](https://en.wikipedia.org/wiki/Lin-Ma
 
 快欣赏一下 Ham 求亲成功后的骚气舞姿。
 
-![UGsRj4qTc7fMWKI.jpg](https://cdn.sa.net/2024/03/16/UGsRj4qTc7fMWKI.jpg)
+![UGsRj4qTc7fMWKI.jpg](https://cdn.varzy.me/legacy/2024/03/16/UGsRj4qTc7fMWKI.jpg)
 
 Helpless 是我一个男孩子听了都会心跳加速的歌，歌名 Helpless 是个双关语，有一版翻译是“情迷意乱”，个人感觉非常信达雅。Eliza 每重复一次「I Do」和「Helpless」，那种坠入爱河时的粉红色少女心💓就强烈一分，直到婚礼进行曲时到达顶点。
 
@@ -60,7 +60,7 @@ Satisfied 是整部剧最精彩的一趴(没有)之一。这首曲子紧邻 Help
 
 Eliza 被 Ham 深邃的眼睛吸引，Angelica 又何尝不是呢。Ham 主动找上 Angelica，用近乎无礼的口吻说出 Angelica 就像他一样永远不会满足 (never be satisfied)，这非但没有让 Angelica 动怒，反而在三两分钟的试探中发现她终于遇到了一个与自己水平相当的男人，这种畅快感足以比拟富兰克林用风筝解开闪电的秘密。
 
-![MpAYLQueFRBIa7W.jpg](https://cdn.sa.net/2024/03/16/MpAYLQueFRBIa7W.jpg)
+![MpAYLQueFRBIa7W.jpg](https://cdn.varzy.me/legacy/2024/03/16/MpAYLQueFRBIa7W.jpg)
 
 如果说 Eliza 对 Ham 的一见钟情单纯是因为「在人群中多看了你一眼」，那么 Angelica 的心动则更多来自于灵魂层面。早在专辑第 5 曲「[The Schuyler Sisters](https://music.163.com/song?id=35804603&userid=45403592)」就展现出 Angelica 是个思想进步的女性，她敏锐察觉空气中的新思潮，也想要表达自己在政治和女权上的诉求，但当时的社会条件下并不允许自己站在时代的聚光灯下，所以大姐 never be satisfied。这首歌里大姐也吐露了自己的择偶标准：「I’m lookin’ for a mind at work」，直译是志在工作，如果发散一点，大概是希望对方胸怀抱负，能改变这个世界吧。
 
@@ -70,7 +70,7 @@ NO.1，Angelica 作为斯凯勒家族的长女，为了家族关系必须嫁给�
 
 Angelica 太聪明了，她知道自己和 Ham 并非不能，而是不合适，于是她穿过舞厅，把 Ham 带到了 Eliza 面前。时间再次回到婚礼现场，Angelica 举杯敬新娘，举杯敬新郎，举杯敬新人的无限未来，希望二人知足常乐 (be satisfied)。Angelica 的选择没有出错，却让她有可能后悔余生，她也只能自我安慰，至少 Eliza 是 Ham 的新娘了，至少她还有机会再看到 Ham 的眼睛。
 
-![DkfspTSOWil1jZ5.jpg](https://cdn.sa.net/2024/03/16/DkfspTSOWil1jZ5.jpg)
+![DkfspTSOWil1jZ5.jpg](https://cdn.varzy.me/legacy/2024/03/16/DkfspTSOWil1jZ5.jpg)
 
 虽然大姐和 Ham 没有在一起，但两人互相欣赏，之后也一直保持着通信和…暧昧的关系。这在「[Take a Break](https://music.163.com/song?id=35804624&userid=45403592)」一曲中也有所体现：
 
@@ -97,7 +97,7 @@ Eliza 希望 Ham 能「[Take a Break](https://music.163.com/song?id=35804624&use
 
 Eliza 回老家期间，Ham 开始和一个叫 [Maria Reynolds](https://en.wikipedia.org/wiki/Maria_Reynolds) (玛丽亚·雷诺兹) 的 23 岁女子有染。结果有一天 Maria 的丈夫 James Reynolds (詹姆斯·雷诺兹) 突然出现，要求 Ham 给他安排政府职位和金钱赔偿，还开心的表示只要给钱就能继续享用自己的“荡妇”。根据[维基百科](https://en.wikipedia.org/wiki/Hamilton%E2%80%93Reynolds_affair)的说法，对方多次勒索，Ham 还真就多次“享用”了，最终共支付了对方 1300 美金以上 (相当于 2021 年的 21000 美元)。此时再回想起 Helpless 中，岳父把 Eliza 交给 Ham 时对他唯一的要求：Be true，他也没有做到，最后那段对 Eliza 的告白也看得人糟心。
 
-![5x9rQwX3NkbseTq.jpg](https://cdn.sa.net/2024/03/16/5x9rQwX3NkbseTq.jpg)
+![5x9rQwX3NkbseTq.jpg](https://cdn.varzy.me/legacy/2024/03/16/5x9rQwX3NkbseTq.jpg)
 
 在原版卡司中，Maria 的演员身兼两角，前半部分饰演了斯凯勒三姐妹中的 Peggy，所以 Ham 某种意义上算是把斯凯勒三姐妹都给霍霍了🤡。这首歌和其他曲子的风格很不一样，旋律黏糊糊的，Maria 的演员也唱得无比妩媚，能让人感受到唇齿间的诱惑🫦，难以抗拒。她的红裙子也是整部剧中为数不多的亮眼色彩。
 
@@ -109,7 +109,7 @@ Eliza 回老家期间，Ham 开始和一个叫 [Maria Reynolds](https://en.wikip
 
 最骚的操作来了。Ham 亲自编写了一本小册子，把整件事的前因后果自曝了个清清楚楚，用来证明他政治生涯上的清白。你可以在这里找到小册子的[全文](https://founders.archives.gov/documents/Hamilton/01-21-02-0138-0002)。
 
-![HaZMuvLKlby8rmY.png](https://cdn.sa.net/2024/03/16/HaZMuvLKlby8rmY.png)
+![HaZMuvLKlby8rmY.png](https://cdn.varzy.me/legacy/2024/03/16/HaZMuvLKlby8rmY.png)
 
 这首歌也非常有特点，低沉的电子音+飘忽的非议和笑声，有一种醉生梦死的迷幻感，可能 Ham 当时就是这种精神状态吧。
 
@@ -121,7 +121,7 @@ Hamilton 这部剧里每个角色都有自己独特的旋律和关键词，比�
 
 第一次看剧时，我以为烧信也就象征性把纸扔桶里就完事了，没想到 Eliza 真的在舞台上把信纸点着了😱。后来了解到，剧组为了这个场景做了很多准备，还专门寻找了不易产生烟尘和碎屑的纸张，最后选择了相对最安全的方案。
 
-![SKl3BkXFIbJ1wU7.jpg](https://cdn.sa.net/2024/03/16/SKl3BkXFIbJ1wU7.jpg)
+![SKl3BkXFIbJ1wU7.jpg](https://cdn.varzy.me/legacy/2024/03/16/SKl3BkXFIbJ1wU7.jpg)
 
 你可能会发现我开头提过的最喜欢的曲子之一叫「[First Burn](https://music.163.com/song?id=555931206&userid=45403592)」而不是「Burn」。实际上 First Burn 是 Burn 的初版废案，相比最终版歌词和旋律都有所不同，这首歌于 18 年被重制，由五位饰演过 Eliza 的演员共同献唱，你可以在 [YouTube](https://www.youtube.com/watch?v=r2ys-AimNbE) 上观看 MV。
 
@@ -137,7 +137,7 @@ Philip 的离世对 Ham 和 Eliza 的打击也很大，他们选择举家搬去�
 
 Ham 请求 Eliza 的原谅，他宁愿用自己的命换 Philip 的命，他知道他们都需要时间来抚平伤痛，但如果能让他伴她左右，That would be enough。Eliza 原谅了 Ham，在花园中牵起了他的手，她知道二人需要相互扶持，走出阴霾。Forgiveness. Can you imagine?
 
-![NLnrojimB8Qlsk9.jpg](https://cdn.sa.net/2024/03/16/NLnrojimB8Qlsk9.jpg)
+![NLnrojimB8Qlsk9.jpg](https://cdn.varzy.me/legacy/2024/03/16/NLnrojimB8Qlsk9.jpg)
 
 这首歌里，Never be satisfied 的 Ham 终于第一次说出「That would be enough」。家庭终于不再是跳板，而是成为了归宿。
 
@@ -152,7 +152,7 @@ Ham 和 Jefferson 处处不和，但最终 Ham 却把选票投给了 Jefferson �
 > Hey! Best of wives and best of women!  
 > 嘿，你是最好的妻子，完美的女人
 
-![ekTSU3mOab8conM.jpg](https://cdn.sa.net/2024/03/16/ekTSU3mOab8conM.jpg)
+![ekTSU3mOab8conM.jpg](https://cdn.varzy.me/legacy/2024/03/16/ekTSU3mOab8conM.jpg)
 
 决斗当天，晨雾未散，两人背对，各走十步。Ham 就像 Philip 一样把手臂举向天空，Burr 的子弹击中了 Ham，Alexander Hamilton 于次日去世，享年 47 岁。
 
@@ -166,11 +166,11 @@ Eliza 贯穿了 Hamilton 这部剧，也贯穿了 Hamilton 的一生，她完全
 
 最后一曲「[Who Lives, Who Dies, Who Tells Your Story](https://music.163.com/song?id=35804644&userid=45403592)」，扮演 Alexander Hamilton 的作者 Lin-Manuel Miranda 重新走上舞台，握住 Eliza 的手，这一刻他不再是 Alexander Hamilton，而是 LMM 本人，是他们在一同诉说 Hamilton 的故事。
 
-![6ECVd9zyipgk5B1.jpg](https://cdn.sa.net/2024/03/16/6ECVd9zyipgk5B1.jpg)
+![6ECVd9zyipgk5B1.jpg](https://cdn.varzy.me/legacy/2024/03/16/6ECVd9zyipgk5B1.jpg)
 
 整部剧在 Eliza 微微抬头和一声啜泣声中结束，我相信这是因为她看到了观众，看到了百年后的今天，还有人愿意倾听他们的故事。
 
-![Dmbcrva6zi9ehf2.jpg](https://cdn.sa.net/2024/03/16/Dmbcrva6zi9ehf2.jpg)
+![Dmbcrva6zi9ehf2.jpg](https://cdn.varzy.me/legacy/2024/03/16/Dmbcrva6zi9ehf2.jpg)
 
 虽然本文的主题是「爱情」，但我也只是借这条比较好懂的明线来安利 Hamilton 这部剧。我在落笔时总会有种肚子里墨水不够的无力感，我的词藻并不足以展现这部剧的魅力。但假如这篇文章能让你对这部剧，这些人，这段历史产生丝毫的兴趣，那我也算是别样的 Tell his story 了，我想，That would be enough😊。
 

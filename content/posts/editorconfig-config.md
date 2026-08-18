@@ -7,8 +7,8 @@ tags: ['工程化']
 date: '2020-03-27'
 slug: 'editorconfig-config'
 summary: ''
-last_edited_time: '2026-08-14T17:02:00.000Z'
-last_fetched_time: '2026-08-14T17:08:19.129Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:05:02.432Z'
 page_id: 'b13f1dd7-a207-43c7-b6c2-bee6c469fe43'
 icon: '🚡'
 ---

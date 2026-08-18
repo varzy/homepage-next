@@ -7,8 +7,8 @@ tags: ['梦', '精选']
 date: '2024-05-19'
 slug: 'braid'
 summary: '他蜷缩着身子，翅膀被扯掉了一半，丑陋不堪。'
-last_edited_time: '2026-05-30T16:51:00.000Z'
-last_fetched_time: '2026-05-30T16:52:10.925Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:00:50.406Z'
 page_id: '73da2548-707d-4d4e-a505-54b6dd010321'
 icon: '🔓'
 ---

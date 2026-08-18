@@ -7,8 +7,8 @@ tags: ['微信小程序']
 date: '2021-03-18'
 slug: 'miniprogram-wxs-format-time'
 summary: ''
-last_edited_time: '2026-08-14T16:32:00.000Z'
-last_fetched_time: '2026-08-14T16:40:13.650Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:02:52.213Z'
 page_id: 'c1a9149b-9c3b-4034-9a64-81657b9c5818'
 icon: '⛴️'
 ---

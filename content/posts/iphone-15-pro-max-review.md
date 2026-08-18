@@ -7,8 +7,8 @@ tags: ['评测', 'Apple', '数码产品', '流水账']
 date: '2023-09-23'
 slug: 'iphone-15-pro-max-review'
 summary: '距离今年的攒钱目标又坚实得后退了一步呢'
-last_edited_time: '2025-09-03T06:04:00.000Z'
-last_fetched_time: '2025-09-03T06:05:45.553Z'
+last_edited_time: '2026-08-18T17:43:00.000Z'
+last_fetched_time: '2026-08-18T18:01:04.301Z'
 page_id: '6c254a86-acb8-4734-acda-b366569c781c'
 icon: '😊'
 ---
@@ -17,13 +17,13 @@ icon: '😊'
 
 其实我的 13 Pro 用起来是完全不卡的，但迫于最近入了星穹铁道的坑，13 Pro 的小屏幕和 128G 的存储空间属实有些捉襟见肘，再加上 15 这一代正好把我对 13 Pro 有所微词的几个痛点都给解决了，索性就换了帕。
 
-![U4VyGHBWte9EmpJ.jpg](https://cdn.sa.net/2024/03/16/U4VyGHBWte9EmpJ.jpg)
+![U4VyGHBWte9EmpJ.jpg](https://cdn.varzy.me/legacy/2024/03/16/U4VyGHBWte9EmpJ.jpg)
 
 ## 还是得排队
 
 我和同事晚上 7 点 45 到达了三里屯店，依旧是里三圈外三圈，最终在 8 点 20 左右拿到了各自的机器。每次去三里屯除了感叹自己是个土鳖，还是会觉得经济下行个屁，怕不是只有我的经济下行了。。。
 
-![4yBnS7AdpWLRVXb.jpg](https://cdn.sa.net/2024/03/16/4yBnS7AdpWLRVXb.jpg)
+![4yBnS7AdpWLRVXb.jpg](https://cdn.varzy.me/legacy/2024/03/16/4yBnS7AdpWLRVXb.jpg)
 
 店门口依旧站着一大票黄牛，有收的也有卖的。据说 22 号早上 Pro Max 热门机型能加价 1000 以上，而取完机器后随便拉了个黄牛问了下，当时的 Pro Max 也还是能加价 500 左右收🥲。
 
@@ -33,23 +33,23 @@ icon: '😊'
 
 每次去 Apple Store，不管买啥都要白嫖个做工好到逆天的纸袋子😅
 
-![MPZQJsxqar5i3FU.jpg](https://cdn.sa.net/2024/03/16/MPZQJsxqar5i3FU.jpg)
+![MPZQJsxqar5i3FU.jpg](https://cdn.varzy.me/legacy/2024/03/16/MPZQJsxqar5i3FU.jpg)
 
 全家福～ 对比 13 Pro 的白色，15 Pro Max 的白色会稍暖一些，反光更有一种金属光泽，是一种非常难以形容的颜色，还是蛮好看的。
 
-![eQYB76I2TzdbO9x.jpg](https://cdn.sa.net/2024/03/16/eQYB76I2TzdbO9x.jpg)
+![eQYB76I2TzdbO9x.jpg](https://cdn.varzy.me/legacy/2024/03/16/eQYB76I2TzdbO9x.jpg)
 
 TypeC！！！你让我好等啊 🫠
 
-![8BbgkjCt6JHfnol.jpg](https://cdn.sa.net/2024/03/16/8BbgkjCt6JHfnol.jpg)
+![8BbgkjCt6JHfnol.jpg](https://cdn.varzy.me/legacy/2024/03/16/8BbgkjCt6JHfnol.jpg)
 
 做工很好的编织线，但似乎比以前随机附送的线要短上不少。
 
-![bLzEi7qGFWM1UZQ.jpg](https://cdn.sa.net/2024/03/16/bLzEi7qGFWM1UZQ.jpg)
+![bLzEi7qGFWM1UZQ.jpg](https://cdn.varzy.me/legacy/2024/03/16/bLzEi7qGFWM1UZQ.jpg)
 
 保温杯工艺的边框 (不是)。发布会把钛金属吹成了花，但实际效果怎么样也只能等待时间的检验了。不过根据 13 Pro 裸奔两年之后的情况来看，苹果从 13 这一代引进的 PVD 涂层还是很有效的。
 
-![fSjqrPpHXln2NwW.jpg](https://cdn.sa.net/2024/03/16/fSjqrPpHXln2NwW.jpg)
+![fSjqrPpHXln2NwW.jpg](https://cdn.varzy.me/legacy/2024/03/16/fSjqrPpHXln2NwW.jpg)
 
 ## 玄学的「手感」
 
@@ -61,17 +61,17 @@ TypeC！！！你让我好等啊 🫠
 
 还有一个更玄学的原因是我是个大手用户，现在操作 Pro Max 机型时手指更加放得开了。或许从一开始就是 6.7 寸更适合我啊。
 
-![WuhZAP6IKGV5lk3.jpg](https://cdn.sa.net/2024/03/16/WuhZAP6IKGV5lk3.jpg)
+![WuhZAP6IKGV5lk3.jpg](https://cdn.varzy.me/legacy/2024/03/16/WuhZAP6IKGV5lk3.jpg)
 
 ## **灵动岛**
 
 无感，真无感，我不是说这玩意存在感低，而是我对这个功能着实一点都不感冒。目前唯一能稍微打动我的就是播放音乐时可以长按呼出音乐播放界面了，不用像以前一样需要下拉控制中心，再长按右上角的媒体组件了。
 
-![S41HaVp9s2vYMdw.jpg](https://cdn.sa.net/2024/03/16/S41HaVp9s2vYMdw.jpg)
+![S41HaVp9s2vYMdw.jpg](https://cdn.varzy.me/legacy/2024/03/16/S41HaVp9s2vYMdw.jpg)
 
 哦对了，在即刻里看长图时，灵动岛的特效还蛮有趣的😄
 
-![2ImQNTRzbkdDneh.jpg](https://cdn.sa.net/2024/03/16/2ImQNTRzbkdDneh.jpg)
+![2ImQNTRzbkdDneh.jpg](https://cdn.varzy.me/legacy/2024/03/16/2ImQNTRzbkdDneh.jpg)
 
 ## Action Button
 
@@ -85,17 +85,17 @@ TypeC！！！你让我好等啊 🫠
 
 15 Pro Max 独享的五倍长焦表现如何呢？我对着窗外随手拍了一张 1 倍的照片(等效 24mm 焦距)，接着切换到 5 倍拍下了第二张照片。
 
-![y9MqHnpOlWwGkz7.jpg](https://cdn.sa.net/2024/03/16/y9MqHnpOlWwGkz7.jpg)
+![y9MqHnpOlWwGkz7.jpg](https://cdn.varzy.me/legacy/2024/03/16/y9MqHnpOlWwGkz7.jpg)
 
-![2mZGIqQVv8z6ahO.jpg](https://cdn.sa.net/2024/03/16/2mZGIqQVv8z6ahO.jpg)
+![2mZGIqQVv8z6ahO.jpg](https://cdn.varzy.me/legacy/2024/03/16/2mZGIqQVv8z6ahO.jpg)
 
 就像影视飓风说的，五倍确实很吃光，在今天这种多云天气下，效果只能说得上一般吧，不过个人感觉，足够用了😂，毕竟除了音乐会，日常也没太多应用场景？当然，15 Pro Max 还支持更高 25 倍的数码变焦，但。。。
 
-![s4p1DoC2qhx3lzP.jpg](https://cdn.sa.net/2024/03/16/s4p1DoC2qhx3lzP.jpg)
+![s4p1DoC2qhx3lzP.jpg](https://cdn.varzy.me/legacy/2024/03/16/s4p1DoC2qhx3lzP.jpg)
 
 我最近常使用手机的「人像」模式，在面对大部分有纵深的场景时，它都能提供非常棒的虚化效果🤞
 
-![kmNybR8xaHz7Q5t.jpg](https://cdn.sa.net/2024/03/16/kmNybR8xaHz7Q5t.jpg)
+![kmNybR8xaHz7Q5t.jpg](https://cdn.varzy.me/legacy/2024/03/16/kmNybR8xaHz7Q5t.jpg)
 
 几年前，当我看到所有手机发布会都在用一半篇幅讲相机时，我总觉得无聊，觉得「方向错了」，但随着这几年我拍照越来越多，照片承载的回忆也越来越多，相机于我再也不是个简单的扫码工具了。如果相机的提升能带来更清晰的回忆，这笔投资就是值得的。
 

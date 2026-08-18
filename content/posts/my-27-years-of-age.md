@@ -7,8 +7,8 @@ tags: ['随想']
 date: '2023-03-31'
 slug: 'my-27-years-of-age'
 summary: '明天又是个周六，我已经准备再找个公园走一走了。'
-last_edited_time: '2025-09-02T08:54:00.000Z'
-last_fetched_time: '2025-09-02T09:26:42.846Z'
+last_edited_time: '2026-08-18T17:44:00.000Z'
+last_fetched_time: '2026-08-18T18:01:15.864Z'
 page_id: '4fe92f31-b090-4e9e-9ccc-c513b4d3eee7'
 icon: '💟'
 ---
@@ -19,7 +19,7 @@ icon: '💟'
 
 去年的年终总结里我久违地给自己定下了 2023 年的目标，后面又加上了徒步旅行和拔智齿这两项。现在 2023 眨眼就过去三分之一，虽然只完成了其中之一，但我好歹可以骄傲得划掉无线电这一项了。
 
-![TwjpntL8NoDkmPU.jpg](https://cdn.sa.net/2024/03/16/TwjpntL8NoDkmPU.jpg)
+![TwjpntL8NoDkmPU.jpg](https://cdn.varzy.me/legacy/2024/03/16/TwjpntL8NoDkmPU.jpg)
 
 抛开找女朋友这条过于随缘的，所有目标里最难的大概就是去日本旅行了吧。我在护照重新开放办理的一周后就去附近的派出所办理了护照，之后便是重新拾起了日语。我对自己的日语没什么太高的要求，也不要求自己非要考个 N2 N1 之类的证书，能保证自己在日本不迷路就差不多了吧。
 
@@ -33,7 +33,7 @@ icon: '💟'
 
 我宅太多年了，实在是缺乏运动，但我依旧接受不了在窝在屋子里跟着 Keep 蹦跶。我喜欢跑步，但北京没有跑步环境，于是我转为下班后沿着地铁线路暴走三四站再上车，或者到家后再出门快走一会。
 
-![Bm9qrgxw4XIC7Wl.jpg](https://cdn.sa.net/2024/03/16/Bm9qrgxw4XIC7Wl.jpg)
+![Bm9qrgxw4XIC7Wl.jpg](https://cdn.varzy.me/legacy/2024/03/16/Bm9qrgxw4XIC7Wl.jpg)
 
 结束了一天的工作安静地走一会路也很好，可以让自己想清楚很多事情。
 

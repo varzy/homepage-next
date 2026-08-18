@@ -7,8 +7,8 @@ tags: ['Docker', 'Laravel', 'PHP']
 date: '2021-03-14'
 slug: 'laradock-usage'
 summary: ''
-last_edited_time: '2025-09-02T07:53:00.000Z'
-last_fetched_time: '2025-09-02T09:29:28.426Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:02:57.285Z'
 page_id: 'e4bc02cb-799b-4efd-bb2f-0965bf16b66e'
 icon: '🏸'
 ---

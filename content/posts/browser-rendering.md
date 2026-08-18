@@ -7,8 +7,8 @@ tags: ['八股文', '浏览器', 'JavaScript']
 date: '2020-04-03'
 slug: 'browser-rendering'
 summary: ''
-last_edited_time: '2026-08-14T16:28:00.000Z'
-last_fetched_time: '2026-08-14T16:40:55.226Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:04:31.510Z'
 page_id: 'ad05ab17-ed47-45ca-87f8-b0387733f3b3'
 icon: '💉'
 ---

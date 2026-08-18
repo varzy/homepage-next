@@ -7,8 +7,8 @@ tags: ['Git']
 date: '2020-03-27'
 slug: 'gitconfig-alias'
 summary: ''
-last_edited_time: '2026-08-14T17:01:00.000Z'
-last_fetched_time: '2026-08-14T17:08:17.069Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:04:59.793Z'
 page_id: '6ea78241-dcff-4661-8fae-5a752ee0c9c8'
 icon: '🎀'
 ---

@@ -7,8 +7,8 @@ tags: ['微信小程序']
 date: '2021-01-28'
 slug: 'miniprogram-simple-router'
 summary: ''
-last_edited_time: '2026-08-14T16:32:00.000Z'
-last_fetched_time: '2026-08-14T16:40:26.910Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:03:06.581Z'
 page_id: '78d0d43e-be92-4e50-8b1b-2823d5c13d57'
 icon: '🥈'
 ---

@@ -7,8 +7,8 @@ tags: ['生产力', '小形迹', '精选']
 date: '2025-09-24'
 slug: 'my-trip-packing'
 summary: '持续优化自己的出行装备和工作流对我这种装备党 + J 人来说是个非常有趣的事情。'
-last_edited_time: '2025-10-02T14:29:00.000Z'
-last_fetched_time: '2025-10-02T15:49:48.443Z'
+last_edited_time: '2026-08-18T17:42:00.000Z'
+last_fetched_time: '2026-08-18T18:00:06.167Z'
 page_id: '264dc9c0-364a-80bf-8bd6-c6b09eb285f2'
 icon: '🪁'
 ---
@@ -17,11 +17,11 @@ icon: '🪁'
 
 我一向倾向于极简出行，只带旅途中一定会用到的东西，并且会尽力让自己在行程中空出双手，所以我很久没使用过行李箱了，绝大多数出行只会背一个双肩包。
 
-![2cXMpNhzVtYKaLr.jpg](https://cdn.sa.net/2025/09/24/2cXMpNhzVtYKaLr.jpg)
+![2cXMpNhzVtYKaLr.jpg](https://cdn.varzy.me/legacy/2025/09/24/2cXMpNhzVtYKaLr.jpg)
 
 先看一张爆炸图，这几乎是我所有的出行物品，一般不会带全，比如出差就不会带墨镜，回老家就不会带电脑。可以看到我用一个个小收纳包实现了模块化收纳，这样既可以保证装包时的整洁，又可以提升我换包的速度。按照功能区分，这几个模块分别是：EDC，PSK，洗护包，数码包，衣物包，文件袋。
 
-![FT2cwYO5oMAktdv.jpg](https://cdn.sa.net/2025/09/24/FT2cwYO5oMAktdv.jpg)
+![FT2cwYO5oMAktdv.jpg](https://cdn.varzy.me/legacy/2025/09/24/FT2cwYO5oMAktdv.jpg)
 
 ## EDC
 
@@ -29,15 +29,15 @@ EDC 即 Everyday Carry，原意是每天都要携带的物品。不过我总感�
 
 对我来说真正的 EDC 只有 6 件物品：**手机，Airpods Pro，Apple Watch，纸巾，烟，火机**。我的手机和耳机永远分别放在裤子的左右兜，Watch 在左手腕。剩下的三件小东西会用一个Muji 的「小双肩包」收纳，工作日会多放一张公司门禁卡，在外就再放张酒店的房卡。不管是北京市内日常通勤还是临时吃饭遛弯，把这个小包揣兜里就可以出门了。
 
-![ozt5vjdNU4Lufbh.jpg](https://cdn.sa.net/2025/09/24/ozt5vjdNU4Lufbh.jpg)
+![ozt5vjdNU4Lufbh.jpg](https://cdn.varzy.me/legacy/2025/09/24/ozt5vjdNU4Lufbh.jpg)
 
 而出行途中，我会把这个小包挂在双肩包的肩带上，如此一来不用卸包就可以快速嘬一根或者刷房卡进门。
 
-![nsxH4KluNO8dY7U.jpg](https://cdn.sa.net/2025/09/24/nsxH4KluNO8dY7U.jpg)
+![nsxH4KluNO8dY7U.jpg](https://cdn.varzy.me/legacy/2025/09/24/nsxH4KluNO8dY7U.jpg)
 
 除此以外，我也将一些旅途中可能随时取用的物品放到了 EDC 这个分类，比如：**钱包、口罩、充电宝、墨镜、护手霜、防晒霜……** 这些小物件就很灵活了，我一般会将它们放到背包的行政舱等便于拿取的位置。
 
-![Pp7M6IhgrbnDHi3.jpg](https://cdn.sa.net/2025/09/24/Pp7M6IhgrbnDHi3.jpg)
+![Pp7M6IhgrbnDHi3.jpg](https://cdn.varzy.me/legacy/2025/09/24/Pp7M6IhgrbnDHi3.jpg)
 
 这里多说一句钱包，我的钱包里只有身份证，少量现金和一张存款金额很小的银行卡。就如同不能把鸡蛋放到一个篮子里，我极不鼓励把所有证件一股脑塞到一个钱包里。
 
@@ -53,7 +53,7 @@ PSK 的全称是 Personal Survival Kit，本来是指存放一个人户外生存
 
 为了减小体积，我还会把大的胶囊板板剪成小板板。除了药品我还放了一些常用但出门在外不太好找的东西，包括一把指甲剪，几根棉签和牙线，以及备用的纸巾和香烟各一包。
 
-![Erq89KUgcAFG2V4.jpg](https://cdn.sa.net/2025/09/24/Erq89KUgcAFG2V4.jpg)
+![Erq89KUgcAFG2V4.jpg](https://cdn.varzy.me/legacy/2025/09/24/Erq89KUgcAFG2V4.jpg)
 
 不管我去哪，只要背双肩包都会把这个 PSK 小包放进去。出差途中这个小包不止一次帮助到了塞牙的我，发烧的同事，以及高铁上过敏的大哥🥺。
 
@@ -61,7 +61,7 @@ PSK 的全称是 Personal Survival Kit，本来是指存放一个人户外生存
 
 洗护包是 Muji 的一个笔袋。我其实是个挺糙的人，并不太介意使用酒店的物品，再加上出差一般只会选择华住等住宿体验相对标准的酒店，所以我带的洗护用品并不多，基本只有电动牙刷、洗面奶、剃须刀、润肤霜，耳塞，还有一根皮筋。我这种中长发平时在家里都带发箍，外出在酒店没发箍就只能把头发绑起来了🤣。
 
-![t1C5P2qAVdOo4z3.jpg](https://cdn.sa.net/2025/09/24/t1C5P2qAVdOo4z3.jpg)
+![t1C5P2qAVdOo4z3.jpg](https://cdn.varzy.me/legacy/2025/09/24/t1C5P2qAVdOo4z3.jpg)
 
 ## 数码包
 
@@ -69,7 +69,7 @@ PSK 的全称是 Personal Survival Kit，本来是指存放一个人户外生存
 
 除此以外我还会常备一个读卡器和一个 U 盘。
 
-![BOuwQylRgLZE7i9.jpg](https://cdn.sa.net/2025/09/24/BOuwQylRgLZE7i9.jpg)
+![BOuwQylRgLZE7i9.jpg](https://cdn.varzy.me/legacy/2025/09/24/BOuwQylRgLZE7i9.jpg)
 
 ## 衣物包
 
@@ -81,7 +81,7 @@ PSK 的全称是 Personal Survival Kit，本来是指存放一个人户外生存
 
 我的衣物包来自招商银行积分换的一套收纳包，只用到了其中一个中号袋子，春夏秋一般是塞不满的。我一般还会往这个袋子里塞几个保鲜袋，装一些到家再洗的 smelly clothes🌚。
 
-![opmk3gvBZzyYd2E.jpg](https://cdn.sa.net/2025/09/24/opmk3gvBZzyYd2E.jpg)
+![opmk3gvBZzyYd2E.jpg](https://cdn.varzy.me/legacy/2025/09/24/opmk3gvBZzyYd2E.jpg)
 
 ## 文件袋
 
@@ -89,7 +89,7 @@ PSK 的全称是 Personal Survival Kit，本来是指存放一个人户外生存
 
 这个文件袋永远放在背包主仓贴身的一侧，即使出去玩我也会背着，不会把它放到酒店。
 
-![Ye2bkErRqj5uUno.jpg](https://cdn.sa.net/2025/09/24/Ye2bkErRqj5uUno.jpg)
+![Ye2bkErRqj5uUno.jpg](https://cdn.varzy.me/legacy/2025/09/24/Ye2bkErRqj5uUno.jpg)
 
 ## 其他物件
 
@@ -99,7 +99,7 @@ PSK 的全称是 Personal Survival Kit，本来是指存放一个人户外生存
 
 相机包来自 Muji 的「珍藏品收纳包」，放我的 X100VI 刚刚好。我拍照不会特别多，因此一般不带相机充电器，只会带一到两块电池，平时就插线直充。把电池也放这个包里好处是过机场安检时只需要把这个包一整个掏出来就行了。
 
-![wvtDk1MHLKOd4z8.jpg](https://cdn.sa.net/2025/09/24/wvtDk1MHLKOd4z8.jpg)
+![wvtDk1MHLKOd4z8.jpg](https://cdn.varzy.me/legacy/2025/09/24/wvtDk1MHLKOd4z8.jpg)
 
 💧 **防水袋**
 
@@ -119,6 +119,6 @@ PSK 的全称是 Personal Survival Kit，本来是指存放一个人户外生存
 
 不过即便如此北面的容量对我来说也足够了，大多数出行我都背的是北面这支包。我最极限的一次用它装下了以上所有物品后还塞进去了出差需要的各种设备，包括两台 minipc、充电器和一大堆线缆。虽然这时候已经不太背得动就是了🌚。
 
-![dGYIFJSxRPEvkt6.jpg](https://cdn.sa.net/2025/09/24/dGYIFJSxRPEvkt6.jpg)
+![dGYIFJSxRPEvkt6.jpg](https://cdn.varzy.me/legacy/2025/09/24/dGYIFJSxRPEvkt6.jpg)
 
 小鹰的背包属于户外包，两侧的腰封在长时间走路、背大重量物品时能大幅分担肩膀的压力。我平时很少背这款包，毕竟有腰封的包在城市场景里还是有点怪怪的，不过上次回老家因为工作原因背了台巨重的 Pro Art 16，体验非常好～

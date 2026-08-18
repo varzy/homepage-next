@@ -3,8 +3,8 @@ page_id: '2efdc9c0-364a-8077-9c62-e5c2e4ef1889'
 title: 'Friends'
 slug: 'friends'
 status: 'Published'
-last_edited_time: '2026-08-17T17:36:00.000Z'
-last_fetched_time: '2026-08-17T17:36:47.894Z'
+last_edited_time: '2026-08-18T01:09:00.000Z'
+last_fetched_time: '2026-08-18T02:10:54.667Z'
 ---
 
 # 往来
@@ -47,3 +47,4 @@ avatar: https://i.see.you/2026/08/17/6Ovi/avatar.png
 - [东涂西话](https://www.fongap.com/)
 - [重生云](https://xiaochopin.github.io/)
 - [映屿](https://blog.verdant.ee/)
+- [SEISAMUSE](https://www.seis-jun.xyz/)

@@ -3,8 +3,8 @@ page_id: '372dc9c0-364a-80f3-9b8a-e7cf3c61d44d'
 title: 'Gear'
 slug: 'gear'
 status: 'Published'
-last_edited_time: '2026-08-17T16:50:00.000Z'
-last_fetched_time: '2026-08-17T17:10:53.784Z'
+last_edited_time: '2026-08-18T00:56:00.000Z'
+last_fetched_time: '2026-08-18T02:10:53.448Z'
 ---
 
 # 器用
@@ -73,9 +73,9 @@ last_fetched_time: '2026-08-17T17:10:53.784Z'
 
 Coding
 
-- **VSCode** + **Claude Code Extension** + [**Catppuccin Theme**](https://catppuccin.com/)
+- **VSCode** + **Claude Code Extension** + **Catppuccin Theme**
 - [**Maple Mono NF CN**](https://font.subf.dev/)
-- **iTerm** + [**Dracula Theme**](https://draculatheme.com/iterm)
+- **iTerm** + **Dracula Theme**
 - **CC Switch** + [**Zenmux.ai**](https://zenmux.ai/)
 
 CLI

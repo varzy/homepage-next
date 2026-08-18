@@ -88,6 +88,21 @@ export function legacyPublicUrl(seeUrl: string): string {
   return `${getR2PublicDomain()}/${legacyKeyFromSeeUrl(seeUrl)}`;
 }
 
+const R2_HOST_RE = /varzy\.me/;
+
+/**
+ * 从公开 URL 取 R2 对象 key（剥 host，去前导斜杠）；非 varzy.me 域返回 null。
+ * 域名无关（cdn/img 均可），供引用集与 orphan 比对，避免多域误判。
+ */
+export function r2KeyFromUrl(url: string | null): string | null {
+  if (!url || !R2_HOST_RE.test(url)) return null;
+  try {
+    return new URL(url).pathname.replace(/^\/+/, '');
+  } catch {
+    return null;
+  }
+}
+
 /**
  * 从 Notion file/external 条目（page.cover / page.icon / files 属性条目）取 URL。
  * 复用 cleanup-r2-orphans.ts 的 fileEntryUrl 范式。

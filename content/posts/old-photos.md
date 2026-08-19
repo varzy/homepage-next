@@ -3,12 +3,12 @@ title: '老照片'
 category: 'Nichijou'
 type: 'Post'
 status: 'Published'
-tags: ['我记得', '流水账']
+tags: ['我记得', '流水账', '精选']
 date: '2024-08-13'
 slug: 'old-photos'
 summary: '我不知道自己会不会还有孩子了，但如果有，我也一定会将这些回忆传承下去。'
-last_edited_time: '2026-08-18T17:43:00.000Z'
-last_fetched_time: '2026-08-18T18:00:43.680Z'
+last_edited_time: '2026-08-19T12:20:00.000Z'
+last_fetched_time: '2026-08-19T12:49:47.174Z'
 page_id: '2ca77267-9e9d-49d9-8f78-fb01adcd7a81'
 icon: '🏑'
 ---

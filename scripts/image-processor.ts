@@ -1,8 +1,6 @@
 import { Client } from '@notionhq/client';
 import { BlockObjectResponse, PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
-import { createImageUploader, generateFileName, stableFileNameFromUrl } from './image-uploader';
-import type { ImageUploader } from './image-uploader';
-import { isSmmsUrl } from './smms-uploader';
+import { isR2Url, r2ImageUploader, type R2ImageUploader } from './r2-uploader';
 
 export interface ImageProcessingStats {
   total: number;
@@ -14,22 +12,19 @@ export interface ImageProcessingStats {
 export class NotionImageProcessor {
   private notion: Client;
   private imagePrefix: string;
-  private uploader: ImageUploader;
+  private uploader: R2ImageUploader;
 
   constructor(notionApiSecret: string, imagePrefix: string = 'blog') {
     this.notion = new Client({ auth: notionApiSecret });
     this.imagePrefix = imagePrefix;
-    this.uploader = createImageUploader();
+    this.uploader = r2ImageUploader();
   }
 
   /**
-   * 处理页面中的所有图片，将 Notion 托管的图片和未托管的外部图片上传到当前图床
+   * 处理页面中的所有图片：Notion 托管图片与未托管的外链图片均下载并上传到 R2，
+   * 随后回写 Notion 块。已托管在 R2 的外链跳过，故可安全重复执行。
    */
-  async processPageImages(
-    pageId: string,
-    slug: string,
-    migrate = false,
-  ): Promise<ImageProcessingStats> {
+  async processPageImages(pageId: string, slug: string): Promise<ImageProcessingStats> {
     console.log(`📷 Processing images for page: ${slug}`);
 
     const stats: ImageProcessingStats = {
@@ -40,7 +35,7 @@ export class NotionImageProcessor {
     };
 
     try {
-      await this.processBlocks(pageId, slug, stats, migrate, pageId);
+      await this.processBlocks(pageId, stats, pageId);
 
       console.log(`📷 Image processing completed for ${slug}:`);
       console.log(
@@ -55,22 +50,12 @@ export class NotionImageProcessor {
   }
 
   /**
-   * 迁移模式：仅处理 s.ee（SMMS）外链图片，下载并上传到当前图床（R2）后回写 Notion。
-   * 已迁移为 R2 链接的图片会被跳过，因此可安全重复执行。
-   */
-  async migratePageImages(pageId: string, slug: string): Promise<ImageProcessingStats> {
-    return this.processPageImages(pageId, slug, true);
-  }
-
-  /**
    * 递归处理所有块
    */
   private async processBlocks(
     blockId: string,
-    slug: string,
     stats: ImageProcessingStats,
-    migrate: boolean = false,
-    pageId: string = '',
+    pageId: string,
     startCursor?: string,
   ): Promise<void> {
     try {
@@ -84,18 +69,18 @@ export class NotionImageProcessor {
       for (const block of blocks) {
         if (block.type === 'image') {
           stats.total++;
-          await this.processImageBlock(block, slug, stats, migrate, pageId);
+          await this.processImageBlock(block, stats, pageId);
         }
 
         // 递归处理子块
         if (block.has_children) {
-          await this.processBlocks(block.id, slug, stats, migrate, pageId);
+          await this.processBlocks(block.id, stats, pageId);
         }
       }
 
       // 处理分页
       if (response.has_more && response.next_cursor) {
-        await this.processBlocks(blockId, slug, stats, migrate, pageId, response.next_cursor);
+        await this.processBlocks(blockId, stats, pageId, response.next_cursor);
       }
     } catch (error) {
       console.error(`❌ Error processing blocks for blockId ${blockId}:`, error);
@@ -108,10 +93,8 @@ export class NotionImageProcessor {
    */
   private async processImageBlock(
     block: BlockObjectResponse,
-    slug: string,
     stats: ImageProcessingStats,
-    migrate: boolean = false,
-    pageId: string = '',
+    pageId: string,
   ): Promise<void> {
     if (block.type !== 'image') return;
 
@@ -121,26 +104,19 @@ export class NotionImageProcessor {
       let needsUpload = false;
 
       if (imageBlock.type === 'file') {
-        // Notion 托管的图片：常规流程需上传；迁移流程只处理 s.ee 外链，跳过
+        // Notion 托管的图片：需上传
         imageUrl = imageBlock.file.url;
-        needsUpload = !migrate;
-        if (needsUpload) {
-          console.log(`🔄 Found Notion-hosted image: ${block.id}`);
-        }
+        needsUpload = true;
+        console.log(`🔄 Found Notion-hosted image: ${block.id}`);
       } else if (imageBlock.type === 'external') {
+        // 未托管在 R2 的外链：需上传；已托管则跳过
         imageUrl = imageBlock.external.url;
-        // 迁移流程：仅命中 s.ee 的链接；常规流程：未托管的外链
-        needsUpload = migrate ? isSmmsUrl(imageUrl) : !this.uploader.isHostedUrl(imageUrl);
-
-        if (needsUpload) {
-          console.log(
-            migrate
-              ? `🔄 Found SMMS image to migrate: ${imageUrl}`
-              : `🔄 Found external image (not yet hosted): ${imageUrl}`,
-          );
-        } else {
-          console.log(`✅ Image already hosted: ${imageUrl}`);
-        }
+        needsUpload = !isR2Url(imageUrl);
+        console.log(
+          needsUpload
+            ? `🔄 Found external image (not yet hosted): ${imageUrl}`
+            : `✅ Image already hosted: ${imageUrl}`,
+        );
       } else {
         stats.skipped++;
         return;
@@ -151,17 +127,10 @@ export class NotionImageProcessor {
         return;
       }
 
-      // 迁移流程使用基于完整链接哈希的「稳定且唯一」文件名（同链接→同 key 便于幂等跳过；
-      // 不同链接→不同 key，不会折叠），并带 prefix+pageId 兼顾可读与按页分组；
-      // 常规流程沿用带前缀/时间戳/块 id 的随机文件名
-      const fileName = migrate
-        ? stableFileNameFromUrl(imageUrl, this.imagePrefix, pageId)
-        : generateFileName(imageUrl, `${this.imagePrefix}_${slug}`, block.id);
-
+      // 内容寻址 key（public/{year}/{month}/{label}/{pageId}/{hash}.{ext}）由 uploader 内部组合，
+      // 同页同图自然幂等。
       try {
-        const uploadResult = migrate
-          ? await this.uploader.uploadExternalIdempotent(imageUrl, fileName)
-          : await this.uploader.uploadExternal(imageUrl, fileName);
+        const uploadResult = await this.uploader.uploadExternal(imageUrl, this.imagePrefix, pageId);
 
         // 更新 Notion 块
         await this.notion.blocks.update({
@@ -172,13 +141,15 @@ export class NotionImageProcessor {
         });
 
         stats.processed++;
-        console.log(`✅ Image uploaded and updated: ${fileName} -> ${uploadResult.url}`);
+        console.log(
+          `✅ Image uploaded and updated: ${uploadResult.fileName} -> ${uploadResult.url}`,
+        );
 
         // 添加延迟以避免频率限制
         await this.delay(100);
       } catch (uploadError) {
         stats.errors++;
-        console.error(`❌ Failed to process image ${fileName}:`, uploadError);
+        console.error(`❌ Failed to process image ${imageUrl}:`, uploadError);
 
         // 继续处理其他图片，不中断整个流程
       }
@@ -189,13 +160,10 @@ export class NotionImageProcessor {
   }
 
   /**
-   * 处理页面 property 中所有 files 类型字段，将未托管的图片上传到当前图床并更新 Notion 页面属性
+   * 处理页面 property 中所有 files 类型字段，将未托管的图片上传到 R2 并更新 Notion 页面属性。
+   * Notion 托管图片与未托管外链均上传；已托管在 R2 的跳过。
    */
-  async processPageFileProperties(
-    page: PageObjectResponse,
-    slug: string,
-    migrate: boolean = false,
-  ): Promise<PageObjectResponse> {
+  async processPageFileProperties(page: PageObjectResponse): Promise<PageObjectResponse> {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const updatedProperties: Record<string, any> = {};
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -218,22 +186,16 @@ export class NotionImageProcessor {
 
         if (file.type === 'file') {
           url = file.file.url;
-          needsUpload = !migrate;
-          if (needsUpload) {
-            console.log(`🔄 Found Notion-hosted property image in "${propName}": ${file.name}`);
-          }
+          needsUpload = true;
+          console.log(`🔄 Found Notion-hosted property image in "${propName}": ${file.name}`);
         } else if (file.type === 'external') {
           url = file.external.url;
-          needsUpload = migrate ? isSmmsUrl(url) : !this.uploader.isHostedUrl(url);
-          if (needsUpload) {
-            console.log(
-              migrate
-                ? `🔄 Found SMMS property image to migrate in "${propName}": ${url}`
-                : `🔄 Found external property image (not yet hosted) in "${propName}": ${url}`,
-            );
-          } else {
-            console.log(`✅ Property image already hosted in "${propName}"`);
-          }
+          needsUpload = !isR2Url(url);
+          console.log(
+            needsUpload
+              ? `🔄 Found external property image (not yet hosted) in "${propName}": ${url}`
+              : `✅ Property image already hosted in "${propName}"`,
+          );
         } else {
           newFiles.push(file);
           continue;
@@ -244,16 +206,11 @@ export class NotionImageProcessor {
           continue;
         }
 
-        const fileName = migrate
-          ? stableFileNameFromUrl(url, this.imagePrefix, page.id)
-          : generateFileName(url, `${this.imagePrefix}_${slug}`);
         try {
-          const result = migrate
-            ? await this.uploader.uploadExternalIdempotent(url, fileName)
-            : await this.uploader.uploadExternal(url, fileName);
+          const result = await this.uploader.uploadExternal(url, this.imagePrefix, page.id);
           newFiles.push({ type: 'external', name: file.name || '', external: { url: result.url } });
           anyUpdated = true;
-          console.log(`✅ Property image uploaded: ${fileName} -> ${result.url}`);
+          console.log(`✅ Property image uploaded: ${result.fileName} -> ${result.url}`);
         } catch (err) {
           console.warn(`⚠️ Failed to upload property image for "${propName}":`, err);
           newFiles.push(file);
@@ -277,16 +234,6 @@ export class NotionImageProcessor {
       ...page,
       properties: { ...page.properties, ...updatedProperties },
     };
-  }
-
-  /**
-   * 迁移模式：仅处理 page 中 files 类型属性里的 s.ee 外链图片。
-   */
-  async migratePageFileProperties(
-    page: PageObjectResponse,
-    slug: string,
-  ): Promise<PageObjectResponse> {
-    return this.processPageFileProperties(page, slug, true);
   }
 
   /**
@@ -316,13 +263,11 @@ export class NotionImageProcessor {
       for (const block of blocks) {
         if (block.type === 'image') {
           imageCount++;
-
           const imageBlock = block.image;
-          if (imageBlock.type === 'file') {
-            needsProcessing = true;
-          } else if (
-            imageBlock.type === 'external' &&
-            !this.uploader.isHostedUrl(imageBlock.external.url)
+          // Notion 托管图片需处理；外链仅在未托管于 R2 时需处理
+          if (
+            imageBlock.type === 'file' ||
+            (imageBlock.type === 'external' && !isR2Url(imageBlock.external.url))
           ) {
             needsProcessing = true;
           }

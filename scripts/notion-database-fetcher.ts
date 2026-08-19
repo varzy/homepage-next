@@ -14,7 +14,7 @@ export interface NotionFetcherConfig<T> {
   lastFetchedTimeProperty: string;
   /** 日志标签，如 "post"、"page"、"kotoba" */
   label: string;
-  /** SMMS 图片文件名前缀，如 "posts"、"pages"、"kotoba" */
+  /** 图片 key 中的库标识前缀，如 "posts"、"pages"、"kotoba" */
   imagePrefix: string;
 
   buildFilter(since?: Date): object;
@@ -204,11 +204,9 @@ export class NotionDatabaseFetcher<T> {
     const identifier = this.config.getConvertIdentifier(entry);
     const pageId = this.config.getPageId(entry);
 
-    // 处理 page property 中 files 类型的图片，上传到 SM.MS 并更新 Notion
+    // 处理 page property 中 files 类型的图片，上传到 R2 并更新 Notion
     const rawPage = (await this.notion.pages.retrieve({ page_id: pageId })) as PageObjectResponse;
-    const updatedPage = await this.converter
-      .getImageProcessor()
-      .processPageFileProperties(rawPage, identifier);
+    const updatedPage = await this.converter.getImageProcessor().processPageFileProperties(rawPage);
     const updatedEntry = this.config.extractMetadata(updatedPage);
 
     const { content, imageStats } = await this.converter.convertToMDX(pageId, identifier);

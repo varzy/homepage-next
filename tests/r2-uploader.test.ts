@@ -1,25 +1,85 @@
-import { describe, it, expect, beforeEach, afterEach } from 'vitest';
+import { createHash } from 'node:crypto';
+import { describe, it, expect, beforeEach } from 'vitest';
 import {
-  composeR2Key,
-  isR2Url,
+  composeNewImageKey,
+  extractExtension,
   getContentType,
   is404,
+  isR2Url,
   r2ImageUploader,
 } from '../scripts/r2-uploader';
 
 describe('scripts/r2-uploader.ts', () => {
+  describe('composeNewImageKey', () => {
+    const label = 'posts';
+    const pageId = '39adc9c0-364a-8080-b388-dcdc44f78d56';
+    const buffer = Buffer.from('some-image-bytes');
+    const ext = 'webp';
+
+    it('生成 public/{year}/{month}/{label}/{pageId}/{hash}.{ext} 结构', () => {
+      const key = composeNewImageKey(label, pageId, buffer, ext);
+      expect(key).toMatch(
+        new RegExp(`^public/\\d{4}/\\d{2}/${label}/${pageId}/[0-9a-f]{16}\\.webp$`),
+      );
+    });
+
+    it('同 buffer → 同 key（内容寻址，幂等）', () => {
+      expect(composeNewImageKey(label, pageId, buffer, ext)).toBe(
+        composeNewImageKey(label, pageId, buffer, ext),
+      );
+    });
+
+    it('不同 buffer → 不同 key（不折叠）', () => {
+      expect(composeNewImageKey(label, pageId, Buffer.from('a'), ext)).not.toBe(
+        composeNewImageKey(label, pageId, Buffer.from('b'), ext),
+      );
+    });
+
+    it('不同 pageId → 不同 key（按页分组，跨页不去重）', () => {
+      expect(composeNewImageKey(label, 'page-A', buffer, ext)).not.toBe(
+        composeNewImageKey(label, 'page-B', buffer, ext),
+      );
+    });
+
+    it('不同 label → 不同 key（按库分组）', () => {
+      expect(composeNewImageKey('posts', pageId, buffer, ext)).not.toBe(
+        composeNewImageKey('taste', pageId, buffer, ext),
+      );
+    });
+
+    it('保留传入扩展名', () => {
+      expect(composeNewImageKey(label, pageId, buffer, 'png')).toMatch(/\.png$/);
+      expect(composeNewImageKey(label, pageId, buffer, 'jpg')).toMatch(/\.jpg$/);
+    });
+
+    it('hash 为 sha1(buffer) 前 16 位', () => {
+      const expected = createHash('sha1').update(buffer).digest('hex').slice(0, 16);
+      expect(composeNewImageKey(label, pageId, buffer, ext).endsWith(`/${expected}.${ext}`)).toBe(
+        true,
+      );
+    });
+  });
+
+  describe('extractExtension', () => {
+    it('从 URL 末段提取小写扩展名', () => {
+      expect(extractExtension('https://a.com/x.jpg')).toBe('jpg');
+      expect(extractExtension('https://a.com/x.WEBP')).toBe('webp');
+      expect(extractExtension('https://a.com/path/to/img.png')).toBe('png');
+    });
+
+    it('无扩展名或非法 URL 回退 jpg', () => {
+      expect(extractExtension('https://a.com/noext')).toBe('jpg');
+      expect(extractExtension('not-a-url')).toBe('jpg');
+    });
+
+    it('过长的伪扩展名回退 jpg', () => {
+      expect(extractExtension('https://a.com/file.verylongext')).toBe('jpg');
+    });
+  });
+
   describe('isR2Url', () => {
-    beforeEach(() => {
-      process.env.R2_PUBLIC_DOMAIN = 'https://img.varzy.me';
-    });
-
-    it('匹配自定义域名返回 true', () => {
-      expect(isR2Url('https://img.varzy.me/blog_test_123.jpg')).toBe(true);
-    });
-
-    it('无协议的域名同样匹配', () => {
-      process.env.R2_PUBLIC_DOMAIN = 'img.varzy.me';
-      expect(isR2Url('https://img.varzy.me/x.jpg')).toBe(true);
+    it('R2 自定义域名返回 true', () => {
+      expect(isR2Url('https://cdn.varzy.me/blog_test_123.jpg')).toBe(true);
     });
 
     it('其他域名返回 false', () => {
@@ -27,13 +87,13 @@ describe('scripts/r2-uploader.ts', () => {
       expect(isR2Url('https://sm.ms/image/abc')).toBe(false);
     });
 
-    it('空字符串返回 false', () => {
-      expect(isR2Url('')).toBe(false);
+    it('仅 host 精确匹配才为 true（路径含域名片段不算）', () => {
+      expect(isR2Url('https://evil.com/cdn.varzy.me/x.jpg')).toBe(false);
     });
 
-    it('未配置 R2_PUBLIC_DOMAIN 时返回 false', () => {
-      delete process.env.R2_PUBLIC_DOMAIN;
-      expect(isR2Url('https://img.varzy.me/x.jpg')).toBe(false);
+    it('空字符串 / 非法 URL 返回 false', () => {
+      expect(isR2Url('')).toBe(false);
+      expect(isR2Url('not-a-url')).toBe(false);
     });
   });
 
@@ -67,65 +127,6 @@ describe('scripts/r2-uploader.ts', () => {
     });
   });
 
-  describe('R2ImageUploader.isHostedUrl（过渡期）', () => {
-    beforeEach(() => {
-      process.env.R2_PUBLIC_DOMAIN = 'https://img.varzy.me';
-      process.env.R2_ACCOUNT_ID = 'dummy-account';
-      process.env.R2_ACCESS_KEY_ID = 'dummy-key';
-      process.env.R2_SECRET_ACCESS_KEY = 'dummy-secret';
-      process.env.R2_BUCKET_NAME = 'dummy-bucket';
-    });
-
-    afterEach(() => {
-      delete process.env.R2_ACCOUNT_ID;
-      delete process.env.R2_ACCESS_KEY_ID;
-      delete process.env.R2_SECRET_ACCESS_KEY;
-      delete process.env.R2_BUCKET_NAME;
-    });
-
-    it('R2 链接视为已托管', () => {
-      const uploader = r2ImageUploader();
-      expect(uploader.isHostedUrl('https://img.varzy.me/blog_x_123.jpg')).toBe(true);
-    });
-
-    it('历史 SMMS 链接也视为已托管（避免重复上传）', () => {
-      const uploader = r2ImageUploader();
-      expect(uploader.isHostedUrl('https://sm.ms/image/abc123')).toBe(true);
-      expect(uploader.isHostedUrl('https://cdn.sa.net/images/abc.png')).toBe(true);
-    });
-
-    it('其他外部链接视为未托管', () => {
-      const uploader = r2ImageUploader();
-      expect(uploader.isHostedUrl('https://example.com/image.jpg')).toBe(false);
-    });
-  });
-
-  describe('composeR2Key', () => {
-    afterEach(() => {
-      delete process.env.R2_KEY_PREFIX;
-    });
-
-    it('默认前缀为 images', () => {
-      delete process.env.R2_KEY_PREFIX;
-      expect(composeR2Key('a.jpg')).toBe('images/a.jpg');
-    });
-
-    it('自定义前缀', () => {
-      process.env.R2_KEY_PREFIX = 'assets/img';
-      expect(composeR2Key('a.jpg')).toBe('assets/img/a.jpg');
-    });
-
-    it('清理前缀首尾斜杠', () => {
-      process.env.R2_KEY_PREFIX = '/images/';
-      expect(composeR2Key('a.jpg')).toBe('images/a.jpg');
-    });
-
-    it('空前缀时直接使用文件名', () => {
-      process.env.R2_KEY_PREFIX = '';
-      expect(composeR2Key('a.jpg')).toBe('a.jpg');
-    });
-  });
-
   describe('is404', () => {
     it('Cloudflare R2 的 NotFound 错误视为 404', () => {
       const err = { name: 'NotFound', $metadata: { httpStatusCode: 404 } };
@@ -155,6 +156,18 @@ describe('scripts/r2-uploader.ts', () => {
       expect(is404(null)).toBe(false);
       expect(is404(undefined)).toBe(false);
       expect(is404('string')).toBe(false);
+    });
+  });
+
+  describe('R2ImageUploader', () => {
+    beforeEach(() => {
+      delete process.env.R2_ACCOUNT_ID;
+      delete process.env.R2_ACCESS_KEY_ID;
+      delete process.env.R2_SECRET_ACCESS_KEY;
+    });
+
+    it('缺少必需 env 时构造抛错', () => {
+      expect(() => r2ImageUploader()).toThrow(/not fully configured/);
     });
   });
 });

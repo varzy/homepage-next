@@ -3,8 +3,8 @@
 import 'dotenv/config';
 import path from 'path';
 import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
-import { ensureImageUploaderConfigured } from './image-uploader';
 import { NotionDatabaseFetcher, NotionFetcherConfig } from './notion-database-fetcher';
+import { ensureImageUploaderConfigured } from './r2-uploader';
 import { PageMetadata, SyncMode } from './types';
 import {
   getTextProperty,

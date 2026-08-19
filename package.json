@@ -23,15 +23,7 @@
     "sync:kotoba": "tsx scripts/fetch-kotoba.ts -- --full-sync",
     "sync:taste": "tsx scripts/fetch-taste.ts -- --full-sync",
     "sync:pages": "tsx scripts/fetch-pages.ts -- --full-sync",
-    "sync:all": "pnpm run sync:posts && pnpm run sync:kotoba && pnpm run sync:taste && pnpm run sync:pages",
-    "migrate:preflight": "tsx scripts/preflight-check.ts",
-    "migrate:download": "tsx scripts/download-see-images.ts",
-    "migrate:upload": "tsx scripts/upload-legacy-to-r2.ts",
-    "migrate:rewrite": "tsx scripts/rewrite-notion-urls.ts",
-    "migrate:smms": "tsx scripts/migrate-smms-to-r2.ts",
-    "restore:notion": "tsx scripts/restore-notion-from-md.ts",
-    "verify:r2": "tsx scripts/verify-r2.ts",
-    "cleanup:r2": "tsx scripts/cleanup-r2-orphans.ts"
+    "sync:all": "pnpm run sync:posts && pnpm run sync:kotoba && pnpm run sync:taste && pnpm run sync:pages"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1112.0",

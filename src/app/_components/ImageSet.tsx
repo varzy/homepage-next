@@ -38,7 +38,7 @@ interface ImageSetProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   sizes?: string;
 }
 
-export default function ImageSet({ src, sizes, loading = 'lazy', ...rest }: ImageSetProps) {
+export default function ImageSet({ src, sizes, ...rest }: ImageSetProps) {
   const finalSizes = sizes ?? DEFAULT_SIZES;
   // 非 CDN 图只返回原始 src（不附带 srcset/sizes）
   const imgProps = isCdnImage(src)
@@ -49,5 +49,5 @@ export default function ImageSet({ src, sizes, loading = 'lazy', ...rest }: Imag
       }
     : { src };
 
-  return <img {...rest} {...imgProps} loading={loading} />;
+  return <img {...rest} {...imgProps} />;
 }

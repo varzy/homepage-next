@@ -3,8 +3,8 @@ page_id: '263dc9c0-364a-8032-9368-cc0f8f18d4e9'
 title: 'Readme'
 slug: 'readme'
 status: 'Published'
-last_edited_time: '2026-08-17T17:43:00.000Z'
-last_fetched_time: '2026-08-17T17:48:53.560Z'
+last_edited_time: '2026-08-19T03:17:00.000Z'
+last_fetched_time: '2026-08-19T04:02:54.820Z'
 ---
 
 ## 我
@@ -21,7 +21,7 @@ ACG 爱好者，在等 GTA6。半个极客，喜欢捣鼓软件和数码产品�
 
 「贼歪」即 ZY，是我名字首字母的音译，域名的含义是 `var zy = me`。
 
-网站由 Next.js 驱动，Vercel 部署，Notion 作为 CMS，图片托管于 [s.ee](http://s.ee/)，并使用 [giscus](https://giscus.app/) 作为评论系统。网站主题由本人设计。没有在国内备案的计划。
+网站由 Next.js 驱动，Vercel 部署，Notion 作为 CMS，图片托管于 Cloudfalre R2，并使用 giscus 作为评论系统。网站主题由本人设计。没有在国内备案的计划。
 
 代码已开源：[varzy/homepage-next](https://github.com/varzy/homepage-next)。
 

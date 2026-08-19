@@ -1,7 +1,5 @@
 import path from 'path';
-import { glob } from 'glob';
-import matter from 'gray-matter';
-import { CacheManager, FileUtils } from './content-utils';
+import { CacheManager, FileUtils, listMarkdownFiles } from './content-utils';
 
 const TASTE_DIR = path.join(process.cwd(), 'content/taste');
 
@@ -61,26 +59,16 @@ export async function getAllTasteItemsWithContent(): Promise<TasteItemWithConten
     return [];
   }
 
-  const pattern = path.join(TASTE_DIR, '*.md');
-  const files = await glob(pattern);
+  const files = await listMarkdownFiles(TASTE_DIR);
 
   const items = files
     .map((filePath) => {
-      const fileContent = FileUtils.readFileSync(filePath);
-      if (!fileContent) return null;
+      const parsed = FileUtils.parseFrontmatter<TasteFrontmatterData>(filePath);
+      if (!parsed) return null;
 
-      try {
-        const { data, content } = matter(fileContent) as {
-          data: TasteFrontmatterData;
-          content: string;
-        };
-        const meta = buildTasteItem(data);
-        if (!meta.page_id) return null;
-        return { ...meta, content: content.trim() };
-      } catch (error) {
-        console.error(`Error parsing taste file ${filePath}:`, error);
-        return null;
-      }
+      const meta = buildTasteItem(parsed.data);
+      if (!meta.page_id) return null;
+      return { ...meta, content: parsed.content.trim() };
     })
     .filter((item): item is TasteItemWithContent => item !== null);
 

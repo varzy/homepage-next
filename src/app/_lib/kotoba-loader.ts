@@ -1,7 +1,11 @@
 import path from 'path';
-import { glob } from 'glob';
-import matter from 'gray-matter';
-import { CacheManager, FileUtils } from './content-utils';
+import {
+  CacheManager,
+  FileUtils,
+  collectTags,
+  filterByTag,
+  listMarkdownFiles,
+} from './content-utils';
 
 const KOTOBA_DIR = path.join(process.cwd(), 'content/kotoba');
 
@@ -59,8 +63,7 @@ export async function getAllKotobaPosts(): Promise<KotobaPost[]> {
     return [];
   }
 
-  const pattern = path.join(KOTOBA_DIR, '*.md');
-  const files = await glob(pattern);
+  const files = await listMarkdownFiles(KOTOBA_DIR);
 
   const posts = files
     .map((filePath) => {
@@ -81,25 +84,13 @@ export async function getAllKotobaPostsWithContent(): Promise<KotobaPostWithCont
 
   if (!FileUtils.dirExists(KOTOBA_DIR)) return [];
 
-  const pattern = path.join(KOTOBA_DIR, '*.md');
-  const files = await glob(pattern);
+  const files = await listMarkdownFiles(KOTOBA_DIR);
 
   const posts = files
     .map((filePath) => {
-      const fileContent = FileUtils.readFileSync(filePath);
-      if (!fileContent) return null;
-
-      try {
-        const { data, content } = matter(fileContent) as {
-          data: KotobaFrontmatterData;
-          content: string;
-        };
-        const meta = buildKotobaMeta(data);
-        return { ...meta, content };
-      } catch (error) {
-        console.error(`Error parsing kotoba file ${filePath}:`, error);
-        return null;
-      }
+      const parsed = FileUtils.parseFrontmatter<KotobaFrontmatterData>(filePath);
+      if (!parsed) return null;
+      return { ...buildKotobaMeta(parsed.data), content: parsed.content };
     })
     .filter((p): p is KotobaPostWithContent => p !== null && p.page_id !== '')
     .sort((a, b) => new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime());
@@ -109,20 +100,15 @@ export async function getAllKotobaPostsWithContent(): Promise<KotobaPostWithCont
 }
 
 export async function getKotobaPostsByTag(tag: string): Promise<KotobaPost[]> {
-  const posts = await getAllKotobaPosts();
-  return posts.filter((p) => p.tags.includes(tag));
+  return filterByTag(await getAllKotobaPosts(), tag);
 }
 
 export async function getKotobaPostsWithContentByTag(
   tag: string,
 ): Promise<KotobaPostWithContent[]> {
-  const all = await getAllKotobaPostsWithContent();
-  return all.filter((p) => p.tags.includes(tag));
+  return filterByTag(await getAllKotobaPostsWithContent(), tag);
 }
 
 export async function getAllKotobaTags(): Promise<string[]> {
-  const posts = await getAllKotobaPosts();
-  const tagSet = new Set<string>();
-  posts.forEach((p) => p.tags.forEach((tag) => tagSet.add(tag)));
-  return Array.from(tagSet).sort();
+  return collectTags(await getAllKotobaPosts());
 }

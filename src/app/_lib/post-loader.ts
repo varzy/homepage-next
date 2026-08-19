@@ -1,8 +1,13 @@
 import path from 'path';
-import { glob } from 'glob';
-import matter from 'gray-matter';
 import { SITE_CONFIG } from '@/site.config';
-import { CacheManager, FileUtils } from './content-utils';
+import {
+  CacheManager,
+  FileUtils,
+  collectTags,
+  filterByTag,
+  listMarkdownFiles,
+  readWithContent,
+} from './content-utils';
 
 const POSTS_DIR = path.join(process.cwd(), 'content/posts');
 
@@ -94,23 +99,6 @@ function cleanTextForWordCount(text: string): string {
 const postsCache = new CacheManager<PostMeta[]>();
 const postFilesCache = new CacheManager<string[]>();
 
-async function listPostFiles(): Promise<string[]> {
-  if (!FileUtils.dirExists(POSTS_DIR)) return [];
-
-  const cachedFiles = postFilesCache.get();
-  if (cachedFiles) return cachedFiles;
-
-  try {
-    const pattern = path.join(POSTS_DIR, '*.md');
-    const files = await glob(pattern);
-    postFilesCache.set(files);
-    return files;
-  } catch (error) {
-    console.error('Error listing post files:', error);
-    return [];
-  }
-}
-
 function parseMetaFromFile(filePath: string): PostMeta | null {
   const parsed = FileUtils.parseFrontmatter<PostFrontmatterData>(filePath);
   if (!parsed) return null;
@@ -126,7 +114,7 @@ export async function getAllPosts(): Promise<PostMeta[]> {
     return [];
   }
 
-  const files = await listPostFiles();
+  const files = await listMarkdownFiles(POSTS_DIR, postFilesCache);
   const posts = files
     .map(parseMetaFromFile)
     .filter((post): post is PostMeta => post !== null)
@@ -173,15 +161,11 @@ export async function getCurrentCategoryNextPost(
 }
 
 export async function getPostsByTag(tag: string): Promise<PostMeta[]> {
-  const posts = await getAllPosts();
-  return posts.filter((post) => post.tags.includes(tag));
+  return filterByTag(await getAllPosts(), tag);
 }
 
 export async function getAllTags(): Promise<string[]> {
-  const posts = await getAllPosts();
-  const tagSet = new Set<string>();
-  posts.forEach((post) => post.tags.forEach((tag) => tagSet.add(tag)));
-  return Array.from(tagSet).sort();
+  return collectTags(await getAllPosts());
 }
 
 export async function getAllCategories(): Promise<string[]> {
@@ -194,36 +178,21 @@ export async function getAllCategories(): Promise<string[]> {
 }
 
 export async function getPostWithContent(slug: string): Promise<PostWithContent | null> {
-  try {
-    const filePath = path.join(POSTS_DIR, `${slug}.md`);
-    const parsed = FileUtils.parseFrontmatter<PostFrontmatterData>(filePath);
-    if (!parsed) return null;
-
-    const meta = buildPostMeta(parsed.data);
-    return { ...meta, content: parsed.content };
-  } catch (error) {
-    console.error(`Error loading post ${slug}:`, error);
-    return null;
-  }
+  return readWithContent<PostFrontmatterData, PostMeta>(POSTS_DIR, slug, buildPostMeta, 'post');
 }
 
 export async function getPostsTotalWords(): Promise<number> {
   if (!FileUtils.dirExists(POSTS_DIR)) return 0;
 
-  const files = await listPostFiles();
+  const files = await listMarkdownFiles(POSTS_DIR, postFilesCache);
   let total = 0;
 
   for (const filePath of files) {
-    const fileContent = FileUtils.readFileSync(filePath);
-    if (!fileContent) continue;
+    const parsed = FileUtils.parseFrontmatter<PostFrontmatterData>(filePath);
+    if (!parsed) continue;
 
-    try {
-      const { content } = matter(fileContent);
-      const cleanedText = cleanTextForWordCount(content);
-      total += cleanedText.replace(/\s+/g, '').length;
-    } catch {
-      continue;
-    }
+    const cleanedText = cleanTextForWordCount(parsed.content);
+    total += cleanedText.replace(/\s+/g, '').length;
   }
 
   return total;

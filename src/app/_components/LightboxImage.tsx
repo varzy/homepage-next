@@ -30,7 +30,7 @@ export default function LightboxImage({
       className={wrapperClassName ?? 'contents'}
       aria-label={alt || 'View image'}
     >
-      <ImageSet {...rest} src={src} alt={alt} className={clsx(className, 'cursor-zoom-in')} />
+      <ImageSet {...rest} src={src} alt={alt} className={clsx(className, 'cursor-pointer')} />
     </button>
   );
 }

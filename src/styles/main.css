@@ -55,6 +55,7 @@
 }
 
 @utility g-container {
+  /* 180 = 720px */
   @apply container mx-auto max-w-180 px-4;
 }
 
@@ -64,7 +65,7 @@
 }
 
 @utility g-with-prose {
-  @apply prose dark:prose-invert prose-code:before:content-none prose-code:after:content-none prose-a:font-normal prose-a:text-inherit prose-a:decoration-1 prose-blockquote:[&_p]:before:content-none prose-blockquote:[&_p]:after:content-none max-w-none text-base leading-loose wrap-break-word;
+  @apply prose dark:prose-invert prose-code:before:content-none prose-code:after:content-none prose-a:font-normal prose-a:text-inherit prose-a:decoration-1 prose-blockquote:[&_p]:before:content-none prose-blockquote:[&_p]:after:content-none prose-img:w-full prose-img:h-auto prose-img:block max-w-none text-base leading-loose wrap-break-word;
 }
 
 @utility g-plain-button {

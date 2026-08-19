@@ -17,7 +17,7 @@ export default async function Sponsor() {
         <LightboxImage
           className="w-2/3"
           src="https://cdn.varzy.me/static/sponsor_qrcode.jpg"
-          alt="zy 的支付宝赞赏码"
+          alt="zy 的微信赞赏码"
         />
       </div>
     </Prose>

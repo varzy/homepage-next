@@ -1,4 +1,5 @@
 import type { TasteItemWithContent } from '@/app/_lib/taste-loader';
+import { getImageAttrs, CARD_SIZES } from '@/utils/image-transform';
 
 export default function TasteCard({
   item,
@@ -10,12 +11,19 @@ export default function TasteCard({
   showExtra?: boolean;
 }) {
   const aspectStyle = { aspectRatio: aspect };
+  const cover = item.cover ? getImageAttrs(item.cover, CARD_SIZES) : null;
   const inner = (
     <article className="text-sm">
       {/* cover */}
-      {item.cover && (
+      {cover && (
         <div className="mb-2 overflow-hidden" style={aspectStyle}>
-          <img src={item.cover} alt={item.title} className="h-full w-full object-cover" />
+          <img
+            src={cover.src}
+            srcSet={cover.srcSet}
+            sizes={cover.sizes}
+            alt={item.title}
+            className="h-full w-full object-cover"
+          />
         </div>
       )}
       <div className="">

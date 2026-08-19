@@ -1,6 +1,8 @@
 'use client';
 
 import clsx from 'clsx';
+import { useState } from 'react';
+import { getImageAttrs } from '@/utils/image-transform';
 import { useLightbox } from './LightboxProvider';
 
 interface LightboxImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
@@ -15,10 +17,15 @@ export default function LightboxImage({
   ...rest
 }: LightboxImageProps) {
   const { open } = useLightbox();
+  // 变换 URL 出错（如配额超限返回 9422）时回退到原始图，避免白图。
+  const [fallback, setFallback] = useState(false);
 
   if (typeof src !== 'string' || !src) {
     return <img src={src} alt={alt} className={className} {...rest} />;
   }
+
+  const attrs = getImageAttrs(src);
+  const displaySrc = fallback ? src : attrs.src;
 
   return (
     <button
@@ -29,11 +36,14 @@ export default function LightboxImage({
       aria-label={alt || 'View image'}
     >
       <img
-        src={src}
-        alt={alt}
-        className={clsx(className, 'cursor-zoom-in')}
-        loading={rest.loading ?? 'lazy'}
         {...rest}
+        src={displaySrc}
+        alt={alt}
+        srcSet={fallback ? undefined : attrs.srcSet}
+        sizes={attrs.sizes}
+        loading={rest.loading ?? 'lazy'}
+        onError={() => setFallback(true)}
+        className={clsx(className, 'cursor-zoom-in')}
       />
     </button>
   );

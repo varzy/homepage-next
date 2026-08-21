@@ -3,8 +3,8 @@ page_id: '2efdc9c0-364a-8077-9c62-e5c2e4ef1889'
 title: 'Friends'
 slug: 'friends'
 status: 'Published'
-last_edited_time: '2026-08-19T03:17:00.000Z'
-last_fetched_time: '2026-08-19T04:02:54.095Z'
+last_edited_time: '2026-08-21T04:08:00.000Z'
+last_fetched_time: '2026-08-21T04:20:51.072Z'
 ---
 
 # 往来
@@ -29,6 +29,7 @@ avatar: https://cdn.varzy.me/static/zyavatar.png
 - [和光同尘](https://ikangjia.cn/)
 - [Airing 的小屋](https://blog.ursb.me/)
 - [Restrive14](https://yzhthinking.top/)
+- [天仙子](https://www.tianxianzi.me/)
 
 这些是我用来发现其他博客的平台。
 
@@ -40,7 +41,6 @@ avatar: https://cdn.varzy.me/static/zyavatar.png
 
 - [Another Dayu](https://anotherdayu.com/)
 - [極客死亡計劃](https://www.geedea.pro/)
-- [天仙子](https://www.tianxianzi.me/)
 - [SO!AZY](https://blog.solazy.me/)
 - [二丫讲梵](https://wiki.eryajf.net/)
 - [莫比乌斯](https://mobius.blog/)

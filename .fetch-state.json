@@ -1,18 +1,18 @@
 {
   "page": {
-    "lastSuccessfulRun": "2026-08-21T04:20:51.072Z",
+    "lastSuccessfulRun": "2026-08-25T12:40:37.169Z",
     "lastFullSync": "2026-06-14T14:28:55.413Z"
   },
   "post": {
-    "lastSuccessfulRun": "2026-08-25T11:47:12.214Z",
+    "lastSuccessfulRun": "2026-08-25T12:40:41.247Z",
     "lastFullSync": "2026-08-18T18:05:39.381Z"
   },
   "kotoba": {
-    "lastSuccessfulRun": "2026-08-25T07:30:16.761Z",
+    "lastSuccessfulRun": "2026-08-25T12:40:43.859Z",
     "lastFullSync": "2026-08-18T17:59:15.504Z"
   },
   "taste": {
-    "lastSuccessfulRun": "2026-08-24T11:05:08.053Z",
+    "lastSuccessfulRun": "2026-08-25T12:40:46.717Z",
     "lastFullSync": "2026-08-18T17:55:04.576Z"
   }
 }

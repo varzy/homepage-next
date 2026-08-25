@@ -7,8 +7,8 @@ tags: ['个人主页', 'Notion']
 date: '2026-08-19'
 slug: 'blog-image-host-migration-to-cloudflare-r2'
 summary: '感恩赛博菩萨 Cloudflare。'
-last_edited_time: '2026-08-25T11:46:00.000Z'
-last_fetched_time: '2026-08-25T11:47:12.213Z'
+last_edited_time: '2026-08-25T12:06:00.000Z'
+last_fetched_time: '2026-08-25T12:40:41.246Z'
 page_id: '3c1dc9c0-364a-80c4-b7ed-fb2ec3daae28'
 icon: '🪅'
 ---
@@ -27,7 +27,7 @@ icon: '🪅'
 
 ## 这个网站的架构
 
-在讲解我的迁移步骤之前，有必要先说明一下这个网站的大致架构。以发布一篇新文章为例，其生命周期是这样的：
+在讲解迁移步骤之前，有必要先说明一下这个网站的大致架构。以发布一篇新文章为例，其生命周期是这样的：
 
 1. 在 Notion 的 Blog 数据库下添加新的页面并编写内容，如果有图片的话，直接扔到 Notion 页面中，该图片将被 Notion 托管
 2. 执行 `pnpm fetch:posts` 命令，该脚本将通过 Notion API 获取新页面的内容，并将其中的 Block 转换为标准的 Markdown 格式
@@ -39,7 +39,7 @@ icon: '🪅'
 
 **Q1：为什么不直接使用 Notion 托管图片而是要上传到自己的图床？**
 
-最核心的原因是直接上传到 Notion 中的图片通过 API 访问时，其链接只有最多两小时的过期时间，超出该时限就无法访问了。
+核心原因是直接上传到 Notion 的图片通过 API 访问时，其链接只有最多两小时的可用时间，超出该时限就无法访问了。
 
 **Q2：为什么设计这么复杂的流程？直接写 Markdown 不好吗？**
 
@@ -57,7 +57,7 @@ icon: '🪅'
 
 前三步我都是用 Claude 编写了几个临时脚本完成的，这里就不放我的 AI Slop 代码了😅。总之，在脚本编写过程中，需要注意的就是每一步都要建立一定的缓存机制，以及保持幂等原则。由于 Notion API 存在 [Request limits](https://developers.notion.com/reference/request-limits)，像这种大规模的请求很容易摸到上限，这时候就需要保证如果脚本执行出错了，也可以无副作用得无限次重试直至成功。
 
-## 接入 Cloudflare 的 Transformations
+## 接入 Transformations
 
 如果只是把图片搬到 Cloudflare，那么图片访问速度并不会有什么提升，而 Transformations 就是专门解决这件事的。按照一定的参数拼接图片 URL，Cloudflare 的边缘节点可以很方便得对图片进行裁剪、旋转，以及最常用的压缩等操作，并将转变后的图片直接缓存到 CDN。
 
@@ -75,9 +75,9 @@ https://cdn.varzy.me/cdn-cgi/image/width=1024,quality=80,format=auto/legacy/2026
 - `metadata=none`：删除图片里的 EXIF 信息
 - `onerror=redirect`：如果变换失败，或者超出 5000 次的免费转换额度时就重定向回原图
 
-接下来我们可以结合 `<img>` 标签的 `srcset` 和 `sizes` 两个属性，更进一步提升图片的加载速度。我相信很多人都并不了解这两个属性，毕竟比起单独设置 src，这两个属性要复杂得多。如果想进一步了解可以先看看 [Make responsive images](https://developers.cloudflare.com/images/optimization/make-responsive-images/) 这篇精彩的文档。
+接下来我们可以结合 `<img>` 标签的 `srcset` 和 `sizes` 两个属性更进一步提升图片的加载速度。我相信很多人都并不了解这两个属性，毕竟比起单独设置 src，这两个属性要复杂得多。如果想进一步了解可以先看看 [Make responsive images](https://developers.cloudflare.com/images/optimization/make-responsive-images/) 这篇精彩的文档。
 
-举个实际的例子，在 [/taste](https://varzy.me/taste) 页面中的封面图标签大概长这个样子：
+举例，在 [/taste](https://varzy.me/taste) 页面中的封面图标签大概长下面这个样子。大致解释一下，720px 是我给博客内容区域设置的宽度，当视口小于 720px 时图片会按照 50vw 的宽度来预测渲染宽度。反之图片最大宽度是 240px，不管屏幕多大都绝不会超过这个预测值。
 
 ```html
 <img
@@ -91,13 +91,15 @@ https://cdn.varzy.me/cdn-cgi/image/width=1024,quality=80,format=auto/legacy/2026
 />
 ```
 
-大致解释一下，当视口小于 720px 时图片会按照 50vw 的宽度来预测渲染宽度，如果使用 iPhone 12 Pro 访问这个页面，那么 50vw 等于 390 / 2 = 195px，而 Pro 机型的屏幕像素渲染倍率是 2x，因此最终的渲染宽度就是 195 x 2 = 390px，小于 640px，因此最终会渲染第一档 640px 的图片。
+如果使用 iPhone 12 Pro 访问这个页面，那么 50vw 等于 390 / 2 = 195px，而 Pro 机型的屏幕像素渲染倍率是 2x，最终的渲染宽度就是 195 x 2 = 390px，小于 640px，因此会渲染第一档 640px 的图片。
 
 ![a1c76e656b0a3429.png](https://cdn.varzy.me/public/2026/08/posts/3c1dc9c0-364a-80c4-b7ed-fb2ec3daae28/a1c76e656b0a3429.png)
 
-而对于 17 Pro Max，由于是 3x 机型，因此渲染宽度是 440 / 2 x 3 = 660px，大于 660 小于 1024，因此会渲染第二档 1024px 的图片。
+对于 17 Pro Max，由于是 3x 机型，因此渲染宽度是 440 / 2 x 3 = 660px，大于 660 小于 1024，因此会渲染第二档 1024px 的图片。
 
 ![6c325f590b75673f.png](https://cdn.varzy.me/public/2026/08/posts/3c1dc9c0-364a-80c4-b7ed-fb2ec3daae28/6c325f590b75673f.png)
+
+而对于更大、分辨率更高的屏幕，最大也只会渲染 1536px 的图片。
 
 ## 成果
 

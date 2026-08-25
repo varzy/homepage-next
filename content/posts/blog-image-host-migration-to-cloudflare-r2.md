@@ -3,12 +3,12 @@ title: '博客图床迁移到 Cloudflare R2 全过程回顾'
 category: 'Coding'
 type: 'Post'
 status: 'Published'
-tags: ['个人主页', 'Notion', 'Nextjs', '浏览器']
+tags: ['个人主页', 'Notion']
 date: '2026-08-19'
 slug: 'blog-image-host-migration-to-cloudflare-r2'
 summary: '感恩赛博菩萨 Cloudflare。'
-last_edited_time: '2026-08-25T11:32:00.000Z'
-last_fetched_time: '2026-08-25T11:32:30.289Z'
+last_edited_time: '2026-08-25T11:46:00.000Z'
+last_fetched_time: '2026-08-25T11:47:12.213Z'
 page_id: '3c1dc9c0-364a-80c4-b7ed-fb2ec3daae28'
 icon: '🪅'
 ---
@@ -31,7 +31,7 @@ icon: '🪅'
 
 1. 在 Notion 的 Blog 数据库下添加新的页面并编写内容，如果有图片的话，直接扔到 Notion 页面中，该图片将被 Notion 托管
 2. 执行 `pnpm fetch:posts` 命令，该脚本将通过 Notion API 获取新页面的内容，并将其中的 Block 转换为标准的 Markdown 格式
-3. **在遍历 Block 的过程中，如果发现了图片 Block 并且该图片还没有被上传到自己的图床，那么就下载该图片并上传到图床，再将上传后的 URL 反向写回 Notion。**也就是说，所有 Notion 中的图片地址 (https://app.notion.com/image/attachment/xxx.jpg) 最终都会变成图床上的地址 (https://i.see.you/xxx.jpg)
+3. 在遍历 Block 的过程中，如果发现了图片 Block 并且该图片还没有被上传到自己的图床，那么就下载该图片并上传到图床，再将上传后的 URL 反向写回 Notion。也就是说，所有 Notion 中的图片地址 ([https://app.notion.com/image/attachment/xxx.jpg](https://app.notion.com/image/attachment/xxx.jpg)) 最终都会变成图床上的地址 ([https://i.see.you/xxx.jpg](https://i.see.you/xxx.jpg))
 4. 脚本执行成功后，这篇文章会以 Markdown 格式保存到项目的 `/content` 目录下
 5. 执行 `pnpm build` 命令，Next.js 会以 SSG 模式输出整个网站的纯静态 HTML
 
@@ -43,11 +43,11 @@ icon: '🪅'
 
 **Q2：为什么设计这么复杂的流程？直接写 Markdown 不好吗？**
 
-我的更新频率已经够低了，如果不找一个随时能写的平台我可能一年都更不了几篇🙂‍↔️。
+我的更新频率已经够低了，如果不找一个随时能写的平台可能一年都更不了几篇🙂‍↔️。
 
 ## 迁移过程
 
-总体来说分成了以下几个大步骤：
+总体来说分成了以下几个步骤：
 
 1. 遍历项目 content 目录，提取所有真实在用的图片链接并下载到本地。下载过程中需要保证目录结构和线上完全一致，例如 `https://i.see.you/2026/08/17/foo/bar.jpg` 在本地的路径是 `/2026/08/17/foo/bar.jpg`
 2. 将所有图片按原路径上传到 Cloudflare R2。我在 Bucket 下创建了个顶级目录 `legacy`，把以往所有图片都扔到了这个根目录下，最终的路径就是 `https://cdn.varzy.me/legacy/2026/08/17/foo/bar.jpg`
@@ -55,13 +55,13 @@ icon: '🪅'
 4. 直接删掉项目中的 content 目录重建缓存，完成后即可对齐本地文件与 Notion 数据库内容
 5. 重新部署上线，搞定
 
-前三步我都是用 Claude 编写了几个临时脚本，这里就不放我的 AI Slop 代码了😅。总之，在脚本编写过程中，唯一需要注意的就是每一步都要建立一定的缓存机制，以及保持幂等原则。由于 Notion API 存在 [Request limits](https://developers.notion.com/reference/request-limits)，像这种大规模的请求很容易就会摸到上限，这时候就需要保证如果脚本执行出错了，也可以无副作用得无限次重试直至成功。
+前三步我都是用 Claude 编写了几个临时脚本完成的，这里就不放我的 AI Slop 代码了😅。总之，在脚本编写过程中，需要注意的就是每一步都要建立一定的缓存机制，以及保持幂等原则。由于 Notion API 存在 [Request limits](https://developers.notion.com/reference/request-limits)，像这种大规模的请求很容易摸到上限，这时候就需要保证如果脚本执行出错了，也可以无副作用得无限次重试直至成功。
 
 ## 接入 Cloudflare 的 Transformations
 
-如果只是把图片搬到 Cloudflare，那么图片访问速度并不会有什么提升，甚至还不如 s.ee。而 Transformations 就是专门解决这件事的，按照一定的参数拼接图片 URL，Cloudflare 的边缘节点可以很方便得对图片进行裁剪、旋转，以及最常用的压缩等操作，并将转变后的图片直接缓存到 CDN。
+如果只是把图片搬到 Cloudflare，那么图片访问速度并不会有什么提升，而 Transformations 就是专门解决这件事的。按照一定的参数拼接图片 URL，Cloudflare 的边缘节点可以很方便得对图片进行裁剪、旋转，以及最常用的压缩等操作，并将转变后的图片直接缓存到 CDN。
 
-至于收费，Transformations 提供了每月 5000 次的 [免费转换额度](https://developers.cloudflare.com/images/pricing/#images-free)，这对我的网站也是完全够用的。
+至于费用，Transformations 提供了每月 5000 次的 [免费转换额度](https://developers.cloudflare.com/images/pricing/#images-free)，这对我的网站也是完全够用的。
 
 完整的参数文档见 [Features](https://developers.cloudflare.com/images/optimization/features/)，示例：
 

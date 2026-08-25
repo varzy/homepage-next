@@ -7,8 +7,8 @@ tags: ['个人主页', 'Notion', 'Nextjs', '浏览器']
 date: '2026-08-19'
 slug: 'blog-image-host-migration-to-cloudflare-r2'
 summary: '感恩赛博菩萨 Cloudflare。'
-last_edited_time: '2026-08-25T11:28:00.000Z'
-last_fetched_time: '2026-08-25T11:28:35.438Z'
+last_edited_time: '2026-08-25T11:32:00.000Z'
+last_fetched_time: '2026-08-25T11:32:30.289Z'
 page_id: '3c1dc9c0-364a-80c4-b7ed-fb2ec3daae28'
 icon: '🪅'
 ---
@@ -77,7 +77,7 @@ https://cdn.varzy.me/cdn-cgi/image/width=1024,quality=80,format=auto/legacy/2026
 
 接下来我们可以结合 `<img>` 标签的 `srcset` 和 `sizes` 两个属性，更进一步提升图片的加载速度。我相信很多人都并不了解这两个属性，毕竟比起单独设置 src，这两个属性要复杂得多。如果想进一步了解可以先看看 [Make responsive images](https://developers.cloudflare.com/images/optimization/make-responsive-images/) 这篇精彩的文档。
 
-举个实际的例子，在 [/taste](https://varzy.me/taste) 页面中的封面图标签长这个样子：
+举个实际的例子，在 [/taste](https://varzy.me/taste) 页面中的封面图标签大概长这个样子：
 
 ```html
 <img
@@ -91,7 +91,7 @@ https://cdn.varzy.me/cdn-cgi/image/width=1024,quality=80,format=auto/legacy/2026
 />
 ```
 
-大致解释一下，就是当视口小于 720px 时图片会按照 50vw 的宽度来预测渲染宽度。如果使用 iPhone 12 Pro 访问这个页面，那么 50vw 等于 390 / 2 = 195px，而 Pro 机型的屏幕像素渲染倍率是 2x，因此最终的渲染宽度就是 195 x 2 = 390px，小于 640px，因此最终会渲染第一档 640px 的图片。
+大致解释一下，当视口小于 720px 时图片会按照 50vw 的宽度来预测渲染宽度，如果使用 iPhone 12 Pro 访问这个页面，那么 50vw 等于 390 / 2 = 195px，而 Pro 机型的屏幕像素渲染倍率是 2x，因此最终的渲染宽度就是 195 x 2 = 390px，小于 640px，因此最终会渲染第一档 640px 的图片。
 
 ![a1c76e656b0a3429.png](https://cdn.varzy.me/public/2026/08/posts/3c1dc9c0-364a-80c4-b7ed-fb2ec3daae28/a1c76e656b0a3429.png)
 

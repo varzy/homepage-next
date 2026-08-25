@@ -7,8 +7,8 @@ tags: ['个人主页', 'Notion']
 date: '2026-08-19'
 slug: 'blog-image-host-migration-to-cloudflare-r2'
 summary: '感恩赛博菩萨 Cloudflare。'
-last_edited_time: '2026-08-25T12:06:00.000Z'
-last_fetched_time: '2026-08-25T12:40:41.246Z'
+last_edited_time: '2026-08-25T13:00:00.000Z'
+last_fetched_time: '2026-08-25T13:46:17.813Z'
 page_id: '3c1dc9c0-364a-80c4-b7ed-fb2ec3daae28'
 icon: '🪅'
 ---
@@ -31,7 +31,7 @@ icon: '🪅'
 
 1. 在 Notion 的 Blog 数据库下添加新的页面并编写内容，如果有图片的话，直接扔到 Notion 页面中，该图片将被 Notion 托管
 2. 执行 `pnpm fetch:posts` 命令，该脚本将通过 Notion API 获取新页面的内容，并将其中的 Block 转换为标准的 Markdown 格式
-3. 在遍历 Block 的过程中，如果发现了图片 Block 并且该图片还没有被上传到自己的图床，那么就下载该图片并上传到图床，再将上传后的 URL 反向写回 Notion。也就是说，所有 Notion 中的图片地址 ([https://app.notion.com/image/attachment/xxx.jpg](https://app.notion.com/image/attachment/xxx.jpg)) 最终都会变成图床上的地址 ([https://i.see.you/xxx.jpg](https://i.see.you/xxx.jpg))
+3. 在遍历 Block 的过程中，如果发现了图片 Block 并且该图片还没有被上传到自己的图床，那么就下载该图片并上传到图床，再将上传后的 URL 反向写回 Notion。也就是说，所有 Notion 中的图片地址 (https://app.notion.com/image/attachment/xxx.jpg) 最终都会变成图床上的地址 (https://i.see.you/xxx.jpg)
 4. 脚本执行成功后，这篇文章会以 Markdown 格式保存到项目的 `/content` 目录下
 5. 执行 `pnpm build` 命令，Next.js 会以 SSG 模式输出整个网站的纯静态 HTML
 
@@ -99,7 +99,7 @@ https://cdn.varzy.me/cdn-cgi/image/width=1024,quality=80,format=auto/legacy/2026
 
 ![6c325f590b75673f.png](https://cdn.varzy.me/public/2026/08/posts/3c1dc9c0-364a-80c4-b7ed-fb2ec3daae28/6c325f590b75673f.png)
 
-而对于更大、分辨率更高的屏幕，最大也只会渲染 1536px 的图片。
+而对于尺寸更大、分辨率更高的屏幕，最大也只会渲染 1536px 的图片。
 
 ## 成果
 

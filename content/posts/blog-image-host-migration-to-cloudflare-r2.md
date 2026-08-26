@@ -7,8 +7,8 @@ tags: ['个人主页', 'Notion']
 date: '2026-08-19'
 slug: 'blog-image-host-migration-to-cloudflare-r2'
 summary: '感恩赛博菩萨 Cloudflare。'
-last_edited_time: '2026-08-26T00:15:00.000Z'
-last_fetched_time: '2026-08-26T01:10:04.285Z'
+last_edited_time: '2026-08-26T02:44:00.000Z'
+last_fetched_time: '2026-08-26T03:51:33.193Z'
 page_id: '3c1dc9c0-364a-80c4-b7ed-fb2ec3daae28'
 icon: '🪅'
 ---
@@ -19,7 +19,7 @@ icon: '🪅'
 
 [sm.ms](http://sm.ms/) 几乎是最早一批并且运营至今的图床了，稳定性不错，至少在我使用的过程中没有踩过什么坑。而自从网站升级成 [s.ee](http://s.ee/) 后，加了一些文件分享、短链之类的功能，说实话这些都是我完全用不到的服务，而原本招牌的图床的后台也并没有随着升级变得更好用。
 
-虽然更新频率成谜，但「贼歪」好歹也是个运行 11 年的网站了。我是个严重的数据丢失恐惧症患者，非常重视自己这些没什么人看的东西的可迁移性。这个网站的文字内容在 Notion 和 Git 仓库里是双备份的，但图片却只有 [s.ee](http://s.ee/) 这一处。说白了，我就是怕它跑路🌚。
+虽然更新频率成谜，但「贼歪」好歹也是个运行 11 年的网站了。我是个严重的数据丢失恐惧症患者，非常重视自己这些没什么人看的东西的可迁移性。这个网站的文字内容在 Notion 和 Git 仓库里是双备份的，但图片却只有 s.ee 这一处。说白了，我就是怕它跑路🌚。
 
 而 Cloudflare R2 支持标准的 S3 协议，图片的管理和迁移都有标准 API，更重要的是，我希望借助 Cloudflare 的 [Transformations](https://developers.cloudflare.com/images/optimization/transformations/overview/) 功能获取更快的图片访问速度，这也是 s.ee 一直缺失的功能。至于额度，我在 sm.ms 时代就购买了永久会员因此 s.ee 有 500G 的容量，Cloudflare R2 则是 10G，不过对于我的用量来说 10G 也是绰绰有余的。
 

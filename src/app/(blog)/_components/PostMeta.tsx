@@ -17,7 +17,7 @@ export default function PostMeta({
   const hasTags = showTags && post.tags.length > 0;
 
   return (
-    <span className="text-secondary text-sm">
+    <div className="text-secondary text-sm">
       <time dateTime={post.date}>{formatAbsoluteDate(post.date, dateTpl)}</time>
       {hasCategory && (
         <>
@@ -40,6 +40,6 @@ export default function PostMeta({
           ))}
         </span>
       )}
-    </span>
+    </div>
   );
 }

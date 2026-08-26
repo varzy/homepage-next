@@ -7,8 +7,8 @@ tags: ['个人主页', 'Notion']
 date: '2026-08-19'
 slug: 'blog-image-host-migration-to-cloudflare-r2'
 summary: '感恩赛博菩萨 Cloudflare。'
-last_edited_time: '2026-08-25T13:00:00.000Z'
-last_fetched_time: '2026-08-25T13:46:17.813Z'
+last_edited_time: '2026-08-26T00:15:00.000Z'
+last_fetched_time: '2026-08-26T01:10:04.285Z'
 page_id: '3c1dc9c0-364a-80c4-b7ed-fb2ec3daae28'
 icon: '🪅'
 ---
@@ -50,7 +50,7 @@ icon: '🪅'
 总体来说分成了以下几个步骤：
 
 1. 遍历项目 content 目录，提取所有真实在用的图片链接并下载到本地。下载过程中需要保证目录结构和线上完全一致，例如 `https://i.see.you/2026/08/17/foo/bar.jpg` 在本地的路径是 `/2026/08/17/foo/bar.jpg`
-2. 将所有图片按原路径上传到 Cloudflare R2。我在 Bucket 下创建了个顶级目录 `legacy`，把以往所有图片都扔到了这个根目录下，最终的路径就是 `https://cdn.varzy.me/legacy/2026/08/17/foo/bar.jpg`
+2. 将所有图片按原路径上传到 Cloudflare R2。我在 Bucket 下创建了个顶级目录 `legacy`，把以往所有图片都扔到了这个根目录下，最终的 URL 就是 `https://cdn.varzy.me/legacy/2026/08/17/foo/bar.jpg`
 3. 调用 Notion API 遍历所有页面，将每一个图片 Block 的 URL 的前半部分替换为 R2 的 CDN 地址，例如将 `https://i.see.you/2026/08/17/foo/bar.jpg` 替换为 `https://cdn.varzy.me/legacy/2026/08/17/foo/bar.jpg`
 4. 直接删掉项目中的 content 目录重建缓存，完成后即可对齐本地文件与 Notion 数据库内容
 5. 重新部署上线，搞定
@@ -73,11 +73,11 @@ https://cdn.varzy.me/cdn-cgi/image/width=1024,quality=80,format=auto/legacy/2026
 - `quality=80`：图片质量，设置为 80 一般是看不出什么区别的
 - `format=auto`：Cloudflare 按浏览器自行决定转换为 AVIF 还是 WebP
 - `metadata=none`：删除图片里的 EXIF 信息
-- `onerror=redirect`：如果变换失败，或者超出 5000 次的免费转换额度时就重定向回原图
+- `onerror=redirect`：如果转换失败，或者超出 5000 次的免费转换额度时就重定向回原图
 
 接下来我们可以结合 `<img>` 标签的 `srcset` 和 `sizes` 两个属性更进一步提升图片的加载速度。我相信很多人都并不了解这两个属性，毕竟比起单独设置 src，这两个属性要复杂得多。如果想进一步了解可以先看看 [Make responsive images](https://developers.cloudflare.com/images/optimization/make-responsive-images/) 这篇精彩的文档。
 
-举例，在 [/taste](https://varzy.me/taste) 页面中的封面图标签大概长下面这个样子。大致解释一下，720px 是我给博客内容区域设置的宽度，当视口小于 720px 时图片会按照 50vw 的宽度来预测渲染宽度。反之图片最大宽度是 240px，不管屏幕多大都绝不会超过这个预测值。
+举例，在 [/taste](https://varzy.me/taste) 页面中的封面图标签大概长下面这个样子。大致解释一下，720px 是我给博客内容区域设置的宽度，当视口小于 720px 时图片会按照 50vw 的宽度来预测渲染宽度，反之则使用 240px，不管屏幕多大都绝不会超过这个预测值。
 
 ```html
 <img
@@ -103,7 +103,7 @@ https://cdn.varzy.me/cdn-cgi/image/width=1024,quality=80,format=auto/legacy/2026
 
 ## 成果
 
-经过了这次迁移 & 适配了 Transformations，现在网站上的图片几乎都可以秒开了。直接看一个不严谨但可以反应客观事实的前后对比。
+迁移 & 适配了 Transformations 之后，现在网站上的图片几乎都可以秒开了。直接看一个不严谨但可以反应客观事实的前后对比。
 
 Before：
 

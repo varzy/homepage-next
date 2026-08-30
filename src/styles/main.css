@@ -3,23 +3,15 @@
 @plugin '@tailwindcss/typography';
 
 @theme {
-  /* 字号 */
-  --text-paragraph: 0.9375rem;
-
-  /* Surfaces ─ 页面与卡片背景 */
+  --text-paragraph: 0.9375rem; /* 15px 是双端看起来都较为舒适的正文字号 */
   --color-background: #f6f6f6; /* 全站页面底色 */
   --color-surface: #ffffff; /* 卡片 / 高出一层的容器（如 KotobaCard）*/
-  /* Text ─ 文字层级 */
   --color-ink: #111111; /* 主文字：标题、正文强调 */
   --color-secondary: #6b7280; /* 次级信息：日期、副标、辅助说明 */
   --color-muted: #4b5563; /* 介于 ink 与 secondary 之间：列表摘要 */
-  /* Borders ─ 分隔线 */
   --color-border: rgb(0 0 0 / 0.1); /* 常规边框：卡片外框 */
   --color-border-soft: rgb(0 0 0 / 0.05); /* 更轻：内部分隔 hr */
-  /* Tags ─ 标签胶囊 */
-  --color-tag: #e9e8ed; /* 标签默认背景 */
-  --color-tag-hover: #dfdee2; /* 标签 hover 背景 */
-  /* Inline code ─ 文中行内代码（代码块由 react-syntax-highlighter 的 oneLight / oneDark 主题接管）*/
+  --color-img-placeholder: #e9e8ed; /* 图片加载 / 加载失败的预留色块 */
   --color-code-bg: #ececec; /* 行内 `code` 背景 */
   --color-code-fg: #be3b6c; /* 行内 `code` 文字（玫红）*/
 }
@@ -34,8 +26,7 @@
     --color-muted: #b6ad9f;
     --color-border: rgb(255 255 255 / 0.12);
     --color-border-soft: rgb(255 255 255 / 0.06);
-    --color-tag: #2a2724;
-    --color-tag-hover: #353029;
+    --color-img-placeholder: #2a2724;
     --color-code-bg: #2a2724;
     --color-code-fg: #e8a8a0;
   }
@@ -72,31 +63,12 @@
   @apply cursor-pointer border-0 bg-transparent p-0;
 }
 
-/* 图片加载占位 ─ 在图片解码完成前显示柔和的 shimmer，避免图片「突然出现」*/
-@keyframes g-img-shimmer {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
-}
-
 .g-img-loading {
   min-height: 8rem;
-  background-color: var(--color-tag);
-  background-size: cover;
-  background-repeat: no-repeat;
-  /* animation: g-img-shimmer 1.6s ease-in-out infinite; */
+  background-color: var(--color-img-placeholder);
 }
 
 .g-img-error {
   min-height: 8rem;
-  background-color: var(--color-tag);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .g-img-loading {
-    animation: none;
-  }
+  background-color: var(--color-img-placeholder);
 }

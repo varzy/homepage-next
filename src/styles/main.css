@@ -71,3 +71,32 @@
 @utility g-plain-button {
   @apply cursor-pointer border-0 bg-transparent p-0;
 }
+
+/* 图片加载占位 ─ 在图片解码完成前显示柔和的 shimmer，避免图片「突然出现」*/
+@keyframes g-img-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.g-img-loading {
+  min-height: 8rem;
+  background-color: var(--color-tag);
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* animation: g-img-shimmer 1.6s ease-in-out infinite; */
+}
+
+.g-img-error {
+  min-height: 8rem;
+  background-color: var(--color-tag);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .g-img-loading {
+    animation: none;
+  }
+}

@@ -1,3 +1,8 @@
+'use client';
+
+import clsx from 'clsx';
+import { useEffect, useRef, useState } from 'react';
+
 const CDN_HOST = 'cdn.varzy.me';
 // tailwind sm, lg, 2xl
 const WIDTH_LADDER = [640, 1024, 1536] as const;
@@ -38,7 +43,16 @@ interface ImageSetProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   sizes?: string;
 }
 
-export default function ImageSet({ src, sizes, ...rest }: ImageSetProps) {
+export default function ImageSet({ src, sizes, className, ...rest }: ImageSetProps) {
+  const [loaded, setLoaded] = useState(false);
+  const [error, setError] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  // 兜底：图片可能在挂载前就已缓存完成（onLoad 不再触发），此时直接标记为已加载，避免占位常驻
+  useEffect(() => {
+    if (imgRef.current?.complete) setLoaded(true);
+  }, []);
+
   const finalSizes = sizes ?? DEFAULT_SIZES;
   // 非 CDN 图只返回原始 src（不附带 srcset/sizes）
   const imgProps = isCdnImage(src)
@@ -49,5 +63,16 @@ export default function ImageSet({ src, sizes, ...rest }: ImageSetProps) {
       }
     : { src };
 
-  return <img {...rest} {...imgProps} />;
+  // 加载完成前通过 g-img-loading 显示 shimmer 占位；解码完成后图片像素自然覆盖占位背景
+  return (
+    <img
+      {...rest}
+      {...imgProps}
+      ref={imgRef}
+      decoding="async"
+      onLoad={() => setLoaded(true)}
+      onError={() => setError(true)}
+      className={clsx(!loaded && !error && 'g-img-loading', error && 'g-img-error', className)}
+    />
+  );
 }

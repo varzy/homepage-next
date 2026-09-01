@@ -3,8 +3,8 @@ page_id: '2efdc9c0-364a-8077-9c62-e5c2e4ef1889'
 title: 'Friends'
 slug: 'friends'
 status: 'Published'
-last_edited_time: '2026-08-21T04:08:00.000Z'
-last_fetched_time: '2026-08-21T04:20:51.072Z'
+last_edited_time: '2026-09-01T02:46:00.000Z'
+last_fetched_time: '2026-09-01T02:51:46.087Z'
 ---
 
 # 往来
@@ -31,12 +31,6 @@ avatar: https://cdn.varzy.me/static/zyavatar.png
 - [Restrive14](https://yzhthinking.top/)
 - [天仙子](https://www.tianxianzi.me/)
 
-这些是我用来发现其他博客的平台。
-
-- [BlogsClub](https://www.blogsclub.org/)
-- [bo.ke](http://bo.ke/)
-- [BlogFinder](https://bf.zzxworld.com/)
-
 这些是我不时闲逛的站点。
 
 - [Another Dayu](https://anotherdayu.com/)
@@ -52,3 +46,9 @@ avatar: https://cdn.varzy.me/static/zyavatar.png
 - [映屿](https://blog.verdant.ee/)
 - [SEISAMUSE](https://www.seis-jun.xyz/)
 - [Kar's Blog](https://hellokar.org/)
+
+这些是我用来发现其他博客的平台。
+
+- [BlogsClub](https://www.blogsclub.org/)
+- [bo.ke](http://bo.ke/)
+- [BlogFinder](https://bf.zzxworld.com/)

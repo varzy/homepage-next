@@ -44,3 +44,5 @@ next-env.d.ts
 
 tmp
 tmp.local
+
+content/drafts

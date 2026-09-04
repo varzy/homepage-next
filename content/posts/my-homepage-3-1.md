@@ -7,8 +7,8 @@ tags: ['个人主页']
 date: '2026-08-14'
 slug: 'my-homepage-3-1'
 summary: '新的页面，和更多的减法。'
-last_edited_time: '2026-08-18T17:41:00.000Z'
-last_fetched_time: '2026-08-18T17:59:36.597Z'
+last_edited_time: '2026-09-04T02:27:00.000Z'
+last_fetched_time: '2026-09-04T02:28:07.114Z'
 page_id: '3b8dc9c0-364a-8014-96cf-cc25a5545aee'
 icon: '🌠'
 ---
@@ -23,7 +23,7 @@ icon: '🌠'
 
 我为页面添加了 Less & More 两个按钮，默认的 Less 布局将只显示封面、标题和作者，如果切换到 More，则会额外展示作品的别名和我的一句话点评。
 
-![posts_my-homepage-3-1_3bcdc9c0-3.png](https://cdn.varzy.me/legacy/2026/08/14/p9Zg/posts_my-homepage-3-1_3bcdc9c0-3.png)
+![fde15ce54762dadd.png](https://cdn.varzy.me/public/2026/09/posts/3b8dc9c0-364a-8014-96cf-cc25a5545aee/fde15ce54762dadd.png)
 
 ## 新增了器用页面
 

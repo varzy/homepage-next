@@ -3,8 +3,8 @@ page_id: '2efdc9c0-364a-8077-9c62-e5c2e4ef1889'
 title: 'Friends'
 slug: 'friends'
 status: 'Published'
-last_edited_time: '2026-09-04T02:18:00.000Z'
-last_fetched_time: '2026-09-04T02:22:17.891Z'
+last_edited_time: '2026-09-04T02:24:00.000Z'
+last_fetched_time: '2026-09-04T02:27:56.376Z'
 ---
 
 # 往来
@@ -28,7 +28,7 @@ avatar: https://cdn.varzy.me/static/zyavatar.png
 
 - [和光同尘](https://ikangjia.cn/)
 - [Airing 的小屋](https://blog.ursb.me/)
-- [Restrive14](https://yzhthinking.top/)
+- [RESTRIVE](https://yzhthinking.top/)
 - [天仙子](https://www.tianxianzi.me/)
 
 这些是我不时闲逛的站点。

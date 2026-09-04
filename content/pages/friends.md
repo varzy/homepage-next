@@ -3,8 +3,8 @@ page_id: '2efdc9c0-364a-8077-9c62-e5c2e4ef1889'
 title: 'Friends'
 slug: 'friends'
 status: 'Published'
-last_edited_time: '2026-09-01T02:46:00.000Z'
-last_fetched_time: '2026-09-01T02:51:46.087Z'
+last_edited_time: '2026-09-04T02:18:00.000Z'
+last_fetched_time: '2026-09-04T02:22:17.891Z'
 ---
 
 # 往来
@@ -46,6 +46,7 @@ avatar: https://cdn.varzy.me/static/zyavatar.png
 - [映屿](https://blog.verdant.ee/)
 - [SEISAMUSE](https://www.seis-jun.xyz/)
 - [Kar's Blog](https://hellokar.org/)
+- [雪糕](https://gao.bar/)
 
 这些是我用来发现其他博客的平台。
 

@@ -3,8 +3,8 @@ page_id: '372dc9c0-364a-80f3-9b8a-e7cf3c61d44d'
 title: 'Gear'
 slug: 'gear'
 status: 'Published'
-last_edited_time: '2026-08-18T00:56:00.000Z'
-last_fetched_time: '2026-08-18T02:10:53.448Z'
+last_edited_time: '2026-09-05T17:53:00.000Z'
+last_fetched_time: '2026-09-05T18:52:11.415Z'
 ---
 
 # 器用
@@ -23,7 +23,7 @@ last_fetched_time: '2026-08-18T02:10:53.448Z'
 ## 出行
 
 - **MUJI 双拉链收纳袋** - EDC 小包。放纸巾，耳机等日用品
-- **DOOMGEAR 白洞** - PSK 小包。放牙线，创可贴，充电宝等应急物品
+- **DOOMGEAR 白洞** - PSK 小包。放创可贴，充电宝等应急物品
 - **Bellroy Lite Sling Mini 4L 斜挎包**
 - **F/CE 420 Travel BP 33L 双肩包** - 我能找到的最好看，大容量，又不臃肿的双肩包
 - **Jellycat 小花生挂件**
@@ -47,7 +47,7 @@ last_fetched_time: '2026-08-18T02:10:53.448Z'
 提神
 
 - **MINTIA 薄荷糖** - 物理意义上非常“带劲”的一款糖
-- **钻石荷花香烟** - 每天早上第一支一定是这款
+- **钻石荷花香烟** - 每天早上第一支
 
 ## Battle Station
 

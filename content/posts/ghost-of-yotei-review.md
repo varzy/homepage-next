@@ -7,8 +7,8 @@ tags: ['评测', '游戏人生']
 date: '2026-09-06'
 slug: 'ghost-of-yotei-review'
 summary: '满分 10 分的话，我会给上一代《对马岛之魂》 9 分，这一代给个 7 分吧。'
-last_edited_time: '2026-09-05T17:10:00.000Z'
-last_fetched_time: '2026-09-05T17:11:27.852Z'
+last_edited_time: '2026-09-05T17:14:00.000Z'
+last_fetched_time: '2026-09-05T17:14:57.243Z'
 page_id: '3d2dc9c0-364a-80c8-87bf-f417d1525b26'
 icon: '🕤'
 ---
@@ -89,7 +89,7 @@ icon: '🕤'
 
 ## 新 DLC
 
-就我通关的两天前，Sucker Punch 发布了最新 DLC [弦续关原](https://www.bilibili.com/video/BV13Bte6pE8u)的预告。除了可以看到历史上著名的奠定了德川幕府未来长久统治的关原合战，还推出了个肉鸽玩法，可以操作笃，阿雪和 DLC 新角色，而且这个模式里还能游玩前代主角境井仁！
+就我通关的两天前，Sucker Punch 发布了最新 DLC [弦续关原](https://www.bilibili.com/video/BV13Bte6pE8u) 和 [无尽追缉](https://www.bilibili.com/video/BV1t1te6mEKL) 的预告。除了可以看到历史上著名的奠定了德川幕府未来长久统治的关原合战，还推出了个肉鸽玩法，可以操作笃，阿雪和 DLC 新角色，而且这个模式里还能游玩前代主角境井仁！
 
 虽然这篇文章以吐槽居多，不过你问我买不买新 DLC，我当然是要买的🙈。
 

@@ -4,7 +4,7 @@
 
 @theme {
   --text-paragraph: 0.9375rem; /* 15px 是双端看起来都较为舒适的正文字号 */
-  --color-background: #f6f6f6; /* 全站页面底色 */
+  --color-background: #f8f8f8; /* 全站页面底色 */
   --color-surface: #ffffff; /* 卡片 / 高出一层的容器（如 KotobaCard）*/
   --color-ink: #111111; /* 主文字：标题、正文强调 */
   --color-secondary: #6b7280; /* 次级信息：日期、副标、辅助说明 */

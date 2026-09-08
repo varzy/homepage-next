@@ -3,8 +3,8 @@ page_id: '372dc9c0-364a-80f3-9b8a-e7cf3c61d44d'
 title: 'Gear'
 slug: 'gear'
 status: 'Published'
-last_edited_time: '2026-09-05T17:53:00.000Z'
-last_fetched_time: '2026-09-05T18:52:11.415Z'
+last_edited_time: '2026-09-08T07:26:00.000Z'
+last_fetched_time: '2026-09-08T10:51:50.796Z'
 ---
 
 # 器用
@@ -70,6 +70,7 @@ last_fetched_time: '2026-09-05T18:52:11.415Z'
 - **1Password**
 - **OneDrive**
 - **Snipaste** - 截图 & 贴图
+- **ChatGPT Plus**
 
 Coding
 

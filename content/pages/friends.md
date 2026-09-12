@@ -3,8 +3,8 @@ page_id: '2efdc9c0-364a-8077-9c62-e5c2e4ef1889'
 title: 'Friends'
 slug: 'friends'
 status: 'Published'
-last_edited_time: '2026-09-12T12:26:00.000Z'
-last_fetched_time: '2026-09-12T12:30:18.997Z'
+last_edited_time: '2026-09-12T12:36:00.000Z'
+last_fetched_time: '2026-09-12T12:36:46.447Z'
 ---
 
 # 往来

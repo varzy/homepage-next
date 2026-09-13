@@ -3,8 +3,8 @@ page_id: '2efdc9c0-364a-8077-9c62-e5c2e4ef1889'
 title: 'Friends'
 slug: 'friends'
 status: 'Published'
-last_edited_time: '2026-09-12T12:36:00.000Z'
-last_fetched_time: '2026-09-12T12:36:46.447Z'
+last_edited_time: '2026-09-13T13:57:00.000Z'
+last_fetched_time: '2026-09-13T14:50:26.099Z'
 ---
 
 # 往来
@@ -48,9 +48,12 @@ avatar: https://cdn.varzy.me/static/zyavatar.png
 - [SEISAMUSE](https://www.seis-jun.xyz/)
 - [Kar's Blog](https://hellokar.org/)
 - [雪糕](https://gao.bar/)
+- [無人之境](https://buxx.me/)
+- [理论派](https://sliun.com/)
 
 这些是我用来发现其他博客的平台。
 
 - [BlogsClub](https://www.blogsclub.org/)
-- [bo.ke](http://bo.ke/)
 - [BlogFinder](https://bf.zzxworld.com/)
+- [博友圈](https://www.boyouquan.com/)
+- [bo.ke](http://bo.ke/)

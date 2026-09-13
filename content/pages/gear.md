@@ -3,8 +3,8 @@ page_id: '372dc9c0-364a-80f3-9b8a-e7cf3c61d44d'
 title: 'Gear'
 slug: 'gear'
 status: 'Published'
-last_edited_time: '2026-09-08T07:26:00.000Z'
-last_fetched_time: '2026-09-08T10:51:50.796Z'
+last_edited_time: '2026-09-13T15:54:00.000Z'
+last_fetched_time: '2026-09-13T17:59:05.162Z'
 ---
 
 # 器用
@@ -17,13 +17,16 @@ last_fetched_time: '2026-09-08T10:51:50.796Z'
 - **Redmi K90 Pro Max** - 游戏机，流量机
 - **AirPods Pro 3**
 - **Casio GST-B400BB-1A**
+- **MUJI 双拉链收纳袋** - EDC 小包。放纸巾、酒精湿巾、耳机等日用品
+
+## PSK
+
 - **奈特科尔 NB Air** - 极致轻薄的充电宝，可放进白洞收纳包中随身携带
 - **纳拓小水手 S11 Pro** - 极致轻薄的多功能工具钳，可放进白洞收纳包中随身携带
+- **DOOMGEAR 白洞** - PSK 小包。放创可贴、充电宝、备用现金等意外情况可能会遇到的物品
 
 ## 出行
 
-- **MUJI 双拉链收纳袋** - EDC 小包。放纸巾，耳机等日用品
-- **DOOMGEAR 白洞** - PSK 小包。放创可贴，充电宝等应急物品
 - **Bellroy Lite Sling Mini 4L 斜挎包**
 - **F/CE 420 Travel BP 33L 双肩包** - 我能找到的最好看，大容量，又不臃肿的双肩包
 - **Jellycat 小花生挂件**
@@ -75,7 +78,7 @@ last_fetched_time: '2026-09-08T10:51:50.796Z'
 Coding
 
 - **VSCode** + **Claude Code Extension** + **Catppuccin Theme**
-- [**Maple Mono NF CN**](https://font.subf.dev/)
+- **Maple Mono NF CN**
 - **iTerm** + **Dracula Theme**
 - **CC Switch** + [**Zenmux.ai**](https://zenmux.ai/)
 
@@ -86,7 +89,7 @@ CLI
 - **eza**
 - **bat**
 - **glances**
-- [**mole**](https://github.com/tw93/mole)
+- **mole**
 
 ## LLMs
 

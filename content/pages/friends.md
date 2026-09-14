@@ -3,8 +3,8 @@ page_id: '2efdc9c0-364a-8077-9c62-e5c2e4ef1889'
 title: 'Friends'
 slug: 'friends'
 status: 'Published'
-last_edited_time: '2026-09-14T02:28:00.000Z'
-last_fetched_time: '2026-09-14T02:29:09.073Z'
+last_edited_time: '2026-09-14T02:42:00.000Z'
+last_fetched_time: '2026-09-14T06:02:44.959Z'
 ---
 
 # 往来
@@ -47,7 +47,7 @@ avatar: https://cdn.varzy.me/static/zyavatar.png
 - [映屿](https://blog.verdant.ee/)
 - [SEISAMUSE](https://www.seis-jun.xyz/)
 - [Kar's Blog](https://hellokar.org/)
-- [雪糕](https://gao.bar/)
+- [糕点铺子](https://gao.bar/)
 - [無人之境](https://buxx.me/)
 - [理论派](https://sliun.com/)
 - [子锐](https://zrui.tech/)

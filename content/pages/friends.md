@@ -3,8 +3,8 @@ page_id: '2efdc9c0-364a-8077-9c62-e5c2e4ef1889'
 title: 'Friends'
 slug: 'friends'
 status: 'Published'
-last_edited_time: '2026-09-14T02:20:00.000Z'
-last_fetched_time: '2026-09-14T02:23:33.024Z'
+last_edited_time: '2026-09-14T02:28:00.000Z'
+last_fetched_time: '2026-09-14T02:29:09.073Z'
 ---
 
 # 往来
@@ -31,7 +31,6 @@ avatar: https://cdn.varzy.me/static/zyavatar.png
 - [RESTRIVE](https://yzhthinking.top/)
 - [天仙子](https://www.tianxianzi.me/)
 - [Tiusx](https://tius.cn/) - 凡是过往，皆为序章， 照进黑暗中的那束光为救赎
-- [子锐](https://zrui.tech/)
 
 这些是我不时闲逛的站点。
 
@@ -51,6 +50,7 @@ avatar: https://cdn.varzy.me/static/zyavatar.png
 - [雪糕](https://gao.bar/)
 - [無人之境](https://buxx.me/)
 - [理论派](https://sliun.com/)
+- [子锐](https://zrui.tech/)
 
 这些是我用来发现其他博客的平台。
 

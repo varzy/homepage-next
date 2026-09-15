@@ -3,8 +3,8 @@ page_id: '2efdc9c0-364a-8077-9c62-e5c2e4ef1889'
 title: 'Friends'
 slug: 'friends'
 status: 'Published'
-last_edited_time: '2026-09-14T02:42:00.000Z'
-last_fetched_time: '2026-09-14T06:02:44.959Z'
+last_edited_time: '2026-09-15T08:55:00.000Z'
+last_fetched_time: '2026-09-15T13:16:58.723Z'
 ---
 
 # 往来
@@ -51,6 +51,7 @@ avatar: https://cdn.varzy.me/static/zyavatar.png
 - [無人之境](https://buxx.me/)
 - [理论派](https://sliun.com/)
 - [子锐](https://zrui.tech/)
+- [guchengf.me](https://guchengf.me/)
 
 这些是我用来发现其他博客的平台。
 

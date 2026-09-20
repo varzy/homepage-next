@@ -6,7 +6,7 @@ import { getPageWithContent } from '@/app/_lib/page-loader';
 import { getEmojiFavicon } from '@/utils/favicon';
 
 export const metadata: Metadata = {
-  title: `友人`,
+  title: `往来`,
   icons: getEmojiFavicon('🎐'),
 };
 

@@ -8,15 +8,16 @@ export interface PageHeroProps {
 
 export default function PageHero({ title, after, children }: PageHeroProps) {
   return (
-    <div className="g-container py-10">
+    <header className="g-container py-10">
       {children ? (
         <>{children}</>
       ) : (
         <>
-          {title && <h1 className="text-ink text-3xl font-extrabold sm:text-4xl">{title}</h1>}
+          {/* text-4xl = 36px, same with prose h1 */}
+          {title && <h1 className="text-ink text-4xl font-extrabold">{title}</h1>}
           {after && <div className="mt-3">{after}</div>}
         </>
       )}
-    </div>
+    </header>
   );
 }

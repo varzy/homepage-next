@@ -7,8 +7,8 @@ tags: ['流水账']
 date: '2021-09-08'
 slug: 'keep-long-hair'
 summary: '决定把头发留长几乎就是一瞬间的想法，我称之为迟到的叛逆。'
-last_edited_time: '2025-09-03T06:01:00.000Z'
-last_fetched_time: '2025-09-03T06:05:59.910Z'
+last_edited_time: '2026-08-18T17:47:00.000Z'
+last_fetched_time: '2026-08-18T18:02:33.230Z'
 page_id: '008942a8-ec5c-49eb-8201-df1bb00fb7ab'
 icon: '🪡'
 ---
@@ -21,10 +21,10 @@ icon: '🪡'
 
 发箍已经就绪，发带业已到位，皮筋还在路上（假的）。请期待我的下一波照片。
 
-![bcqCra2p6ht7fz9.jpg](https://cdn.sa.net/2024/03/16/bcqCra2p6ht7fz9.jpg)
+![bcqCra2p6ht7fz9.jpg](https://cdn.varzy.me/legacy/2024/03/16/bcqCra2p6ht7fz9.jpg)
 
-![zQqo2LSUncamPWi.jpg](https://cdn.sa.net/2024/03/16/zQqo2LSUncamPWi.jpg)
+![zQqo2LSUncamPWi.jpg](https://cdn.varzy.me/legacy/2024/03/16/zQqo2LSUncamPWi.jpg)
 
 （更新于 2021.10.21）时间又过去了一个半月，我终于扎起了人生中第一个小辫儿 🤣。
 
-![eJydDtaiH3ph2kn.jpg](https://cdn.sa.net/2024/03/16/eJydDtaiH3ph2kn.jpg)
+![eJydDtaiH3ph2kn.jpg](https://cdn.varzy.me/legacy/2024/03/16/eJydDtaiH3ph2kn.jpg)

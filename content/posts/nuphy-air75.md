@@ -7,8 +7,8 @@ tags: ['外设', '评测', '数码产品', '流水账']
 date: '2022-11-27'
 slug: 'nuphy-air75'
 summary: '我可别就此掉入客制化的坑吧？'
-last_edited_time: '2025-09-03T06:03:00.000Z'
-last_fetched_time: '2025-09-03T06:05:50.865Z'
+last_edited_time: '2026-08-18T17:44:00.000Z'
+last_fetched_time: '2026-08-18T18:01:29.132Z'
 page_id: '87eda1b8-08ff-424e-bb70-43f0cfcc00a8'
 icon: '🛷'
 ---
@@ -29,7 +29,7 @@ icon: '🛷'
 
 然而外设这种东西吧，不上点压力，痛点还真无法体现。近期居家办公，面对更大的输入需求，MX Keys Mini 让我觉得有些力不从心。只要敲得够多，再好的薄膜键盘也会给人一种敲纸板的感觉，以及，我可能真的永远无法适应半高方向键🤦‍♂️
 
-![oKyTXkgtSjI6EMm.jpg](https://cdn.sa.net/2024/03/16/oKyTXkgtSjI6EMm.jpg)
+![oKyTXkgtSjI6EMm.jpg](https://cdn.varzy.me/legacy/2024/03/16/oKyTXkgtSjI6EMm.jpg)
 
 于是再入一把机械键盘的心思又刺挠起来了。虽然是冲动消费，但也要先想清楚自己的需求：
 
@@ -44,27 +44,27 @@ icon: '🛷'
 
 包装盒一股浓浓的二次元气息～
 
-![B1rAqnDgKw6ILXR.jpg](https://cdn.sa.net/2024/03/16/B1rAqnDgKw6ILXR.jpg)
+![B1rAqnDgKw6ILXR.jpg](https://cdn.varzy.me/legacy/2024/03/16/B1rAqnDgKw6ILXR.jpg)
 
 打开包装，就可以看到极具 Google Material Design 风格的键盘本体了。键盘的做工很不错，缝隙均匀，键帽平整，看了一圈确实没找到什么瑕疵。
 
-![Z74izRVK1Hx3USj.jpg](https://cdn.sa.net/2024/03/16/Z74izRVK1Hx3USj.jpg)
+![Z74izRVK1Hx3USj.jpg](https://cdn.varzy.me/legacy/2024/03/16/Z74izRVK1Hx3USj.jpg)
 
 键帽采用 PBT 材质，刻字清晰。键帽的底部弧度小，顶部弧度大，既填补了空隙又保证视觉上圆润活泼。ESC，Space，Enter 三个键采用了独特的配色，不得不说这三个颜色调得针不戳，深得我心。
 
-![vGa3pXTVMtPj1Iq.jpg](https://cdn.sa.net/2024/03/16/vGa3pXTVMtPj1Iq.jpg)
+![vGa3pXTVMtPj1Iq.jpg](https://cdn.varzy.me/legacy/2024/03/16/vGa3pXTVMtPj1Iq.jpg)
 
 键盘背面则采用了半透明的亚克力材质，隐约能看到内部的电路板，中间还镶嵌了一块镜面的金属铭牌。亚克力材质使得键盘非常轻巧，个人感觉比体积更小的 MX Keys Mini 还要轻一些。
 
-![itrC4QDWN5xphTo.jpg](https://cdn.sa.net/2024/03/16/itrC4QDWN5xphTo.jpg)
+![itrC4QDWN5xphTo.jpg](https://cdn.varzy.me/legacy/2024/03/16/itrC4QDWN5xphTo.jpg)
 
 除了键盘本体，盒子里还有：一张印有白丝老婆的说明书(海报)；一张印有白丝老婆的贴纸；支持薅轴和键帽的双向拔键器；Win 系统键帽；C 口充电线；USB 接收器；替换用的条形脚垫和增高脚垫；红轴、茶轴和青轴的热插拔轴体各一个。
 
-![Fxntcpa6mgeHMub.jpg](https://cdn.sa.net/2024/03/16/Fxntcpa6mgeHMub.jpg)
+![Fxntcpa6mgeHMub.jpg](https://cdn.varzy.me/legacy/2024/03/16/Fxntcpa6mgeHMub.jpg)
 
 来张全家福～
 
-![wfGDq3dI9KMEPSU.jpg](https://cdn.sa.net/2024/03/16/wfGDq3dI9KMEPSU.jpg)
+![wfGDq3dI9KMEPSU.jpg](https://cdn.varzy.me/legacy/2024/03/16/wfGDq3dI9KMEPSU.jpg)
 
 ## 轴体
 
@@ -72,13 +72,13 @@ NuPhy Air75 与传统机械键盘最大的区别之一就是采用了来自佳�
 
 个人感觉佳达隆红轴相比 Cherry 红轴要更“硬”一些，长时间输入免不了疲劳。不过说实话，手感已经不是我考虑键盘的第一要素了，毕竟只论手感很难有什么键盘能比得上 Niz 的静电容，我更在意的其实是各种细节和整体的用户体验。
 
-![YftUHmTyQFRO529.jpg](https://cdn.sa.net/2024/03/16/YftUHmTyQFRO529.jpg)
+![YftUHmTyQFRO529.jpg](https://cdn.varzy.me/legacy/2024/03/16/YftUHmTyQFRO529.jpg)
 
 这款键盘是支持热插拔轴体的，这也就意味着我们可以任意更换部分按键的轴体。使用包装盒里的拔键器拔掉键帽，再使用另一端的小钳子夹住轴体两端，往上那么一薅轴就下来了，再把其他轴体直接插入即可。
 
 包装里附赠了红轴、茶轴和青轴的轴体各一个，于是我就把 ESC 换成了茶轴，把 FN 换成了青轴，感觉不错👍～
 
-![zs3Q2EcjGM8CJFb.jpg](https://cdn.sa.net/2024/03/16/zs3Q2EcjGM8CJFb.jpg)
+![zs3Q2EcjGM8CJFb.jpg](https://cdn.varzy.me/legacy/2024/03/16/zs3Q2EcjGM8CJFb.jpg)
 
 ## 灯光
 
@@ -88,7 +88,7 @@ NuPhy Air75 与传统机械键盘最大的区别之一就是采用了来自佳�
 
 不过我并非是光污染爱好者，自然是到手第一时间就把所有能亮的地方都给关掉了😅
 
-![WFbTjdHuE5AC7zr.jpg](https://cdn.sa.net/2024/03/16/WFbTjdHuE5AC7zr.jpg)
+![WFbTjdHuE5AC7zr.jpg](https://cdn.varzy.me/legacy/2024/03/16/WFbTjdHuE5AC7zr.jpg)
 
 ## 设备连接
 
@@ -96,7 +96,7 @@ NuPhy Air75 与传统机械键盘最大的区别之一就是采用了来自佳�
 
 键盘侧边也提供了 Win 和 Mac 键位的切换开关，如果从 Mac 电脑更换到 Windows 电脑，只需要拨动开关即可。这个功能啊，Excited！
 
-![EHQqshSb7XPKuOv.jpg](https://cdn.sa.net/2024/03/16/EHQqshSb7XPKuOv.jpg)
+![EHQqshSb7XPKuOv.jpg](https://cdn.varzy.me/legacy/2024/03/16/EHQqshSb7XPKuOv.jpg)
 
 但是！不知道是不是错觉，我总感觉 NuPhy 打起字来肉肉的，延迟略高，而 MX Keys Mini 就很跟手。经过一天的高强度使用，这种感觉有所缓解，但也仅仅是缓解，在用 NuPhy 敲下这段话时也还是觉得微微卡顿。如果想拿这款键盘玩游戏，可能得掂量掂量了。
 
@@ -106,7 +106,7 @@ NuPhy Air75 与传统机械键盘最大的区别之一就是采用了来自佳�
 
 然而当我们把这个键盘往 Macbook 上一放就会发现，whaaaat？竟能如此天生一对，地造一双？
 
-![5LMhVlOSH9WwD1J.jpg](https://cdn.sa.net/2024/03/16/5LMhVlOSH9WwD1J.jpg)
+![5LMhVlOSH9WwD1J.jpg](https://cdn.varzy.me/legacy/2024/03/16/5LMhVlOSH9WwD1J.jpg)
 
 事实上这款键盘很大一个卖点就是能完美架在 Macbook 上，背面的四条橡胶脚垫刚刚好能卡进 Macbook 键盘的空隙，还保证不会压到下面的键位。对于不需要外接显示器，或者经常移动办公的朋友们，这个键盘可能就是改善输入体验的最优解了。
 
@@ -114,7 +114,7 @@ NuPhy Air75 与传统机械键盘最大的区别之一就是采用了来自佳�
 
 但假如并没有把键盘放在 Macbook 上的需求，又确实想把键盘抬高该怎么办呢？Nuphy 也给出了一个并不完美的解决方案：两个独立的增高脚垫。这两个橙色的脚垫支持磁吸，可以和后面的两个脚垫合体，如此一来便能把键盘抬高……1 厘米左右？反正就聊胜于无吧😂。
 
-![WsDdXbu47UapMvc.jpg](https://cdn.sa.net/2024/03/16/WsDdXbu47UapMvc.jpg)
+![WsDdXbu47UapMvc.jpg](https://cdn.varzy.me/legacy/2024/03/16/WsDdXbu47UapMvc.jpg)
 
 ## 总结
 
@@ -122,4 +122,4 @@ NuPhy Air75 与传统机械键盘最大的区别之一就是采用了来自佳�
 
 ~~我可别就此掉入客制化的坑吧？~~
 
-![SlM89HNu3qfCOUK.jpg](https://cdn.sa.net/2024/03/16/SlM89HNu3qfCOUK.jpg)
+![SlM89HNu3qfCOUK.jpg](https://cdn.varzy.me/legacy/2024/03/16/SlM89HNu3qfCOUK.jpg)

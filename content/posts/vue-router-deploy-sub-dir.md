@@ -7,8 +7,8 @@ tags: ['Vue', 'CICD']
 date: '2020-03-27'
 slug: 'vue-router-deploy-sub-dir'
 summary: ''
-last_edited_time: '2025-09-02T08:57:00.000Z'
-last_fetched_time: '2025-09-02T09:32:19.520Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:04:49.017Z'
 page_id: '19275676-eee2-4b8d-8d42-7b744a0b2197'
 icon: '🎬'
 ---

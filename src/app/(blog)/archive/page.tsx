@@ -33,7 +33,10 @@ export default async function ArchivePage() {
 
   return (
     <BlogPageContainer
-      pageHero={{ title: 'Archive', after: `共 ${totalPosts} 篇文章，约 ${totalWords} 字。` }}
+      pageHero={{
+        title: 'Archive',
+        after: `共 ${totalPosts} 篇文章，约 ${totalWords.toLocaleString('en-US')} 字。`,
+      }}
     >
       {sortedYears.map((year) => (
         <BlogSection key={year} title={year}>

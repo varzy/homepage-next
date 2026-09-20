@@ -1,6 +1,7 @@
 'use client';
 
 import clsx from 'clsx';
+import ImageSet from './ImageSet';
 import { useLightbox } from './LightboxProvider';
 
 interface LightboxImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
@@ -20,6 +21,7 @@ export default function LightboxImage({
     return <img src={src} alt={alt} className={className} {...rest} />;
   }
 
+  // 放大图始终用原始全尺寸 src（不压缩）；srcset 渲染与错误兜底交由 ImageSet
   return (
     <button
       type="button"
@@ -28,13 +30,7 @@ export default function LightboxImage({
       className={wrapperClassName ?? 'contents'}
       aria-label={alt || 'View image'}
     >
-      <img
-        src={src}
-        alt={alt}
-        className={clsx(className, 'cursor-zoom-in')}
-        loading={rest.loading ?? 'lazy'}
-        {...rest}
-      />
+      <ImageSet {...rest} src={src} alt={alt} className={clsx(className, 'cursor-pointer')} />
     </button>
   );
 }

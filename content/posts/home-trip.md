@@ -7,8 +7,8 @@ tags: ['小形迹', '流水账']
 date: '2023-09-04'
 slug: 'home-trip'
 summary: '真的，各种意义上的，好累啊。'
-last_edited_time: '2025-09-03T05:47:00.000Z'
-last_fetched_time: '2025-09-03T05:54:56.723Z'
+last_edited_time: '2026-08-18T17:43:00.000Z'
+last_fetched_time: '2026-08-18T18:01:06.173Z'
 page_id: 'c992d407-16fa-496f-9ada-16a470b84fa5'
 icon: '🏛️'
 ---
@@ -17,7 +17,7 @@ icon: '🏛️'
 
 从洛阳下车后，睡得精神崩溃的我实在懒得等公交和倒车，再加上这次时间短，我并不想把时间浪费在路程上，于是遍直接打车回了爷爷奶奶家。小院还是那个小院，门口的牵牛花开得很好，院子里多了一盆荷花，奶奶又消瘦了一些。
 
-![EJlKdeqnPTQ6WZr.jpg](https://cdn.sa.net/2024/03/16/EJlKdeqnPTQ6WZr.jpg)
+![EJlKdeqnPTQ6WZr.jpg](https://cdn.varzy.me/legacy/2024/03/16/EJlKdeqnPTQ6WZr.jpg)
 
 即使多次强调午饭简单一些，但奶奶还是端上来了大大小小好几盘子。
 
@@ -31,15 +31,15 @@ icon: '🏛️'
 
 好在这两天时间里也不尽是不开心。周六晚上，我给樊老师带了份小礼物，而樊老师则回赠了她亲手制作的蛋黄酥、雪花酥和蔓越莓饼干🥹。超好吃，超感动的！
 
-![7hF5ZXIzU23trOp.jpg](https://cdn.sa.net/2024/03/16/7hF5ZXIzU23trOp.jpg)
+![7hF5ZXIzU23trOp.jpg](https://cdn.varzy.me/legacy/2024/03/16/7hF5ZXIzU23trOp.jpg)
 
 和樊老师压马路时才发现蜜雪冰城在十八线小县城里的绝对统治地位。在我们县城的 CBD 地段，短短几百米的路上蜜雪冰城就开了好几家。
 
-![aRNhYJS84peAk9G.jpg](https://cdn.sa.net/2024/03/16/aRNhYJS84peAk9G.jpg)
+![aRNhYJS84peAk9G.jpg](https://cdn.varzy.me/legacy/2024/03/16/aRNhYJS84peAk9G.jpg)
 
 话说，这家店的老板，究竟是故意的还是不小心。。。
 
-![nUGrg3i7XWQePHM.jpg](https://cdn.sa.net/2024/03/16/nUGrg3i7XWQePHM.jpg)
+![nUGrg3i7XWQePHM.jpg](https://cdn.varzy.me/legacy/2024/03/16/nUGrg3i7XWQePHM.jpg)
 
 回程的火车上，对面坐了两位结伴的程序员。我不是有意偷听，但还是知晓了男生在百度写 PHP，而女生是银行外包写 Java。他们聊了很多，最后偶然聊到了 ChatGPT 和翻墙。男生连 Shadowsocks 都没拼对，并且告知女生可以下载蓝灯，一年 300 多块… 实在令我有些绷不住😅
 

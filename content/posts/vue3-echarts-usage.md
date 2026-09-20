@@ -7,8 +7,8 @@ tags: ['Vue']
 date: '2022-04-14'
 slug: 'vue3-echarts-usage'
 summary: ''
-last_edited_time: '2025-08-06T06:16:00.000Z'
-last_fetched_time: '2025-09-02T09:27:35.165Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:01:50.213Z'
 page_id: 'ba1a6a3b-cfc3-4be8-9f7d-bf6c0334ab80'
 icon: '📊'
 ---

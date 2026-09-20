@@ -3,12 +3,12 @@ title: '从微信小程序里的 UTC 日期说起'
 category: 'Coding'
 type: 'Post'
 status: 'Published'
-tags: ['Miniprogram']
+tags: ['微信小程序', 'JavaScript']
 date: '2021-03-15'
 slug: 'miniprogram-utc'
 summary: ''
-last_edited_time: '2025-09-02T07:53:00.000Z'
-last_fetched_time: '2025-09-02T09:29:24.719Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:02:55.657Z'
 page_id: 'df57b98c-74de-4187-9f07-21c15fc68c70'
 icon: '🛥️'
 ---

@@ -5,6 +5,17 @@ export interface FetchResult {
   deleted: number;
 }
 
+export type SyncMode = 'incremental' | 'full-sync' | 'force';
+
+export interface FetchStateEntry {
+  lastSuccessfulRun: string;
+  lastFullSync: string;
+}
+
+export interface FetchState {
+  [label: string]: FetchStateEntry;
+}
+
 export interface PostMetadata {
   title: string;
   category: string;
@@ -37,6 +48,19 @@ export interface KotobaMetadata {
   title_url: string;
   with_title: boolean;
   published_time: string;
+  last_edited_time: string;
+  last_fetched_time: string | null;
+}
+
+export interface TasteMetadata {
+  page_id: string;
+  title: string;
+  alias?: string;
+  status: string;
+  category: string;
+  cover: string;
+  url?: string;
+  label?: string;
   last_edited_time: string;
   last_fetched_time: string | null;
 }

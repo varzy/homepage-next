@@ -7,8 +7,8 @@ tags: ['Linux']
 date: '2020-03-27'
 slug: 'ubuntu-skills'
 summary: ''
-last_edited_time: '2025-08-06T06:19:00.000Z'
-last_fetched_time: '2025-09-02T09:32:09.655Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:04:44.067Z'
 page_id: '6d832d86-e56a-4498-b391-012db20a8b25'
 icon: '🎸'
 ---

@@ -7,25 +7,25 @@ tags: ['动画', '音乐']
 date: '2022-01-21'
 slug: 'carole-and-tuesday'
 summary: '补番的这几天，我的上下班路途也都循环着原声辑里的三十多首歌。'
-last_edited_time: '2025-09-02T07:51:00.000Z'
-last_fetched_time: '2025-09-02T09:27:51.808Z'
+last_edited_time: '2026-08-18T17:45:00.000Z'
+last_fetched_time: '2026-08-18T18:01:59.001Z'
 page_id: '44b7afd2-1b91-4c06-b74d-278e3d94cec2'
 icon: '🎙️'
 ---
 
 《卡罗尔与星期二》是动画制作公司骨头社(BONES)的 20 周年，音乐公司 Flying DOG 10 周年的纪念作。动画的争议比较大，我的个人评分也在 4 星和 5 星之间摇摆许久，最终还是给了 5 星。
 
-![Glt8qv6S4YNaJiE.jpg](https://cdn.sa.net/2024/03/16/Glt8qv6S4YNaJiE.jpg)
+![Glt8qv6S4YNaJiE.jpg](https://cdn.varzy.me/legacy/2024/03/16/Glt8qv6S4YNaJiE.jpg)
 
 ## 随便写写
 
 《卡罗尔与星期二》(后简称 《C & T》) 的故事发生在未来，人类已经移居火星，音乐都由 AI 创作，而主角卡罗尔(Carole) 和星期二(Tuesday，台译塔斯黛)邂逅后坚持自己写歌，直到出道、成名。虽然名字叫《卡罗尔与星期二》，但实际上动画采用了双(三)女主叙事， 另一个就是与二人组人生轨迹完全不同的安吉拉(Angela)。个人认为安吉拉的塑造比起二人组还要更好一些，而且她的音乐也丝毫不差，可惜有情人终成兄妹（逃。
 
-![A3VWouDIUF2KScz.png](https://cdn.sa.net/2024/03/16/A3VWouDIUF2KScz.png)
+![A3VWouDIUF2KScz.png](https://cdn.varzy.me/legacy/2024/03/16/A3VWouDIUF2KScz.png)
 
 骨头社操刀，作画质量不必多说，那风，那水，那光，那萌妹子...（C & T：害怕😨）
 
-![hMkbj5xqsrKcJuY.jpg](https://cdn.sa.net/2024/03/16/hMkbj5xqsrKcJuY.jpg)
+![hMkbj5xqsrKcJuY.jpg](https://cdn.varzy.me/legacy/2024/03/16/hMkbj5xqsrKcJuY.jpg)
 
 既然是音乐番，还是得重点关注一下动画里的音乐。《C & T》热播时我并没有第一时间追番，不过我还是早早就听完了动画的两张原声专辑，里面的很多首歌第一遍听时就加了红心♥️，所以我还是非常认可这部番的音乐质量的。但当我最近开始补番，结合动画画面和剧情再去听动画里的歌，才发现以前一些被我忽略的歌竟然如此抓耳。补番的这几天，我的上下班路途也都循环着原声辑里的三十多首歌。
 
@@ -47,9 +47,9 @@ icon: '🎙️'
 
 MJ 拉了地球上 45 位艺术家创作了 7 分 07 秒的《We are the World》，声援非洲饥荒募捐活动，歌曲署名“USA For Africa”，前半部分多位艺术家每人一句，后半部分则是节奏感很强的大合唱；卡罗尔和星期二拉了火星上一批最红的歌手创作了 7 分 09 秒的《Mother》，呼吁创作自由和地球和火星间的和平，歌曲署名“VOICES FROM MARS”，前半部分主角们每人一小节，后半部分则是节奏感很强的大合唱。
 
-![Npg8ZbelBoRnd1v.png](https://cdn.sa.net/2024/03/16/Npg8ZbelBoRnd1v.png)
+![Npg8ZbelBoRnd1v.png](https://cdn.varzy.me/legacy/2024/03/16/Npg8ZbelBoRnd1v.png)
 
-![n8mbOwIaldoc3xH.jpg](https://cdn.sa.net/2024/03/16/n8mbOwIaldoc3xH.jpg)
+![n8mbOwIaldoc3xH.jpg](https://cdn.varzy.me/legacy/2024/03/16/n8mbOwIaldoc3xH.jpg)
 
 除了我猜测的《Mother》这首歌的致敬，实际上动画里每一话的英文标题都来自于现实中的真实歌曲名。这或许也是渡边的推荐歌单。
 
@@ -73,4 +73,4 @@ MJ 拉了地球上 45 位艺术家创作了 7 分 07 秒的《We are the World�
 
 最后值得一提的是，动画里多次出现的 [@carole_and_tuesday](https://www.instagram.com/carole_and_tuesday/) 这个 Instagram 账号是真的存在的！
 
-![jid3trnsv6g7LCG.png](https://cdn.sa.net/2024/03/16/jid3trnsv6g7LCG.png)
+![jid3trnsv6g7LCG.png](https://cdn.varzy.me/legacy/2024/03/16/jid3trnsv6g7LCG.png)

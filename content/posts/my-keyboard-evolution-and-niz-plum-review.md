@@ -7,8 +7,8 @@ tags: ['评测', '外设', '流水账']
 date: '2021-10-30'
 slug: 'my-keyboard-evolution-and-niz-plum-review'
 summary: '程序员每天看的最多的不是女朋友的脸，而是显示器；摸的最多的不是女朋友的手，而是鼠标和键盘。'
-last_edited_time: '2025-09-03T06:03:00.000Z'
-last_fetched_time: '2025-09-03T06:05:55.786Z'
+last_edited_time: '2026-08-18T17:46:00.000Z'
+last_fetched_time: '2026-08-18T18:02:21.987Z'
 page_id: '6ccaf870-a34f-4458-8248-edb51e112374'
 icon: '⌨️'
 ---
@@ -41,7 +41,7 @@ icon: '⌨️'
 
 我热衷于桌面理线，目前办公桌面仅留了三根线：一是 MBP 与显示器相连的 TypeC 线，这根线让 MBP 给显示器传输视频信号的同时，显示器还能提供 90W 的反向充电，这种神奇的连接体验在 2021 年几乎已经成为标配；其二便是有线的 Earpods，这是之前购买 iPad Mini 5 时附送的；其三就是这根键盘线了。前两根线着实是去不掉，因此我只能对键盘线做文章，希望换上无线键盘，精简掉这根键盘线了。
 
-![ehvMxu5Zw1Fj4IC.jpg](https://cdn.sa.net/2024/03/16/ehvMxu5Zw1Fj4IC.jpg)
+![ehvMxu5Zw1Fj4IC.jpg](https://cdn.varzy.me/legacy/2024/03/16/ehvMxu5Zw1Fj4IC.jpg)
 
 除了键盘线和人性中的喜新厌旧外，我更换键盘的最核心动力其实是敲击时的声响。本人自带大力金刚指 Buff，敲同事的静音红轴都能敲出广场舞的动静。而 Poker2 键盘内没有任何缓冲结构，且留有一个很大的空腔，这就导致每一次敲击，弹簧音夹杂着钢板震动音在键盘内空谷传响，余音袅袅，绕办公桌三秒而不绝。虽然我也会刻意减小指尖的力道，但难免有些时候状态极佳，进入 Zone，便不可避免地打扰到方圆几个楼层的同事。终于有一天，有一位女同事忍无可忍，在飞书上私聊我要求敲键盘声音小一点😢。
 
@@ -63,11 +63,11 @@ icon: '⌨️'
 
 外包装环保且平平无奇。打开之后就直接是键盘本体，键盘有泡泡纸包裹，并且键盘上还有一个蛮厚实的防尘罩。
 
-![y3L7aldzCTcsIfx.jpg](https://cdn.sa.net/2024/03/16/y3L7aldzCTcsIfx.jpg)
+![y3L7aldzCTcsIfx.jpg](https://cdn.varzy.me/legacy/2024/03/16/y3L7aldzCTcsIfx.jpg)
 
 键盘的调色很舒服，我个人非常喜欢这种浅灰 + 奶白的配色，看起来既优雅又性冷淡。事实上我购买衣物和鞋子时也倾向于这种配色。
 
-![pSNncdEzMj7sxm8.jpg](https://cdn.sa.net/2024/03/16/pSNncdEzMj7sxm8.jpg)
+![pSNncdEzMj7sxm8.jpg](https://cdn.varzy.me/legacy/2024/03/16/pSNncdEzMj7sxm8.jpg)
 
 包装里的不用读系列其实还是需要读一读的。虽然支持的操作很多，但绝大部分我都不太用得上，大概也就记住怎么连接蓝牙和查看电量就可以了。
 
@@ -77,29 +77,29 @@ icon: '⌨️'
 
 键盘还附赠了一大堆弹簧，据说可以自己拆开键帽安装弹窗增加压力克数。我购买的这款是 35g 版本，个人觉得力度不轻不重刚刚好，而且我现在早已遗失大学那会的折腾劲，估计只要键盘不出毛病，我是绝不会主动拆轴瞎搞的。
 
-![LZ2Td6wiHlrGfSU.jpg](https://cdn.sa.net/2024/03/16/LZ2Td6wiHlrGfSU.jpg)
+![LZ2Td6wiHlrGfSU.jpg](https://cdn.varzy.me/legacy/2024/03/16/LZ2Td6wiHlrGfSU.jpg)
 
 键帽采用 PBT 材质，做工很不错，完全不像网传的那样有毛刺和水口 (不过我看的那个评测视频已经是一年前的了)。我购入的这款是侧刻版本，但键帽正面并非完全空白，而是有半透明的刻印，在一定角度下还能呈现反光。不过作为极简主义者，我还是更希望键帽正面能干净得彻底一些😅。
 
-![Tb6tUKGWDI5ciqo.jpg](https://cdn.sa.net/2024/03/16/Tb6tUKGWDI5ciqo.jpg)
+![Tb6tUKGWDI5ciqo.jpg](https://cdn.varzy.me/legacy/2024/03/16/Tb6tUKGWDI5ciqo.jpg)
 
-![OpDktKCbadZSesY.jpg](https://cdn.sa.net/2024/03/16/OpDktKCbadZSesY.jpg)
+![OpDktKCbadZSesY.jpg](https://cdn.varzy.me/legacy/2024/03/16/OpDktKCbadZSesY.jpg)
 
 键盘轴体与传统机械键盘的十字菊花略有不同，但朋友表示第三方的键帽也能装进去。至于大键则是采用了平衡杆，不晃不涩不肉，感觉不错。迫于我从来没接触过平衡杆，怕拆下来不好装，所以这里也就不拆大键了。
 
-![7cvRFdzYfx3hjoW.jpg](https://cdn.sa.net/2024/03/16/7cvRFdzYfx3hjoW.jpg)
+![7cvRFdzYfx3hjoW.jpg](https://cdn.varzy.me/legacy/2024/03/16/7cvRFdzYfx3hjoW.jpg)
 
 关于键帽还有一个非常有趣的细节，就是空格键并非直来直去，而是在中间做出了一个圆润的弧度，正好是我们平时敲击空格键时落指概率最大的区域，有效提升了大拇指的幸福感。为这个巧思点赞。
 
-![ULaCwRrhcWfXqSd.jpg](https://cdn.sa.net/2024/03/16/ULaCwRrhcWfXqSd.jpg)
+![ULaCwRrhcWfXqSd.jpg](https://cdn.varzy.me/legacy/2024/03/16/ULaCwRrhcWfXqSd.jpg)
 
 另一个细节是随键盘附带的优联接收器采用了半透明设计，可以直接看到里面的电路板，我很喜欢这样的直男设计。
 
-![VBuDfWqjbwNJiYm.jpg](https://cdn.sa.net/2024/03/16/VBuDfWqjbwNJiYm.jpg)
+![VBuDfWqjbwNJiYm.jpg](https://cdn.varzy.me/legacy/2024/03/16/VBuDfWqjbwNJiYm.jpg)
 
 把键盘翻过来就会感觉背面的做工和正面还是存在不小的差距。我收到的这把键盘在外圈和底壳连接处的缝隙粗细不一，而且四边的两个脚垫廉价感十足。顶部的脚撑采用了两段式设计，但质感不佳，手感奇异，你需要用几乎让自己怀疑这玩意是不是要被掰断了的力度才能把脚撑收回。
 
-![WDZbiGpy13dPN2x.jpg](https://cdn.sa.net/2024/03/16/WDZbiGpy13dPN2x.jpg)
+![WDZbiGpy13dPN2x.jpg](https://cdn.varzy.me/legacy/2024/03/16/WDZbiGpy13dPN2x.jpg)
 
 总体来说，我对这把键盘的外在还是非常满意的，类似脚撑、背部做工等问题其实对我来说并没有那么重要，而其他部分则完美符合了我的需求，甚至还在键帽设计、配件上还超出了我的预期😆。
 
@@ -113,7 +113,7 @@ icon: '⌨️'
 
 我也斗胆录了段敲字视频上传到了 B 站：[**宁芝NIZ 静电容 ATOM68 侧刻上手试敲**](https://www.bilibili.com/video/BV1qR4y177xe)**。**录音设备是 13 Pro，个人觉得录出来的效果还是非常还原的。p.s. 迫于腕托还在公司，所以我就随手找了块毛巾垫着了。p.p.s 为了拍摄这个顶部视角，我穷尽毕生物理学和几何学知识才搭建了这个垂直机位😂。
 
-![shVcGwloS5a82vL.jpg](https://cdn.sa.net/2024/03/16/shVcGwloS5a82vL.jpg)
+![shVcGwloS5a82vL.jpg](https://cdn.varzy.me/legacy/2024/03/16/shVcGwloS5a82vL.jpg)
 
 ## 软实力
 

@@ -7,8 +7,8 @@ tags: ['小形迹', '流水账']
 date: '2023-06-26'
 slug: 'dragon-boat-festival-trip'
 summary: '我也多希望这个假期不止是我工作上的分界点。加油啊 ZY！'
-last_edited_time: '2025-09-03T05:47:00.000Z'
-last_fetched_time: '2025-09-03T05:55:03.658Z'
+last_edited_time: '2026-08-18T17:44:00.000Z'
+last_fetched_time: '2026-08-18T18:01:11.531Z'
 page_id: '94f766ab-b091-4780-bd7b-10260b536d09'
 icon: '🐲'
 ---
@@ -17,7 +17,7 @@ icon: '🐲'
 
 到家就已经晚上 8 点了，老妈准备了鸡蛋饼和油馍套餐迎接我。真的是很久没有哪一餐是如此纯粹的碳水了😂。
 
-![gkpZWqbYhP8ucSM.jpg](https://cdn.sa.net/2024/03/16/gkpZWqbYhP8ucSM.jpg)
+![gkpZWqbYhP8ucSM.jpg](https://cdn.varzy.me/legacy/2024/03/16/gkpZWqbYhP8ucSM.jpg)
 
 第二天回到了爷爷奶奶家。这次回家特意没有提前告诉爷爷奶奶，怕他们激动得睡不着觉，也算是个惊喜了。
 
@@ -27,21 +27,21 @@ icon: '🐲'
 
 为什么对这个小说印象如此之深呢？因为我的姥爷就是这样一个人。很久之前我们就劝他不要再种地了，可前几天姥爷才又顶着太阳去给地里除了草。这篇小说让我知道他是不可能被劝得动的。
 
-![f5ZeO7zSNtM9L8d.jpg](https://cdn.sa.net/2024/03/16/f5ZeO7zSNtM9L8d.jpg)
+![f5ZeO7zSNtM9L8d.jpg](https://cdn.varzy.me/legacy/2024/03/16/f5ZeO7zSNtM9L8d.jpg)
 
 昨天的碳水套餐是麻麻的爱，中午则是奶奶的爱。朴素一餐，但我吃的干干净净。
 
-![2FkahyLimqT6b4Q.jpg](https://cdn.sa.net/2024/03/16/2FkahyLimqT6b4Q.jpg)
+![2FkahyLimqT6b4Q.jpg](https://cdn.varzy.me/legacy/2024/03/16/2FkahyLimqT6b4Q.jpg)
 
 吃过午饭，我一边坐在院子里的树下乘凉，一边看树边的小花和砖缝里的蚂蚁。可能真的是在北京呆太久了，觉得没有咖啡和冰可乐的生活也好惬意啊。
 
-![6BLboh95eNXvEyi.jpg](https://cdn.sa.net/2024/03/16/6BLboh95eNXvEyi.jpg)
+![6BLboh95eNXvEyi.jpg](https://cdn.varzy.me/legacy/2024/03/16/6BLboh95eNXvEyi.jpg)
 
-![1Wzq4GxeFsVUPHo.jpg](https://cdn.sa.net/2024/03/16/1Wzq4GxeFsVUPHo.jpg)
+![1Wzq4GxeFsVUPHo.jpg](https://cdn.varzy.me/legacy/2024/03/16/1Wzq4GxeFsVUPHo.jpg)
 
 民国时期，洛阳地区大量墓葬被盗，出土了众多墓志石刻，生于我们镇上的国民党陆军上将[张钫先生](https://zh.wikipedia.org/wiki/%E5%BC%B5%E9%88%81)将这些墓志铭搜集，在镇中心建成了「[千唐志斋](https://baike.baidu.com/item/%E5%8D%83%E5%94%90%E5%BF%97%E6%96%8B%E7%9F%B3%E5%88%BB/6197826)」，这就是离我家最近的 4A 级景点了。电影《1942》里提到的「张钫」正是同一人。
 
-![poyO9QlUVzDWhw6.jpg](https://cdn.sa.net/2024/03/16/poyO9QlUVzDWhw6.jpg)
+![poyO9QlUVzDWhw6.jpg](https://cdn.varzy.me/legacy/2024/03/16/poyO9QlUVzDWhw6.jpg)
 
 我大概也十几年没有去过了，这次回来听说在老馆旁边还建成了一个新馆，于是约上友人，新馆老馆都重游了一遍。新馆就是标准的现代博物馆结构，我还是更喜欢老馆一些。
 
@@ -49,37 +49,37 @@ icon: '🐲'
 
 老馆里还有两座小凉亭相对而立，分别叫做「千千亭」和「又又亭」。从小我就觉得这两个名字特别特别好听，友人说，如果我有了孩子，不如就叫「赵小千」和「赵小又」吧。诶，竟然意外的好听，我觉得可行🤣。
 
-![OpRl1xyMHa7sf3C.jpg](https://cdn.sa.net/2024/03/16/OpRl1xyMHa7sf3C.jpg)
+![OpRl1xyMHa7sf3C.jpg](https://cdn.varzy.me/legacy/2024/03/16/OpRl1xyMHa7sf3C.jpg)
 
-![XM9Oa3obrGWeCd2.jpg](https://cdn.sa.net/2024/03/16/XM9Oa3obrGWeCd2.jpg)
+![XM9Oa3obrGWeCd2.jpg](https://cdn.varzy.me/legacy/2024/03/16/XM9Oa3obrGWeCd2.jpg)
 
 从千唐志斋出来，我们又走了一遍村子的「商业街」。五金店、小诊所、修车铺、雪糕批发… 门口坐着的似乎还是那些叔叔阿姨。我又去到曾经上过的小学，学校的后门已经被封死，小卖部看起来也关门许久。路过街角的小超市，听说和我同年同月同日生的黄姓同学已经继承家业，现在正在柜台收银，最近还生了个可爱的女儿…
 
 村子里的时间曲率似乎是不均匀的，有些事物在悄然前进，有些事物又从未改变。
 
-![46OUhxPCyBipoj2.jpg](https://cdn.sa.net/2024/03/16/46OUhxPCyBipoj2.jpg)
+![46OUhxPCyBipoj2.jpg](https://cdn.varzy.me/legacy/2024/03/16/46OUhxPCyBipoj2.jpg)
 
-![B5xoATCyN6s7Yi4.jpg](https://cdn.sa.net/2024/03/16/B5xoATCyN6s7Yi4.jpg)
+![B5xoATCyN6s7Yi4.jpg](https://cdn.varzy.me/legacy/2024/03/16/B5xoATCyN6s7Yi4.jpg)
 
 友人偏爱古风装扮，我也试着戴上了她的发饰。可。。。可爱捏？女装路上的一大步（逃
 
-![twYNA54dbyMh7EQ.jpg](https://cdn.sa.net/2024/03/16/twYNA54dbyMh7EQ.jpg)
+![twYNA54dbyMh7EQ.jpg](https://cdn.varzy.me/legacy/2024/03/16/twYNA54dbyMh7EQ.jpg)
 
 从爷爷奶奶家离开前，又看到了这块与我“感情颇深”的砖。小时候的我确实是太闲了，没事就拿窗户的门销去磨下面这块砖😅。铁杵成针诚不我欺。
 
-![4rzoEp8Xmx7NkF1.jpg](https://cdn.sa.net/2024/03/16/4rzoEp8Xmx7NkF1.jpg)
+![4rzoEp8Xmx7NkF1.jpg](https://cdn.varzy.me/legacy/2024/03/16/4rzoEp8Xmx7NkF1.jpg)
 
 洛阳人的一天从一碗汤开始，而洛阳游子的归途也必定伴随着一碗汤。从我开始北漂到现在，每次回家总要至少喝一次牛肉汤，我印象中应该是从未落下过的。关于牛肉汤我也有好多故事可以讲，等我有空再好好写一写吧。
 
-![1drngKoamOE35bD.jpg](https://cdn.sa.net/2024/03/16/1drngKoamOE35bD.jpg)
+![1drngKoamOE35bD.jpg](https://cdn.varzy.me/legacy/2024/03/16/1drngKoamOE35bD.jpg)
 
 除了热情的牛肉汤，还有麻麻做的窝窝头。小时候姥姥家养猪，猪食槽差不多就是窝头的形状，有一次我拉着我妈说想吃「猪碗」，给我妈整一愣一愣的。这也成了我的一个梗，被她们取笑至今🤣。
 
-![v3Wmp6EdyQROLw7.jpg](https://cdn.sa.net/2024/03/16/v3Wmp6EdyQROLw7.jpg)
+![v3Wmp6EdyQROLw7.jpg](https://cdn.varzy.me/legacy/2024/03/16/v3Wmp6EdyQROLw7.jpg)
 
 很久之前就说要给家人做一顿饭，但直到这个假期才真正付诸了行动。 不过做得并不算特别成功😂，比如红烧肉的糖色炒的太轻啦…
 
-![3pzXDPqEAefjQRY.jpg](https://cdn.sa.net/2024/03/16/3pzXDPqEAefjQRY.jpg)
+![3pzXDPqEAefjQRY.jpg](https://cdn.varzy.me/legacy/2024/03/16/3pzXDPqEAefjQRY.jpg)
 
 前段时间心情过于糟糕，连带着工作上同步推进的项目都会让我产生严重的生理不适，甚至只要看到这个项目的代码就想吐。我不是个工作狂，也不热爱工作，但那种工作效率真的不是我该有的水平。
 

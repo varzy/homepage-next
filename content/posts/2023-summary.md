@@ -7,8 +7,8 @@ tags: ['年终总结']
 date: '2023-12-31'
 slug: '2023-summary'
 summary: '有什么想做的就去做吧，且将新火试新茶，诗酒趁年华。'
-last_edited_time: '2025-11-19T06:51:00.000Z'
-last_fetched_time: '2026-01-20T07:48:35.544Z'
+last_edited_time: '2026-08-18T17:43:00.000Z'
+last_fetched_time: '2026-08-18T18:01:01.688Z'
 page_id: '32553026-a035-4c96-9988-4a0e63ba50b0'
 icon: '⛵'
 ---
@@ -21,13 +21,13 @@ icon: '⛵'
 
 这一年里参加了几次徒步，也旅行了好几趟，仲夏去苏杭散心，吹了苏州博物馆的空调和金鸡湖的晚风，七月在大连吃了海胆饺子看了海鸥。
 
-![BZcVx5b3RHEpG7m.jpg](https://cdn.sa.net/2024/03/15/BZcVx5b3RHEpG7m.jpg)
+![BZcVx5b3RHEpG7m.jpg](https://cdn.varzy.me/legacy/2024/03/15/BZcVx5b3RHEpG7m.jpg)
 
-![r6EeTizQC1ObcRu.jpg](https://cdn.sa.net/2024/03/15/r6EeTizQC1ObcRu.jpg)
+![r6EeTizQC1ObcRu.jpg](https://cdn.varzy.me/legacy/2024/03/15/r6EeTizQC1ObcRu.jpg)
 
 三月和八月各去了一趟沈阳找我曾经的室友老张一家子。即使只隔了半年，还是能感觉到小张的成长，说话清楚了不少，跑得又快又稳当。八月还和老张“坦诚相见”得泡了澡堂子，回程的火车上撞见了这一年份最美的晚霞。
 
-![wklPAZXKSCVerdJ.jpg](https://cdn.sa.net/2024/03/15/wklPAZXKSCVerdJ.jpg)
+![wklPAZXKSCVerdJ.jpg](https://cdn.varzy.me/legacy/2024/03/15/wklPAZXKSCVerdJ.jpg)
 
 重新认识了一些旧朋友，比如樊老师，也认识了几位一见如故的新朋友，比如铁锤和小丫。五一假期参加了最好的朋友之一，土土的婚礼，又当伴郎又当花童的（指把手捧花从北京带到山西）。感谢土土，他带着我来了场说走就走的自驾旅行，带我和恶师傅一起刷过四斤烤羊腿，也和培根大佬约了不止一次海底捞。
 
@@ -35,13 +35,13 @@ icon: '⛵'
 
 参加了不少活动。和朋友一起听了场「丢莱卡」乐队的现场。去了极客公园的创新大会，王小川关于 AI 的解读还是很见水平的。和同样二刺猿的同事逛了北京的核聚变，在核市奇谭铺子见到了四十二；同一天下午又拐去了北平机器的煎饼节，领了瓶绿豆沙啤酒，吃了套与小区门口没啥差别的煎饼果子😂。
 
-![rDRPI5ztjyFX3fq.jpg](https://cdn.sa.net/2024/03/15/rDRPI5ztjyFX3fq.jpg)
+![rDRPI5ztjyFX3fq.jpg](https://cdn.varzy.me/legacy/2024/03/15/rDRPI5ztjyFX3fq.jpg)
 
 六月最后一天晚上在多抓鱼三体里屯店参加闭店活动。作为多抓鱼的前忠实用户，三里屯店我去过很多次，听老狼唱起《啊朋友再见》时还是蛮伤感的。闭店后所有墙面都会重新刷大白，于是每一处能落笔的地方都铺满了到访者的笔迹，有大触画画，有人用彩笔写下「BYEBYE Fuck You All」，有人在隔空比身高，也有人在很努力得劝人别学土木和新闻🌚。
 
 虽然字很丑，但我也留下了一些对朋友的祝福，对自己的期许，以及一些放在心里憋得慌，又讲给谁听都不合适的话。它们再也不会重见天日，但至少这个世界听到过了。p.s. 那天晚上拿了几张多抓鱼的海报，还有剩，想要的可以找我～
 
-![rJLnTvOhtD8u2Ec.jpg](https://cdn.sa.net/2024/03/15/rJLnTvOhtD8u2Ec.jpg)
+![rJLnTvOhtD8u2Ec.jpg](https://cdn.varzy.me/legacy/2024/03/15/rJLnTvOhtD8u2Ec.jpg)
 
 今年终于鼓起勇气接近了一个瞩目许久的女生，却以迄今为止最疼痛的姿势硬着陆了。就像伊卡洛斯追逐太阳。这份伤痛直击内心最深处那 0.5% 的一隅，使我不得不告别一些如影随形十几年的习惯。
 
@@ -53,13 +53,13 @@ icon: '⛵'
 
 今年又拼了个大积木，是双鹰咔哒的法拉利，量大管饱还便宜，而且个人感觉机械件的设计完全不逊色于原版乐高。拼乐高可太解压了，就是拼完之后没处发落就很痛苦😖。
 
-![zD5JRlygO6Ud3vC.jpg](https://cdn.sa.net/2024/03/15/zD5JRlygO6Ud3vC.jpg)
+![zD5JRlygO6Ud3vC.jpg](https://cdn.varzy.me/legacy/2024/03/15/zD5JRlygO6Ud3vC.jpg)
 
 又搬了一次家，住进了一个有独卫和巨大落地窗的向阳主卧。这是我在北京的第 5 个蜗居，很贵，但有了独卫后生活质量确实是直线上升了。在屋里用小电锅煮过一次螺蛳粉，低估了这玩意的威力，房间和衣服臭了整整一周💩。
 
 我依旧没有去考驾照，反而考了两个奇奇怪怪的证，分别是业余无线电和 [Apple Device Support](https://www.credly.com/badges/236b8f7a-524b-44d6-b20d-ea7b61787429/public_url)。我的呼号是 B1IOSX，欢迎通联。73！
 
-![aL67SdMVRyXEN2Q.jpg](https://cdn.sa.net/2024/03/15/aL67SdMVRyXEN2Q.jpg)
+![aL67SdMVRyXEN2Q.jpg](https://cdn.varzy.me/legacy/2024/03/15/aL67SdMVRyXEN2Q.jpg)
 
 学会了抽烟，终于变成坏孩子了。可我该怎么办呢？陷入无法自拔的失落时，我真的需要一个强行放空的手段，哪怕是通过一氧化碳中毒导致的大脑片刻缺氧。
 
@@ -73,7 +73,7 @@ icon: '⛵'
 
 上半年刚准备启动夜跑计划，不幸右脚踝究极扭伤 (甚至入夏时都没好利索)，就把跑步改成了快走，刚开始沿着附近宽敞的大路走个几圈，之后逐渐增加距离，3 公里，4 公里，5 公里… 直到有一晚一口气走完 8 公里，到家后甚至有一种汗没流到位的感觉，我才猛然发觉自己已经轻了 4 公斤，体脂率来到了 15% 以下。而年中那段时间为了逼自己睡着又不得不进行着报复性的过量运动，体重最低时一度降到了 67kg，体脂则是 12.8%。
 
-![gbtj6FRYmDfTO3Q.jpg](https://cdn.sa.net/2024/03/15/gbtj6FRYmDfTO3Q.jpg)
+![gbtj6FRYmDfTO3Q.jpg](https://cdn.varzy.me/legacy/2024/03/15/gbtj6FRYmDfTO3Q.jpg)
 
 体重和体脂下降带来最明显的变化就是身体轻盈了许多，有了一些线条，冬天也更抗冻了。虽然很享受内啡肽大量分泌的状态，但关节的哀嚎和心态的好转还是让我逐渐回归了正常的运动水平，从秋天开始我的体重基本维持在 68-69kg，体脂则在 14% 左右摆动。
 
@@ -121,7 +121,7 @@ icon: '⛵'
 
 电影看得不多，去院线看的更是只有诺兰的《[奥本海默](https://movie.douban.com/subject/35593344/)》。不过我是被铁锤带着去中国电影博物馆的黄金位置看的，影院本身的体验也相当加分，感谢铁锤！
 
-![sp9AQhVT3K4SlU6.jpg](https://cdn.sa.net/2024/03/15/sp9AQhVT3K4SlU6.jpg)
+![sp9AQhVT3K4SlU6.jpg](https://cdn.varzy.me/legacy/2024/03/15/sp9AQhVT3K4SlU6.jpg)
 
 而今年最期待的《铃芽之旅》因为错过了院线档期直到现在还没看。那我就再等一个人和她一起看吧。
 

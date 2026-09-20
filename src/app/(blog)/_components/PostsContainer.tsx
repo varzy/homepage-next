@@ -8,7 +8,7 @@ export default function PostsContainer({
   currentPage,
   showCategory = true,
   showTags = true,
-  showYear = true,
+  dateTpl = 'MMM DD, YYYY',
   urlPrefix = '/',
 }: {
   posts: PostMeta[];
@@ -16,7 +16,7 @@ export default function PostsContainer({
   urlPrefix?: string;
   showCategory?: boolean;
   showTags?: boolean;
-  showYear?: boolean;
+  dateTpl?: string;
 }) {
   const prePage = SITE_CONFIG.blogPerPage;
   const currentPagePosts = posts.slice((currentPage - 1) * prePage, currentPage * prePage);
@@ -29,7 +29,7 @@ export default function PostsContainer({
             key={post.page_id}
             showCategory={showCategory}
             showTags={showTags}
-            showYear={showYear}
+            dateTpl={dateTpl}
             {...post}
           ></PostItem>
         ))}

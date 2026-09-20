@@ -7,8 +7,8 @@ tags: ['生产力', '软件', 'MacOS']
 date: '2022-09-02'
 slug: 'productive-mac-apps'
 summary: '用 Mac 这么多年，我也折腾过许许多多软件，然而现在已经返璞归真了。'
-last_edited_time: '2025-08-06T06:15:00.000Z'
-last_fetched_time: '2025-09-02T09:27:14.694Z'
+last_edited_time: '2026-08-18T17:45:00.000Z'
+last_fetched_time: '2026-08-18T18:01:37.084Z'
 page_id: 'fbe5853e-092b-4f46-ad2b-206186d0a514'
 icon: '🪐'
 ---
@@ -30,15 +30,15 @@ icon: '🪐'
 4. **AppCleaner**。免费的应用卸载软件
 5. **VSCode**。用来阅读 + 临时修改。Docker 插件 + colima 可以完全替代 Docker Desktop 这个半毒瘤。在用 [Github Theme](https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme)
 
-   ![fJHtAsuKY6GPT8U.jpg](https://cdn.sa.net/2024/03/16/fJHtAsuKY6GPT8U.jpg)
+   ![fJHtAsuKY6GPT8U.jpg](https://cdn.varzy.me/legacy/2024/03/16/fJHtAsuKY6GPT8U.jpg)
 
 6. **JetBrains 全家桶**。真·吃饭的家伙。买了全家桶，但几乎只用 WebStorm 和 IDEA 。前段时间涨价之际一个冲动直接进行一个三年订阅的续🌚。很多老主题还没有适配新版 UI，经常导致侧边栏过于拥挤，所以亮色模式下还是用回了默认主题 `Light`，暗色则继续使用 `Druvbox Dark Medium`
 
-   ![bxUL1tOYZqSmvMF.jpg](https://cdn.sa.net/2024/03/16/bxUL1tOYZqSmvMF.jpg)
+   ![bxUL1tOYZqSmvMF.jpg](https://cdn.varzy.me/legacy/2024/03/16/bxUL1tOYZqSmvMF.jpg)
 
 7. **iTerm2** + **ohmyzsh**。几乎用不到 iTerm2 的高级功能，于是前段时间尝试用回了自带的 Terminal ，发现颜值还是差很多，老老实实回到了 iTerm2 。在用 [Dracula](https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Dracula.itermcolors) 主题
 
-   ![23P6xWplYqwHjtJ.png](https://cdn.sa.net/2024/03/16/23P6xWplYqwHjtJ.png)
+   ![23P6xWplYqwHjtJ.png](https://cdn.varzy.me/legacy/2024/03/16/23P6xWplYqwHjtJ.png)
 
 8. **TablePlus** + **Paw** + **Downie** + **MindNote** + **Diagrams**。来自 Setapp 的一些乱七八糟的软件，属于锦上添花，大部分都可以找到替代品
 

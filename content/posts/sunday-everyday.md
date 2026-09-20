@@ -6,9 +6,9 @@ status: 'Published'
 tags: ['游戏人生', '随想']
 date: '2025-08-12'
 slug: 'sunday-everyday'
-summary: '人生苦短，我站周天哥。'
-last_edited_time: '2025-09-02T03:27:00.000Z'
-last_fetched_time: '2025-09-02T09:25:15.595Z'
+summary: '快乐的猪，还是痛苦的苏格拉底？'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:00:23.002Z'
 page_id: '1ecdc9c0-364a-80b9-ad60-ef46255ba761'
 icon: '🛫'
 ---

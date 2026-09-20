@@ -18,10 +18,10 @@ export default async function Readme() {
     <div>
       <div className="flex items-end gap-3.5 pt-12 pb-10">
         <div className="flex-1">
-          <LightboxImage src="https://cdn.sa.net/2025/08/08/rJ9UIbeghaxc52d.jpg" alt="" />
+          <LightboxImage src="https://cdn.varzy.me/static/selfie1.jpg" alt="selfie 1" />
         </div>
         <div className="flex-1">
-          <LightboxImage src="https://cdn.sa.net/2025/08/08/Z8N2B3ObpDSTVEt.jpg" alt="" />
+          <LightboxImage src="https://cdn.varzy.me/static/selfie2.jpg" alt="selfie 2" />
         </div>
       </div>
 

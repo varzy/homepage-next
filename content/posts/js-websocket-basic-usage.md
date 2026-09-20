@@ -7,8 +7,8 @@ tags: ['JavaScript']
 date: '2021-04-13'
 slug: 'js-websocket-basic-usage'
 summary: ''
-last_edited_time: '2025-08-06T06:17:00.000Z'
-last_fetched_time: '2025-09-02T09:29:04.896Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:02:47.176Z'
 page_id: '69768b3b-36e3-40ae-bee3-a497762b9b72'
 icon: '👗'
 ---

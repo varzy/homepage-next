@@ -7,8 +7,8 @@ tags: ['音乐', '精选']
 date: '2021-09-27'
 slug: 'threejs-demo-through-the-dark'
 summary: "‘Through The Dark’ was written by Hilltop Hoods' Pressure (aka Dan Smith) for his young son Liam who was diagnosed with leukaemia."
-last_edited_time: '2025-08-06T06:17:00.000Z'
-last_fetched_time: '2025-09-02T09:28:39.809Z'
+last_edited_time: '2026-08-18T17:46:00.000Z'
+last_fetched_time: '2026-08-18T18:02:27.889Z'
 page_id: '5a559705-8971-4fe2-95d6-7518f19b9204'
 icon: '🌑'
 ---
@@ -21,7 +21,7 @@ icon: '🌑'
 
 仍不死心的我又翻开了网页源代码，搜索 `throught`，结果还真就找到了这行代码：
 
-![hLZPRzc3duWmQpr.png](https://cdn.sa.net/2024/03/16/hLZPRzc3duWmQpr.png)
+![hLZPRzc3duWmQpr.png](https://cdn.varzy.me/legacy/2024/03/16/hLZPRzc3duWmQpr.png)
 
 Whoops~ 看来果然已经下线了，So Sad 😞。我尝试访问注释中的地址：[https://throughthedark.withgoogle.com/](https://throughthedark.withgoogle.com/)，结果指向了早已不再维护的 Google Play Music，看来这个 Demo 确实已经再也无法真正意义上的游玩了。不死心的我只能把目光投向了 Youtube。在 Youtube 搜索 `Through The Dark threejs`，只找到了寥寥数个相关视频。
 
@@ -31,11 +31,11 @@ Whoops~ 看来果然已经下线了，So Sad 😞。我尝试访问注释中的�
 >
 > “Through The Dark”是 Hilltop Hoods' Pressure（又名 Dan Smith）为他被诊断出患有白血病的小儿子 Liam 写的。这部互动电影与 Google Play Music 合作，以 Dan 的故事为灵感，分享父子在两个 3D 动画世界中的旅程——黑暗代表恐惧，光明代表希望。
 
-![HVt6TZX5RuLxrhM.png](https://cdn.sa.net/2024/03/16/HVt6TZX5RuLxrhM.png)
+![HVt6TZX5RuLxrhM.png](https://cdn.varzy.me/legacy/2024/03/16/HVt6TZX5RuLxrhM.png)
 
 官方把这种表现形式定义为“互动电影”，确如其名。只消鼠标滚轮的上下滚动这一个操作，你就可以看着孩子与父亲从并肩而行到阴阳两隔之间发生的各种片段，而影片中对于心理活动的描绘则使用了大量奇妙的画面比喻，艺术感十足。不得不说创作团队真的是一群鬼才。
 
-![8tPWD2whBmLp7cb.png](https://cdn.sa.net/2024/03/16/8tPWD2whBmLp7cb.png)
+![8tPWD2whBmLp7cb.png](https://cdn.varzy.me/legacy/2024/03/16/8tPWD2whBmLp7cb.png)
 
 幸运的是，除了官方视频，我还找到了两段玩家自行上传的游戏录像：
 
@@ -44,4 +44,4 @@ Whoops~ 看来果然已经下线了，So Sad 😞。我尝试访问注释中的�
 
 虽然画质不高，并且也没办法亲自操纵画面，但我仍然推荐你通过别人的双手感受一下这满到溢出的伤感。
 
-![128LdhXFOwlbkVa.png](https://cdn.sa.net/2024/03/16/128LdhXFOwlbkVa.png)
+![128LdhXFOwlbkVa.png](https://cdn.varzy.me/legacy/2024/03/16/128LdhXFOwlbkVa.png)

@@ -7,8 +7,8 @@ tags: ['软件', '生产力', '外设']
 date: '2019-12-22'
 slug: 'my-desktop'
 summary: '当我第一次注重桌面体验。'
-last_edited_time: '2025-09-02T08:57:00.000Z'
-last_fetched_time: '2025-09-02T09:33:14.405Z'
+last_edited_time: '2026-08-18T17:47:00.000Z'
+last_fetched_time: '2026-08-18T18:05:23.230Z'
 page_id: '45c832f0-49a6-46b8-9285-e28315fd9dbb'
 icon: '♠️'
 ---
@@ -19,11 +19,11 @@ icon: '♠️'
 
 工作形态：
 
-![v8RjT6u759ckAdO.jpg](https://cdn.sa.net/2024/03/16/v8RjT6u759ckAdO.jpg)
+![v8RjT6u759ckAdO.jpg](https://cdn.varzy.me/legacy/2024/03/16/v8RjT6u759ckAdO.jpg)
 
 娱乐形态：
 
-![aTlv5Ei84qkDNUG.jpg](https://cdn.sa.net/2024/03/16/aTlv5Ei84qkDNUG.jpg)
+![aTlv5Ei84qkDNUG.jpg](https://cdn.varzy.me/legacy/2024/03/16/aTlv5Ei84qkDNUG.jpg)
 
 ### **装备清单**
 
@@ -51,13 +51,13 @@ icon: '♠️'
 
 最早这两台电脑是完全独立使用的，Y7000 接了 G502 放在桌子的右侧，当我想切换电脑的时候，就只能把凳子从左侧拉到右侧 (好在楼下的姐姐还没来找过我的麻烦)。这样使用了挺久，也没什么不好的感觉，但有一天，我突发奇想得把 Y7000 接上这台 4k 显示器，打开了魔兽，看到 4k 高清无码的血精灵姐姐时，我整个人都湿了 (图是刚刚截的)。
 
-![zNMcbnLXFG51Ido.png](https://cdn.sa.net/2024/03/16/zNMcbnLXFG51Ido.png)
+![zNMcbnLXFG51Ido.png](https://cdn.varzy.me/legacy/2024/03/16/zNMcbnLXFG51Ido.png)
 
 从那天起，我想用 Y7000 玩游戏时，就要把机械键盘推到一边，摆上 Y7000，拔掉 Mac Mini 的 HDMI 线插到 Y7000 上，再把 G502 拉到显示器下方，然后用笔记本的键盘、外接显示器和 G502 玩魔兽。这套流程简直要素过多！
 
 于是我终于规划出了现在这套方案。在京东上随便找了一个杂牌立式支架，把两台电脑接口朝上立着固定起来，节省了本就宝贵的桌面空间。最重要的是，当我切换主机时只需要重新拔插 HDMI 和键盘这两根线即可。G502 永远在 Y7000 上使用，XM Master 2S 永远在 Mac Mini 上使用。由于 Y7000 的 type-c 接口并非雷电3，无法传输视频信号，否则可以通过转接器，仅插拔一根线就能实现主机的切换。
 
-![BqWXtZFO6M5Cgzw.jpg](https://cdn.sa.net/2024/03/16/BqWXtZFO6M5Cgzw.jpg)
+![BqWXtZFO6M5Cgzw.jpg](https://cdn.varzy.me/legacy/2024/03/16/BqWXtZFO6M5Cgzw.jpg)
 
 这种方案当然也有缺点，即 Windows 笔记本不能关机，否则只能取出笔记本手动开机后再盒盖放回支架。不过本来我就不是关机党，所以问题也不大。
 
@@ -87,9 +87,9 @@ MX Master 2S 是我在上一家公司时为了外接 Macbook 使用的鼠标。�
 
 也是先上两张图:
 
-![unaFrp2U5ZtVNiy.png](https://cdn.sa.net/2024/03/16/unaFrp2U5ZtVNiy.png)
+![unaFrp2U5ZtVNiy.png](https://cdn.varzy.me/legacy/2024/03/16/unaFrp2U5ZtVNiy.png)
 
-![GdnvwLhS15lz7WY.png](https://cdn.sa.net/2024/03/16/GdnvwLhS15lz7WY.png)
+![GdnvwLhS15lz7WY.png](https://cdn.varzy.me/legacy/2024/03/16/GdnvwLhS15lz7WY.png)
 
 ### **沟通**
 
@@ -102,13 +102,13 @@ MX Master 2S 是我在上一家公司时为了外接 Macbook 使用的鼠标。�
 
 - [滴答清单](https://dida365.com/): 全平台的 GTD 工具，自认为买过最值得的效率软件之一。假使我有比同龄人出色的地方，有一半都归功于她。今天看了下成就也吓了一跳，不知不觉中已经使用了 4 年有余
 
-  ![PV3ze6qmD2IuHgn.png](https://cdn.sa.net/2024/03/16/PV3ze6qmD2IuHgn.png)
+  ![PV3ze6qmD2IuHgn.png](https://cdn.varzy.me/legacy/2024/03/16/PV3ze6qmD2IuHgn.png)
 
 - Office 家庭版: 找了几个朋友一起拼车
 - [石墨文档](https://shimo.im/): 虽然有了 Office 365，但实际上更多的非 Markdown 文档和表格都是在石墨上进行编撰的。比如我目前就在用表格记账。更加常用的场景是进行简单的协作，比如公司组内成员间的日报、周报等，都是让他们写在一个成员间共享的文档中进行统一汇总
 - 印象笔记: 我几乎试用过市面上所有的笔记软件，没有任何一款让我满意。最终迫不得已还是回到了全平台的印象笔记。但是目前又出了一个比高级会员更贵的什么鬼会员，而且经常出现弹窗广告，烦求滴很。当年印象笔记独立出国内版的时候我就知道会有这么一天，未来如果有更好的选择，我一定是第一批叛逃的用户。plus，我也是参加过印象笔记发布会的老用户了
 
-  ![7NU1qScioECd5Df.png](https://cdn.sa.net/2024/03/16/7NU1qScioECd5Df.png)
+  ![7NU1qScioECd5Df.png](https://cdn.varzy.me/legacy/2024/03/16/7NU1qScioECd5Df.png)
 
 - Bear: 我心目中最接近 “完美” 的笔记软件，奈何不能在 Windows 下使用，Bear web 从提出到现在也一点动静都没
 - 1Password: 不解释，买就对了
@@ -133,11 +133,11 @@ MX Master 2S 是我在上一家公司时为了外接 Macbook 使用的鼠标。�
 - [Snipate](https://zh.snipaste.com/): Windows 下使用的截图工具。截图是基操，贴图是亮点。自带取色工具，对于我这种做前端的真的是非常实用了
 - Magnet: MacOS 上用于快速规划窗口布局的工具，App Store 有售。在写 Web 应用时，我喜欢把浏览器和编辑器各切分为屏幕的三分之二，这样仅通过鼠标左右点击就可以切换两个窗口了
 
-  ![tuHNsAnOZa9SoJe.png](https://cdn.sa.net/2024/03/16/tuHNsAnOZa9SoJe.png)
+  ![tuHNsAnOZa9SoJe.png](https://cdn.varzy.me/legacy/2024/03/16/tuHNsAnOZa9SoJe.png)
 
 - [iStat Menus](https://bjango.com/mac/istatmenus/): 查看 Mac 的各种实时硬件信息
 
-  ![P9uaIpnNmRqOhrk.png](https://cdn.sa.net/2024/03/16/P9uaIpnNmRqOhrk.png)
+  ![P9uaIpnNmRqOhrk.png](https://cdn.varzy.me/legacy/2024/03/16/P9uaIpnNmRqOhrk.png)
 
 - [7z](https://www.7-zip.org/download.html): Windows 下使用的解压缩工具
 - Dr. Unarchiver: MacOS 下使用的解压缩工具
@@ -163,7 +163,7 @@ MX Master 2S 是我在上一家公司时为了外接 Macbook 使用的鼠标。�
 - Steam: Shut up and take my money!
 - 战网: Lok'tar Ogar! （我是大树
 
-  ![wiIVBpetz29KSUs.jpg](https://cdn.sa.net/2024/03/16/wiIVBpetz29KSUs.jpg)
+  ![wiIVBpetz29KSUs.jpg](https://cdn.varzy.me/legacy/2024/03/16/wiIVBpetz29KSUs.jpg)
 
 - Uplay: fa (四声) 国土豆，誉满天下
 

@@ -1,14 +1,28 @@
+import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 import PostsContainer from '@/app/(blog)/_components/PostsContainer';
 import { buildTagPageParams } from '@/app/_lib/pagination-utils';
 import { getAllPosts, getPostsByTag, getAllTags } from '@/app/_lib/post-loader';
 import { SITE_CONFIG } from '@/site.config';
+import { getEmojiFavicon } from '@/utils/favicon';
 import { safeDecodeTag } from '@/utils/url';
 
 export async function generateStaticParams() {
   const [allPosts, allTags] = await Promise.all([getAllPosts(), getAllTags()]);
   return buildTagPageParams(allPosts, allTags, SITE_CONFIG.blogPerPage);
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ tag: string }>;
+}): Promise<Metadata> {
+  const { tag } = await params;
+  return {
+    title: `#${safeDecodeTag(tag)}`,
+    icons: getEmojiFavicon('🎟️'),
+  };
 }
 
 export default async function Tag({

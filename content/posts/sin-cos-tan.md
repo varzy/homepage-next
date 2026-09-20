@@ -7,17 +7,17 @@ tags: ['随想']
 date: '2024-06-05'
 slug: 'sin-cos-tan'
 summary: '人不能同时拥有当下和对当下的理解。'
-last_edited_time: '2025-08-06T06:14:00.000Z'
-last_fetched_time: '2025-09-02T09:25:49.201Z'
+last_edited_time: '2026-08-18T17:43:00.000Z'
+last_fetched_time: '2026-08-18T18:00:47.195Z'
 page_id: '43e005fb-df6f-4be5-8999-283267d11b79'
 icon: '📐'
 ---
 
 最近在 B 站刷到一个短视频，开头问，你还记得 a平方 - b平方如何展开吗？我愣了一下，果真不记得，接着视频用图像的形式解释了这个公式，豁然开朗。感谢这位 UP，我想我就算是得了阿兹海默也不会忘记这个公式了。
 
-![oTLQYSlgcINRnas.png](https://cdn.sa.net/2024/06/05/oTLQYSlgcINRnas.png)
+![oTLQYSlgcINRnas.png](https://cdn.varzy.me/legacy/2024/06/05/oTLQYSlgcINRnas.png)
 
-![NPKzUIQ7Ya3B5lX.png](https://cdn.sa.net/2024/06/05/NPKzUIQ7Ya3B5lX.png)
+![NPKzUIQ7Ya3B5lX.png](https://cdn.varzy.me/legacy/2024/06/05/NPKzUIQ7Ya3B5lX.png)
 
 回想我的初中时代，这些冰冷的公式总是被加粗放大，扔在课本里最显眼的位置，即使是数学老师也无一例外地要求我们不管三七二十一先背下来再说，所以每次几何开新课总免不了一番公式默写。视频中的解法并不一定适用于初中的应试教育环境，我也无意讨论它的思路是否最优，但我感慨的是这种解法是从原理出发，而非叙述现象本身，这种思路是我在学生时代极少接触的。
 

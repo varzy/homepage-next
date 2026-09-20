@@ -6,19 +6,19 @@ export default function PostMeta({
   post,
   showCategory = true,
   showTags = true,
-  showYear = true,
+  dateTpl = 'MMM DD, YYYY',
 }: {
   post: PostMetaData;
   showCategory?: boolean;
   showTags?: boolean;
-  showYear?: boolean;
+  dateTpl?: string;
 }) {
   const hasCategory = showCategory && post.categoryKey;
   const hasTags = showTags && post.tags.length > 0;
 
   return (
-    <span className="text-secondary text-sm">
-      {formatAbsoluteDate(post.date, showYear)}
+    <div className="text-secondary text-sm">
+      <time dateTime={post.date}>{formatAbsoluteDate(post.date, dateTpl)}</time>
       {hasCategory && (
         <>
           <span>, in </span>
@@ -40,6 +40,6 @@ export default function PostMeta({
           ))}
         </span>
       )}
-    </span>
+    </div>
   );
 }

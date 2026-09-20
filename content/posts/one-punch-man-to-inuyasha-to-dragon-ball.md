@@ -7,8 +7,8 @@ tags: ['我记得', '漫画']
 date: '2021-12-20'
 slug: 'one-punch-man-to-inuyasha-to-dragon-ball'
 summary: '感谢一拳超人和那位无名群友，让平平无奇且无趣的我多了个靠谱的爱好；感谢 Kindle 和 Vol.moe，让我能够短暂忘却地铁上的枯燥和拥挤。'
-last_edited_time: '2025-10-07T14:00:00.000Z'
-last_fetched_time: '2025-10-07T14:03:10.443Z'
+last_edited_time: '2026-08-18T17:45:00.000Z'
+last_fetched_time: '2026-08-18T18:02:09.926Z'
 page_id: 'a44182ac-cbdf-4559-b276-684992f26f5f'
 icon: '👊'
 ---
@@ -21,7 +21,7 @@ icon: '👊'
 
 我还清楚得记得之前钻在被窝里看一拳，还拍下了 “我变秃了，也变强了” 这一页。本来想把这张照片放下面，结果翻遍了相册却没有找到，可能是在更换手机的时候遗失了吧。
 
-![bGVhCK826zHDdOj.png](https://cdn.sa.net/2024/03/16/bGVhCK826zHDdOj.png)
+![bGVhCK826zHDdOj.png](https://cdn.varzy.me/legacy/2024/03/16/bGVhCK826zHDdOj.png)
 
 为了看漫画的效果更好，我甚至在后续购入了 Kindle 最贵的 Oasis 32G 这个型号。这个 Kindle 并没有吃灰，我还是看了不少漫画，海贼王，犬夜叉，日常，钢炼，JOJO 的奇妙冒险，死亡笔记，火影忍者，进击的巨人…… 其中大部分漫画都是在 13 号线上补完的。之前住在龙泽地铁站，也就是西二旗的上一站，我必须在上车前就摆好拿 Kindle 的姿势，做好一路上不换姿势的准备。好在有了漫画的陪伴，这段拥挤窒息的通勤之旅并没有那么难熬。
 
@@ -33,7 +33,7 @@ icon: '👊'
 
 犬夜叉里我最喜欢的角色就是神乐。时隔许久，犬夜叉的剧情我再度遗忘，甚至大 Boss 奈落是怎么个嗝屁的我都不记得了，但唯独清晰得记得神乐的结局。当时看漫画时甚至把属于神乐的那几页都截图保存了下来，为了各位的阅读体验，我把 16 张截图移到了文末，如果你感兴趣的话可以去瞄一眼。
 
-![8VyLfeliONP2SMp.jpg](https://cdn.sa.net/2024/03/16/8VyLfeliONP2SMp.jpg)
+![8VyLfeliONP2SMp.jpg](https://cdn.varzy.me/legacy/2024/03/16/8VyLfeliONP2SMp.jpg)
 
 神乐是风使，她虽然是奈落的分身，却并无意于和主角团纠缠，她的最终诉求就只有脱离奈落的掌控获取自由。而她却在奈落归还其心脏，即将重获自由的一瞬间被奈落杀死。或许这个角色在创作之初就注定了她的结局，毕竟剧情里总需要塑造一系列悲情角色，把看客对奈落的愤恨一层层拔高。神乐倾慕杀生丸，或许不只是因为杀生丸的俊美，亦有可能是神乐羡慕杀生丸的强大和自由不羁。杀生丸也在神乐临死时终于一改此前的榆木形象，如果不是那句“我知道是你”，或许神乐并不能“笑着离开”吧。
 
@@ -41,7 +41,7 @@ icon: '👊'
 
 目前我正在看《龙珠》，已经看到了人造人篇，但说实话并不觉得多么好看，翻页的速度也比看其他漫画时快了许多。关于龙珠我发现一个很有意思的现象，那就是比我年龄大个 5 岁以上的人，几乎都非常非常喜欢龙珠，或许龙珠才是他们热血得简简单单的童年吧。
 
-![od3SeOxpzEbakRW.jpg](https://cdn.sa.net/2024/03/16/od3SeOxpzEbakRW.jpg)
+![od3SeOxpzEbakRW.jpg](https://cdn.varzy.me/legacy/2024/03/16/od3SeOxpzEbakRW.jpg)
 
 在我喜欢上漫画之前，我总觉得漫画只是出版动画的手段罢了，比起有音乐有颜色的动画，为什么要看只有黑白和线条的漫画呢？但现在我开始觉得漫画和动画是两个完全平行的载体，毕竟漫画才是作者的第一手表达渠道，在节奏、分镜、微表情等诸多方面只有作者自己才能拿捏准确，而动画则需要在音乐、剧情、配音等更多方面一起发力，最终质量则更像是比拼短板效应。
 
@@ -49,7 +49,7 @@ icon: '👊'
 
 再举个例子，《进击的巨人》第 25 卷，也就是名场面“莱纳，你坐啊”之后，战锤巨人家族老大宣布对帕拉迪岛宣战的同时，艾伦变身巨人同时破窗而出，下一秒就直接拍死了他。这一幕的分镜是如此震撼，以至于我无比期待第四季动画会如何处理这个分镜。可结果呢，这个分镜在动画里直接被砍了。。。
 
-![FGCB9sZQ1VtXYxn.png](https://cdn.sa.net/2024/03/16/FGCB9sZQ1VtXYxn.png)
+![FGCB9sZQ1VtXYxn.png](https://cdn.varzy.me/legacy/2024/03/16/FGCB9sZQ1VtXYxn.png)
 
 当然对于漫画的改编并不一定都是坏的，就比如日常番天花板《日常》，动画就把漫画中一些章节的先后顺序进行了调整，使得整个剧情更加连贯。京阿尼永远滴神！
 
@@ -59,34 +59,34 @@ icon: '👊'
 
 神乐的专属篇幅👇👇👇
 
-![bGVqOB4ySlg78tI.png](https://cdn.sa.net/2024/03/16/bGVqOB4ySlg78tI.png)
+![bGVqOB4ySlg78tI.png](https://cdn.varzy.me/legacy/2024/03/16/bGVqOB4ySlg78tI.png)
 
-![sUQdJGAVun2HiC7.png](https://cdn.sa.net/2024/03/16/sUQdJGAVun2HiC7.png)
+![sUQdJGAVun2HiC7.png](https://cdn.varzy.me/legacy/2024/03/16/sUQdJGAVun2HiC7.png)
 
-![MXuwalv5ndymVQN.png](https://cdn.sa.net/2024/03/16/MXuwalv5ndymVQN.png)
+![MXuwalv5ndymVQN.png](https://cdn.varzy.me/legacy/2024/03/16/MXuwalv5ndymVQN.png)
 
-![69wX8hNeAY7ImGz.png](https://cdn.sa.net/2024/03/16/69wX8hNeAY7ImGz.png)
+![69wX8hNeAY7ImGz.png](https://cdn.varzy.me/legacy/2024/03/16/69wX8hNeAY7ImGz.png)
 
-![2PTcrhJelR43i1Y.png](https://cdn.sa.net/2024/03/16/2PTcrhJelR43i1Y.png)
+![2PTcrhJelR43i1Y.png](https://cdn.varzy.me/legacy/2024/03/16/2PTcrhJelR43i1Y.png)
 
-![qM7U5TZQSrmENId.png](https://cdn.sa.net/2024/03/16/qM7U5TZQSrmENId.png)
+![qM7U5TZQSrmENId.png](https://cdn.varzy.me/legacy/2024/03/16/qM7U5TZQSrmENId.png)
 
-![lbJuUnzCxXqpBdm.png](https://cdn.sa.net/2024/03/16/lbJuUnzCxXqpBdm.png)
+![lbJuUnzCxXqpBdm.png](https://cdn.varzy.me/legacy/2024/03/16/lbJuUnzCxXqpBdm.png)
 
-![XsM95xYCaK61p3D.png](https://cdn.sa.net/2024/03/16/XsM95xYCaK61p3D.png)
+![XsM95xYCaK61p3D.png](https://cdn.varzy.me/legacy/2024/03/16/XsM95xYCaK61p3D.png)
 
-![Plpv8ZmkDH92R3f.png](https://cdn.sa.net/2024/03/16/Plpv8ZmkDH92R3f.png)
+![Plpv8ZmkDH92R3f.png](https://cdn.varzy.me/legacy/2024/03/16/Plpv8ZmkDH92R3f.png)
 
-![h9giWvFBASXbcn2.png](https://cdn.sa.net/2024/03/16/h9giWvFBASXbcn2.png)
+![h9giWvFBASXbcn2.png](https://cdn.varzy.me/legacy/2024/03/16/h9giWvFBASXbcn2.png)
 
-![wanC2KDiYb5ZQEL.png](https://cdn.sa.net/2024/03/16/wanC2KDiYb5ZQEL.png)
+![wanC2KDiYb5ZQEL.png](https://cdn.varzy.me/legacy/2024/03/16/wanC2KDiYb5ZQEL.png)
 
-![pGIHZbT9QCnU3AN.png](https://cdn.sa.net/2024/03/16/pGIHZbT9QCnU3AN.png)
+![pGIHZbT9QCnU3AN.png](https://cdn.varzy.me/legacy/2024/03/16/pGIHZbT9QCnU3AN.png)
 
-![vrxeNUys8Z9wzT6.png](https://cdn.sa.net/2024/03/16/vrxeNUys8Z9wzT6.png)
+![vrxeNUys8Z9wzT6.png](https://cdn.varzy.me/legacy/2024/03/16/vrxeNUys8Z9wzT6.png)
 
-![F6J9Vw8IyDGqe7b.png](https://cdn.sa.net/2024/03/16/F6J9Vw8IyDGqe7b.png)
+![F6J9Vw8IyDGqe7b.png](https://cdn.varzy.me/legacy/2024/03/16/F6J9Vw8IyDGqe7b.png)
 
-![uYJoCyOnh3dcQqS.png](https://cdn.sa.net/2024/03/16/uYJoCyOnh3dcQqS.png)
+![uYJoCyOnh3dcQqS.png](https://cdn.varzy.me/legacy/2024/03/16/uYJoCyOnh3dcQqS.png)
 
-![nD9kGcKpsM8XPTv.png](https://cdn.sa.net/2024/03/16/nD9kGcKpsM8XPTv.png)
+![nD9kGcKpsM8XPTv.png](https://cdn.varzy.me/legacy/2024/03/16/nD9kGcKpsM8XPTv.png)

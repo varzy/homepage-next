@@ -4,7 +4,8 @@ import 'dotenv/config';
 import path from 'path';
 import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 import { NotionDatabaseFetcher, NotionFetcherConfig } from './notion-database-fetcher';
-import { KotobaMetadata } from './types';
+import { ensureImageUploaderConfigured } from './r2-uploader';
+import { KotobaMetadata, SyncMode } from './types';
 import {
   getTextProperty,
   getSelectProperty,
@@ -53,12 +54,22 @@ const kotobaConfig: NotionFetcherConfig<KotobaMetadata> = {
   lastFetchedTimeProperty: 'last_fetched_time',
   label: 'kotoba',
   imagePrefix: 'kotoba',
-  buildFilter: () => ({
-    and: [{ property: 'status', select: { equals: 'Published' } }],
+  buildFilter: (since?: Date) => ({
+    and: [
+      { property: 'status', select: { equals: 'Published' } },
+      ...(since
+        ? [
+            {
+              timestamp: 'last_edited_time',
+              last_edited_time: { on_or_after: since.toISOString() },
+            },
+          ]
+        : []),
+    ],
   }),
   buildSort: () => [{ property: 'published_time', direction: 'descending' }],
   extractMetadata: extractKotobaMeta,
-  getFileKey: (e) => `${e.published_time}-${e.page_id.split('-').pop()}`,
+  getFileKey: (e) => `${e.published_time.slice(0, 10)}-${e.page_id.split('-').pop()}`,
   getPageId: (e) => e.page_id,
   getConvertIdentifier: (e) => e.page_id.replace(/-/g, '').slice(0, 8),
   getLastFetchedTime: (e) => e.last_fetched_time,
@@ -74,15 +85,15 @@ async function main() {
     );
   }
 
-  if (!process.env.SMMS_API_TOKEN) {
-    console.warn('⚠️ SMMS_API_TOKEN is not set — image upload will fail');
-    process.exit(1);
-  }
+  ensureImageUploaderConfigured();
 
-  const forceMode = process.argv.includes('--force');
-  console.log(`🔥 Force mode: ${forceMode}`);
+  const syncMode: SyncMode = process.argv.includes('--force')
+    ? 'force'
+    : process.argv.includes('--full-sync')
+      ? 'full-sync'
+      : 'incremental';
 
-  await new NotionDatabaseFetcher(kotobaConfig, forceMode).fetch();
+  await new NotionDatabaseFetcher(kotobaConfig, syncMode).fetch();
   process.exit(0);
 }
 

@@ -7,8 +7,8 @@ tags: ['随想']
 date: '2025-05-24'
 slug: 'mourning-my-father'
 summary: '父亲是个伟大的人吗？不是。我能比父亲做得更好吗？绝对不能。'
-last_edited_time: '2025-09-02T08:54:00.000Z'
-last_fetched_time: '2025-09-02T09:25:35.325Z'
+last_edited_time: '2026-08-18T17:42:00.000Z'
+last_fetched_time: '2026-08-18T18:00:36.428Z'
 page_id: '1fcdc9c0-364a-80d9-a9fa-cddf9158d6d8'
 icon: '☁️'
 ---
@@ -33,7 +33,7 @@ icon: '☁️'
 
 一年前，父亲连起身都已变得困难，爷爷奶奶从老家搬去县城以在我母亲上班之余照顾父亲。今日礼毕，爷爷奶奶决定留在老家生活。老宅一年无人居住，我们动用全家之力收拾了一整个下午才稍微有能住人的样子。之前父母在二楼居住，我回到二楼翻看父亲的书柜，发现了一沓子老照片，他曾如此意气风发，而辞世之时也才 57 岁，还不过花甲之年。
 
-![gO2FtbeswqRKTBh.jpg](https://cdn.sa.net/2025/05/24/gO2FtbeswqRKTBh.jpg)
+![gO2FtbeswqRKTBh.jpg](https://cdn.varzy.me/legacy/2025/05/24/gO2FtbeswqRKTBh.jpg)
 
 父亲是个很复杂的人。他勤奋，坚忍，节俭，不抽烟不沾酒不打牌。他善良，说不管怎么判，自己看到老人一定会去扶。他自傲，强势又固执，不会处理人际关系，尤其是与母亲的关系。
 

@@ -3,12 +3,12 @@ title: '使用 Stylelint 规范样式代码'
 category: 'Coding'
 type: 'Post'
 status: 'Published'
-tags: ['CSS']
+tags: ['CSS', '工程化']
 date: '2021-10-05'
 slug: 'stylelint-basic-usage'
 summary: ''
-last_edited_time: '2025-09-02T08:00:00.000Z'
-last_fetched_time: '2025-09-02T09:28:38.232Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:02:23.512Z'
 page_id: 'daf51441-5527-4fca-b73b-cb1615d57093'
 icon: '🎣'
 ---

@@ -16,8 +16,8 @@ export default async function Sponsor() {
       <div className="flex justify-center">
         <LightboxImage
           className="w-2/3"
-          src="https://cdn.sa.net/2025/09/05/wFI1csOjDp8A96f.jpg"
-          alt="zy 的支付宝赞赏码"
+          src="https://cdn.varzy.me/static/sponsor_qrcode.jpg"
+          alt="zy 的微信赞赏码"
         />
       </div>
     </Prose>

@@ -7,8 +7,8 @@ tags: ['Apple', '评测', '数码产品', '流水账']
 date: '2021-09-24'
 slug: 'iphone-13-pro-review'
 summary: '希望我能陪伴这台手机多一点时间，也希望我能真的用上这三枚目前摸起来突兀无比的镜头，多记录一些值得老来下酒的回忆吧。'
-last_edited_time: '2025-09-03T06:05:00.000Z'
-last_fetched_time: '2025-09-03T06:05:57.699Z'
+last_edited_time: '2026-08-18T17:47:00.000Z'
+last_fetched_time: '2026-08-18T18:02:30.000Z'
 page_id: '4fa43419-4ec9-4338-9649-378a8d583904'
 icon: '📱'
 ---
@@ -37,7 +37,7 @@ icon: '📱'
 
 照片是 Apple Store 的二楼露台，进去屋子后还有一长队。
 
-![EjuQDVW6Y5aAp91.jpg](https://cdn.sa.net/2024/03/16/EjuQDVW6Y5aAp91.jpg)
+![EjuQDVW6Y5aAp91.jpg](https://cdn.varzy.me/legacy/2024/03/16/EjuQDVW6Y5aAp91.jpg)
 
 排了足足 40 分钟，终于轮到我提货了。手机出库的过程中，我还咨询了一下接待我的小蓝人 iPhone 自带充电线是否支持快充，得到了肯定的答复。
 
@@ -45,13 +45,13 @@ icon: '📱'
 
 另外，接待我的小蓝人手持 13 Pro Max 远峰蓝，我看到的第一眼就有了后悔购买白色版本的想法。那个蓝色比宣传图要好看太多，简直一眼万年。虽然特意拍了一张照片，但确实如小蓝人所说，这种蓝色是相机拍不出来的。如果有条件，我强烈推荐各位朋友在购买前去 Apple Store 感受一下真机。
 
-![1FRg9xcnVLpPYm8.jpg](https://cdn.sa.net/2024/03/16/1FRg9xcnVLpPYm8.jpg)
+![1FRg9xcnVLpPYm8.jpg](https://cdn.varzy.me/legacy/2024/03/16/1FRg9xcnVLpPYm8.jpg)
 
 ## 提货以外
 
 我并不认为自己是个果粉，但我不得不说苹果的无障碍支持和人文关怀做得确实好。二楼提货时，桌子趴着一只乖乖的导盲犬 🦮。而当我下到一楼时，无意间发现一名小蓝人正在和另一位疑似语言障碍用户用手语交流。
 
-![YyUAXaS6D3BgTki.jpg](https://cdn.sa.net/2024/03/16/YyUAXaS6D3BgTki.jpg)
+![YyUAXaS6D3BgTki.jpg](https://cdn.varzy.me/legacy/2024/03/16/YyUAXaS6D3BgTki.jpg)
 
 Apple Store 外面则围着大批黄牛，我提货出来后至少有四五个黄牛凑过来问我 “哥们，卖手机不”。一方面是我社恐，另一方面也是我确实没有什么卖掉的心思，就快步走开了。直到走到地铁站我才觉得我应该问问的，即使不卖，我也有点好奇他们到底能加多少。不过这种数据，大概看看咸鱼就知道了。目前道听途说，黄牛一般加价在 300 左右，而部分热门型号甚至会加价近 1000 元。
 
@@ -61,11 +61,11 @@ Apple Store 外面则围着大批黄牛，我提货出来后至少有四五个�
 
 我想大部分数码爱好者都会喜欢撕膜的那一瞬间。而今年苹果出于“环保”考量，取消了塑封包装 (但同期发布的 iPad Mini 6 还在用)，取而代之的是上下各一条的一次性纸封条。虽然不太具有可比性，但撕胶条给人的感觉就像拎起包装盒、盖子自动滑出时的那种独特阻尼感，能明显感觉出来这是费功夫精心调教过的。
 
-![S4QTUepZ1jwFJDH.jpg](https://cdn.sa.net/2024/03/16/S4QTUepZ1jwFJDH.jpg)
+![S4QTUepZ1jwFJDH.jpg](https://cdn.varzy.me/legacy/2024/03/16/S4QTUepZ1jwFJDH.jpg)
 
 打开包装，最扎眼的还是这三枚硕大的摄像头。包装里只有一根 Usb-C to Lighting 的充电线和几张不用看系列，已然没有了 iPhone 11 包装盒内的 5V1A 充电头，老夫直呼爷👴青结。
 
-![YJobGyUWqRvTSfr.jpg](https://cdn.sa.net/2024/03/16/YJobGyUWqRvTSfr.jpg)
+![YJobGyUWqRvTSfr.jpg](https://cdn.varzy.me/legacy/2024/03/16/YJobGyUWqRvTSfr.jpg)
 
 > 关于环保我想多说一句。虽然很多人调侃苹果为了环保取消充电头、“免费” 回收旧设备等骚操作，但苹果确确实实让这个世界少了一些塑料不是吗？有兴趣的话可以看一看前苹果包装工程师关于 iMac 包装的讲解视频：[https://www.youtube.com/watch?v=wkYF8Ywc7HA](https://www.youtube.com/watch?v=wkYF8Ywc7HA)，可以看出苹果在大部分消费者也许并不那么重视的包装方面着实是花了大心思。
 
@@ -75,21 +75,21 @@ Apple Store 外面则围着大批黄牛，我提货出来后至少有四五个�
 
 银色的边框在没有沾染指纹时确实非常漂亮，但 12 Pro 系列的银色边框由于工艺不同，比其他几个颜色的边框更容易刮伤，这也是我购买白色版本时比较担心的一点。而最近网上有人推测 13 Pro 系列的边框工艺进行了升级，银色边框也可以拥有其他颜色一样的耐刮性，视频链接[在这里](https://www.bilibili.com/video/BV1CM4y1g72T)。我也只能希望确有其事吧，毕竟这次的 13 Pro 我是打算彻底裸奔使用了。
 
-![7QEFLSDgnylKJ83.jpg](https://cdn.sa.net/2024/03/16/7QEFLSDgnylKJ83.jpg)
+![7QEFLSDgnylKJ83.jpg](https://cdn.varzy.me/legacy/2024/03/16/7QEFLSDgnylKJ83.jpg)
 
 拿起手机，第一感觉就是摄像头真的太大太挺拔了。。。之前用 iPhone 11 时，除了冬天拿手机太滑以外，大部分时间都在裸奔使用，手指也经常触碰摄像头，但并不会给我 13 Pro 这样如此突兀的感觉。仔细对比 iPhone 11，摄像头模组本身就已经高出机身许多，而镜头则是在模组上更加激凸，导致我把玩许久直到现在仍然无法适应这种怪异的感觉。
 
 握持手感上，虽然 iPhone 13 系列全系重量上升，但实际上我并没有太大的感受。这也有可能是我一直在使用 iPhone 11 导致的，毕竟 11 重 194g，而 13 Pro 重 203g，差距仅 9g。至于很多人吐槽的直角边框割手问题，我反而是非常钟情。我一直很喜欢方方正正的手机，比如大学的时候使用的 SONY Z3 Compact，又小又板正，喜欢得不得了。可惜它现在已经再也开不了机，只能埋葬在我的柜子里了。
 
-![lksEqSJIZT6mu7r.jpg](https://cdn.sa.net/2024/03/16/lksEqSJIZT6mu7r.jpg)
+![lksEqSJIZT6mu7r.jpg](https://cdn.varzy.me/legacy/2024/03/16/lksEqSJIZT6mu7r.jpg)
 
 与 12 Pro 系列一样，13 Pro 系列的边框采用亮面铝合金，而后盖则做成了磨砂质感，对比 11 略显奶白色的玻璃后盖，我确实更喜欢这种略带金属光芒的银白色。如果对比 MacBook 的银色外壳，也可以看到 13 Pro 后盖的磨砂会更加“细腻”。
 
-![ZG46YrhPy8MBXKC.jpg](https://cdn.sa.net/2024/03/16/ZG46YrhPy8MBXKC.jpg)
+![ZG46YrhPy8MBXKC.jpg](https://cdn.varzy.me/legacy/2024/03/16/ZG46YrhPy8MBXKC.jpg)
 
 13 Pro 还有一个变化就是刘海缩窄了 20%，但缩窄的同时，又略微加宽了一丢丢一丝丝一咪咪。但至少就我一眼看过去，这个变化带来的感知属实不强。
 
-![wF93eXxtUuRN1az.jpg](https://cdn.sa.net/2024/03/16/wF93eXxtUuRN1az.jpg)
+![wF93eXxtUuRN1az.jpg](https://cdn.varzy.me/legacy/2024/03/16/wF93eXxtUuRN1az.jpg)
 
 ## 内在美
 
@@ -105,11 +105,11 @@ Apple Store 外面则围着大批黄牛，我提货出来后至少有四五个�
 
 虽然之前使用的 iPhone 11 并不支持 5G，但我早早就把主号升级成了 5G 套餐 (深井冰行为👀)，所以手机右上角也终于显示高贵的 5G 标识了。插卡之后最令我感动的大概就是 5G 信号竟然是满格！
 
-![kRZxw4Ba1Ps738i.png](https://cdn.sa.net/2024/03/16/kRZxw4Ba1Ps738i.png)
+![kRZxw4Ba1Ps738i.png](https://cdn.varzy.me/legacy/2024/03/16/kRZxw4Ba1Ps738i.png)
 
 于是我从网易云找出 Rap God，把气氛造足，打开了 Speedtest，于是。。。
 
-![izV53ptTIPMq9Hy.png](https://cdn.sa.net/2024/03/16/izV53ptTIPMq9Hy.png)
+![izV53ptTIPMq9Hy.png](https://cdn.varzy.me/legacy/2024/03/16/izV53ptTIPMq9Hy.png)
 
 等等，这怎么和我预想中的完全不一样？何同学视频里那种测速跑一晚上能烧掉一套房的速度呢？不晓得是什么原因，我测速三次一次比一次慢，而最快的第一次实际上也远不能算得上惊艳。莫非是我住的楼层太高了，5G 基站信号覆盖不到？有待测试，有待测试。
 
@@ -119,7 +119,7 @@ Apple Store 外面则围着大批黄牛，我提货出来后至少有四五个�
 
 但我一向对于夜间模式的表现很感兴趣。13 全系相机模组变大，进光量大幅提升，也就意味着夜间模式的表现应该会更好。之前 iPhone 11 在夜间的表现就足以让我觉得惊艳，因此我也就关掉屋子里所有光源，尝试拍了一下我挂在墙上的袋子 (奇怪的装饰)。为了尽可能真实地还原噪点和暗部细节，这也是本文中唯一一张没有进行二次压缩的图片。
 
-![9dwYEeJxhMncDv4.jpg](https://cdn.sa.net/2024/03/16/9dwYEeJxhMncDv4.jpg)
+![9dwYEeJxhMncDv4.jpg](https://cdn.varzy.me/legacy/2024/03/16/9dwYEeJxhMncDv4.jpg)
 
 ## 结语
 

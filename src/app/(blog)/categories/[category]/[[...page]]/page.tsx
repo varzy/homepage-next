@@ -1,27 +1,41 @@
+import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 import PostsContainer from '@/app/(blog)/_components/PostsContainer';
+import { buildPageSegments } from '@/app/_lib/pagination-utils';
 import { getCategoryPosts } from '@/app/_lib/post-loader';
-import { SITE_CONFIG, isCategoryKey } from '@/site.config';
+import { SITE_CONFIG } from '@/site.config';
+import { getEmojiFavicon } from '@/utils/favicon';
+
+function isCategoryKey(value: string): value is keyof typeof SITE_CONFIG.categories {
+  return value in SITE_CONFIG.categories;
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ category: string }>;
+}): Promise<Metadata> {
+  const { category } = await params;
+  if (!isCategoryKey(category)) return {};
+  const categoryCtx = SITE_CONFIG.categories[category];
+  return {
+    title: categoryCtx.alias,
+    icons: getEmojiFavicon(categoryCtx.favicon),
+  };
+}
 
 export async function generateStaticParams() {
-  const categoriesConfig = SITE_CONFIG.categories;
-
-  const renderingGroups = await Promise.all(
-    Object.keys(categoriesConfig).map(async (key) => {
-      const categoryPosts = await getCategoryPosts(key);
-
-      if (categoryPosts.length === 0) return [];
-
-      const totalPages = Math.ceil(categoryPosts.length / SITE_CONFIG.blogPerPage);
-      return Array.from({ length: totalPages }).map((_, i) => ({
+  const groups = await Promise.all(
+    Object.keys(SITE_CONFIG.categories).map(async (key) => {
+      const posts = await getCategoryPosts(key);
+      return buildPageSegments(posts.length, SITE_CONFIG.blogPerPage).map((page) => ({
         category: key,
-        page: [String(i + 1)],
+        page,
       }));
     }),
   );
-
-  return renderingGroups.reduce((all, group) => [...all, ...group], []);
+  return groups.flat();
 }
 
 export default async function CategoryPage({

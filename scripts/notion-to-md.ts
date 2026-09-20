@@ -30,7 +30,7 @@ export class NotionToMDXConverter {
       const mdString = this.n2m.toMarkdownString(mdBlocks);
 
       return {
-        content: mdString.parent,
+        content: mdString.parent || '',
         imageStats,
       };
     } catch (error) {

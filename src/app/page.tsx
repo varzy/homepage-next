@@ -17,15 +17,13 @@ export default function Home() {
     },
     {
       label: '书影音',
-      alias: 'Douban',
-      href: 'https://www.douban.com/people/varzy/',
-      target: '_blank',
+      alias: 'Taste',
+      href: '/taste',
     },
     {
-      label: '歌单',
-      alias: 'NeteaseMusic',
-      href: 'https://music.163.com/playlist?id=39874340&userid=45403592',
-      target: '_blank',
+      label: '器用',
+      alias: 'Gear',
+      href: '/gear',
     },
     {
       label: '代码库',
@@ -34,14 +32,14 @@ export default function Home() {
       target: '_blank',
     },
     {
-      label: '友人',
+      label: '往来',
       alias: 'Friends',
       href: '/friends',
     },
   ];
 
   return (
-    <div className="g-container-lefty leading-8 tracking-wider">
+    <main className="container px-4 pt-32 pb-20 leading-8 tracking-wider sm:pl-12 md:pl-16 lg:pl-32 xl:pl-48 2xl:pl-80">
       {/* Heading */}
       <div className="flex items-end text-5xl font-bold">
         <h1 className="italic">贼歪</h1>
@@ -49,7 +47,7 @@ export default function Home() {
       <h2 className="mt-3">🧑‍💻Developer. 📝Blogger. 🫣INFJ.</h2>
 
       {/* Links */}
-      <nav>
+      <nav aria-label="首页菜单">
         <ul className="mt-12 space-y-2.5">
           {links.map((link, index) => (
             <li key={index}>
@@ -66,6 +64,6 @@ export default function Home() {
           ))}
         </ul>
       </nav>
-    </div>
+    </main>
   );
 }

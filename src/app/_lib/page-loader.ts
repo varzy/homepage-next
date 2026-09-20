@@ -1,5 +1,5 @@
 import path from 'path';
-import { FileUtils } from './content-utils';
+import { readWithContent } from './content-utils';
 
 const PAGES_DIR = path.join(process.cwd(), 'content/pages');
 
@@ -37,15 +37,5 @@ function buildPageMeta(data: PageFrontmatterData): PageMeta {
 }
 
 export async function getPageWithContent(slug: string): Promise<PageWithContent | null> {
-  try {
-    const filePath = path.join(PAGES_DIR, `${slug}.md`);
-    const parsed = FileUtils.parseFrontmatter<PageFrontmatterData>(filePath);
-    if (!parsed) return null;
-
-    const meta = buildPageMeta(parsed.data);
-    return { ...meta, content: parsed.content };
-  } catch (error) {
-    console.error(`Error loading page ${slug}:`, error);
-    return null;
-  }
+  return readWithContent<PageFrontmatterData, PageMeta>(PAGES_DIR, slug, buildPageMeta, 'page');
 }

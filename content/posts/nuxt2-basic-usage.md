@@ -7,8 +7,8 @@ tags: ['Nuxt']
 date: '2022-04-11'
 slug: 'nuxt2-basic-usage'
 summary: ''
-last_edited_time: '2025-09-02T08:55:00.000Z'
-last_fetched_time: '2025-09-02T09:27:48.024Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:01:56.145Z'
 page_id: 'a51f70e4-8d64-456a-9266-fad7eb1841ce'
 icon: '🎉'
 ---

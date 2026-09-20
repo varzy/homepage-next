@@ -7,8 +7,8 @@ tags: ['软件', 'Notion']
 date: '2022-05-30'
 slug: 'notion-essentials-badge'
 summary: 'Notion Certified is a program for Notion power users to validate their skills for clients and peers.'
-last_edited_time: '2025-09-02T07:51:00.000Z'
-last_fetched_time: '2025-09-02T09:27:27.749Z'
+last_edited_time: '2026-08-18T17:45:00.000Z'
+last_fetched_time: '2026-08-18T18:01:46.082Z'
 page_id: '99c26cbc-8f55-4abb-834c-97fbd7cc4807'
 icon: '🥳'
 ---
@@ -21,18 +21,18 @@ icon: '🥳'
 
 提交申请大概一周后，也就是昨晚，我收到了第二封邮件要求参加考试，需要在 90 分钟内答 60 道选择题。开始我还想，60 道选择题给 90 分钟是不是太宽裕了，于是今天早上就裸考上阵了。打开试卷才发现这些题目还蛮刁钻的，最后竟然还是卡点交卷😂
 
-![vtOmzr1fPD3cbyH.png](https://cdn.sa.net/2024/03/16/vtOmzr1fPD3cbyH.png)
+![vtOmzr1fPD3cbyH.png](https://cdn.varzy.me/legacy/2024/03/16/vtOmzr1fPD3cbyH.png)
 
 交卷后马上就收到了第三封邮件告知我以 80% 的成绩通过考试(答对 70% 就算通过)，邮件里提供了 Credly 网站下发的 [数字认证徽章](https://www.credly.com/badges/495b795d-f7ed-4ea0-b186-f03b430a5aae/public_url)，以及加入 Notion Certified HQ 空间的邀请链接。P.S. 没有通过也问题不大，30 天后可以重新考试😉
 
-![AKJy9mVbrMWuah7.png](https://cdn.sa.net/2024/03/16/AKJy9mVbrMWuah7.png)
+![AKJy9mVbrMWuah7.png](https://cdn.varzy.me/legacy/2024/03/16/AKJy9mVbrMWuah7.png)
 
 总体来说 Notion Essentials Badge 对于 Notion 熟手并不算很难申请，流程和考题也比较合理，确实做到了官方宣称的“用于验证他们的技能”。如果你也想尝试一下，希望我的体验能给你提供帮助。
 
 考试通过后我自然也是通过邮件里的链接加入了 Notion Certified HQ 的 Workspace，根据成员人数来看，我应该是全球第 433 号成员 (感觉还是挺牛逼的吧🤣)
 
-![3OwyYftqoSj1XRZ.png](https://cdn.sa.net/2024/03/16/3OwyYftqoSj1XRZ.png)
+![3OwyYftqoSj1XRZ.png](https://cdn.varzy.me/legacy/2024/03/16/3OwyYftqoSj1XRZ.png)
 
 点击查看我的 [Notion Essentials Badge](https://www.credly.com/badges/495b795d-f7ed-4ea0-b186-f03b430a5aae/public_url) 😎
 
-![B2Lx1n3HDJipvTW.png](https://cdn.sa.net/2024/03/16/B2Lx1n3HDJipvTW.png)
+![B2Lx1n3HDJipvTW.png](https://cdn.varzy.me/legacy/2024/03/16/B2Lx1n3HDJipvTW.png)

@@ -7,8 +7,8 @@ tags: ['CSS']
 date: '2020-03-27'
 slug: 'css-placeholder'
 summary: ''
-last_edited_time: '2025-08-06T06:20:00.000Z'
-last_fetched_time: '2025-09-02T09:32:25.633Z'
+last_edited_time: '2026-08-18T14:55:00.000Z'
+last_fetched_time: '2026-08-18T18:04:50.281Z'
 page_id: '06a2bebd-59b6-4181-b30b-ca4528261c32'
 icon: '🥊'
 ---

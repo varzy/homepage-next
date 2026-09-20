@@ -7,8 +7,8 @@ tags: ['年终总结']
 date: '2022-12-31'
 slug: '2022-summary'
 summary: '平淡的 2022，刺激的 2022.12。过去无法归零，但我们还有重新开始的未来。2023，祝愿世界和平，你我诸事顺遂。'
-last_edited_time: '2025-09-02T08:54:00.000Z'
-last_fetched_time: '2025-09-02T09:26:51.112Z'
+last_edited_time: '2026-08-18T17:44:00.000Z'
+last_fetched_time: '2026-08-18T18:01:21.650Z'
 page_id: '43b3ffce-7a7b-4afd-9054-4693951e5b54'
 icon: '🌃'
 ---
@@ -19,7 +19,7 @@ icon: '🌃'
 
 相册里 2021 年的第一张照片是小侄女，2022 年则是室友的宝宝“小张”，正坐在我腿上专心看儿歌～
 
-![qJ7DbPpVAnXmkWw.jpg](https://cdn.sa.net/2024/03/16/qJ7DbPpVAnXmkWw.jpg)
+![qJ7DbPpVAnXmkWw.jpg](https://cdn.varzy.me/legacy/2024/03/16/qJ7DbPpVAnXmkWw.jpg)
 
 ### **环球影城团建**
 
@@ -27,7 +27,7 @@ icon: '🌃'
 
 现在回想一下，除了哈利波特的 5D 电影让我想要二刷外，其余的回忆就只剩下：冻死了！冻死了！冻死了啊！这应该是个我不会去第二次的地方吧。
 
-![kfsucAO3oh21rwH.jpg](https://cdn.sa.net/2024/03/16/kfsucAO3oh21rwH.jpg)
+![kfsucAO3oh21rwH.jpg](https://cdn.varzy.me/legacy/2024/03/16/kfsucAO3oh21rwH.jpg)
 
 ### **又是个没回家的春节**
 
@@ -35,11 +35,11 @@ icon: '🌃'
 
 过年前几天，北京总算是下了场像样的雪，路边有人捏了一大堆小雪人。
 
-![2b7YEOupTrzMKyJ.jpg](https://cdn.sa.net/2024/03/16/2b7YEOupTrzMKyJ.jpg)
+![2b7YEOupTrzMKyJ.jpg](https://cdn.varzy.me/legacy/2024/03/16/2b7YEOupTrzMKyJ.jpg)
 
 除夕夜全家给小张发了红包🧧。
 
-![dt7ngDkUPNOMwGz.jpg](https://cdn.sa.net/2024/03/16/dt7ngDkUPNOMwGz.jpg)
+![dt7ngDkUPNOMwGz.jpg](https://cdn.varzy.me/legacy/2024/03/16/dt7ngDkUPNOMwGz.jpg)
 
 之后我们还去了宜家、西单、奥特莱斯，反正那几天全家出动满大街乱逛😂，小张应该也玩的蛮开心的。
 
@@ -47,13 +47,13 @@ icon: '🌃'
 
 我从去年开始留长发后一直没有修剪，到 2 月底时头发已经相当长了，平时出门基本都是半扎武士头。我觉得时机已到，是时候适当来点变化了。
 
-![TN1KigRUmujQwVf.jpg](https://cdn.sa.net/2024/03/16/TN1KigRUmujQwVf.jpg)
+![TN1KigRUmujQwVf.jpg](https://cdn.varzy.me/legacy/2024/03/16/TN1KigRUmujQwVf.jpg)
 
 2 月 26 号，也就是拍下这组照片的次日，我就找托尼表示自己想整个木村拓哉那样微微卷曲的发型，托尼自信得一批，马上安排，然而一顿操作猛如虎，烫完一看二百五。那是是矬得惊世骇俗的发型，我甚至当时都不愿意留下一张照片，但，朋友，你应该知道卷福吧🧑‍🦱？虽然之后又拉直了些许，不过后来很长一段时间里我都只能扎着个辫子，垮着个批脸去上班😑。
 
 既然聊到了头发那就一次聊完吧。这次烫头给我造成了严重的托尼 PTSD，导致后面好几个月都不愿意踏进理发店，到了夏天头发已经很长了，我也只好整个扎起来，真·大姑娘。直到深秋时分，头发又到了另一个尴尬期，耷拉在肩膀上像杂草一样，我终于下定决心再去剪短一些，结果发现这个半长不长的感觉还蛮适合我的，于是从秋天开始到现在我基本都是右边这个发型了。
 
-![GALw5zKh4xIbnEO.jpg](https://cdn.sa.net/2024/03/16/GALw5zKh4xIbnEO.jpg)
+![GALw5zKh4xIbnEO.jpg](https://cdn.varzy.me/legacy/2024/03/16/GALw5zKh4xIbnEO.jpg)
 
 ### 拼乐高可太快乐了
 
@@ -61,13 +61,13 @@ icon: '🌃'
 
 虽说是打算五一拼，然而哪个男孩能抵挡得了乐高+跑车的魅力，于是在五一之前我就开始捯饬了。那几天每天下班后开一罐可乐，屏幕上放着艾尔登法环的游戏实况，手上拼着乐高，绝对是今年最快乐的时光之一了。
 
-![RG7frNtlLhK8W1Z.jpg](https://cdn.sa.net/2024/03/16/RG7frNtlLhK8W1Z.jpg)
+![RG7frNtlLhK8W1Z.jpg](https://cdn.varzy.me/legacy/2024/03/16/RG7frNtlLhK8W1Z.jpg)
 
 ### 回了趟家
 
 7 月 24 号，我终于请假回了趟家，当了个伴郎，见了个相亲对象，吃了老妈做的饺子，面疙瘩汤和炸馒头片。
 
-![hZeIpxKTvtRs76w.jpg](https://cdn.sa.net/2024/03/16/hZeIpxKTvtRs76w.jpg)
+![hZeIpxKTvtRs76w.jpg](https://cdn.varzy.me/legacy/2024/03/16/hZeIpxKTvtRs76w.jpg)
 
 发小的婚礼是在村里自家办的，那天最有意思的事情就是我身后的几个老太太用巨大的声音讨论我是男生还是女生，直到我扭头回答了这个问题😅。可能她们头一回在现实中见到长头发的男生吧。
 
@@ -75,7 +75,7 @@ icon: '🌃'
 
 7 月 31 号我回到北京，这次回家之行也是今年唯一一次出京的经历了。
 
-![TpeDgdiswIoLXkO.jpg](https://cdn.sa.net/2024/03/16/TpeDgdiswIoLXkO.jpg)
+![TpeDgdiswIoLXkO.jpg](https://cdn.varzy.me/legacy/2024/03/16/TpeDgdiswIoLXkO.jpg)
 
 ### 充实的十一
 
@@ -85,15 +85,15 @@ icon: '🌃'
 
 [2 号](https://t.me/aboutzy/1499)和女网友面基，除了约饭，下午还逛了工体的多抓鱼二手书店，也给领导的宝宝买了本抗造的绘本。个人觉得还是很值得一去的。多抓鱼现在也有二手衣物的业务，他们的墙壁上印着一句很有意思的话：「那一定是宽松的好卖，因为人容易胖但不容易瘦」。
 
-![sCf2vmSAIDaJVc8.jpg](https://cdn.sa.net/2024/03/16/sCf2vmSAIDaJVc8.jpg)
+![sCf2vmSAIDaJVc8.jpg](https://cdn.varzy.me/legacy/2024/03/16/sCf2vmSAIDaJVc8.jpg)
 
 [3 号](https://t.me/aboutzy/1516)去玩了一把心心相念的射箭。什么嘛，我射的还挺准的嘛（逃
 
-![4nM3FhOpUslQxNJ.jpg](https://cdn.sa.net/2024/03/16/4nM3FhOpUslQxNJ.jpg)
+![4nM3FhOpUslQxNJ.jpg](https://cdn.varzy.me/legacy/2024/03/16/4nM3FhOpUslQxNJ.jpg)
 
 [4 号](https://t.me/aboutzy/1525)是北京难得能称得上秋高气爽，云淡风轻的好天气，下午去了什刹海遛弯儿，啊！这天！这光！这水！这顶级材质包！相同的景色随着太阳渐渐西下，每一分钟的色彩都不尽相同，相当好看。10 月 4 号可能是今年接近「外出旅游」的一天。
 
-![PFtEbqJ83Ty27w9.jpg](https://cdn.sa.net/2024/03/16/PFtEbqJ83Ty27w9.jpg)
+![PFtEbqJ83Ty27w9.jpg](https://cdn.varzy.me/legacy/2024/03/16/PFtEbqJ83Ty27w9.jpg)
 
 [5 号](https://t.me/aboutzy/1533)无事，~~勾栏听曲~~ 做饭看剧。
 
@@ -109,7 +109,7 @@ icon: '🌃'
 
 这一路上我惊奇得发现原来自如寓就在菜市场不远处，发现北京竟然还有「成人按摩技能培训学校」这种神奇的学校，发现杨树的身份证上还会标注性别…
 
-![ofUVmR1QwOZ7X4p.jpg](https://cdn.sa.net/2024/03/16/ofUVmR1QwOZ7X4p.jpg)
+![ofUVmR1QwOZ7X4p.jpg](https://cdn.varzy.me/legacy/2024/03/16/ofUVmR1QwOZ7X4p.jpg)
 
 我 6 点多出门，一直走到 8 点半才回到小区。我在小区门口的天宫院小吃吃早餐，身后有位美团骑手来的比我晚，点的比我多，走的比我早。众生辛苦啊。
 
@@ -123,7 +123,7 @@ icon: '🌃'
 
 盘点了一下自己在键盘上的所有花销，其实还不到 2000 元，比钓鱼省钱多了（
 
-![r4pukaC9n5oByUY.jpg](https://cdn.sa.net/2024/03/16/r4pukaC9n5oByUY.jpg)
+![r4pukaC9n5oByUY.jpg](https://cdn.varzy.me/legacy/2024/03/16/r4pukaC9n5oByUY.jpg)
 
 ### 12 月
 
@@ -133,7 +133,7 @@ icon: '🌃'
 
 我大概是症状中等偏重的那一批，不过好在我一直都有备常用药的习惯，再加上之前偶尔偏头痛，所以我这屯了不少布洛芬和氨咖黄敏。最值得庆幸的是，我整个感染过程中味觉和嗅觉完全没有受到影响，在我发烧 38.8 时，只觉得大米粥和咸菜竟是如此美味。一周后我需要到岗复工时还是咳得相当厉害，不过看来不止我是如此，整个办公室里的咳嗽声此起彼伏，跟对暗号一样😂。
 
-![NFiQfDaWrwyUH36.jpg](https://cdn.sa.net/2024/03/16/NFiQfDaWrwyUH36.jpg)
+![NFiQfDaWrwyUH36.jpg](https://cdn.varzy.me/legacy/2024/03/16/NFiQfDaWrwyUH36.jpg)
 
 我的室友和老家的家人也都无一幸免，尤其是爷爷奶奶本来身体就不好，再加上新冠的症状更是让人难以放心。
 
@@ -143,41 +143,41 @@ icon: '🌃'
 
 年初的时候小张还是小小张，现在已经是大孩子啦。
 
-![CvSAuQ49PpVDojq.jpg](https://cdn.sa.net/2024/03/16/CvSAuQ49PpVDojq.jpg)
+![CvSAuQ49PpVDojq.jpg](https://cdn.varzy.me/legacy/2024/03/16/CvSAuQ49PpVDojq.jpg)
 
 夏天，公司楼下那些开得不像真花的花儿们。
 
-![IbGhp5C1AMyRmcF.jpg](https://cdn.sa.net/2024/03/16/IbGhp5C1AMyRmcF.jpg)
+![IbGhp5C1AMyRmcF.jpg](https://cdn.varzy.me/legacy/2024/03/16/IbGhp5C1AMyRmcF.jpg)
 
 我终于拥有宜家小鲨鱼了！为什么对这款宜家鲨鱼如此心心想念呢？因为之前买过一个送给小侄女（她天天抱着鱼翅啃，都啃秃噜了），再打开商城想给自己买一个时发现小号的已经下架，只剩下一米二那款超大的。我等啊等，整整两年这个小号的才重新上架。两年！你知道这两年我怎么过的吗😫
 
-![jxu8HsoB2lWNLJz.jpg](https://cdn.sa.net/2024/03/16/jxu8HsoB2lWNLJz.jpg)
+![jxu8HsoB2lWNLJz.jpg](https://cdn.varzy.me/legacy/2024/03/16/jxu8HsoB2lWNLJz.jpg)
 
 8 月初终于拿到了我的新宠儿 Macbook Air M2，再也不用背着死沉的 MBP 往返家和公司了！我的肩膀点了一万个赞。另外，这个星光色是我觉得苹果调的所有颜色里最好看的没有之一。
 
-![3SvzqXLYK759Zwr.jpg](https://cdn.sa.net/2024/03/16/3SvzqXLYK759Zwr.jpg)
+![3SvzqXLYK759Zwr.jpg](https://cdn.varzy.me/legacy/2024/03/16/3SvzqXLYK759Zwr.jpg)
 
 8 月 4 号是小张的两岁生日，这是嫂子自己在家做的蛋糕🍰。基操勿六，嫂子之前可是个糕点师。
 
-![bGBfAVwpIPOu4Se.jpg](https://cdn.sa.net/2024/03/16/bGBfAVwpIPOu4Se.jpg)
+![bGBfAVwpIPOu4Se.jpg](https://cdn.varzy.me/legacy/2024/03/16/bGBfAVwpIPOu4Se.jpg)
 
 8 月 20 号，我的室友，也就是小张的爸爸终于结束了自己的北漂生涯，回到了老家沈阳，可喜可贺可喜可贺。有一说一他的 2022 可比我的要精彩多了🤣。
 
 秋天将至，是时候添衣服了。小张似乎很喜欢他的新外套，可劲凹造型。
 
-![ziE9WJQ328PBvqn.jpg](https://cdn.sa.net/2024/03/16/ziE9WJQ328PBvqn.jpg)
+![ziE9WJQ328PBvqn.jpg](https://cdn.varzy.me/legacy/2024/03/16/ziE9WJQ328PBvqn.jpg)
 
 春天的小白熊和秋天的树。
 
-![kZGNHVoDn5WBX2I.jpg](https://cdn.sa.net/2024/03/16/kZGNHVoDn5WBX2I.jpg)
+![kZGNHVoDn5WBX2I.jpg](https://cdn.varzy.me/legacy/2024/03/16/kZGNHVoDn5WBX2I.jpg)
 
 因为住的楼层比较高，今年看到了不少高质量的日出和夕阳。最近起床的时间刚好赶上日出，拉开窗帘就能看到第一抹朝阳的感觉相当不错。
 
-![QZIDtdhkUp2qVr4.jpg](https://cdn.sa.net/2024/03/16/QZIDtdhkUp2qVr4.jpg)
+![QZIDtdhkUp2qVr4.jpg](https://cdn.varzy.me/legacy/2024/03/16/QZIDtdhkUp2qVr4.jpg)
 
 今年流水账的最后一张照片也用老家的年肉汤收尾吧。迫于痘痘，再也不敢像去年那样放那么多辣椒了😭
 
-![LJc6OB9SDwpmayM.jpg](https://cdn.sa.net/2024/03/16/LJc6OB9SDwpmayM.jpg)
+![LJc6OB9SDwpmayM.jpg](https://cdn.varzy.me/legacy/2024/03/16/LJc6OB9SDwpmayM.jpg)
 
 ## **盘点今年的最爱**
 
@@ -205,7 +205,7 @@ icon: '🌃'
 
 我的频道和 Newsletter 仍是玩票性质更新，因此没有做过任何推广，目前 Telegram 有 54 个关注，Newsletter 则有 44 个订阅，文章总阅读量 1037。
 
-![Ays9ZhXoLnBQ4pi.png](https://cdn.sa.net/2024/03/16/Ays9ZhXoLnBQ4pi.png)
+![Ays9ZhXoLnBQ4pi.png](https://cdn.varzy.me/legacy/2024/03/16/Ays9ZhXoLnBQ4pi.png)
 
 今年并没有用代码做出什么好玩的东西，很大一部分原因是工作太忙了，光是公司代码都写得够够的了，空闲时间实在提不起什么兴致搞自己的项目。
 
@@ -239,7 +239,7 @@ icon: '🌃'
 
 疫情三年对我最大的影响不是不能堂食，不是不能回老家，更不是减少了社交，而是强行给我加了个 3 天的保质期，为了工作生活我也只能不停地陪核酸检测员演戏。但除此之外呢？疫情对我真的有影响吗？我思考过这个问题，所以这位老哥的回复一下就戳中了我。
 
-![W2SCJTFQGdBx85k.jpg](https://cdn.sa.net/2024/03/16/W2SCJTFQGdBx85k.jpg)
+![W2SCJTFQGdBx85k.jpg](https://cdn.varzy.me/legacy/2024/03/16/W2SCJTFQGdBx85k.jpg)
 
 可能和我从小的教育和经历有关吧，我是个挺自卑的人。即便我有了超越大部分男生的身高，有了一份还不错的工作，我仍然难以摆脱自己的自卑。在前疫情时代，我总会稍许期待北京的冬天，因为雾霾可以让我名正言顺得捂上口罩，隐藏我的表情，让我感到舒适。所以，我其实是个很喜欢戴口罩的人，某种程度我得感谢 Covid-19🤫。
 

@@ -7,8 +7,8 @@ tags: ['年终总结']
 date: '2024-12-28'
 slug: '2024-summary'
 summary: '我无法长大更不想长大，那就保持现状，让我再当几年孩子吧。'
-last_edited_time: '2025-09-02T08:54:00.000Z'
-last_fetched_time: '2025-09-02T09:25:37.911Z'
+last_edited_time: '2026-08-18T17:43:00.000Z'
+last_fetched_time: '2026-08-18T18:00:38.535Z'
 page_id: '122dc9c0-364a-80f4-a150-ced50d592781'
 icon: '🎑'
 ---
@@ -21,29 +21,29 @@ hi，别来无恙，这是我的第七篇年终总结。
 
 五月是最轻快的一个月。我在四月底拿到了新的 Offer，提了离职，之后就开始顺理成章地摸鱼，没啥工作就跑到楼下吹风放空。五一假期回了趟老家，去二楼翻了翻落灰多年的老物件，果然找到了小学时啃完的第一部长篇小说《年轮》，这是我第一次「亲眼目睹」上个世纪的历史，我一直认为这本书对我的三观乃至性格都有着深远的影响。
 
-![wXlWY93512cLzIK.jpg](https://cdn.sa.net/2024/12/28/wXlWY93512cLzIK.jpg)
+![wXlWY93512cLzIK.jpg](https://cdn.varzy.me/legacy/2024/12/28/wXlWY93512cLzIK.jpg)
 
 五一当天晚上在发小家的屋顶乡村 BBQ。那些充满了现代工业气息的预制烤串并不好吃，但背后是山，楼下是河，远处是云，这是一种在北京永远找寻不到的静谧时刻。
 
-![DhwmEu3FXRStdv2.jpg](https://cdn.sa.net/2024/12/28/DhwmEu3FXRStdv2.jpg)
+![DhwmEu3FXRStdv2.jpg](https://cdn.varzy.me/legacy/2024/12/28/DhwmEu3FXRStdv2.jpg)
 
 离职前夕一口气清空所有假期去了趟青岛。那一天我路过一个沙滩，就脱了鞋走到沙滩中间面向大海坐了下来，吹着略带海带味的海风点了一支烟，这就是我开始抽烟以来最美味的一支烟没有之一了。回到北京，请同事们喝了喜茶，5 月 21 日我终于离开了工作近 4 年的搜狐，来到了一个与其气质完全相反的算是小而美的团队。
 
-![D5lCbviNj7ro6hs.jpg](https://cdn.sa.net/2024/12/28/D5lCbviNj7ro6hs.jpg)
+![D5lCbviNj7ro6hs.jpg](https://cdn.varzy.me/legacy/2024/12/28/D5lCbviNj7ro6hs.jpg)
 
 这是一个很棒的 Team，新同事都强得有够可怕，每个人都在自己的领域独当一面，更有几位一人成军的六边形战士，我需要毫不懈怠才能保证不会掉队。我能看出来大家都很满意当下的状态，并且专注于自己的事情，我也久违得找回了工作本身带来的成就感，几乎身边所有人都说我换了工作后精神状态和皮肤状态好了不止一点 (It’s true)。入职没多久就迎来了第一次出差，去了趟设计上海展，走断腿。既然人都到上海了，那当然要去见一见咱的初号脑婆🥳。
 
-![FA42hRHZDv9LMuN.jpg](https://cdn.sa.net/2024/12/28/FA42hRHZDv9LMuN.jpg)
+![FA42hRHZDv9LMuN.jpg](https://cdn.varzy.me/legacy/2024/12/28/FA42hRHZDv9LMuN.jpg)
 
 8 月去了 Google IO 开发者大会，午饭时正好和几位残障开发者坐在一桌，感受到了 Google 无障碍团队的努力。9 月份和铁锤小丫一起去了核聚变，在《失物招领有限公司》展台刚好要截止排队时，我们无意间给 staff 小姐姐透露了小丫的真名，于是拿到了当天最后一顶小鸭帽🥳，Lucky～
 
-![2LjlzKdVvyNpIqn.jpg](https://cdn.sa.net/2024/12/28/2LjlzKdVvyNpIqn.jpg)
+![2LjlzKdVvyNpIqn.jpg](https://cdn.varzy.me/legacy/2024/12/28/2LjlzKdVvyNpIqn.jpg)
 
 以往的十一假期我都会回老家，而今年我决定留在北京给自己放个假。10 月 1 号老宋从青岛过来北京，和她约了个饭，逛了圈什刹海。从 2 号开始，我关闭了手机的一切通知，隐藏了主屏以外的所有屏幕，并且只保留了天气，电话，短信，相机，网易云，Spotify，机核，米家，高德地图，支付宝这些对我而言最必要的 APP，我想过几天「赛博辟谷」的生活。
 
 这几天里我饿了就吃，困了就睡，醒了就玩一会 P5R，天气好的时候也会出去遛弯。我曾晚上 11 点半穿戴整齐去门口买煎饼果子，曾骑车十几分钟只为去喝一碗胡辣汤，也曾暴走十公里到达紫谷伊甸园… 哦对了，每年我都会拼一个大积木，这个假期也没落下。
 
-![Iru9dnV8KG3C5R1.jpg](https://cdn.sa.net/2024/12/28/Iru9dnV8KG3C5R1.jpg)
+![Iru9dnV8KG3C5R1.jpg](https://cdn.varzy.me/legacy/2024/12/28/Iru9dnV8KG3C5R1.jpg)
 
 10 月 7 号晚上我点开微信，重回喧嚣。我常自诩为一个极简主义者，这是我近年来「最极简」的一个假期了。考虑到每次回老家都比较增压，这也是我休息的最好的一个长假。下次还敢。
 
@@ -51,7 +51,7 @@ hi，别来无恙，这是我的第七篇年终总结。
 
 今年总体还比起去年还是宅了不少，对番剧和游戏也丧失了许多兴趣，没有朋友约的周末一般就只是在电脑上随便放个视频当 BGM，不知不觉两天时间就过去了。我依旧在找寻自己的不插电娱乐活动，于是 11 月底购入了富士 X100VI 📷。我并不追求拍出多么好看的照片，也懒得学习任何摄影技巧，我需要的只是一台好看轻便的，让我想要带出去的机器。网上对 X100VI 的评价褒贬不一，但它确实是最符合我需求的一款相机了。腹肌南波湾~
 
-![K76wURWqVl1mDgZ.jpg](https://cdn.sa.net/2024/12/28/K76wURWqVl1mDgZ.jpg)
+![K76wURWqVl1mDgZ.jpg](https://cdn.varzy.me/legacy/2024/12/28/K76wURWqVl1mDgZ.jpg)
 
 今年依旧和铁锤小丫一起徒步约饭逛展，去使馆区喂猫，探讨一些形而上的问题。和道长，源源一起胡吃海喝。和樊老师打语音电话，在老家的公园里看脏脏狗，在维修店门口拍小猫。蹭土土的车在崂山沿线看海。真的非常非常感谢这群朋友。
 
@@ -59,7 +59,7 @@ hi，别来无恙，这是我的第七篇年终总结。
 
 相比于专门找大块时间出去玩，我现在更重视生活中点点滴滴的开心。年初我在雪最大的那天散步到头发结冰，不知道吃什么就去天宫院小吃点梅干菜猪肉包，在家里煮出了完美的溏心蛋，在卫生间抽烟时和隔壁的小猫大眼瞪小眼…下半年出了几次差，经常早起赶 7 点那趟火车，有时就会撞见热烈的朝霞，借用同事 Danni 的一句话：「这是给早起小牛马的奖励」。
 
-![UZ2rHYSVolRIfvd.jpg](https://cdn.sa.net/2024/12/28/UZ2rHYSVolRIfvd.jpg)
+![UZ2rHYSVolRIfvd.jpg](https://cdn.varzy.me/legacy/2024/12/28/UZ2rHYSVolRIfvd.jpg)
 
 ## Coins
 
@@ -69,7 +69,7 @@ hi，别来无恙，这是我的第七篇年终总结。
 
 今年最瘦的时候距离去年最低 12.8% 的逆天体脂率还是差很多，入冬后动弹得少，脸上肚子上的肉又多了起来，但比起两年前的桶形身材还是要好不少。不知道是因为换工作还是年龄到了，总之下半年脸上的痘痘好了许多。后面几个月又把头发留得很长了，开始重新扎小辫～
 
-![sMVcmHLQA7Dokq6.jpg](https://cdn.sa.net/2024/12/28/sMVcmHLQA7Dokq6.jpg)
+![sMVcmHLQA7Dokq6.jpg](https://cdn.varzy.me/legacy/2024/12/28/sMVcmHLQA7Dokq6.jpg)
 
 今年依旧睡无能。我时常夜晚醒来以为天该亮了吧，结果一看时间才两三点，这时候我就会有很强的挫败感，也会懊恼于黑夜为何如此漫长。我对我的睡眠已经永远弃疗了。
 
@@ -93,7 +93,7 @@ AI 对我编码的帮助也值得一提，目前我的主力编辑器已经从 I
 
 年初 AirPods Pro 送修的时候，把闲置许久的 iPhone SE 初代换了个电池，装了个本地的音乐播放器改造成了 MP3～
 
-![L4QUI2vBTiFO6gm.jpg](https://cdn.sa.net/2024/12/28/L4QUI2vBTiFO6gm.jpg)
+![L4QUI2vBTiFO6gm.jpg](https://cdn.varzy.me/legacy/2024/12/28/L4QUI2vBTiFO6gm.jpg)
 
 ## 文娱
 
@@ -101,7 +101,7 @@ AI 对我编码的帮助也值得一提，目前我的主力编辑器已经从 I
 
 今年看的电影很少，线上看的竟然只记得《[周处除三害](https://movie.douban.com/subject/36151692/)》，大陆太需要狗屎喜剧片以外的电影类型了。线下也只看了三场，两场霉霉的《[时代巡回演唱会](https://movie.douban.com/subject/36538847/)》和《[你的名字](https://movie.douban.com/subject/26683290/)》的重映。君名在北京只有一家影院有 IMAX 而且排片还在工作日上午，只能请假去看了。我一直有收藏各种票据的习惯，还真翻出了 2016 年和大学女友首映场的电影票。时过境迁，那天我孤身一人，左边二百来斤的老哥全程猛男落泪，他又想起了谁或什么呢。
 
-![DmEc6OipSYskn37.jpg](https://cdn.sa.net/2024/12/28/DmEc6OipSYskn37.jpg)
+![DmEc6OipSYskn37.jpg](https://cdn.varzy.me/legacy/2024/12/28/DmEc6OipSYskn37.jpg)
 
 🎸 音。
 
@@ -123,7 +123,7 @@ AI 对我编码的帮助也值得一提，目前我的主力编辑器已经从 I
 
 8 月 20 号，我在公司用 PS5 力压一众 PC 党成为第一个吃上黑螃蟹的人✌️。
 
-![edxzir9OBR72f3v.jpg](https://cdn.sa.net/2024/12/28/edxzir9OBR72f3v.jpg)
+![edxzir9OBR72f3v.jpg](https://cdn.varzy.me/legacy/2024/12/28/edxzir9OBR72f3v.jpg)
 
 不过 PS5 上的黑猴在第三关海面上会疯狂掉帧，导致我直接失去了战意，反倒是今年争论最大的 TGA 年度游戏《宇宙机器人》让我玩得停不下来，通关后也给出了极高的评价。我是真心觉得机器人和黑猴不管谁拿年度游戏都是说得通的。
 

@@ -7,15 +7,15 @@ tags: ['电影', '我记得']
 date: '2023-04-24'
 slug: 'amelie'
 summary: '如果说起我小腿控的起源，艾米丽绝对占一份功劳。'
-last_edited_time: '2025-10-07T14:00:00.000Z'
-last_fetched_time: '2025-10-07T14:02:58.658Z'
+last_edited_time: '2026-08-18T17:44:00.000Z'
+last_fetched_time: '2026-08-18T18:01:14.448Z'
 page_id: '7ee31462-dbcd-4cf5-830f-7c548703bc73'
 icon: '🏐'
 ---
 
 如果说起我小腿控的起源，艾米丽绝对占一份功劳🫣。
 
-![rSXjtLDemx9y3av.jpg](https://cdn.sa.net/2024/03/16/rSXjtLDemx9y3av.jpg)
+![rSXjtLDemx9y3av.jpg](https://cdn.varzy.me/legacy/2024/03/16/rSXjtLDemx9y3av.jpg)
 
 「天使爱美丽」，这是一部电影的名字。我也不知道为什么会被翻译成「爱美丽」而不是女主的名字「艾米丽」。电影豆瓣评分 8.7，位列电影榜 NO.117。电影的调色相当大胆且罕见，有一种浓厚的油画质感。
 
@@ -27,12 +27,12 @@ CCTV10 曾经有档节目叫《第十放映室》，我很喜欢这档节目，�
 
 这是电影里的一句经典台词，国内有一版译文「**没有你，良辰美景更与何人说**」，取自柳永的雨霖铃「此去经年，应是良辰美景虚设。便纵有千种风情，更与何人说」，可谓是信达雅到了极致，广泛流传。
 
-![dfTCWy31nU8wgPR.jpg](https://cdn.sa.net/2024/03/16/dfTCWy31nU8wgPR.jpg)
+![dfTCWy31nU8wgPR.jpg](https://cdn.varzy.me/legacy/2024/03/16/dfTCWy31nU8wgPR.jpg)
 
 电影的剧情徐徐推进，艾米丽最终也终于收获了自己的爱情。嘴角，脖颈，和眼睛的吻简直浪漫疯了。
 
-![xlPr12IQ3cmjR5p.jpg](https://cdn.sa.net/2024/03/16/xlPr12IQ3cmjR5p.jpg)
+![xlPr12IQ3cmjR5p.jpg](https://cdn.varzy.me/legacy/2024/03/16/xlPr12IQ3cmjR5p.jpg)
 
 啊，想起我微信朋友圈里存活的第一条更新，就是艾米丽😎。
 
-![rNjtsz2PlQhLWin.jpg](https://cdn.sa.net/2024/03/16/rNjtsz2PlQhLWin.jpg)
+![rNjtsz2PlQhLWin.jpg](https://cdn.varzy.me/legacy/2024/03/16/rNjtsz2PlQhLWin.jpg)

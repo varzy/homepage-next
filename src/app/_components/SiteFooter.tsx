@@ -7,11 +7,11 @@ export type FooterLink = {
   target?: '_self' | '_blank';
 };
 
-export default function SiteFooter({ links }: { links: FooterLink[] }) {
+export default function SiteFooter({ links = [] }: { links?: FooterLink[] }) {
   const footerLinks = [
     {
-      label: 'CC BY-NC 4.0',
-      href: 'https://creativecommons.org/licenses/by-nc/4.0/',
+      label: 'CC BY-NC-SA 4.0',
+      href: 'https://creativecommons.org/licenses/by-nc-sa/4.0',
       target: '_blank',
     },
     ...links,
@@ -23,15 +23,25 @@ export default function SiteFooter({ links }: { links: FooterLink[] }) {
         <span>
           &copy; 2015 - {new Date().getFullYear()} <Link href="/">{SITE_CONFIG.author}</Link>
         </span>
-        <span className="mx-2">·</span>
-        {footerLinks.map((link, index) => (
-          <span key={index}>
-            {index > 0 && <span className="mx-2">·</span>}
-            <Link href={link.href} target={link.target ?? '_self'}>
-              {link.label}
-            </Link>
-          </span>
-        ))}
+        <span className="mx-2" aria-hidden="true">
+          ·
+        </span>
+        <nav aria-label="页脚导航">
+          <ul className="m-0 flex list-none items-center p-0">
+            {footerLinks.map((link, index) => (
+              <li key={index} className="flex items-center">
+                {index > 0 && (
+                  <span className="mx-2" aria-hidden="true">
+                    ·
+                  </span>
+                )}
+                <Link href={link.href} target={link.target ?? '_self'}>
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </footer>
   );

@@ -3,6 +3,8 @@ import RSS from 'rss';
 import { getAllPosts, type PostMeta } from '@/app/_lib/post-loader';
 import { SITE_CONFIG } from '@/site.config';
 
+export const dynamic = 'force-static';
+
 function generateRSSFeed(posts: PostMeta[]): string {
   const feed = new RSS({
     title: SITE_CONFIG.title,

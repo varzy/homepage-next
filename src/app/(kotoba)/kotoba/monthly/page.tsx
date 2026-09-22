@@ -20,14 +20,14 @@ export default async function KotobaMonthlyPage() {
       <div className="g-container">
         <ul className="m-0 list-none p-0">
           {months.map((m, index) => (
-            <li key={index} className="mb-3 ">
+            <li key={index} className="mb-3 last:mb-0">
               <Link
                 href={`/kotoba/monthly/${m.year}/${m.month}`}
-                className="me-3 inline-block w-22 text-sm last:me-0 hover:underline"
+                className="inline-block w-22 hover:underline"
               >
-                <span>{formatYearMonth(m.year, m.month)}</span>
+                {formatYearMonth(m.year, m.month)}
               </Link>
-              <span className="text-secondary ms-4"> {m.postsCount}</span>
+              <span className="text-secondary"> {m.postsCount}</span>
             </li>
           ))}
         </ul>

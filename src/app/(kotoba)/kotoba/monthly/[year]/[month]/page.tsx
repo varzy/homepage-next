@@ -38,7 +38,7 @@ export default async function KotobaMonthlyDetailPage({
 
   return (
     <>
-      <PageHero title={formatYearMonth(year, month)} after={`本月有 ${posts.length} 条更新。`} />
+      <PageHero title={formatYearMonth(year, month)} />
 
       <div className="g-container">
         <div>

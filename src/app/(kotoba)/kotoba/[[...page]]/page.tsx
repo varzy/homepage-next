@@ -42,7 +42,7 @@ export default async function KotobaPage({ params }: { params: Promise<{ page?: 
             >
               贼歪说
             </Link>
-            」将会第一时间更新，欢迎订阅。
+            」会在第一时间更新，欢迎订阅。
           </div>
         }
       />

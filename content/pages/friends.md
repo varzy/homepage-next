@@ -3,8 +3,8 @@ page_id: '2efdc9c0-364a-8077-9c62-e5c2e4ef1889'
 title: 'Friends'
 slug: 'friends'
 status: 'Published'
-last_edited_time: '2026-09-15T08:55:00.000Z'
-last_fetched_time: '2026-09-15T13:16:58.723Z'
+last_edited_time: '2026-09-22T06:46:00.000Z'
+last_fetched_time: '2026-09-22T09:14:10.280Z'
 ---
 
 # 往来
@@ -26,11 +26,11 @@ avatar: https://cdn.varzy.me/static/zyavatar.png
 
 这些是与我互换了友链的朋友们。
 
-- [和光同尘](https://ikangjia.cn/) - Every dog has its day.
+- [和光同尘](https://ikangjia.cn/)
 - [Airing 的小屋](https://blog.ursb.me/)
 - [RESTRIVE](https://yzhthinking.top/)
 - [天仙子](https://www.tianxianzi.me/)
-- [Tiusx](https://tius.cn/) - 凡是过往，皆为序章， 照进黑暗中的那束光为救赎
+- [Tiusx](https://tius.cn/)
 
 这些是我不时闲逛的站点。
 

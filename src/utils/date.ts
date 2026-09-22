@@ -10,15 +10,6 @@ dayjs.extend(timezone);
 dayjs.extend(relativeTime);
 dayjs.locale('zh-cn');
 
-const DATE_ONLY_RE = /^\d{4}-\d{2}-\d{2}$/;
-
-function parseDate(dateStr: string): dayjs.Dayjs {
-  if (DATE_ONLY_RE.test(dateStr)) {
-    return dayjs.tz(dateStr, 'Asia/Shanghai');
-  }
-  return dayjs(dateStr);
-}
-
 export function formatAbsoluteDate(dateStr: string, tpl: string = 'MMM DD, YYYY'): string {
   const date = dayjs(dateStr).tz('Asia/Shanghai');
   if (!date.isValid()) return dateStr;
@@ -26,9 +17,24 @@ export function formatAbsoluteDate(dateStr: string, tpl: string = 'MMM DD, YYYY'
   return date.locale('en').format(tpl);
 }
 
-export function formatRelativeDate(dateStr: string): string {
-  const past = parseDate(dateStr);
-  if (!past.isValid()) return dateStr;
+export function getYearMonth(dateStr: string): { year: string; month: string } | null {
+  const date = dayjs(dateStr).tz('Asia/Shanghai');
+  if (!date.isValid()) return null;
 
-  return past.fromNow();
+  return {
+    year: String(date.year()),
+    month: String(date.month() + 1).padStart(2, '0'),
+  };
+}
+
+export function formatYearMonth(
+  year: string | number,
+  month: string | number,
+  tpl: string = 'MMM YYYY',
+): string {
+  const paddedMonth = String(month).padStart(2, '0');
+  const date = dayjs.tz(`${year}-${paddedMonth}-01`, 'Asia/Shanghai');
+  if (!date.isValid()) return `${year}/${paddedMonth}`;
+
+  return date.locale('en').format(tpl);
 }

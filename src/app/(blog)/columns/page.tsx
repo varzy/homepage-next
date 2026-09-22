@@ -36,7 +36,7 @@ export default async function ColumnsPage() {
     .sort((a, b) => b.postsCount - a.postsCount);
 
   return (
-    <BlogPageContainer pageHero={{ title: 'Columns' }}>
+    <BlogPageContainer pageHero={{ title: '栏目' }}>
       <BlogSection title="Categories">
         {categoryLinks.map((category, index) => (
           <div className="mt-5" key={index}>

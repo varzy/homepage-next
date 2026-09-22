@@ -34,7 +34,7 @@ export default async function ArchivePage() {
   return (
     <BlogPageContainer
       pageHero={{
-        title: 'Archive',
+        title: '归档',
         after: `共 ${totalPosts} 篇文章，约 ${totalWords.toLocaleString('en-US')} 字。`,
       }}
     >

@@ -18,12 +18,12 @@ export default async function KotobaMonthlyPage() {
       <PageHero title="月刊" />
 
       <div className="g-container">
-        <ul className="m-0 list-none p-0">
+        <ul className="m-0 list-none space-y-4 p-0">
           {months.map((m, index) => (
-            <li key={index} className="mb-3 last:mb-0">
+            <li key={index} className="">
               <Link
                 href={`/kotoba/monthly/${m.year}/${m.month}`}
-                className="inline-block w-22 hover:underline"
+                className="inline-block w-26 hover:underline"
               >
                 {formatYearMonth(m.year, m.month)}
               </Link>

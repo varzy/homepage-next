@@ -16,7 +16,8 @@ export default function KotobaCard({ post }: KotobaCardProps) {
   const publishedTimeLabel = formatAbsoluteDate(post.publishedDate, 'MMM DD, YYYY HH:mm');
 
   return (
-    <article className="bg-surface border-border mb-4 p-5">
+    <article className="bg-surface  mb-4 p-5" id={post.page_id}>
+      {/* 13px */}
       <div className="mb-3 flex flex-wrap items-baseline gap-x-3 text-[0.8125rem]">
         {post.tags.map((tag) => (
           <Link

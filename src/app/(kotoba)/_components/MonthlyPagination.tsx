@@ -16,7 +16,6 @@ export default function MonthlyPagination({ months, year, month }: MonthlyPagina
   const currentIndex = months.findIndex((m) => m.year === year && m.month === month);
   if (currentIndex === -1) return null;
 
-  // months are sorted descending (newest first): prev is newer, next is older
   const prev = months[currentIndex - 1];
   const next = months[currentIndex + 1];
 

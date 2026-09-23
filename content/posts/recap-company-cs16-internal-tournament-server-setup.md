@@ -7,8 +7,8 @@ tags: ['游戏人生', 'Windows']
 date: '2026-09-23'
 slug: 'recap-company-cs16-internal-tournament-server-setup'
 summary: '上一篇聊完了我们是怎么把比赛现场播出去的，这一篇来聊聊怎么玩起来。'
-last_edited_time: '2026-09-23T09:06:00.000Z'
-last_fetched_time: '2026-09-23T09:08:41.681Z'
+last_edited_time: '2026-09-23T09:27:00.000Z'
+last_fetched_time: '2026-09-23T09:28:14.864Z'
 page_id: '3e2dc9c0-364a-809a-ab43-c22c54274ccf'
 icon: '⛸️'
 ---
@@ -19,7 +19,7 @@ icon: '⛸️'
 
 CS1.6 的安装目录中有 hlds.exe 和 hltv.exe 两个应用。通过前者可以启动半条命或 CS1.6 服务器，同局域网的玩家即可在游戏中发现该房间，和在游戏创建房间的效果是一致的。hlds.exe 也可以通过命令行方式启动。
 
-![d08c81819fdae82e.png](https://cdn.varzy.me/public/2026/09/posts/3e2dc9c0-364a-809a-ab43-c22c54274ccf/d08c81819fdae82e.png)
+![a33586be19a39d16.png](https://cdn.varzy.me/public/2026/09/posts/3e2dc9c0-364a-809a-ab43-c22c54274ccf/a33586be19a39d16.png)
 
 hltv.exe 则是专门的转播代理服务，它最大的作用就是设置延迟。如果需要设置线下观赛区或导播，那么至少需要将游戏画面实时延迟 10s 以上，保证不会让选手瞄到实时画面。如果没有线下转播的需求则无需开启 hltv。
 
@@ -78,7 +78,7 @@ hltv.exe +connect 127.0.0.1:27015 +port 27020 +delay 10 +name "HLTV-OB"
 
 ### 方案一：ReGameDLL_CS
 
-[ReGameDLL_CS](https://rehlds.dev/zh-Hans/docs/regamedll-cs/) 是一个基于原版逆向重构的游戏逻辑模块，修复了一系列 Bug、引入了机器人、死亡竞赛等机制，而且实施起来非常简单，只需要下载该 dll 并覆盖 `cstrike\dlls\mp.dll` 即可。
+[ReGameDLL_CS](https://rehlds.dev/zh-Hans/docs/regamedll-cs/) 是一个基于原版逆向重构的游戏逻辑模块，修复了一系列 Bug，引入了机器人、死亡竞赛等机制，而且实施起来非常简单，只需要下载该 dll 并覆盖 `cstrike\dlls\mp.dll` 即可。
 
 ReGameDLL_CS 读取 `cstrike\game.cfg` 配置文件，完整的配置见官方文档的 [Configuration and commands](https://rehlds.dev/docs/regamedll-cs/settings/)，核心配置项如下：
 
@@ -92,9 +92,9 @@ mp_buy_anywhere 1  // 随意地点买枪
 mp_buytime -1  // 随时买枪
 ```
 
-请注意，基于 ReGameDLL_CS 定制的服务器有两个致命缺陷：
+请注意，基于 ReGameDLL_CS 定制的服务器有两个缺陷：
 
-1. `game.cfg` 中的配置会在切换地图后失效。这是因为服务器每次换图时都会重新跑一遍 server.cfg，其中的部分默认配置会再次覆盖 `game.cfg` 导致配置失效。我们的解决方案是编写脚本，将 `game.cfg` 中的配置直接放到 `server.cfg` 中，同时确保 `game.cfg` 文件不存在
+1. `game.cfg` 中的配置会在切换地图后失效。这是因为服务器每次换图时都会重新跑一遍 `server.cfg`，其中的部分默认配置会再次覆盖 `game.cfg` 导致配置失效。我们的解决方案是编写脚本，将 `game.cfg` 中的配置直接放到 `server.cfg` 中，同时确保 `game.cfg` 文件不存在
 2. 如上文所述，无法实现随机出生点
 
 📢 在调研和定制过程中，我全部采用编写脚本的方式而非直接修改配置文件，包含但不限于一键安装 ReGameDLL_CS、一键启动原版、一键启动 DM 模式等诸多功能。脚本已开源： [varzy/cs16server-scripts](https://github.com/varzy/cs16server-scripts)。

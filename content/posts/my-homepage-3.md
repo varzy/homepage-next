@@ -7,8 +7,8 @@ tags: ['个人主页']
 date: '2026-05-28'
 slug: 'my-homepage-3'
 summary: '我希望我的网站是安静的，不喧嚣的，是简洁而不失条理的。'
-last_edited_time: '2026-08-18T14:55:00.000Z'
-last_fetched_time: '2026-08-18T17:59:52.812Z'
+last_edited_time: '2026-09-23T04:33:00.000Z'
+last_fetched_time: '2026-09-23T05:37:48.697Z'
 page_id: '36edc9c0-364a-80cf-aadf-e6fccdd6d094'
 icon: '✉️'
 ---
@@ -23,7 +23,7 @@ icon: '✉️'
 
 如今 Telegram 越来越不好用，除了解决生理需求而浏览 NSFW 内容，我打开 Telegram 的次数越来越少，频道的更新频率也越来越低。但目前市面上似乎并没有更好的平台去承载我的碎片化叙事（好吧，就是沉没成本太高）。当手机里 Notion 这款笔记软件的「日活」超越了 Telegram 时，我想是时候重新考虑用 Notion 发布 Telegram 了。
 
-我用 AI 编写了 no2tg 的革新版本，取名 no2tg2，依旧是从 Notion 某一个数据库中取页面，并把内容发布到 Telegram。
+我用 AI 编写了 no2tg 的革新版本，取名 [no2tg2](https://github.com/varzy/no2tg2)，依旧是从 Notion 某一个数据库中取页面，并把内容发布到 Telegram。
 
 更重要的是，我为网站加了一个新的页面 [贼歪说](https://varzy.me/kotoba) 来承载这些零碎内容，你可以在网页端以时间线的形式浏览这些内容。举个不恰当的例子，目前的 Telegram 频道变成了一种 RSS。
 

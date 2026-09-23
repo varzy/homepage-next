@@ -7,8 +7,8 @@ tags: ['游戏人生', 'Windows']
 date: '2026-09-21'
 slug: 'recap-company-cs16-internal-tournament-live-streaming-plan'
 summary: '写在公司的 CS1.6 内部赛大成功之后。'
-last_edited_time: '2026-09-21T08:19:00.000Z'
-last_fetched_time: '2026-09-21T08:25:05.100Z'
+last_edited_time: '2026-09-23T09:06:00.000Z'
+last_fetched_time: '2026-09-23T09:08:44.704Z'
 page_id: '3e2dc9c0-364a-8024-9a0f-e70e411ab659'
 icon: '⛳'
 ---
@@ -49,7 +49,7 @@ NDI 全称 Network Device Interface，是一种允许通过局域网实时传输
 
 ## OB 机和推流机组网
 
-基于 NDI 的组网肥肠简单。在最顺利的情况下，只要 OB 机和推流机都需要安装 [OBS](https://obsproject.com/)、[NDI Tools](https://ndi.video/tools/) 和 [DistroAV](https://distroav.org/) 这三个软件，重启 OB 机的 OBS 后，点击工具 → DistroAV NDI 打开配置窗口，为当前设备添加一个名称，点击确定。
+基于 NDI 的组网肥肠简单。在最顺利的情况下，只要 OB 机和推流机都安装 [OBS](https://obsproject.com/)、[NDI Tools](https://ndi.video/tools/) 和 [DistroAV](https://distroav.org/) 这三个软件，重启 OB 机的 OBS 后，点击工具 → DistroAV NDI 打开配置窗口，为当前设备添加一个名称，点击确定。
 
 ![2f1d25af7a7edb06.png](https://cdn.varzy.me/public/2026/09/posts/3e2dc9c0-364a-8024-9a0f-e70e411ab659/2f1d25af7a7edb06.png)
 

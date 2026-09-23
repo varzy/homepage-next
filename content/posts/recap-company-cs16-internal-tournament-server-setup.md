@@ -7,8 +7,8 @@ tags: ['游戏人生', 'Windows']
 date: '2026-09-23'
 slug: 'recap-company-cs16-internal-tournament-server-setup'
 summary: '上一篇聊完了我们是怎么把比赛现场播出去的，这一篇来聊聊怎么玩起来。'
-last_edited_time: '2026-09-23T09:27:00.000Z'
-last_fetched_time: '2026-09-23T09:28:14.864Z'
+last_edited_time: '2026-09-23T09:29:00.000Z'
+last_fetched_time: '2026-09-23T09:29:22.435Z'
 page_id: '3e2dc9c0-364a-809a-ab43-c22c54274ccf'
 icon: '⛸️'
 ---

@@ -7,8 +7,8 @@ tags: ['游戏人生', 'Windows']
 date: '2026-09-23'
 slug: 'recap-company-cs16-internal-tournament-server-setup'
 summary: '上一篇聊完了我们是怎么把比赛现场播出去的，这一篇来聊聊怎么玩起来。'
-last_edited_time: '2026-09-23T09:29:00.000Z'
-last_fetched_time: '2026-09-23T09:29:22.435Z'
+last_edited_time: '2026-09-23T09:30:00.000Z'
+last_fetched_time: '2026-09-23T09:30:47.946Z'
 page_id: '3e2dc9c0-364a-809a-ab43-c22c54274ccf'
 icon: '⛸️'
 ---
@@ -19,7 +19,7 @@ icon: '⛸️'
 
 CS1.6 的安装目录中有 hlds.exe 和 hltv.exe 两个应用。通过前者可以启动半条命或 CS1.6 服务器，同局域网的玩家即可在游戏中发现该房间，和在游戏创建房间的效果是一致的。hlds.exe 也可以通过命令行方式启动。
 
-![a33586be19a39d16.png](https://cdn.varzy.me/public/2026/09/posts/3e2dc9c0-364a-809a-ab43-c22c54274ccf/a33586be19a39d16.png)
+![fd1ab812195cd92d.png](https://cdn.varzy.me/public/2026/09/posts/3e2dc9c0-364a-809a-ab43-c22c54274ccf/fd1ab812195cd92d.png)
 
 hltv.exe 则是专门的转播代理服务，它最大的作用就是设置延迟。如果需要设置线下观赛区或导播，那么至少需要将游戏画面实时延迟 10s 以上，保证不会让选手瞄到实时画面。如果没有线下转播的需求则无需开启 hltv。
 

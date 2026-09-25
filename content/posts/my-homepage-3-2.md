@@ -7,15 +7,15 @@ tags: ['个人主页']
 date: '2026-09-24'
 slug: 'my-homepage-3-2'
 summary: '体验提升，小修小补。'
-last_edited_time: '2026-09-24T03:00:00.000Z'
-last_fetched_time: '2026-09-24T03:01:56.199Z'
+last_edited_time: '2026-09-25T04:03:00.000Z'
+last_fetched_time: '2026-09-25T07:19:02.818Z'
 page_id: '3e4dc9c0-364a-80b1-aa1d-eeb1abb7f9ee'
 icon: '🏓'
 ---
 
 上个版本的更新日志：[主页 3.1](https://varzy.me/posts/my-homepage-3-1)。
 
-## 图床迁移至 Cloudflare R2 及图片优化
+## 图床迁移至 Cloudflare R2
 
 将本站用了许久的 [sm.ms](http://sm.ms/) 图床迁移到了 Cloudflare R2，并且配合 [Transformation](https://developers.cloudflare.com/images/optimization/transformations/overview/) 功能大幅提升了图片加载速度。技术方案可见 [博客图床迁移到 Cloudflare R2 全过程回顾](https://varzy.me/posts/blog-image-host-migration-to-cloudflare-r2) 一文。
 

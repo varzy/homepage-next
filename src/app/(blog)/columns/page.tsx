@@ -8,7 +8,7 @@ import { getEmojiFavicon } from '@/utils/favicon';
 import BlogSection from '../_components/BlogSection';
 
 export const metadata: Metadata = {
-  title: 'Columns',
+  title: '栏目',
   icons: getEmojiFavicon('📰'),
 };
 

@@ -7,7 +7,7 @@ import BlogSection from '../_components/BlogSection';
 import PostItemArchive from '../_components/PostItemArchive';
 
 export const metadata: Metadata = {
-  title: 'Archive',
+  title: '归档',
   icons: getEmojiFavicon('🗂️'),
 };
 

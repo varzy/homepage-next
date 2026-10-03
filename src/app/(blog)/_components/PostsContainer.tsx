@@ -1,4 +1,4 @@
-import Pagination from '@/app/_components/Pagination';
+import NumberedPagination from '@/app/_components/NumberedPagination';
 import { PostMeta } from '@/app/_lib/post-loader';
 import { SITE_CONFIG } from '@/site.config';
 import PostItem from './PostItem';
@@ -34,7 +34,7 @@ export default function PostsContainer({
           ></PostItem>
         ))}
       </div>
-      <Pagination
+      <NumberedPagination
         current={currentPage}
         pageSize={prePage}
         urlPrefix={urlPrefix}

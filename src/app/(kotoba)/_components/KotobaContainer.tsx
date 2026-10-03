@@ -1,4 +1,4 @@
-import Pagination from '@/app/_components/Pagination';
+import NumberedPagination from '@/app/_components/NumberedPagination';
 import { KotobaPostWithContent } from '@/app/_lib/kotoba-loader';
 import { SITE_CONFIG } from '@/site.config';
 import KotobaCard from './KotobaCard';
@@ -20,7 +20,7 @@ export default function KotobaContainer({ posts, currentPage, urlPrefix }: Kotob
           <KotobaCard key={post.page_id} post={post} />
         ))}
       </div>
-      <Pagination
+      <NumberedPagination
         current={currentPage}
         pageSize={SITE_CONFIG.kotobaPerPage}
         urlPrefix={urlPrefix}

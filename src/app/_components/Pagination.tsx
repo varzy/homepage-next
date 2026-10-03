@@ -1,31 +1,36 @@
 import Link from 'next/link';
+import { ReactNode } from 'react';
 
-export interface PaginationProps {
-  total: number;
-  current: number;
-  pageSize: number;
-  urlPrefix: string;
+export interface PaginationItem {
+  href: string;
+  label: string;
 }
 
-export default function Pagination({ total, current, pageSize, urlPrefix }: PaginationProps) {
-  const showPrev = current > 1;
-  const showNext = current * pageSize < total;
-  const totalPage = Math.ceil(total / pageSize);
+export interface PaginationProps {
+  ariaLabel?: string;
+  prev?: PaginationItem;
+  next?: PaginationItem;
+  children: ReactNode;
+}
 
-  const Goto = (page: number, label: string) => (
-    <Link className="hover:underline" href={page === 1 ? urlPrefix : `${urlPrefix}/${page}`}>
-      {label}
-    </Link>
-  );
+const Goto = ({ href, label }: PaginationItem) => (
+  <Link className="hover:underline" href={href}>
+    {label}
+  </Link>
+);
 
+export default function Pagination({
+  ariaLabel = '分页导航',
+  prev,
+  next,
+  children,
+}: PaginationProps) {
   return (
-    <nav className="mt-14" aria-label="分页导航">
+    <nav className="mt-14" aria-label={ariaLabel}>
       <ul className="m-0 grid list-none grid-cols-[1fr_auto_1fr] items-center p-0">
-        <li className="prev text-left">{showPrev && Goto(current - 1, '< Prev')}</li>
-        <li className="current text-secondary text-center">
-          {current} of {totalPage}
-        </li>
-        <li className="next text-right">{showNext && Goto(current + 1, 'Next >')}</li>
+        <li className="text-left">{prev && <Goto {...prev} />}</li>
+        <li className="text-secondary text-center">{children}</li>
+        <li className="text-right">{next && <Goto {...next} />}</li>
       </ul>
     </nav>
   );

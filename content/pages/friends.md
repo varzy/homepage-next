@@ -3,8 +3,8 @@ page_id: '2efdc9c0-364a-8077-9c62-e5c2e4ef1889'
 title: 'Friends'
 slug: 'friends'
 status: 'Published'
-last_edited_time: '2026-09-23T15:18:00.000Z'
-last_fetched_time: '2026-09-23T16:23:16.874Z'
+last_edited_time: '2026-10-06T06:07:00.000Z'
+last_fetched_time: '2026-10-06T07:19:27.519Z'
 ---
 
 # 往来
@@ -53,6 +53,7 @@ avatar: https://cdn.varzy.me/static/zyavatar.png
 - [子锐](https://zrui.tech/)
 - [guchengf.me](https://guchengf.me/)
 - [Lex Blog](https://dreams.plus/)
+- [SkyWT](https://skywt.cn/)
 
 这些是我用来发现其他博客的平台。
 

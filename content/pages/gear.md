@@ -3,8 +3,8 @@ page_id: '372dc9c0-364a-80f3-9b8a-e7cf3c61d44d'
 title: 'Gear'
 slug: 'gear'
 status: 'Published'
-last_edited_time: '2026-09-15T01:18:00.000Z'
-last_fetched_time: '2026-09-15T01:22:46.373Z'
+last_edited_time: '2026-10-09T09:28:00.000Z'
+last_fetched_time: '2026-10-09T09:28:34.106Z'
 ---
 
 # 器用
@@ -13,7 +13,7 @@ last_fetched_time: '2026-09-15T01:22:46.373Z'
 
 ## EDC
 
-- **iPhone 15 Pro Max** - 主力机
+- **iPhone 18 Pro Max + 图拉斯 O3 Air 手机壳** - 主力机
 - **Redmi K90 Pro Max** - 游戏机，流量机
 - **AirPods Pro 3**
 - **Casio GST-B400BB-1A**
@@ -90,9 +90,3 @@ CLI
 - **bat**
 - **glances**
 - **mole**
-
-## LLMs
-
-- **Z.ai / GLM-5.2**
-- **Anthropic / Claude Sonnet 5**
-- **Anthropic / Claude Opus 5**

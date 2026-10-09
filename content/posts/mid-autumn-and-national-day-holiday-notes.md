@@ -7,8 +7,8 @@ tags: ['小形迹', '流水账']
 date: '2026-10-09'
 slug: 'mid-autumn-and-national-day-holiday-notes'
 summary: 'Damn，我不想上班。'
-last_edited_time: '2026-10-09T08:53:00.000Z'
-last_fetched_time: '2026-10-09T08:54:20.425Z'
+last_edited_time: '2026-10-09T10:32:00.000Z'
+last_fetched_time: '2026-10-09T10:33:04.572Z'
 page_id: '3f2dc9c0-364a-80ed-af28-e6d76511ac50'
 icon: '⛰️'
 ---
@@ -31,7 +31,7 @@ icon: '⛰️'
 
 ![46b5d7a69e6a31b3.jpg](https://cdn.varzy.me/public/2026/10/posts/3f2dc9c0-364a-80ed-af28-e6d76511ac50/46b5d7a69e6a31b3.jpg)
 
-回家见了发小，他的女儿比起去年一下子长高了很多，我一下子都没认出来。
+回家见了发小，他的女儿比起去年一下子长高了很多，我差点没认出来。
 
 也见了樊老师，和她一起吃了个在北方已经算相当不错的蟹黄面，又蹭她的票逛了王城公园的昆虫展。
 

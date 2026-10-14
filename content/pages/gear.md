@@ -1,10 +1,10 @@
 ---
-page_id: '372dc9c0-364a-80f3-9b8a-e7cf3c61d44d'
-title: 'Gear'
-slug: 'gear'
-status: 'Published'
-last_edited_time: '2026-10-09T09:28:00.000Z'
-last_fetched_time: '2026-10-09T09:28:34.106Z'
+page_id: "372dc9c0-364a-80f3-9b8a-e7cf3c61d44d"
+title: "Gear"
+slug: "gear"
+status: "Published"
+last_edited_time: "2026-10-14T14:34:00.000Z"
+last_fetched_time: "2026-10-14T14:35:08.998Z"
 ---
 
 # 器用
@@ -19,11 +19,15 @@ last_fetched_time: '2026-10-09T09:28:34.106Z'
 - **Casio GST-B400BB-1A**
 - **MUJI 双拉链收纳袋** - EDC 小包。放纸巾、酒精湿巾、耳机等日用品
 
+![6d8fb8988f2bae75.jpg](https://cdn.varzy.me/public/2026/10/pages/372dc9c0-364a-80f3-9b8a-e7cf3c61d44d/6d8fb8988f2bae75.jpg)
+
 ## PSK
 
 - **奈特科尔 NB Air** - 极致轻薄的充电宝，可放进白洞收纳包中随身携带
 - **纳拓小水手 S11 Pro** - 极致轻薄的多功能工具钳，可放进白洞收纳包中随身携带
 - **DOOMGEAR 白洞** - PSK 小包。放创可贴、充电宝、备用现金等意外情况可能会用到的物品
+
+![083bd335c2217b67.jpg](https://cdn.varzy.me/public/2026/10/pages/372dc9c0-364a-80f3-9b8a-e7cf3c61d44d/083bd335c2217b67.jpg)
 
 ## 出行
 
@@ -32,35 +36,39 @@ last_fetched_time: '2026-10-09T09:28:34.106Z'
 - **Jellycat 小花生挂件**
 - **Waterfront 折叠伞** - 极致轻薄的雨伞，有记忆贴片，收缩后无需手动整理伞布
 - **FUJIFILM X100VI** - 除了对焦慢，腹肌南波万
+- **折叠购物袋** - 品牌随意，买菜逛超市必备
+
+![483b816f803f5569.jpg](https://cdn.varzy.me/public/2026/10/pages/372dc9c0-364a-80f3-9b8a-e7cf3c61d44d/483b816f803f5569.jpg)
 
 ## 衣着
 
 - **优衣库 Airism 白色短袖** - 焊死在身上的打底衫，夏穿 L 冬穿 M
-- **美津浓 FIYI TL V2 运动鞋**
+- **美津浓 FIYI TL V2 运动鞋** - 已严肃回购两双
 
 ## 日用
-
-个护
 
 - **可复美重组胶原蛋白修复敷料**
 - **CeraVe 保湿乳液**
 - **海露玻璃酸钠滴眼液**
 - **3M 耳塞**
+- **Miniso 一次性口罩**
+- **宜家保鲜袋**
 
-提神
+## 家电
 
-- **MINTIA 薄荷糖** - 物理意义上非常“带劲”的一款糖
-- **钻石荷花香烟** - 每天早上第一支
+- **米家空调伴侣** - 把出租屋的空调智能化
+- **小米台灯 Pro**
 
 ## Battle Station
 
 - **MacBook Air 13' M2**
 - **Rainy 75 雪顶可可轴**
 - **VGN 蜻蜓3 大师+**
-- **小米台灯 Pro**
 - **Play Station 5** - 从朋友那收的二手，或将成为近年来最值得的一笔投资
 - **文石 Leaf 3** - 在旅途中看漫画，以及睡前看垃圾小说助眠
 - **毕亚兹雷雳5 编织数据线**
+
+![9b3ce2da35bb6e93.jpg](https://cdn.varzy.me/public/2026/10/pages/372dc9c0-364a-80f3-9b8a-e7cf3c61d44d/9b3ce2da35bb6e93.jpg)
 
 ## MacOS Setup
 
@@ -90,3 +98,5 @@ CLI
 - **bat**
 - **glances**
 - **mole**
+
+![2dbd3ebef2ee1bc3.png](https://cdn.varzy.me/public/2026/10/pages/372dc9c0-364a-80f3-9b8a-e7cf3c61d44d/2dbd3ebef2ee1bc3.png)

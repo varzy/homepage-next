@@ -3,8 +3,8 @@ page_id: "372dc9c0-364a-80f3-9b8a-e7cf3c61d44d"
 title: "Gear"
 slug: "gear"
 status: "Published"
-last_edited_time: "2026-10-14T15:22:00.000Z"
-last_fetched_time: "2026-10-14T15:22:43.151Z"
+last_edited_time: "2026-10-14T23:44:00.000Z"
+last_fetched_time: "2026-10-14T23:45:20.666Z"
 ---
 
 # 器用
@@ -18,6 +18,7 @@ last_fetched_time: "2026-10-14T15:22:43.151Z"
 - **Casio GST-B400BB-1A**
 - **MUJI 双拉链收纳袋** - EDC 小包。放纸巾、酒精湿巾、耳机等日用品
 - **AirPods Pro 3**
+- **MINTIA 薄荷糖**
 
 ![6d8fb8988f2bae75.jpg](https://cdn.varzy.me/public/2026/10/pages/372dc9c0-364a-80f3-9b8a-e7cf3c61d44d/6d8fb8988f2bae75.jpg)
 
@@ -32,7 +33,7 @@ last_fetched_time: "2026-10-14T15:22:43.151Z"
 ## 出行
 
 - **Bellroy Lite Sling Mini 4L 斜挎包**
-- **F/CE 420 Travel BP 33L 双肩包** - 我能找到的最好看，大容量，又不臃肿的双肩包
+- **F/CE 420 Travel BP 33L 双肩包** - 我能找到的最好看，大容量，又不臃肿的双肩包。不过做工真的很差
 - **Jellycat 小花生挂件**
 - **Waterfront 折叠伞** - 极致轻薄的雨伞，有记忆贴片，收缩后无需手动整理伞布
 - **FUJIFILM X100VI** - 除了对焦慢，腹肌南波万
@@ -75,7 +76,7 @@ last_fetched_time: "2026-10-14T15:22:43.151Z"
 
 生产力
 
-- **Surge / FlClash**
+- **FlClash**
 - **滴答清单** - 已经是 11 年老用户了
 - **Notion** - 存放我所有的笔记，并且配合 Notion API 玩出了不少花样
 - **Raycast** - 最常用的功能是 Calculator, Clipboard History & Window Management

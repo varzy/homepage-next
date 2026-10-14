@@ -3,8 +3,8 @@ page_id: "372dc9c0-364a-80f3-9b8a-e7cf3c61d44d"
 title: "Gear"
 slug: "gear"
 status: "Published"
-last_edited_time: "2026-10-14T14:47:00.000Z"
-last_fetched_time: "2026-10-14T14:48:00.765Z"
+last_edited_time: "2026-10-14T15:22:00.000Z"
+last_fetched_time: "2026-10-14T15:22:43.151Z"
 ---
 
 # 器用
@@ -101,3 +101,11 @@ CLI
 - **mole**
 
 ![2dbd3ebef2ee1bc3.png](https://cdn.varzy.me/public/2026/10/pages/372dc9c0-364a-80f3-9b8a-e7cf3c61d44d/2dbd3ebef2ee1bc3.png)
+
+## 冲浪
+
+- **Instagram Reels** - 不像 Tiktok 一样锁区，并且抽象，擦边，猫，音乐，黑人地狱笑话，德国地狱笑话，911 地狱笑话应有尽有
+- **Netflix** - 在「看视频」这一件事上做到了极致，即使封锁愈发严苛，我依旧无法抛弃它
+- [**OuO**](https://play.google.com/store/apps/details?id=com.elpatrixf.OuO) - 从大学开始，我的每款安卓手机都会安装这款应用
+
+![70465ee086e350f0.jpg](https://cdn.varzy.me/public/2026/10/pages/372dc9c0-364a-80f3-9b8a-e7cf3c61d44d/70465ee086e350f0.jpg)

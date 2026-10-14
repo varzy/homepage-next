@@ -3,8 +3,8 @@ page_id: "372dc9c0-364a-80f3-9b8a-e7cf3c61d44d"
 title: "Gear"
 slug: "gear"
 status: "Published"
-last_edited_time: "2026-10-14T14:34:00.000Z"
-last_fetched_time: "2026-10-14T14:35:08.998Z"
+last_edited_time: "2026-10-14T14:47:00.000Z"
+last_fetched_time: "2026-10-14T14:48:00.765Z"
 ---
 
 # 器用
@@ -15,17 +15,17 @@ last_fetched_time: "2026-10-14T14:35:08.998Z"
 
 - **iPhone 18 Pro Max + 图拉斯 O3 Air 手机壳** - 主力机
 - **Redmi K90 Pro Max** - 游戏机，流量机
-- **AirPods Pro 3**
 - **Casio GST-B400BB-1A**
 - **MUJI 双拉链收纳袋** - EDC 小包。放纸巾、酒精湿巾、耳机等日用品
+- **AirPods Pro 3**
 
 ![6d8fb8988f2bae75.jpg](https://cdn.varzy.me/public/2026/10/pages/372dc9c0-364a-80f3-9b8a-e7cf3c61d44d/6d8fb8988f2bae75.jpg)
 
 ## PSK
 
+- **DOOMGEAR 白洞** - PSK 小包。放创可贴、充电宝、备用现金等意外情况可能会用到的物品
 - **奈特科尔 NB Air** - 极致轻薄的充电宝，可放进白洞收纳包中随身携带
 - **纳拓小水手 S11 Pro** - 极致轻薄的多功能工具钳，可放进白洞收纳包中随身携带
-- **DOOMGEAR 白洞** - PSK 小包。放创可贴、充电宝、备用现金等意外情况可能会用到的物品
 
 ![083bd335c2217b67.jpg](https://cdn.varzy.me/public/2026/10/pages/372dc9c0-364a-80f3-9b8a-e7cf3c61d44d/083bd335c2217b67.jpg)
 
@@ -43,7 +43,7 @@ last_fetched_time: "2026-10-14T14:35:08.998Z"
 ## 衣着
 
 - **优衣库 Airism 白色短袖** - 焊死在身上的打底衫，夏穿 L 冬穿 M
-- **美津浓 FIYI TL V2 运动鞋** - 已严肃回购两双
+- **美津浓 FIYI TL V2 运动鞋**
 
 ## 日用
 
@@ -57,7 +57,8 @@ last_fetched_time: "2026-10-14T14:35:08.998Z"
 ## 家电
 
 - **米家空调伴侣** - 把出租屋的空调智能化
-- **小米台灯 Pro**
+- **小米台灯 Pro** - 睡觉以外的时间都亮着，常用 30% 亮度 + 2700K 暖光照亮卧室
+- **小米 BE6500 Pro 路由器**
 
 ## Battle Station
 

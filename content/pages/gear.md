@@ -3,8 +3,8 @@ page_id: "372dc9c0-364a-80f3-9b8a-e7cf3c61d44d"
 title: "Gear"
 slug: "gear"
 status: "Published"
-last_edited_time: "2026-10-14T23:44:00.000Z"
-last_fetched_time: "2026-10-14T23:45:20.666Z"
+last_edited_time: "2026-10-15T01:49:00.000Z"
+last_fetched_time: "2026-10-15T01:51:48.896Z"
 ---
 
 # 器用
@@ -25,8 +25,8 @@ last_fetched_time: "2026-10-14T23:45:20.666Z"
 ## PSK
 
 - **DOOMGEAR 白洞** - PSK 小包。放创可贴、充电宝、备用现金等意外情况可能会用到的物品
-- **奈特科尔 NB Air** - 极致轻薄的充电宝，可放进白洞收纳包中随身携带
-- **纳拓小水手 S11 Pro** - 极致轻薄的多功能工具钳，可放进白洞收纳包中随身携带
+- **奈特科尔 NB Air** - 极致轻薄的充电宝，4900mAh 应付国内出行完全够用
+- **纳拓小水手 S11 Pro** - 极致轻薄的多功能工具钳，可上高铁，拆个快递剪个线头足够了
 
 ![083bd335c2217b67.jpg](https://cdn.varzy.me/public/2026/10/pages/372dc9c0-364a-80f3-9b8a-e7cf3c61d44d/083bd335c2217b67.jpg)
 

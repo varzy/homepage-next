@@ -1,20 +1,20 @@
 ---
-page_id: '263dc9c0-364a-80af-b283-cf7dd8e250d6'
-title: 'Resume'
-slug: 'resume'
-status: 'Published'
-last_edited_time: '2026-05-22T12:29:00.000Z'
-last_fetched_time: '2026-05-22T12:40:10.778Z'
+page_id: "263dc9c0-364a-80af-b283-cf7dd8e250d6"
+title: "Resume"
+slug: "resume"
+status: "Published"
+last_edited_time: "2026-10-15T06:51:00.000Z"
+last_fetched_time: "2026-10-15T08:59:10.802Z"
 ---
 
 # 赵越的简历
 
 ## 个人信息
 
-- **我**: 男 | 1996 年 | Base 北京 | 河南师范大学 | 计算机科学与技术专业
-- **手机 & 微信**: +86 155 6525 2838
+- **我**: 1996 年 | Base 北京 | 河南师范大学 | 计算机科学与技术专业
+- **Phone & Wechat**: +86 155 6525 2838
 - **Email**: [varzyme@gmail.com](mailto:varzyme@gmail.com)
-- **Github**: [https://github.com/varzy](https://github.com/varzy)
+- **Github**: [github.com/varzy](https://github.com/varzy)
 
 ## 技能清单
 
@@ -39,7 +39,7 @@ last_fetched_time: '2026-05-22T12:40:10.778Z'
 
 ## 工作经历
 
-### 2020.06 - 至今 北京搜狐新媒体信息技术有限公司
+### 2020.06 - 2024.05 北京搜狐新媒体信息技术有限公司
 
 > 任职于搜狐汽车创新营销中心，主要负责各类营销活动的支持及创新探索，涉及微信小程序、网页、活动专题等各种渠道。
 

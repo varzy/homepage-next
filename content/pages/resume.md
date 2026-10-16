@@ -1,10 +1,10 @@
 ---
-page_id: "263dc9c0-364a-80af-b283-cf7dd8e250d6"
-title: "Resume"
-slug: "resume"
-status: "Published"
-last_edited_time: "2026-10-15T06:51:00.000Z"
-last_fetched_time: "2026-10-15T08:59:10.802Z"
+page_id: '263dc9c0-364a-80af-b283-cf7dd8e250d6'
+title: 'Resume'
+slug: 'resume'
+status: 'Published'
+last_edited_time: '2026-10-15T06:51:00.000Z'
+last_fetched_time: '2026-10-15T08:59:10.802Z'
 ---
 
 # 赵越的简历

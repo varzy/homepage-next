@@ -44,7 +44,7 @@ export default function Home() {
       <div className="flex items-end text-5xl font-bold">
         <h1 className="italic">贼歪</h1>
       </div>
-      <h2 className="mt-3">🧑‍💻Developer. 📝Blogger. 🫣INFJ.</h2>
+      <h2 className="mt-3">🧑‍💻Developer. 📝Blogger. ⚪Minimalist.</h2>
 
       {/* Links */}
       <nav aria-label="首页菜单">

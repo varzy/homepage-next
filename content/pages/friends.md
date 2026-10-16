@@ -3,8 +3,8 @@ page_id: '2efdc9c0-364a-8077-9c62-e5c2e4ef1889'
 title: 'Friends'
 slug: 'friends'
 status: 'Published'
-last_edited_time: '2026-10-06T06:07:00.000Z'
-last_fetched_time: '2026-10-06T07:19:27.519Z'
+last_edited_time: '2026-10-16T05:36:00.000Z'
+last_fetched_time: '2026-10-16T05:37:22.691Z'
 ---
 
 # 往来
@@ -18,7 +18,7 @@ last_fetched_time: '2026-10-06T07:19:27.519Z'
 ```plain text
 name: 贼歪
 url: https://varzy.me
-motto: Developer. Blogger. INFJ.
+motto: Developer. Blogger. Minimalist.
 avatar: https://cdn.varzy.me/static/zyavatar.png
 ```
 

@@ -1,10 +1,10 @@
 ---
-page_id: "372dc9c0-364a-80f3-9b8a-e7cf3c61d44d"
-title: "Gear"
-slug: "gear"
-status: "Published"
-last_edited_time: "2026-10-15T01:49:00.000Z"
-last_fetched_time: "2026-10-15T01:51:48.896Z"
+page_id: '372dc9c0-364a-80f3-9b8a-e7cf3c61d44d'
+title: 'Gear'
+slug: 'gear'
+status: 'Published'
+last_edited_time: '2026-10-15T01:49:00.000Z'
+last_fetched_time: '2026-10-15T01:51:48.896Z'
 ---
 
 # 器用

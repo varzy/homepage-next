@@ -1,10 +1,10 @@
 ---
-page_id: '372dc9c0-364a-80f3-9b8a-e7cf3c61d44d'
-title: 'Gear'
-slug: 'gear'
-status: 'Published'
-last_edited_time: '2026-10-15T01:49:00.000Z'
-last_fetched_time: '2026-10-15T01:51:48.896Z'
+page_id: "372dc9c0-364a-80f3-9b8a-e7cf3c61d44d"
+title: "Gear"
+slug: "gear"
+status: "Published"
+last_edited_time: "2026-10-16T08:32:00.000Z"
+last_fetched_time: "2026-10-16T12:09:37.568Z"
 ---
 
 # 器用
@@ -58,7 +58,7 @@ last_fetched_time: '2026-10-15T01:51:48.896Z'
 ## 家电
 
 - **米家空调伴侣** - 把出租屋的空调智能化
-- **小米台灯 Pro** - 睡觉以外的时间都亮着，常用 30% 亮度 + 2700K 暖光照亮卧室
+- **小米台灯 Pro** - 睡觉以外的时间都亮着，常用 30% 亮度 + 2700K 暖光打亮卧室
 - **小米 BE6500 Pro 路由器**
 
 ## Battle Station

@@ -3,8 +3,8 @@ page_id: "372dc9c0-364a-80f3-9b8a-e7cf3c61d44d"
 title: "Gear"
 slug: "gear"
 status: "Published"
-last_edited_time: "2026-10-22T09:41:00.000Z"
-last_fetched_time: "2026-10-22T09:41:57.565Z"
+last_edited_time: "2026-10-22T09:43:00.000Z"
+last_fetched_time: "2026-10-22T09:43:47.828Z"
 ---
 
 # 器用
@@ -101,7 +101,7 @@ CLI
 - **glances**
 - **mole**
 
-![82757a09bd1db654.png](https://cdn.varzy.me/public/2026/10/pages/372dc9c0-364a-80f3-9b8a-e7cf3c61d44d/82757a09bd1db654.png)
+![88f33a500224aed7.png](https://cdn.varzy.me/public/2026/10/pages/372dc9c0-364a-80f3-9b8a-e7cf3c61d44d/88f33a500224aed7.png)
 
 ## 冲浪
 

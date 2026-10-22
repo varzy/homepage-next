@@ -3,8 +3,8 @@ page_id: "372dc9c0-364a-80f3-9b8a-e7cf3c61d44d"
 title: "Gear"
 slug: "gear"
 status: "Published"
-last_edited_time: "2026-10-16T08:32:00.000Z"
-last_fetched_time: "2026-10-16T12:09:37.568Z"
+last_edited_time: "2026-10-22T09:41:00.000Z"
+last_fetched_time: "2026-10-22T09:41:57.565Z"
 ---
 
 # 器用
@@ -87,7 +87,7 @@ last_fetched_time: "2026-10-16T12:09:37.568Z"
 
 Coding
 
-- **VSCode** + **Claude Code Extension** + **Catppuccin Theme**
+- **VSCode + Vim Extension** + **Claude Code Extension** + **Catppuccin Theme**
 - **Maple Mono NF CN**
 - **iTerm** + **Dracula Theme**
 - **CC Switch** + [**Zenmux.ai**](https://zenmux.ai/)
@@ -101,7 +101,7 @@ CLI
 - **glances**
 - **mole**
 
-![2dbd3ebef2ee1bc3.png](https://cdn.varzy.me/public/2026/10/pages/372dc9c0-364a-80f3-9b8a-e7cf3c61d44d/2dbd3ebef2ee1bc3.png)
+![82757a09bd1db654.png](https://cdn.varzy.me/public/2026/10/pages/372dc9c0-364a-80f3-9b8a-e7cf3c61d44d/82757a09bd1db654.png)
 
 ## 冲浪
 

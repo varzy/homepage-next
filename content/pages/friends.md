@@ -1,10 +1,10 @@
 ---
-page_id: '2efdc9c0-364a-8077-9c62-e5c2e4ef1889'
-title: 'Friends'
-slug: 'friends'
-status: 'Published'
-last_edited_time: '2026-10-16T05:36:00.000Z'
-last_fetched_time: '2026-10-16T05:37:22.691Z'
+page_id: "2efdc9c0-364a-8077-9c62-e5c2e4ef1889"
+title: "Friends"
+slug: "friends"
+status: "Published"
+last_edited_time: "2026-10-25T10:52:00.000Z"
+last_fetched_time: "2026-10-25T11:00:36.265Z"
 ---
 
 # 往来
@@ -31,6 +31,7 @@ avatar: https://cdn.varzy.me/static/zyavatar.png
 - [RESTRIVE](https://yzhthinking.top/)
 - [天仙子](https://www.tianxianzi.me/)
 - [Tiusx](https://tius.cn/)
+- [Ashes Space](https://blog.ashesborn.cloud/)
 
 这些是我不时闲逛的站点。
 

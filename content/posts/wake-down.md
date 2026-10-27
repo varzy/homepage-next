@@ -1,16 +1,16 @@
 ---
-title: 'Wake down'
-category: 'Nebulous'
-type: 'Post'
-status: 'Published'
-tags: ['精选', '梦']
-date: '2026-07-26'
-slug: 'wake-down'
-summary: '我从床上翻身坐了起来，写下了这些文字。'
-last_edited_time: '2026-08-18T14:55:00.000Z'
-last_fetched_time: '2026-08-18T17:59:38.206Z'
-page_id: '3a9dc9c0-364a-80d7-9a43-d07ec0cb0824'
-icon: '🎃'
+title: "Wake down"
+category: "Nebulous"
+type: "Post"
+status: "Published"
+tags: ["梦"]
+date: "2026-07-26"
+slug: "wake-down"
+summary: "我从床上翻身坐了起来，写下了这些文字。"
+last_edited_time: "2026-10-27T15:42:00.000Z"
+last_fetched_time: "2026-10-27T19:54:45.316Z"
+page_id: "3a9dc9c0-364a-80d7-9a43-d07ec0cb0824"
+icon: "🎃"
 ---
 
 我从床上翻身坐了起来，看了眼手机，已经是八点十分了。我走出卧室来到了我的办公室，敲了几下空格尝试唤醒电脑。最近被一个技术方案搞得焦头烂额，不管是 Claude 还是 GPT 都无能为力。

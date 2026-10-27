@@ -3,12 +3,12 @@ title: "咖啡店广告"
 category: "Nebulous"
 type: "Post"
 status: "Published"
-tags: ["梦"]
+tags: ["梦", "精选"]
 date: "2026-10-27"
 slug: "coffee-shop-advertisement"
 summary: "听说直到现在，木头吧台上还有那杯撒了一半的咖啡洇出的水渍。"
-last_edited_time: "2026-10-27T06:09:00.000Z"
-last_fetched_time: "2026-10-27T06:15:24.435Z"
+last_edited_time: "2026-10-27T15:42:00.000Z"
+last_fetched_time: "2026-10-27T19:54:44.347Z"
 page_id: "405dc9c0-364a-80d1-b390-d9958f2a0c4c"
 icon: "🌨️"
 ---

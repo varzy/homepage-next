@@ -1,16 +1,16 @@
 ---
-title: '我的差旅打包方案'
-category: 'Nichijou'
-type: 'Post'
-status: 'Published'
-tags: ['生产力', '小形迹', '精选']
-date: '2025-09-24'
-slug: 'my-trip-packing'
-summary: '持续优化自己的出行装备和工作流对我这种装备党 + J 人来说是个非常有趣的事情。'
-last_edited_time: '2026-08-18T17:42:00.000Z'
-last_fetched_time: '2026-08-18T18:00:06.167Z'
-page_id: '264dc9c0-364a-80bf-8bd6-c6b09eb285f2'
-icon: '🪁'
+title: "我的差旅打包方案"
+category: "Nichijou"
+type: "Post"
+status: "Published"
+tags: ["小形迹", "极简主义"]
+date: "2025-09-24"
+slug: "my-trip-packing"
+summary: "持续优化自己的出行装备和工作流对我这种装备党 + J 人来说是个非常有趣的事情。"
+last_edited_time: "2026-11-02T03:22:00.000Z"
+last_fetched_time: "2026-11-02T03:23:24.026Z"
+page_id: "264dc9c0-364a-80bf-8bd6-c6b09eb285f2"
+icon: "🪁"
 ---
 
 过去一年里我一共出差了 15 次，再加上自己的短途旅行、回老家等，平均下来每个月总有那么几天在差旅状态。不知道其他人怎么想，但持续优化自己的出行装备和工作流对我这种装备党 + J 人来说是个非常有趣的事情。最近刚刚结束了为期一周的深圳出差，今天就分享一下我的差旅打包方案。

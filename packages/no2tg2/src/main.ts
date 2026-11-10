@@ -1,9 +1,10 @@
 import 'dotenv/config';
-import { isR2Configured } from './config.ts';
+import { NotionImageProcessor } from '@zy/shared';
+
+import { config, isR2Configured } from './config.ts';
 import { formatMessage, validateMessage } from './formatter.ts';
-import { processPageImages } from './image-processor.ts';
 import { logger } from './logger.ts';
-import { getPageContent, markAsPublished, queryReadyPage } from './notion.ts';
+import { getPageContent, markAsPublished, queryReadyPage, notionClient } from './notion.ts';
 import { applyGlobalProxyForFetch } from './proxy.ts';
 import { sendToChannel } from './telegram.ts';
 
@@ -27,7 +28,12 @@ async function release(): Promise<void> {
 
   if (isR2Configured()) {
     logger.info('正在处理页面图片...');
-    const imageStats = await processPageImages(page.id);
+    const processor = new NotionImageProcessor({
+      notion: notionClient,
+      label: config.r2.label,
+      compress: true,
+    });
+    const imageStats = await processor.processPageImages(page.id);
     logger.info(
       {
         total: imageStats.total,

@@ -1,6 +1,6 @@
 import { Client } from '@notionhq/client';
+import { NotionImageProcessor, ImageProcessingStats } from '@zy/shared';
 import { NotionToMarkdown } from 'notion-to-md';
-import { NotionImageProcessor, ImageProcessingStats } from './image-processor';
 
 export class NotionToMDXConverter {
   private notion: Client;
@@ -10,7 +10,11 @@ export class NotionToMDXConverter {
   constructor(notionApiSecret: string, imagePrefix: string = 'blog') {
     this.notion = new Client({ auth: notionApiSecret });
     this.n2m = new NotionToMarkdown({ notionClient: this.notion });
-    this.imageProcessor = new NotionImageProcessor(notionApiSecret, imagePrefix);
+    this.imageProcessor = new NotionImageProcessor({
+      notion: this.notion,
+      label: imagePrefix,
+      compress: true,
+    });
   }
 
   async convertToMDX(
@@ -22,7 +26,7 @@ export class NotionToMDXConverter {
       let imageStats: ImageProcessingStats | undefined;
       if (slug) {
         console.log(`🖼️ Processing images for ${slug}...`);
-        imageStats = await this.imageProcessor.processPageImages(pageId, slug);
+        imageStats = await this.imageProcessor.processPageImages(pageId);
       }
 
       // 转换为 Markdown
@@ -60,15 +64,6 @@ export class NotionToMDXConverter {
       console.error(`❌ Failed to update ${propertyName} for page ${pageId}:`, error);
       throw error;
     }
-  }
-
-  /**
-   * 检查页面是否有图片需要处理
-   */
-  async checkImagesNeedProcessing(
-    pageId: string,
-  ): Promise<{ needsProcessing: boolean; imageCount: number }> {
-    return this.imageProcessor.checkImagesNeedProcessing(pageId);
   }
 
   /**

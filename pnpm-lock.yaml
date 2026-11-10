@@ -212,6 +212,9 @@ importers:
       '@aws-sdk/client-s3':
         specifier: ^3.1150.0
         version: 3.1150.0
+      '@notionhq/client':
+        specifier: ^5.27.0
+        version: 5.27.0
       heic-decode:
         specifier: ^2.1.0
         version: 2.1.0

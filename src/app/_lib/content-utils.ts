@@ -3,30 +3,19 @@ import path from 'path';
 import { glob } from 'glob';
 import matter from 'gray-matter';
 
-export const CACHE_DURATION = 5 * 60 * 1000;
+const CACHE_DURATION = 5 * 60 * 1000;
 
 export class CacheManager<T> {
   private cache: T | null = null;
   private cacheTime = 0;
 
-  constructor(private duration: number = CACHE_DURATION) {}
-
-  isValid(): boolean {
-    return this.cache !== null && Date.now() - this.cacheTime < this.duration;
-  }
-
   get(): T | null {
-    return this.isValid() ? this.cache : null;
+    return Date.now() - this.cacheTime < CACHE_DURATION ? this.cache : null;
   }
 
   set(data: T): void {
     this.cache = data;
     this.cacheTime = Date.now();
-  }
-
-  clear(): void {
-    this.cache = null;
-    this.cacheTime = 0;
   }
 }
 

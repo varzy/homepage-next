@@ -1,6 +1,5 @@
 import fs from 'fs';
 import path from 'path';
-import { createR2Uploader } from '@zy/notion-images/r2';
 import { FetchResult } from './types';
 
 // ─── Notion property helpers ──────────────────────────────────────────────────
@@ -44,13 +43,6 @@ export const getFilesProperty = (prop: any): string => {
 
 // ─── File system helpers ──────────────────────────────────────────────────────
 
-export function ensureDirectory(dir: string): void {
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
-    console.log(`📁 Created directory: ${dir}`);
-  }
-}
-
 export function cleanupOrphanedFiles(
   dir: string,
   publishedIds: Set<string>,
@@ -79,12 +71,4 @@ export function cleanupOrphanedFiles(
     result.errors++;
     console.error('❌ Failed during orphaned files cleanup:', err);
   }
-}
-
-// ─── Image uploader helpers ──────────────────────────────────────────────────
-
-/** 在抓取脚本入口处校验 R2 配置是否就绪，并打印当前图床。 */
-export function ensureImageUploaderConfigured(): void {
-  createR2Uploader();
-  console.log('🖼️ Image uploader in use: r2');
 }

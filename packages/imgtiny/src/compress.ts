@@ -3,7 +3,7 @@ import chalk from 'chalk';
 import ora from 'ora';
 import { resolve, parse } from 'node:path';
 import { unlink, readdir } from 'node:fs/promises';
-import { findImages, findCompressedImages } from './helpers/utils';
+import { findImages } from './helpers/utils';
 import { processImage, formatSize, type ProcessResult } from './helpers/processor';
 import { DEFAULT_DIR } from './helpers/config';
 
@@ -59,7 +59,7 @@ program
 
         // 如果开启了清理选项，则清理旧的压缩文件
         if (clean) {
-          const oldCompressedFiles = await findCompressedImages(outputDir);
+          const oldCompressedFiles = await findImages(outputDir, 'compressed');
           if (oldCompressedFiles.length > 0) {
             spinner.text = `正在清理 ${oldCompressedFiles.length} 个旧的压缩文件...`;
             await Promise.all(oldCompressedFiles.map((file) => unlink(file)));

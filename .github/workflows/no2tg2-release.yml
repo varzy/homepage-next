@@ -31,7 +31,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Install dependencies
-        run: pnpm --filter 'no2tg2...' install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Check no2tg2 and its workspace dependencies
         run: pnpm --filter 'no2tg2...' run exam

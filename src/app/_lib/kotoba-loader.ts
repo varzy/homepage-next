@@ -100,10 +100,6 @@ export async function getAllKotobaPostsWithContent(): Promise<KotobaPostWithCont
   return posts;
 }
 
-export async function getKotobaPostsByTag(tag: string): Promise<KotobaPost[]> {
-  return filterByTag(await getAllKotobaPosts(), tag);
-}
-
 export async function getKotobaPostsWithContentByTag(
   tag: string,
 ): Promise<KotobaPostWithContent[]> {

@@ -32,7 +32,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Install dependencies
-        run: pnpm --filter 'homepage-next...' install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Check homepage and its workspace dependencies
         run: pnpm --filter 'homepage-next...' run exam

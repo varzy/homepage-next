@@ -30,7 +30,6 @@ async function release(): Promise<void> {
   const processor = new NotionImageProcessor({
     notion: notionClient,
     label: 'no2tg2',
-    compress: true,
     uploader: config.r2,
   });
   const imageStats = await processor.processPageImages(page.id);

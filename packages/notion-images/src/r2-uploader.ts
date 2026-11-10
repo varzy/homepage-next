@@ -25,18 +25,16 @@ export interface R2UploaderOptions {
   publicDomain?: string;
 }
 
-export interface ImageUploadResult {
+interface ImageUploadResult {
   /** 上传后的公开访问 URL */
   url: string;
   /** 存储到 R2 的对象 key */
   fileName: string;
-  /** 文件大小（字节） */
-  size: number;
 }
 
 /**
  * 从 URL 提取扩展名（不含点、小写）；无法识别时回退 'jpg'。
- * 仅用于生成 key 后缀与推断 Content-Type，实际上传仍以响应 content-type 为准。
+ * 用于识别以前上传的 HEIC 外链。
  */
 export const extractExtension = (url: string): string => {
   try {
@@ -85,27 +83,6 @@ export const isR2Url = (url: string, publicDomain: string = DEFAULT_PUBLIC_DOMAI
   }
 };
 
-const CONTENT_TYPE_MAP: Record<string, string> = {
-  jpg: 'image/jpeg',
-  jpeg: 'image/jpeg',
-  png: 'image/png',
-  gif: 'image/gif',
-  webp: 'image/webp',
-  svg: 'image/svg+xml',
-  bmp: 'image/bmp',
-  ico: 'image/x-icon',
-};
-
-/** 根据扩展名推断 Content-Type，优先使用下载响应的 content-type。 */
-export const getContentType = (fileName: string, fallback?: string): string => {
-  if (fallback) {
-    const base = fallback.split(';')[0]?.trim() ?? '';
-    if (base.startsWith('image/')) return base;
-  }
-  const ext = fileName.split('.').pop()?.toLowerCase();
-  return CONTENT_TYPE_MAP[ext || ''] || 'application/octet-stream';
-};
-
 /** 判断 S3/R2 错误是否为「对象不存在」（HEAD 幂等检查用）。 */
 export const is404 = (error: unknown): boolean => {
   if (typeof error !== 'object' || error === null) return false;
@@ -139,7 +116,7 @@ export class R2ImageUploader {
   }
 
   /**
-   * 上传已下载（可压缩）的图片字节到 R2（内容寻址、幂等）。
+   * 上传压缩后的图片字节到 R2（内容寻址、幂等）。
    * 若 key 已存在则 HEAD 跳过，保证同月内重复执行不产生重复对象。
    */
   async uploadBuffer(
@@ -147,18 +124,16 @@ export class R2ImageUploader {
     ext: string,
     label: string,
     pageId: string,
-    contentTypeFallback?: string,
+    contentType: string,
   ): Promise<ImageUploadResult> {
     const key = composeNewImageKey(label, pageId, buffer, ext);
     const publicUrl = `${this.publicDomain}/${key}`;
 
-    const head = await this.headObject(key);
-    if (head) {
+    if (await this.objectExists(key)) {
       console.log(`✅ Already on R2, skip upload: ${key}`);
-      return { url: publicUrl, fileName: key, size: head.size ?? 0 };
+      return { url: publicUrl, fileName: key };
     }
 
-    const contentType = getContentType(key, contentTypeFallback);
     console.log(`📤 Uploading to R2: ${key} (${(buffer.length / 1024).toFixed(2)}KB)`);
     await this.client.send(
       new PutObjectCommand({
@@ -169,21 +144,17 @@ export class R2ImageUploader {
       }),
     );
 
-    return { url: publicUrl, fileName: key, size: buffer.length };
+    return { url: publicUrl, fileName: key };
   }
 
-  /** HEAD 探测对象是否存在；不存在（404）返回 null，其余错误向上抛出。 */
-  private async headObject(key: string): Promise<{ size?: number } | null> {
+  /** HEAD 探测对象是否存在，404 以外的错误向上抛出。 */
+  private async objectExists(key: string): Promise<boolean> {
     try {
-      const res = await this.client.send(new HeadObjectCommand({ Bucket: this.bucket, Key: key }));
-      return { size: res.ContentLength };
+      await this.client.send(new HeadObjectCommand({ Bucket: this.bucket, Key: key }));
+      return true;
     } catch (error) {
-      if (is404(error)) return null;
+      if (is404(error)) return false;
       throw error;
     }
   }
 }
-
-/** 创建 R2 图片上传器实例（构造时即校验凭据；可注入配置覆盖 env）。 */
-export const createR2Uploader = (opts?: R2UploaderOptions): R2ImageUploader =>
-  new R2ImageUploader(opts);

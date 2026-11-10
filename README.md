@@ -9,7 +9,7 @@
 - `no2tg2` 从 Notion 队列取下一篇待发布页面，发送到 Telegram 频道。
 - `imgtiny` 只依赖本地压缩管线，支持批量压缩和目录监听。
 
-内部包通过 `workspace:*` 链接，由 CLI 直接加载 TypeScript 源码。共用依赖的版本范围定义在 `pnpm-workspace.yaml` 的 catalog 中。
+内部包通过 `workspace:*` 链接，由 CLI 直接加载 TypeScript 源码。子包各自声明业务依赖，共用的版本范围放在 `pnpm-workspace.yaml` 的 catalog 中。开发工具统一由根目录安装，子包脚本直接使用这些工具。
 
 ## 常用命令
 

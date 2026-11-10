@@ -2,9 +2,8 @@ import { createHash } from 'node:crypto';
 import { describe, it, expect, beforeEach } from 'vitest';
 import {
   composeNewImageKey,
-  createR2Uploader,
+  R2ImageUploader,
   extractExtension,
-  getContentType,
   is404,
   isR2Url,
 } from '../src/r2-uploader.js';
@@ -96,36 +95,6 @@ describe('shared/r2-uploader.ts', () => {
     });
   });
 
-  describe('getContentType', () => {
-    it('按扩展名推断', () => {
-      expect(getContentType('a.jpg')).toBe('image/jpeg');
-      expect(getContentType('a.JPEG')).toBe('image/jpeg');
-      expect(getContentType('a.PNG')).toBe('image/png');
-      expect(getContentType('a.webp')).toBe('image/webp');
-      expect(getContentType('a.gif')).toBe('image/gif');
-      expect(getContentType('a.svg')).toBe('image/svg+xml');
-      expect(getContentType('a.bmp')).toBe('image/bmp');
-      expect(getContentType('a.ico')).toBe('image/x-icon');
-    });
-
-    it('未知扩展名回退为 octet-stream', () => {
-      expect(getContentType('a.xyz')).toBe('application/octet-stream');
-      expect(getContentType('noext')).toBe('application/octet-stream');
-    });
-
-    it('优先使用传入的 image content-type', () => {
-      expect(getContentType('a.jpg', 'image/png')).toBe('image/png');
-    });
-
-    it('传入非 image content-type 时忽略并按扩展名推断', () => {
-      expect(getContentType('a.jpg', 'text/html')).toBe('image/jpeg');
-    });
-
-    it('传入带参数的 content-type 时取分号前部分', () => {
-      expect(getContentType('a.jpg', 'image/png; charset=utf-8')).toBe('image/png');
-    });
-  });
-
   describe('is404', () => {
     it('Cloudflare R2 的 NotFound 错误视为 404', () => {
       const err = { name: 'NotFound', $metadata: { httpStatusCode: 404 } };
@@ -166,7 +135,7 @@ describe('shared/r2-uploader.ts', () => {
     });
 
     it('缺少必需 env 时构造抛错', () => {
-      expect(() => createR2Uploader()).toThrow(/not fully configured/);
+      expect(() => new R2ImageUploader()).toThrow(/not fully configured/);
     });
   });
 });

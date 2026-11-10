@@ -1,99 +1,117 @@
 import fs from 'fs';
 import path from 'path';
-import { Client } from '@notionhq/client';
-import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
-import { NotionToMDXConverter } from './notion-to-md';
-import { FetchResult, FetchState, FetchStateEntry, SyncMode } from './types';
-import { ensureDirectory, cleanupOrphanedFiles } from './utils';
+import { Client, isFullPage, type PageObjectResponse } from '@notionhq/client';
+import { NotionImageProcessor } from '@zy/notion-images';
+import { NotionToMarkdown } from 'notion-to-md';
+import type { FetchResult, FetchState, SyncMetadata, SyncMode } from './types';
+import { cleanupOrphanedFiles } from './utils';
 
-export interface NotionFetcherConfig<T> {
-  databaseId: string;
-  notionApiSecret: string;
-  outputDir: string;
-  /** Notion 中记录本次抓取时间的属性名，如 last_fetched_time 或 last_fetched_time */
-  lastFetchedTimeProperty: string;
-  /** 日志标签，如 "post"、"page"、"kotoba" */
+type Query = Parameters<Client['dataSources']['query']>[0];
+type PropertyFilter = Extract<NonNullable<Query['filter']>, { property: string }>;
+
+/** 将一个 Notion 数据源同步到本地 Markdown 的配置。 */
+interface NotionFetcherConfig<T extends SyncMetadata> {
+  /** Notion 数据源 ID 的值，对应查询参数 `data_source_id`。 */
+  databaseId: string | undefined;
+  /** 本地 `content/` 下的目录名，也用于区分 R2 图片的来源。 */
+  collection: string;
+  /** 同步日志的标签，也是 `.fetch-state.json` 中的检查点键名。 */
   label: string;
-  /** 图片 key 中的库标识前缀，如 "posts"、"pages"、"kotoba" */
-  imagePrefix: string;
+  /** 追加到 Published 状态和增量时间条件的筛选规则。 */
+  filters?: PropertyFilter[];
+  /** 传给 Notion 查询的排序规则。 */
+  sorts?: Query['sorts'];
 
-  buildFilter(since?: Date): object;
-  buildSort(): object[];
-
+  /** 从 Notion 页面提取同步和生成 Markdown 所需的元数据。 */
   extractMetadata(page: PageObjectResponse): T;
-  /** 本地文件名（不含 .md），如 slug 或 page_id */
+  /** 返回不含 `.md` 的文件名，用于定位文件和识别已下线内容。 */
   getFileKey(entry: T): string;
-  getPageId(entry: T): string;
-  /** 传给 convertToMDX 的标识符 */
+  /** 返回图片处理日志中的条目标识。返回空字符串时跳过正文图片处理。 */
   getConvertIdentifier(entry: T): string;
-  getLastFetchedTime(entry: T): string | null;
-  getLastEditedTime(entry: T): string;
+  /** 将元数据和已转换的正文拼成要写入磁盘的完整 Markdown。 */
   generateContent(entry: T, content: string): string;
-  withLastFetchedTime(entry: T, time: string): T;
-  beforeGenerateContent?: (entry: T) => Promise<T>;
 }
 
-const STATE_FILE = path.join(process.cwd(), '.fetch-state.json');
+export async function runNotionFetch<T extends SyncMetadata>(
+  config: NotionFetcherConfig<T>,
+): Promise<void> {
+  try {
+    const { databaseId, collection } = config;
+    if (!databaseId) {
+      throw new Error(`Missing Notion database ID for "${collection}"`);
+    }
 
-export class NotionDatabaseFetcher<T> {
+    const token = process.env.NOTION_API_SECRET;
+    if (!token) {
+      throw new Error('Missing required environment variable: NOTION_API_SECRET');
+    }
+
+    const mode: SyncMode = process.argv.includes('--force')
+      ? 'force'
+      : process.argv.includes('--full-sync')
+        ? 'full-sync'
+        : 'incremental';
+
+    await new NotionDatabaseFetcher(config, databaseId, token).fetch(mode);
+  } catch (error) {
+    console.error('💥 Script failed:', error);
+    process.exitCode = 1;
+  }
+}
+
+class NotionDatabaseFetcher<T extends SyncMetadata> {
   private notion: Client;
-  private converter: NotionToMDXConverter;
+  private markdown: NotionToMarkdown;
+  private images: NotionImageProcessor;
+  private outputDir: string;
+  private stateFile = path.join(process.cwd(), '.fetch-state.json');
 
   constructor(
     private config: NotionFetcherConfig<T>,
-    private syncMode: SyncMode,
+    private databaseId: string,
+    token: string,
   ) {
-    this.notion = new Client({ auth: config.notionApiSecret });
-    this.converter = new NotionToMDXConverter(config.notionApiSecret, config.imagePrefix);
+    this.notion = new Client({ auth: token });
+    this.markdown = new NotionToMarkdown({ notionClient: this.notion });
+    this.images = new NotionImageProcessor({
+      notion: this.notion,
+      label: config.collection,
+    });
+    this.outputDir = path.join(process.cwd(), 'content', config.collection);
   }
 
-  async fetch(): Promise<FetchResult> {
-    let effectiveSyncMode = this.syncMode;
+  async fetch(mode: SyncMode): Promise<void> {
+    // Use the start time so edits arriving during this run are visible on the next one.
+    const startedAt = new Date().toISOString();
     let since: Date | undefined;
+    const existingState = this.readState()[this.config.label];
 
-    const existingState = this.readState();
-    const isFirstRun = existingState === null;
-
-    if (this.syncMode === 'incremental') {
+    if (mode === 'incremental') {
       if (!existingState?.lastSuccessfulRun) {
         console.log(
           `⚠️  No previous run state for "${this.config.label}", falling back to full-sync`,
         );
-        effectiveSyncMode = 'full-sync';
+        mode = 'full-sync';
       } else {
         since = new Date(existingState.lastSuccessfulRun);
       }
     }
 
     console.log(
-      `🚀 Starting to fetch ${this.config.label} [${effectiveSyncMode}]${since ? ` since ${since.toISOString()}` : ''}...`,
+      `🚀 Starting to fetch ${this.config.label} [${mode}]${since ? ` since ${since.toISOString()}` : ''}...`,
     );
 
-    const result: FetchResult = { updated: 0, skipped: 0, errors: 0, deleted: 0 };
-    const shouldCleanOrphans = effectiveSyncMode !== 'incremental';
-
-    ensureDirectory(this.config.outputDir);
+    const result: FetchResult = { updated: 0, errors: 0, deleted: 0 };
+    fs.mkdirSync(this.outputDir, { recursive: true });
 
     const allEntries = await this.queryAllEntries(since);
     console.log(`📚 Found ${allEntries.length} published ${this.config.label} entries`);
 
-    const publishedIds = new Set(allEntries.map((e) => this.config.getFileKey(e)).filter(Boolean));
-    const toUpdate = this.filterToUpdate(allEntries, effectiveSyncMode);
+    const toUpdate = this.filterToUpdate(allEntries, mode);
     console.log(`🔄 ${this.config.label} entries to update: ${toUpdate.length}`);
 
-    if (toUpdate.length === 0 && effectiveSyncMode !== 'force') {
-      if (shouldCleanOrphans) {
-        cleanupOrphanedFiles(this.config.outputDir, publishedIds, result);
-      }
-      console.log(`✅ All ${this.config.label} entries are up to date!`);
-      if (result.updated > 0 || result.deleted > 0 || isFirstRun) {
-        this.writeState(effectiveSyncMode);
-      }
-      return result;
-    }
-
     for (const entry of toUpdate) {
-      const label = this.config.getFileKey(entry) || this.config.getPageId(entry);
+      const label = this.config.getFileKey(entry) || entry.page_id;
       try {
         await this.processEntry(entry);
         result.updated++;
@@ -104,67 +122,72 @@ export class NotionDatabaseFetcher<T> {
       }
     }
 
-    if (shouldCleanOrphans) {
-      cleanupOrphanedFiles(this.config.outputDir, publishedIds, result);
+    if (mode !== 'incremental') {
+      const publishedIds = new Set(
+        allEntries.map((e) => this.config.getFileKey(e)).filter(Boolean),
+      );
+      cleanupOrphanedFiles(this.outputDir, publishedIds, result);
     }
 
     console.log(
-      `🎉 Done fetching ${this.config.label}! Updated: ${result.updated}, Deleted: ${result.deleted}, Skipped: ${result.skipped}, Errors: ${result.errors}`,
+      `🎉 Done fetching ${this.config.label}! Updated: ${result.updated}, Deleted: ${result.deleted}, Skipped: ${allEntries.length - toUpdate.length}, Errors: ${result.errors}`,
     );
 
-    if (result.updated > 0 || result.deleted > 0 || isFirstRun) {
-      this.writeState(effectiveSyncMode);
+    if (result.errors === 0 && (result.updated > 0 || result.deleted > 0 || !existingState)) {
+      this.writeState(mode, startedAt);
     }
-
-    return result;
   }
 
-  private readState(): FetchStateEntry | null {
-    if (!fs.existsSync(STATE_FILE)) return null;
+  private readState(): FetchState {
     try {
-      const state: FetchState = JSON.parse(fs.readFileSync(STATE_FILE, 'utf-8'));
-      return state[this.config.label] || null;
+      return JSON.parse(fs.readFileSync(this.stateFile, 'utf-8')) ?? {};
     } catch {
-      return null;
+      return {};
     }
   }
 
-  private writeState(mode: SyncMode): void {
-    let state: FetchState = {};
-    if (fs.existsSync(STATE_FILE)) {
-      try {
-        state = JSON.parse(fs.readFileSync(STATE_FILE, 'utf-8'));
-      } catch {
-        state = {};
-      }
-    }
-    const now = new Date().toISOString();
-    const existing = state[this.config.label] || { lastSuccessfulRun: '', lastFullSync: '' };
+  private writeState(mode: SyncMode, startedAt: string): void {
+    const state = this.readState();
     state[this.config.label] = {
-      lastSuccessfulRun: now,
-      lastFullSync: mode === 'full-sync' || mode === 'force' ? now : existing.lastFullSync,
+      lastSuccessfulRun: startedAt,
+      lastFullSync:
+        mode === 'incremental' ? (state[this.config.label]?.lastFullSync ?? '') : startedAt,
     };
-    fs.writeFileSync(STATE_FILE, JSON.stringify(state, null, 2), 'utf-8');
+    fs.writeFileSync(this.stateFile, JSON.stringify(state, null, 2), 'utf-8');
     console.log(`💾 State saved for "${this.config.label}" [${mode}]`);
   }
 
   private async queryAllEntries(since?: Date): Promise<T[]> {
+    const published: PropertyFilter = { property: 'status', select: { equals: 'Published' } };
+    const filters = [published, ...(this.config.filters ?? [])];
+    const filter: Query['filter'] = since
+      ? {
+          and: [
+            ...filters,
+            {
+              timestamp: 'last_edited_time',
+              last_edited_time: { on_or_after: since.toISOString() },
+            },
+          ],
+        }
+      : filters.length === 1
+        ? published
+        : { and: filters };
     const entries: T[] = [];
     let startCursor: string | undefined;
 
     do {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const response = await (this.notion as any).dataSources.query({
-        data_source_id: this.config.databaseId,
-        filter: this.config.buildFilter(since),
-        sorts: this.config.buildSort(),
+      const response = await this.notion.dataSources.query({
+        data_source_id: this.databaseId,
+        filter,
+        sorts: this.config.sorts,
         start_cursor: startCursor,
       });
 
-      const pageEntries = response.results.map((page: PageObjectResponse) =>
-        this.config.extractMetadata(page),
-      );
-      entries.push(...pageEntries);
+      for (const page of response.results) {
+        if (!isFullPage(page)) throw new Error(`Incomplete Notion page: ${page.id}`);
+        entries.push(this.config.extractMetadata(page));
+      }
       startCursor = response.next_cursor || undefined;
     } while (startCursor);
 
@@ -178,23 +201,23 @@ export class NotionDatabaseFetcher<T> {
     }
 
     return entries.filter((entry) => {
-      const filePath = path.join(this.config.outputDir, `${this.config.getFileKey(entry)}.md`);
+      const fileKey = this.config.getFileKey(entry);
+      const filePath = path.join(this.outputDir, `${fileKey}.md`);
 
       if (!fs.existsSync(filePath)) {
-        console.log(`📥 New ${this.config.label}: ${this.config.getFileKey(entry)}`);
+        console.log(`📥 New ${this.config.label}: ${fileKey}`);
         return true;
       }
 
-      const lastFetchedTime = this.config.getLastFetchedTime(entry);
+      const lastFetchedTime = entry.last_fetched_time;
       if (!lastFetchedTime) {
-        console.log(`🔄 First time fetch: ${this.config.getFileKey(entry)}`);
+        console.log(`🔄 First time fetch: ${fileKey}`);
         return true;
       }
 
-      const needsUpdate =
-        new Date(this.config.getLastEditedTime(entry)) > new Date(lastFetchedTime);
+      const needsUpdate = new Date(entry.last_edited_time) > new Date(lastFetchedTime);
       if (needsUpdate) {
-        console.log(`🔄 Updated since last fetch: ${this.config.getFileKey(entry)}`);
+        console.log(`🔄 Updated since last fetch: ${fileKey}`);
       }
       return needsUpdate;
     });
@@ -202,30 +225,38 @@ export class NotionDatabaseFetcher<T> {
 
   private async processEntry(entry: T): Promise<void> {
     const identifier = this.config.getConvertIdentifier(entry);
-    const pageId = this.config.getPageId(entry);
+    const pageId = entry.page_id;
 
     // 处理 page property 中 files 类型的图片，上传到 R2 并更新 Notion
-    const rawPage = (await this.notion.pages.retrieve({ page_id: pageId })) as PageObjectResponse;
-    const updatedPage = await this.converter.getImageProcessor().processPageFileProperties(rawPage);
+    const rawPage = await this.notion.pages.retrieve({ page_id: pageId });
+    if (!isFullPage(rawPage)) throw new Error(`Incomplete Notion page: ${pageId}`);
+    const updatedPage = await this.images.processPageFileProperties(rawPage);
     const updatedEntry = this.config.extractMetadata(updatedPage);
 
-    const { content, imageStats } = await this.converter.convertToMDX(pageId, identifier);
-
-    if (imageStats && imageStats.total > 0) {
-      console.log(
-        `📊 Images for ${identifier}: total=${imageStats.total}, processed=${imageStats.processed}, skipped=${imageStats.skipped}, errors=${imageStats.errors}`,
-      );
+    if (identifier) {
+      console.log(`🖼️ Processing images for ${identifier}...`);
+      const { total, processed, skipped, errors } = await this.images.processPageImages(pageId);
+      if (total > 0) {
+        console.log(
+          `📊 Images for ${identifier}: total=${total}, processed=${processed}, skipped=${skipped}, errors=${errors}`,
+        );
+      }
     }
 
-    await this.converter.updateBlogLastFetchedTime(pageId, this.config.lastFetchedTimeProperty);
-
-    let finalEntry = this.config.withLastFetchedTime(updatedEntry, new Date().toISOString());
-    if (this.config.beforeGenerateContent) {
-      finalEntry = await this.config.beforeGenerateContent(finalEntry);
-    }
-    const mdContent = this.config.generateContent(finalEntry, content);
-
-    const filePath = path.join(this.config.outputDir, `${this.config.getFileKey(entry)}.md`);
+    const blocks = await this.markdown.pageToMarkdown(pageId);
+    const content = this.markdown.toMarkdownString(blocks).parent || '';
+    const fetchedAt = new Date().toISOString();
+    const mdContent = this.config.generateContent(
+      { ...updatedEntry, last_fetched_time: fetchedAt },
+      content,
+    );
+    const filePath = path.join(this.outputDir, `${this.config.getFileKey(entry)}.md`);
     fs.writeFileSync(filePath, mdContent, 'utf-8');
+
+    await this.notion.pages.update({
+      page_id: pageId,
+      properties: { last_fetched_time: { date: { start: fetchedAt } } },
+    });
+    console.log(`📝 Updated last_fetched_time for page ${pageId}`);
   }
 }

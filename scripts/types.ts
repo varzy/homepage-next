@@ -1,6 +1,5 @@
 export interface FetchResult {
   updated: number;
-  skipped: number;
   errors: number;
   deleted: number;
 }
@@ -16,7 +15,13 @@ export interface FetchState {
   [label: string]: FetchStateEntry;
 }
 
-export interface PostMetadata {
+export interface SyncMetadata {
+  page_id: string;
+  last_edited_time: string;
+  last_fetched_time: string | null;
+}
+
+export interface PostMetadata extends SyncMetadata {
   title: string;
   category: string;
   type: string;
@@ -25,35 +30,25 @@ export interface PostMetadata {
   date: string;
   slug: string;
   summary: string;
-  last_edited_time: string;
-  last_fetched_time: string | null;
-  page_id: string;
   icon?: string;
 }
 
-export interface PageMetadata {
-  page_id: string;
+export interface PageMetadata extends SyncMetadata {
   title: string;
   slug: string;
   status: string;
-  last_edited_time: string;
-  last_fetched_time: string | null;
 }
 
-export interface KotobaMetadata {
-  page_id: string;
+export interface KotobaMetadata extends SyncMetadata {
   title: string;
   status: string;
   tags: string[];
   title_url: string;
   with_title: boolean;
   published_time: string;
-  last_edited_time: string;
-  last_fetched_time: string | null;
 }
 
-export interface TasteMetadata {
-  page_id: string;
+export interface TasteMetadata extends SyncMetadata {
   title: string;
   alias?: string;
   status: string;
@@ -61,6 +56,4 @@ export interface TasteMetadata {
   cover: string;
   url?: string;
   label?: string;
-  last_edited_time: string;
-  last_fetched_time: string | null;
 }

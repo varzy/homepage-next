@@ -1,11 +1,8 @@
 #!/usr/bin/env tsx
 
 import 'dotenv/config';
-import path from 'path';
-import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
-import { NotionDatabaseFetcher, NotionFetcherConfig } from './notion-database-fetcher';
-import { PageMetadata, SyncMode } from './types';
-import { ensureImageUploaderConfigured } from './utils';
+import { runNotionFetch } from './notion-database-fetcher';
+import type { PageMetadata } from './types';
 import {
   getTextProperty,
   getSelectProperty,
@@ -13,20 +10,25 @@ import {
   getDateProperty,
 } from './utils';
 
-function extractPageMeta(page: PageObjectResponse): PageMetadata {
-  const p = page.properties;
-  return {
-    page_id: page.id,
-    title: getTextProperty(p.title),
-    slug: getTextProperty(p.slug),
-    status: getSelectProperty(p.status),
-    last_edited_time: getLastEditedTimeProperty(p.last_edited_time),
-    last_fetched_time: getDateProperty(p.last_fetched_time) || null,
-  };
-}
-
-export function generatePageContent(meta: PageMetadata, content: string): string {
-  return `---
+void runNotionFetch<PageMetadata>({
+  databaseId: process.env.NOTION_PAGES_DATABASE_ID,
+  collection: 'pages',
+  label: 'page',
+  extractMetadata(page) {
+    const p = page.properties;
+    return {
+      page_id: page.id,
+      title: getTextProperty(p.title),
+      slug: getTextProperty(p.slug),
+      status: getSelectProperty(p.status),
+      last_edited_time: getLastEditedTimeProperty(p.last_edited_time),
+      last_fetched_time: getDateProperty(p.last_fetched_time) || null,
+    };
+  },
+  getFileKey: (e) => e.slug,
+  getConvertIdentifier: (e) => e.slug,
+  generateContent(meta, content) {
+    return `---
 page_id: "${meta.page_id}"
 title: "${meta.title.replace(/"/g, '\\"')}"
 slug: "${meta.slug}"
@@ -36,58 +38,5 @@ last_fetched_time: "${meta.last_fetched_time || ''}"
 ---
 
 ${content}`;
-}
-
-const pagesConfig: NotionFetcherConfig<PageMetadata> = {
-  databaseId: process.env.NOTION_PAGES_DATABASE_ID || '',
-  notionApiSecret: process.env.NOTION_API_SECRET || '',
-  outputDir: path.join(process.cwd(), 'content/pages'),
-  lastFetchedTimeProperty: 'last_fetched_time',
-  label: 'page',
-  imagePrefix: 'pages',
-  buildFilter: (since?: Date) =>
-    since
-      ? {
-          and: [
-            { property: 'status', select: { equals: 'Published' } },
-            {
-              timestamp: 'last_edited_time',
-              last_edited_time: { on_or_after: since.toISOString() },
-            },
-          ],
-        }
-      : { property: 'status', select: { equals: 'Published' } },
-  buildSort: () => [],
-  extractMetadata: extractPageMeta,
-  getFileKey: (e) => e.slug,
-  getPageId: (e) => e.page_id,
-  getConvertIdentifier: (e) => e.slug,
-  getLastFetchedTime: (e) => e.last_fetched_time,
-  getLastEditedTime: (e) => e.last_edited_time,
-  generateContent: generatePageContent,
-  withLastFetchedTime: (e, t) => ({ ...e, last_fetched_time: t }),
-};
-
-async function main() {
-  if (!pagesConfig.databaseId || !pagesConfig.notionApiSecret) {
-    throw new Error(
-      'Missing required environment variables: NOTION_PAGES_DATABASE_ID, NOTION_API_SECRET',
-    );
-  }
-
-  ensureImageUploaderConfigured();
-
-  const syncMode: SyncMode = process.argv.includes('--force')
-    ? 'force'
-    : process.argv.includes('--full-sync')
-      ? 'full-sync'
-      : 'incremental';
-
-  await new NotionDatabaseFetcher(pagesConfig, syncMode).fetch();
-  process.exit(0);
-}
-
-main().catch((error) => {
-  console.error('💥 Script failed:', error);
-  process.exit(1);
+  },
 });

@@ -38,7 +38,6 @@ describe('NotionImageProcessor.processPageImages', () => {
         ],
       }),
       label: 'test',
-      compress: true,
     });
 
     const stats = await processor.processPageImages('page-1');

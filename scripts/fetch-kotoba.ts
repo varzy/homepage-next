@@ -1,11 +1,8 @@
 #!/usr/bin/env tsx
 
 import 'dotenv/config';
-import path from 'path';
-import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
-import { NotionDatabaseFetcher, NotionFetcherConfig } from './notion-database-fetcher';
-import { KotobaMetadata, SyncMode } from './types';
-import { ensureImageUploaderConfigured } from './utils';
+import { runNotionFetch } from './notion-database-fetcher';
+import type { KotobaMetadata } from './types';
 import {
   getTextProperty,
   getSelectProperty,
@@ -16,23 +13,29 @@ import {
   getLastEditedTimeProperty,
 } from './utils';
 
-function extractKotobaMeta(page: PageObjectResponse): KotobaMetadata {
-  const p = page.properties;
-  return {
-    page_id: page.id,
-    title: getTextProperty(p.title),
-    status: getSelectProperty(p.status),
-    tags: getMultiSelectProperty(p.tags),
-    title_url: getUrlProperty(p.title_url),
-    with_title: getCheckboxProperty(p.with_title),
-    published_time: getDateProperty(p.published_time),
-    last_edited_time: getLastEditedTimeProperty(p.last_edited_time),
-    last_fetched_time: getDateProperty(p.last_fetched_time) || null,
-  };
-}
-
-export function generateKotobaContent(meta: KotobaMetadata, content: string): string {
-  return `---
+void runNotionFetch<KotobaMetadata>({
+  databaseId: process.env.NOTION_KOTOBA_DATABASE_ID,
+  collection: 'kotoba',
+  label: 'kotoba',
+  sorts: [{ property: 'published_time', direction: 'descending' }],
+  extractMetadata(page) {
+    const p = page.properties;
+    return {
+      page_id: page.id,
+      title: getTextProperty(p.title),
+      status: getSelectProperty(p.status),
+      tags: getMultiSelectProperty(p.tags),
+      title_url: getUrlProperty(p.title_url),
+      with_title: getCheckboxProperty(p.with_title),
+      published_time: getDateProperty(p.published_time),
+      last_edited_time: getLastEditedTimeProperty(p.last_edited_time),
+      last_fetched_time: getDateProperty(p.last_fetched_time) || null,
+    };
+  },
+  getFileKey: (e) => `${e.published_time.slice(0, 10)}-${e.page_id.split('-').pop()}`,
+  getConvertIdentifier: (e) => e.page_id.replace(/-/g, '').slice(0, 8),
+  generateContent(meta, content) {
+    return `---
 page_id: "${meta.page_id}"
 title: "${meta.title.replace(/"/g, '\\"')}"
 status: "${meta.status}"
@@ -45,59 +48,5 @@ last_fetched_time: "${meta.last_fetched_time || ''}"
 ---
 
 ${content}`;
-}
-
-const kotobaConfig: NotionFetcherConfig<KotobaMetadata> = {
-  databaseId: process.env.NOTION_KOTOBA_DATABASE_ID || '',
-  notionApiSecret: process.env.NOTION_API_SECRET || '',
-  outputDir: path.join(process.cwd(), 'content/kotoba'),
-  lastFetchedTimeProperty: 'last_fetched_time',
-  label: 'kotoba',
-  imagePrefix: 'kotoba',
-  buildFilter: (since?: Date) => ({
-    and: [
-      { property: 'status', select: { equals: 'Published' } },
-      ...(since
-        ? [
-            {
-              timestamp: 'last_edited_time',
-              last_edited_time: { on_or_after: since.toISOString() },
-            },
-          ]
-        : []),
-    ],
-  }),
-  buildSort: () => [{ property: 'published_time', direction: 'descending' }],
-  extractMetadata: extractKotobaMeta,
-  getFileKey: (e) => `${e.published_time.slice(0, 10)}-${e.page_id.split('-').pop()}`,
-  getPageId: (e) => e.page_id,
-  getConvertIdentifier: (e) => e.page_id.replace(/-/g, '').slice(0, 8),
-  getLastFetchedTime: (e) => e.last_fetched_time,
-  getLastEditedTime: (e) => e.last_edited_time,
-  generateContent: generateKotobaContent,
-  withLastFetchedTime: (e, t) => ({ ...e, last_fetched_time: t }),
-};
-
-async function main() {
-  if (!kotobaConfig.databaseId || !kotobaConfig.notionApiSecret) {
-    throw new Error(
-      'Missing required environment variables: NOTION_KOTOBA_DATABASE_ID, NOTION_API_SECRET',
-    );
-  }
-
-  ensureImageUploaderConfigured();
-
-  const syncMode: SyncMode = process.argv.includes('--force')
-    ? 'force'
-    : process.argv.includes('--full-sync')
-      ? 'full-sync'
-      : 'incremental';
-
-  await new NotionDatabaseFetcher(kotobaConfig, syncMode).fetch();
-  process.exit(0);
-}
-
-main().catch((error) => {
-  console.error('💥 Script failed:', error);
-  process.exit(1);
+  },
 });

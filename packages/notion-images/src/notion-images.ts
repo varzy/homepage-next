@@ -1,13 +1,11 @@
-import type { BlockObjectResponse, PageObjectResponse } from '@notionhq/client';
-import type { Client } from '@notionhq/client';
+import type { BlockObjectResponse, Client, PageObjectResponse } from '@notionhq/client';
 
 import { compressImage } from '@zy/image-compression';
 import {
-  createR2Uploader,
+  R2ImageUploader,
   extractExtension,
   isR2Url,
   type R2UploaderOptions,
-  type R2ImageUploader,
 } from './r2-uploader.ts';
 
 export interface ImageProcessingStats {
@@ -25,27 +23,23 @@ export interface NotionImageProcessorOptions {
   notion: Client;
   /** R2 对象 key 的 label 段，如 'posts'、'kotoba'、'no2tg2' */
   label: string;
-  /** 上传前是否压缩（HEIC→JPEG、EXIF 朝向、gain map 剥离、缩放到 1920 内） */
-  compress?: boolean;
   /** R2 凭据等配置，缺省读环境变量 */
   uploader?: R2UploaderOptions;
 }
 
 /**
  * 遍历 Notion 页面的图片块与 files 类型属性，把未托管在 R2 的图片
- * （可选压缩后）上传到 R2 并回写 Notion。已托管在 R2 的跳过，可安全重复执行。
+ * 压缩后上传到 R2 并回写 Notion。已托管在 R2 的跳过，可安全重复执行。
  */
 export class NotionImageProcessor {
   private notion: Client;
   private uploader: R2ImageUploader;
   private label: string;
-  private compress: boolean;
 
   constructor(opts: NotionImageProcessorOptions) {
     this.notion = opts.notion;
-    this.uploader = createR2Uploader(opts.uploader);
+    this.uploader = new R2ImageUploader(opts.uploader);
     this.label = opts.label;
-    this.compress = opts.compress ?? false;
   }
 
   async processPageImages(pageId: string): Promise<ImageProcessingStats> {
@@ -207,13 +201,10 @@ export class NotionImageProcessor {
   }
 
   /**
-   * 下载图片（可选压缩后）上传到 R2。内容寻址 key（public/{year}/{month}/{label}/
+   * 下载并压缩图片后上传到 R2。内容寻址 key（public/{year}/{month}/{label}/
    * {pageId}/{hash}.{ext}）由 uploader 内部组合，同页同图自然幂等。
    */
-  private async uploadImage(
-    url: string,
-    pageId: string,
-  ): Promise<{ url: string; fileName: string; size: number }> {
+  private async uploadImage(url: string, pageId: string) {
     console.log(`📥 Downloading image: ${url}`);
     const res = await fetch(url, {
       cache: 'no-cache',
@@ -223,20 +214,8 @@ export class NotionImageProcessor {
       throw new Error(`Failed to download image: ${res.status} ${res.statusText}`);
     }
 
-    const rawBuffer = Buffer.from(await res.arrayBuffer());
-
-    if (!this.compress) {
-      return this.uploader.uploadBuffer(
-        rawBuffer,
-        extractExtension(url),
-        this.label,
-        pageId,
-        res.headers.get('content-type') || undefined,
-      );
-    }
-
     // 扩展名与 Content-Type 取自压缩后的实际格式（HEIC 会被转成 JPEG）
-    const image = await compressImage(rawBuffer, url);
+    const image = await compressImage(Buffer.from(await res.arrayBuffer()), url);
     return this.uploader.uploadBuffer(
       image.buffer,
       image.ext,

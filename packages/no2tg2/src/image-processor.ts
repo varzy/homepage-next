@@ -1,14 +1,15 @@
 import type { BlockObjectResponse } from '@notionhq/client';
-
-import { compressImage } from './compress.ts';
-import { logger } from './logger.ts';
-import { notionClient } from './notion.ts';
 import {
+  compressImage,
   createR2Uploader,
   extractExtension,
   isR2Url,
   type R2ImageUploader,
-} from './r2-uploader.ts';
+} from '@zy/shared';
+
+import { config } from './config.ts';
+import { logger } from './logger.ts';
+import { notionClient } from './notion.ts';
 
 export interface ImageProcessingStats {
   total: number;
@@ -22,7 +23,7 @@ const HEIC_EXTS = new Set(['heic', 'heif']);
 
 export async function processPageImages(pageId: string): Promise<ImageProcessingStats> {
   const stats: ImageProcessingStats = { total: 0, processed: 0, skipped: 0, errors: 0 };
-  const uploader = createR2Uploader();
+  const uploader = createR2Uploader(config.r2);
   await processBlocks(pageId, stats, uploader);
   return stats;
 }
@@ -104,6 +105,7 @@ async function processImageBlock(
     const uploadResult = await uploader.uploadBuffer(
       image.buffer,
       image.ext,
+      config.r2.label,
       block.id,
       image.contentType,
     );

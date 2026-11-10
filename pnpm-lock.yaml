@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@aws-sdk/client-s3':
-        specifier: ^3.1150.0
-        version: 3.1150.0
       '@giscus/react':
         specifier: ^3.1.0
         version: 3.1.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -35,6 +32,9 @@ importers:
       '@vercel/speed-insights':
         specifier: ^2.0.0
         version: 2.0.0(next@16.4.0(@types/node@26.6.5)(react-dom@19.3.0(react@19.3.0))(react@19.3.0))(react@19.3.0)
+      '@zy/shared':
+        specifier: workspace:*
+        version: link:packages/shared
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -163,30 +163,24 @@ importers:
 
   packages/no2tg2:
     dependencies:
-      '@aws-sdk/client-s3':
-        specifier: ^3.1112.0
-        version: 3.1150.0
       '@notionhq/client':
         specifier: ^5.21.0
         version: 5.27.0
+      '@zy/shared':
+        specifier: workspace:*
+        version: link:../shared
       dayjs:
         specifier: ^1.11.20
         version: 1.11.23
       dotenv:
         specifier: ^17.4.2
         version: 17.4.2
-      heic-decode:
-        specifier: ^2.1.0
-        version: 2.1.0
       pino:
         specifier: ^10.3.1
         version: 10.4.0
       proxy-agent:
         specifier: ^8.0.1
         version: 8.0.2
-      sharp:
-        specifier: ^0.34.5
-        version: 0.34.5
       telegraf:
         specifier: ^4.16.3
         version: 4.16.3
@@ -206,6 +200,34 @@ importers:
       tsx:
         specifier: ^4.23.15
         version: 4.23.15
+      typescript:
+        specifier: ^7.0.2
+        version: 7.0.2
+      vitest:
+        specifier: ^5.0.4
+        version: 5.0.4(@types/node@26.6.5)(@vitest/coverage-v8@5.0.4)(jsdom@30.1.2)(vite@8.0.10(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(tsx@4.23.15)(yaml@2.9.1))
+
+  packages/shared:
+    dependencies:
+      '@aws-sdk/client-s3':
+        specifier: ^3.1150.0
+        version: 3.1150.0
+      heic-decode:
+        specifier: ^2.1.0
+        version: 2.1.0
+      sharp:
+        specifier: ^0.34.5
+        version: 0.34.5
+    devDependencies:
+      '@types/node':
+        specifier: ^26.6.5
+        version: 26.6.5
+      oxfmt:
+        specifier: ^0.72.0
+        version: 0.72.0
+      oxlint:
+        specifier: ^1.87.0
+        version: 1.87.0
       typescript:
         specifier: ^7.0.2
         version: 7.0.2

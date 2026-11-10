@@ -1,6 +1,6 @@
 import { Client } from '@notionhq/client';
 import { BlockObjectResponse, PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
-import { isR2Url, r2ImageUploader, type R2ImageUploader } from './r2-uploader';
+import { createR2Uploader, isR2Url, type R2ImageUploader } from '@zy/shared';
 
 export interface ImageProcessingStats {
   total: number;
@@ -17,7 +17,7 @@ export class NotionImageProcessor {
   constructor(notionApiSecret: string, imagePrefix: string = 'blog') {
     this.notion = new Client({ auth: notionApiSecret });
     this.imagePrefix = imagePrefix;
-    this.uploader = r2ImageUploader();
+    this.uploader = createR2Uploader();
   }
 
   /**

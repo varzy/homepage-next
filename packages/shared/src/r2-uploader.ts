@@ -2,22 +2,28 @@ import { createHash } from 'node:crypto';
 import { HeadObjectCommand, PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
 
 /**
- * Cloudflare R2 图片上传（基于 S3 兼容 API）。
+ * Cloudflare R2 图片上传（基于 S3 兼容 API），homepage-next 与 no2tg2 共用。
  *
- * 阶段二起所有新图统一走内容寻址 key：
+ * 上传 key 采用内容寻址、按页分组：
  *   public/{year}/{month}/{label}/{pageId}/{sha1(bytes)[:16]}.{ext}
- * 同页同图自然幂等（HEAD 跳过），详见迁移文档 §4。
+ * 同页同图自然幂等（上传前 HEAD 跳过），可安全重复执行。
  *
- * 敏感凭据走环境变量：R2_ACCOUNT_ID、R2_ACCESS_KEY_ID、R2_SECRET_ACCESS_KEY。
- * 桶名与公开域名不敏感，直接写死在下方常量（R2_BUCKET / R2_PUBLIC_DOMAIN）。
+ * 敏感凭据走环境变量：R2_ACCOUNT_ID、R2_ACCESS_KEY_ID、R2_SECRET_ACCESS_KEY
+ * （也可通过构造参数注入）。桶名与公开域名不敏感，走默认值。
  */
 
 /** R2 桶名（不敏感，写死）。 */
-const R2_BUCKET = 'homepage';
+const DEFAULT_BUCKET = 'homepage';
 /** 绑定到 R2 桶的自定义域名（图片公开访问域名，不敏感，写死）。 */
-const R2_PUBLIC_DOMAIN = 'https://cdn.varzy.me';
-/** R2 自定义域名的 host，用于 isR2Url 精确匹配。 */
-const R2_HOST = new URL(R2_PUBLIC_DOMAIN).host;
+const DEFAULT_PUBLIC_DOMAIN = 'https://cdn.varzy.me';
+
+export interface R2UploaderOptions {
+  accountId?: string;
+  accessKeyId?: string;
+  secretAccessKey?: string;
+  bucket?: string;
+  publicDomain?: string;
+}
 
 export interface ImageUploadResult {
   /** 上传后的公开访问 URL */
@@ -47,10 +53,10 @@ export const extractExtension = (url: string): string => {
 };
 
 /**
- * 组合新图在 R2 中的对象 key（内容寻址、幂等、按页分组）。
+ * 组合图片在 R2 中的对象 key（内容寻址、幂等、按页分组）。
  * - year/month：上传时间（运行时取，零 plumbing）
  * - contentHash：图片字节 sha1 前 16 位 → 同页同图自然幂等（上传前 HEAD 跳过）
- * - label/pageId：按库 / 按页分组，便于在 R2 列表中定位归属
+ * - label/pageId：按来源库 / 按页分组，便于在 R2 列表中定位归属
  *
  * 取舍：因 key 含 pageId 与上传时间，同一张图被多页共用、或跨月重复执行时会各存一份
  * （无跨页 / 跨月去重），属可接受的小幅冗余、非数据错误。
@@ -61,9 +67,8 @@ export const composeNewImageKey = (
   buffer: Buffer,
   ext: string,
 ): string => {
-  const now = new Date();
-  const year = now.getFullYear().toString();
-  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const year = new Date().getFullYear().toString();
+  const month = String(new Date().getMonth() + 1).padStart(2, '0');
   const hash = createHash('sha1').update(buffer).digest('hex').slice(0, 16);
   return `public/${year}/${month}/${label}/${pageId}/${hash}.${ext}`;
 };
@@ -72,9 +77,9 @@ export const composeNewImageKey = (
  * 判断 URL 是否指向 R2 自定义域名（按 host 精确匹配，避免路径中含域名片段的误判；
  * URL 非法时返回 false）。
  */
-export const isR2Url = (url: string): boolean => {
+export const isR2Url = (url: string, publicDomain: string = DEFAULT_PUBLIC_DOMAIN): boolean => {
   try {
-    return new URL(url).host === R2_HOST;
+    return new URL(url).host === new URL(publicDomain).host;
   } catch {
     return false;
   }
@@ -113,10 +118,10 @@ export class R2ImageUploader {
   private bucket: string;
   private publicDomain: string;
 
-  constructor() {
-    const accountId = process.env.R2_ACCOUNT_ID;
-    const accessKeyId = process.env.R2_ACCESS_KEY_ID;
-    const secretAccessKey = process.env.R2_SECRET_ACCESS_KEY;
+  constructor(opts: R2UploaderOptions = {}) {
+    const accountId = opts.accountId ?? process.env.R2_ACCOUNT_ID;
+    const accessKeyId = opts.accessKeyId ?? process.env.R2_ACCESS_KEY_ID;
+    const secretAccessKey = opts.secretAccessKey ?? process.env.R2_SECRET_ACCESS_KEY;
 
     if (!accountId || !accessKeyId || !secretAccessKey) {
       throw new Error(
@@ -129,14 +134,45 @@ export class R2ImageUploader {
       endpoint: `https://${accountId}.r2.cloudflarestorage.com`,
       credentials: { accessKeyId, secretAccessKey },
     });
-    this.bucket = R2_BUCKET;
-    this.publicDomain = R2_PUBLIC_DOMAIN.replace(/\/$/, '');
+    this.bucket = opts.bucket ?? DEFAULT_BUCKET;
+    this.publicDomain = (opts.publicDomain ?? DEFAULT_PUBLIC_DOMAIN).replace(/\/$/, '');
   }
 
   /**
-   * 下载外部图片并上传到 R2（内容寻址、幂等）。
+   * 上传已下载（可压缩）的图片字节到 R2（内容寻址、幂等）。
    * 若 key 已存在则 HEAD 跳过，保证同月内重复执行不产生重复对象。
    */
+  async uploadBuffer(
+    buffer: Buffer,
+    ext: string,
+    label: string,
+    pageId: string,
+    contentTypeFallback?: string,
+  ): Promise<ImageUploadResult> {
+    const key = composeNewImageKey(label, pageId, buffer, ext);
+    const publicUrl = `${this.publicDomain}/${key}`;
+
+    const head = await this.headObject(key);
+    if (head) {
+      console.log(`✅ Already on R2, skip upload: ${key}`);
+      return { url: publicUrl, fileName: key, size: head.size ?? 0 };
+    }
+
+    const contentType = getContentType(key, contentTypeFallback);
+    console.log(`📤 Uploading to R2: ${key} (${(buffer.length / 1024).toFixed(2)}KB)`);
+    await this.client.send(
+      new PutObjectCommand({
+        Bucket: this.bucket,
+        Key: key,
+        Body: buffer,
+        ContentType: contentType,
+      }),
+    );
+
+    return { url: publicUrl, fileName: key, size: buffer.length };
+  }
+
+  /** 下载外部图片并上传到 R2（下载后不经压缩，原样转存）。 */
   async uploadExternal(url: string, label: string, pageId: string): Promise<ImageUploadResult> {
     console.log(`📥 Downloading image: ${url}`);
 
@@ -152,28 +188,13 @@ export class R2ImageUploader {
     }
 
     const buffer = Buffer.from(await res.arrayBuffer());
-    const ext = extractExtension(url);
-    const key = composeNewImageKey(label, pageId, buffer, ext);
-    const publicUrl = `${this.publicDomain}/${key}`;
-
-    const head = await this.headObject(key);
-    if (head) {
-      console.log(`✅ Already on R2, skip upload: ${key}`);
-      return { url: publicUrl, fileName: key, size: head.size ?? 0 };
-    }
-
-    const contentType = getContentType(key, res.headers.get('content-type') || undefined);
-    console.log(`📤 Uploading to R2: ${key} (${(buffer.length / 1024).toFixed(2)}KB)`);
-    await this.client.send(
-      new PutObjectCommand({
-        Bucket: this.bucket,
-        Key: key,
-        Body: buffer,
-        ContentType: contentType,
-      }),
+    return this.uploadBuffer(
+      buffer,
+      extractExtension(url),
+      label,
+      pageId,
+      res.headers.get('content-type') || undefined,
     );
-
-    return { url: publicUrl, fileName: key, size: buffer.length };
   }
 
   /** HEAD 探测对象是否存在；不存在（404）返回 null，其余错误向上抛出。 */
@@ -188,11 +209,6 @@ export class R2ImageUploader {
   }
 }
 
-/** 创建 R2 图片上传器实例（构造时即校验环境变量）。 */
-export const r2ImageUploader = (): R2ImageUploader => new R2ImageUploader();
-
-/** 在抓取脚本入口处校验 R2 配置是否就绪，并打印当前图床。 */
-export function ensureImageUploaderConfigured(): void {
-  r2ImageUploader();
-  console.log('🖼️ Image uploader in use: r2');
-}
+/** 创建 R2 图片上传器实例（构造时即校验凭据；可注入配置覆盖 env）。 */
+export const createR2Uploader = (opts?: R2UploaderOptions): R2ImageUploader =>
+  new R2ImageUploader(opts);

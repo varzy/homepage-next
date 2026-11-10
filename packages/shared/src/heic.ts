@@ -1,7 +1,6 @@
+/// <reference path="./heic-decode.d.ts" />
 import decode from 'heic-decode';
 import sharp from 'sharp';
-
-import { logger } from './logger.ts';
 
 /**
  * HEVC 编码的 HEIF 品牌（ftyp major/compatible brand）。
@@ -67,6 +66,6 @@ export async function heicToJpeg(buffer: Buffer, maxDimension: number): Promise<
 
   // sharp 能解析 HEIC 容器元数据（只是不能解码像素），借它取出 ICC
   const { icc } = await sharp(buffer).metadata();
-  logger.info({ width, height, icc: icc?.length ?? 0 }, 'HEIC 已解码');
+  console.log(`HEIC 已解码 ${width}x${height} (icc ${icc?.length ?? 0}B)`);
   return icc ? embedIccProfile(jpeg, icc) : jpeg;
 }

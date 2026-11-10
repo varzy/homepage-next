@@ -1,7 +1,6 @@
 import sharp from 'sharp';
 
 import { heicToJpeg, isHeic } from './heic.ts';
-import { logger } from './logger.ts';
 
 const MAX_DIMENSION = 1920;
 const JPEG_QUALITY = 80;
@@ -162,17 +161,8 @@ async function compressWithSharp(
 
   // 集中记录压缩结果，覆盖 R2 处理与 Telegram 上传两条路径。format/dims/尺寸是
   // 图片问题的首要诊断信息（如 Ultra HDR gain map、解码失败、尺寸异常等）。
-  logger.info(
-    {
-      label,
-      inputFormat,
-      outputFormat: output.format,
-      width: metadata.width,
-      height: metadata.height,
-      inputSize: buffer.length,
-      outputSize: output.buffer.length,
-    },
-    '图片压缩完成',
+  console.log(
+    `图片压缩完成 ${label}: ${inputFormat}→${output.format} ${metadata.width}x${metadata.height} ${buffer.length}→${output.buffer.length}B`,
   );
 
   return output;
@@ -193,7 +183,7 @@ export async function compressImage(buffer: Buffer, label: string): Promise<Comp
     if (inputFormat === 'heic' || inputFormat === 'unknown') {
       throw new Error(`图片处理失败（${label}，格式 ${inputFormat}）：${error}`, { cause: err });
     }
-    logger.warn({ label, inputFormat, size: buffer.length, error }, '图片压缩失败，回退原图');
+    console.warn(`图片压缩失败，回退原图: ${label} (${inputFormat}) ${error}`);
     return result(buffer, inputFormat);
   }
 }

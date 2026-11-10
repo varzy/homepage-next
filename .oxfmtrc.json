@@ -1,6 +1,7 @@
 {
   "$schema": "./node_modules/oxfmt/configuration_schema.json",
   "singleQuote": true,
+  "ignorePatterns": ["packages/**"],
   "sortTailwindcss": {
     "preserveDuplicates": true,
     "preserveWhitespace": true

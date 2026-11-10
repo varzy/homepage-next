@@ -4,8 +4,8 @@ import 'dotenv/config';
 import path from 'path';
 import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
 import { NotionDatabaseFetcher, NotionFetcherConfig } from './notion-database-fetcher';
-import { ensureImageUploaderConfigured } from './r2-uploader';
 import { KotobaMetadata, SyncMode } from './types';
+import { ensureImageUploaderConfigured } from './utils';
 import {
   getTextProperty,
   getSelectProperty,

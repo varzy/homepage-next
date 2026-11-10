@@ -2,14 +2,14 @@ import { createHash } from 'node:crypto';
 import { describe, it, expect, beforeEach } from 'vitest';
 import {
   composeNewImageKey,
+  createR2Uploader,
   extractExtension,
   getContentType,
   is404,
   isR2Url,
-  r2ImageUploader,
-} from '../scripts/r2-uploader';
+} from '../src/r2-uploader.js';
 
-describe('scripts/r2-uploader.ts', () => {
+describe('shared/r2-uploader.ts', () => {
   describe('composeNewImageKey', () => {
     const label = 'posts';
     const pageId = '39adc9c0-364a-8080-b388-dcdc44f78d56';
@@ -167,7 +167,7 @@ describe('scripts/r2-uploader.ts', () => {
     });
 
     it('缺少必需 env 时构造抛错', () => {
-      expect(() => r2ImageUploader()).toThrow(/not fully configured/);
+      expect(() => createR2Uploader()).toThrow(/not fully configured/);
     });
   });
 });

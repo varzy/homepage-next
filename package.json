@@ -23,7 +23,9 @@
     "sync:kotoba": "tsx scripts/fetch-kotoba.ts -- --full-sync",
     "sync:taste": "tsx scripts/fetch-taste.ts -- --full-sync",
     "sync:pages": "tsx scripts/fetch-pages.ts -- --full-sync",
-    "sync:all": "pnpm run sync:posts && pnpm run sync:kotoba && pnpm run sync:taste && pnpm run sync:pages"
+    "sync:all": "pnpm run sync:posts && pnpm run sync:kotoba && pnpm run sync:taste && pnpm run sync:pages",
+    "no2tg": "pnpm --filter no2tg2 release",
+    "imgtiny:compress": "pnpm --filter imgtiny compress"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1150.0",

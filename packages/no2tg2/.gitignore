@@ -1,0 +1,8 @@
+homepage-next
+lancelot
+.DS_Store
+node_modules
+dist
+.pnpm-store
+.env
+.tmp

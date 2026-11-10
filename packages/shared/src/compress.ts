@@ -2,12 +2,11 @@ import sharp from 'sharp';
 
 import { heicToJpeg, isHeic } from './heic.ts';
 
-const MAX_DIMENSION = 1920;
-const JPEG_QUALITY = 80;
-const PNG_QUALITY = 80;
+const DEFAULT_MAX_DIMENSION = 1920;
+const DEFAULT_QUALITY = 80;
 
 /** 输出格式：浏览器（Notion）与 Telegram 都能直接显示的格式。 */
-export type OutputFormat = 'jpeg' | 'png' | 'webp' | 'gif';
+export type OutputFormat = 'jpeg' | 'png' | 'webp' | 'gif' | 'avif' | 'tiff';
 export type InputFormat = OutputFormat | 'heic' | 'unknown';
 
 export interface CompressedImage {
@@ -18,11 +17,22 @@ export interface CompressedImage {
   contentType: string;
 }
 
+export interface CompressOptions {
+  /** auto：保持原格式（HEIC 转 JPEG、GIF 原样保留）；webp：一律重编码为 WebP（imgtiny 非 keepFormat 路径） */
+  output?: 'auto' | 'webp';
+  /** 最长边上限（px），默认 1920 */
+  maxDimension?: number;
+  /** 有损质量 1-100，默认 80 */
+  quality?: number;
+}
+
 const OUTPUT_INFO: Record<OutputFormat, { ext: string; contentType: string }> = {
   jpeg: { ext: 'jpg', contentType: 'image/jpeg' },
   png: { ext: 'png', contentType: 'image/png' },
   webp: { ext: 'webp', contentType: 'image/webp' },
   gif: { ext: 'gif', contentType: 'image/gif' },
+  avif: { ext: 'avif', contentType: 'image/avif' },
+  tiff: { ext: 'tiff', contentType: 'image/tiff' },
 };
 
 /** 按文件头魔数识别图片格式。Notion/R2 的 URL 扩展名与 content-type 都不可靠。 */
@@ -38,6 +48,22 @@ export function detectImageFormat(buffer: Buffer): InputFormat {
     buffer.toString('latin1', 8, 12) === 'WEBP'
   ) {
     return 'webp';
+  }
+  // TIFF：II*\0（小端）或 MM\0*（大端）
+  if (
+    buffer.length >= 4 &&
+    ((buffer[0] === 0x49 && buffer[1] === 0x49 && buffer[2] === 0x2a && buffer[3] === 0x00) ||
+      (buffer[0] === 0x4d && buffer[1] === 0x4d && buffer[2] === 0x00 && buffer[3] === 0x2a))
+  ) {
+    return 'tiff';
+  }
+  // AVIF：ftyp box 的 major brand 在偏移 8；mif1 等 HEIF 通用 brand 交给 isHeic，避免歧义
+  if (
+    buffer.length >= 12 &&
+    buffer.toString('latin1', 4, 8) === 'ftyp' &&
+    ['avif', 'avis'].includes(buffer.toString('latin1', 8, 12))
+  ) {
+    return 'avif';
   }
   if (isHeic(buffer)) return 'heic';
   return 'unknown';
@@ -70,7 +96,7 @@ export function stripJpegSecondaryImages(buffer: Buffer): Buffer {
       offset++;
       continue;
     }
-    const marker = buffer[offset + 1];
+    const marker = buffer[offset + 1] ?? -1;
 
     // 填充字节 FF00 与 TEM(01) 无长度字段
     if (marker === 0x00 || marker === 0x01) {
@@ -93,7 +119,7 @@ export function stripJpegSecondaryImages(buffer: Buffer): Buffer {
       offset += 2 + segLen; // 跳过 SOS 段头，进入熵编码数据
       while (offset + 1 < buffer.length) {
         if (buffer[offset] === 0xff && buffer[offset + 1] !== 0x00) {
-          const m = buffer[offset + 1];
+          const m = buffer[offset + 1] ?? -1;
           // RSTn 仍属熵编码流，越过继续扫描
           if (m >= 0xd0 && m <= 0xd7) {
             offset += 2;
@@ -117,13 +143,14 @@ async function compressWithSharp(
   buffer: Buffer,
   inputFormat: InputFormat,
   label: string,
+  opts: Required<CompressOptions>,
 ): Promise<CompressedImage> {
-  // GIF 可能是动图，sharp 处理动图效果不佳，原样保留
-  if (inputFormat === 'gif') return result(buffer, 'gif');
+  // GIF 可能是动图，sharp 处理动图效果不佳，auto 模式原样保留
+  if (inputFormat === 'gif' && opts.output === 'auto') return result(buffer, 'gif');
 
   const source =
     inputFormat === 'heic'
-      ? await heicToJpeg(buffer, MAX_DIMENSION)
+      ? await heicToJpeg(buffer, opts.maxDimension)
       : stripJpegSecondaryImages(buffer);
   const image = sharp(source);
   const metadata = await image.metadata();
@@ -137,26 +164,37 @@ async function compressWithSharp(
   if (
     metadata.width &&
     metadata.height &&
-    (metadata.width > MAX_DIMENSION || metadata.height > MAX_DIMENSION)
+    (metadata.width > opts.maxDimension || metadata.height > opts.maxDimension)
   ) {
-    image.resize(MAX_DIMENSION, MAX_DIMENSION, { fit: 'inside', withoutEnlargement: true });
+    image.resize(opts.maxDimension, opts.maxDimension, { fit: 'inside', withoutEnlargement: true });
   }
 
-  // PNG/WebP 保持原格式（截图、透明图），其余（JPEG、HEIC 等）统一输出 JPEG。
+  // auto 模式保持原格式（PNG/WebP/AVIF/TIFF，截图、透明图），其余（JPEG、HEIC）统一
+  // 输出 JPEG；webp 模式一律重编码为 WebP。
   // sharp 默认会把带 ICC 的输入（如 Display P3）转换到 sRGB 再输出。
   let output: CompressedImage;
-  switch (inputFormat) {
-    case 'png':
-      output = result(await image.png({ quality: PNG_QUALITY }).toBuffer(), 'png');
-      break;
-    case 'webp':
-      output = result(await image.webp({ quality: JPEG_QUALITY }).toBuffer(), 'webp');
-      break;
-    default:
-      output = result(
-        await image.jpeg({ quality: JPEG_QUALITY, mozjpeg: true }).toBuffer(),
-        'jpeg',
-      );
+  if (opts.output === 'webp') {
+    output = result(await image.webp({ quality: opts.quality }).toBuffer(), 'webp');
+  } else {
+    switch (inputFormat) {
+      case 'png':
+        output = result(await image.png({ quality: opts.quality }).toBuffer(), 'png');
+        break;
+      case 'webp':
+        output = result(await image.webp({ quality: opts.quality }).toBuffer(), 'webp');
+        break;
+      case 'avif':
+        output = result(await image.avif({ quality: opts.quality }).toBuffer(), 'avif');
+        break;
+      case 'tiff':
+        output = result(await image.tiff({ quality: opts.quality }).toBuffer(), 'tiff');
+        break;
+      default:
+        output = result(
+          await image.jpeg({ quality: opts.quality, mozjpeg: true }).toBuffer(),
+          'jpeg',
+        );
+    }
   }
 
   // 集中记录压缩结果，覆盖 R2 处理与 Telegram 上传两条路径。format/dims/尺寸是
@@ -169,15 +207,24 @@ async function compressWithSharp(
 }
 
 /**
- * 压缩并规范化图片：缩放到 MAX_DIMENSION 内、应用 EXIF 朝向、HEIC 转 JPEG。
+ * 压缩并规范化图片：缩放到 maxDimension 内、应用 EXIF 朝向、HEIC 转 JPEG。
  *
  * 失败时仅当原图本身是浏览器/Telegram 可直接显示的格式才回退原图；HEIC 等格式
  * 原样上传必然被 Telegram 拒绝（IMAGE_PROCESS_FAILED），因此直接抛错。
  */
-export async function compressImage(buffer: Buffer, label: string): Promise<CompressedImage> {
+export async function compressImage(
+  buffer: Buffer,
+  label: string,
+  options?: CompressOptions,
+): Promise<CompressedImage> {
+  const opts: Required<CompressOptions> = {
+    output: options?.output ?? 'auto',
+    maxDimension: options?.maxDimension ?? DEFAULT_MAX_DIMENSION,
+    quality: options?.quality ?? DEFAULT_QUALITY,
+  };
   const inputFormat = detectImageFormat(buffer);
   try {
-    return await compressWithSharp(buffer, inputFormat, label);
+    return await compressWithSharp(buffer, inputFormat, label, opts);
   } catch (err) {
     const error = err instanceof Error ? err.message : String(err);
     if (inputFormat === 'heic' || inputFormat === 'unknown') {

@@ -16,6 +16,8 @@ describe('detectImageFormat', () => {
     expect(detectImageFormat(await solid(2, 2).png().toBuffer())).toBe('png');
     expect(detectImageFormat(await solid(2, 2).webp().toBuffer())).toBe('webp');
     expect(detectImageFormat(await solid(2, 2).gif().toBuffer())).toBe('gif');
+    expect(detectImageFormat(await solid(2, 2).avif().toBuffer())).toBe('avif');
+    expect(detectImageFormat(await solid(2, 2).tiff().toBuffer())).toBe('tiff');
     expect(detectImageFormat(SAMPLE_HEIC)).toBe('heic');
     expect(detectImageFormat(Buffer.from('hello world!'))).toBe('unknown');
   });
@@ -67,6 +69,25 @@ describe('compressImage', () => {
     const brokenHeic = Buffer.concat([SAMPLE_HEIC.subarray(0, 40), Buffer.alloc(64)]);
     await expect(compressImage(brokenHeic, 'broken.heic')).rejects.toThrow('格式 heic');
     await expect(compressImage(Buffer.from('not an image'), 'x')).rejects.toThrow('格式 unknown');
+  });
+
+  it('CompressOptions：avif/tiff 保持原格式，webp 模式强制转 WebP，maxDimension 生效', async () => {
+    const avif = await compressImage(await solid(10, 10).avif().toBuffer(), 'a.avif');
+    expect(avif).toMatchObject({ format: 'avif', ext: 'avif', contentType: 'image/avif' });
+
+    const tiff = await compressImage(await solid(10, 10).tiff().toBuffer(), 'a.tiff');
+    expect(tiff).toMatchObject({ format: 'tiff', ext: 'tiff', contentType: 'image/tiff' });
+
+    const webp = await compressImage(await solid(10, 10).gif().toBuffer(), 'a.gif', {
+      output: 'webp',
+    });
+    expect(webp.format).toBe('webp');
+
+    const resized = await compressImage(await solid(300, 150).png().toBuffer(), 'big.png', {
+      maxDimension: 100,
+    });
+    const meta = await sharp(resized.buffer).metadata();
+    expect([meta.width, meta.height]).toEqual([100, 50]);
   });
 });
 

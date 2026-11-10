@@ -99,7 +99,7 @@ const CONTENT_TYPE_MAP: Record<string, string> = {
 /** 根据扩展名推断 Content-Type，优先使用下载响应的 content-type。 */
 export const getContentType = (fileName: string, fallback?: string): string => {
   if (fallback) {
-    const base = fallback.split(';')[0].trim();
+    const base = fallback.split(';')[0]?.trim() ?? '';
     if (base.startsWith('image/')) return base;
   }
   const ext = fileName.split('.').pop()?.toLowerCase();

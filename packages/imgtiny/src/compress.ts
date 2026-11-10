@@ -1,8 +1,8 @@
 import { Command } from 'commander';
 import chalk from 'chalk';
 import ora from 'ora';
-import { resolve, parse, join } from 'node:path';
-import { unlink, access } from 'node:fs/promises';
+import { resolve, parse } from 'node:path';
+import { unlink, readdir } from 'node:fs/promises';
 import { findImages, findCompressedImages } from './helpers/utils';
 import { processImage, formatSize, type ProcessResult } from './helpers/processor';
 import { DEFAULT_DIR } from './helpers/config';
@@ -60,25 +60,20 @@ program
           return;
         }
 
-        // 过滤掉已经压缩过的图片
+        // 输出扩展名取决于压缩后的实际格式（如 HEIC→JPG），无法预知，
+        // 改用前缀判断是否已有压缩产物
+        const existingFiles = await readdir(outputDir).catch(() => [] as string[]);
+
         const images: string[] = [];
         let skippedCount = 0;
 
         for (const img of allImages) {
-          const parsedPath = parse(img);
-          const originalName = parsedPath.name;
-          const originalExt = parsedPath.ext.toLowerCase();
-          const targetExt = keepFormat ? originalExt : '.webp';
-          const outputFilename = `${originalName}_compressed${targetExt}`;
-          const outputPath = join(outputDir, outputFilename);
+          // shortcut: 同名不同扩展（a.heic 与 a.jpg）会互相误判已压缩，重名场景罕见
+          const alreadyCompressed = existingFiles.some((name) =>
+            name.startsWith(`${parse(img).name}_compressed`),
+          );
 
-          let exists = false;
-          try {
-            await access(outputPath);
-            exists = true;
-          } catch {}
-
-          if (exists) {
+          if (alreadyCompressed) {
             skippedCount++;
           } else {
             images.push(img);

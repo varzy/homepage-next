@@ -4,17 +4,7 @@ import chalk from 'chalk';
 import { spawn } from 'node:child_process';
 import { resolve } from 'node:path';
 import { DEFAULT_DIR } from './helpers/config';
-
-const SUPPORTED_EXTS = new Set([
-  '.jpg',
-  '.jpeg',
-  '.png',
-  '.gif',
-  '.webp',
-  '.avif',
-  '.tiff',
-  '.tif',
-]);
+import { isCompressedImage, isSupportedImage } from './helpers/utils';
 
 const program = new Command();
 
@@ -23,7 +13,7 @@ program
   .description('监听目录，自动压缩新图片')
   .option('-i, --input <path>', '监听的文件夹路径', DEFAULT_DIR)
   .action((options) => {
-    const inputDir = resolve(process.cwd(), options.input);
+    const inputDir = resolve(process.env.INIT_CWD ?? process.cwd(), options.input);
 
     console.log(chalk.blue.bold('\n👁  Blog Image Zipper - 监听模式\n'));
     console.log(chalk.gray(`监听目录: ${inputDir}`));
@@ -37,12 +27,7 @@ program
     });
 
     watcher.on('add', (filePath) => {
-      const lower = filePath.toLowerCase();
-      const ext = lower.slice(lower.lastIndexOf('.'));
-
-      if (!SUPPORTED_EXTS.has(ext)) return;
-      // 跳过已经压缩过的文件
-      if (lower.includes('_compressed')) return;
+      if (!isSupportedImage(filePath) || isCompressedImage(filePath)) return;
 
       console.log(chalk.cyan(`[${new Date().toLocaleTimeString()}] 检测到新文件: ${filePath}`));
 

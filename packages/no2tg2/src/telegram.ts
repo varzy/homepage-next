@@ -2,7 +2,7 @@ import type { Agent } from 'node:http';
 import { Telegraf } from 'telegraf';
 import type { Context } from 'telegraf';
 
-import { compressImage } from '@zy/shared';
+import { compressImage } from '@zy/image-compression';
 
 import { config } from './config.ts';
 import { logger } from './logger.ts';

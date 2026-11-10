@@ -1,5 +1,5 @@
 import { Client } from '@notionhq/client';
-import { NotionImageProcessor, ImageProcessingStats } from '@zy/shared';
+import { NotionImageProcessor, type ImageProcessingStats } from '@zy/notion-images';
 import { NotionToMarkdown } from 'notion-to-md';
 
 export class NotionToMDXConverter {

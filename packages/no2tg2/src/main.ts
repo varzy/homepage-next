@@ -1,7 +1,7 @@
 import 'dotenv/config';
-import { NotionImageProcessor } from '@zy/shared';
+import { NotionImageProcessor } from '@zy/notion-images';
 
-import { config, isR2Configured } from './config.ts';
+import { config } from './config.ts';
 import { formatMessage, validateMessage } from './formatter.ts';
 import { logger } from './logger.ts';
 import { getPageContent, markAsPublished, queryReadyPage, notionClient } from './notion.ts';
@@ -26,26 +26,15 @@ async function release(): Promise<void> {
 
   logger.info({ title: page.title, createdDate: page.createdTime.slice(0, 10) }, '找到待发布页面');
 
-  if (isR2Configured()) {
-    logger.info('正在处理页面图片...');
-    const processor = new NotionImageProcessor({
-      notion: notionClient,
-      label: config.r2.label,
-      compress: true,
-    });
-    const imageStats = await processor.processPageImages(page.id);
-    logger.info(
-      {
-        total: imageStats.total,
-        processed: imageStats.processed,
-        skipped: imageStats.skipped,
-        errors: imageStats.errors,
-      },
-      '图片处理完成',
-    );
-  } else {
-    logger.warn('R2 图床未完整配置，跳过图片处理');
-  }
+  logger.info('正在处理页面图片...');
+  const processor = new NotionImageProcessor({
+    notion: notionClient,
+    label: 'no2tg2',
+    compress: true,
+    uploader: config.r2,
+  });
+  const imageStats = await processor.processPageImages(page.id);
+  logger.info(imageStats, '图片处理完成');
 
   logger.info('正在获取页面内容...');
   const content = await getPageContent(page.id);
@@ -87,10 +76,7 @@ async function release(): Promise<void> {
 
 async function runOnce(): Promise<void> {
   try {
-    logger.info(
-      { r2Configured: isR2Configured(), node: process.version, pid: process.pid },
-      'no2tg2 启动',
-    );
+    logger.info({ node: process.version, pid: process.pid }, 'no2tg2 启动');
     const activeProxy = applyGlobalProxyForFetch();
     if (activeProxy) {
       logger.info({ proxy: activeProxy }, '已启用全局代理');

@@ -24,27 +24,6 @@
 - 内置 Secrets 管理，配置简单安全。
 - 可手动触发（`workflow_dispatch`），便于调试。
 
-### 前置改动：config.ts 改为读取环境变量
-
-当前 `config.ts` 是硬编码的，需要改为从环境变量读取，才能在 GitHub Actions 中安全注入密钥：
-
-```ts
-// src/config.ts
-export const config = {
-  notion: {
-    token: process.env.NOTION_TOKEN!,
-    dataSourceId: process.env.NOTION_DATABASE_ID!,
-  },
-  telegram: {
-    botToken: process.env.TELEGRAM_BOT_TOKEN!,
-    chatId: process.env.TELEGRAM_CHAT_ID!,
-  },
-  smms: {
-    apiToken: process.env.SMMS_API_TOKEN ?? '',
-  },
-} as const;
-```
-
 ### GitHub Actions Workflow 文件
 
 创建 `.github/workflows/release.yml`：
@@ -86,7 +65,9 @@ jobs:
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          SMMS_API_TOKEN: ${{ secrets.SMMS_API_TOKEN }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
         run: pnpm release
 ```
 
@@ -98,7 +79,9 @@ jobs:
 - `NOTION_DATABASE_ID`
 - `TELEGRAM_BOT_TOKEN`
 - `TELEGRAM_CHAT_ID`
-- `SMMS_API_TOKEN`（可选）
+- `R2_ACCOUNT_ID`
+- `R2_ACCESS_KEY_ID`
+- `R2_SECRET_ACCESS_KEY`
 
 ### 注意事项
 
@@ -134,7 +117,9 @@ release:
     NOTION_DATABASE_ID: $NOTION_DATABASE_ID
     TELEGRAM_BOT_TOKEN: $TELEGRAM_BOT_TOKEN
     TELEGRAM_CHAT_ID: $TELEGRAM_CHAT_ID
-    SMMS_API_TOKEN: $SMMS_API_TOKEN
+    R2_ACCOUNT_ID: $R2_ACCOUNT_ID
+    R2_ACCESS_KEY_ID: $R2_ACCESS_KEY_ID
+    R2_SECRET_ACCESS_KEY: $R2_SECRET_ACCESS_KEY
   only:
     - schedules
 ```

@@ -4,18 +4,19 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "tsx src/main.ts --schedule",
+    "start": "tsx src/main.ts",
     "release": "tsx src/main.ts",
-    "lint": "oxlint src",
-    "format": "oxfmt --write src",
-    "test": "vitest run tests/*.test.ts",
+    "lint": "oxlint src tests",
+    "format": "oxfmt src tests",
+    "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "exam": "pnpm format && pnpm lint && pnpm typecheck && pnpm test"
+    "exam": "oxfmt --check src tests && pnpm run lint && pnpm run typecheck && pnpm run test"
   },
   "dependencies": {
-    "@notionhq/client": "^5.21.0",
-    "@zy/shared": "workspace:*",
-    "dayjs": "^1.11.20",
+    "@notionhq/client": "catalog:",
+    "@zy/image-compression": "workspace:*",
+    "@zy/notion-images": "workspace:*",
+    "dayjs": "catalog:",
     "dotenv": "^17.4.2",
     "pino": "^10.3.1",
     "proxy-agent": "^8.0.1",
@@ -23,11 +24,11 @@
     "undici": "^8.10.0"
   },
   "devDependencies": {
-    "@types/node": "^26.6.5",
-    "oxfmt": "^0.72.0",
-    "oxlint": "^1.87.0",
-    "tsx": "^4.23.15",
-    "typescript": "^7.0.2",
-    "vitest": "^5.0.4"
+    "@types/node": "catalog:",
+    "oxfmt": "catalog:",
+    "oxlint": "catalog:",
+    "tsx": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
   }
 }

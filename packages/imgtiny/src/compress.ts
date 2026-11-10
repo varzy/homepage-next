@@ -16,19 +16,25 @@ program
   .option('-o, --output <path>', '输出文件夹路径 (默认: 输入文件夹)')
   .option('-w, --width <number>', '最大宽度 (px)', '1920')
   .option('-q, --quality <number>', '图片质量 (1-100)', '90')
-  .option('-k, --keep-format', '保持原图片格式 (默认转换为 WebP)', true)
+  .option('-k, --keep-format', '保持原图片格式（默认）', true)
+  .option('--no-keep-format', '转换为 WebP')
   .option('-c, --clean', '强制清空输出目录中的已压缩图片', false)
   .action(async (options) => {
     try {
       const startTime = Date.now();
-      // 如果 options.input 是绝对路径 (如默认值), resolve 会直接返回它
-      // 如果是相对路径, 则相对于当前工作目录解析
-      const inputDir = resolve(process.cwd(), options.input);
-      // 如果没有指定输出目录，则默认输出到输入目录
-      const outputDir = options.output ? resolve(process.cwd(), options.output) : inputDir;
+      // pnpm --filter 从包目录运行脚本，相对参数仍以调用目录为准。
+      const invocationDir = process.env.INIT_CWD ?? process.cwd();
+      const inputDir = resolve(invocationDir, options.input);
+      const outputDir = options.output ? resolve(invocationDir, options.output) : inputDir;
 
-      const maxWidth = parseInt(options.width, 10);
-      const quality = parseInt(options.quality, 10);
+      const maxWidth = Number(options.width);
+      const quality = Number(options.quality);
+      if (!Number.isSafeInteger(maxWidth) || maxWidth < 1) {
+        throw new Error('--width 必须是正整数');
+      }
+      if (!Number.isInteger(quality) || quality < 1 || quality > 100) {
+        throw new Error('--quality 必须是 1 到 100 之间的整数');
+      }
       const keepFormat = options.keepFormat;
       const clean = options.clean;
 
@@ -44,20 +50,20 @@ program
       const spinner = ora('正在扫描图片...').start();
 
       try {
-        // 如果开启了清理选项，则清理旧的压缩文件
-        if (clean) {
-          const oldCompressedFiles = await findCompressedImages(outputDir);
-          if (oldCompressedFiles.length > 0) {
-            spinner.text = `正在清理 ${oldCompressedFiles.length} 个旧的压缩文件...`;
-            await Promise.all(oldCompressedFiles.map((file) => unlink(file).catch(() => {})));
-          }
-        }
-
         const allImages = await findImages(inputDir);
 
         if (allImages.length === 0) {
           spinner.fail(chalk.yellow(`未在输入目录 "${inputDir}" 中找到支持的图片文件。`));
           return;
+        }
+
+        // 如果开启了清理选项，则清理旧的压缩文件
+        if (clean) {
+          const oldCompressedFiles = await findCompressedImages(outputDir);
+          if (oldCompressedFiles.length > 0) {
+            spinner.text = `正在清理 ${oldCompressedFiles.length} 个旧的压缩文件...`;
+            await Promise.all(oldCompressedFiles.map((file) => unlink(file)));
+          }
         }
 
         // 输出扩展名取决于压缩后的实际格式（如 HEIC→JPG），无法预知，
@@ -69,8 +75,8 @@ program
 
         for (const img of allImages) {
           // shortcut: 同名不同扩展（a.heic 与 a.jpg）会互相误判已压缩，重名场景罕见
-          const alreadyCompressed = existingFiles.some((name) =>
-            name.startsWith(`${parse(img).name}_compressed`),
+          const alreadyCompressed = existingFiles.some(
+            (name) => parse(name).name === `${parse(img).name}_compressed`,
           );
 
           if (alreadyCompressed) {
@@ -181,8 +187,10 @@ program
           );
         }
         console.log('');
+        if (failCount > 0) process.exitCode = 1;
       } catch (err: any) {
-        spinner.fail(chalk.red(`读取目录失败: ${err.message}`));
+        spinner.fail(chalk.red(`压缩失败: ${err.message}`));
+        process.exitCode = 1;
       }
     } catch (error: any) {
       console.error(chalk.red('\n发生未知错误:'));

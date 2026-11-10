@@ -1,10 +1,14 @@
 import { describe, expect, it, vi } from 'vitest';
 
-import { compressImage } from '@zy/shared';
+import { compressImage } from '@zy/image-compression';
 import { createTelegramProxyAgent, sendToChannel } from '../src/telegram.js';
 import type { TelegramApi } from '../src/telegram.js';
 
-vi.mock('@zy/shared', () => ({
+vi.mock('../src/config.ts', () => ({
+  config: { telegram: { chatId: 'test-channel' } },
+}));
+
+vi.mock('@zy/image-compression', () => ({
   compressImage: vi.fn(async (buffer: Buffer) => ({
     buffer,
     format: 'jpeg',

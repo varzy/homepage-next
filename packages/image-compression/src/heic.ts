@@ -1,3 +1,4 @@
+// oxlint-disable-next-line typescript/triple-slash-reference -- 直接消费源码的包也需要加载此模块声明。
 /// <reference path="./heic-decode.d.ts" />
 import decode from 'heic-decode';
 import sharp from 'sharp';

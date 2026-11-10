@@ -5,6 +5,9 @@ on:
     - cron: '0 * * * *'
   workflow_dispatch:
 
+concurrency:
+  group: homepage-content-sync
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -29,7 +32,10 @@ jobs:
           cache: 'pnpm'
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm --filter 'homepage-next...' install --frozen-lockfile
+
+      - name: Check homepage and its workspace dependencies
+        run: pnpm --filter 'homepage-next...' run exam
 
       - name: Fetch content from Notion
         run: pnpm fetch:all
@@ -43,14 +49,14 @@ jobs:
           R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
 
-      - name: Run checks
-        run: pnpm run exam
+      - name: Format synced content
+        run: pnpm exec oxfmt content .fetch-state.json
 
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
+          git add -- content .fetch-state.json
           if git diff --staged --quiet; then
             echo "No changes, skipping commit."
           else

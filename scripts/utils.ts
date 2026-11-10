@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { createR2Uploader } from '@zy/shared';
+import { createR2Uploader } from '@zy/notion-images/r2';
 import { FetchResult } from './types';
 
 // ─── Notion property helpers ──────────────────────────────────────────────────

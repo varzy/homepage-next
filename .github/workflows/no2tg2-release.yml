@@ -3,6 +3,13 @@ name: no2tg2 Release
 on:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
+concurrency:
+  group: no2tg2-release
+  queue: max
+
 jobs:
   release:
     runs-on: ubuntu-latest
@@ -11,6 +18,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -22,7 +31,10 @@ jobs:
           cache: 'pnpm'
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm --filter 'no2tg2...' install --frozen-lockfile
+
+      - name: Check no2tg2 and its workspace dependencies
+        run: pnpm --filter 'no2tg2...' run exam
 
       - name: Publish queued Notion page to Telegram
         run: pnpm --filter no2tg2 release

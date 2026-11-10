@@ -172,31 +172,6 @@ export class R2ImageUploader {
     return { url: publicUrl, fileName: key, size: buffer.length };
   }
 
-  /** 下载外部图片并上传到 R2（下载后不经压缩，原样转存）。 */
-  async uploadExternal(url: string, label: string, pageId: string): Promise<ImageUploadResult> {
-    console.log(`📥 Downloading image: ${url}`);
-
-    const res = await fetch(url, {
-      cache: 'no-cache',
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (compatible; NotionImageUploader/1.0)',
-      },
-    });
-
-    if (!res.ok) {
-      throw new Error(`Failed to download image: ${res.status} ${res.statusText}`);
-    }
-
-    const buffer = Buffer.from(await res.arrayBuffer());
-    return this.uploadBuffer(
-      buffer,
-      extractExtension(url),
-      label,
-      pageId,
-      res.headers.get('content-type') || undefined,
-    );
-  }
-
   /** HEAD 探测对象是否存在；不存在（404）返回 null，其余错误向上抛出。 */
   private async headObject(key: string): Promise<{ size?: number } | null> {
     try {

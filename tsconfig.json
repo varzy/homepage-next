@@ -25,10 +25,12 @@
   },
   "include": [
     "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
+    "src/**/*",
+    "scripts/**/*.ts",
+    "tests/**/*.ts",
+    "vitest.config.ts",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
   ],
-  "exclude": ["node_modules", "backup/**/*", ".next/**/*", "packages/**"]
+  "exclude": ["node_modules"]
 }

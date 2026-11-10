@@ -1,0 +1,28 @@
+{
+  "name": "@zy/notion-images",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/notion-images.ts",
+    "./r2": "./src/r2-uploader.ts"
+  },
+  "scripts": {
+    "lint": "oxlint src tests",
+    "format": "oxfmt src tests",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "exam": "oxfmt --check src tests && pnpm run lint && pnpm run typecheck && pnpm run test"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1150.0",
+    "@notionhq/client": "catalog:",
+    "@zy/image-compression": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "oxfmt": "catalog:",
+    "oxlint": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  }
+}

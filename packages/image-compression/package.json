@@ -1,0 +1,26 @@
+{
+  "name": "@zy/image-compression",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/compress.ts"
+  },
+  "scripts": {
+    "lint": "oxlint src tests",
+    "format": "oxfmt src tests",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "exam": "oxfmt --check src tests && pnpm run lint && pnpm run typecheck && pnpm run test"
+  },
+  "dependencies": {
+    "heic-decode": "^2.1.0",
+    "sharp": "^0.34.5"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "oxfmt": "catalog:",
+    "oxlint": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  }
+}

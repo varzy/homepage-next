@@ -1,7 +1,7 @@
 import type { BlockObjectResponse, PageObjectResponse } from '@notionhq/client';
 import type { Client } from '@notionhq/client';
 
-import { compressImage } from './compress.ts';
+import { compressImage } from '@zy/image-compression';
 import {
   createR2Uploader,
   extractExtension,

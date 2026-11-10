@@ -84,7 +84,6 @@ describe('shared/r2-uploader.ts', () => {
 
     it('其他域名返回 false', () => {
       expect(isR2Url('https://example.com/image.jpg')).toBe(false);
-      expect(isR2Url('https://sm.ms/image/abc')).toBe(false);
     });
 
     it('仅 host 精确匹配才为 true（路径含域名片段不算）', () => {

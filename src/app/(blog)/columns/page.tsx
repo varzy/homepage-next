@@ -31,9 +31,13 @@ export default async function ColumnsPage() {
     return { tag, postsCount: tagPosts.length };
   });
 
+  const featuredTag = '精选';
   const sortedTags = tagsWithPostsCount
     .filter((tag) => tag.postsCount > 0)
-    .sort((a, b) => b.postsCount - a.postsCount);
+    .sort((a, b) => {
+      const featuredOrder = Number(b.tag === featuredTag) - Number(a.tag === featuredTag);
+      return featuredOrder || b.postsCount - a.postsCount;
+    });
 
   return (
     <BlogPageContainer pageHero={{ title: '栏目' }}>
@@ -54,9 +58,9 @@ export default async function ColumnsPage() {
 
       <BlogSection title="Tags">
         <ul className="m-0 list-none p-0">
-          {sortedTags.map((tag, index) => (
-            <li key={index} className="me-5 mb-3 inline-block">
-              <PostTag tag={tag.tag} count={tag.postsCount} />
+          {sortedTags.map(({ tag, postsCount }) => (
+            <li key={tag} className="me-5 mb-3 inline-block">
+              <PostTag tag={tag} count={postsCount} />
             </li>
           ))}
         </ul>

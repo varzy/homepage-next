@@ -35,7 +35,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Check homepage and its workspace dependencies
-        run: pnpm --filter 'homepage-next...' run exam
+        run: pnpm run exam:all
 
       - name: Fetch content from Notion
         run: pnpm fetch:all

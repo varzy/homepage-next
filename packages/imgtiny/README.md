@@ -8,8 +8,6 @@
 
 ```bash
 pnpm imgtiny:compress        # 仓库根目录
-# 或
-pnpm --filter imgtiny compress
 ```
 
 指定目录与参数（flag 直接透传，无需 `--`）：
@@ -28,9 +26,3 @@ pnpm imgtiny:compress --input /path/to/input --output /path/to/output
 - `-c`：先清空输出目录中旧的压缩产物
 
 输出扩展名跟随压缩后的实际格式（如 HEIC → `xxx_compressed.jpg`）。已存在同名压缩产物的图片会自动跳过。
-
-### 监听目录变化自动压缩
-
-```bash
-pnpm --filter imgtiny watch
-```

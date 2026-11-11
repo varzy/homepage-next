@@ -1,11 +1,11 @@
-import { Command } from 'commander';
-import chalk from 'chalk';
-import ora from 'ora';
-import { resolve, parse } from 'node:path';
 import { unlink, readdir } from 'node:fs/promises';
-import { findImages } from './helpers/utils';
-import { processImage, formatSize, type ProcessResult } from './helpers/processor';
+import { resolve, parse } from 'node:path';
+import chalk from 'chalk';
+import { Command } from 'commander';
+import ora from 'ora';
 import { DEFAULT_DIR } from './helpers/config';
+import { processImage, formatSize, type ProcessResult } from './helpers/processor';
+import { findImages } from './helpers/utils';
 
 const program = new Command();
 

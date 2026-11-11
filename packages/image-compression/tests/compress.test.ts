@@ -1,7 +1,6 @@
 import { readFileSync } from 'node:fs';
 import sharp from 'sharp';
 import { describe, expect, it } from 'vitest';
-
 import { compressImage, detectImageFormat, stripJpegSecondaryImages } from '../src/compress.js';
 
 const SAMPLE_HEIC = readFileSync(new URL('./fixtures/sample.heic', import.meta.url));

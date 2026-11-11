@@ -1,6 +1,5 @@
 import 'dotenv/config';
 import { NotionImageProcessor } from '@zy/notion-images';
-
 import { config } from './config.ts';
 import { formatMessage, validateMessage } from './formatter.ts';
 import { logger } from './logger.ts';

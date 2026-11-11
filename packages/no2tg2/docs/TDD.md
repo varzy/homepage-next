@@ -171,8 +171,8 @@ const folderName = `${formatPublishTimestamp()}-${sanitizePageTitle(pageTitle)}`
 
 图片按 Notion 页面中的顺序，以 `img_{n}` 为基础名称命名，后缀名根据实际图片格式确定：
 
-| 顺序 | 文件名示例 |
-| --- | --- |
+| 顺序    | 文件名示例  |
+| ------- | ----------- |
 | 第 1 张 | `img_1.jpg` |
 | 第 2 张 | `img_2.png` |
 | 第 3 张 | `img_3.jpg` |
@@ -254,7 +254,7 @@ export async function sendToChannel(
 - 0 图：`sendMessage`
 - 1 图：`sendPhoto + caption`
 - 2-10 图：`sendMediaGroup`，caption 仅首图
-- >10 图：抛错
+- > 10 图：抛错
 
 全部使用 `parse_mode: "MarkdownV2"`。
 
@@ -298,22 +298,22 @@ await markAsPublished(page.id);
 
 ### 3.1 运行时依赖
 
-| 包名 | 用途 |
-| --- | --- |
-| `@notionhq/client` | Notion API |
-| `telegraf` | Telegram Bot API |
-| `proxy-agent` | Telegram 代理支持 |
-| `dayjs` | 时间格式化（替代 `Intl.DateTimeFormat`） |
-| `sharp` | 图片压缩与格式转换 |
+| 包名               | 用途                                     |
+| ------------------ | ---------------------------------------- |
+| `@notionhq/client` | Notion API                               |
+| `telegraf`         | Telegram Bot API                         |
+| `proxy-agent`      | Telegram 代理支持                        |
+| `dayjs`            | 时间格式化（替代 `Intl.DateTimeFormat`） |
+| `sharp`            | 图片压缩与格式转换                       |
 
 ### 3.2 开发依赖
 
-| 包名 | 用途 |
-| --- | --- |
-| `typescript` | 类型检查 |
-| `tsx` | 直接运行 TS |
+| 包名          | 用途         |
+| ------------- | ------------ |
+| `typescript`  | 类型检查     |
+| `tsx`         | 直接运行 TS  |
 | `@types/node` | Node.js 类型 |
-| `vitest` | 单元测试 |
+| `vitest`      | 单元测试     |
 
 ### 3.3 验证脚本
 
@@ -357,16 +357,16 @@ await markAsPublished(page.id);
 
 ## 5. 错误与边界处理
 
-| 场景 | 处理方式 |
-| --- | --- |
-| 查询无结果 | 正常退出（exit code 0） |
-| `Name` 为空 | 在查询阶段过滤，不进入发布流程 |
-| `Tags` 为空 | 允许发布，仅不输出标签行 |
-| `WithTitle=true` 且 `TitleURL` 无效 | 由 Telegram API 兜底报错 |
-| icon 非 emoji | 忽略 icon，使用随机 fallback emoji |
-| 正文为空 | 跳过发布（警告退出） |
-| 图片下载失败 | 抛出错误，发布流程中断（含具体 URL 和 HTTP 状态码） |
-| 图片压缩失败 | 抛出错误，发布流程中断 |
-| 图片数量 > 10 | 抛出错误，发布流程中断 |
-| Telegram 发送失败 | 抛出错误退出；本地备份已存在，Notion 状态不更新 |
-| Notion 状态更新失败 | 输出错误日志，提示手动更新；exit code 设为 1 |
+| 场景                                | 处理方式                                            |
+| ----------------------------------- | --------------------------------------------------- |
+| 查询无结果                          | 正常退出（exit code 0）                             |
+| `Name` 为空                         | 在查询阶段过滤，不进入发布流程                      |
+| `Tags` 为空                         | 允许发布，仅不输出标签行                            |
+| `WithTitle=true` 且 `TitleURL` 无效 | 由 Telegram API 兜底报错                            |
+| icon 非 emoji                       | 忽略 icon，使用随机 fallback emoji                  |
+| 正文为空                            | 跳过发布（警告退出）                                |
+| 图片下载失败                        | 抛出错误，发布流程中断（含具体 URL 和 HTTP 状态码） |
+| 图片压缩失败                        | 抛出错误，发布流程中断                              |
+| 图片数量 > 10                       | 抛出错误，发布流程中断                              |
+| Telegram 发送失败                   | 抛出错误退出；本地备份已存在，Notion 状态不更新     |
+| Notion 状态更新失败                 | 输出错误日志，提示手动更新；exit code 设为 1        |

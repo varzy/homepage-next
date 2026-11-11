@@ -1,9 +1,7 @@
 import type { Agent } from 'node:http';
+import { compressImage } from '@zy/image-compression';
 import { Telegraf } from 'telegraf';
 import type { Context } from 'telegraf';
-
-import { compressImage } from '@zy/image-compression';
-
 import { config } from './config.ts';
 import { logger } from './logger.ts';
 import { createNodeProxyAgent, resolveProxyUrl } from './proxy.ts';

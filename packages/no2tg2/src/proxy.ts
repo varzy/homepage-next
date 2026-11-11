@@ -1,5 +1,4 @@
 import type { Agent } from 'node:http';
-
 import { ProxyAgent as NodeProxyAgent } from 'proxy-agent';
 import { ProxyAgent as UndiciProxyAgent, setGlobalDispatcher } from 'undici';
 

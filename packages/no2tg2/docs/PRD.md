@@ -8,16 +8,16 @@
 
 ### 1.1 技术栈
 
-| 层面 | 选型 |
-| --- | --- |
-| 运行时 | Node.js |
-| 包管理 | pnpm |
-| 语言 | TypeScript |
-| Notion SDK | `@notionhq/client` |
-| Telegram SDK | `telegraf` |
-| 时间处理 | `dayjs`（配合 `utc` + `timezone` 插件） |
-| 图片压缩 | `sharp` |
-| 构建/执行 | `tsx`（直接运行 TS，免编译） |
+| 层面         | 选型                                    |
+| ------------ | --------------------------------------- |
+| 运行时       | Node.js                                 |
+| 包管理       | pnpm                                    |
+| 语言         | TypeScript                              |
+| Notion SDK   | `@notionhq/client`                      |
+| Telegram SDK | `telegraf`                              |
+| 时间处理     | `dayjs`（配合 `utc` + `timezone` 插件） |
+| 图片压缩     | `sharp`                                 |
+| 构建/执行    | `tsx`（直接运行 TS，免编译）            |
 
 ### 1.2 设计原则
 
@@ -30,15 +30,15 @@
 
 ## 2. Notion 数据源结构
 
-| 属性名 | 类型 | 说明 |
-| --- | --- | --- |
-| `Name` | Title | 页面标题（Notion 默认字段） |
-| `PublishDate` | Date | 记录实际发布时间，默认为空，发布后由程序写入 |
-| `Status` | Select | 页面状态，可选值：`Draft` / `Unpublished` / `Published` |
-| `CreatedTime` | Created time | Notion 自动维护的创建时间 |
-| `Tags` | Multi-select | 用于生成 Telegram 首行标签，支持多个标签 |
-| `WithTitle` | Checkbox | 是否在正文前输出标题 |
-| `TitleURL` | URL | 标题跳转链接（仅 `WithTitle=true` 时生效） |
+| 属性名        | 类型         | 说明                                                    |
+| ------------- | ------------ | ------------------------------------------------------- |
+| `Name`        | Title        | 页面标题（Notion 默认字段）                             |
+| `PublishDate` | Date         | 记录实际发布时间，默认为空，发布后由程序写入            |
+| `Status`      | Select       | 页面状态，可选值：`Draft` / `Unpublished` / `Published` |
+| `CreatedTime` | Created time | Notion 自动维护的创建时间                               |
+| `Tags`        | Multi-select | 用于生成 Telegram 首行标签，支持多个标签                |
+| `WithTitle`   | Checkbox     | 是否在正文前输出标题                                    |
+| `TitleURL`    | URL          | 标题跳转链接（仅 `WithTitle=true` 时生效）              |
 
 ### 2.1 页面正文结构
 
@@ -156,14 +156,14 @@ page_size: 1
 
 Notion 的 `rich_text` 中每个文本片段可能携带以下 annotations，需逐一转换为 Telegram MarkdownV2 语法：
 
-| Notion annotation | Telegram MarkdownV2 | 示例 |
-| --- | --- | --- |
-| `bold` | `*text*` | `*加粗文字*` |
-| `italic` | `_text_` | `_斜体文字_` |
-| `strikethrough` | `~text~` | `~删除线~` |
-| `underline` | `__text__` | `__下划线__` |
-| `code` | `` `text` `` | `` `行内代码` `` |
-| `href`（链接） | `[text](url)` | `[点击这里](https://example\.com)` |
+| Notion annotation | Telegram MarkdownV2 | 示例                               |
+| ----------------- | ------------------- | ---------------------------------- |
+| `bold`            | `*text*`            | `*加粗文字*`                       |
+| `italic`          | `_text_`            | `_斜体文字_`                       |
+| `strikethrough`   | `~text~`            | `~删除线~`                         |
+| `underline`       | `__text__`          | `__下划线__`                       |
+| `code`            | `` `text` ``        | `` `行内代码` ``                   |
+| `href`（链接）    | `[text](url)`       | `[点击这里](https://example\.com)` |
 
 **MarkdownV2 转义规则**：在 MarkdownV2 模式下，以下字符如果作为普通文本出现，必须用 `\` 转义：
 
@@ -187,11 +187,11 @@ _ * [ ] ( ) ~ ` > # + - = | { } . !
 
 **目录内容**：
 
-| 文件 | 说明 |
-| --- | --- |
-| `content.md` | 格式化后的 Telegram 消息正文（MarkdownV2 格式） |
-| `img_1.jpg` / `img_1.png` 等 | 第 1 张图片，后缀名依据实际格式确定 |
-| `img_2.jpg` / `img_2.png` 等 | 第 2 张图片，以此类推 |
+| 文件                         | 说明                                            |
+| ---------------------------- | ----------------------------------------------- |
+| `content.md`                 | 格式化后的 Telegram 消息正文（MarkdownV2 格式） |
+| `img_1.jpg` / `img_1.png` 等 | 第 1 张图片，后缀名依据实际格式确定             |
+| `img_2.jpg` / `img_2.png` 等 | 第 2 张图片，以此类推                           |
 
 图片先下载到此目录，再进行压缩（原地覆盖），然后以本地文件路径发送到 Telegram。
 
@@ -211,12 +211,12 @@ _ * [ ] ( ) ~ ` > # + - = | { } . !
 
 发送阶段使用本地文件（压缩后）而非原始 URL，根据图片数量采用不同的发送方式：
 
-| 场景 | API 方法 | 说明 |
-| --- | --- | --- |
-| 无图片 | `sendMessage` | 仅发送文本 |
-| 1 张图片 | `sendPhoto` | 发送单图，正文作为 caption |
-| 2-10 张图片 | `sendMediaGroup` | 发送图片组，正文作为第一张图的 caption |
-| 超过 10 张图片 | 报错退出 | Telegram 限制 media group 最多 10 张 |
+| 场景           | API 方法         | 说明                                   |
+| -------------- | ---------------- | -------------------------------------- |
+| 无图片         | `sendMessage`    | 仅发送文本                             |
+| 1 张图片       | `sendPhoto`      | 发送单图，正文作为 caption             |
+| 2-10 张图片    | `sendMediaGroup` | 发送图片组，正文作为第一张图的 caption |
+| 超过 10 张图片 | 报错退出         | Telegram 限制 media group 最多 10 张   |
 
 > **注意**：Telegram 的 caption 长度限制为 **1024** 字符（非 sendMessage 的 4096），超长时应报错。
 
@@ -274,17 +274,17 @@ export const config = {
 
 ### 5.2 错误处理
 
-| 错误场景 | 处理方式 |
-| --- | --- |
-| 没有待发布的页面 | 输出 `没有待发布的页面` 并正常退出 |
-| Notion API 调用失败 | 输出错误详情并以 exit code 1 退出 |
-| 页面正文为空 | 输出警告并退出（空页面不发布） |
-| 图片超过 10 张 | 输出错误并退出 |
-| Caption 超长 | 输出错误并退出（附当前长度） |
-| 图片下载失败 | 输出错误并退出（备份与发送均依赖下载） |
-| 图片压缩失败 | 输出错误并退出 |
-| Telegram 发送失败 | 输出错误详情并退出（此时不更新 Notion 状态，但本地备份已存在） |
-| Notion 状态更新失败 | 输出错误（但消息已发出，提示手动更新） |
+| 错误场景            | 处理方式                                                       |
+| ------------------- | -------------------------------------------------------------- |
+| 没有待发布的页面    | 输出 `没有待发布的页面` 并正常退出                             |
+| Notion API 调用失败 | 输出错误详情并以 exit code 1 退出                              |
+| 页面正文为空        | 输出警告并退出（空页面不发布）                                 |
+| 图片超过 10 张      | 输出错误并退出                                                 |
+| Caption 超长        | 输出错误并退出（附当前长度）                                   |
+| 图片下载失败        | 输出错误并退出（备份与发送均依赖下载）                         |
+| 图片压缩失败        | 输出错误并退出                                                 |
+| Telegram 发送失败   | 输出错误详情并退出（此时不更新 Notion 状态，但本地备份已存在） |
+| Notion 状态更新失败 | 输出错误（但消息已发出，提示手动更新）                         |
 
 ---
 

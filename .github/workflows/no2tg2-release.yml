@@ -27,17 +27,18 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          # Node 24.14 detects the Notion SDK's CommonJS named exports.
+          node-version: '^24.14.0'
           cache: 'pnpm'
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Check no2tg2 and its workspace dependencies
-        run: pnpm --filter 'no2tg2...' run exam
+      - name: Run no2tg2 type checks and tests
+        run: pnpm --filter no2tg2 run exam
 
       - name: Publish queued Notion page to Telegram
-        run: pnpm --filter no2tg2 release
+        run: pnpm run no2tg:release
         env:
           NOTION_API_SECRET: ${{ secrets.NOTION_API_SECRET }}
           NOTION_KOTOBA_DATABASE_ID: ${{ secrets.NOTION_KOTOBA_DATABASE_ID }}

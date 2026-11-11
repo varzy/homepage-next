@@ -1,7 +1,6 @@
 import { readFileSync } from 'node:fs';
 import sharp from 'sharp';
 import { describe, expect, it } from 'vitest';
-
 import { embedIccProfile, heicToJpeg, isHeic } from '../src/heic.js';
 
 // 64x48 的 Display P3 HEIC，由 macOS `sips -s format heic` 生成，与 iPhone 同为 HEVC 编码

@@ -1,5 +1,5 @@
-import { join, parse } from 'node:path';
 import { mkdir, readFile, stat, writeFile } from 'node:fs/promises';
+import { join, parse } from 'node:path';
 import { compressImage } from '@zy/image-compression';
 
 export interface ProcessOptions {

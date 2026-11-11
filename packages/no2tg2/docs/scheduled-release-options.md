@@ -6,12 +6,12 @@
 
 ## 方案汇总
 
-| 方案 | 免费额度 | 改动成本 | 推荐指数 |
-|---|---|---|---|
-| GitHub Actions | 公开仓库无限制，私有 2000 min/月 | 中（需改 config 读取环境变量） | ★★★★★ |
-| GitLab CI Scheduled Pipelines | 400 min/月（SaaS） | 中 | ★★★ |
-| Codemagic | 500 min/月 | 中 | ★★ |
-| Oracle Cloud 免费 VPS | 永久免费实例 | 高（需运维） | ★★★ |
+| 方案                          | 免费额度                         | 改动成本                       | 推荐指数 |
+| ----------------------------- | -------------------------------- | ------------------------------ | -------- |
+| GitHub Actions                | 公开仓库无限制，私有 2000 min/月 | 中（需改 config 读取环境变量） | ★★★★★    |
+| GitLab CI Scheduled Pipelines | 400 min/月（SaaS）               | 中                             | ★★★      |
+| Codemagic                     | 500 min/月                       | 中                             | ★★       |
+| Oracle Cloud 免费 VPS         | 永久免费实例                     | 高（需运维）                   | ★★★      |
 
 ---
 

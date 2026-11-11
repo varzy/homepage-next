@@ -1,18 +1,19 @@
+import {
+  APIErrorCode,
+  Client,
+  isFullPage,
+  isNotionClientError,
+  type BlockObjectResponse,
+  type PageObjectResponse,
+  type RichTextItemResponse,
+} from '@notionhq/client';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc.js';
-
-dayjs.extend(utc);
-
-import { APIErrorCode, Client, isFullPage, isNotionClientError } from '@notionhq/client';
-import type {
-  BlockObjectResponse,
-  PageObjectResponse,
-  RichTextItemResponse,
-} from '@notionhq/client';
-
 import { config } from './config.ts';
 import { logger } from './logger.ts';
 import { createNodeProxyAgent } from './proxy.ts';
+
+dayjs.extend(utc);
 
 export interface NotionPage {
   id: string;

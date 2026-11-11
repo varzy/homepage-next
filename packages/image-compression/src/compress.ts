@@ -1,5 +1,4 @@
 import sharp from 'sharp';
-
 import { heicToJpeg, isHeic } from './heic.ts';
 
 const DEFAULT_MAX_DIMENSION = 1920;

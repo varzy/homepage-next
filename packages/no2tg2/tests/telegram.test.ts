@@ -1,6 +1,5 @@
-import { describe, expect, it, vi } from 'vitest';
-
 import { compressImage } from '@zy/image-compression';
+import { describe, expect, it, vi } from 'vitest';
 import { createTelegramProxyAgent, sendToChannel } from '../src/telegram.js';
 import type { TelegramApi } from '../src/telegram.js';
 

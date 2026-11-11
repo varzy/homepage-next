@@ -64,6 +64,13 @@ describe('compressImage', () => {
     expect(out.format).toBe('jpeg');
   });
 
+  it('显式转 WebP 失败时抛错', async () => {
+    const broken = Buffer.from([0xff, 0xd8, 0xff, 0xe0]);
+    await expect(compressImage(broken, 'broken.jpg', { output: 'webp' })).rejects.toThrow(
+      '图片处理失败（broken.jpg，格式 jpeg）',
+    );
+  });
+
   it('无法解码的 HEIC 或未知格式直接抛错，不回退原图', async () => {
     const brokenHeic = Buffer.concat([SAMPLE_HEIC.subarray(0, 40), Buffer.alloc(64)]);
     await expect(compressImage(brokenHeic, 'broken.heic')).rejects.toThrow('格式 heic');

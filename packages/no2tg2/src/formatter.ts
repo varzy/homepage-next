@@ -2,6 +2,7 @@ import type { Paragraph, RichTextSnippet } from './notion.ts';
 
 const MARKDOWN_V2_ESCAPE_REGEX = /([_*[\]()~`>#+\-=|{}.!\\])/g;
 const LINK_ESCAPE_REGEX = /([)\\])/g;
+const CODE_ESCAPE_REGEX = /([`\\])/g;
 
 export function escapeMarkdownV2(text: string): string {
   return text.replace(MARKDOWN_V2_ESCAPE_REGEX, '\\$1');
@@ -18,73 +19,75 @@ export interface MessageMeta {
   titleUrl: string | null;
 }
 
-export function convertSnippet(snippet: RichTextSnippet): string {
-  let text = escapeMarkdownV2(snippet.plainText);
+interface MessageSnippet {
+  plainText: string;
+  annotations?: Partial<RichTextSnippet['annotations']>;
+  href?: string | null;
+}
 
-  if (snippet.annotations.code) {
-    text = `\`${text}\``;
+interface FormattedMessage {
+  markdown: string;
+  visibleLength: number;
+}
+
+export function convertSnippet({ plainText, annotations = {}, href }: MessageSnippet): string {
+  if (annotations.code) {
+    // Telegram 行内代码不能与其他样式或链接嵌套。
+    return `\`${plainText.replace(CODE_ESCAPE_REGEX, '\\$1')}\``;
   }
-  if (snippet.annotations.strikethrough) {
+
+  let text = escapeMarkdownV2(plainText);
+  if (annotations.strikethrough) {
     text = `~${text}~`;
   }
-  if (snippet.annotations.italic) {
+  if (annotations.italic) {
     text = `_${text}_`;
   }
-  if (snippet.annotations.underline) {
-    text = `__${text}__`;
+  if (annotations.underline) {
+    // 避免 MarkdownV2 把斜体和下划线的结束标记优先解析为 __。
+    text = `__${text}${annotations.italic ? '**' : ''}__`;
   }
-  if (snippet.annotations.bold) {
+  if (annotations.bold) {
     text = `*${text}*`;
   }
-  if (snippet.href) {
-    text = `[${text}](${escapeMarkdownLinkUrl(snippet.href)})`;
+  if (href) {
+    text = `[${text}](${escapeMarkdownLinkUrl(href)})`;
   }
 
   return text;
 }
 
-export function convertParagraph(paragraph: Paragraph): string {
-  return paragraph.map(convertSnippet).join('');
-}
-
-function toHashtag(tag: string): string | null {
+function toHashtag(tag: string): string {
   const normalized = tag.trim().replace(/^#+/, '').replace(/\s+/g, '');
-  if (!normalized) {
-    return null;
-  }
-  return escapeMarkdownV2(`#${normalized}`);
+  return normalized ? `#${normalized}` : '';
 }
 
-function formatTagsLine(tags: string[]): string {
-  return tags
-    .map(toHashtag)
-    .filter((item): item is string => item !== null)
-    .join(' ');
+export function formatMessage(paragraphs: Paragraph[], meta: MessageMeta): FormattedMessage {
+  const sections: MessageSnippet[][] = [
+    [{ plainText: meta.tags.map(toHashtag).filter(Boolean).join(' ') }],
+    meta.withTitle
+      ? [{ plainText: meta.title, annotations: { bold: true }, href: meta.titleUrl }]
+      : [],
+    ...paragraphs,
+  ];
+  const nonEmptySections = sections
+    .map((section) => section.filter((snippet) => snippet.plainText.length > 0))
+    .filter((section) => section.length > 0);
+  const text = nonEmptySections
+    .map((section) => section.map((snippet) => snippet.plainText).join(''))
+    .join('\n\n');
+
+  return {
+    markdown: nonEmptySections.map((section) => section.map(convertSnippet).join('')).join('\n\n'),
+    visibleLength: Array.from(text).length,
+  };
 }
 
-function formatTitleLine(meta: MessageMeta): string {
-  if (!meta.withTitle) {
-    return '';
-  }
-  const escapedTitle = `*${escapeMarkdownV2(meta.title)}*`;
-  if (!meta.titleUrl) {
-    return escapedTitle;
-  }
-  return `[${escapedTitle}](${escapeMarkdownLinkUrl(meta.titleUrl)})`;
-}
-
-export function formatMessage(paragraphs: Paragraph[], meta: MessageMeta): string {
-  const tagsLine = formatTagsLine(meta.tags);
-  const titleLine = formatTitleLine(meta);
-  const body = paragraphs.map(convertParagraph).join('\n\n');
-  return [tagsLine, titleLine, body].filter((part) => part.length > 0).join('\n\n');
-}
-
-export function validateMessage(text: string, hasImages: boolean): void {
+export function validateMessage({ visibleLength }: FormattedMessage, hasImages: boolean): void {
   const maxLength = hasImages ? 1024 : 4096;
   const field = hasImages ? 'caption' : 'text';
 
-  if (text.length > maxLength) {
-    throw new Error(`Telegram ${field} 超长：当前 ${text.length}，上限 ${maxLength}`);
+  if (visibleLength > maxLength) {
+    throw new Error(`Telegram ${field} 超长：当前 ${visibleLength}，上限 ${maxLength}`);
   }
 }

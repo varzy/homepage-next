@@ -55,10 +55,10 @@ async function release(): Promise<void> {
   validateMessage(message, content.imageUrls.length > 0);
 
   logger.info(
-    { imageCount: content.imageUrls.length, messageLength: message.length },
+    { imageCount: content.imageUrls.length, messageLength: message.visibleLength },
     '正在发送到 Telegram...',
   );
-  await sendToChannel(message, content.imageUrls);
+  await sendToChannel(message.markdown, content.imageUrls);
   logger.info('发送成功！');
 
   logger.info('正在更新 Notion 状态...');

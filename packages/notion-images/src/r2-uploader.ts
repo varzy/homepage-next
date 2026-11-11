@@ -71,18 +71,6 @@ export const composeNewImageKey = (
   return `public/${year}/${month}/${label}/${pageId}/${hash}.${ext}`;
 };
 
-/**
- * 判断 URL 是否指向 R2 自定义域名（按 host 精确匹配，避免路径中含域名片段的误判；
- * URL 非法时返回 false）。
- */
-export const isR2Url = (url: string, publicDomain: string = DEFAULT_PUBLIC_DOMAIN): boolean => {
-  try {
-    return new URL(url).host === new URL(publicDomain).host;
-  } catch {
-    return false;
-  }
-};
-
 /** 判断 S3/R2 错误是否为「对象不存在」（HEAD 幂等检查用）。 */
 export const is404 = (error: unknown): boolean => {
   if (typeof error !== 'object' || error === null) return false;
@@ -113,6 +101,15 @@ export class R2ImageUploader {
     });
     this.bucket = opts.bucket ?? DEFAULT_BUCKET;
     this.publicDomain = (opts.publicDomain ?? DEFAULT_PUBLIC_DOMAIN).replace(/\/$/, '');
+  }
+
+  /** 按 host 精确匹配，避免路径中的域名片段误判。 */
+  isHosted(url: string): boolean {
+    try {
+      return new URL(url).host === new URL(this.publicDomain).host;
+    } catch {
+      return false;
+    }
   }
 
   /**

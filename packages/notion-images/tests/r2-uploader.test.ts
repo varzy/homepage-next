@@ -5,7 +5,6 @@ import {
   R2ImageUploader,
   extractExtension,
   is404,
-  isR2Url,
 } from '../src/r2-uploader.js';
 
 describe('shared/r2-uploader.ts', () => {
@@ -76,22 +75,28 @@ describe('shared/r2-uploader.ts', () => {
     });
   });
 
-  describe('isR2Url', () => {
+  describe('isHosted', () => {
+    const uploader = new R2ImageUploader({
+      accountId: 'test-account',
+      accessKeyId: 'test-key',
+      secretAccessKey: 'test-secret',
+    });
+
     it('R2 自定义域名返回 true', () => {
-      expect(isR2Url('https://cdn.varzy.me/blog_test_123.jpg')).toBe(true);
+      expect(uploader.isHosted('https://cdn.varzy.me/blog_test_123.jpg')).toBe(true);
     });
 
     it('其他域名返回 false', () => {
-      expect(isR2Url('https://example.com/image.jpg')).toBe(false);
+      expect(uploader.isHosted('https://example.com/image.jpg')).toBe(false);
     });
 
     it('仅 host 精确匹配才为 true（路径含域名片段不算）', () => {
-      expect(isR2Url('https://evil.com/cdn.varzy.me/x.jpg')).toBe(false);
+      expect(uploader.isHosted('https://evil.com/cdn.varzy.me/x.jpg')).toBe(false);
     });
 
     it('空字符串 / 非法 URL 返回 false', () => {
-      expect(isR2Url('')).toBe(false);
-      expect(isR2Url('not-a-url')).toBe(false);
+      expect(uploader.isHosted('')).toBe(false);
+      expect(uploader.isHosted('not-a-url')).toBe(false);
     });
   });
 

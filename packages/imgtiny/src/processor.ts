@@ -1,6 +1,7 @@
 import { mkdir, readFile, stat, writeFile } from 'node:fs/promises';
-import { join, parse } from 'node:path';
+import { join } from 'node:path';
 import { compressImage } from '@zy/image-compression';
+import { compressedStem } from './utils';
 
 export interface ProcessOptions {
   inputPath: string;
@@ -38,8 +39,8 @@ export async function processImage(options: ProcessOptions): Promise<ProcessResu
     });
 
     // 输出扩展名取决于压缩后的实际格式（如 HEIC→JPG），不再回填原扩展名
-    const outputPath = join(outputDir, `${parse(inputPath).name}_compressed.${image.ext}`);
-    await writeFile(outputPath, image.buffer);
+    const outputPath = join(outputDir, `${compressedStem(inputPath)}.${image.ext}`);
+    await writeFile(outputPath, image.buffer, { flag: 'wx' });
 
     return {
       input: inputPath,
@@ -48,14 +49,14 @@ export async function processImage(options: ProcessOptions): Promise<ProcessResu
       newSize: image.buffer.length,
       isSuccess: true,
     };
-  } catch (error: any) {
+  } catch (error) {
     return {
       input: inputPath,
       output: '',
       originalSize: 0,
       newSize: 0,
       isSuccess: false,
-      error: error.message || String(error),
+      error: error instanceof Error ? error.message : String(error),
     };
   }
 }

@@ -208,8 +208,7 @@ async function compressWithSharp(
 /**
  * 压缩并规范化图片：缩放到 maxDimension 内、应用 EXIF 朝向、HEIC 转 JPEG。
  *
- * 失败时仅当原图本身是浏览器/Telegram 可直接显示的格式才回退原图；HEIC 等格式
- * 原样上传必然被 Telegram 拒绝（IMAGE_PROCESS_FAILED），因此直接抛错。
+ * auto 模式下，已识别的非 HEIC 格式允许回退原图。WebP 转码失败时抛错。
  */
 export async function compressImage(
   buffer: Buffer,
@@ -226,7 +225,7 @@ export async function compressImage(
     return await compressWithSharp(buffer, inputFormat, label, opts);
   } catch (err) {
     const error = err instanceof Error ? err.message : String(err);
-    if (inputFormat === 'heic' || inputFormat === 'unknown') {
+    if (opts.output === 'webp' || inputFormat === 'heic' || inputFormat === 'unknown') {
       throw new Error(`图片处理失败（${label}，格式 ${inputFormat}）：${error}`, { cause: err });
     }
     console.warn(`图片压缩失败，回退原图: ${label} (${inputFormat}) ${error}`);

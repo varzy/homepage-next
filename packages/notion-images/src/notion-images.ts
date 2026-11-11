@@ -1,11 +1,12 @@
-import type { Client, ImageBlockObjectResponse, PageObjectResponse } from '@notionhq/client';
-import { compressImage, type CompressedImage } from '@zy/image-compression';
 import {
-  R2ImageUploader,
-  extractExtension,
-  isR2Url,
-  type R2UploaderOptions,
-} from './r2-uploader.ts';
+  isFullPage,
+  type Client,
+  type ImageBlockObjectResponse,
+  type PageObjectResponse,
+  type UpdatePageParameters,
+} from '@notionhq/client';
+import { compressImage, type CompressedImage } from '@zy/image-compression';
+import { R2ImageUploader, extractExtension, type R2UploaderOptions } from './r2-uploader.ts';
 
 export interface ImageProcessingStats {
   total: number;
@@ -49,76 +50,46 @@ export class NotionImageProcessor {
 
   /** 处理页面 property 中所有 files 类型字段，将未托管的图片上传到 R2 并更新页面属性。 */
   async processPageFileProperties(page: PageObjectResponse): Promise<PageObjectResponse> {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const updatedProperties: Record<string, any> = {};
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const patchedProps: Record<string, any> = {};
+    const properties: NonNullable<UpdatePageParameters['properties']> = {};
 
     for (const [propName, prop] of Object.entries(page.properties)) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const p = prop as any;
-      if (p.type !== 'files') continue;
+      if (prop.type !== 'files') continue;
 
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const files: any[] = p.files;
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const newFiles: any[] = [];
-      let anyUpdated = false;
+      const files: typeof prop.files = [];
+      let changed = false;
 
-      for (const file of files) {
-        let url: string;
-        let needsUpload = false;
-
-        if (file.type === 'file') {
-          url = file.file.url;
-          needsUpload = true;
-          console.log(`🔄 Found Notion-hosted property image in "${propName}": ${file.name}`);
-        } else if (file.type === 'external') {
-          url = file.external.url;
-          needsUpload = !isR2Url(url);
-          console.log(
-            needsUpload
-              ? `🔄 Found external property image (not yet hosted) in "${propName}": ${url}`
-              : `✅ Property image already hosted in "${propName}"`,
-          );
-        } else {
-          newFiles.push(file);
+      for (const file of prop.files) {
+        if (
+          file.type !== 'file' &&
+          (file.type !== 'external' || this.uploader.isHosted(file.external.url))
+        ) {
+          files.push(file);
           continue;
         }
 
-        if (!needsUpload) {
-          newFiles.push(file);
-          continue;
-        }
-
+        const url = file.type === 'file' ? file.file.url : file.external.url;
         try {
           const result = await this.uploadImage(url, page.id);
-          newFiles.push({ type: 'external', name: file.name || '', external: { url: result.url } });
-          anyUpdated = true;
+          files.push({ type: 'external', name: file.name || '', external: { url: result.url } });
+          changed = true;
           console.log(`✅ Property image uploaded: ${result.fileName} -> ${result.url}`);
         } catch (err) {
           console.warn(`⚠️ Failed to upload property image for "${propName}":`, err);
-          newFiles.push(file);
+          files.push(file);
         }
       }
 
-      if (anyUpdated) {
-        patchedProps[propName] = { files: newFiles };
-        updatedProperties[propName] = { ...p, files: newFiles };
-      }
+      if (changed) properties[propName] = { files };
     }
 
-    if (Object.keys(patchedProps).length === 0) return page;
+    if (Object.keys(properties).length === 0) return page;
 
-    await this.notion.pages.update({
-      page_id: page.id,
-      properties: patchedProps,
-    });
+    const updatedPage = await this.notion.pages.update({ page_id: page.id, properties });
+    if (isFullPage(updatedPage)) return updatedPage;
 
-    return {
-      ...page,
-      properties: { ...page.properties, ...updatedProperties },
-    };
+    const refreshedPage = await this.notion.pages.retrieve({ page_id: page.id });
+    if (!isFullPage(refreshedPage)) throw new Error(`Incomplete Notion page: ${page.id}`);
+    return refreshedPage;
   }
 
   /** 递归处理所有块 */
@@ -168,7 +139,8 @@ export class NotionImageProcessor {
       } else if (imageBlock.type === 'external') {
         imageUrl = imageBlock.external.url;
         // 历史版本曾把未能转码的 HEIC 原样传到 R2，浏览器无法显示，需重新处理
-        needsUpload = !isR2Url(imageUrl) || HEIC_EXTS.has(extractExtension(imageUrl));
+        needsUpload =
+          !this.uploader.isHosted(imageUrl) || HEIC_EXTS.has(extractExtension(imageUrl));
       } else {
         stats.skipped++;
         return;

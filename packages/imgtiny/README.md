@@ -26,3 +26,4 @@ pnpm imgtiny:compress --input /path/to/input --output /path/to/output
 - `-c`：先清空输出目录中旧的压缩产物
 
 输出扩展名跟随压缩后的实际格式（如 HEIC → `xxx_compressed.jpg`）。已存在同名压缩产物的图片会自动跳过。
+输入中有同名图片（如 `a.jpg` 和 `a.heic`）时，请先重命名其中一张。工具会在清理和写入前报告冲突。

@@ -24,9 +24,9 @@
     "sync:taste": "tsx scripts/fetch-taste.ts -- --full-sync",
     "sync:pages": "tsx scripts/fetch-pages.ts -- --full-sync",
     "sync:all": "pnpm run sync:posts && pnpm run sync:kotoba && pnpm run sync:taste && pnpm run sync:pages",
-    "no2tg": "pnpm --filter no2tg2 release",
+    "no2tg:release": "pnpm --filter no2tg2 release",
     "imgtiny:compress": "pnpm --filter imgtiny compress",
-    "check": "pnpm --filter \"*\" run exam"
+    "exam:all": "pnpm --filter \"*\" run exam"
   },
   "dependencies": {
     "@giscus/react": "^3.1.0",

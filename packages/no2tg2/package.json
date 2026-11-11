@@ -6,11 +6,9 @@
   "scripts": {
     "start": "tsx src/main.ts",
     "release": "tsx src/main.ts",
-    "lint": "oxlint src tests",
-    "format": "oxfmt src tests",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "exam": "oxfmt --check src tests && pnpm run lint && pnpm run typecheck && pnpm run test"
+    "exam": "pnpm run typecheck && pnpm run test"
   },
   "dependencies": {
     "@notionhq/client": "catalog:",

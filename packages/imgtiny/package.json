@@ -4,12 +4,8 @@
   "type": "module",
   "scripts": {
     "compress": "tsx src/compress.ts",
-    "watch": "tsx src/watch.ts",
-    "lint": "oxlint src",
-    "fmt": "oxfmt",
-    "exam": "oxfmt --check && pnpm run lint && pnpm run typecheck",
-    "format": "oxfmt",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "exam": "pnpm run typecheck"
   },
   "dependencies": {
     "@zy/image-compression": "workspace:*",

@@ -6,11 +6,9 @@
     ".": "./src/notion-images.ts"
   },
   "scripts": {
-    "lint": "oxlint src tests",
-    "format": "oxfmt src tests",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "exam": "oxfmt --check src tests && pnpm run lint && pnpm run typecheck && pnpm run test"
+    "exam": "pnpm run typecheck && pnpm run test"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1150.0",

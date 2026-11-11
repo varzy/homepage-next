@@ -8,8 +8,8 @@ function requireEnv(name: string): string {
 
 export const config = {
   notion: {
-    token: requireEnv('NOTION_TOKEN'),
-    dataSourceId: requireEnv('NOTION_DATABASE_ID'),
+    token: requireEnv('NOTION_API_SECRET'),
+    dataSourceId: requireEnv('NOTION_KOTOBA_DATABASE_ID'),
   },
   telegram: {
     botToken: requireEnv('TELEGRAM_BOT_TOKEN'),

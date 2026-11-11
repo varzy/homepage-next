@@ -39,8 +39,8 @@ jobs:
       - name: Publish queued Notion page to Telegram
         run: pnpm --filter no2tg2 release
         env:
-          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
-          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+          NOTION_API_SECRET: ${{ secrets.NOTION_API_SECRET }}
+          NOTION_KOTOBA_DATABASE_ID: ${{ secrets.NOTION_KOTOBA_DATABASE_ID }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}

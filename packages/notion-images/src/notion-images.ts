@@ -1,6 +1,5 @@
-import type { BlockObjectResponse, Client, PageObjectResponse } from '@notionhq/client';
-
-import { compressImage } from '@zy/image-compression';
+import type { Client, ImageBlockObjectResponse, PageObjectResponse } from '@notionhq/client';
+import { compressImage, type CompressedImage } from '@zy/image-compression';
 import {
   R2ImageUploader,
   extractExtension,
@@ -140,7 +139,7 @@ export class NotionImageProcessor {
 
       if (block.type === 'image') {
         stats.total++;
-        await this.processImageBlock(block as BlockObjectResponse, pageId, stats);
+        await this.processImageBlock(block, pageId, stats);
       }
 
       if (block.has_children) {
@@ -154,12 +153,10 @@ export class NotionImageProcessor {
   }
 
   private async processImageBlock(
-    block: BlockObjectResponse,
+    block: ImageBlockObjectResponse,
     pageId: string,
     stats: ImageProcessingStats,
   ): Promise<void> {
-    if (block.type !== 'image') return;
-
     try {
       const imageBlock = block.image;
       let imageUrl: string;
@@ -205,17 +202,8 @@ export class NotionImageProcessor {
    * {pageId}/{hash}.{ext}）由 uploader 内部组合，同页同图自然幂等。
    */
   private async uploadImage(url: string, pageId: string) {
-    console.log(`📥 Downloading image: ${url}`);
-    const res = await fetch(url, {
-      cache: 'no-cache',
-      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; NotionImageUploader/1.0)' },
-    });
-    if (!res.ok) {
-      throw new Error(`Failed to download image: ${res.status} ${res.statusText}`);
-    }
-
+    const image = await this.getCompressedImage(url);
     // 扩展名与 Content-Type 取自压缩后的实际格式（HEIC 会被转成 JPEG）
-    const image = await compressImage(Buffer.from(await res.arrayBuffer()), url);
     return this.uploader.uploadBuffer(
       image.buffer,
       image.ext,
@@ -223,5 +211,19 @@ export class NotionImageProcessor {
       pageId,
       image.contentType,
     );
+  }
+
+  private async getCompressedImage(url: string): Promise<CompressedImage> {
+    console.log(`📥 Downloading image: ${url}`);
+    const response = await fetch(url, {
+      cache: 'no-cache',
+      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; NotionImageUploader/1.0)' },
+    });
+    if (!response.ok) {
+      throw new Error(`Failed to download image: ${response.status} ${response.statusText}`);
+    }
+
+    const bytes = await response.arrayBuffer();
+    return compressImage(Buffer.from(bytes), url);
   }
 }

@@ -14,7 +14,7 @@ export default async function Readme() {
   const postWithContent = await getPageWithContent('readme');
   if (!postWithContent) notFound();
 
-  const stickers = [
+  const badges = [
     {
       icon: 'https://cdn.varzy.me/static/Written-By-a-Human-Not-By-AI-Badge-white.svg',
       href: 'https://notbyai.fyi/',
@@ -41,9 +41,9 @@ export default async function Readme() {
       <MdxRenderer source={postWithContent.content} />
 
       <div className="flex items-center gap-3.5 py-2">
-        {stickers.map((sticker) => (
-          <a key={sticker.icon} target="_blank" href={sticker.href}>
-            <img className="h-9" src={sticker.icon} alt={sticker.alt} />
+        {badges.map((badge) => (
+          <a key={badge.icon} target="_blank" href={badge.href}>
+            <img className="h-9" src={badge.icon} alt={badge.alt} />
           </a>
         ))}
       </div>

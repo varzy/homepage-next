@@ -38,7 +38,7 @@ jobs:
         run: pnpm --filter no2tg2 run exam
 
       - name: Publish queued Notion page to Telegram
-        run: pnpm run no2tg:release
+        run: pnpm run no2tg2:release
         env:
           NOTION_API_SECRET: ${{ secrets.NOTION_API_SECRET }}
           NOTION_KOTOBA_DATABASE_ID: ${{ secrets.NOTION_KOTOBA_DATABASE_ID }}

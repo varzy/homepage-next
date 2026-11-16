@@ -1,4 +1,5 @@
 import { type Metadata } from 'next';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import LightboxImage from '@/app/_components/LightboxImage';
 import MdxRenderer from '@/app/_components/MdxRenderer';
@@ -42,9 +43,9 @@ export default async function Readme() {
 
       <div className="flex items-center gap-3.5 py-2">
         {badges.map((badge) => (
-          <a key={badge.icon} target="_blank" href={badge.href}>
+          <Link key={badge.icon} target="_blank" href={badge.href}>
             <img className="h-9" src={badge.icon} alt={badge.alt} />
-          </a>
+          </Link>
         ))}
       </div>
     </div>

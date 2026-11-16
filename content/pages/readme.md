@@ -3,8 +3,8 @@ page_id: "263dc9c0-364a-8032-9368-cc0f8f18d4e9"
 title: "Readme"
 slug: "readme"
 status: "Published"
-last_edited_time: "2026-10-16T05:58:00.000Z"
-last_fetched_time: "2026-10-16T06:50:55.901Z"
+last_edited_time: "2026-11-16T05:33:00.000Z"
+last_fetched_time: "2026-11-16T05:34:22.366Z"
 ---
 
 ## 我
@@ -29,4 +29,4 @@ ACG 爱好者，在等 GTA6。半个极客，喜欢捣鼓软件和数码产品�
 
 文字内容截至目前未有任何 AI 参与编纂，并且承诺未来很长一段时间内都不会有 AIGC 内容。
 
-所有内容均以 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans) 协议授权，转载请注明出处，禁止用于商业目的。
+所有内容均以 CC BY-NC-SA 4.0 协议授权，转载请注明出处，禁止用于商业目的。

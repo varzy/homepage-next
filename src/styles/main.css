@@ -46,8 +46,12 @@
 }
 
 @utility g-container {
-  /* 180 = 720px */
-  @apply container mx-auto max-w-180 px-4;
+  /* 172 = 688px */
+  @apply container mx-auto max-w-172 px-4;
+}
+
+@utility g-container-content {
+  @apply g-container pt-16 pb-48;
 }
 
 @utility prose-invert {

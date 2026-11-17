@@ -1,4 +1,3 @@
-import SiteFooter from '@/app/_components/SiteFooter';
 import SiteHeader from '@/app/_components/SiteHeader';
 
 export default function BlogLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -12,8 +11,7 @@ export default function BlogLayout({ children }: Readonly<{ children: React.Reac
           { label: 'RSS', href: '/rss.xml', target: '_blank' },
         ]}
       />
-      <main>{children}</main>
-      <SiteFooter />
+      <main className="g-container-content">{children}</main>
     </>
   );
 }

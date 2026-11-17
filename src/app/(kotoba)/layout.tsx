@@ -1,4 +1,3 @@
-import SiteFooter from '@/app/_components/SiteFooter';
 import SiteHeader from '@/app/_components/SiteHeader';
 
 export default function KotobaLayout({ children }: { children: React.ReactNode }) {
@@ -11,8 +10,7 @@ export default function KotobaLayout({ children }: { children: React.ReactNode }
           { label: 'Telegram', href: 'https://t.me/aboutzy', target: '_blank' },
         ]}
       />
-      <main>{children}</main>
-      <SiteFooter />
+      <main className="g-container-content">{children}</main>
     </>
   );
 }

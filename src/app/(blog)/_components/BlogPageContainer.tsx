@@ -11,9 +11,7 @@ export default function BlogPageContainer({
   return (
     <>
       {pageHero && <PageHero {...pageHero}></PageHero>}
-      <div className="g-container">
-        <div>{children}</div>
-      </div>
+      <div>{children}</div>
     </>
   );
 }

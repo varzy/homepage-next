@@ -40,14 +40,13 @@ export default async function KotobaMonthlyDetailPage({
     <>
       <PageHero title={formatYearMonth(year, month)} />
 
-      <div className="g-container">
-        <div>
-          {posts.reverse().map((post) => (
-            <KotobaCard key={post.page_id} post={post} />
-          ))}
-        </div>
-        <MonthlyPagination months={months} year={year} month={month} />
-      </div>
+      <>
+        {posts.reverse().map((post) => (
+          <KotobaCard key={post.page_id} post={post} />
+        ))}
+      </>
+
+      <MonthlyPagination months={months} year={year} month={month} />
     </>
   );
 }

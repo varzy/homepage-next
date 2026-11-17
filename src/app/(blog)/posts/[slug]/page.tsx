@@ -1,11 +1,11 @@
 import { notFound } from 'next/navigation';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
-import NextPost from '@/app/(blog)/_components/NextPost';
+// import NextPost from '@/app/(blog)/_components/NextPost';
 import PostFooter from '@/app/(blog)/_components/PostFooter';
 import MdxRenderer from '@/app/_components/MdxRenderer';
 import {
   getAllPosts,
-  getCurrentCategoryNextPost,
+  // getCurrentCategoryNextPost,
   getPostBySlug,
   getPostWithContent,
 } from '@/app/_lib/post-loader';
@@ -40,10 +40,10 @@ export default async function Post({ params }: PageProps) {
   const postWithContent = await getPostWithContent(slug);
   if (!postWithContent) notFound();
 
-  const nextPost = await getCurrentCategoryNextPost(
-    postWithContent.categoryKey,
-    postWithContent.slug,
-  );
+  // const nextPost = await getCurrentCategoryNextPost(
+  //   postWithContent.categoryKey,
+  //   postWithContent.slug,
+  // );
 
   return (
     <BlogPageContainer
@@ -54,7 +54,7 @@ export default async function Post({ params }: PageProps) {
     >
       <MdxRenderer source={postWithContent.content} />
       <PostFooter />
-      <NextPost nextPost={nextPost} />
+      {/* <NextPost nextPost={nextPost} /> */}
     </BlogPageContainer>
   );
 }

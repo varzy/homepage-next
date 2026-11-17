@@ -6,8 +6,8 @@ import { useEffect, useRef, useState } from 'react';
 const CDN_HOST = 'cdn.varzy.me';
 // tailwind sm, lg, 2xl
 const WIDTH_LADDER = [640, 1024, 1536] as const;
-// 内容区域宽度为 720px，小于则
-const DEFAULT_SIZES = '(max-width: 720px) 100vw, 720px';
+// 内容区域宽度为 688px，小于则
+const DEFAULT_SIZES = '(max-width: 688px) 100vw, 688px';
 /** 变换默认参数：质量 80、按 Accept 协商 avif/webp、剥离 metadata、失败时自动回到原始图片 */
 const OPTS = 'quality=80,format=auto,metadata=none,onerror=redirect';
 

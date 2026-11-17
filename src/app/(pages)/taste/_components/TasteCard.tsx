@@ -18,7 +18,7 @@ export default function TasteCard({
         <div className="mb-2 overflow-hidden" style={aspectStyle}>
           <ImageSet
             src={item.cover}
-            sizes="(max-width: 720px) 50vw, 240px"
+            sizes="(max-width: 688px) 50vw, 240px"
             alt={item.title}
             className="h-full w-full object-cover"
           />

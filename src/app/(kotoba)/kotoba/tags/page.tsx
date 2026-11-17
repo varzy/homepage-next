@@ -25,21 +25,19 @@ export default async function KotobaTagsPage() {
     <>
       <PageHero title="Tags" />
 
-      <div className="g-container">
-        <ul className="m-0 mt-4 list-none p-0">
-          {sortedTags.map((tag, index) => (
-            <li key={index} className="me-5 mb-3 inline-block">
-              <Link
-                href={`/kotoba/tags/${encodeURIComponent(tag.tag)}`}
-                className="me-3 text-sm last:me-0 hover:underline"
-              >
-                <span>#{tag.tag}</span>
-                <span className="text-secondary"> {tag.postsCount}</span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ul className="m-0 mt-4 list-none p-0">
+        {sortedTags.map((tag, index) => (
+          <li key={index} className="me-5 mb-3 inline-block">
+            <Link
+              href={`/kotoba/tags/${encodeURIComponent(tag.tag)}`}
+              className="me-3 text-sm last:me-0 hover:underline"
+            >
+              <span>#{tag.tag}</span>
+              <span className="text-secondary"> {tag.postsCount}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </>
   );
 }

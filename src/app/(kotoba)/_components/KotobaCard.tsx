@@ -16,14 +16,14 @@ export default function KotobaCard({ post }: KotobaCardProps) {
   const publishedTimeLabel = formatAbsoluteDate(post.publishedDate, 'MMM DD, YYYY HH:mm');
 
   return (
-    <article className="bg-surface  mb-4 p-5" id={post.page_id.replaceAll('-', '')}>
+    <article className="bg-surface mb-4 p-5" id={post.page_id.replaceAll('-', '')}>
       {/* 13px */}
-      <div className="mb-3 flex flex-wrap items-baseline gap-x-3 text-[0.8125rem]">
+      <div className="mb-3 flex flex-wrap items-baseline text-[0.8125rem]">
         {post.tags.map((tag) => (
           <Link
             key={tag}
             href={`/kotoba/tags/${encodeURIComponent(tag)}`}
-            className="hover:underline"
+            className="me-2 hover:underline"
           >
             #{tag}
           </Link>

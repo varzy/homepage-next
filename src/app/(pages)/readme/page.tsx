@@ -41,7 +41,7 @@ export default async function Readme() {
 
       <MdxRenderer source={postWithContent.content} />
 
-      <div className="flex items-center gap-3.5 py-2">
+      <div className="flex items-center gap-3">
         {badges.map((badge) => (
           <Link key={badge.icon} target="_blank" href={badge.href}>
             <img className="h-9" src={badge.icon} alt={badge.alt} />

@@ -47,13 +47,11 @@ export default async function KotobaTagPage({
   return (
     <>
       <PageHero title={'#' + tagText} />
-      <div className="g-container">
-        <KotobaContainer
-          posts={posts}
-          currentPage={currentPage}
-          urlPrefix={`/kotoba/tags/${rawTag}`}
-        />
-      </div>
+      <KotobaContainer
+        posts={posts}
+        currentPage={currentPage}
+        urlPrefix={`/kotoba/tags/${rawTag}`}
+      />
     </>
   );
 }

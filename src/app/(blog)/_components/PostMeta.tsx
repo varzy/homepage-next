@@ -20,21 +20,16 @@ export default function PostMeta({
     <div className="text-secondary text-sm">
       <time dateTime={post.date}>{formatAbsoluteDate(post.date, dateTpl)}</time>
       {hasCategory && (
-        <>
-          <span>, in </span>
+        <span className="ms-2">
           <Link className="text-ink hover:underline" href={`/categories/${post.categoryKey}`}>
             {post.categoryAlias}
           </Link>
-        </>
+        </span>
       )}
       {hasTags && (
-        <span className="ms-3">
+        <span className="ms-2">
           {post.tags.map((tag) => (
-            <Link
-              key={tag}
-              className="text-ink me-2 last:me-0 hover:underline"
-              href={`/tags/${tag}`}
-            >
+            <Link key={tag} className="text-ink ms-2  hover:underline" href={`/tags/${tag}`}>
               #{tag}
             </Link>
           ))}

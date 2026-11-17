@@ -48,7 +48,7 @@ export default function Home() {
 
       {/* Links */}
       <nav aria-label="首页菜单">
-        <ul className="mt-12 space-y-2.5">
+        <ul className="mt-12 space-y-2.5 ">
           {links.map((link, index) => (
             <li key={index}>
               <span>/&nbsp;</span>
@@ -64,6 +64,9 @@ export default function Home() {
           ))}
         </ul>
       </nav>
+
+      {/* Copyright */}
+      <p className="mt-12 hidden">&copy; 2015 - {+new Date().getFullYear()} 贼歪.</p>
     </main>
   );
 }

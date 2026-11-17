@@ -10,11 +10,11 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <main className="g-container py-8">
+    <>
       <Prose>
         <h1>404 Not Found.</h1>
         <Link href="/">Back to /</Link>
       </Prose>
-    </main>
+    </>
   );
 }

@@ -51,7 +51,7 @@
 }
 
 @utility g-container-content {
-  @apply g-container pt-16 pb-48;
+  @apply g-container pt-16 pb-36;
 }
 
 @utility prose-invert {

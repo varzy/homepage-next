@@ -8,7 +8,7 @@ export type HeaderLink = {
 
 export default function SiteHeader({ links = [] }: { links?: HeaderLink[] }) {
   return (
-    <header className="py-8">
+    <header className="py-6">
       <div className="g-container">
         <div className="flex items-center justify-between">
           <Link className="text-lg font-bold tracking-wider italic" href="/">

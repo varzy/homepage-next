@@ -35,9 +35,9 @@ export default function Comments() {
             aria-expanded={isShowComments}
             aria-controls="giscus-comments"
             onClick={() => setIsShowComments(true)}
-            className=" g-plain-button"
+            className="g-plain-button"
           >
-            评论 ({commentCount})
+            <span className="underline-offset-4 hover:underline">评论 ({commentCount})</span>
           </button>
         )}
       </div>

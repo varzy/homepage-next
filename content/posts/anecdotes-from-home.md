@@ -1,16 +1,16 @@
 ---
-title: '老家轶事'
-category: 'Nichijou'
-type: 'Post'
-status: 'Published'
-tags: ['小形迹', '流水账']
-date: '2025-09-02'
-slug: 'anecdotes-from-home'
-summary: '所谓回家就是永远不会感觉到饿。'
-last_edited_time: '2026-08-18T17:42:00.000Z'
-last_fetched_time: '2026-08-18T18:00:17.173Z'
-page_id: '25fdc9c0-364a-8059-b99c-c27b4cdf7a36'
-icon: '🪦'
+title: "老家轶事"
+category: "Nichijou"
+type: "Post"
+status: "Published"
+tags: ["小形迹", "流水账", "精选"]
+date: "2025-09-02"
+slug: "anecdotes-from-home"
+summary: "所谓回家就是永远不会感觉到饿。"
+last_edited_time: "2026-11-18T04:47:00.000Z"
+last_fetched_time: "2026-11-18T04:48:02.179Z"
+page_id: "25fdc9c0-364a-8059-b99c-c27b4cdf7a36"
+icon: "🪦"
 ---
 
 8 月 29 日是父亲过世的百日，按照习俗要去坟上祭奠，我回了趟老家。

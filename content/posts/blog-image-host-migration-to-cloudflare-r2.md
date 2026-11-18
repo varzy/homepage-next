@@ -1,16 +1,16 @@
 ---
-title: '博客图床迁移到 Cloudflare R2 全过程回顾'
-category: 'Coding'
-type: 'Post'
-status: 'Published'
-tags: ['个人主页', 'Notion']
-date: '2026-08-19'
-slug: 'blog-image-host-migration-to-cloudflare-r2'
-summary: '感恩赛博菩萨 Cloudflare。'
-last_edited_time: '2026-08-26T02:44:00.000Z'
-last_fetched_time: '2026-08-26T03:51:33.193Z'
-page_id: '3c1dc9c0-364a-80c4-b7ed-fb2ec3daae28'
-icon: '🪅'
+title: "博客图床迁移到 Cloudflare R2 全过程回顾"
+category: "Coding"
+type: "Post"
+status: "Published"
+tags: ["个人主页", "Notion", "精选"]
+date: "2026-08-19"
+slug: "blog-image-host-migration-to-cloudflare-r2"
+summary: "感恩赛博菩萨 Cloudflare。"
+last_edited_time: "2026-11-18T04:46:00.000Z"
+last_fetched_time: "2026-11-18T04:48:00.625Z"
+page_id: "3c1dc9c0-364a-80c4-b7ed-fb2ec3daae28"
+icon: "🪅"
 ---
 
 8 月 18 日，我花费了约一晚上和半个白天的时间，把这个网站的图床从 [s.ee](http://s.ee/) 迁移到了 [Cloudflare R2](https://www.cloudflare.com/products/r2/)，目前已经顺利迁移完毕。
@@ -83,7 +83,7 @@ https://cdn.varzy.me/cdn-cgi/image/width=1024,quality=80,format=auto/legacy/2026
 <img
   sizes="(max-width: 720px) 50vw, 240px"
   srcset="
-    https://cdn.varzy.me/cdn-cgi/image/width=640,quality=80,format=auto,metadata=none,onerror=redirect/legacy/2026/08/08/d0Mz/taste_3b5dc9c0_1786155772462_d6c.jpg   640w,
+    https://cdn.varzy.me/cdn-cgi/image/width=640,quality=80,format=auto,metadata=none,onerror=redirect/legacy/2026/08/08/d0Mz/taste_3b5dc9c0_1786155772462_d6c.jpg 640w,
     https://cdn.varzy.me/cdn-cgi/image/width=1024,quality=80,format=auto,metadata=none,onerror=redirect/legacy/2026/08/08/d0Mz/taste_3b5dc9c0_1786155772462_d6c.jpg 1024w,
     https://cdn.varzy.me/cdn-cgi/image/width=1536,quality=80,format=auto,metadata=none,onerror=redirect/legacy/2026/08/08/d0Mz/taste_3b5dc9c0_1786155772462_d6c.jpg 1536w
   "

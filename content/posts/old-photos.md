@@ -1,16 +1,16 @@
 ---
-title: '老照片'
-category: 'Nichijou'
-type: 'Post'
-status: 'Published'
-tags: ['我记得', '流水账', '精选']
-date: '2024-08-13'
-slug: 'old-photos'
-summary: '我不知道自己会不会还有孩子了，但如果有，我也一定会将这些回忆传承下去。'
-last_edited_time: '2026-08-19T12:20:00.000Z'
-last_fetched_time: '2026-08-19T12:49:47.174Z'
-page_id: '2ca77267-9e9d-49d9-8f78-fb01adcd7a81'
-icon: '🏑'
+title: "老照片"
+category: "Nichijou"
+type: "Post"
+status: "Published"
+tags: ["我记得", "流水账", "精选"]
+date: "2024-08-13"
+slug: "old-photos"
+summary: "我不知道自己会不会还有孩子了，但如果有，我也一定会将这些回忆传承下去。"
+last_edited_time: "2026-11-18T04:47:00.000Z"
+last_fetched_time: "2026-11-18T04:48:05.801Z"
+page_id: "2ca77267-9e9d-49d9-8f78-fb01adcd7a81"
+icon: "🏑"
 ---
 
 上周给老爸买了个新手机，本来想着邮寄回去，结果周三时我爸告诉我家里路由器也挂掉了，要我在北京把路由器设置好再寄回去，保证插上就能用。那索性还是直接回趟家吧。往返洛阳的车票总是难买，但好歹还是候补到了周五晚上的硬卧和周日凌晨的高铁。然而周五北京暴雨，我的绿皮车如期停运，只能周五下午才临时候补了好几趟周六的高铁。周六中午坐上开往洛阳的高铁时，我才告诉家人下午到家的事情。

@@ -3,12 +3,12 @@ title: "博客图床迁移到 Cloudflare R2 全过程回顾"
 category: "Coding"
 type: "Post"
 status: "Published"
-tags: ["个人主页", "Notion", "精选"]
+tags: ["个人主页", "Notion"]
 date: "2026-08-19"
 slug: "blog-image-host-migration-to-cloudflare-r2"
 summary: "感恩赛博菩萨 Cloudflare。"
-last_edited_time: "2026-11-18T04:46:00.000Z"
-last_fetched_time: "2026-11-18T04:48:00.625Z"
+last_edited_time: "2026-11-18T04:49:00.000Z"
+last_fetched_time: "2026-11-18T04:50:31.939Z"
 page_id: "3c1dc9c0-364a-80c4-b7ed-fb2ec3daae28"
 icon: "🪅"
 ---

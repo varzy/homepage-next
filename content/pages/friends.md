@@ -3,8 +3,8 @@ page_id: "2efdc9c0-364a-8077-9c62-e5c2e4ef1889"
 title: "Friends"
 slug: "friends"
 status: "Published"
-last_edited_time: "2026-11-17T06:07:00.000Z"
-last_fetched_time: "2026-11-17T10:25:09.223Z"
+last_edited_time: "2026-11-18T07:09:00.000Z"
+last_fetched_time: "2026-11-18T12:45:29.923Z"
 ---
 
 # 往来
@@ -56,6 +56,7 @@ avatar: https://cdn.varzy.me/static/zyavatar.png
 - [Lex Blog](https://dreams.plus/)
 - [SkyWT](https://skywt.cn/)
 - [sepelathons](https://sepelathons.neocities.org/)
+- [luckycc](https://luckycc.cc/)
 
 这些是我用来发现其他博客的平台。
 

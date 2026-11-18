@@ -7,18 +7,13 @@ last_edited_time: "2026-11-17T06:07:00.000Z"
 last_fetched_time: "2026-11-17T10:25:09.223Z"
 ---
 
-
 # 往来
-
 
 欢迎互换友链。我偏好版面简洁，有自我表达，且没有 AI 参与编撰的网站，如果你的站点符合要求，可以在下方留言，或发送邮件到 varzyme#gmail.com 告知我你的站点信息。
 
-
 如果你有任何想说的想聊的，也同样欢迎你留言或发邮件给我。
 
-
 ## 本站
-
 
 ```plain text
 name: 贼歪
@@ -27,9 +22,7 @@ motto: Developer. Blogger. Minimalist.
 avatar: https://cdn.varzy.me/static/zyavatar.png
 ```
 
-
 ## 友人
-
 
 这些是与我互换了友链的朋友们。
 

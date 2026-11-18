@@ -1,12 +1,15 @@
-import { MDXRemote } from 'next-mdx-remote/rsc';
+import { compileMDX } from 'next-mdx-remote/rsc';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark, oneLight } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import LightboxImage from '@/app/_components/LightboxImage';
+import Toc from '@/app/_components/Toc';
+import rehypeToc, { type TocItem } from '@/app/_lib/rehype-toc';
 import Prose from './Prose';
 
 interface MdxRendererProps {
   source: string;
   withProse?: boolean;
+  withToc?: boolean;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -60,18 +63,33 @@ const SmartCode = ({ children, className, ...props }: MdxCustomComponentProps) =
   );
 };
 
-export default function MdxRenderer({ source, withProse = true }: MdxRendererProps) {
-  const inner = (
-    <MDXRemote
-      source={source}
-      components={{
-        code: SmartCode,
-        pre: CustomPre,
-        a: CustomLink,
-        img: LightboxImage,
-      }}
-    />
-  );
+export default async function MdxRenderer({
+  source,
+  withProse = true,
+  withToc = false,
+}: MdxRendererProps) {
+  const headings: TocItem[] = [];
+  const { content } = await compileMDX({
+    source,
+    components: {
+      code: SmartCode,
+      pre: CustomPre,
+      a: CustomLink,
+      img: LightboxImage,
+    },
+    options: { mdxOptions: { rehypePlugins: [[rehypeToc, headings]] } },
+  });
 
-  return withProse ? <Prose>{inner}</Prose> : inner;
+  const body = withProse ? <Prose>{content}</Prose> : content;
+  if (!withToc || headings.length === 0) return body;
+
+  // 目录悬挂在 688px 正文列右侧留白里，xl 以下留白不够故隐藏
+  return (
+    <div className="relative">
+      {body}
+      <aside className="absolute top-0 bottom-0 left-full ml-12 hidden w-52 md:block">
+        <Toc items={headings} />
+      </aside>
+    </div>
+  );
 }

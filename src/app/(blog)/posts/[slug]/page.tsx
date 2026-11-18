@@ -52,7 +52,7 @@ export default async function Post({ params }: PageProps) {
         after: <PostMeta post={postWithContent}></PostMeta>,
       }}
     >
-      <MdxRenderer source={postWithContent.content} />
+      <MdxRenderer source={postWithContent.content} withToc />
       <PostFooter />
       {/* <NextPost nextPost={nextPost} /> */}
     </BlogPageContainer>

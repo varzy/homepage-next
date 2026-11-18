@@ -27,7 +27,7 @@ export default function PostMeta({
         </span>
       )}
       {hasTags && (
-        <span className="ms-2">
+        <span>
           {post.tags.map((tag) => (
             <Link key={tag} className="text-ink ms-2 hover:underline" href={`/tags/${tag}`}>
               #{tag}

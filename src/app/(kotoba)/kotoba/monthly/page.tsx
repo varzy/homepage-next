@@ -26,7 +26,6 @@ export default async function KotobaMonthlyPage() {
             >
               {formatYearMonth(m.year, m.month)}
             </Link>
-            <span className="text-secondary"> {m.postsCount}</span>
           </li>
         ))}
         <li>

@@ -6,8 +6,8 @@ import PostItem from './PostItem';
 export default function PostsContainer({
   posts,
   currentPage,
-  showCategory = true,
-  showTags = true,
+  showCategory = false,
+  showTags = false,
   dateTpl = 'MMM DD, YYYY',
   urlPrefix = '/',
 }: {

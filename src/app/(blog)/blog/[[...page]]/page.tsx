@@ -27,12 +27,7 @@ export default async function BlogPage({ params }: { params: Promise<{ page?: st
 
   return (
     <BlogPageContainer pageHero={{ title: '文章' }}>
-      <PostsContainer
-        posts={allPosts}
-        currentPage={currentPage}
-        showTags={false}
-        urlPrefix="/blog"
-      />
+      <PostsContainer posts={allPosts} currentPage={currentPage} urlPrefix="/blog" />
     </BlogPageContainer>
   );
 }

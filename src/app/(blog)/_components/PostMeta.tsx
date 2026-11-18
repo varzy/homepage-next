@@ -21,9 +21,11 @@ export default function PostMeta({
       <time dateTime={post.date}>{formatAbsoluteDate(post.date, dateTpl)}</time>
       {hasCategory && (
         <span className="ms-2">
+          「
           <Link className="text-ink hover:underline" href={`/categories/${post.categoryKey}`}>
             {post.categoryAlias}
           </Link>
+          」
         </span>
       )}
       {hasTags && (

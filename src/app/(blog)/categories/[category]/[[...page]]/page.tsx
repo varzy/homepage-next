@@ -53,12 +53,12 @@ export default async function CategoryPage({
   const allPosts = await getCategoryPosts(categoryParam);
 
   return (
-    <BlogPageContainer pageHero={{ title: categoryCtx.alias, after: categoryCtx.description }}>
+    <BlogPageContainer
+      pageHero={{ title: `「${categoryCtx.alias}」`, after: categoryCtx.description }}
+    >
       <PostsContainer
         posts={allPosts}
         currentPage={currentPage}
-        showCategory={false}
-        showTags={false}
         urlPrefix={`/categories/${categoryParam}`}
       />
     </BlogPageContainer>

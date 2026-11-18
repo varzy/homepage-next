@@ -2,10 +2,11 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import BlogPageContainer from '@/app/(blog)/_components/BlogPageContainer';
 import PostTag from '@/app/(blog)/_components/PostTag';
-import { getAllPosts, getAllTags } from '@/app/_lib/post-loader';
+import { getAllPosts, getAllTags, getPostsByTag } from '@/app/_lib/post-loader';
 import { SITE_CONFIG } from '@/site.config';
 import { getEmojiFavicon } from '@/utils/favicon';
 import BlogSection from '../_components/BlogSection';
+import PostItemArchive from '../_components/PostItemArchive';
 
 export const metadata: Metadata = {
   title: '栏目',
@@ -13,6 +14,9 @@ export const metadata: Metadata = {
 };
 
 export default async function ColumnsPage() {
+  const allPosts = await getAllPosts();
+  const tags = await getAllTags();
+
   const categoriesConfig = SITE_CONFIG.categories;
   const categoryLinks = Object.keys(categoriesConfig).map((key) => {
     const category = categoriesConfig[key as keyof typeof categoriesConfig];
@@ -23,21 +27,15 @@ export default async function ColumnsPage() {
     };
   });
 
-  const allPosts = await getAllPosts();
-  const tags = await getAllTags();
-
   const tagsWithPostsCount = tags.map((tag) => {
     const tagPosts = allPosts.filter((post) => post.tags.includes(tag));
     return { tag, postsCount: tagPosts.length };
   });
-
-  const featuredTag = '精选';
   const sortedTags = tagsWithPostsCount
     .filter((tag) => tag.postsCount > 0)
-    .sort((a, b) => {
-      const featuredOrder = Number(b.tag === featuredTag) - Number(a.tag === featuredTag);
-      return featuredOrder || b.postsCount - a.postsCount;
-    });
+    .sort((a, b) => b.postsCount - a.postsCount);
+
+  const pinnedPosts = await getPostsByTag('精选');
 
   return (
     <BlogPageContainer pageHero={{ title: '栏目' }}>
@@ -64,6 +62,12 @@ export default async function ColumnsPage() {
             </li>
           ))}
         </ul>
+      </BlogSection>
+
+      <BlogSection title="Pinned">
+        {pinnedPosts.map((post) => (
+          <PostItemArchive key={post.page_id} {...post} dateTpl="MMM DD, YYYY"></PostItemArchive>
+        ))}
       </BlogSection>
     </BlogPageContainer>
   );

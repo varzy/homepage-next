@@ -1,16 +1,16 @@
 ---
-title: '当极简和断舍离成为一种习惯'
-category: 'Nichijou'
-type: 'Post'
-status: 'Published'
-tags: ['随想']
-date: '2021-08-24'
-slug: 'simple-and-danshari'
-summary: '最近办公室新入职了一位小姐姐，刚来第二天我就注意到她……'
-last_edited_time: '2026-08-18T14:55:00.000Z'
-last_fetched_time: '2026-08-18T18:02:37.887Z'
-page_id: '80882b3d-945a-4f57-904d-d7430415ee2a'
-icon: '⬜'
+title: "当极简和断舍离成为一种习惯"
+category: "Nichijou"
+type: "Post"
+status: "Published"
+tags: ["随想", "极简主义"]
+date: "2021-08-24"
+slug: "simple-and-danshari"
+summary: "最近办公室新入职了一位小姐姐，刚来第二天我就注意到她……"
+last_edited_time: "2026-11-23T05:24:00.000Z"
+last_fetched_time: "2026-11-23T05:24:59.341Z"
+page_id: "80882b3d-945a-4f57-904d-d7430415ee2a"
+icon: "⬜"
 ---
 
 最近办公室新入职了一位小姐姐，刚来第二天我就注意到她…… 的键盘。今天中午鼓起勇气向她询问了键盘型号。回到工位后，看着我那已经用了四年多的 Poker2，顺势就打开了淘宝开始找键盘和键帽。

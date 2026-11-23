@@ -3,8 +3,8 @@ page_id: "372dc9c0-364a-80f3-9b8a-e7cf3c61d44d"
 title: "Gear"
 slug: "gear"
 status: "Published"
-last_edited_time: "2026-11-17T10:43:00.000Z"
-last_fetched_time: "2026-11-17T12:52:45.488Z"
+last_edited_time: "2026-11-23T06:09:00.000Z"
+last_fetched_time: "2026-11-23T08:42:26.287Z"
 ---
 
 # 器用
@@ -43,7 +43,7 @@ last_fetched_time: "2026-11-17T12:52:45.488Z"
 
 ## 衣着
 
-- **优衣库 Airism 白色短袖** - 焊死在身上的打底衫，夏穿 L 冬穿 M
+- **优衣库 Airism 白色短袖** - 焊死在身上的打底衫
 - **美津浓 FIYI TL V2 运动鞋**
 
 ## 日用
